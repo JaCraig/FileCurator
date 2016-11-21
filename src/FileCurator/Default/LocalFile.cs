@@ -162,13 +162,14 @@ namespace FileCurator.Default
         /// Moves the file to a new directory
         /// </summary>
         /// <param name="directory">Directory to move to</param>
-        public override void MoveTo(IDirectory directory)
+        public override IFile MoveTo(IDirectory directory)
         {
             if (directory == null || !Exists)
-                return;
+                return this;
             directory.Create();
             InternalFile.MoveTo(directory.FullName + "\\" + Name);
             InternalFile = new System.IO.FileInfo(directory.FullName + "\\" + Name);
+            return this;
         }
 
         /// <summary>
@@ -213,12 +214,13 @@ namespace FileCurator.Default
         /// Renames the file
         /// </summary>
         /// <param name="newName">New name for the file</param>
-        public override void Rename(string newName)
+        public override IFile Rename(string newName)
         {
             if (string.IsNullOrEmpty(newName) || !Exists)
-                return;
+                return this;
             InternalFile.MoveTo(InternalFile.DirectoryName + "\\" + newName);
             InternalFile = new System.IO.FileInfo(InternalFile.DirectoryName + "\\" + newName);
+            return this;
         }
 
         /// <summary>

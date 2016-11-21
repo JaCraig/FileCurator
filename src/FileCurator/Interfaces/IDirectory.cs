@@ -85,12 +85,12 @@ namespace FileCurator.Interfaces
         /// <summary>
         /// Creates the directory if it does not currently exist
         /// </summary>
-        void Create();
+        IDirectory Create();
 
         /// <summary>
         /// Deletes the directory
         /// </summary>
-        void Delete();
+        IDirectory Delete();
 
         /// <summary>
         /// Enumerates sub directories (defaults to top level sub directories)
@@ -134,6 +134,6 @@ namespace FileCurator.Interfaces
         /// Renames the directory
         /// </summary>
         /// <param name="name">The new name of the directory</param>
-        void Rename(string name);
+        IDirectory Rename(string name);
     }
 }

@@ -128,21 +128,22 @@ namespace FileCurator.Default
         /// <summary>
         /// Creates the directory
         /// </summary>
-        public override void Create()
+        public override IDirectory Create()
         {
             if (InternalDirectory == null)
-                return;
+                return this;
             InternalDirectory.Create();
             InternalDirectory.Refresh();
+            return this;
         }
 
         /// <summary>
         /// Deletes the directory
         /// </summary>
-        public override void Delete()
+        public override IDirectory Delete()
         {
             if (!Exists)
-                return;
+                return this;
             foreach (IFile File in EnumerateFiles())
             {
                 File.Delete();
@@ -153,6 +154,7 @@ namespace FileCurator.Default
             }
             InternalDirectory.Delete(true);
             InternalDirectory.Refresh();
+            return this;
         }
 
         /// <summary>
@@ -193,12 +195,13 @@ namespace FileCurator.Default
         /// Renames the directory
         /// </summary>
         /// <param name="name">Name of the new directory</param>
-        public override void Rename(string name)
+        public override IDirectory Rename(string name)
         {
             if (InternalDirectory == null || string.IsNullOrEmpty(name))
-                return;
+                return this;
             InternalDirectory.MoveTo(Parent.FullName + "\\" + name);
             InternalDirectory = new System.IO.DirectoryInfo(Parent.FullName + "\\" + name);
+            return this;
         }
     }
 }

@@ -48,7 +48,15 @@ namespace UnitTests.IO
         {
             new DirectoryInfo("~/Logs/").Delete();
             new DirectoryInfo("~/App_Data/").Delete();
-            var Temp = new DirectoryInfo(".");
+            for (int x = 0; x < 6; ++x)
+            {
+                new DirectoryInfo("./Testing/" + x).Create();
+            }
+            for (int x = 0; x < 7; ++x)
+            {
+                new FileInfo("./Testing/" + x + ".txt").Write(x.ToString());
+            }
+            var Temp = new DirectoryInfo("./Testing/");
             foreach (IFile File in Temp) { }
             Assert.Equal(6, Temp.EnumerateDirectories().Count());
             Assert.Equal(7, Temp.EnumerateFiles().Count());

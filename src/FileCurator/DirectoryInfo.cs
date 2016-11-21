@@ -220,21 +220,23 @@ namespace FileCurator
         /// <summary>
         /// Creates the directory if it does not currently exist
         /// </summary>
-        public void Create()
+        public IDirectory Create()
         {
             if (InternalDirectory == null)
-                return;
+                return this;
             InternalDirectory.Create();
+            return this;
         }
 
         /// <summary>
         /// Deletes the directory
         /// </summary>
-        public void Delete()
+        public IDirectory Delete()
         {
             if (InternalDirectory == null)
-                return;
+                return this;
             InternalDirectory.Delete();
+            return this;
         }
 
         /// <summary>
@@ -358,11 +360,12 @@ namespace FileCurator
         /// Renames the directory
         /// </summary>
         /// <param name="name">The new name of the directory</param>
-        public void Rename(string name)
+        public IDirectory Rename(string name)
         {
             if (InternalDirectory == null || string.IsNullOrEmpty(name))
-                return;
+                return this;
             InternalDirectory.Rename(name);
+            return this;
         }
 
         /// <summary>

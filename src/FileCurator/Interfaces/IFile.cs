@@ -88,7 +88,7 @@ namespace FileCurator.Interfaces
         /// Moves the file to another directory
         /// </summary>
         /// <param name="directory">Directory to move the file to</param>
-        void MoveTo(IDirectory directory);
+        IFile MoveTo(IDirectory directory);
 
         /// <summary>
         /// Reads the file to the end as a string
@@ -106,7 +106,7 @@ namespace FileCurator.Interfaces
         /// Renames the file
         /// </summary>
         /// <param name="newName">New file name</param>
-        void Rename(string newName);
+        IFile Rename(string newName);
 
         /// <summary>
         /// Writes content to the file

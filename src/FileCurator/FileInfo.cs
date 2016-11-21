@@ -286,11 +286,12 @@ namespace FileCurator
         /// Moves the file to a new directory
         /// </summary>
         /// <param name="directory">Directory to move to</param>
-        public void MoveTo(IDirectory directory)
+        public IFile MoveTo(IDirectory directory)
         {
             if (InternalFile == null || directory == null)
-                return;
+                return this;
             InternalFile.MoveTo(directory);
+            return this;
         }
 
         /// <summary>
@@ -319,11 +320,12 @@ namespace FileCurator
         /// Renames the file
         /// </summary>
         /// <param name="newName">New name for the file</param>
-        public void Rename(string newName)
+        public IFile Rename(string newName)
         {
             if (InternalFile == null || string.IsNullOrEmpty(newName))
-                return;
+                return this;
             InternalFile.Rename(newName);
+            return this;
         }
 
         /// <summary>

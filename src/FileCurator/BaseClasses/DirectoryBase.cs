@@ -271,12 +271,12 @@ namespace FileCurator.BaseClasses
         /// <summary>
         /// Creates the directory
         /// </summary>
-        public abstract void Create();
+        public abstract IDirectory Create();
 
         /// <summary>
         /// Deletes the directory
         /// </summary>
-        public abstract void Delete();
+        public abstract IDirectory Delete();
 
         /// <summary>
         /// Enumerates directories under this directory
@@ -373,7 +373,7 @@ namespace FileCurator.BaseClasses
         /// Renames the directory
         /// </summary>
         /// <param name="name">Name of the new directory</param>
-        public abstract void Rename(string name);
+        public abstract IDirectory Rename(string name);
 
         /// <summary>
         /// Enumerates the files and directories in the directory

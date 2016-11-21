@@ -303,7 +303,7 @@ namespace FileCurator.BaseClasses
         /// Moves the file to a new directory
         /// </summary>
         /// <param name="directory">Directory to move to</param>
-        public abstract void MoveTo(IDirectory directory);
+        public abstract IFile MoveTo(IDirectory directory);
 
         /// <summary>
         /// Reads the file in as a string
@@ -321,7 +321,7 @@ namespace FileCurator.BaseClasses
         /// Renames the file
         /// </summary>
         /// <param name="newName">New name for the file</param>
-        public abstract void Rename(string newName);
+        public abstract IFile Rename(string newName);
 
         /// <summary>
         /// Returns the name of the file
