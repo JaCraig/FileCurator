@@ -60,8 +60,8 @@ namespace UnitTests.IO
             foreach (IFile File in Temp) { }
             Assert.Equal(6, Temp.EnumerateDirectories().Count());
             Assert.Equal(7, Temp.EnumerateFiles().Count());
-            Assert.Equal(6, Temp.EnumerateDirectories(x => x.Created < DateTime.UtcNow).Count());
-            Assert.Equal(7, Temp.EnumerateFiles(x => x.Created < DateTime.UtcNow).Count());
+            Assert.Equal(6, Temp.EnumerateDirectories(x => x.Created < DateTime.UtcNow.AddDays(1)).Count());
+            Assert.Equal(7, Temp.EnumerateFiles(x => x.Created < DateTime.UtcNow.AddDays(1)).Count());
         }
 
         [Fact]
