@@ -1,0 +1,27 @@
+{
+  "title": "FileCurator",
+  "version": "1.0.0",
+  "authors": [ "James Craig" ],
+  "description": "FileCurator is a simple manager for your files. It tries to give them a common interface to deal with files whether on your system or other locations.",
+  "packOptions": {
+    "owners": [ "James Craig" ],
+    "summary": "FileCurator is a simple manager for your files.",
+    "projectUrl": "https://github.com/JaCraig/FileCurator",
+    "licenseUrl": "https://github.com/JaCraig/FileCurator/blob/master/LICENSE",
+    "tags": [ "FileSystem", "File", "URL" ]
+  },
+  "dependencies": {
+    "Canister.IoC": "1.0.26",
+    "NETStandard.Library": "1.6.0",
+    "System.IO.FileSystem": "4.0.1",
+    "System.Threading.Tasks.Parallel": "4.0.1"
+  },
+  "frameworks": {
+    "netstandard1.1": {
+      "imports": "dnxcore50"
+    }
+  },
+  "buildOptions": {
+    "xmlDoc": true
+  }
+}
