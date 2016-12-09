@@ -16,6 +16,7 @@ limitations under the License.
 
 using Canister.Interfaces;
 using FileCurator.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FileCurator.Module
 {
@@ -39,7 +40,7 @@ namespace FileCurator.Module
         public void Load(IBootstrapper Bootstrapper)
         {
             Bootstrapper.RegisterAll<IFileSystem>();
-            Bootstrapper.Register(new FileCurator(Bootstrapper.ResolveAll<IFileSystem>()));
+            Bootstrapper.Register<FileCurator>(ServiceLifetime.Singleton);
         }
     }
 }
