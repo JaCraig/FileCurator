@@ -13,10 +13,10 @@
     <copyright>Copyright 2016</copyright>
     <tags>FileSystem File URL</tags>
     <dependencies>
-      <dependency id="NETStandard.Library" version="1.6.0" />
-      <dependency id="Canister.IoC" version="1.0.26" />
-      <dependency id="System.IO.FileSystem" version="4.0.1" />
-      <dependency id="System.Threading.Tasks.Parallel" version="4.0.1" />
+      <dependency id="NETStandard.Library" version="1.6.1" />
+      <dependency id="Canister.IoC" version="1.0.31" />
+      <dependency id="System.IO.FileSystem" version="4.3.0" />
+      <dependency id="System.Threading.Tasks.Parallel" version="4.3.0" />
     </dependencies>
   </metadata>
   <files>

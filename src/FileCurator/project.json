@@ -11,10 +11,10 @@
     "tags": [ "FileSystem", "File", "URL" ]
   },
   "dependencies": {
-    "Canister.IoC": "1.0.26",
-    "NETStandard.Library": "1.6.0",
-    "System.IO.FileSystem": "4.0.1",
-    "System.Threading.Tasks.Parallel": "4.0.1"
+    "Canister.IoC": "1.0.31",
+    "NETStandard.Library": "1.6.1",
+    "System.IO.FileSystem": "4.3.0",
+    "System.Threading.Tasks.Parallel": "4.3.0"
   },
   "frameworks": {
     "netstandard1.1": {

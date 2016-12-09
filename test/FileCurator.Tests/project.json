@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0",
   "title": "FileCurator.Tests",
   "description": "Tests for FileCurator",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "xunit": "2.2.0-*",
+    "Microsoft.NETCore.App": "1.1.0",
     "FileCurator": "1.0.*",
     "dotnet-test-xunit": "2.2.0-*"
   },
@@ -26,10 +27,6 @@
   "frameworks": {
     "netcoreapp1.0": {
       "dependencies": {
-        "Microsoft.NETCore.App": {
-          "type": "platform",
-          "version": "1.0.0-*"
-        }
       },
       "imports": [
         "portable-net45+win8",
