@@ -8,7 +8,9 @@ FileCurator is a library used to simplify file access and management on your sys
 
 The system relies on an IoC wrapper called [Canister](https://github.com/JaCraig/Canister). While Canister has a built in IoC container, it's purpose is to actually wrap your container of choice in a way that simplifies setup and usage for other libraries that don't want to be tied to a specific IoC container. FileCurator uses it to detect and pull in file system providers. As such you must set up Canister in order to use FileCurator:
 
-    Canister.Builder.CreateContainer(new List<ServiceDescriptor>(), typeof(FileCurator).GetTypeInfo().Assembly);
+    Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
+                .RegisterFileCurator()
+                .Build();
 	
 This line is required prior to using the extension methods, FileInfo, and DirectoryInfo classes for the first time. Once Canister is set up, you can call the classes provided:
 
@@ -24,7 +26,10 @@ The system comes with a couple of built in file systems for dealing with local f
 	
 After the classes are created, you must tell Canister where to look for it. So modify the initialization line accordingly:
 
-    Canister.Builder.CreateContainer(new List<ServiceDescriptor>(), typeof(FileCurator).GetTypeInfo().Assembly, typeof(MyFileSystem).GetTypeInfo().Assembly);
+    Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
+                .RegisterFileCurator()
+		.AddAssembly(typeof(MyFileSystem).GetTypeInfo().Assembly)
+                .Build();
 	
 From there the system will find the new provider and use it when called.
 
@@ -57,7 +62,10 @@ By default the system comes with a couple of file systems for dealing with local
 	
 After the class is created, you must tell Canister where to look for it. So modify the initialization line accordingly:
 
-    Canister.Builder.CreateContainer(new List<ServiceDescriptor>(), typeof(FileCurator).GetTypeInfo().Assembly, typeof(MyLocalFileSystem).GetTypeInfo().Assembly);
+    Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
+                .RegisterFileCurator()
+		.AddAssembly(typeof(MyLocalFileSystem).GetTypeInfo().Assembly)
+                .Build();
 	
 From there the system will override the default "Relative Local" provider with your own.
 
