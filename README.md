@@ -28,7 +28,7 @@ After the classes are created, you must tell Canister where to look for it. So m
 
     Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
                 .RegisterFileCurator()
-		.AddAssembly(typeof(MyFileSystem).GetTypeInfo().Assembly)
+				.AddAssembly(typeof(MyFileSystem).GetTypeInfo().Assembly)
                 .Build();
 	
 From there the system will find the new provider and use it when called.
@@ -64,7 +64,7 @@ After the class is created, you must tell Canister where to look for it. So modi
 
     Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
                 .RegisterFileCurator()
-		.AddAssembly(typeof(MyLocalFileSystem).GetTypeInfo().Assembly)
+				.AddAssembly(typeof(MyLocalFileSystem).GetTypeInfo().Assembly)
                 .Build();
 	
 From there the system will override the default "Relative Local" provider with your own.
