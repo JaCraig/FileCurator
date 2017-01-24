@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FileCurator.Registration;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -12,7 +13,9 @@ namespace FileCurator.Tests.BaseClasses
         public TestingDirectoryFixture()
         {
             if (Canister.Builder.Bootstrapper == null)
-                Canister.Builder.CreateContainer(new List<ServiceDescriptor>(), typeof(FileCurator).GetTypeInfo().Assembly);
+                Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
+                    .RegisterFileCurator()
+                    .Build();
             new DirectoryInfo(@".\Testing").Create();
             new DirectoryInfo(@".\App_Data").Create();
             new DirectoryInfo(@".\Logs").Create();
