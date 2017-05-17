@@ -1,11 +1,10 @@
-﻿using FileCurator;
-using FileCurator.Interfaces;
+﻿using FileCurator.Interfaces;
 using FileCurator.Tests.BaseClasses;
 using System;
 using System.Linq;
 using Xunit;
 
-namespace UnitTests.IO
+namespace FileCurator.Tests
 {
     public class DirectoryInfoTests : TestingDirectoryFixture
     {

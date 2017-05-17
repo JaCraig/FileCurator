@@ -3,7 +3,7 @@ using FileCurator.Tests.BaseClasses;
 using System.Text;
 using Xunit;
 
-namespace UnitTests.IO
+namespace FileCurator.Tests
 {
     public class FileInfoTests : TestingDirectoryFixture
     {
