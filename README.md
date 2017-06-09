@@ -17,8 +17,29 @@ This line is required prior to using the extension methods, FileInfo, and Direct
     var MyFile = new FileInfo("~/MyFile.txt");
 	MyFile = new FileInfo("./MyFile.txt");
 	MyFile = new FileInfo("MyFile.txt");
+	MyFile = new FileInfo("http://www.google.com");
+	MyFile = new FileInfo("resource://MyDLL/MyDLL.Resources.MyFile.txt");
 	
-The FileInfo and DirectoryInfo classes take a string for the file path as well as a user name, password, and domain, assuming the file system you are trying to reach requires it. It translates ~ and . to be the local base directory. From there you will have access to the file's contents and information.
+The FileInfo and DirectoryInfo classes take a string for the file path as well as a user name, password, and domain, assuming the file system you are trying to reach requires it. It translates ~ and . to be the local base directory. From there you will have access to the file's contents and information. Similarly you can pass in web addresses or the location of embedded resource files and will be able to read them accordingly.
+
+## Embedded Resources
+
+For embedded resources, the syntax is:
+
+    resource://MyDLL/MyDLL.Resources.MyFile.txt
+
+or
+
+    resource://MyDLL/MyDLL.MyFile.txt
+    
+Where resource:// lets the system know you want to retrieve an embedded resource. MyDLL is the name of the Assembly that the resource is found in. And MyFile.txt is the name of the file. Depending on the version of .Net the Resources portion may or may not be needed (.Net Core, add Resources).
+
+Another item is that you must register the assembly that you want to be able to pull the resource from with Canister:
+
+    Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
+                .RegisterFileCurator()
+		.AddAssembly(typeof(TypeInTheAssemblyWithTheResources).GetTypeInfo().Assembly)
+		.Build();
 
 ## Adding File Systems
 
@@ -28,7 +49,7 @@ After the classes are created, you must tell Canister where to look for it. So m
 
     Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
                 .RegisterFileCurator()
-				.AddAssembly(typeof(MyFileSystem).GetTypeInfo().Assembly)
+		.AddAssembly(typeof(MyFileSystem).GetTypeInfo().Assembly)
                 .Build();
 	
 From there the system will find the new provider and use it when called.
@@ -64,7 +85,7 @@ After the class is created, you must tell Canister where to look for it. So modi
 
     Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
                 .RegisterFileCurator()
-				.AddAssembly(typeof(MyLocalFileSystem).GetTypeInfo().Assembly)
+		.AddAssembly(typeof(MyLocalFileSystem).GetTypeInfo().Assembly)
                 .Build();
 	
 From there the system will override the default "Relative Local" provider with your own.
