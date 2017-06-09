@@ -345,8 +345,18 @@ namespace FileCurator.BaseClasses
         /// <returns>The files in the directory</returns>
         public IEnumerator<IFile> GetEnumerator()
         {
-            foreach (IFile File in EnumerateFiles())
-                yield return File;
+            foreach (IFile TempFile in EnumerateFiles())
+                yield return TempFile;
+        }
+
+        /// <summary>
+        /// Enumerates the files and directories in the directory
+        /// </summary>
+        /// <returns>The files and directories</returns>
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            foreach (IFile TempFile in EnumerateFiles())
+                yield return TempFile;
         }
 
         /// <summary>
@@ -374,16 +384,6 @@ namespace FileCurator.BaseClasses
         /// </summary>
         /// <param name="name">Name of the new directory</param>
         public abstract IDirectory Rename(string name);
-
-        /// <summary>
-        /// Enumerates the files and directories in the directory
-        /// </summary>
-        /// <returns>The files and directories</returns>
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-        {
-            foreach (IFile File in EnumerateFiles())
-                yield return File;
-        }
 
         /// <summary>
         /// Gets info for the directory

@@ -68,7 +68,7 @@ namespace FileCurator
         public IDirectory Directory(string path, string userName = "", string password = "", string domain = "")
         {
             var FileSystem = FindSystem(path);
-            return FileSystem == null ? null : FileSystem.Directory(path, userName, password, domain);
+            return FileSystem?.Directory(path, userName, password, domain);
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace FileCurator
         public IFile File(string path, string userName = "", string password = "", string domain = "")
         {
             var FileSystem = FindSystem(path);
-            return FileSystem == null ? null : FileSystem.File(path, userName, password, domain);
+            return FileSystem?.File(path, userName, password, domain);
         }
 
         /// <summary>

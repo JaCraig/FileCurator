@@ -249,9 +249,9 @@ namespace FileCurator
         {
             if (InternalDirectory != null)
             {
-                foreach (IDirectory Directory in InternalDirectory.EnumerateDirectories(searchPattern, options))
+                foreach (IDirectory TempDirectory in InternalDirectory.EnumerateDirectories(searchPattern, options))
                 {
-                    yield return new DirectoryInfo(Directory);
+                    yield return new DirectoryInfo(TempDirectory);
                 }
             }
         }
@@ -281,9 +281,9 @@ namespace FileCurator
         {
             if (InternalDirectory != null)
             {
-                foreach (IFile File in InternalDirectory.EnumerateFiles(searchPattern, options))
+                foreach (IFile TempFile in InternalDirectory.EnumerateFiles(searchPattern, options))
                 {
-                    yield return new FileInfo(File);
+                    yield return new FileInfo(TempFile);
                 }
             }
         }
@@ -332,8 +332,18 @@ namespace FileCurator
         /// <returns>The files in the directory</returns>
         public IEnumerator<IFile> GetEnumerator()
         {
-            foreach (FileInfo File in EnumerateFiles())
-                yield return File;
+            foreach (FileInfo TempFile in EnumerateFiles())
+                yield return TempFile;
+        }
+
+        /// <summary>
+        /// Enumerates the files and directories in the directory
+        /// </summary>
+        /// <returns>The files and directories</returns>
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            foreach (FileInfo TempFile in EnumerateFiles())
+                yield return TempFile;
         }
 
         /// <summary>
@@ -366,16 +376,6 @@ namespace FileCurator
                 return this;
             InternalDirectory.Rename(name);
             return this;
-        }
-
-        /// <summary>
-        /// Enumerates the files and directories in the directory
-        /// </summary>
-        /// <returns>The files and directories</returns>
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-        {
-            foreach (FileInfo File in EnumerateFiles())
-                yield return File;
         }
 
         /// <summary>

@@ -29,7 +29,6 @@ namespace FileCurator.BaseClasses
         /// Constructor
         /// </summary>
         protected LocalFileSystemBase()
-            : base()
         {
         }
 

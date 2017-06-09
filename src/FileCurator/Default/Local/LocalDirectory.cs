@@ -117,13 +117,13 @@ namespace FileCurator.Default
         {
             if (!Exists)
                 return this;
-            foreach (IFile File in EnumerateFiles())
+            foreach (IFile TempFile in EnumerateFiles())
             {
-                File.Delete();
+                TempFile.Delete();
             }
-            foreach (IDirectory Directory in EnumerateDirectories())
+            foreach (IDirectory TempDirectory in EnumerateDirectories())
             {
-                Directory.Delete();
+                TempDirectory.Delete();
             }
             InternalDirectory.Delete(true);
             InternalDirectory.Refresh();
@@ -157,9 +157,9 @@ namespace FileCurator.Default
         {
             if (InternalDirectory != null)
             {
-                foreach (System.IO.FileInfo File in InternalDirectory.EnumerateFiles(searchPattern, options))
+                foreach (System.IO.FileInfo TempFile in InternalDirectory.EnumerateFiles(searchPattern, options))
                 {
-                    yield return new LocalFile(File);
+                    yield return new LocalFile(TempFile);
                 }
             }
         }

@@ -44,18 +44,18 @@ namespace FileCurator.Tests
         public void File()
         {
             var Temp = new FileCurator(new IFileSystem[] { new AbsoluteLocalFileSystem(), new NetworkFileSystem(), new RelativeLocalFileSystem() });
-            var File = Temp.File(@"C:\Test.txt");
-            Assert.NotNull(File);
-            Assert.IsType<LocalFile>(File);
-            Assert.False(File.Exists);
-            File = Temp.File(@"~\Test.txt");
-            Assert.NotNull(File);
-            Assert.IsType<LocalFile>(File);
-            Assert.False(File.Exists);
-            File = Temp.File(@"\\localhost\C$\Test.txt");
-            Assert.NotNull(File);
-            Assert.IsType<LocalFile>(File);
-            Assert.False(File.Exists);
+            var TestFile = Temp.File(@"C:\Test.txt");
+            Assert.NotNull(TestFile);
+            Assert.IsType<LocalFile>(TestFile);
+            Assert.False(TestFile.Exists);
+            TestFile = Temp.File(@"~\Test.txt");
+            Assert.NotNull(TestFile);
+            Assert.IsType<LocalFile>(TestFile);
+            Assert.False(TestFile.Exists);
+            TestFile = Temp.File(@"\\localhost\C$\Test.txt");
+            Assert.NotNull(TestFile);
+            Assert.IsType<LocalFile>(TestFile);
+            Assert.False(TestFile.Exists);
         }
     }
 }

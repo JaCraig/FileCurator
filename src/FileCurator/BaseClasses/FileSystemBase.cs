@@ -29,7 +29,6 @@ namespace FileCurator.BaseClasses
         /// Constructor
         /// </summary>
         protected FileSystemBase()
-            : base()
         {
             HandleRegex = new Regex(HandleRegexString, RegexOptions.IgnoreCase);
         }

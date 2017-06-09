@@ -35,10 +35,10 @@ namespace FileCurator.Tests.Default
         public void File()
         {
             var Temp = new NetworkFileSystem();
-            var File = Temp.File(@"\\localhost\C$\Test.txt");
-            Assert.NotNull(File);
-            Assert.IsType<LocalFile>(File);
-            Assert.False(File.Exists);
+            var TestFile = Temp.File(@"\\localhost\C$\Test.txt");
+            Assert.NotNull(TestFile);
+            Assert.IsType<LocalFile>(TestFile);
+            Assert.False(TestFile.Exists);
         }
     }
 }

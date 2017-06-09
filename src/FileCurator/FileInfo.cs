@@ -50,47 +50,47 @@ namespace FileCurator
         /// <summary>
         /// Last time accessed (UTC time)
         /// </summary>
-        public DateTime Accessed => InternalFile == null ? DateTime.Now : InternalFile.Accessed;
+        public DateTime Accessed => InternalFile?.Accessed ?? DateTime.Now;
 
         /// <summary>
         /// Time created (UTC time)
         /// </summary>
-        public DateTime Created => InternalFile == null ? DateTime.Now : InternalFile.Created;
+        public DateTime Created => InternalFile?.Created ?? DateTime.Now;
 
         /// <summary>
         /// Directory the file is within
         /// </summary>
-        public IDirectory Directory => InternalFile == null ? null : InternalFile.Directory;
+        public IDirectory Directory => InternalFile?.Directory;
 
         /// <summary>
         /// Does the file exist?
         /// </summary>
-        public bool Exists => InternalFile != null && InternalFile.Exists;
+        public bool Exists => InternalFile?.Exists ?? false;
 
         /// <summary>
         /// File extension
         /// </summary>
-        public string Extension => InternalFile == null ? "" : InternalFile.Extension;
+        public string Extension => InternalFile?.Extension ?? "";
 
         /// <summary>
         /// Full path
         /// </summary>
-        public string FullName => InternalFile == null ? "" : InternalFile.FullName;
+        public string FullName => InternalFile?.FullName ?? "";
 
         /// <summary>
         /// Size of the file
         /// </summary>
-        public long Length => InternalFile == null ? 0 : InternalFile.Length;
+        public long Length => InternalFile?.Length ?? 0;
 
         /// <summary>
         /// Time modified (UTC time)
         /// </summary>
-        public DateTime Modified => InternalFile == null ? DateTime.Now : InternalFile.Modified;
+        public DateTime Modified => InternalFile?.Modified ?? DateTime.Now;
 
         /// <summary>
         /// Name of the file
         /// </summary>
-        public string Name => InternalFile == null ? "" : InternalFile.Name;
+        public string Name => InternalFile?.Name ?? "";
 
         /// <summary>
         /// Internal directory
