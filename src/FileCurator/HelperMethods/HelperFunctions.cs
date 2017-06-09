@@ -25,6 +25,22 @@ namespace FileCurator.HelperMethods
     public static class HelperFunctions
     {
         /// <summary>
+        /// Gets the last x number of characters from the right hand side
+        /// </summary>
+        /// <param name="input">Input string</param>
+        /// <param name="length">x number of characters to return</param>
+        /// <returns>The resulting string</returns>
+        public static string Left(this string input, int length)
+        {
+            if (string.IsNullOrEmpty(input))
+                return "";
+            if (length <= 0)
+                return "";
+            length = input.Length > length ? length : input.Length;
+            return input.Substring(0, length);
+        }
+
+        /// <summary>
         /// Removes illegal characters from a directory
         /// </summary>
         /// <param name="directoryName">Directory name</param>

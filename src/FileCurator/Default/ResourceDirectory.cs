@@ -40,89 +40,59 @@ namespace FileCurator.Default
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="Path">Path to the directory</param>
-        /// <param name="Domain">Domain of the user (optional)</param>
-        /// <param name="Password">Password to be used to access the directory (optional)</param>
-        /// <param name="UserName">User name to be used to access the directory (optional)</param>
-        public ResourceDirectory(string Path, string UserName = "", string Password = "", string Domain = "")
-            : base(Path, UserName, Password, Domain)
+        /// <param name="path">Path to the directory</param>
+        /// <param name="domain">Domain of the user (optional)</param>
+        /// <param name="password">Password to be used to access the directory (optional)</param>
+        /// <param name="userName">User name to be used to access the directory (optional)</param>
+        public ResourceDirectory(string path, string userName = "", string password = "", string domain = "")
+            : base(path, userName, password, domain)
         {
         }
 
         /// <summary>
         /// returns now
         /// </summary>
-        public override DateTime Accessed
-        {
-            get { return DateTime.Now; }
-        }
+        public override DateTime Accessed => DateTime.Now;
 
         /// <summary>
         /// returns now
         /// </summary>
-        public override DateTime Created
-        {
-            get { return DateTime.Now; }
-        }
+        public override DateTime Created => DateTime.Now;
 
         /// <summary>
         /// returns true
         /// </summary>
-        public override bool Exists
-        {
-            get { return true; }
-        }
+        public override bool Exists => true;
 
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName
-        {
-            get { return InternalDirectory; }
-        }
+        public override string FullName => InternalDirectory;
 
         /// <summary>
         /// returns now
         /// </summary>
-        public override DateTime Modified
-        {
-            get { return DateTime.Now; }
-        }
+        public override DateTime Modified => DateTime.Now;
 
         /// <summary>
         /// Full path
         /// </summary>
-        public override string Name
-        {
-            get { return SplitPathRegex.Match(InternalDirectory).Groups["Assembly"].Value; }
-        }
+        public override string Name => SplitPathRegex.Match(InternalDirectory).Groups["Assembly"].Value;
 
         /// <summary>
         /// Full path
         /// </summary>
-        public override IDirectory Parent
-        {
-            get
-            {
-                return null;
-            }
-        }
+        public override IDirectory Parent => null;
 
         /// <summary>
         /// Root
         /// </summary>
-        public override IDirectory Root
-        {
-            get { return this; }
-        }
+        public override IDirectory Root => this;
 
         /// <summary>
         /// Size (returns 0)
         /// </summary>
-        public override long Size
-        {
-            get { return 0; }
-        }
+        public override long Size => 0;
 
         /// <summary>
         /// Gets the split path regex.
@@ -139,8 +109,8 @@ namespace FileCurator.Default
             get
             {
                 var AssemblyName = SplitPathRegex.Match(InternalDirectory).Groups["Assembly"].Value;
-                return Canister.Builder.Bootstrapper.Resolve<IEnumerable<Assembly>>()
-                                                    .FirstOrDefault(x => x.GetName().Name == AssemblyName);
+                var Assemblies = Canister.Builder.Bootstrapper.Resolve<IEnumerable<Assembly>>();
+                return Assemblies.FirstOrDefault(x => x.GetName().Name == AssemblyName);
             }
         }
 

@@ -15,6 +15,7 @@ namespace FileCurator.Tests.BaseClasses
             if (Canister.Builder.Bootstrapper == null)
                 Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
                     .RegisterFileCurator()
+                    .AddAssembly(typeof(TestingDirectoryFixture).GetTypeInfo().Assembly)
                     .Build();
             new DirectoryInfo(@".\Testing").Create();
             new DirectoryInfo(@".\App_Data").Create();

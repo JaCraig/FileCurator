@@ -56,74 +56,47 @@ namespace FileCurator.Default
         /// <summary>
         /// Time accessed (UTC time)
         /// </summary>
-        public override DateTime Accessed
-        {
-            get { return InternalDirectory == null ? DateTime.Now : InternalDirectory.LastAccessTimeUtc; }
-        }
+        public override DateTime Accessed => InternalDirectory?.LastAccessTimeUtc ?? DateTime.Now;
 
         /// <summary>
         /// Time created (UTC time)
         /// </summary>
-        public override DateTime Created
-        {
-            get { return InternalDirectory == null ? DateTime.Now : InternalDirectory.CreationTimeUtc; }
-        }
+        public override DateTime Created => InternalDirectory?.CreationTimeUtc ?? DateTime.Now;
 
         /// <summary>
         /// Does the directory exist?
         /// </summary>
-        public override bool Exists
-        {
-            get { return InternalDirectory != null && InternalDirectory.Exists; }
-        }
+        public override bool Exists => InternalDirectory?.Exists ?? false;
 
         /// <summary>
         /// Full path of the directory
         /// </summary>
-        public override string FullName
-        {
-            get { return InternalDirectory == null ? "" : InternalDirectory.FullName; }
-        }
+        public override string FullName => InternalDirectory?.FullName ?? "";
 
         /// <summary>
         /// Time modified (UTC time)
         /// </summary>
-        public override DateTime Modified
-        {
-            get { return InternalDirectory == null ? DateTime.Now : InternalDirectory.LastWriteTimeUtc; }
-        }
+        public override DateTime Modified => InternalDirectory?.LastWriteTimeUtc ?? DateTime.Now;
 
         /// <summary>
         /// Name of the directory
         /// </summary>
-        public override string Name
-        {
-            get { return InternalDirectory == null ? "" : InternalDirectory.Name; }
-        }
+        public override string Name => InternalDirectory?.Name ?? "";
 
         /// <summary>
         /// Parent directory
         /// </summary>
-        public override IDirectory Parent
-        {
-            get { return InternalDirectory == null ? null : new LocalDirectory(InternalDirectory.Parent); }
-        }
+        public override IDirectory Parent => InternalDirectory == null ? null : new LocalDirectory(InternalDirectory.Parent);
 
         /// <summary>
         /// Root directory
         /// </summary>
-        public override IDirectory Root
-        {
-            get { return InternalDirectory == null ? null : new LocalDirectory(InternalDirectory.Root); }
-        }
+        public override IDirectory Root => InternalDirectory == null ? null : new LocalDirectory(InternalDirectory.Root);
 
         /// <summary>
         /// Size of the directory
         /// </summary>
-        public override long Size
-        {
-            get { return Exists ? InternalDirectory.EnumerateFiles("*", SearchOption.AllDirectories).Sum(x => x.Length) : 0; }
-        }
+        public override long Size => Exists ? InternalDirectory.EnumerateFiles("*", SearchOption.AllDirectories).Sum(x => x.Length) : 0;
 
         /// <summary>
         /// Creates the directory

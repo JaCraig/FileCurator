@@ -14,6 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using FileCurator.BaseClasses;
+
 namespace FileCurator.Default
 {
     /// <summary>
@@ -24,57 +26,54 @@ namespace FileCurator.Default
         /// <summary>
         /// Name of the file system
         /// </summary>
-        public override string Name { get { return "Resource File System"; } }
+        public override string Name => "Resource File System";
 
         /// <summary>
         /// Regex string used to determine if the file system can handle the path
         /// </summary>
-        protected override string HandleRegexString { get { return @"^resource://"; } }
+        protected override string HandleRegexString => @"^resource://";
 
         /// <summary>
         /// Gets the directory representation for the directory
         /// </summary>
-        /// <param name="Path">Path to the directory</param>
-        /// <param name="UserName">User name to be used to access the directory (optional)</param>
-        /// <param name="Password">Password to be used to access the directory (optional)</param>
-        /// <param name="Domain">Domain of the user (optional)</param>
+        /// <param name="path">Path to the directory</param>
+        /// <param name="userName">User name to be used to access the directory (optional)</param>
+        /// <param name="password">Password to be used to access the directory (optional)</param>
+        /// <param name="domain">Domain of the user (optional)</param>
         /// <returns>The directory object</returns>
-        public override Interfaces.IDirectory Directory(string Path, string UserName = "", string Password = "", string Domain = "")
+        public override Interfaces.IDirectory Directory(string path, string userName = "", string password = "", string domain = "")
         {
-            return new ResourceDirectory(Path, UserName, Password, Domain);
-        }
-
-        /// <summary>
-        /// Gets the class representation for the file
-        /// </summary>
-        /// <param name="Path">Path to the file</param>
-        /// <param name="UserName">User name to be used to access the file (optional)</param>
-        /// <param name="Password">Password to be used to access the file (optional)</param>
-        /// <param name="Domain">Domain of the user (optional)</param>
-        /// <returns>The file object</returns>
-        public override Interfaces.IFile File(string Path, string UserName = "", string Password = "", string Domain = "")
-        {
-            return new ResourceFile(Path, UserName, Password, Domain);
-        }
-
-        /// <summary>
-        /// Gets the absolute path of the variable passed in
-        /// </summary>
-        /// <param name="Path">Path to convert to absolute</param>
-        /// <returns>The absolute path of the path passed in</returns>
-        protected override string AbsolutePath(string Path)
-        {
-            return Path;
+            return new ResourceDirectory(path, userName, password, domain);
         }
 
         /// <summary>
         /// Function to override in order to dispose objects
         /// </summary>
-        /// <param name="Managed">
-        /// If true, managed and unmanaged objects should be disposed. Otherwise unmanaged objects only.
-        /// </param>
-        protected override void Dispose(bool Managed)
+        public override void Dispose()
         {
+        }
+
+        /// <summary>
+        /// Gets the class representation for the file
+        /// </summary>
+        /// <param name="path">Path to the file</param>
+        /// <param name="userName">User name to be used to access the file (optional)</param>
+        /// <param name="password">Password to be used to access the file (optional)</param>
+        /// <param name="domain">Domain of the user (optional)</param>
+        /// <returns>The file object</returns>
+        public override Interfaces.IFile File(string path, string userName = "", string password = "", string domain = "")
+        {
+            return new ResourceFile(path, userName, password, domain);
+        }
+
+        /// <summary>
+        /// Gets the absolute path of the variable passed in
+        /// </summary>
+        /// <param name="path">Path to convert to absolute</param>
+        /// <returns>The absolute path of the path passed in</returns>
+        protected override string AbsolutePath(string path)
+        {
+            return path;
         }
     }
 }

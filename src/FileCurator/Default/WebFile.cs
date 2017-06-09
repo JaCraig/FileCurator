@@ -18,24 +18,22 @@ using FileCurator.BaseClasses;
 using FileCurator.HelperMethods;
 using FileCurator.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
+using System.Net;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace FileCurator.Default
 {
     /// <summary>
-    /// Basic Resource file class
+    /// Web file
     /// </summary>
-    public class ResourceFile : FileBase<string, ResourceFile>
+    /// <seealso cref="FileBase{Uri, WebFile}"/>
+    public class WebFile : FileBase<Uri, WebFile>
     {
         /// <summary>
         /// Constructor
         /// </summary>
-        public ResourceFile()
+        public WebFile()
         {
         }
 
@@ -46,8 +44,20 @@ namespace FileCurator.Default
         /// <param name="domain">Domain of the user (optional)</param>
         /// <param name="password">Password to be used to access the directory (optional)</param>
         /// <param name="userName">User name to be used to access the directory (optional)</param>
-        public ResourceFile(string path, string userName = "", string password = "", string domain = "")
-            : base(path, userName, password, domain)
+        public WebFile(string path, string userName = "", string password = "", string domain = "")
+            : this(string.IsNullOrEmpty(path) ? null : new Uri(path), userName, password, domain)
+        {
+        }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="file">File to use</param>
+        /// <param name="domain">Domain of the user (optional)</param>
+        /// <param name="password">Password to be used to access the file (optional)</param>
+        /// <param name="userName">User name to be used to access the file (optional)</param>
+        public WebFile(Uri file, string userName = "", string password = "", string domain = "")
+            : base(file, userName, password, domain)
         {
         }
 
@@ -64,36 +74,27 @@ namespace FileCurator.Default
         /// <summary>
         /// Directory base path
         /// </summary>
-        public override IDirectory Directory => new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", UserName, Password, Domain);
+        public override IDirectory Directory => InternalFile == null ? null : new WebDirectory((string)InternalFile.AbsolutePath.Left(InternalFile.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), UserName, Password, Domain);
 
         /// <summary>
         /// Does it exist? Always true.
         /// </summary>
-        public override bool Exists => AssemblyFrom.GetManifestResourceStream(Resource) != null;
+        public override bool Exists => true;
 
         /// <summary>
         /// Extension (always empty)
         /// </summary>
-        public override string Extension => Resource.Right(Resource.Length - Resource.LastIndexOf('.'));
+        public override string Extension => "";
 
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName => "resource://" + AssemblyFrom.GetName().Name + "/" + Resource;
+        public override string FullName => InternalFile?.AbsolutePath ?? "";
 
         /// <summary>
-        /// Size of the file
+        /// Size of the file (always 0)
         /// </summary>
-        public override long Length
-        {
-            get
-            {
-                using (Stream TempStream = AssemblyFrom.GetManifestResourceStream(Resource))
-                {
-                    return TempStream.Length;
-                }
-            }
-        }
+        public override long Length => 0;
 
         /// <summary>
         /// Time modified (just returns now)
@@ -103,39 +104,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Absolute path of the file (same as FullName)
         /// </summary>
-        public override string Name => Resource;
-
-        /// <summary>
-        /// Gets the split path regex.
-        /// </summary>
-        /// <value>The split path regex.</value>
-        private static Regex SplitPathRegex => new Regex(@"^resource://(?<Assembly>[^/]*)/(?<FileName>[^/]*)", RegexOptions.IgnoreCase);
-
-        /// <summary>
-        /// Gets or sets the assembly this is from.
-        /// </summary>
-        /// <value>The assembly this is from.</value>
-        private Assembly AssemblyFrom
-        {
-            get
-            {
-                return Canister.Builder.Bootstrapper.Resolve<IEnumerable<Assembly>>()
-                                                    .FirstOrDefault(x => x.GetName().Name == SplitPathRegex.Match(InternalFile).Groups["Assembly"].Value);
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the resource.
-        /// </summary>
-        /// <value>The resource.</value>
-        private string Resource
-        {
-            get
-            {
-                var Match = SplitPathRegex.Match(InternalFile).Groups["FileName"];
-                return Match.Success ? Match.Value : "";
-            }
-        }
+        public override string Name => InternalFile?.AbsolutePath ?? "";
 
         /// <summary>
         /// Copies the file to another directory
@@ -145,7 +114,7 @@ namespace FileCurator.Default
         /// <returns>The newly created file</returns>
         public override IFile CopyTo(IDirectory directory, bool overwrite)
         {
-            if (directory == null || !Exists)
+            if (directory == null)
                 return this;
             var File = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), UserName, Password, Domain);
             if (!File.Exists || overwrite)
@@ -162,7 +131,14 @@ namespace FileCurator.Default
         /// <returns>Any response for deleting the resource (usually FTP, HTTP, etc)</returns>
         public override string Delete()
         {
-            return "";
+            if (InternalFile == null)
+                return "";
+            var Request = WebRequest.Create(InternalFile) as HttpWebRequest;
+            Request.Method = "DELETE";
+            Request.ContentType = "text/xml";
+            SetupData(Request, "");
+            SetupCredentials(Request);
+            return SendRequest(Request);
         }
 
         /// <summary>
@@ -180,41 +156,30 @@ namespace FileCurator.Default
         }
 
         /// <summary>
-        /// Reads the Resource page
+        /// Reads the web page
         /// </summary>
         /// <returns>The content as a string</returns>
         public override string Read()
         {
             if (InternalFile == null)
                 return "";
-            using (StreamReader TempStream = new StreamReader(AssemblyFrom.GetManifestResourceStream(Resource)))
-            {
-                return TempStream.ReadToEnd();
-            }
+            var Request = WebRequest.Create(InternalFile) as HttpWebRequest;
+            Request.Method = "GET";
+            Request.ContentType = "text/xml";
+            SetupData(Request, "");
+            SetupCredentials(Request);
+            return SendRequest(Request);
         }
 
         /// <summary>
-        /// Reads the Resource page
+        /// Reads the web page
         /// </summary>
         /// <returns>The content as a byte array</returns>
         public override byte[] ReadBinary()
         {
             if (InternalFile == null)
                 return new byte[0];
-            using (Stream Reader = AssemblyFrom.GetManifestResourceStream(Resource))
-            {
-                byte[] Buffer = new byte[1024];
-                using (MemoryStream Temp = new MemoryStream())
-                {
-                    while (true)
-                    {
-                        var Count = Reader.Read(Buffer, 0, Buffer.Length);
-                        if (Count <= 0)
-                            return Temp.ToArray();
-                        Temp.Write(Buffer, 0, Count);
-                    }
-                }
-            }
+            return Read().ToByteArray();
         }
 
         /// <summary>
@@ -235,7 +200,17 @@ namespace FileCurator.Default
         /// <returns>The result of the write or original content</returns>
         public override string Write(string content, FileMode mode = FileMode.Create, Encoding encoding = null)
         {
-            return "";
+            var Request = WebRequest.Create(InternalFile) as HttpWebRequest;
+            if (Request == null)
+                return "";
+            if (mode.HasFlag(FileMode.Append) || mode.HasFlag(FileMode.Open))
+                Request.Method = "PUT";
+            else if (mode.HasFlag(FileMode.Create) || mode.HasFlag(FileMode.CreateNew))
+                Request.Method = "POST";
+            Request.ContentType = "text/xml";
+            SetupData(Request, content);
+            SetupCredentials(Request);
+            return SendRequest(Request);
         }
 
         /// <summary>
@@ -246,7 +221,60 @@ namespace FileCurator.Default
         /// <returns>The result of the write or original content</returns>
         public override byte[] Write(byte[] content, FileMode mode = FileMode.Create)
         {
-            return new byte[0];
+            return Write(content.ToString(Encoding.UTF8), mode).ToByteArray();
+        }
+
+        /// <summary>
+        /// Sends the request to the URL specified
+        /// </summary>
+        /// <param name="request">The web request object</param>
+        /// <returns>The string returned by the service</returns>
+        private static string SendRequest(HttpWebRequest request)
+        {
+            if (request == null)
+                return "";
+            using (HttpWebResponse Response = request.GetResponseAsync().Result as HttpWebResponse)
+            {
+                if (Response.StatusCode != HttpStatusCode.OK)
+                    return "";
+                using (StreamReader Reader = new StreamReader(Response.GetResponseStream()))
+                {
+                    return Reader.ReadToEnd();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets up any data that needs to be sent
+        /// </summary>
+        /// <param name="request">The web request object</param>
+        /// <param name="data">Data to send with the request</param>
+        private static void SetupData(HttpWebRequest request, string data)
+        {
+            if (request == null)
+                return;
+            if (string.IsNullOrEmpty(data))
+            {
+                return;
+            }
+            var ByteData = data.ToByteArray();
+            using (Stream RequestStream = request.GetRequestStreamAsync().Result)
+            {
+                RequestStream.Write(ByteData, 0, ByteData.Length);
+            }
+        }
+
+        /// <summary>
+        /// Sets up any credentials (basic authentication, for OAuth, please use the OAuth class to
+        /// create the URL)
+        /// </summary>
+        /// <param name="request">The web request object</param>
+        private void SetupCredentials(HttpWebRequest request)
+        {
+            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password))
+            {
+                request.Credentials = new NetworkCredential(UserName, Password);
+            }
         }
     }
 }

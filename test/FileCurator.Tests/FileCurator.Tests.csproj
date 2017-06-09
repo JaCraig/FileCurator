@@ -21,6 +21,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\TextFile1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\TextFile1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\src\FileCurator\FileCurator.csproj" />
   </ItemGroup>
 

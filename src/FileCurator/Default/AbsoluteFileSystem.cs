@@ -26,12 +26,12 @@ namespace FileCurator.Default
         /// <summary>
         /// Name of the file system
         /// </summary>
-        public override string Name { get { return "Absolute Local"; } }
+        public override string Name => "Absolute Local";
 
         /// <summary>
         /// Relative starter
         /// </summary>
-        protected override string HandleRegexString { get { return @"^\w:"; } }
+        protected override string HandleRegexString => @"^\w:";
 
         /// <summary>
         /// Gets the absolute path of the variable passed in

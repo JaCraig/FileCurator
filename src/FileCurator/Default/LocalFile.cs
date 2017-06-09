@@ -56,74 +56,47 @@ namespace FileCurator.Default
         /// <summary>
         /// Last time accessed (UTC time)
         /// </summary>
-        public override DateTime Accessed
-        {
-            get { return InternalFile == null ? DateTime.Now : InternalFile.LastAccessTimeUtc; }
-        }
+        public override DateTime Accessed => InternalFile?.LastAccessTimeUtc ?? DateTime.Now;
 
         /// <summary>
         /// Time created (UTC time)
         /// </summary>
-        public override DateTime Created
-        {
-            get { return InternalFile == null ? DateTime.Now : InternalFile.CreationTimeUtc; }
-        }
+        public override DateTime Created => InternalFile?.CreationTimeUtc ?? DateTime.Now;
 
         /// <summary>
         /// Directory the file is within
         /// </summary>
-        public override IDirectory Directory
-        {
-            get { return InternalFile == null ? null : new LocalDirectory(InternalFile.Directory); }
-        }
+        public override IDirectory Directory => InternalFile == null ? null : new LocalDirectory(InternalFile.Directory);
 
         /// <summary>
         /// Does the file exist?
         /// </summary>
-        public override bool Exists
-        {
-            get { return InternalFile != null && InternalFile.Exists; }
-        }
+        public override bool Exists => InternalFile?.Exists ?? false;
 
         /// <summary>
         /// File extension
         /// </summary>
-        public override string Extension
-        {
-            get { return InternalFile == null ? "" : InternalFile.Extension; }
-        }
+        public override string Extension => InternalFile?.Extension ?? "";
 
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName
-        {
-            get { return InternalFile == null ? "" : InternalFile.FullName; }
-        }
+        public override string FullName => InternalFile?.FullName ?? "";
 
         /// <summary>
         /// Size of the file
         /// </summary>
-        public override long Length
-        {
-            get { return InternalFile == null || !InternalFile.Exists ? 0 : InternalFile.Length; }
-        }
+        public override long Length => Exists ? InternalFile.Length : 0;
 
         /// <summary>
         /// Time modified (UTC time)
         /// </summary>
-        public override DateTime Modified
-        {
-            get { return InternalFile == null ? DateTime.Now : InternalFile.LastWriteTimeUtc; }
-        }
+        public override DateTime Modified => InternalFile?.LastWriteTimeUtc ?? DateTime.Now;
 
         /// <summary>
         /// Name of the file
         /// </summary>
-        public override string Name
-        {
-            get { return InternalFile == null ? "" : InternalFile.Name; }
-        }
+        public override string Name => InternalFile?.Name ?? "";
 
         /// <summary>
         /// Copies the file to another directory
