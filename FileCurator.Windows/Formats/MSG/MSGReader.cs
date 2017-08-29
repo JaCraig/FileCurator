@@ -28,7 +28,7 @@ namespace FileCurator.Windows.Formats.MSG
     /// <summary>
     /// MSG Reader
     /// </summary>
-    /// <seealso cref="FileCurator.Formats.Interfaces.IGenericFileReader{IMessage}"/>
+    /// <seealso cref="ReaderBaseClass{IMessage}"/>
     public class MSGReader : ReaderBaseClass<IMessage>
     {
         /// <summary>

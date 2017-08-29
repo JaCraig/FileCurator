@@ -25,10 +25,22 @@ namespace FileCurator.Formats.Delimited
     /// <seealso cref="BaseClasses.FormatBaseClass{DelimitedReader, DelimitedWriter, ITable}"/>
     public class DelimitedFormat : FormatBaseClass<DelimitedReader, DelimitedWriter, ITable>
     {
+        /// <summary>
+        /// Gets the content types.
+        /// </summary>
+        /// <value>The content types.</value>
         public override string[] ContentTypes => new[] { "TEXT/CSV", "TEXT/TAB-SEPARATED-VALUES", "TEXT/COMMA-SEPARATED-VALUES", "APPLICATION/CSV" };
 
+        /// <summary>
+        /// Gets the display name.
+        /// </summary>
+        /// <value>The display name.</value>
         public override string DisplayName => "Delimited files";
 
+        /// <summary>
+        /// Gets the file types.
+        /// </summary>
+        /// <value>The file types.</value>
         public override string[] FileTypes => new[] { "CSV", "TSV", "TAB" };
     }
 }

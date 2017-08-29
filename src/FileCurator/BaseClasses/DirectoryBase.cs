@@ -207,7 +207,7 @@ namespace FileCurator.BaseClasses
         {
             if (other == null)
                 return 1;
-            if (InternalDirectory == null)
+            if (ReferenceEquals(InternalDirectory, null))
                 return -1;
             return string.Compare(FullName, other.FullName, StringComparison.OrdinalIgnoreCase);
         }
@@ -233,7 +233,7 @@ namespace FileCurator.BaseClasses
         /// <returns>Returns the new directory</returns>
         public virtual IDirectory CopyTo(IDirectory directory, CopyOptions options = CopyOptions.CopyAlways)
         {
-            if (InternalDirectory == null || directory == null)
+            if (ReferenceEquals(InternalDirectory, null) || directory == null)
                 return this;
             directory.Create();
             foreach (IFile TempFile in EnumerateFiles())

@@ -23,7 +23,7 @@ namespace FileCurator.Data.FixedLength
     /// <summary>
     /// Basic string field
     /// </summary>
-    /// <seealso cref="BaseClasses.FieldBaseClass{System.String}"/>
+    /// <seealso cref="BaseClasses.FieldBaseClass{String}"/>
     public class StringField : FieldBaseClass<string>
     {
         /// <summary>

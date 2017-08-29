@@ -22,7 +22,7 @@ namespace FileCurator.Windows.Formats.RTF
     /// <summary>
     /// RTF format
     /// </summary>
-    /// <seealso cref="FileCurator.Formats.BaseClasses.FormatBaseClass{RTFReader, RTFWriter, IGenericFile}"/>
+    /// <seealso cref="FormatBaseClass{RTFReader, RTFWriter, IGenericFile}"/>
     public class RTFFormat : FormatBaseClass<RTFReader, RTFWriter, IGenericFile>
     {
         /// <summary>

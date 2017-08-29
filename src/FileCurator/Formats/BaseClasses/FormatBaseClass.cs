@@ -26,6 +26,8 @@ namespace FileCurator.Formats.BaseClasses
     /// </summary>
     /// <typeparam name="TFileReader">The type of the file reader.</typeparam>
     /// <typeparam name="TFileWriter">The type of the file writer.</typeparam>
+    /// <typeparam name="TFile">The type of the file.</typeparam>
+    /// <seealso cref="IFormat{TFile}"/>
     /// <seealso cref="IFormat"/>
     public abstract class FormatBaseClass<TFileReader, TFileWriter, TFile> : IFormat<TFile>
         where TFileReader : IGenericFileReader<TFile>, new()
@@ -76,7 +78,6 @@ namespace FileCurator.Formats.BaseClasses
         /// Determines whether this instance can decode the specified stream.
         /// </summary>
         /// <param name="stream">The stream.</param>
-        /// <param name="mimeType">Type of the MIME.</param>
         /// <returns>True if it can, false otherwise</returns>
         public bool CanRead(Stream stream)
         {

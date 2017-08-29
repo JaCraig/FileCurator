@@ -22,7 +22,7 @@ namespace FileCurator.Windows.Formats.MSG
     /// <summary>
     /// MSG Format
     /// </summary>
-    /// <seealso cref="FileCurator.Formats.BaseClasses.FormatBaseClass{MSGReader, MSGWriter, IMessage}"/>
+    /// <seealso cref="FormatBaseClass{MSGReader, MSGWriter, IMessage}"/>
     public class MSGFormat : FormatBaseClass<MSGReader, MSGWriter, IMessage>
     {
         /// <summary>

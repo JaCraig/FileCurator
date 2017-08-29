@@ -22,7 +22,7 @@ namespace FileCurator.Windows.Formats.PDF
     /// <summary>
     /// PDF Format
     /// </summary>
-    /// <seealso cref="FileCurator.Formats.BaseClasses.FormatBaseClass{PDFReader, PDFWriter, IGenericFile}"/>
+    /// <seealso cref="FormatBaseClass{PDFReader, PDFWriter, IGenericFile}"/>
     public class PDFFormat : FormatBaseClass<PDFReader, PDFWriter, IGenericFile>
     {
         /// <summary>

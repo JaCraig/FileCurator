@@ -25,7 +25,6 @@ namespace FileCurator.Data.FixedLength.BaseClasses
     /// </summary>
     /// <typeparam name="TField">The type of the field.</typeparam>
     /// <seealso cref="IRecord"/>
-    /// <seealso cref="System.Collections.Generic.IList{IField{TField}}"/>
     public abstract class RecordBase<TField> : IRecord, IList<IField<TField>>
     {
         /// <summary>

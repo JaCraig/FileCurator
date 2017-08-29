@@ -68,16 +68,16 @@ namespace FileCurator.Formats.ICal
         /// <summary>
         /// Strips the HTML.
         /// </summary>
-        /// <param name="HTML">The HTML.</param>
+        /// <param name="TempHTML">The HTML.</param>
         /// <returns></returns>
-        private static string StripHTML(string HTML)
+        private static string StripHTML(string TempHTML)
         {
-            if (string.IsNullOrEmpty(HTML))
+            if (string.IsNullOrEmpty(TempHTML))
                 return string.Empty;
 
-            HTML = STRIP_HTML_REGEX.Replace(HTML, string.Empty);
-            HTML = HTML.Replace("&nbsp;", " ");
-            return HTML.Replace("&#160;", string.Empty);
+            TempHTML = STRIP_HTML_REGEX.Replace(TempHTML, string.Empty);
+            TempHTML = TempHTML.Replace("&nbsp;", " ");
+            return TempHTML.Replace("&#160;", string.Empty);
         }
 
         /// <summary>

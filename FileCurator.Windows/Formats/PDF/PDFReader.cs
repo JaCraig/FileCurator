@@ -28,7 +28,7 @@ namespace FileCurator.Windows.Formats.PDF
     /// <summary>
     /// PDF Reader
     /// </summary>
-    /// <seealso cref="FileCurator.Formats.Interfaces.IGenericFileReader{IGenericFile}"/>
+    /// <seealso cref="ReaderBaseClass{IGenericFile}"/>
     public class PDFReader : ReaderBaseClass<IGenericFile>
     {
         /// <summary>

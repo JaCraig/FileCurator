@@ -25,7 +25,7 @@ namespace FileCurator.Windows.Formats.RTF
     /// <summary>
     /// RTF Reader
     /// </summary>
-    /// <seealso cref="FileCurator.Formats.Interfaces.IGenericFileReader{IGenericFile}"/>
+    /// <seealso cref="ReaderBaseClass{IGenericFile}"/>
     public class RTFReader : ReaderBaseClass<IGenericFile>
     {
         /// <summary>

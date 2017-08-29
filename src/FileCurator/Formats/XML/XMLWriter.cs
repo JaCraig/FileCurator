@@ -23,7 +23,7 @@ namespace FileCurator.Formats.XML
     /// <summary>
     /// XML Writer
     /// </summary>
-    /// <seealso cref="FileCurator.Formats.Interfaces.IGenericFileWriter"/>
+    /// <seealso cref="IGenericFileWriter"/>
     public class XMLWriter : IGenericFileWriter
     {
         /// <summary>

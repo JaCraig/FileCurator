@@ -21,7 +21,7 @@ namespace FileCurator.Formats.ICal
     /// <summary>
     /// ICal format
     /// </summary>
-    /// <seealso cref="BaseClasses.FormatBaseClass{ICalendarReader, ICalendarWriter, Data.Interfaces.ICalendar}"/>
+    /// <seealso cref="FormatBaseClass{ICalendarReader, ICalendarWriter, ICalendar}"/>
     public class ICalendarFormat : FormatBaseClass<ICalendarReader, ICalendarWriter, Data.Interfaces.ICalendar>
     {
         /// <summary>
