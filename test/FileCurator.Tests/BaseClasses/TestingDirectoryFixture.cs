@@ -20,6 +20,7 @@ namespace FileCurator.Tests.BaseClasses
             new DirectoryInfo(@".\Testing").Create();
             new DirectoryInfo(@".\App_Data").Create();
             new DirectoryInfo(@".\Logs").Create();
+            new DirectoryInfo("./Results").Create();
         }
 
         public void Dispose()
@@ -27,6 +28,7 @@ namespace FileCurator.Tests.BaseClasses
             new DirectoryInfo(@".\Testing").Delete();
             new DirectoryInfo(@".\App_Data").Delete();
             new DirectoryInfo(@".\Logs").Delete();
+            new DirectoryInfo("./Results").Delete();
         }
     }
 }

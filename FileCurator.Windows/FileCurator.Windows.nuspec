@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>FileCurator.Windows</id>
+		<title>FileCurator.Windows</title>
+		<version>$version$</version>
+		<authors>James Craig</authors>
+		<owners>James Craig</owners>
+		<licenseUrl>https://github.com/JaCraig/FileCurator/blob/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/JaCraig/FileCurator</projectUrl>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		<description>FileCurator.Windows is a set of formats that are only available using the full version of the .Net framework. If an alternative is built in .Net Standard these will be replaced. So consider this a hold over.</description>
+		<summary>FileCurator.Windows is a set of formats that are only available using the full version of the .Net framework.</summary>
+		<copyright>Copyright 2017</copyright>
+		<tags>pdf rtf msg file formats</tags>
+		<references>
+			<reference file="FileCurator.Windows.dll" />
+		</references>
+	</metadata>
+</package>

@@ -14,12 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using BigBook.Registration;
 using Canister.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace FileCurator.Registration
 {
@@ -35,7 +32,10 @@ namespace FileCurator.Registration
         /// <returns>The bootstrapper</returns>
         public static IBootstrapper RegisterFileCurator(this IBootstrapper bootstrapper)
         {
-            return bootstrapper.AddAssembly(typeof(CanisterExtensions).GetTypeInfo().Assembly);
+            return bootstrapper == null ?
+                        bootstrapper :
+                        bootstrapper.RegisterBigBookOfDataTypes()
+                                    .AddAssembly(typeof(CanisterExtensions).GetTypeInfo().Assembly);
         }
     }
 }

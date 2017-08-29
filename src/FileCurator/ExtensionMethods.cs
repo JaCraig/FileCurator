@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using FileCurator.Formats.Data.Interfaces;
+using FileCurator.Formats.Interfaces;
 using FileCurator.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace FileCurator
@@ -27,6 +31,12 @@ namespace FileCurator
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static class ExtensionMethods
     {
+        /// <summary>
+        /// Gets the internal manager.
+        /// </summary>
+        /// <value>The internal manager.</value>
+        private static Formats.Manager InternalManager => Canister.Builder.Bootstrapper.Resolve<Formats.Manager>();
+
         /// <summary>
         /// Deletes a list of files
         /// </summary>
@@ -47,6 +57,55 @@ namespace FileCurator
             if (Directories == null)
                 return;
             Parallel.ForEach(Directories, x => x.Delete());
+        }
+
+        /// <summary>
+        /// Reads the specified file.
+        /// </summary>
+        /// <param name="file">The file.</param>
+        /// <param name="mimeType">Type of the MIME.</param>
+        /// <returns>The file as an TFile object</returns>
+        /// <exception cref="ArgumentException">
+        /// Could not find file format that returns the specified object type
+        /// </exception>
+        public static IGenericFile Parse(this Stream file, string mimeType = "")
+        {
+            var Format = InternalManager.FindFormat(file, mimeType);
+            if (Format == null)
+                throw new ArgumentException("Could not find file format that returns the specified object type");
+            return Format.ReadBase(file);
+        }
+
+        /// <summary>
+        /// Reads the specified MIME type.
+        /// </summary>
+        /// <typeparam name="TFile">The type of the file.</typeparam>
+        /// <param name="file">The file.</param>
+        /// <param name="mimeType">Type of the MIME.</param>
+        /// <returns>The file as an TFile object</returns>
+        /// <exception cref="ArgumentException">
+        /// Could not find file format that returns the specified object type
+        /// </exception>
+        public static TFile Parse<TFile>(this Stream file, string mimeType = "")
+            where TFile : IGenericFile
+        {
+            var Format = (InternalManager.FindFormat(file, mimeType) as IFormat<TFile>);
+            if (Format == null)
+                throw new ArgumentException("Could not find file format that returns the specified object type");
+            return Format.Read(file);
+        }
+
+        /// <summary>
+        /// Writes the specified data.
+        /// </summary>
+        /// <param name="file">The file.</param>
+        /// <param name="data">The data.</param>
+        /// <param name="mimeType">Type of the MIME.</param>
+        /// <returns>True if it was written successfully, false otherwise.</returns>
+        public static bool Write(this Stream file, IGenericFile data, string mimeType = "")
+        {
+            var Format = InternalManager.FindFormat(file, mimeType);
+            return Format.Write(file, data);
         }
     }
 }

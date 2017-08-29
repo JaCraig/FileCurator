@@ -14,6 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using BigBook;
+using FileCurator.Formats;
+using FileCurator.Formats.Data.Interfaces;
+using FileCurator.Formats.Interfaces;
 using FileCurator.Interfaces;
 using System;
 using System.IO;
@@ -96,6 +100,12 @@ namespace FileCurator
         /// Internal directory
         /// </summary>
         protected IFile InternalFile { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the internal manager.
+        /// </summary>
+        /// <value>The internal manager.</value>
+        private Manager FormatManager => Canister.Builder.Bootstrapper.Resolve<Manager>();
 
         /// <summary>
         /// Reads the file and converts it to a byte array
@@ -295,6 +305,44 @@ namespace FileCurator
         }
 
         /// <summary>
+        /// Parses this instance.
+        /// </summary>
+        /// <typeparam name="TFile">The type of the file object expected.</typeparam>
+        /// <returns>The parsed file</returns>
+        /// <exception cref="ArgumentException">
+        /// Could not find file format that returns the specified object type
+        /// </exception>
+        public TFile Parse<TFile>()
+            where TFile : IGenericFile
+        {
+            var Format = (FormatManager.FindFormat(FullName) as IFormat<TFile>);
+            if (Format == null)
+                throw new ArgumentException("Could not find file format that returns the specified object type");
+            using (var TempStream = new MemoryStream(ReadBinary()))
+            {
+                return Format.Read(TempStream);
+            }
+        }
+
+        /// <summary>
+        /// Parses this instance.
+        /// </summary>
+        /// <returns>The parsed file</returns>
+        /// <exception cref="ArgumentException">
+        /// Could not find file format that returns the specified object type
+        /// </exception>
+        public IGenericFile Parse()
+        {
+            var Format = FormatManager.FindFormat(FullName);
+            if (Format == null)
+                throw new ArgumentException("Could not find file format that returns the specified object type");
+            using (var TempStream = new MemoryStream(ReadBinary()))
+            {
+                return Format.ReadBase(TempStream);
+            }
+        }
+
+        /// <summary>
         /// Reads the file in as a string
         /// </summary>
         /// <returns>The file contents as a string</returns>
@@ -362,6 +410,23 @@ namespace FileCurator
             if (InternalFile == null)
                 return content;
             return InternalFile.Write(content, mode);
+        }
+
+        /// <summary>
+        /// Writes the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="mode">The mode.</param>
+        /// <returns>True if it was written successfully, false otherwise.</returns>
+        public bool Write(IGenericFile data, FileMode mode = FileMode.Create)
+        {
+            var Format = FormatManager.FindFormat(FullName);
+            using (var TempStream = new MemoryStream())
+            {
+                bool Success = Format.Write(TempStream, data);
+                Write(TempStream.ReadAllBinary(), mode);
+                return Success;
+            }
         }
     }
 }

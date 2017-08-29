@@ -10,7 +10,7 @@
     <Description>FileCurator is a simple manager for your files. It tries to give them a common interface to deal with files whether on your system or other locations.</Description>
     <AssemblyTitle>FileCurator</AssemblyTitle>
     <Authors>James Craig</Authors>
-    <TargetFramework>netstandard1.1</TargetFramework>
+    <TargetFramework>netstandard1.6</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>FileCurator</AssemblyName>
     <PackageId>FileCurator</PackageId>
@@ -27,7 +27,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Canister.IoC" Version="1.0.46" />
+    <PackageReference Include="BigBook" Version="1.0.23" />
+    <PackageReference Include="Canister.IoC" Version="1.0.49" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.7.2" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.5.1" />
+    <PackageReference Include="MimeKit" Version="1.18.0" />
     <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
     <PackageReference Include="System.Net.Requests" Version="4.3.0" />
     <PackageReference Include="System.Threading.Tasks.Parallel" Version="4.3.0" />
