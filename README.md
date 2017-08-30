@@ -88,17 +88,189 @@ After the class is created, you must tell Canister where to look for it. So modi
 	
 From there the system will override the default "Relative Local" provider with your own.
 
+## Parsing Files
+
+FileCurator also has a number of file formats that it understands and can parse:
+
+* CSV
+* TSV
+* Tab delimited
+* Excel (XLSX files only)
+* HTML files
+* ICS (iCalendar files)
+* EML
+* MHT
+* PowerPoint (PPTX and PPSX)
+* RSS
+* VCS (vCal files)
+* VCF (vCard files)
+* Word (DOCX files only)
+* XML
+* And of course TXT files...
+
+There are also a few items that are not .Net Core/.Net Standard supported in the FileCurator.Windows package:
+
+* PDF
+* MSG files
+* RTF
+
+Once a .Net Standard library is available to parse these items that is open sourced (and without a funky license), these will be moved into the main library. Anyway, in order to parse a file you would do the following:
+
+    var MyFile = new FileInfo("~/MyFile.txt").Parse();
+	
+The above code opens the MyFile.txt document and parses it into a IGenericFile object. This object contains a Content property, a Title property, and a Meta property. For the above text file, only the Content property is filled in. However you can also do this:
+
+    var MyEmail = new FileInfo("~/MyEmail.eml").Parse();
+	
+This will take the content of the email and place it in the Content property, the subject of the email is in Title. However you may be saying, what about To, or BCC, or From fields? That's why there is another Parse method:
+
+    var MyEmail = new FileInfo("~/MyEmail.eml").Parse<IMessage>();
+	
+This time we get back an IMessage object instead of an IGenericFile object. And the IMessage object has fields for To, BCC, CC, From, Sent date, etc. The Parse<>() method takes any type that inherits from IGenericFile. The built in types are:
+
+* IMessage
+* ITable
+* IFeed
+* ICard
+* ICalendar
+
+And each of these correspond to a particular set of file formats:
+
+* IMessage - EML, MHT, and MSG files.
+* ITable - Delimited (CSV, TSV, etc.) and Excel files.
+* IFeed - RSS files.
+* ICard - vCards
+* ICalendar - iCal and vCal files.
+
+All other file types are parsed as IGenericFile objects. And calling for an object of type A when the parser returns type B will throw an exception. So if you have no idea what the file is, it's best to just use the Parse() method instead.
+
+Writing an object to a file is similarly simple:
+
+    var MyTable = new GenericTable();
+    MyTable.Columns.Add("Column Header 1");
+    MyTable.Columns.Add("Column Header 2");
+    MyTable.Rows.Add(new GenericRow());
+    MyTable.Rows[0].Cells.Add(new GenericCell("My Data"));
+    MyTable.Rows[0].Cells.Add(new GenericCell("Goes Here"));
+    new FileInfo("~/MyFile.xlsx").Write(MyTable);
+	
+The above code creates a table object with 2 column headers and a single row containing two cells, the first contains "My Data" and the second contains "Goes Here". The FileInfo object then takes the extension of the file that you are saving to and sends it to the proper format handler for writing the data to disk. In the above case it would be the Excel handler. You can similarly take the ITable object and save it as a CSV:
+
+    new FileInfo("~/MyFile.csv").Write(MyTable);
+	
+No other code needs to change, just the file extension and it saves it properly as a CSV.
+
+There are also extension methods to work with Streams instead of just FileInfo objects:
+
+    using(var TempStream = new MemoryStream())
+	{
+	    TempStream.Write(new GenericFile("This is my content","My Title",""), MimeType.Word);
+	}
+	
+The above code would write to the TempStream object a word doc that contains "This is my content" in the body and have a title of "My Title". You can similarly parse Stream objects like the FileInfo object but the only difference is that it takes in a MimeType object. This is to help it figure out what sort of file is in the stream. However for unknown files you can specify MimeType.Unknown. The system will then try its best to figure out what the file is and act accordingly.
+
+## Writing Your Own Format Parser
+
+All format parsers must inherit from the IFormat<TFile> interface. However there is a base class to help simplify some of the process called FormatBaseClass<TFileReader, TFileWriter, TFile>, but it is not required. As an example:
+
+    /// <summary>
+    /// Text format
+    /// </summary>
+    /// <seealso cref="BaseClasses.FormatBaseClass{TxtReader, TxtWriter, IGenericFile}"/>
+    public class TxtFormat : FormatBaseClass<TxtReader, TxtWriter, IGenericFile>
+    {
+        /// <summary>
+        /// Gets the content types.
+        /// </summary>
+        /// <value>The content types.</value>
+        public override string[] ContentTypes => new[] { "TEXT/PLAIN" };
+
+        /// <summary>
+        /// Gets or sets the display name.
+        /// </summary>
+        /// <value>The display name.</value>
+        public override string DisplayName => "Text";
+
+        /// <summary>
+        /// Gets or sets the file types.
+        /// </summary>
+        /// <value>The file types.</value>
+        public override string[] FileTypes => new[] { "TXT" };
+    }
+	
+The above class is the TXT file parser. It also has a reader class:
+
+    /// <summary>
+    /// TXT file reader
+    /// </summary>
+    /// <seealso cref="Interfaces.IGenericFileReader{IGenericFile}"/>
+    public class TxtReader : ReaderBaseClass<IGenericFile>
+    {
+        /// <summary>
+        /// Gets the header identifier.
+        /// </summary>
+        /// <value>The header identifier.</value>
+        public override byte[] HeaderIdentifier => new byte[0];
+
+        /// <summary>
+        /// Reads the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <returns>The file</returns>
+        public override IGenericFile Read(Stream stream)
+        {
+            return new GenericFile(stream.ReadAll(), "", "");
+        }
+    }
+	
+And a writer class:
+
+    /// <summary>
+    /// Txt Writer
+    /// </summary>
+    /// <seealso cref="IGenericFileWriter"/>
+    public class TxtWriter : IGenericFileWriter
+    {
+        /// <summary>
+        /// Writes the file to the specified writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="file">The file.</param>
+        /// <returns>True if it writes successfully, false otherwise.</returns>
+        public bool Write(Stream writer, IGenericFile file)
+        {
+            var TempData = Encoding.UTF8.GetBytes(file.ToString());
+            writer.Write(TempData, 0, TempData.Length);
+            return true;
+        }
+    }
+	
+You can create something similar for your formats as well. Just make sure that you tell Canister where to look for it. So modify the initialization line accordingly:
+
+    Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
+    	.RegisterFileCurator()
+		.AddAssembly(typeof(TxtFormat).GetTypeInfo().Assembly)
+		.Build();
+		
+From there the system will automatically pick up your format and use it when appropriate. You can also override the existing formats with your own. You just need to state the content type and file types that you wish to intercept and it will use your items instead of the corresponding items in FileCurator.
+
 ## Installation
 
 The library is available via Nuget with the package name "FileCurator". To install it run the following command in the Package Manager Console:
 
 Install-Package FileCurator
 
+The file parsers that are not .Net Standard yet are also available with the package name of "FileCurator.Windows". To install it run the following command in the Package Manager Console:
+
+Install-Package FileCurator.Windows
+
+This package, however, requires the full version of .Net and is not considered stable. As things become available in .Net Standard, they will be moved out of there and new items may move in as formats are added.
+
 ## Build Process
 
 In order to build the library you will require the following as a minimum:
 
-1. Visual Studio 2015 with Update 3
+1. Visual Studio 2017
 2. .Net Core 1.0 SDK
 
 Other than that, just clone the project and you should be able to load the solution and build without too much effort.

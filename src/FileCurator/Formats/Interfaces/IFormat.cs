@@ -84,6 +84,7 @@ namespace FileCurator.Formats.Interfaces
     /// </summary>
     /// <typeparam name="TFile">The type of the file.</typeparam>
     public interface IFormat<TFile> : IFormat
+        where TFile : IGenericFile
     {
         /// <summary>
         /// Parses the specified stream.

@@ -14,6 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using FileCurator.Enums;
 using FileCurator.Formats.Data.Interfaces;
 using FileCurator.Formats.Interfaces;
 using FileCurator.Interfaces;
@@ -68,7 +69,7 @@ namespace FileCurator
         /// <exception cref="ArgumentException">
         /// Could not find file format that returns the specified object type
         /// </exception>
-        public static IGenericFile Parse(this Stream file, string mimeType = "")
+        public static IGenericFile Parse(this Stream file, MimeType mimeType)
         {
             var Format = InternalManager.FindFormat(file, mimeType);
             if (Format == null)
@@ -86,7 +87,7 @@ namespace FileCurator
         /// <exception cref="ArgumentException">
         /// Could not find file format that returns the specified object type
         /// </exception>
-        public static TFile Parse<TFile>(this Stream file, string mimeType = "")
+        public static TFile Parse<TFile>(this Stream file, MimeType mimeType)
             where TFile : IGenericFile
         {
             var Format = (InternalManager.FindFormat(file, mimeType) as IFormat<TFile>);
@@ -102,7 +103,7 @@ namespace FileCurator
         /// <param name="data">The data.</param>
         /// <param name="mimeType">Type of the MIME.</param>
         /// <returns>True if it was written successfully, false otherwise.</returns>
-        public static bool Write(this Stream file, IGenericFile data, string mimeType = "")
+        public static bool Write(this Stream file, IGenericFile data, MimeType mimeType)
         {
             var Format = InternalManager.FindFormat(file, mimeType);
             return Format.Write(file, data);
