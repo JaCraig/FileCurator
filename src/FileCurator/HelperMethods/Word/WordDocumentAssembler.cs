@@ -117,7 +117,7 @@ namespace FileCurator.HelperMethods.Word
                             }
                         }
                     };
-                    TempCell.Append(new Paragraph(new Run(new Text(Cell.StripIllegalXML()))));
+                    TempCell.Append(new Paragraph(new Run(new Text(Cell))));
                     TempRow.Append(TempCell);
                 }
                 TempTable.Append(TempRow);
