@@ -14,6 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using BigBook;
 using BigBook.Patterns.BaseClasses;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
@@ -90,7 +91,7 @@ namespace FileCurator.HelperMethods.Word
         /// <returns>This</returns>
         public WordDocumentAssembler AppendTable(List<List<string>> Table)
         {
-            var TempTable = new Table();
+            var TempTable = new DocumentFormat.OpenXml.Wordprocessing.Table();
             foreach (var Row in Table)
             {
                 var TempRow = new TableRow();
@@ -116,7 +117,7 @@ namespace FileCurator.HelperMethods.Word
                             }
                         }
                     };
-                    TempCell.Append(new Paragraph(new Run(new Text(Cell))));
+                    TempCell.Append(new Paragraph(new Run(new Text(Cell.StripIllegalXML()))));
                     TempRow.Append(TempCell);
                 }
                 TempTable.Append(TempRow);
@@ -173,7 +174,7 @@ namespace FileCurator.HelperMethods.Word
             }
             foreach (var Key in replacements.Keys)
             {
-                docText = docText.Replace(Key, replacements[Key](objectArgs));
+                docText = docText.Replace(Key, replacements[Key](objectArgs).StripIllegalXML());
             }
             using (StreamWriter sw = new StreamWriter(InternalWordDoc.MainDocumentPart.GetStream(FileMode.Create)))
             {
