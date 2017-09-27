@@ -235,7 +235,14 @@ namespace FileCurator.Default
         {
             if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password))
             {
-                request.Credentials = new NetworkCredential(UserName, Password);
+                if (!string.IsNullOrEmpty(Domain))
+                    request.Credentials = new NetworkCredential(UserName, Password, Domain);
+                else
+                    request.Credentials = new NetworkCredential(UserName, Password);
+            }
+            else
+            {
+                request.UseDefaultCredentials = true;
             }
         }
     }
