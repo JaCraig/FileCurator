@@ -41,11 +41,9 @@ namespace FileCurator.Default
         /// Constructor
         /// </summary>
         /// <param name="path">Path to the file</param>
-        /// <param name="domain">Domain of the user (optional)</param>
-        /// <param name="password">Password to be used to access the directory (optional)</param>
-        /// <param name="userName">User name to be used to access the directory (optional)</param>
-        public WebFile(string path, string userName = "", string password = "", string domain = "")
-            : this(string.IsNullOrEmpty(path) ? null : new Uri(path), userName, password, domain)
+        /// <param name="credentials">The credentials.</param>
+        public WebFile(string path, Credentials credentials = null)
+            : this(string.IsNullOrEmpty(path) ? null : new Uri(path), credentials)
         {
         }
 
@@ -53,11 +51,9 @@ namespace FileCurator.Default
         /// Constructor
         /// </summary>
         /// <param name="file">File to use</param>
-        /// <param name="domain">Domain of the user (optional)</param>
-        /// <param name="password">Password to be used to access the file (optional)</param>
-        /// <param name="userName">User name to be used to access the file (optional)</param>
-        public WebFile(Uri file, string userName = "", string password = "", string domain = "")
-            : base(file, userName, password, domain)
+        /// <param name="credentials">The credentials.</param>
+        public WebFile(Uri file, Credentials credentials)
+            : base(file, credentials)
         {
         }
 
@@ -74,7 +70,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Directory base path
         /// </summary>
-        public override IDirectory Directory => InternalFile == null ? null : new WebDirectory((string)InternalFile.AbsolutePath.Left(InternalFile.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), UserName, Password, Domain);
+        public override IDirectory Directory => InternalFile == null ? null : new WebDirectory((string)InternalFile.AbsolutePath.Left(InternalFile.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
 
         /// <summary>
         /// Does it exist? Always true.
@@ -116,7 +112,7 @@ namespace FileCurator.Default
         {
             if (directory == null)
                 return this;
-            var File = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), UserName, Password, Domain);
+            var File = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             if (!File.Exists || overwrite)
             {
                 File.Write(ReadBinary());
@@ -149,7 +145,7 @@ namespace FileCurator.Default
         {
             if (directory == null || !Exists)
                 return this;
-            var TempFile = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), UserName, Password, Domain);
+            var TempFile = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             TempFile.Write(ReadBinary());
             Delete();
             return TempFile;
@@ -233,7 +229,7 @@ namespace FileCurator.Default
         {
             if (request == null)
                 return "";
-            using (HttpWebResponse Response = request.GetResponseAsync().Result as HttpWebResponse)
+            using (HttpWebResponse Response = request.GetResponseAsync().GetAwaiter().GetResult() as HttpWebResponse)
             {
                 if (Response.StatusCode != HttpStatusCode.OK)
                     return "";
@@ -258,7 +254,7 @@ namespace FileCurator.Default
                 return;
             }
             var ByteData = data.ToByteArray();
-            using (Stream RequestStream = request.GetRequestStreamAsync().Result)
+            using (Stream RequestStream = request.GetRequestStreamAsync().GetAwaiter().GetResult())
             {
                 RequestStream.Write(ByteData, 0, ByteData.Length);
             }
@@ -271,12 +267,14 @@ namespace FileCurator.Default
         /// <param name="request">The web request object</param>
         private void SetupCredentials(HttpWebRequest request)
         {
-            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password))
+            if (Credentials == null)
+                return;
+            if (!string.IsNullOrEmpty(Credentials?.UserName) && !string.IsNullOrEmpty(Credentials?.Password))
             {
-                if (!string.IsNullOrEmpty(Domain))
-                    request.Credentials = new NetworkCredential(UserName, Password, Domain);
+                if (!string.IsNullOrEmpty(Credentials?.Domain))
+                    request.Credentials = new NetworkCredential(Credentials?.UserName, Credentials?.Password, Credentials?.Domain);
                 else
-                    request.Credentials = new NetworkCredential(UserName, Password);
+                    request.Credentials = new NetworkCredential(Credentials?.UserName, Credentials?.Password);
             }
             else
             {

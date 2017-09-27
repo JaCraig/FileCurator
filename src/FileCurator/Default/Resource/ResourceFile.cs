@@ -43,11 +43,9 @@ namespace FileCurator.Default
         /// Constructor
         /// </summary>
         /// <param name="path">Path to the file</param>
-        /// <param name="domain">Domain of the user (optional)</param>
-        /// <param name="password">Password to be used to access the directory (optional)</param>
-        /// <param name="userName">User name to be used to access the directory (optional)</param>
-        public ResourceFile(string path, string userName = "", string password = "", string domain = "")
-            : base(path, userName, password, domain)
+        /// <param name="credentials">The credentials.</param>
+        public ResourceFile(string path, Credentials credentials = null)
+            : base(path, credentials)
         {
         }
 
@@ -64,7 +62,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Directory base path
         /// </summary>
-        public override IDirectory Directory => new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", UserName, Password, Domain);
+        public override IDirectory Directory => new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
 
         /// <summary>
         /// Does it exist? Always true.
@@ -147,7 +145,7 @@ namespace FileCurator.Default
         {
             if (directory == null || !Exists)
                 return this;
-            var File = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), UserName, Password, Domain);
+            var File = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             if (!File.Exists || overwrite)
             {
                 File.Write(ReadBinary());
@@ -173,7 +171,7 @@ namespace FileCurator.Default
         {
             if (directory == null || !Exists)
                 return this;
-            var TempFile = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), UserName, Password, Domain);
+            var TempFile = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             TempFile.Write(ReadBinary());
             Delete();
             return TempFile;

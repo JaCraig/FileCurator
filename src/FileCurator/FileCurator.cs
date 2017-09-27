@@ -61,14 +61,12 @@ namespace FileCurator
         /// Gets the directory representation for the directory
         /// </summary>
         /// <param name="path">Path to the directory</param>
-        /// <param name="domain">Domain of the user (optional)</param>
-        /// <param name="password">Password to be used to access the directory (optional)</param>
-        /// <param name="userName">User name to be used to access the directory (optional)</param>
+        /// <param name="credentials">The credentials.</param>
         /// <returns>The directory object</returns>
-        public IDirectory Directory(string path, string userName = "", string password = "", string domain = "")
+        public IDirectory Directory(string path, Credentials credentials = null)
         {
             var FileSystem = FindSystem(path);
-            return FileSystem?.Directory(path, userName, password, domain);
+            return FileSystem?.Directory(path, credentials);
         }
 
         /// <summary>
@@ -91,14 +89,12 @@ namespace FileCurator
         /// Gets the class representation for the file
         /// </summary>
         /// <param name="path">Path to the file</param>
-        /// <param name="domain">Domain of the user (optional)</param>
-        /// <param name="password">Password to be used to access the file (optional)</param>
-        /// <param name="userName">User name to be used to access the file (optional)</param>
+        /// <param name="credentials">The credentials.</param>
         /// <returns>The file object</returns>
-        public IFile File(string path, string userName = "", string password = "", string domain = "")
+        public IFile File(string path, Credentials credentials = null)
         {
             var FileSystem = FindSystem(path);
-            return FileSystem?.File(path, userName, password, domain);
+            return FileSystem?.File(path, credentials);
         }
 
         /// <summary>

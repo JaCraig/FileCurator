@@ -41,11 +41,9 @@ namespace FileCurator.Default
         /// Constructor
         /// </summary>
         /// <param name="path">Path to the directory</param>
-        /// <param name="domain">Domain of the user (optional)</param>
-        /// <param name="password">Password to be used to access the directory (optional)</param>
-        /// <param name="userName">User name to be used to access the directory (optional)</param>
-        public ResourceDirectory(string path, string userName = "", string password = "", string domain = "")
-            : base(path, userName, password, domain)
+        /// <param name="credentials">The credentials.</param>
+        public ResourceDirectory(string path, Credentials credentials = null)
+            : base(path, credentials)
         {
         }
 
@@ -153,7 +151,7 @@ namespace FileCurator.Default
             if (AssemblyFrom == null)
                 return new List<IFile>();
             var TempData = AssemblyFrom.GetManifestResourceNames() ?? new string[0];
-            return TempData.Select(x => new ResourceFile(FullName + x, UserName, Password, Domain));
+            return TempData.Select(x => new ResourceFile(FullName + x, Credentials));
         }
 
         /// <summary>

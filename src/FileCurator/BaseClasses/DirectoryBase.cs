@@ -44,15 +44,11 @@ namespace FileCurator.BaseClasses
         /// Constructor
         /// </summary>
         /// <param name="internalDirectory">Internal directory object</param>
-        /// <param name="domain">Domain of the user (optional)</param>
-        /// <param name="password">Password to be used to access the file (optional)</param>
-        /// <param name="userName">User name to be used to access the file (optional)</param>
-        protected DirectoryBase(InternalDirectoryType internalDirectory, string userName = "", string password = "", string domain = "")
+        /// <param name="credentials">The credentials.</param>
+        protected DirectoryBase(InternalDirectoryType internalDirectory, Credentials credentials = null)
         {
+            Credentials = credentials;
             InternalDirectory = internalDirectory;
-            UserName = userName;
-            Password = password;
-            Domain = domain;
         }
 
         /// <summary>
@@ -64,6 +60,12 @@ namespace FileCurator.BaseClasses
         /// Date created (UTC time)
         /// </summary>
         public abstract DateTime Created { get; }
+
+        /// <summary>
+        /// Gets the credentials.
+        /// </summary>
+        /// <value>The credentials.</value>
+        public Credentials Credentials { get; }
 
         /// <summary>
         /// Does it exist?
@@ -101,24 +103,9 @@ namespace FileCurator.BaseClasses
         public abstract long Size { get; }
 
         /// <summary>
-        /// Domain
-        /// </summary>
-        protected string Domain { get; set; }
-
-        /// <summary>
         /// Internal directory
         /// </summary>
         protected InternalDirectoryType InternalDirectory { get; set; }
-
-        /// <summary>
-        /// Password
-        /// </summary>
-        protected string Password { get; set; }
-
-        /// <summary>
-        /// User name
-        /// </summary>
-        protected string UserName { get; set; }
 
         /// <summary>
         /// Determines if two directories are not equal
@@ -245,9 +232,9 @@ namespace FileCurator.BaseClasses
                         break;
 
                     case CopyOptions.CopyIfNewer:
-                        if (new FileInfo(directory.FullName + "\\" + TempFile.Name.Replace("/", "").Replace("\\", ""), UserName, Password, Domain).Exists)
+                        if (new FileInfo(directory.FullName + "\\" + TempFile.Name.Replace("/", "").Replace("\\", ""), Credentials).Exists)
                         {
-                            var FileInfo = new FileInfo(directory.FullName + "\\" + TempFile.Name.Replace("/", "").Replace("\\", ""), UserName, Password, Domain);
+                            var FileInfo = new FileInfo(directory.FullName + "\\" + TempFile.Name.Replace("/", "").Replace("\\", ""), Credentials);
                             if (FileInfo.Modified.CompareTo(TempFile.Modified) < 0)
                                 TempFile.CopyTo(directory, true);
                         }
@@ -264,7 +251,7 @@ namespace FileCurator.BaseClasses
                 }
             }
             foreach (IDirectory SubDirectory in EnumerateDirectories())
-                SubDirectory.CopyTo(new DirectoryInfo(directory.FullName + "\\" + SubDirectory.Name.Replace("/", "").Replace("\\", ""), UserName, Password, Domain), options);
+                SubDirectory.CopyTo(new DirectoryInfo(directory.FullName + "\\" + SubDirectory.Name.Replace("/", "").Replace("\\", ""), Credentials), options);
             return directory;
         }
 
@@ -374,7 +361,7 @@ namespace FileCurator.BaseClasses
         /// <param name="directory">Directory to move to</param>
         public virtual IDirectory MoveTo(IDirectory directory)
         {
-            var ReturnValue = CopyTo(new DirectoryInfo(directory.FullName + "\\" + Name.Replace("/", "").Replace("\\", ""), UserName, Password, Domain));
+            var ReturnValue = CopyTo(new DirectoryInfo(directory.FullName + "\\" + Name.Replace("/", "").Replace("\\", ""), Credentials));
             Delete();
             return ReturnValue;
         }

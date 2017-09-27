@@ -38,14 +38,12 @@ namespace FileCurator.Default
         /// Gets the directory representation for the directory
         /// </summary>
         /// <param name="path">Path to the directory</param>
-        /// <param name="domain">Domain of the user (optional)</param>
-        /// <param name="password">Password to be used to access the directory (optional)</param>
-        /// <param name="userName">User name to be used to access the directory (optional)</param>
+        /// <param name="credentials">The credentials.</param>
         /// <returns>The directory object</returns>
-        public override IDirectory Directory(string path, string userName = "", string password = "", string domain = "")
+        public override IDirectory Directory(string path, Credentials credentials = null)
         {
             path = AbsolutePath(path);
-            return new WebDirectory(path, userName, password, domain);
+            return new WebDirectory(path, credentials);
         }
 
         /// <summary>
@@ -59,14 +57,12 @@ namespace FileCurator.Default
         /// Gets the class representation for the file
         /// </summary>
         /// <param name="path">Path to the file</param>
-        /// <param name="domain">Domain of the user (optional)</param>
-        /// <param name="password">Password to be used to access the file (optional)</param>
-        /// <param name="userName">User name to be used to access the file (optional)</param>
+        /// <param name="credentials">The credentials.</param>
         /// <returns>The file object</returns>
-        public override IFile File(string path, string userName = "", string password = "", string domain = "")
+        public override IFile File(string path, Credentials credentials = null)
         {
             path = AbsolutePath(path);
-            return new WebFile(path, userName, password, domain);
+            return new WebFile(path, credentials);
         }
 
         /// <summary>

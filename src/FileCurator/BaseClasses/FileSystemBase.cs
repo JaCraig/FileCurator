@@ -62,11 +62,9 @@ namespace FileCurator.BaseClasses
         /// Gets the directory representation for the directory
         /// </summary>
         /// <param name="path">Path to the directory</param>
-        /// <param name="domain">Domain of the user (optional)</param>
-        /// <param name="password">Password to be used to access the directory (optional)</param>
-        /// <param name="userName">User name to be used to access the directory (optional)</param>
+        /// <param name="credentials">The credentials.</param>
         /// <returns>The directory object</returns>
-        public abstract IDirectory Directory(string path, string userName = "", string password = "", string domain = "");
+        public abstract IDirectory Directory(string path, Credentials credentials);
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting
@@ -78,11 +76,9 @@ namespace FileCurator.BaseClasses
         /// Gets the class representation for the file
         /// </summary>
         /// <param name="path">Path to the file</param>
-        /// <param name="domain">Domain of the user (optional)</param>
-        /// <param name="password">Password to be used to access the file (optional)</param>
-        /// <param name="userName">User name to be used to access the file (optional)</param>
+        /// <param name="credentials">The credentials.</param>
         /// <returns>The file object</returns>
-        public abstract IFile File(string path, string userName = "", string password = "", string domain = "");
+        public abstract IFile File(string path, Credentials credentials);
 
         /// <summary>
         /// Gets the absolute path of the variable passed in

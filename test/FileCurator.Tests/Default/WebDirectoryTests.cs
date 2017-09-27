@@ -2,6 +2,7 @@
 using FileCurator.Interfaces;
 using FileCurator.Tests.BaseClasses;
 using System;
+using System.Net;
 using Xunit;
 
 namespace FileCurator.Tests.Default
@@ -32,9 +33,9 @@ namespace FileCurator.Tests.Default
         public void CreateAndDelete()
         {
             var Temp = new WebDirectory("http://www.google.com");
-            Assert.Throws<AggregateException>(() => Temp.Create());
+            Assert.Throws<WebException>(() => Temp.Create());
             Assert.True(Temp.Exists);
-            Assert.Throws<AggregateException>(() => Temp.Delete());
+            Assert.Throws<WebException>(() => Temp.Delete());
             Assert.True(Temp.Exists);
         }
 
@@ -78,7 +79,7 @@ namespace FileCurator.Tests.Default
             var Temp2 = new LocalDirectory("./Testing/");
             Temp2.Create();
             while (!Temp2.Exists) { }
-            Assert.Throws<AggregateException>(() => Temp.MoveTo(Temp2));
+            Assert.Throws<WebException>(() => Temp.MoveTo(Temp2));
             Assert.True(Temp.Exists);
             Assert.True(Temp2.Exists);
             int Count = 0;

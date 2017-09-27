@@ -50,15 +50,11 @@ namespace FileCurator.BaseClasses
         /// Constructor
         /// </summary>
         /// <param name="internalFile">Internal file</param>
-        /// <param name="userName">User name</param>
-        /// <param name="password">Password</param>
-        /// <param name="domain">User's domain</param>
-        protected FileBase(InternalFileType internalFile, string userName, string password, string domain)
+        /// <param name="credentials">The credentials.</param>
+        protected FileBase(InternalFileType internalFile, Credentials credentials = null)
             : this(internalFile)
         {
-            UserName = userName;
-            Password = password;
-            Domain = domain;
+            Credentials = credentials;
         }
 
         /// <summary>
@@ -70,6 +66,12 @@ namespace FileCurator.BaseClasses
         /// Time created (UTC time)
         /// </summary>
         public abstract DateTime Created { get; }
+
+        /// <summary>
+        /// Gets the credentials.
+        /// </summary>
+        /// <value>The credentials.</value>
+        public Credentials Credentials { get; }
 
         /// <summary>
         /// Directory the file is within
@@ -107,24 +109,9 @@ namespace FileCurator.BaseClasses
         public abstract string Name { get; }
 
         /// <summary>
-        /// Domain of the user
-        /// </summary>
-        protected string Domain { get; set; }
-
-        /// <summary>
         /// Internal directory
         /// </summary>
         protected InternalFileType InternalFile { get; set; }
-
-        /// <summary>
-        /// Password
-        /// </summary>
-        protected string Password { get; set; }
-
-        /// <summary>
-        /// User name used
-        /// </summary>
-        protected string UserName { get; set; }
 
         /// <summary>
         /// Reads the file and converts it to a byte array

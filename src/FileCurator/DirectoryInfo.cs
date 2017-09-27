@@ -32,11 +32,9 @@ namespace FileCurator
         /// Constructor
         /// </summary>
         /// <param name="path">Path to the directory</param>
-        /// <param name="domain">Domain of the user (optional)</param>
-        /// <param name="password">Password to be used to access the directory (optional)</param>
-        /// <param name="userName">User name to be used to access the directory (optional)</param>
-        public DirectoryInfo(string path, string userName = "", string password = "", string domain = "")
-            : this(Canister.Builder.Bootstrapper.Resolve<FileCurator>().Directory(path, userName, password, domain))
+        /// <param name="credentials">The credentials.</param>
+        public DirectoryInfo(string path, Credentials credentials = null)
+            : this(Canister.Builder.Bootstrapper.Resolve<FileCurator>().Directory(path, credentials))
         {
         }
 

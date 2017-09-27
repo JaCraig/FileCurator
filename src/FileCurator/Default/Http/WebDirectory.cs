@@ -41,11 +41,9 @@ namespace FileCurator.Default
         /// Constructor
         /// </summary>
         /// <param name="path">Path to the directory</param>
-        /// <param name="domain">Domain of the user (optional)</param>
-        /// <param name="password">Password to be used to access the directory (optional)</param>
-        /// <param name="userName">User name to be used to access the directory (optional)</param>
-        public WebDirectory(string path, string userName = "", string password = "", string domain = "")
-            : this(string.IsNullOrEmpty(path) ? null : new Uri(path), userName, password, domain)
+        /// <param name="credentials">The credentials.</param>
+        public WebDirectory(string path, Credentials credentials = null)
+            : this(string.IsNullOrEmpty(path) ? null : new Uri(path), credentials)
         {
         }
 
@@ -53,11 +51,9 @@ namespace FileCurator.Default
         /// Constructor
         /// </summary>
         /// <param name="directory">Internal directory</param>
-        /// <param name="domain">Domain of the user (optional)</param>
-        /// <param name="password">Password to be used to access the directory (optional)</param>
-        /// <param name="userName">User name to be used to access the directory (optional)</param>
-        public WebDirectory(Uri directory, string userName = "", string password = "", string domain = "")
-            : base(directory, userName, password, domain)
+        /// <param name="credentials">The credentials.</param>
+        public WebDirectory(Uri directory, Credentials credentials = null)
+            : base(directory, credentials)
         {
         }
 
@@ -94,12 +90,12 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override IDirectory Parent => InternalDirectory == null ? null : new WebDirectory((string)InternalDirectory.AbsolutePath.Left(InternalDirectory.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), UserName, Password, Domain);
+        public override IDirectory Parent => InternalDirectory == null ? null : new WebDirectory((string)InternalDirectory.AbsolutePath.Left(InternalDirectory.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
 
         /// <summary>
         /// Root
         /// </summary>
-        public override IDirectory Root => InternalDirectory == null ? null : new WebDirectory(InternalDirectory.Scheme + "://" + InternalDirectory.Host, UserName, Password, Domain);
+        public override IDirectory Root => InternalDirectory == null ? null : new WebDirectory(InternalDirectory.Scheme + "://" + InternalDirectory.Host, Credentials);
 
         /// <summary>
         /// Size (returns 0)
@@ -119,8 +115,8 @@ namespace FileCurator.Default
             string TempName = Name;
             if (TempName == "/")
                 TempName = "index.html";
-            var NewDirectory = new FileInfo(directory.FullName + "\\" + TempName.Right(TempName.Length - (TempName.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), UserName, Password, Domain);
-            var OldFile = new FileInfo(InternalDirectory.AbsoluteUri, UserName, Password, Domain);
+            var NewDirectory = new FileInfo(directory.FullName + "\\" + TempName.Right(TempName.Length - (TempName.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
+            var OldFile = new FileInfo(InternalDirectory.AbsoluteUri, Credentials);
             NewDirectory.Write(OldFile.Read(), FileMode.Create);
             return directory;
         }
@@ -195,7 +191,8 @@ namespace FileCurator.Default
         {
             if (request == null)
                 return "";
-            using (HttpWebResponse Response = request.GetResponseAsync().Result as HttpWebResponse)
+
+            using (HttpWebResponse Response = request.GetResponseAsync().GetAwaiter().GetResult() as HttpWebResponse)
             {
                 if (Response.StatusCode != HttpStatusCode.OK)
                     return "";
@@ -220,7 +217,7 @@ namespace FileCurator.Default
                 return;
             }
             var ByteData = data.ToByteArray();
-            using (Stream RequestStream = request.GetRequestStreamAsync().Result)
+            using (Stream RequestStream = request.GetRequestStreamAsync().GetAwaiter().GetResult())
             {
                 RequestStream.Write(ByteData, 0, ByteData.Length);
             }
@@ -233,12 +230,14 @@ namespace FileCurator.Default
         /// <param name="request">The web request object</param>
         private void SetupCredentials(HttpWebRequest request)
         {
-            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password))
+            if (Credentials == null)
+                return;
+            if (!string.IsNullOrEmpty(Credentials?.UserName) && !string.IsNullOrEmpty(Credentials?.Password))
             {
-                if (!string.IsNullOrEmpty(Domain))
-                    request.Credentials = new NetworkCredential(UserName, Password, Domain);
+                if (!string.IsNullOrEmpty(Credentials?.Domain))
+                    request.Credentials = new NetworkCredential(Credentials?.UserName, Credentials?.Password, Credentials?.Domain);
                 else
-                    request.Credentials = new NetworkCredential(UserName, Password);
+                    request.Credentials = new NetworkCredential(Credentials?.UserName, Credentials?.Password);
             }
             else
             {
