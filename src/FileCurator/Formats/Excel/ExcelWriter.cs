@@ -19,7 +19,6 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using FileCurator.Formats.Data.Interfaces;
 using FileCurator.Formats.Interfaces;
-using System;
 using System.IO;
 using System.Linq;
 
@@ -58,87 +57,52 @@ namespace FileCurator.Formats.Excel
                 Document.WorkbookPart.Workbook = new Workbook();
                 Document.WorkbookPart.Workbook.AppendChild(new Sheets());
                 WorksheetPart WorksheetPart = InsertSheetInWorksheet(Document.WorkbookPart);
+                Worksheet Worksheet = WorksheetPart.Worksheet;
+                SheetData SheetData = Worksheet.GetFirstChild<SheetData>();
                 if (TableFile == null)
                 {
-                    Cell TempCell = InsertCellInWorksheet("A", 1, WorksheetPart);
-                    TempCell.CellValue = new CellValue(file.ToString());
-                    TempCell.DataType = new EnumValue<CellValues>(CellValues.String);
+                    var Row = new Row { RowIndex = 1 };
+                    Row.AppendChild(new Cell
+                    {
+                        CellValue = new CellValue(file.ToString()),
+                        DataType = new EnumValue<CellValues>(CellValues.String),
+                        CellReference = "A1"
+                    });
+                    SheetData.AppendChild(Row);
                 }
                 else
                 {
-                    for (int x = 0; x < TableFile.Columns.Count; ++x)
+                    if (TableFile.Columns.Count > 0)
                     {
-                        Cell TempCell = InsertCellInWorksheet(Column(x), 0, WorksheetPart);
-                        TempCell.CellValue = new CellValue(TableFile.Columns[x]);
-                        TempCell.DataType = new EnumValue<CellValues>(CellValues.String);
-                    }
-                    for (uint x = 0; x < TableFile.Rows.Count; ++x)
-                    {
-                        for (int y = 0; y < TableFile.Rows[(int)x].Cells.Count; ++y)
+                        var Row = new Row { RowIndex = 0 };
+                        for (int x = 0; x < TableFile.Columns.Count; ++x)
                         {
-                            Cell TempCell = InsertCellInWorksheet(Column(y), x + 1, WorksheetPart);
-                            TempCell.CellValue = new CellValue(TableFile.Rows[(int)x].Cells[y].Content);
-                            TempCell.DataType = new EnumValue<CellValues>(CellValues.String);
+                            Row.AppendChild(new Cell
+                            {
+                                CellValue = new CellValue(TableFile.Columns[x]),
+                                DataType = new EnumValue<CellValues>(CellValues.String),
+                                CellReference = Column(x) + 0
+                            });
+                        }
+                        SheetData.AppendChild(Row);
+                    }
+                    for (int x = 0; x < TableFile.Rows.Count; ++x)
+                    {
+                        var Row = new Row { RowIndex = (uint)(x + 1) };
+                        SheetData.AppendChild(Row);
+                        for (int y = 0; y < TableFile.Rows[x].Cells.Count; ++y)
+                        {
+                            Row.AppendChild(new Cell
+                            {
+                                CellValue = new CellValue(TableFile.Rows[x].Cells[y].Content),
+                                DataType = new EnumValue<CellValues>(CellValues.String),
+                                CellReference = Column(y) + (x + 1)
+                            });
                         }
                     }
                 }
             }
             return true;
-        }
-
-        /// <summary>
-        /// Inserts the cell in worksheet.
-        /// </summary>
-        /// <param name="columnName">Name of the column.</param>
-        /// <param name="rowIndex">Index of the row.</param>
-        /// <param name="worksheetPart">The worksheet part.</param>
-        /// <returns>The cell.</returns>
-        private static Cell InsertCellInWorksheet(string columnName, uint rowIndex, WorksheetPart worksheetPart)
-        {
-            Worksheet worksheet = worksheetPart.Worksheet;
-            SheetData sheetData = worksheet.GetFirstChild<SheetData>();
-            string cellReference = columnName + rowIndex;
-
-            // If the worksheet does not contain a row with the specified row index, insert one.
-            Row row;
-            if (sheetData.Elements<Row>().Any(r => r.RowIndex == rowIndex))
-            {
-                row = sheetData.Elements<Row>().First(r => r.RowIndex == rowIndex);
-            }
-            else
-            {
-                row = new Row() { RowIndex = rowIndex };
-                sheetData.Append(row);
-            }
-
-            // If there is not a cell with the specified column name, insert one.
-            if (row.Elements<Cell>().Any(c => c.CellReference.Value == columnName + rowIndex))
-            {
-                return row.Elements<Cell>().First(c => c.CellReference.Value == cellReference);
-            }
-            else
-            {
-                // Cells must be in sequential order according to CellReference. Determine where to
-                // insert the new cell.
-                Cell refCell = null;
-                foreach (Cell cell in row.Elements<Cell>())
-                {
-                    if (cell.CellReference.Value.Length == cellReference.Length)
-                    {
-                        if (string.Compare(cell.CellReference.Value, cellReference, StringComparison.OrdinalIgnoreCase) > 0)
-                        {
-                            refCell = cell;
-                            break;
-                        }
-                    }
-                }
-
-                Cell newCell = new Cell() { CellReference = cellReference };
-                row.InsertBefore(newCell, refCell);
-
-                worksheet.Save();
-                return newCell;
-            }
         }
 
         /// <summary>

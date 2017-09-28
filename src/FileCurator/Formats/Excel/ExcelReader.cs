@@ -153,6 +153,8 @@ namespace FileCurator.Formats.Excel
         /// <returns>The column name.</returns>
         private string GetColumnName(string cellReference)
         {
+            if (string.IsNullOrEmpty(cellReference))
+                return "";
             return new Regex("[A-Za-z]+").Match(cellReference)
                                          .Value;
         }
