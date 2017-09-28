@@ -37,12 +37,16 @@ namespace FileCurator.Formats.Excel
         /// <returns>The column name</returns>
         public static string Column(int column)
         {
-            var Alpha = (column / 27);
-            var Remainder = column - (Alpha * 26);
-            var Result = "";
-            if (Alpha > 0)
-                Result = ((char)(Alpha + 64)).ToString();
-            return Result + ((char)(Remainder + 64)).ToString();
+            string ColumnLetter = "";
+            int Mod = 0;
+
+            while (column > 0)
+            {
+                Mod = (column - 1) % 26;
+                ColumnLetter = (char)(65 + Mod) + ColumnLetter;
+                column = (int)((column - Mod) / 26);
+            }
+            return ColumnLetter;
         }
 
         /// <summary>

@@ -12,6 +12,16 @@ namespace FileCurator.Tests.Formats.Excel
         public void GetColumnName()
         {
             Assert.Equal("AA", ExcelWriter.Column(27));
+            Assert.Equal("IG", ExcelWriter.Column(241));
+            Assert.Equal("IH", ExcelWriter.Column(242));
+            Assert.Equal("HG", ExcelWriter.Column(215));
+            Assert.Equal("JG", ExcelWriter.Column(267));
+            Assert.Equal("JH", ExcelWriter.Column(268));
+            Assert.Equal("JI", ExcelWriter.Column(269));
+            Assert.Equal("KG", ExcelWriter.Column(293));
+            Assert.Equal("KH", ExcelWriter.Column(294));
+            Assert.Equal("KI", ExcelWriter.Column(295));
+            Assert.Equal("KJ", ExcelWriter.Column(296));
         }
 
         [Fact]
