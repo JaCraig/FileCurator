@@ -9,6 +9,12 @@ namespace FileCurator.Tests.Formats.Excel
     public class ExcelWriterTests : TestingDirectoryFixture
     {
         [Fact]
+        public void GetColumnName()
+        {
+            Assert.Equal("AA", ExcelWriter.Column(27));
+        }
+
+        [Fact]
         public void WriteATable()
         {
             var TestObject = new ExcelWriter();

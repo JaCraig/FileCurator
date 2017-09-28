@@ -37,9 +37,12 @@ namespace FileCurator.Formats.Excel
         /// <returns>The column name</returns>
         public static string Column(int column)
         {
-            return column < 26 ?
-                            ((char)('A' + column)).ToString() :
-                            Column(column / 26) + Column(column % 26 + 1);
+            var Alpha = (column / 27);
+            var Remainder = column - (Alpha * 26);
+            var Result = "";
+            if (Alpha > 0)
+                Result = ((char)(Alpha + 64)).ToString();
+            return Result + ((char)(Remainder + 64)).ToString();
         }
 
         /// <summary>
@@ -72,8 +75,10 @@ namespace FileCurator.Formats.Excel
                 }
                 else
                 {
+                    int headerOffset = 1;
                     if (TableFile.Columns.Count > 0)
                     {
+                        headerOffset = 2;
                         var Row = new Row { RowIndex = 0 };
                         for (int x = 0; x < TableFile.Columns.Count; ++x)
                         {
@@ -81,7 +86,7 @@ namespace FileCurator.Formats.Excel
                             {
                                 CellValue = new CellValue(TableFile.Columns[x]),
                                 DataType = new EnumValue<CellValues>(CellValues.String),
-                                CellReference = Column(x) + 0
+                                CellReference = Column(x + 1) + 1
                             });
                         }
                         SheetData.AppendChild(Row);
@@ -96,7 +101,7 @@ namespace FileCurator.Formats.Excel
                             {
                                 CellValue = new CellValue(TableFile.Rows[x].Cells[y].Content),
                                 DataType = new EnumValue<CellValues>(CellValues.String),
-                                CellReference = Column(y) + (x + 1)
+                                CellReference = Column(y + 1) + (x + headerOffset)
                             });
                         }
                     }
