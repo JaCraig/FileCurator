@@ -98,8 +98,12 @@ namespace FileCurator.Formats
         public IFormat FindFormat(Stream stream, string mimeType)
         {
             mimeType = mimeType.ToUpperInvariant();
-            if (!string.IsNullOrEmpty(mimeType) && FormatsByMimeType.ContainsKey(mimeType))
-                return FormatsByMimeType[mimeType];
+            if (!string.IsNullOrEmpty(mimeType))
+            {
+                var Key = FormatsByMimeType.Keys.FirstOrDefault(mimeType.Contains) ?? mimeType;
+                if (FormatsByMimeType.ContainsKey(Key))
+                    return FormatsByMimeType[Key];
+            }
             return Formats.FirstOrDefault(x => x.CanRead(stream)) ?? DefaultFormat;
         }
 

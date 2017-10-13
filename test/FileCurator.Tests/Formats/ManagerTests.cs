@@ -31,6 +31,7 @@ namespace FileCurator.Tests.Formats
             {"TestCSV.csv","Delimited files","text/csv" },
             {"TestDefault.boop","Text","text/boop" },
             {"TestHTML.htm","HTML","text/html" },
+            {"TestHTML.htm","HTML","text/html; charset=utf-8" },
             {"TestICal.ics","ICal","text/calendar" },
             {"TestMHTML.mht","MIME","message/rfc822" },
             {"TestEml.eml","MIME","message/rfc822" },
