@@ -85,7 +85,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName => InternalFile?.AbsolutePath ?? "";
+        public override string FullName => InternalFile?.ToString() ?? "";
 
         /// <summary>
         /// Size of the file (always 0)

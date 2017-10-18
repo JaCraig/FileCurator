@@ -43,6 +43,12 @@ namespace FileCurator.Formats.Interfaces
         string[] FileTypes { get; }
 
         /// <summary>
+        /// Gets the header information.
+        /// </summary>
+        /// <value>The header information.</value>
+        byte[] HeaderInfo { get; }
+
+        /// <summary>
         /// Determines whether this instance can decode the specified file name.
         /// </summary>
         /// <param name="fileName">Name of the file.</param>

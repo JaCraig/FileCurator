@@ -69,7 +69,7 @@ namespace FileCurator.Tests.Formats
         public void FindFormatByName(string fileName, string expectedFormat)
         {
             var TestObject = new Manager(Canister.Builder.Bootstrapper.ResolveAll<IFormat>());
-            var Format = TestObject.FindFormat("../../../TestData/" + fileName);
+            var Format = TestObject.FindFormat("../../../TestData/" + fileName, null);
             Assert.Equal(expectedFormat, Format.DisplayName);
         }
 

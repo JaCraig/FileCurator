@@ -53,6 +53,12 @@ namespace FileCurator.Formats.BaseClasses
         public abstract string[] FileTypes { get; }
 
         /// <summary>
+        /// Gets the header information.
+        /// </summary>
+        /// <value>The header information.</value>
+        public byte[] HeaderInfo => Reader.HeaderIdentifier;
+
+        /// <summary>
         /// Gets the reader.
         /// </summary>
         /// <value>The reader.</value>

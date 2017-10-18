@@ -38,6 +38,7 @@ namespace FileCurator
         public FileInfo(string path, Credentials credentials = null)
             : this(Canister.Builder.Bootstrapper.Resolve<FileCurator>().File(path, credentials))
         {
+            Credentials = credentials;
         }
 
         /// <summary>
@@ -98,6 +99,12 @@ namespace FileCurator
         /// Internal directory
         /// </summary>
         protected IFile InternalFile { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the credentials.
+        /// </summary>
+        /// <value>The credentials.</value>
+        private Credentials Credentials { get; set; }
 
         /// <summary>
         /// Gets or sets the internal manager.
@@ -313,7 +320,7 @@ namespace FileCurator
         public TFile Parse<TFile>()
             where TFile : IGenericFile
         {
-            var Format = (FormatManager.FindFormat(FullName) as IFormat<TFile>);
+            var Format = (FormatManager.FindFormat(FullName, Credentials) as IFormat<TFile>);
             if (Format == null)
                 throw new ArgumentException("Could not find file format that returns the specified object type");
             using (var TempStream = new MemoryStream(ReadBinary()))
@@ -331,7 +338,7 @@ namespace FileCurator
         /// </exception>
         public IGenericFile Parse()
         {
-            var Format = FormatManager.FindFormat(FullName);
+            var Format = FormatManager.FindFormat(FullName, Credentials);
             if (Format == null)
                 throw new ArgumentException("Could not find file format that returns the specified object type");
             using (var TempStream = new MemoryStream(ReadBinary()))
@@ -418,7 +425,7 @@ namespace FileCurator
         /// <returns>True if it was written successfully, false otherwise.</returns>
         public bool Write(IGenericFile data, FileMode mode = FileMode.Create)
         {
-            var Format = FormatManager.FindFormat(FullName);
+            var Format = FormatManager.FindFormat(FullName, Credentials);
             using (var TempStream = new MemoryStream())
             {
                 bool Success = Format.Write(TempStream, data);
