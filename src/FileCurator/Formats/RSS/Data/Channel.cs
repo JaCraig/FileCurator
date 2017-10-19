@@ -87,10 +87,14 @@ namespace FileCurator.Formats.RSS.Data
             {
                 WebMaster = Node.Value;
             }
-            Node = Element.SelectSingleNode("./pubdate", NamespaceManager);
+            Node = Element.SelectSingleNode("./pubDate", NamespaceManager);
             if (Node != null)
             {
-                PubDate = DateTime.Parse(Node.Value, CultureInfo.InvariantCulture);
+                if (DateTime.TryParse(Node.Value.Replace("PDT", "-0700"), out DateTime TempDate))
+                {
+                    PubDate = TempDate;
+                }
+                PubDate = DateTime.Now;
             }
             var Nodes = Element.Select("./category", NamespaceManager);
             foreach (XPathNavigator TempNode in Nodes)

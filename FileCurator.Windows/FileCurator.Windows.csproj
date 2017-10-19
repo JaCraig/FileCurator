@@ -33,8 +33,8 @@
     <Reference Include="Aspectus, Version=2.0.22.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Aspectus.2.0.22\lib\netstandard1.6\Aspectus.dll</HintPath>
     </Reference>
-    <Reference Include="BigBook, Version=1.0.32.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BigBook.1.0.32\lib\netstandard1.6\BigBook.dll</HintPath>
+    <Reference Include="BigBook, Version=1.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BigBook.1.0.33\lib\netstandard1.6\BigBook.dll</HintPath>
     </Reference>
     <Reference Include="Canister.IoC, Version=1.0.50.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Canister.IoC.1.0.50\lib\netstandard1.1\Canister.IoC.dll</HintPath>

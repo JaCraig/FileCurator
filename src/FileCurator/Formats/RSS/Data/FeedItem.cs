@@ -81,10 +81,14 @@ namespace FileCurator.Formats.RSS.Data
             {
                 Enclosure = new Enclosure(Node);
             }
-            Node = Element.SelectSingleNode("./pubdate", NamespaceManager);
+            Node = Element.SelectSingleNode("./pubDate", NamespaceManager);
             if (Node != null)
             {
-                PubDate = DateTime.Parse(Node.Value, CultureInfo.InvariantCulture);
+                if (DateTime.TryParse(Node.Value.Replace("PDT", "-0700"), out DateTime TempDate))
+                {
+                    PubDate = TempDate;
+                }
+                PubDate = DateTime.Now;
             }
             Node = Element.SelectSingleNode("./media:thumbnail", NamespaceManager);
             if (Node != null)
