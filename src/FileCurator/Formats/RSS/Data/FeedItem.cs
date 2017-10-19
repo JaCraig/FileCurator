@@ -88,7 +88,8 @@ namespace FileCurator.Formats.RSS.Data
                 {
                     PubDate = TempDate;
                 }
-                PubDate = DateTime.Now;
+                else
+                    PubDate = DateTime.Now;
             }
             Node = Element.SelectSingleNode("./media:thumbnail", NamespaceManager);
             if (Node != null)

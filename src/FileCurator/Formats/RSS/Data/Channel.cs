@@ -94,7 +94,8 @@ namespace FileCurator.Formats.RSS.Data
                 {
                     PubDate = TempDate;
                 }
-                PubDate = DateTime.Now;
+                else
+                    PubDate = DateTime.Now;
             }
             var Nodes = Element.Select("./category", NamespaceManager);
             foreach (XPathNavigator TempNode in Nodes)
