@@ -30,20 +30,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspectus, Version=2.0.17.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspectus.2.0.17\lib\netstandard1.6\Aspectus.dll</HintPath>
+    <Reference Include="Aspectus, Version=2.0.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspectus.2.0.22\lib\netstandard1.6\Aspectus.dll</HintPath>
     </Reference>
-    <Reference Include="BigBook, Version=1.0.30.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BigBook.1.0.30\lib\netstandard1.6\BigBook.dll</HintPath>
+    <Reference Include="BigBook, Version=1.0.32.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BigBook.1.0.32\lib\netstandard1.6\BigBook.dll</HintPath>
     </Reference>
-    <Reference Include="Canister.IoC, Version=1.0.49.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Canister.IoC.1.0.49\lib\netstandard1.1\Canister.IoC.dll</HintPath>
+    <Reference Include="Canister.IoC, Version=1.0.50.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Canister.IoC.1.0.50\lib\netstandard1.1\Canister.IoC.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeAnalysis, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.2.3.1\lib\netstandard1.3\Microsoft.CodeAnalysis.dll</HintPath>
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.2.3.2\lib\netstandard1.3\Microsoft.CodeAnalysis.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.2.3.1\lib\netstandard1.3\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.2.3.2\lib\netstandard1.3\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.1.1.1\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll</HintPath>
