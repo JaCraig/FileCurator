@@ -28,6 +28,7 @@ namespace FileCurator.Tests.Formats
         public static readonly TheoryData<string, string, string> FormatDataByMimeType = new TheoryData<string, string, string>
         {
             {"TestDocx.docx","Word","application/vnd.openxmlformats-officedocument.wordprocessingml.document" },
+            {"TestDocx.docx","Word","application/msword" },
             {"TestCSV.csv","Delimited files","text/csv" },
             {"TestDefault.boop","Text","text/boop" },
             {"TestHTML.htm","HTML","text/html" },
