@@ -10,28 +10,26 @@
     <Description>FileCurator is a simple manager for your files. It tries to give them a common interface to deal with files whether on your system or other locations.</Description>
     <AssemblyTitle>FileCurator</AssemblyTitle>
     <Authors>James Craig</Authors>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>FileCurator</AssemblyName>
     <PackageId>FileCurator</PackageId>
     <PackageTags>FileSystem;File;URL</PackageTags>
     <PackageProjectUrl>https://github.com/JaCraig/FileCurator</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/JaCraig/FileCurator/blob/master/LICENSE</PackageLicenseUrl>
-    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
-    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>1.0.$(BuildNumber)</Version>
+    <Version>2.0.$(BuildNumber)</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BigBook" Version="1.0.33" />
-    <PackageReference Include="Canister.IoC" Version="1.0.50" />
-    <PackageReference Include="DocumentFormat.OpenXml" Version="2.7.2" />
-    <PackageReference Include="HtmlAgilityPack" Version="1.6.1" />
-    <PackageReference Include="MimeKit" Version="1.18.1" />
+    <PackageReference Include="BigBook" Version="2.0.0" />
+    <PackageReference Include="Canister.IoC" Version="2.0.0" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.8.0" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.6.10" />
+    <PackageReference Include="MimeKit" Version="2.0.0" />
     <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
     <PackageReference Include="System.Net.Requests" Version="4.3.0" />
     <PackageReference Include="System.Threading.Tasks.Parallel" Version="4.3.0" />
@@ -39,6 +37,10 @@
 
   <ItemGroup>
     <Folder Include="Default\Ftp\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="NETStandard.Library" Version="2.0.1" />
   </ItemGroup>
 
 </Project>

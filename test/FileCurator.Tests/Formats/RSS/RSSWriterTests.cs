@@ -27,7 +27,7 @@ namespace FileCurator.Tests.Formats.RSS
                 var Result = ResultReader.Read(ResultFile);
                 Assert.Equal(1, Result.Count);
                 Assert.Equal(10, Result.Channels.First().Count);
-                Assert.Equal(11957, Result.Content.Length);
+                Assert.Equal(12056, Result.Content.Length);
             }
         }
 
