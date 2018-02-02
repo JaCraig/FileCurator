@@ -94,7 +94,7 @@ namespace FileCurator.Formats.PowerPoint
             if (slidePart.Slide != null)
             {
                 // Find all the title shapes.
-                var shapes = slidePart.Slide.Descendants<Shape>().Where(x => IsTitleShape(x));
+                var shapes = slidePart.Slide.Descendants<Shape>().Where(IsTitleShape);
 
                 StringBuilder paragraphText = new StringBuilder();
 

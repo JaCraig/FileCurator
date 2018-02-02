@@ -66,7 +66,7 @@ namespace FileCurator.Tests.Formats
         };
 
         [Theory]
-        [MemberData("FormatDataByName")]
+        [MemberData(nameof(FormatDataByName))]
         public void FindFormatByName(string fileName, string expectedFormat)
         {
             var TestObject = new Manager(Canister.Builder.Bootstrapper.ResolveAll<IFormat>());
@@ -75,7 +75,7 @@ namespace FileCurator.Tests.Formats
         }
 
         [Theory]
-        [MemberData("FormatDataByFileContents")]
+        [MemberData(nameof(FormatDataByFileContents))]
         public void FindFormatByStreamNoMimeType(string fileName, string expectedFormat)
         {
             var TestObject = new Manager(Canister.Builder.Bootstrapper.ResolveAll<IFormat>());
@@ -87,7 +87,7 @@ namespace FileCurator.Tests.Formats
         }
 
         [Theory]
-        [MemberData("FormatDataByMimeType")]
+        [MemberData(nameof(FormatDataByMimeType))]
         public void FindFormatByStreamWithMimeType(string fileName, string expectedFormat, string mimeType)
         {
             var TestObject = new Manager(Canister.Builder.Bootstrapper.ResolveAll<IFormat>());

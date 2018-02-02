@@ -22,7 +22,7 @@ namespace FileCurator.HelperMethods
     /// <summary>
     /// Helper functions for directory/file names.
     /// </summary>
-    public static class HelperFunctions
+    internal static class HelperFunctions
     {
         /// <summary>
         /// Gets the last x number of characters from the right hand side
@@ -50,8 +50,13 @@ namespace FileCurator.HelperMethods
         {
             if (string.IsNullOrEmpty(directoryName))
                 return directoryName;
-            foreach (char Char in Path.GetInvalidPathChars())
+            var InvalidChars = Path.GetInvalidPathChars();
+            for (int i = 0, maxLength = InvalidChars.Length; i < maxLength; i++)
+            {
+                char Char = InvalidChars[i];
                 directoryName = directoryName.Replace(Char, replacementChar);
+            }
+
             return directoryName;
         }
 
@@ -65,8 +70,13 @@ namespace FileCurator.HelperMethods
         {
             if (string.IsNullOrEmpty(fileName))
                 return fileName;
-            foreach (char Char in Path.GetInvalidFileNameChars())
+            var InvalidChars = Path.GetInvalidFileNameChars();
+            for (int i = 0, InvalidCharsLength = InvalidChars.Length; i < InvalidCharsLength; i++)
+            {
+                char Char = InvalidChars[i];
                 fileName = fileName.Replace(Char, replacementChar);
+            }
+
             return fileName;
         }
 

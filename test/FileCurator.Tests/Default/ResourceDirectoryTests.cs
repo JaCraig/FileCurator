@@ -1,7 +1,6 @@
 ﻿using FileCurator.Default;
 using FileCurator.Interfaces;
 using FileCurator.Tests.BaseClasses;
-using System.Linq;
 using Xunit;
 
 namespace FileCurator.Tests.Default
@@ -47,7 +46,7 @@ namespace FileCurator.Tests.Default
         {
             var Temp = new ResourceDirectory("resource://FileCurator.Tests/");
             foreach (IFile File in Temp) { }
-            Assert.Equal(1, Temp.EnumerateFiles().Count());
+            Assert.Single(Temp.EnumerateFiles());
         }
 
         [Fact]

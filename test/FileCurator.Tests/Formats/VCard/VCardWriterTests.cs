@@ -47,8 +47,8 @@ namespace FileCurator.Tests.Formats.VCard
             using (var ResultFile = File.Open("./Results/WriteACard.vcf", FileMode.OpenOrCreate))
             {
                 var Result = ResultReader.Read(ResultFile);
-                Assert.True(Result.DirectDial.Any(x => x.Type == "WORK" && x.Number == "111-1111"));
-                Assert.True(Result.Email.Any(x => x.Type == "WORK" && x.EmailAddress == "something@someplace.com"));
+                Assert.Contains(Result.DirectDial, x => x.Type == "WORK" && x.Number == "111-1111");
+                Assert.Contains(Result.Email, x => x.Type == "WORK" && x.EmailAddress == "something@someplace.com");
                 Assert.Equal("FirstName", Result.FirstName);
                 Assert.Equal("Prefix FirstName MiddleName LastName Suffix", Result.FullName);
                 Assert.Equal("LastName", Result.LastName);
