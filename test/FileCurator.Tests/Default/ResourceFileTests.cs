@@ -20,6 +20,19 @@ namespace FileCurator.Tests.Default
         }
 
         [Fact]
+        public void CreationDoesntExist()
+        {
+            var File = new ResourceFile("resource://_ViewImports.cshtml");
+            Assert.NotNull(File);
+            Assert.False(File.Exists);
+            Assert.Null(File.Directory);
+            Assert.Equal(".cshtml", File.Extension);
+            Assert.Equal("resource://_ViewImports.cshtml", File.FullName);
+            Assert.Equal(0, File.Length);
+            Assert.Equal("_ViewImports.cshtml", File.Name);
+        }
+
+        [Fact]
         public void ReadWrite()
         {
             var File = new ResourceFile("resource://FileCurator.Tests/FileCurator.Tests.Resources.TextFile1.txt");

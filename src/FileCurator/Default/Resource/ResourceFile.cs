@@ -52,22 +52,46 @@ namespace FileCurator.Default
         /// <summary>
         /// Time accessed (Just returns now)
         /// </summary>
-        public override DateTime Accessed => DateTime.Now;
+        public override DateTime Accessed
+        {
+            get
+            {
+                if (AssemblyFrom == null)
+                    return DateTime.Now;
+
+                return new System.IO.FileInfo(AssemblyFrom.Location).LastAccessTime;
+            }
+        }
 
         /// <summary>
         /// Time created (Just returns now)
         /// </summary>
-        public override DateTime Created => DateTime.Now;
+        public override DateTime Created
+        {
+            get
+            {
+                if (AssemblyFrom == null)
+                    return DateTime.Now;
+
+                return new System.IO.FileInfo(AssemblyFrom.Location).CreationTime;
+            }
+        }
 
         /// <summary>
         /// Directory base path
         /// </summary>
-        public override IDirectory Directory => new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
+        public override IDirectory Directory
+        {
+            get
+            {
+                return AssemblyFrom == null ? null : new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
+            }
+        }
 
         /// <summary>
         /// Does it exist? Always true.
         /// </summary>
-        public override bool Exists => AssemblyFrom.GetManifestResourceStream(Resource) != null;
+        public override bool Exists => AssemblyFrom?.GetManifestResourceStream(Resource) != null;
 
         /// <summary>
         /// Extension (always empty)
@@ -77,7 +101,13 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName => "resource://" + AssemblyFrom.GetName().Name + "/" + Resource;
+        public override string FullName
+        {
+            get
+            {
+                return AssemblyFrom == null ? $"resource://{Resource}" : $"resource://{AssemblyFrom.GetName().Name}/{Resource}";
+            }
+        }
 
         /// <summary>
         /// Size of the file
@@ -86,6 +116,8 @@ namespace FileCurator.Default
         {
             get
             {
+                if (AssemblyFrom == null)
+                    return 0;
                 using (Stream TempStream = AssemblyFrom.GetManifestResourceStream(Resource))
                 {
                     return TempStream.Length;
@@ -96,7 +128,16 @@ namespace FileCurator.Default
         /// <summary>
         /// Time modified (just returns now)
         /// </summary>
-        public override DateTime Modified => DateTime.Now;
+        public override DateTime Modified
+        {
+            get
+            {
+                if (AssemblyFrom == null)
+                    return DateTime.Now;
+
+                return new System.IO.FileInfo(AssemblyFrom.Location).LastWriteTime;
+            }
+        }
 
         /// <summary>
         /// Absolute path of the file (same as FullName)
@@ -107,7 +148,7 @@ namespace FileCurator.Default
         /// Gets the split path regex.
         /// </summary>
         /// <value>The split path regex.</value>
-        private static Regex SplitPathRegex => new Regex(@"^resource://(?<Assembly>[^/]*)/(?<FileName>[^/]*)", RegexOptions.IgnoreCase);
+        private static Regex SplitPathRegex => new Regex(@"^resource://((?<Assembly>[^/]*)/)?(?<FileName>[^/]*)", RegexOptions.IgnoreCase);
 
         /// <summary>
         /// Gets or sets the assembly this is from.
@@ -183,7 +224,7 @@ namespace FileCurator.Default
         /// <returns>The content as a string</returns>
         public override string Read()
         {
-            if (InternalFile == null)
+            if (InternalFile == null || AssemblyFrom == null)
                 return "";
             using (StreamReader TempStream = new StreamReader(AssemblyFrom.GetManifestResourceStream(Resource)))
             {
@@ -197,7 +238,7 @@ namespace FileCurator.Default
         /// <returns>The content as a byte array</returns>
         public override byte[] ReadBinary()
         {
-            if (InternalFile == null)
+            if (InternalFile == null || AssemblyFrom == null)
                 return new byte[0];
             using (Stream Reader = AssemblyFrom.GetManifestResourceStream(Resource))
             {

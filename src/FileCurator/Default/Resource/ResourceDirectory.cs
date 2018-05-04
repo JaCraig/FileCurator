@@ -150,7 +150,7 @@ namespace FileCurator.Default
         {
             if (AssemblyFrom == null)
                 return new List<IFile>();
-            var TempData = AssemblyFrom.GetManifestResourceNames() ?? new string[0];
+            var TempData = AssemblyFrom?.GetManifestResourceNames() ?? new string[0];
             return TempData.Select(x => new ResourceFile(FullName + x, Credentials));
         }
 
