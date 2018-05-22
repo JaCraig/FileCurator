@@ -53,17 +53,17 @@ namespace FileCurator.Data.FixedLength.BaseClasses
         /// <summary>
         /// The list of fields
         /// </summary>
-        protected IList<IField<TField>> Fields { get; private set; }
+        protected IList<IField<TField>> Fields { get; }
 
         /// <summary>
         /// Individual records
         /// </summary>
-        /// <param name="Position">The record that you want to get</param>
+        /// <param name="index">The record that you want to get</param>
         /// <returns>The record requested</returns>
-        public IField<TField> this[int Position]
+        public IField<TField> this[int index]
         {
-            get { return Fields[Position]; }
-            set { Fields[Position] = value; }
+            get { return Fields[index]; }
+            set { Fields[index] = value; }
         }
 
         /// <summary>
@@ -144,9 +144,9 @@ namespace FileCurator.Data.FixedLength.BaseClasses
         /// <summary>
         /// Parses the record
         /// </summary>
-        /// <param name="Value">Value</param>
-        /// <param name="Length">Length of the record</param>
-        public abstract void Parse(string Value, int Length = -1);
+        /// <param name="value">Value</param>
+        /// <param name="length">Length of the record</param>
+        public abstract void Parse(string value, int length = -1);
 
         /// <summary>
         /// Removes a Field from the file

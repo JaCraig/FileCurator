@@ -22,6 +22,7 @@ namespace FileCurator.Formats.Interfaces
     /// <summary>
     /// File reader
     /// </summary>
+    /// <typeparam name="TFile">The type of the file.</typeparam>
     public interface IGenericFileReader<TFile>
         where TFile : IGenericFile
     {

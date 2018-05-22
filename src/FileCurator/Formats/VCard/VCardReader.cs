@@ -25,8 +25,9 @@ using System.Text.RegularExpressions;
 namespace FileCurator.Formats.VCard
 {
     /// <summary>
+    /// Vcard reader
     /// </summary>
-    /// <seealso cref="Interfaces.IGenericFileReader{ICard}"/>
+    /// <seealso cref="ReaderBaseClass{ICard}"/>
     public class VCardReader : ReaderBaseClass<ICard>
     {
         /// <summary>

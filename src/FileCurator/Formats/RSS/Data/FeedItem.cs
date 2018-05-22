@@ -89,7 +89,9 @@ namespace FileCurator.Formats.RSS.Data
                     PubDate = TempDate;
                 }
                 else
+                {
                     PubDate = DateTime.Now;
+                }
             }
             Node = Element.SelectSingleNode("./media:thumbnail", NamespaceManager);
             if (Node != null)

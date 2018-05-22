@@ -30,7 +30,7 @@ namespace FileCurator.Tests.Formats.HTML
             using (var ResultFile = File.Open("./Results/TestHTMLWrite.htm", FileMode.OpenOrCreate))
             {
                 var Result = TestObject.Read(ResultFile);
-                Assert.Equal(@"Yay Testing", Result.ToString());
+                Assert.Equal("Yay Testing", Result.ToString());
             }
         }
     }

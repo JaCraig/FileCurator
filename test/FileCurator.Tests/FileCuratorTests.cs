@@ -26,15 +26,15 @@ namespace FileCurator.Tests
             Assert.NotNull(Dir);
             Assert.IsType<LocalDirectory>(Dir);
             Assert.True(Dir.Exists);
-            Dir = Temp.Directory(@"./");
+            Dir = Temp.Directory("./");
             Assert.NotNull(Dir);
             Assert.IsType<LocalDirectory>(Dir);
             Assert.True(Dir.Exists);
-            Dir = Temp.Directory(@"../");
+            Dir = Temp.Directory("../");
             Assert.NotNull(Dir);
             Assert.IsType<LocalDirectory>(Dir);
             Assert.True(Dir.Exists);
-            Dir = Temp.Directory(@"~/");
+            Dir = Temp.Directory("~/");
             Assert.NotNull(Dir);
             Assert.IsType<LocalDirectory>(Dir);
             Assert.True(Dir.Exists);

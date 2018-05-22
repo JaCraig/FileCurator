@@ -34,7 +34,7 @@ namespace FileCurator.Windows.Formats.PDF
         /// <summary>
         /// The number of characters to keep, when extracting text.
         /// </summary>
-        private static int NumberOfCharsToKeep = 15;
+        private const int NumberOfCharsToKeep = 15;
 
         /// <summary>
         /// Gets the header identifier.
@@ -141,8 +141,8 @@ namespace FileCurator.Windows.Formats.PDF
                         }
 
                         // End of a text object, also go to a new line.
-                        if (bracketDepth == 0 &&
-                            CheckToken(new string[] { "ET" }, previousCharacters))
+                        if (bracketDepth == 0
+                            && CheckToken(new string[] { "ET" }, previousCharacters))
                         {
                             inTextObject = false;
                             resultString.Append(" ");
@@ -173,8 +173,8 @@ namespace FileCurator.Windows.Formats.PDF
                                         }
                                         else
                                         {
-                                            if (((c >= ' ') && (c <= '~')) ||
-                                                ((c >= 128) && (c < 255)))
+                                            if (((c >= ' ') && (c <= '~'))
+                                                || ((c >= 128) && (c < 255)))
                                             {
                                                 resultString.Append(c);
                                             }

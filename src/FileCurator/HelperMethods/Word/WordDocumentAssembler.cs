@@ -29,7 +29,7 @@ namespace FileCurator.HelperMethods.Word
     /// Document assembly helper class
     /// </summary>
     /// <seealso cref="SafeDisposableBaseClass"/>
-    public class WordDocumentAssembler : SafeDisposableBaseClass
+    public sealed class WordDocumentAssembler : SafeDisposableBaseClass
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WordDocumentAssembler"/> class.

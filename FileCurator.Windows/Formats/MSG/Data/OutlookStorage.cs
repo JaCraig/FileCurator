@@ -112,8 +112,7 @@ namespace FileCurator.Formats.MSG
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OutlookStorage"/> class on the specified
-        /// <see cref="NativeMethods.IStorage"/>.
+        /// Initializes a new instance of the <see cref="OutlookStorage"/> class on the specified <see cref="NativeMethods.IStorage"/>.
         /// </summary>
         /// <param name="storage">The storage to create the <see cref="OutlookStorage"/> on.</param>
         private OutlookStorage(NativeMethods.IStorage storage)
@@ -243,11 +242,7 @@ namespace FileCurator.Formats.MSG
         {
             get
             {
-                if (this.parentMessage != null)
-                {
-                    return false;
-                }
-                return true;
+                return this.parentMessage == null;
             }
         }
 
@@ -298,13 +293,9 @@ namespace FileCurator.Formats.MSG
         public object GetMapiProperty(string propIdentifier)
         {
             //try get prop value from stream or storage
-            var propValue = this.GetMapiPropertyFromStreamOrStorage(propIdentifier);
+            var propValue = this.GetMapiPropertyFromStreamOrStorage(propIdentifier) ?? this.GetMapiPropertyFromPropertyStream(propIdentifier);
 
             //if not found in stream or storage try get prop value from property stream
-            if (propValue == null)
-            {
-                propValue = this.GetMapiPropertyFromPropertyStream(propIdentifier);
-            }
 
             return propValue;
         }
@@ -475,7 +466,7 @@ namespace FileCurator.Formats.MSG
             var propBytes = this.GetStreamBytes(OutlookStorage.PROPERTIES_STREAM);
 
             //iterate over property stream in 16 byte chunks starting from end of header
-            for (int i = this.propHeaderSize; i < propBytes.Length; i = i + 16)
+            for (int i = this.propHeaderSize; i < propBytes.Length; i += 16)
             {
                 //get property type located in the 1st and 2nd bytes as a unsigned short value
                 var propType = BitConverter.ToUInt16(propBytes, i);
@@ -610,10 +601,15 @@ namespace FileCurator.Formats.MSG
             /*
              * Prebuffered bytes used in RTF-compressed format (found them in RTFLIB32.LIB)
             */
-            private static byte[] COMPRESSED_RTF_PREBUF;
 
-            private static uint[] CRC32_TABLE =
-            {
+            private const string prebuf = "{\\rtf1\\ansi\\mac\\deff0\\deftab720{\\fonttbl;}" +
+                            "{\\f0\\fnil \\froman \\fswiss \\fmodern \\fscript " +
+                "\\fdecor MS Sans SerifSymbolArialTimes New RomanCourier" +
+                "{\\colortbl\\red0\\green0\\blue0\n\r\\par " +
+                "\\pard\\plain\\f0\\fs20\\b\\i\\u\\tab\\tx";
+
+            private static readonly uint[] CRC32_TABLE =
+                        {
                 0x00000000, 0x77073096, 0xEE0E612C, 0x990951BA, 0x076DC419,
                 0x706AF48F, 0xE963A535, 0x9E6495A3, 0x0EDB8832, 0x79DCB8A4,
                 0xE0D5E91E, 0x97D2D988, 0x09B64C2B, 0x7EB17CBD, 0xE7B82D07,
@@ -668,12 +664,7 @@ namespace FileCurator.Formats.MSG
                 0x2D02EF8D
             };
 
-            private static string prebuf = "{\\rtf1\\ansi\\mac\\deff0\\deftab720{\\fonttbl;}" +
-                            "{\\f0\\fnil \\froman \\fswiss \\fmodern \\fscript " +
-                "\\fdecor MS Sans SerifSymbolArialTimes New RomanCourier" +
-                "{\\colortbl\\red0\\green0\\blue0\n\r\\par " +
-                "\\pard\\plain\\f0\\fs20\\b\\i\\u\\tab\\tx";
-
+            private static byte[] COMPRESSED_RTF_PREBUF;
             /* The lookup table used in the CRC32 calculation */
             /*
              * Calculates the CRC32 of the given bytes.
@@ -780,7 +771,7 @@ namespace FileCurator.Formats.MSG
                                                          // such a buffer by pointing straight into
                                                          // the data buffer, and simulating this
                                                          // behaviour by modifying the pointers appropriately.
-                            offset = (outPos / 4096) * 4096 + offset;
+                            offset = ((outPos / 4096) * 4096) + offset;
                             if (offset >= outPos) // take from previous block
                                 offset -= 4096;
                             // note: can't use System.arraycopy, because the referenced bytes can
@@ -940,20 +931,11 @@ namespace FileCurator.Formats.MSG
                 this.propHeaderSize = OutlookStorage.PROPERTIES_STREAM_HEADER_TOP;
             }
 
-            private readonly List<Attachment> attachments = new List<Attachment>();
-
-            private readonly List<Message> messages = new List<Message>();
-
-            private List<Recipient> recipients = new List<Recipient>();
-
             /// <summary>
             /// Gets the list of attachments in the outlook message.
             /// </summary>
             /// <value>The list of attachments in the outlook message.</value>
-            public List<Attachment> Attachments
-            {
-                get { return this.attachments; }
-            }
+            public List<Attachment> Attachments { get; } = new List<Attachment>();
 
             /// <summary>
             /// Gets the body of the outlook message in RTF format.
@@ -1002,19 +984,13 @@ namespace FileCurator.Formats.MSG
             /// Gets the list of sub messages in the outlook message.
             /// </summary>
             /// <value>The list of sub messages in the outlook message.</value>
-            public List<Message> Messages
-            {
-                get { return this.messages; }
-            }
+            public List<Message> Messages { get; } = new List<Message>();
 
             /// <summary>
             /// Gets the list of recipients in the outlook message.
             /// </summary>
             /// <value>The list of recipients in the outlook message.</value>
-            public List<Recipient> Recipients
-            {
-                get { return this.recipients; }
-            }
+            public List<Recipient> Recipients { get; } = new List<Recipient>();
 
             /// <summary>
             /// Gets the subject of the outlook message.
@@ -1128,19 +1104,19 @@ namespace FileCurator.Formats.MSG
             protected override void Disposing()
             {
                 //dispose sub storages
-                foreach (OutlookStorage subMsg in this.messages)
+                foreach (OutlookStorage subMsg in this.Messages)
                 {
                     subMsg.Dispose();
                 }
 
                 //dispose sub storages
-                foreach (OutlookStorage recip in this.recipients)
+                foreach (OutlookStorage recip in this.Recipients)
                 {
                     recip.Dispose();
                 }
 
                 //dispose sub storages
-                foreach (OutlookStorage attach in this.attachments)
+                foreach (OutlookStorage attach in this.Attachments)
                 {
                     attach.Dispose();
                 }
@@ -1163,7 +1139,7 @@ namespace FileCurator.Formats.MSG
                     if (storageStat.pwcsName.StartsWith(OutlookStorage.RECIP_STORAGE_PREFIX, StringComparison.Ordinal))
                     {
                         var recipient = new Recipient(new OutlookStorage(subStorage));
-                        this.recipients.Add(recipient);
+                        this.Recipients.Add(recipient);
                     }
                     else if (storageStat.pwcsName.StartsWith(OutlookStorage.ATTACH_STORAGE_PREFIX, StringComparison.Ordinal))
                     {
@@ -1198,12 +1174,12 @@ namespace FileCurator.Formats.MSG
                     };
 
                     //add to messages list
-                    this.messages.Add(subMsg);
+                    this.Messages.Add(subMsg);
                 }
                 else
                 {
                     //add attachment to attachment list
-                    this.attachments.Add(attachment);
+                    this.Attachments.Add(attachment);
                 }
             }
         }
@@ -1339,6 +1315,7 @@ namespace FileCurator.Formats.MSG
             public const ushort PT_OBJECT = 13;
 
             /// <summary>
+            /// The pt r4
             /// </summary>
             public const ushort PT_R4 = 4;
 
@@ -1477,6 +1454,7 @@ namespace FileCurator.Formats.MSG
             private static extern IntPtr GlobalLock(IntPtr hMem);
 
             /// <summary>
+            /// STGM?
             /// </summary>
             [Flags]
             public enum STGM
@@ -1487,19 +1465,14 @@ namespace FileCurator.Formats.MSG
                 DIRECT = 0x00000000,
 
                 /// <summary>
-                /// The transacted
-                /// </summary>
-                TRANSACTED = 0x00010000,
-
-                /// <summary>
-                /// The simple
-                /// </summary>
-                SIMPLE = 0x08000000,
-
-                /// <summary>
                 /// The read
                 /// </summary>
                 READ = 0x00000000,
+
+                /// <summary>
+                /// The failifthere
+                /// </summary>
+                FAILIFTHERE = 0x00000000,
 
                 /// <summary>
                 /// The write
@@ -1512,14 +1485,9 @@ namespace FileCurator.Formats.MSG
                 READWRITE = 0x00000002,
 
                 /// <summary>
-                /// The shar e_ den y_ none
+                /// The shar e_ exclusive
                 /// </summary>
-                SHARE_DENY_NONE = 0x00000040,
-
-                /// <summary>
-                /// The shar e_ den y_ read
-                /// </summary>
-                SHARE_DENY_READ = 0x00000030,
+                SHARE_EXCLUSIVE = 0x00000010,
 
                 /// <summary>
                 /// The shar e_ den y_ write
@@ -1527,24 +1495,14 @@ namespace FileCurator.Formats.MSG
                 SHARE_DENY_WRITE = 0x00000020,
 
                 /// <summary>
-                /// The shar e_ exclusive
+                /// The shar e_ den y_ read
                 /// </summary>
-                SHARE_EXCLUSIVE = 0x00000010,
+                SHARE_DENY_READ = 0x00000030,
 
                 /// <summary>
-                /// The priority
+                /// The shar e_ den y_ none
                 /// </summary>
-                PRIORITY = 0x00040000,
-
-                /// <summary>
-                /// The deleteonrelease
-                /// </summary>
-                DELETEONRELEASE = 0x04000000,
-
-                /// <summary>
-                /// The noscratch
-                /// </summary>
-                NOSCRATCH = 0x00100000,
+                SHARE_DENY_NONE = 0x00000040,
 
                 /// <summary>
                 /// The create
@@ -1552,14 +1510,24 @@ namespace FileCurator.Formats.MSG
                 CREATE = 0x00001000,
 
                 /// <summary>
+                /// The transacted
+                /// </summary>
+                TRANSACTED = 0x00010000,
+
+                /// <summary>
                 /// The convert
                 /// </summary>
                 CONVERT = 0x00020000,
 
                 /// <summary>
-                /// The failifthere
+                /// The priority
                 /// </summary>
-                FAILIFTHERE = 0x00000000,
+                PRIORITY = 0x00040000,
+
+                /// <summary>
+                /// The noscratch
+                /// </summary>
+                NOSCRATCH = 0x00100000,
 
                 /// <summary>
                 /// The nosnapshot
@@ -1569,10 +1537,21 @@ namespace FileCurator.Formats.MSG
                 /// <summary>
                 /// The direc t_ SWMR
                 /// </summary>
-                DIRECT_SWMR = 0x00400000
+                DIRECT_SWMR = 0x00400000,
+
+                /// <summary>
+                /// The deleteonrelease
+                /// </summary>
+                DELETEONRELEASE = 0x04000000,
+
+                /// <summary>
+                /// The simple
+                /// </summary>
+                SIMPLE = 0x08000000
             }
 
             /// <summary>
+            /// Enum STATSTG
             /// </summary>
             [ComImport, Guid("0000000D-0000-0000-C000-000000000046"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
             public interface IEnumSTATSTG
@@ -1605,6 +1584,7 @@ namespace FileCurator.Formats.MSG
             }
 
             /// <summary>
+            /// ILock bytes
             /// </summary>
             [ComImport, Guid("0000000A-0000-0000-C000-000000000046"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
             public interface ILockBytes
@@ -1663,6 +1643,7 @@ namespace FileCurator.Formats.MSG
             }
 
             /// <summary>
+            /// Storage
             /// </summary>
             [ComImport, InterfaceType(ComInterfaceType.InterfaceIsIUnknown), Guid("0000000B-0000-0000-C000-000000000046")]
             public interface IStorage
@@ -1818,7 +1799,7 @@ namespace FileCurator.Formats.MSG
             {
             }
 
-            private static ReferenceManager instance = new ReferenceManager();
+            private static readonly ReferenceManager instance = new ReferenceManager();
 
             private readonly List<object> trackingObjects = new List<object>();
 

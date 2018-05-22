@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-using FileCurator.Formats.Data.BaseClasses;
 using FileCurator.Data.FixedLength.Interfaces;
+using FileCurator.Formats.Data.BaseClasses;
 using System.Collections.Generic;
 using System.Text;
 

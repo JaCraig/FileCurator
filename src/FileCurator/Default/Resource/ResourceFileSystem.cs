@@ -31,7 +31,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Regex string used to determine if the file system can handle the path
         /// </summary>
-        protected override string HandleRegexString => @"^resource://";
+        protected override string HandleRegexString => "^resource://";
 
         /// <summary>
         /// Gets the directory representation for the directory

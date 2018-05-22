@@ -60,7 +60,7 @@ namespace FileCurator
         /// <summary>
         /// Does the directory exist
         /// </summary>
-        public bool Exists => InternalDirectory != null && InternalDirectory.Exists;
+        public bool Exists => InternalDirectory?.Exists == true;
 
         /// <summary>
         /// Full path to the directory
@@ -95,7 +95,7 @@ namespace FileCurator
         /// <summary>
         /// Internal directory object
         /// </summary>
-        protected IDirectory InternalDirectory { get; private set; }
+        protected IDirectory InternalDirectory { get; }
 
         /// <summary>
         /// Determines if two directories are not equal
@@ -196,8 +196,7 @@ namespace FileCurator
         /// <returns></returns>
         public int CompareTo(object obj)
         {
-            var Temp = obj as DirectoryInfo;
-            if (Temp == null)
+            if (!(obj is DirectoryInfo Temp))
                 return 1;
             return CompareTo(Temp);
         }

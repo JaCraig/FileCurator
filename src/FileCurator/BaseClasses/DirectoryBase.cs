@@ -206,8 +206,7 @@ namespace FileCurator.BaseClasses
         /// <returns></returns>
         public int CompareTo(object obj)
         {
-            var Temp = obj as IDirectory;
-            if (Temp == null)
+            if (!(obj is IDirectory Temp))
                 return 1;
             return CompareTo(Temp);
         }

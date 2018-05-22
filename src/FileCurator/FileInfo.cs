@@ -98,13 +98,13 @@ namespace FileCurator
         /// <summary>
         /// Internal directory
         /// </summary>
-        protected IFile InternalFile { get; private set; }
+        protected IFile InternalFile { get; }
 
         /// <summary>
         /// Gets or sets the credentials.
         /// </summary>
         /// <value>The credentials.</value>
-        private Credentials Credentials { get; set; }
+        private Credentials Credentials { get; }
 
         /// <summary>
         /// Gets or sets the internal manager.
@@ -235,8 +235,7 @@ namespace FileCurator
         /// <returns></returns>
         public int CompareTo(object obj)
         {
-            var Temp = obj as FileInfo;
-            if (Temp == null)
+            if (!(obj is FileInfo Temp))
                 return 1;
             return CompareTo(Temp);
         }
@@ -320,8 +319,7 @@ namespace FileCurator
         public TFile Parse<TFile>()
             where TFile : IGenericFile
         {
-            var Format = (FormatManager.FindFormat(FullName, Credentials) as IFormat<TFile>);
-            if (Format == null)
+            if (!(FormatManager.FindFormat(FullName, Credentials) is IFormat<TFile>Format))
                 throw new ArgumentException("Could not find file format that returns the specified object type");
             using (var TempStream = new MemoryStream(ReadBinary()))
             {

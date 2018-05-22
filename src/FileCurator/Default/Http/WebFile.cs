@@ -196,12 +196,11 @@ namespace FileCurator.Default
         /// <returns>The result of the write or original content</returns>
         public override string Write(string content, FileMode mode = FileMode.Create, Encoding encoding = null)
         {
-            var Request = WebRequest.Create(InternalFile) as HttpWebRequest;
-            if (Request == null)
+            if (!(WebRequest.Create(InternalFile) is HttpWebRequest Request))
                 return "";
-            if (mode.HasFlag(FileMode.Append) || mode.HasFlag(FileMode.Open))
+            if (mode == FileMode.Append || mode == FileMode.Open)
                 Request.Method = "PUT";
-            else if (mode.HasFlag(FileMode.Create) || mode.HasFlag(FileMode.CreateNew))
+            else if (mode == FileMode.Create || mode == FileMode.CreateNew)
                 Request.Method = "POST";
             Request.ContentType = "text/xml";
             SetupData(Request, content);

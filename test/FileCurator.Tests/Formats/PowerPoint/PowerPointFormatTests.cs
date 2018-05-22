@@ -26,7 +26,7 @@ namespace FileCurator.Tests.Formats.PowerPoint
             {
                 var Result = TestObject.Read(TestFile);
                 Assert.Equal("  YAYYYAYAYAYA asdfoidpasfoasdfhjoidpasfhhf\n  Title1 Something something darkside", Result.ToString());
-                Assert.Equal(@"Title1", Result.Title);
+                Assert.Equal("Title1", Result.Title);
             }
         }
     }

@@ -1,7 +1,6 @@
 ﻿using FileCurator.Formats.RSS;
 using FileCurator.Tests.BaseClasses;
 using System.IO;
-using System.Linq;
 using Xunit;
 
 namespace FileCurator.Tests.Formats.RSS
@@ -14,7 +13,7 @@ namespace FileCurator.Tests.Formats.RSS
             var TestObject = new RSSReader();
             var Result = TestObject.Read(File.OpenRead("../../../TestData/TestRSS.rss"));
             Assert.Equal(1, Result.Count);
-            Assert.Equal(10, Result.Channels.First().Count);
+            Assert.Equal(10, Result.Channels[0].Count);
             Assert.Equal(12056, Result.Content.Length);
         }
     }

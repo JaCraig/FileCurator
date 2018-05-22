@@ -38,8 +38,8 @@ namespace FileCurator.Formats
         {
             FormatsByFileType = new ConcurrentDictionary<string, IFormat>();
             FormatsByMimeType = new ConcurrentDictionary<string, IFormat>();
-            var LocalFormats = formats.Where(x => x.GetType().GetTypeInfo().Assembly.FullName.ToUpperInvariant().Contains("FILECURATOR"));
-            var OtherFormats = formats.Where(x => !x.GetType().GetTypeInfo().Assembly.FullName.ToUpperInvariant().Contains("FILECURATOR"));
+            var LocalFormats = formats.Where(x => x.GetType().GetTypeInfo().Assembly.FullName.IndexOf("FILECURATOR", System.StringComparison.InvariantCultureIgnoreCase) >= 0);
+            var OtherFormats = formats.Where(x => !(x.GetType().GetTypeInfo().Assembly.FullName.IndexOf("FILECURATOR", System.StringComparison.InvariantCultureIgnoreCase) >= 0));
             AddFormats(OtherFormats);
             AddFormats(LocalFormats);
             DefaultFormat = new TxtFormat();
@@ -106,7 +106,7 @@ namespace FileCurator.Formats
                 if (FormatsByMimeType.ContainsKey(Key))
                     return FormatsByMimeType[Key];
             }
-            return Formats.OrderByDescending(x => x.HeaderInfo.Length).ToList().FirstOrDefault(x => x.CanRead(stream)) ?? DefaultFormat;
+            return Formats.OrderByDescending(x => x.HeaderInfo.Length).ToList().Find(x => x.CanRead(stream)) ?? DefaultFormat;
         }
 
         /// <summary>

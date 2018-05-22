@@ -48,15 +48,15 @@ namespace FileCurator.Default
             ParentDirectory = new LocalDirectory(BaseDirectory).Parent.FullName;
             if (path.StartsWith("..\\", StringComparison.OrdinalIgnoreCase))
             {
-                path = ParentDirectory + path.Remove(0, 2);
+                return ParentDirectory + path.Remove(0, 2);
             }
             else if (path.StartsWith(".\\", StringComparison.OrdinalIgnoreCase))
             {
-                path = BaseDirectory + path.Remove(0, 1);
+                return BaseDirectory + path.Remove(0, 1);
             }
             else if (path.StartsWith("~\\", StringComparison.OrdinalIgnoreCase))
             {
-                path = BaseDirectory + path.Remove(0, 1);
+                return BaseDirectory + path.Remove(0, 1);
             }
             return path;
         }

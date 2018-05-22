@@ -41,7 +41,7 @@ namespace FileCurator.BaseClasses
         /// <summary>
         /// Regex used to determine if the file system can handle the path
         /// </summary>
-        protected Regex HandleRegex { get; private set; }
+        protected Regex HandleRegex { get; }
 
         /// <summary>
         /// Regex string used to determine if the file system can handle the path

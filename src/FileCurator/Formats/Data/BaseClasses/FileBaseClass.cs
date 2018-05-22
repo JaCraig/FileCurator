@@ -141,8 +141,7 @@ namespace FileCurator.Formats.Data.BaseClasses
         /// <returns>True if they are equal, false otherwise</returns>
         public override bool Equals(object obj)
         {
-            object TempItem = obj as FormatFileType;
-            if (TempItem == null)
+            if (!(obj is FormatFileType TempItem))
                 return false;
             return Equals((FormatFileType)TempItem);
         }

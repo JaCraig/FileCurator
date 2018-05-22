@@ -96,7 +96,7 @@ namespace FileCurator.Default
         /// Gets the split path regex.
         /// </summary>
         /// <value>The split path regex.</value>
-        private static Regex SplitPathRegex => new Regex(@"^resource://(?<Assembly>[^/]*)/?", RegexOptions.IgnoreCase);
+        private static Regex SplitPathRegex => new Regex("^resource://(?<Assembly>[^/]*)/?", RegexOptions.IgnoreCase);
 
         /// <summary>
         /// Gets or sets the assembly this is from.

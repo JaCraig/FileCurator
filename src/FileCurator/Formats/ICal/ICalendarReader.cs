@@ -51,11 +51,11 @@ namespace FileCurator.Formats.ICal
                 var Value = TempMatch.Groups["Value"].Value.Trim();
                 if (Title.StartsWith("DTSTART", StringComparison.Ordinal))
                 {
-                    ReturnValue.StartTime = DateTime.Parse(Value.ToString(@"####/##/## ##:##"), CultureInfo.CurrentCulture) + ReturnValue.CurrentTimeZone.BaseUtcOffset;
+                    ReturnValue.StartTime = DateTime.Parse(Value.ToString("####/##/## ##:##"), CultureInfo.CurrentCulture) + ReturnValue.CurrentTimeZone.BaseUtcOffset;
                 }
                 else if (Title.StartsWith("DTEND", StringComparison.Ordinal))
                 {
-                    ReturnValue.EndTime = DateTime.Parse(Value.ToString(@"####/##/## ##:##"), CultureInfo.CurrentCulture) + ReturnValue.CurrentTimeZone.BaseUtcOffset;
+                    ReturnValue.EndTime = DateTime.Parse(Value.ToString("####/##/## ##:##"), CultureInfo.CurrentCulture) + ReturnValue.CurrentTimeZone.BaseUtcOffset;
                 }
                 else if (Title.StartsWith("LOCATION", StringComparison.Ordinal))
                 {

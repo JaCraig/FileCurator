@@ -77,7 +77,7 @@ namespace FileCurator.Formats.Delimited
                 Seperator = "";
                 foreach (var CurrentCell in Row.Cells)
                 {
-                    Builder.Append(Seperator).Append("\"" + CurrentCell.Content.Replace("\"", "") + "\"");
+                    Builder.Append(Seperator).Append("\"").Append(CurrentCell.Content.Replace("\"", "")).Append("\"");
                     Seperator = ",";
                 }
                 Builder.AppendLine();

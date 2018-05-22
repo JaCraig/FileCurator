@@ -67,8 +67,8 @@ namespace FileCurator.Formats.RSS.Data
         public int Count => Channels.Count;
 
         /// <summary>
-        /// Gets a value indicating whether the <see
-        /// cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
+        /// Gets a value indicating whether the
+        /// <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
         /// </summary>
         public bool IsReadOnly => Channels.IsReadOnly;
 
@@ -125,8 +125,8 @@ namespace FileCurator.Formats.RSS.Data
         /// </summary>
         /// <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
         /// <returns>
-        /// true if <paramref name="item"/> is found in the <see
-        /// cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
+        /// true if <paramref name="item"/> is found in the
+        /// <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
         /// </returns>
         public bool Contains(IChannel item)
         {
@@ -139,8 +139,8 @@ namespace FileCurator.Formats.RSS.Data
         /// </summary>
         /// <param name="array">
         /// The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements
-        /// copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The <see
-        /// cref="T:System.Array"/> must have zero-based indexing.
+        /// copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The
+        /// <see cref="T:System.Array"/> must have zero-based indexing.
         /// </param>
         /// <param name="arrayIndex">
         /// The zero-based index in <paramref name="array"/> at which copying begins.
@@ -199,9 +199,9 @@ namespace FileCurator.Formats.RSS.Data
         /// </summary>
         /// <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
         /// <returns>
-        /// true if <paramref name="item"/> was successfully removed from the <see
-        /// cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false. This method also
-        /// returns false if <paramref name="item"/> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"/>.
+        /// true if <paramref name="item"/> was successfully removed from the
+        /// <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false. This method
+        /// also returns false if <paramref name="item"/> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </returns>
         public bool Remove(IChannel item)
         {
@@ -251,7 +251,7 @@ namespace FileCurator.Formats.RSS.Data
                 {
                     Channels.Add(new Channel(Element));
                 }
-                if (Channels.Count > 0 && Channels.FirstOrDefault().Count == 0)
+                if (Channels.Count > 0 && Channels.FirstOrDefault()?.Count == 0)
                 {
                     var Items = new List<FeedItem>();
                     Nodes = Navigator.Select(".//item", NamespaceManager);
@@ -259,7 +259,7 @@ namespace FileCurator.Formats.RSS.Data
                     {
                         Items.Add(new FeedItem(Element));
                     }
-                    Channels.FirstOrDefault().Add(Items);
+                    Channels.FirstOrDefault()?.Add(Items);
                 }
             }
         }

@@ -64,7 +64,7 @@ namespace FileCurator.Formats.Data.BaseClasses
         public override string ToString()
         {
             StringBuilder Builder = new StringBuilder();
-            Builder.Append(Columns.ToString(x => x, " ") + "\n");
+            Builder.Append(Columns.ToString(x => x, " ")).Append("\n");
             Builder.Append(Rows.ToString(x => x.ToString(), "\n"));
             return Builder.ToString();
         }

@@ -234,8 +234,7 @@ namespace FileCurator.BaseClasses
         /// <returns></returns>
         public int CompareTo(object obj)
         {
-            var Temp = obj as FileBase<InternalFileType, FileType>;
-            if (Temp == null)
+            if (!(obj is FileBase<InternalFileType, FileType>Temp))
                 return 1;
             return CompareTo(Temp);
         }

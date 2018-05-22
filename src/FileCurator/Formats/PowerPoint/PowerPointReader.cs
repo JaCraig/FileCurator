@@ -129,7 +129,7 @@ namespace FileCurator.Formats.PowerPoint
         private static bool IsTitleShape(Shape shape)
         {
             var placeholderShape = shape.NonVisualShapeProperties.ApplicationNonVisualDrawingProperties.GetFirstChild<PlaceholderShape>();
-            if (placeholderShape != null && placeholderShape.Type != null && placeholderShape.Type.HasValue)
+            if (placeholderShape != null && placeholderShape.Type?.HasValue == true)
             {
                 switch ((PlaceholderValues)placeholderShape.Type)
                 {
@@ -165,7 +165,7 @@ namespace FileCurator.Formats.PowerPoint
         private string GetTitle(PresentationDocument powerPointDoc)
         {
             var presentationPart = powerPointDoc.PresentationPart;
-            if (presentationPart != null && presentationPart.Presentation != null)
+            if (presentationPart?.Presentation != null)
             {
                 // Get a Presentation object from the PresentationPart object.
                 Presentation presentation = presentationPart.Presentation;

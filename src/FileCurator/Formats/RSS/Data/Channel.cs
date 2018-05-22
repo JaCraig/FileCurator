@@ -95,7 +95,9 @@ namespace FileCurator.Formats.RSS.Data
                     PubDate = TempDate;
                 }
                 else
+                {
                     PubDate = DateTime.Now;
+                }
             }
             var Nodes = Element.Select("./category", NamespaceManager);
             foreach (XPathNavigator TempNode in Nodes)
@@ -166,8 +168,8 @@ namespace FileCurator.Formats.RSS.Data
         public string Docs { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether this <see
-        /// cref="T:FileCurator.Formats.Data.Interfaces.IChannel"/> is explicit.
+        /// Gets or sets a value indicating whether this
+        /// <see cref="T:FileCurator.Formats.Data.Interfaces.IChannel"/> is explicit.
         /// </summary>
         /// <value><c>true</c> if explicit; otherwise, <c>false</c>.</value>
         public bool Explicit { get; set; }
@@ -179,8 +181,8 @@ namespace FileCurator.Formats.RSS.Data
         public string ImageUrl { get; set; }
 
         /// <summary>
-        /// Gets a value indicating whether the <see
-        /// cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
+        /// Gets a value indicating whether the
+        /// <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
         /// </summary>
         public bool IsReadOnly => Items.IsReadOnly;
 
@@ -267,8 +269,8 @@ namespace FileCurator.Formats.RSS.Data
         /// </summary>
         /// <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
         /// <returns>
-        /// true if <paramref name="item"/> is found in the <see
-        /// cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
+        /// true if <paramref name="item"/> is found in the
+        /// <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
         /// </returns>
         public bool Contains(IFeedItem item)
         {
@@ -281,8 +283,8 @@ namespace FileCurator.Formats.RSS.Data
         /// </summary>
         /// <param name="array">
         /// The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements
-        /// copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The <see
-        /// cref="T:System.Array"/> must have zero-based indexing.
+        /// copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The
+        /// <see cref="T:System.Array"/> must have zero-based indexing.
         /// </param>
         /// <param name="arrayIndex">
         /// The zero-based index in <paramref name="array"/> at which copying begins.
@@ -341,9 +343,9 @@ namespace FileCurator.Formats.RSS.Data
         /// </summary>
         /// <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
         /// <returns>
-        /// true if <paramref name="item"/> was successfully removed from the <see
-        /// cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false. This method also
-        /// returns false if <paramref name="item"/> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"/>.
+        /// true if <paramref name="item"/> was successfully removed from the
+        /// <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false. This method
+        /// also returns false if <paramref name="item"/> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </returns>
         public bool Remove(IFeedItem item)
         {
@@ -376,7 +378,7 @@ namespace FileCurator.Formats.RSS.Data
             ChannelString.Append("<copyright>").Append(Copyright).Append("</copyright>\r\n");
             ChannelString.Append("<webMaster>").Append(WebMaster).Append("</webMaster>\r\n");
             ChannelString.Append("<pubDate>").Append(PubDate.ToString("Ddd, dd MMM yyyy HH':'mm':'ss", CultureInfo.InvariantCulture)).Append("</pubDate>\r\n");
-            ChannelString.Append("<itunes:explicit>").Append((Explicit ? "yes" : "no")).Append("</itunes:explicit>");
+            ChannelString.Append("<itunes:explicit>").Append(Explicit ? "yes" : "no").Append("</itunes:explicit>");
             ChannelString.Append("<itunes:subtitle>").Append(Utils.StripIllegalCharacters(Title)).Append("</itunes:subtitle>");
             ChannelString.Append("<itunes:summary><![CDATA[").Append(Utils.StripIllegalCharacters(Description)).Append("]]></itunes:summary>");
 

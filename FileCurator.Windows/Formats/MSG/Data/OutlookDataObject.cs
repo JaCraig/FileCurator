@@ -50,24 +50,24 @@ namespace FileCurator.Formats.MSG
         /// Holds the <see cref="System.Runtime.InteropServices.ComTypes.IDataObject"/> interface to
         /// the <see cref="System.Windows.Forms.IDataObject"/> that this class is wrapping.
         /// </summary>
-        private System.Runtime.InteropServices.ComTypes.IDataObject comUnderlyingDataObject;
+        private readonly System.Runtime.InteropServices.ComTypes.IDataObject comUnderlyingDataObject;
 
         /// <summary>
         /// Holds the <see cref="MethodInfo"/> of the "GetDataFromHGLOBLAL" method of the internal
         /// ole <see cref="System.Windows.Forms.IDataObject"/>.
         /// </summary>
-        private MethodInfo getDataFromHGLOBLALMethod;
+        private readonly MethodInfo getDataFromHGLOBLALMethod;
 
         /// <summary>
-        /// Holds the internal ole <see cref="System.Windows.Forms.IDataObject"/> to the <see
-        /// cref="System.Windows.Forms.IDataObject"/> that this class is wrapping.
+        /// Holds the internal ole <see cref="System.Windows.Forms.IDataObject"/> to the
+        /// <see cref="System.Windows.Forms.IDataObject"/> that this class is wrapping.
         /// </summary>
-        private System.Windows.Forms.IDataObject oleUnderlyingDataObject;
+        private readonly System.Windows.Forms.IDataObject oleUnderlyingDataObject;
 
         /// <summary>
         /// Holds the <see cref="System.Windows.Forms.IDataObject"/> that this class is wrapping
         /// </summary>
-        private System.Windows.Forms.IDataObject underlyingDataObject;
+        private readonly System.Windows.Forms.IDataObject underlyingDataObject;
 
         /// <summary>
         /// Retrieves the data associated with the specified class type format.
@@ -86,8 +86,8 @@ namespace FileCurator.Formats.MSG
         /// Retrieves the data associated with the specified data format.
         /// </summary>
         /// <param name="format">
-        /// The format of the data to retrieve. See <see
-        /// cref="T:System.Windows.Forms.DataFormats"></see> for predefined formats.
+        /// The format of the data to retrieve. See
+        /// <see cref="T:System.Windows.Forms.DataFormats"></see> for predefined formats.
         /// </param>
         /// <returns>The data associated with the specified format, or null.</returns>
         public object GetData(string format)
@@ -100,8 +100,8 @@ namespace FileCurator.Formats.MSG
         /// determine whether to convert the data to the format.
         /// </summary>
         /// <param name="format">
-        /// The format of the data to retrieve. See <see
-        /// cref="T:System.Windows.Forms.DataFormats"></see> for predefined formats.
+        /// The format of the data to retrieve. See
+        /// <see cref="T:System.Windows.Forms.DataFormats"></see> for predefined formats.
         /// </param>
         /// <param name="autoConvert">
         /// true to convert the data to the specified format; otherwise, false.
@@ -234,8 +234,8 @@ namespace FileCurator.Formats.MSG
         /// Retrieves the data associated with the specified data format at the specified index.
         /// </summary>
         /// <param name="format">
-        /// The format of the data to retrieve. See <see
-        /// cref="T:System.Windows.Forms.DataFormats"></see> for predefined formats.
+        /// The format of the data to retrieve. See
+        /// <see cref="T:System.Windows.Forms.DataFormats"></see> for predefined formats.
         /// </param>
         /// <param name="index">The index of the data to retrieve.</param>
         /// <returns>
@@ -352,8 +352,8 @@ namespace FileCurator.Formats.MSG
         /// to, the specified format.
         /// </summary>
         /// <param name="format">
-        /// A <see cref="T:System.Type"></see> representing the format for which to check. See <see
-        /// cref="T:System.Windows.Forms.DataFormats"></see> for predefined formats.
+        /// A <see cref="T:System.Type"></see> representing the format for which to check. See
+        /// <see cref="T:System.Windows.Forms.DataFormats"></see> for predefined formats.
         /// </param>
         /// <returns>
         /// true if data stored in this instance is associated with, or can be converted to, the
@@ -458,8 +458,8 @@ namespace FileCurator.Formats.MSG
         /// Stores the specified data and its associated format in this instance.
         /// </summary>
         /// <param name="format">
-        /// The format associated with the data. See <see
-        /// cref="T:System.Windows.Forms.DataFormats"></see> for predefined formats.
+        /// The format associated with the data. See
+        /// <see cref="T:System.Windows.Forms.DataFormats"></see> for predefined formats.
         /// </param>
         /// <param name="data">The data to store.</param>
         public void SetData(string format, object data)
@@ -472,8 +472,8 @@ namespace FileCurator.Formats.MSG
         /// value to specify whether the data can be converted to another format.
         /// </summary>
         /// <param name="format">
-        /// The format associated with the data. See <see
-        /// cref="T:System.Windows.Forms.DataFormats"></see> for predefined formats.
+        /// The format associated with the data. See
+        /// <see cref="T:System.Windows.Forms.DataFormats"></see> for predefined formats.
         /// </param>
         /// <param name="autoConvert">
         /// true to allow the data to be converted to another format; otherwise, false.
