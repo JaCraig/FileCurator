@@ -148,7 +148,7 @@ namespace FileCurator.Default
         /// Gets the split path regex.
         /// </summary>
         /// <value>The split path regex.</value>
-        private static Regex SplitPathRegex => new Regex("^resource://((?<Assembly>[^/]*)/)?(?<FileName>[^/]*)", RegexOptions.IgnoreCase);
+        private static Regex SplitPathRegex => new Regex("^resource://((?<Assembly>[^/]*)/)?(?<FileName>.*)", RegexOptions.IgnoreCase);
 
         /// <summary>
         /// Gets or sets the assembly this is from.
@@ -172,7 +172,7 @@ namespace FileCurator.Default
             get
             {
                 var Match = SplitPathRegex.Match(InternalFile).Groups["FileName"];
-                return Match.Success ? Match.Value : "";
+                return Match.Success ? Match.Value.Replace("\\", "/").Replace("/", ".") : "";
             }
         }
 
