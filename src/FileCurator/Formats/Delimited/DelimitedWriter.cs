@@ -67,7 +67,7 @@ namespace FileCurator.Formats.Delimited
             {
                 foreach (var HeaderColumn in fileTable.Columns)
                 {
-                    Builder.Append(Seperator).Append(HeaderColumn);
+                    Builder.Append(Seperator).Append("\"").Append(HeaderColumn.Replace("\"", "")).Append("\"");
                     Seperator = ",";
                 }
                 Builder.AppendLine();
