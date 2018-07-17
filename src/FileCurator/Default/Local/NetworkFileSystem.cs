@@ -29,6 +29,12 @@ namespace FileCurator.Default
         public override string Name => "Network";
 
         /// <summary>
+        /// Gets the order (lower numbers occur first).
+        /// </summary>
+        /// <value>The order.</value>
+        public override int Order => int.MaxValue;
+
+        /// <summary>
         /// Relative starter
         /// </summary>
         protected override string HandleRegexString => @"^\\";

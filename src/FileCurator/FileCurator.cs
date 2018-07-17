@@ -123,7 +123,7 @@ namespace FileCurator
         {
             if (FileSystems == null)
                 return null;
-            return FileSystems.Values.FirstOrDefault(x => x.CanHandle(path));
+            return FileSystems.Values.OrderBy(x => x.Order).FirstOrDefault(x => x.CanHandle(path));
         }
     }
 }

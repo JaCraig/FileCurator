@@ -29,6 +29,12 @@ namespace FileCurator.Default
         public override string Name => "Resource File System";
 
         /// <summary>
+        /// Gets the order (lower numbers occur first).
+        /// </summary>
+        /// <value>The order.</value>
+        public override int Order => int.MaxValue;
+
+        /// <summary>
         /// Regex string used to determine if the file system can handle the path
         /// </summary>
         protected override string HandleRegexString => "^resource://";

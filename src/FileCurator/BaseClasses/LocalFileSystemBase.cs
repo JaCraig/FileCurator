@@ -23,7 +23,8 @@ namespace FileCurator.BaseClasses
     /// <summary>
     /// Local file system base class
     /// </summary>
-    public abstract class LocalFileSystemBase : FileSystemBase, IFileSystem
+    /// <seealso cref="FileSystemBase"/>
+    public abstract class LocalFileSystemBase : FileSystemBase
     {
         /// <summary>
         /// Constructor

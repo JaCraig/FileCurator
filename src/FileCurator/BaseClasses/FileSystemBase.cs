@@ -39,6 +39,12 @@ namespace FileCurator.BaseClasses
         public abstract string Name { get; }
 
         /// <summary>
+        /// Gets the order (lower numbers occur first).
+        /// </summary>
+        /// <value>The order.</value>
+        public abstract int Order { get; }
+
+        /// <summary>
         /// Regex used to determine if the file system can handle the path
         /// </summary>
         protected Regex HandleRegex { get; }

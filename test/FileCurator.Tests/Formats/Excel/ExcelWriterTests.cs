@@ -1,4 +1,5 @@
-﻿using FileCurator.Formats.Excel;
+﻿using FileCurator.Formats.Data;
+using FileCurator.Formats.Excel;
 using FileCurator.Formats.Txt;
 using FileCurator.Tests.BaseClasses;
 using System.IO;
@@ -22,6 +23,94 @@ namespace FileCurator.Tests.Formats.Excel
             Assert.Equal("KH", ExcelWriter.Column(294));
             Assert.Equal("KI", ExcelWriter.Column(295));
             Assert.Equal("KJ", ExcelWriter.Column(296));
+        }
+
+        [Fact]
+        public void WriteAGenericTable()
+        {
+            var TestObject = new ExcelWriter();
+            var TestReader = new ExcelReader();
+            var TestTable = new GenericTable();
+            TestTable.Columns.Add("User Name");
+            TestTable.Columns.Add("Start Date");
+            TestTable.Columns.Add("End Date");
+            TestTable.Columns.Add("Employee Number");
+            TestTable.Columns.Add("Orientation Date");
+            TestTable.Columns.Add("First Name");
+            TestTable.Columns.Add("Last Name");
+            TestTable.Columns.Add("Title");
+            TestTable.Columns.Add("Middle Name");
+            TestTable.Columns.Add("Nick Name");
+            TestTable.Columns.Add("Prefix");
+            TestTable.Columns.Add("Suffix");
+            TestTable.Columns.Add("Active");
+            TestTable.Columns.Add("Date Created");
+            TestTable.Columns.Add("Date Modified");
+            TestTable.Columns.Add("ID");
+            var TempRow = new GenericRow();
+            TempRow.Cells.Add(new GenericCell("craig"));
+            TempRow.Cells.Add(new GenericCell("1/1/0001 12:00:00 AM"));
+            TempRow.Cells.Add(new GenericCell("1/1/0001 12:00:00 AM"));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell("1/1/0001 12:00:00 AM"));
+            TempRow.Cells.Add(new GenericCell("craig craig"));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell("True"));
+            TempRow.Cells.Add(new GenericCell("5/2/2018 4:00:04 PM"));
+            TempRow.Cells.Add(new GenericCell("5/2/2018 4:00:04 PM"));
+            TempRow.Cells.Add(new GenericCell("1"));
+            TestTable.Rows.Add(TempRow);
+            TempRow = new GenericRow();
+            TempRow.Cells.Add(new GenericCell("rowland"));
+            TempRow.Cells.Add(new GenericCell("1/1/0001 12:00:00 AM"));
+            TempRow.Cells.Add(new GenericCell("1/1/0001 12:00:00 AM"));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell("1/1/0001 12:00:00 AM"));
+            TempRow.Cells.Add(new GenericCell("bee"));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell("True"));
+            TempRow.Cells.Add(new GenericCell("5/2/2018 4:00:04 PM"));
+            TempRow.Cells.Add(new GenericCell("5/2/2018 4:00:04 PM"));
+            TempRow.Cells.Add(new GenericCell("2"));
+            TestTable.Rows.Add(TempRow);
+            TempRow = new GenericRow();
+            TempRow.Cells.Add(new GenericCell("system"));
+            TempRow.Cells.Add(new GenericCell("1/1/0001 12:00:00 AM"));
+            TempRow.Cells.Add(new GenericCell("1/1/0001 12:00:00 AM"));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell("1/1/0001 12:00:00 AM"));
+            TempRow.Cells.Add(new GenericCell("account"));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell(""));
+            TempRow.Cells.Add(new GenericCell("True"));
+            TempRow.Cells.Add(new GenericCell("5/2/2018 4:00:04 PM"));
+            TempRow.Cells.Add(new GenericCell("5/2/2018 4:00:04 PM"));
+            TempRow.Cells.Add(new GenericCell("3"));
+            TestTable.Rows.Add(TempRow);
+            using (var ResultFile = File.Open("./Results/WriteAGenericTable.xlsx", FileMode.OpenOrCreate))
+            {
+                Assert.True(TestObject.Write(ResultFile, TestTable));
+            }
+
+            using (var ResultFile = File.Open("./Results/WriteAGenericTable.xlsx", FileMode.OpenOrCreate))
+            {
+                var Result = TestReader.Read(ResultFile);
+                Assert.Equal(Result, TestTable);
+            }
         }
 
         [Fact]

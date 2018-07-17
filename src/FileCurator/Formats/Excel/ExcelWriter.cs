@@ -83,7 +83,7 @@ namespace FileCurator.Formats.Excel
                     if (TableFile.Columns.Count > 0)
                     {
                         headerOffset = 2;
-                        var Row = new Row { RowIndex = 0 };
+                        var Row = new Row { RowIndex = 1 };
                         for (int x = 0; x < TableFile.Columns.Count; ++x)
                         {
                             Row.AppendChild(new Cell
@@ -97,7 +97,7 @@ namespace FileCurator.Formats.Excel
                     }
                     for (int x = 0; x < TableFile.Rows.Count; ++x)
                     {
-                        var Row = new Row { RowIndex = (uint)(x + 1) };
+                        var Row = new Row { RowIndex = (uint)(x + 2) };
                         SheetData.AppendChild(Row);
                         for (int y = 0; y < TableFile.Rows[x].Cells.Count; ++y)
                         {

@@ -27,6 +27,12 @@ namespace FileCurator.Interfaces
         string Name { get; }
 
         /// <summary>
+        /// Gets the order (lower numbers occur first).
+        /// </summary>
+        /// <value>The order.</value>
+        int Order { get; }
+
+        /// <summary>
         /// Returns true if it can handle the path, false otherwise
         /// </summary>
         /// <param name="path">The path to check against</param>
