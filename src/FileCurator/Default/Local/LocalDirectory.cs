@@ -138,12 +138,12 @@ namespace FileCurator.Default
         /// <returns>List of directories under this directory</returns>
         public override IEnumerable<IDirectory> EnumerateDirectories(string searchPattern = "*", SearchOption options = SearchOption.TopDirectoryOnly)
         {
-            if (InternalDirectory != null)
+            if (!Exists)
+                yield break;
+
+            foreach (System.IO.DirectoryInfo SubDirectory in InternalDirectory.EnumerateDirectories(searchPattern, options))
             {
-                foreach (System.IO.DirectoryInfo SubDirectory in InternalDirectory.EnumerateDirectories(searchPattern, options))
-                {
-                    yield return new LocalDirectory(SubDirectory);
-                }
+                yield return new LocalDirectory(SubDirectory);
             }
         }
 
@@ -155,12 +155,11 @@ namespace FileCurator.Default
         /// <returns>List of files under this directory</returns>
         public override IEnumerable<IFile> EnumerateFiles(string searchPattern = "*", SearchOption options = SearchOption.TopDirectoryOnly)
         {
-            if (InternalDirectory != null)
+            if (!Exists)
+                yield break;
+            foreach (System.IO.FileInfo TempFile in InternalDirectory.EnumerateFiles(searchPattern, options))
             {
-                foreach (System.IO.FileInfo TempFile in InternalDirectory.EnumerateFiles(searchPattern, options))
-                {
-                    yield return new LocalFile(TempFile);
-                }
+                yield return new LocalFile(TempFile);
             }
         }
 
