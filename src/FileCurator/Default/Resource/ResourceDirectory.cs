@@ -85,7 +85,13 @@ namespace FileCurator.Default
         /// <summary>
         /// Root
         /// </summary>
-        public override IDirectory Root => this;
+        public override IDirectory Root
+        {
+            get
+            {
+                return AssemblyFrom == null ? null : new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
+            }
+        }
 
         /// <summary>
         /// Size (returns 0)
@@ -96,7 +102,7 @@ namespace FileCurator.Default
         /// Gets the split path regex.
         /// </summary>
         /// <value>The split path regex.</value>
-        private static Regex SplitPathRegex => new Regex("^resource://(?<Assembly>[^/]*)/?", RegexOptions.IgnoreCase);
+        private static Regex SplitPathRegex => new Regex("^resource://((?<Assembly>[^/]*)/)?(?<FileName>.*)", RegexOptions.IgnoreCase);
 
         /// <summary>
         /// Gets or sets the assembly this is from.
@@ -109,6 +115,19 @@ namespace FileCurator.Default
                 var AssemblyName = SplitPathRegex.Match(InternalDirectory).Groups["Assembly"].Value;
                 var Assemblies = Canister.Builder.Bootstrapper.Resolve<IEnumerable<Assembly>>();
                 return Assemblies.FirstOrDefault(x => x.GetName().Name == AssemblyName);
+            }
+        }
+
+        /// <summary>
+        /// Gets the resource.
+        /// </summary>
+        /// <value>The resource.</value>
+        private string Resource
+        {
+            get
+            {
+                var Match = SplitPathRegex.Match(InternalDirectory).Groups["FileName"];
+                return Match.Success ? Match.Value.Replace("\\", "/").Replace("/", ".") : "";
             }
         }
 
@@ -153,7 +172,7 @@ namespace FileCurator.Default
                 foreach (var TempFile in AssemblyFrom?.GetManifestResourceNames() ?? new string[0])
                 {
                     var TempResource = new ResourceFile($"resource://{AssemblyFrom.GetName().Name}/{TempFile}", Credentials);
-                    if (TempResource.FullName.StartsWith(FullName, StringComparison.Ordinal))
+                    if (TempResource.FullName.Replace($"resource://{AssemblyFrom.GetName().Name}/{AssemblyFrom.GetName().Name}.", "").StartsWith(Resource, StringComparison.Ordinal))
                     {
                         yield return TempResource;
                     }

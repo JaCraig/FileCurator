@@ -47,6 +47,12 @@ namespace FileCurator.Tests.Default
             var Temp = new ResourceDirectory("resource://FileCurator.Tests/");
             foreach (IFile File in Temp) { }
             Assert.Single(Temp.EnumerateFiles());
+            Temp = new ResourceDirectory("resource://FileCurator.Tests/Resources");
+            foreach (IFile File in Temp) { }
+            Assert.Single(Temp.EnumerateFiles());
+            Temp = new ResourceDirectory("resource://FileCurator.Tests/Resources2");
+            foreach (IFile File in Temp) { }
+            Assert.Empty(Temp.EnumerateFiles());
         }
 
         [Fact]
