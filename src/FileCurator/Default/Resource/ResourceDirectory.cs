@@ -14,6 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using BigBook;
 using FileCurator.BaseClasses;
 using FileCurator.Interfaces;
 using System;
@@ -65,7 +66,13 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName => InternalDirectory;
+        public override string FullName
+        {
+            get
+            {
+                return AssemblyFrom == null ? $"resource://{Resource}" : $"resource://{AssemblyFrom.GetName().Name}/{Resource}";
+            }
+        }
 
         /// <summary>
         /// returns now
@@ -127,7 +134,10 @@ namespace FileCurator.Default
             get
             {
                 var Match = SplitPathRegex.Match(InternalDirectory).Groups["FileName"];
-                return Match.Success ? Match.Value.Replace("\\", "/").Replace("/", ".") : "";
+                var ReturnValue = Match.Success ? Match.Value.Replace("\\", "/").Replace("/", ".") : "";
+                if (ReturnValue.EndsWith(".", StringComparison.Ordinal))
+                    return ReturnValue.Left(ReturnValue.Length - 1);
+                return ReturnValue;
             }
         }
 
@@ -172,7 +182,7 @@ namespace FileCurator.Default
                 foreach (var TempFile in AssemblyFrom?.GetManifestResourceNames() ?? new string[0])
                 {
                     var TempResource = new ResourceFile($"resource://{AssemblyFrom.GetName().Name}/{TempFile}", Credentials);
-                    if (TempResource.FullName.Replace($"resource://{AssemblyFrom.GetName().Name}/{AssemblyFrom.GetName().Name}.", "").StartsWith(Resource, StringComparison.Ordinal))
+                    if (TempResource.FullName.StartsWith(FullName, StringComparison.OrdinalIgnoreCase))//.Replace($"resource://{AssemblyFrom.GetName().Name}/{AssemblyFrom.GetName().Name}.", "").StartsWith(Resource, StringComparison.Ordinal))
                     {
                         yield return TempResource;
                     }
