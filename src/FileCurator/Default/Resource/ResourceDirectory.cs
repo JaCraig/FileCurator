@@ -137,7 +137,7 @@ namespace FileCurator.Default
         /// <returns></returns>
         public override IEnumerable<IDirectory> EnumerateDirectories(string searchPattern, SearchOption options = SearchOption.TopDirectoryOnly)
         {
-            return new List<ResourceDirectory>();
+            return Array.Empty<IDirectory>();
         }
 
         /// <summary>
@@ -148,10 +148,17 @@ namespace FileCurator.Default
         /// <returns></returns>
         public override IEnumerable<IFile> EnumerateFiles(string searchPattern = "*", SearchOption options = SearchOption.TopDirectoryOnly)
         {
-            if (AssemblyFrom == null)
-                return new List<IFile>();
-            var TempData = AssemblyFrom?.GetManifestResourceNames() ?? new string[0];
-            return TempData.Select(x => new ResourceFile(FullName + x, Credentials));
+            if (AssemblyFrom != null)
+            {
+                foreach (var TempFile in AssemblyFrom?.GetManifestResourceNames() ?? new string[0])
+                {
+                    var TempResource = new ResourceFile($"resource://{AssemblyFrom.GetName().Name}/{TempFile}", Credentials);
+                    if (TempResource.FullName.StartsWith(FullName, StringComparison.Ordinal))
+                    {
+                        yield return TempResource;
+                    }
+                }
+            }
         }
 
         /// <summary>
