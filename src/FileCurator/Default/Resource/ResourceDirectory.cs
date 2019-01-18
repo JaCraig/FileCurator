@@ -182,7 +182,7 @@ namespace FileCurator.Default
                 foreach (var TempFile in AssemblyFrom?.GetManifestResourceNames() ?? new string[0])
                 {
                     var TempResource = new ResourceFile($"resource://{AssemblyFrom.GetName().Name}/{TempFile}", Credentials);
-                    if (TempResource.FullName.StartsWith(FullName, StringComparison.OrdinalIgnoreCase))//.Replace($"resource://{AssemblyFrom.GetName().Name}/{AssemblyFrom.GetName().Name}.", "").StartsWith(Resource, StringComparison.Ordinal))
+                    if (TempResource.FullName.StartsWith(FullName, StringComparison.OrdinalIgnoreCase))
                     {
                         yield return TempResource;
                     }
