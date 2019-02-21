@@ -152,9 +152,9 @@ namespace FileCurator.BaseClasses
         /// <returns>True if they are, false otherwise</returns>
         public static bool operator ==(DirectoryBase<InternalDirectoryType, DirectoryType> directory1, IDirectory directory2)
         {
-            if ((object)directory1 == null && (object)directory2 == null)
+            if (directory1 is null && directory2 is null)
                 return true;
-            if ((object)directory1 == null || (object)directory2 == null)
+            if (directory1 is null || directory2 is null)
                 return false;
             return directory1.FullName == directory2.FullName;
         }

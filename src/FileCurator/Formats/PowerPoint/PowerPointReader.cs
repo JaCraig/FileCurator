@@ -129,7 +129,7 @@ namespace FileCurator.Formats.PowerPoint
         private static bool IsTitleShape(Shape shape)
         {
             var placeholderShape = shape.NonVisualShapeProperties.ApplicationNonVisualDrawingProperties.GetFirstChild<PlaceholderShape>();
-            if (placeholderShape != null && placeholderShape.Type?.HasValue == true)
+            if (placeholderShape?.Type?.HasValue == true)
             {
                 switch ((PlaceholderValues)placeholderShape.Type)
                 {

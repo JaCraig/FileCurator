@@ -24,8 +24,8 @@ namespace FileCurator.BaseClasses
     /// <summary>
     /// Directory base class
     /// </summary>
-    /// <typeparam name="FileType">File type</typeparam>
     /// <typeparam name="InternalFileType">Internal file type</typeparam>
+    /// <typeparam name="FileType">File type</typeparam>
     public abstract class FileBase<InternalFileType, FileType> : IFile
         where FileType : FileBase<InternalFileType, FileType>, new()
     {
@@ -182,9 +182,9 @@ namespace FileCurator.BaseClasses
         /// <returns>True if they are, false otherwise</returns>
         public static bool operator ==(FileBase<InternalFileType, FileType> file1, IFile file2)
         {
-            if ((object)file1 == null && (object)file2 == null)
+            if (file1 is null && file2 is null)
                 return true;
-            if ((object)file1 == null || (object)file2 == null)
+            if (file1 is null || file2 is null)
                 return false;
             return file1.FullName == file2.FullName;
         }
@@ -234,7 +234,7 @@ namespace FileCurator.BaseClasses
         /// <returns></returns>
         public int CompareTo(object obj)
         {
-            if (!(obj is FileBase<InternalFileType, FileType>Temp))
+            if (!(obj is FileBase<InternalFileType, FileType> Temp))
                 return 1;
             return CompareTo(Temp);
         }

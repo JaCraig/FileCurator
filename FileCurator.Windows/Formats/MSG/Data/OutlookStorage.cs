@@ -130,8 +130,6 @@ namespace FileCurator.Formats.MSG
         /// </summary>
         public Dictionary<string, System.Runtime.InteropServices.ComTypes.STATSTG> subStorageStatistics = new Dictionary<string, System.Runtime.InteropServices.ComTypes.STATSTG>();
 
-        private const int ATTACH_BY_VALUE = 1;
-
         private const int ATTACH_EMBEDDED_MSG = 5;
 
         //attachment constants

@@ -142,9 +142,9 @@ namespace FileCurator
         /// <returns>True if they are, false otherwise</returns>
         public static bool operator ==(DirectoryInfo directory1, DirectoryInfo directory2)
         {
-            if ((object)directory1 == null && (object)directory2 == null)
+            if (directory1 is null && directory2 is null)
                 return true;
-            if ((object)directory1 == null || (object)directory2 == null)
+            if (directory1 is null || directory2 is null)
                 return false;
             return directory1.FullName == directory2.FullName;
         }

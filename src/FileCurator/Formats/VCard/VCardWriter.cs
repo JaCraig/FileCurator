@@ -20,7 +20,6 @@ using FileCurator.Formats.Interfaces;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace FileCurator.Formats.VCard
 {
@@ -30,11 +29,6 @@ namespace FileCurator.Formats.VCard
     /// <seealso cref="IGenericFileWriter"/>
     public class VCardWriter : IGenericFileWriter
     {
-        /// <summary>
-        /// The strip HTML regex
-        /// </summary>
-        private static readonly Regex STRIP_HTML_REGEX = new Regex("<[^>]*>", RegexOptions.Compiled);
-
         /// <summary>
         /// Writes the file to the specified writer.
         /// </summary>

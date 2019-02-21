@@ -181,9 +181,9 @@ namespace FileCurator
         /// <returns>True if they are, false otherwise</returns>
         public static bool operator ==(FileInfo file1, FileInfo file2)
         {
-            if ((object)file1 == null && (object)file2 == null)
+            if (file1 is null && file2 is null)
                 return true;
-            if ((object)file1 == null || (object)file2 == null)
+            if (file1 is null || file2 is null)
                 return false;
             return file1.FullName == file2.FullName;
         }

@@ -21,7 +21,6 @@ using FileCurator.Formats.Data.Interfaces;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace FileCurator.Formats.Data
 {
@@ -40,11 +39,6 @@ namespace FileCurator.Formats.Data
             DirectDial = new List<IPhoneNumber>();
             Email = new List<IMailAddress>();
         }
-
-        /// <summary>
-        /// The strip HTML regex
-        /// </summary>
-        private static readonly Regex STRIP_HTML_REGEX = new Regex("<[^>]*>", RegexOptions.Compiled);
 
         /// <summary>
         /// Parsed content
@@ -166,21 +160,6 @@ namespace FileCurator.Formats.Data
                 .AppendFormat(CultureInfo.CurrentCulture, "ORG:{0}\r\n", Organization)
                 .AppendFormat(CultureInfo.CurrentCulture, "END:VCARD\r\n")
                 .ToString();
-        }
-
-        /// <summary>
-        /// Strips the HTML.
-        /// </summary>
-        /// <param name="TempHTML">The HTML.</param>
-        /// <returns></returns>
-        private static string StripHTML(string TempHTML)
-        {
-            if (string.IsNullOrEmpty(TempHTML))
-                return string.Empty;
-
-            TempHTML = STRIP_HTML_REGEX.Replace(TempHTML, string.Empty);
-            TempHTML = TempHTML.Replace("&nbsp;", " ");
-            return TempHTML.Replace("&#160;", string.Empty);
         }
     }
 }
