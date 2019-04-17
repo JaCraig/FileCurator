@@ -26,18 +26,18 @@ namespace FileCurator.Default
         /// <summary>
         /// Name of the file system
         /// </summary>
-        public override string Name => "Absolute Local";
+        public override string Name { get; } = "Absolute Local";
 
         /// <summary>
         /// Gets the order (lower numbers occur first).
         /// </summary>
         /// <value>The order.</value>
-        public override int Order => int.MaxValue;
+        public override int Order { get; } = int.MaxValue;
 
         /// <summary>
         /// Relative starter
         /// </summary>
-        protected override string HandleRegexString => @"^\w:";
+        protected override string HandleRegexString { get; } = @"^\w:";
 
         /// <summary>
         /// Gets the absolute path of the variable passed in

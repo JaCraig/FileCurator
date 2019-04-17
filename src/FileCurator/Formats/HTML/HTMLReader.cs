@@ -18,6 +18,7 @@ using BigBook;
 using FileCurator.Formats.BaseClasses;
 using FileCurator.Formats.Data;
 using FileCurator.Formats.Data.Interfaces;
+using System;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -39,7 +40,7 @@ namespace FileCurator.Formats.HTML
         /// Gets the header identifier.
         /// </summary>
         /// <value>The header identifier.</value>
-        public override byte[] HeaderIdentifier => new byte[0];
+        public override byte[] HeaderIdentifier { get; } = Array.Empty<byte>();
 
         /// <summary>
         /// Reads the specified stream.

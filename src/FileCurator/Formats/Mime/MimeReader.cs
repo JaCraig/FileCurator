@@ -35,7 +35,7 @@ namespace FileCurator.Formats.Mime
         /// Gets the header identifier.
         /// </summary>
         /// <value>The header identifier.</value>
-        public override byte[] HeaderIdentifier => new byte[] { 0x46, 0x72, 0x6F, 0x6D, 0x3A, 0x20, 0x3C };
+        public override byte[] HeaderIdentifier { get; } = new byte[] { 0x46, 0x72, 0x6F, 0x6D, 0x3A, 0x20, 0x3C };
 
         /// <summary>
         /// Reads the specified stream.

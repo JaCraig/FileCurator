@@ -36,7 +36,7 @@ namespace FileCurator.Formats.Delimited
         /// Gets the header identifier.
         /// </summary>
         /// <value>The header identifier.</value>
-        public override byte[] HeaderIdentifier => new byte[0];
+        public override byte[] HeaderIdentifier { get; } = Array.Empty<byte>();
 
         /// <summary>
         /// Reads the specified stream.

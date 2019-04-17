@@ -61,7 +61,7 @@ namespace FileCurator.Default
         /// <summary>
         /// returns true
         /// </summary>
-        public override bool Exists => true;
+        public override bool Exists { get; } = true;
 
         /// <summary>
         /// Full path
@@ -87,7 +87,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override IDirectory Parent => null;
+        public override IDirectory Parent { get; } = null;
 
         /// <summary>
         /// Root
@@ -103,13 +103,13 @@ namespace FileCurator.Default
         /// <summary>
         /// Size (returns 0)
         /// </summary>
-        public override long Size => 0;
+        public override long Size { get; } = 0;
 
         /// <summary>
         /// Gets the split path regex.
         /// </summary>
         /// <value>The split path regex.</value>
-        private static Regex SplitPathRegex => new Regex("^resource://((?<Assembly>[^/]*)/)?(?<FileName>.*)", RegexOptions.IgnoreCase);
+        private static Regex SplitPathRegex { get; } = new Regex("^resource://((?<Assembly>[^/]*)/)?(?<FileName>.*)", RegexOptions.IgnoreCase);
 
         /// <summary>
         /// Gets or sets the assembly this is from.

@@ -29,18 +29,18 @@ namespace FileCurator.Formats.Delimited
         /// Gets the content types.
         /// </summary>
         /// <value>The content types.</value>
-        public override string[] ContentTypes => new[] { "TEXT/CSV", "TEXT/TAB-SEPARATED-VALUES", "TEXT/COMMA-SEPARATED-VALUES", "APPLICATION/CSV" };
+        public override string[] ContentTypes { get; } = new[] { "TEXT/CSV", "TEXT/TAB-SEPARATED-VALUES", "TEXT/COMMA-SEPARATED-VALUES", "APPLICATION/CSV" };
 
         /// <summary>
         /// Gets the display name.
         /// </summary>
         /// <value>The display name.</value>
-        public override string DisplayName => "Delimited files";
+        public override string DisplayName { get; } = "Delimited files";
 
         /// <summary>
         /// Gets the file types.
         /// </summary>
         /// <value>The file types.</value>
-        public override string[] FileTypes => new[] { "CSV", "TSV", "TAB" };
+        public override string[] FileTypes { get; } = new[] { "CSV", "TSV", "TAB" };
     }
 }

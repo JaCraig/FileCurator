@@ -28,18 +28,18 @@ namespace FileCurator.Formats.ICal
         /// Gets the content types.
         /// </summary>
         /// <value>The content types.</value>
-        public override string[] ContentTypes => new string[] { "TEXT/CALENDAR" };
+        public override string[] ContentTypes { get; } = new string[] { "TEXT/CALENDAR" };
 
         /// <summary>
         /// Gets the display name.
         /// </summary>
         /// <value>The display name.</value>
-        public override string DisplayName => "ICal";
+        public override string DisplayName { get; } = "ICal";
 
         /// <summary>
         /// Gets the file types.
         /// </summary>
         /// <value>The file types.</value>
-        public override string[] FileTypes => new string[] { "ICS" };
+        public override string[] FileTypes { get; } = new string[] { "ICS" };
     }
 }

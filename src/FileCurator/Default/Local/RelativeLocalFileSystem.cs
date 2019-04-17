@@ -27,18 +27,18 @@ namespace FileCurator.Default
         /// <summary>
         /// Name of the file system
         /// </summary>
-        public override string Name => "Relative Local";
+        public override string Name { get; } = "Relative Local";
 
         /// <summary>
         /// Gets the order (lower numbers occur first).
         /// </summary>
         /// <value>The order.</value>
-        public override int Order => int.MaxValue;
+        public override int Order { get; } = int.MaxValue;
 
         /// <summary>
         /// Relative starter
         /// </summary>
-        protected override string HandleRegexString => @"^[~|\.]";
+        protected override string HandleRegexString { get; } = @"^[~|\.]";
 
         /// <summary>
         /// Gets the absolute path of the variable passed in

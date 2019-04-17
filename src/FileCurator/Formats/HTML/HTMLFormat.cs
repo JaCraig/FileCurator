@@ -29,18 +29,18 @@ namespace FileCurator.Formats.HTML
         /// Gets the content types.
         /// </summary>
         /// <value>The content types.</value>
-        public override string[] ContentTypes => new[] { "TEXT/HTML" };
+        public override string[] ContentTypes { get; } = new[] { "TEXT/HTML" };
 
         /// <summary>
         /// Gets or sets the display name.
         /// </summary>
         /// <value>The display name.</value>
-        public override string DisplayName => "HTML";
+        public override string DisplayName { get; } = "HTML";
 
         /// <summary>
         /// Gets or sets the file types.
         /// </summary>
         /// <value>The file types.</value>
-        public override string[] FileTypes => new[] { "HTML", "HTM", "ASPX", "PHP", "ASP" };
+        public override string[] FileTypes { get; } = new[] { "HTML", "HTM", "ASPX", "PHP", "ASP" };
     }
 }

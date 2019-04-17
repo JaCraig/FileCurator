@@ -38,7 +38,7 @@ namespace FileCurator.Formats.PowerPoint
         /// Gets the header identifier.
         /// </summary>
         /// <value>The header identifier.</value>
-        public override byte[] HeaderIdentifier => new byte[] { 0x50, 0x4B, 0x03, 0x04 };
+        public override byte[] HeaderIdentifier { get; } = new byte[] { 0x50, 0x4B, 0x03, 0x04 };
 
         /// <summary>
         /// Used to determine if a reader can actually read the file

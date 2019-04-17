@@ -29,18 +29,18 @@ namespace FileCurator.Formats.Txt
         /// Gets the content types.
         /// </summary>
         /// <value>The content types.</value>
-        public override string[] ContentTypes => new[] { "TEXT/PLAIN" };
+        public override string[] ContentTypes { get; } = new[] { "TEXT/PLAIN" };
 
         /// <summary>
         /// Gets or sets the display name.
         /// </summary>
         /// <value>The display name.</value>
-        public override string DisplayName => "Text";
+        public override string DisplayName { get; } = "Text";
 
         /// <summary>
         /// Gets or sets the file types.
         /// </summary>
         /// <value>The file types.</value>
-        public override string[] FileTypes => new[] { "TXT" };
+        public override string[] FileTypes { get; } = new[] { "TXT" };
     }
 }

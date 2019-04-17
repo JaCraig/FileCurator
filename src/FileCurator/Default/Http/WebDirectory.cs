@@ -70,7 +70,7 @@ namespace FileCurator.Default
         /// <summary>
         /// returns true
         /// </summary>
-        public override bool Exists => true;
+        public override bool Exists { get; } = true;
 
         /// <summary>
         /// Full path
@@ -100,7 +100,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Size (returns 0)
         /// </summary>
-        public override long Size => 0;
+        public override long Size { get; } = 0;
 
         /// <summary>
         /// Copies the directory to the specified parent directory

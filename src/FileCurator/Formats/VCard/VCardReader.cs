@@ -34,7 +34,7 @@ namespace FileCurator.Formats.VCard
         /// Gets the header identifier.
         /// </summary>
         /// <value>The header identifier.</value>
-        public override byte[] HeaderIdentifier => new byte[] { 0x42, 0x45, 0x47, 0x49, 0x4E, 0x3A, 0x56, 0x43, 0x41, 0x52, 0x44 };
+        public override byte[] HeaderIdentifier { get; } = new byte[] { 0x42, 0x45, 0x47, 0x49, 0x4E, 0x3A, 0x56, 0x43, 0x41, 0x52, 0x44 };
 
         /// <summary>
         /// Reads the specified stream.

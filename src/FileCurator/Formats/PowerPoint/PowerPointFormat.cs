@@ -29,18 +29,18 @@ namespace FileCurator.Formats.PowerPoint
         /// Gets the content types.
         /// </summary>
         /// <value>The content types.</value>
-        public override string[] ContentTypes => new[] { "APPLICATION/VND.MS-POWERPOINT", "APPLICATION/VND.OPENXMLFORMATS-OFFICEDOCUMENT.PRESENTATIONML.SLIDESHOW" };
+        public override string[] ContentTypes { get; } = new[] { "APPLICATION/VND.MS-POWERPOINT", "APPLICATION/VND.OPENXMLFORMATS-OFFICEDOCUMENT.PRESENTATIONML.SLIDESHOW" };
 
         /// <summary>
         /// Gets or sets the display name.
         /// </summary>
         /// <value>The display name.</value>
-        public override string DisplayName => "PowerPoint";
+        public override string DisplayName { get; } = "PowerPoint";
 
         /// <summary>
         /// Gets or sets the file types.
         /// </summary>
         /// <value>The file types.</value>
-        public override string[] FileTypes => new[] { "PPTX", "PPSX" };
+        public override string[] FileTypes { get; } = new[] { "PPTX", "PPSX" };
     }
 }

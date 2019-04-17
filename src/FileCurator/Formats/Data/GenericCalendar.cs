@@ -77,7 +77,7 @@ namespace FileCurator.Formats.Data
         /// Meta data
         /// </summary>
         /// <value>The meta.</value>
-        public string Meta => "";
+        public string Meta { get; } = "";
 
         /// <summary>
         /// Organizer

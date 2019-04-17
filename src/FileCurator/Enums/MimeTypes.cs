@@ -34,73 +34,73 @@ namespace FileCurator.Enums
         /// Gets the CSV.
         /// </summary>
         /// <value>The CSV.</value>
-        public static MimeType CSV => new MimeType("TEXT/CSV");
+        public static MimeType CSV { get; } = new MimeType("TEXT/CSV");
 
         /// <summary>
         /// Gets the excel.
         /// </summary>
         /// <value>The excel.</value>
-        public static MimeType Excel => new MimeType("APPLICATION/VND.OPENXMLFORMATS-OFFICEDOCUMENT.SPREADSHEETML.SHEET");
+        public static MimeType Excel { get; } = new MimeType("APPLICATION/VND.OPENXMLFORMATS-OFFICEDOCUMENT.SPREADSHEETML.SHEET");
 
         /// <summary>
         /// Gets the HTML.
         /// </summary>
         /// <value>The HTML.</value>
-        public static MimeType Html => new MimeType("TEXT/HTML");
+        public static MimeType Html { get; } = new MimeType("TEXT/HTML");
 
         /// <summary>
         /// Gets the i cal.
         /// </summary>
         /// <value>The i cal.</value>
-        public static MimeType ICal => new MimeType("TEXT/CALENDAR");
+        public static MimeType ICal { get; } = new MimeType("TEXT/CALENDAR");
 
         /// <summary>
         /// Gets the power point.
         /// </summary>
         /// <value>The power point.</value>
-        public static MimeType PowerPoint => new MimeType("APPLICATION/VND.MS-POWERPOINT");
+        public static MimeType PowerPoint { get; } = new MimeType("APPLICATION/VND.MS-POWERPOINT");
 
         /// <summary>
         /// Gets the RSS.
         /// </summary>
         /// <value>The RSS.</value>
-        public static MimeType RSS => new MimeType("APPLICATION/RSS+XML");
+        public static MimeType RSS { get; } = new MimeType("APPLICATION/RSS+XML");
 
         /// <summary>
         /// Gets the text.
         /// </summary>
         /// <value>The text.</value>
-        public static MimeType Text => new MimeType("TEXT/PLAIN");
+        public static MimeType Text { get; } = new MimeType("TEXT/PLAIN");
 
         /// <summary>
         /// Gets the unknown.
         /// </summary>
         /// <value>The unknown.</value>
-        public static MimeType Unknown => new MimeType("");
+        public static MimeType Unknown { get; } = new MimeType("");
 
         /// <summary>
         /// Gets the v cal.
         /// </summary>
         /// <value>The v cal.</value>
-        public static MimeType VCal => new MimeType("APPLICATION/HBS-VCS");
+        public static MimeType VCal { get; } = new MimeType("APPLICATION/HBS-VCS");
 
         /// <summary>
         /// Gets the v card.
         /// </summary>
         /// <value>The v card.</value>
-        public static MimeType VCard => new MimeType("TEXT/VCARD");
+        public static MimeType VCard { get; } = new MimeType("TEXT/VCARD");
 
         /// <summary>
         /// Gets the word.
         /// </summary>
         /// <value>The word.</value>
-        public static MimeType Word => new MimeType("APPLICATION/VND.OPENXMLFORMATS-OFFICEDOCUMENT.WORDPROCESSINGML.DOCUMENT");
+        public static MimeType Word { get; } = new MimeType("APPLICATION/VND.OPENXMLFORMATS-OFFICEDOCUMENT.WORDPROCESSINGML.DOCUMENT");
 
         /// <summary>
         /// Gets the XML.
         /// </summary>
         /// <value>The XML.</value>
-        public static MimeType XML => new MimeType("TEXT/XML");
+        public static MimeType XML { get; } = new MimeType("TEXT/XML");
 
         /// <summary>
         /// Gets the name.

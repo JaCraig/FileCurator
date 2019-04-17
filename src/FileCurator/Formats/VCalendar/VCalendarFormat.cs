@@ -29,18 +29,18 @@ namespace FileCurator.Formats.VCalendar
         /// Gets the content types.
         /// </summary>
         /// <value>The content types.</value>
-        public override string[] ContentTypes => new string[] { "APPLICATION/HBS-VCS", "TEXT/X-VCALENDAR" };
+        public override string[] ContentTypes { get; } = new string[] { "APPLICATION/HBS-VCS", "TEXT/X-VCALENDAR" };
 
         /// <summary>
         /// Gets the display name.
         /// </summary>
         /// <value>The display name.</value>
-        public override string DisplayName => "VCal";
+        public override string DisplayName { get; } = "VCal";
 
         /// <summary>
         /// Gets the file types.
         /// </summary>
         /// <value>The file types.</value>
-        public override string[] FileTypes => new string[] { "VCS" };
+        public override string[] FileTypes { get; } = new string[] { "VCS" };
     }
 }

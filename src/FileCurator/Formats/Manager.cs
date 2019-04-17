@@ -21,7 +21,6 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 
 namespace FileCurator.Formats
 {
@@ -38,8 +37,9 @@ namespace FileCurator.Formats
         {
             FormatsByFileType = new ConcurrentDictionary<string, IFormat>();
             FormatsByMimeType = new ConcurrentDictionary<string, IFormat>();
-            var LocalFormats = formats.Where(x => x.GetType().GetTypeInfo().Assembly.FullName.IndexOf("FILECURATOR", System.StringComparison.InvariantCultureIgnoreCase) >= 0);
-            var OtherFormats = formats.Where(x => !(x.GetType().GetTypeInfo().Assembly.FullName.IndexOf("FILECURATOR", System.StringComparison.InvariantCultureIgnoreCase) >= 0));
+            var ManagerAssembly = typeof(Manager).Assembly;
+            var LocalFormats = formats.Where(x => x.GetType().Assembly == ManagerAssembly);
+            var OtherFormats = formats.Where(x => x.GetType().Assembly != ManagerAssembly);
             AddFormats(OtherFormats);
             AddFormats(LocalFormats);
             DefaultFormat = new TxtFormat();

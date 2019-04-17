@@ -75,12 +75,12 @@ namespace FileCurator.Default
         /// <summary>
         /// Does it exist? Always true.
         /// </summary>
-        public override bool Exists => true;
+        public override bool Exists { get; } = true;
 
         /// <summary>
         /// Extension (always empty)
         /// </summary>
-        public override string Extension => "";
+        public override string Extension { get; } = "";
 
         /// <summary>
         /// Full path
@@ -90,7 +90,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Size of the file (always 0)
         /// </summary>
-        public override long Length => 0;
+        public override long Length { get; } = 0;
 
         /// <summary>
         /// Time modified (just returns now)

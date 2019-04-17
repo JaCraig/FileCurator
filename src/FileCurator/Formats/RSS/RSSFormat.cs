@@ -29,18 +29,18 @@ namespace FileCurator.Formats.RSS
         /// Gets the content types.
         /// </summary>
         /// <value>The content types.</value>
-        public override string[] ContentTypes => new[] { "APPLICATION/RSS+XML" };
+        public override string[] ContentTypes { get; } = new[] { "APPLICATION/RSS+XML" };
 
         /// <summary>
         /// Gets the display name.
         /// </summary>
         /// <value>The display name.</value>
-        public override string DisplayName => "RSS";
+        public override string DisplayName { get; } = "RSS";
 
         /// <summary>
         /// Gets the file types.
         /// </summary>
         /// <value>The file types.</value>
-        public override string[] FileTypes => new[] { "RSS" };
+        public override string[] FileTypes { get; } = new[] { "RSS" };
     }
 }

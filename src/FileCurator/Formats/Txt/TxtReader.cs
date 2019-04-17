@@ -18,6 +18,7 @@ using BigBook;
 using FileCurator.Formats.BaseClasses;
 using FileCurator.Formats.Data;
 using FileCurator.Formats.Data.Interfaces;
+using System;
 using System.IO;
 
 namespace FileCurator.Formats.Txt
@@ -32,7 +33,7 @@ namespace FileCurator.Formats.Txt
         /// Gets the header identifier.
         /// </summary>
         /// <value>The header identifier.</value>
-        public override byte[] HeaderIdentifier => new byte[0];
+        public override byte[] HeaderIdentifier { get; } = Array.Empty<byte>();
 
         /// <summary>
         /// Reads the specified stream.

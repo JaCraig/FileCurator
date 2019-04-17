@@ -29,18 +29,18 @@ namespace FileCurator.Formats.Excel
         /// Gets the content types.
         /// </summary>
         /// <value>The content types.</value>
-        public override string[] ContentTypes => new[] { "APPLICATION/VND.OPENXMLFORMATS-OFFICEDOCUMENT.SPREADSHEETML.SHEET" };
+        public override string[] ContentTypes { get; } = new[] { "APPLICATION/VND.OPENXMLFORMATS-OFFICEDOCUMENT.SPREADSHEETML.SHEET" };
 
         /// <summary>
         /// Gets or sets the display name.
         /// </summary>
         /// <value>The display name.</value>
-        public override string DisplayName => "Excel";
+        public override string DisplayName { get; } = "Excel";
 
         /// <summary>
         /// Gets or sets the file types.
         /// </summary>
         /// <value>The file types.</value>
-        public override string[] FileTypes => new[] { "XLSX" };
+        public override string[] FileTypes { get; } = new[] { "XLSX" };
     }
 }

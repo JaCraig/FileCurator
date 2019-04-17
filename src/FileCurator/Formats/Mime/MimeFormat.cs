@@ -29,18 +29,18 @@ namespace FileCurator.Formats.Mime
         /// Gets the content types.
         /// </summary>
         /// <value>The content types.</value>
-        public override string[] ContentTypes => new[] { "MESSAGE/RFC822" };
+        public override string[] ContentTypes { get; } = new[] { "MESSAGE/RFC822" };
 
         /// <summary>
         /// Gets or sets the display name.
         /// </summary>
         /// <value>The display name.</value>
-        public override string DisplayName => "MIME";
+        public override string DisplayName { get; } = "MIME";
 
         /// <summary>
         /// Gets or sets the file types.
         /// </summary>
         /// <value>The file types.</value>
-        public override string[] FileTypes => new[] { "EML", "MHT" };
+        public override string[] FileTypes { get; } = new[] { "EML", "MHT" };
     }
 }

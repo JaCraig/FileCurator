@@ -27,18 +27,18 @@ namespace FileCurator.Default
         /// <summary>
         /// Name of the file system
         /// </summary>
-        public override string Name => "HTTP";
+        public override string Name { get; } = "HTTP";
 
         /// <summary>
         /// Gets the order (lower numbers occur first).
         /// </summary>
         /// <value>The order.</value>
-        public override int Order => int.MaxValue;
+        public override int Order { get; } = int.MaxValue;
 
         /// <summary>
         /// Relative starter
         /// </summary>
-        protected override string HandleRegexString => @"^https?://|^www\.";
+        protected override string HandleRegexString { get; } = @"^https?://|^www\.";
 
         /// <summary>
         /// Gets the directory representation for the directory

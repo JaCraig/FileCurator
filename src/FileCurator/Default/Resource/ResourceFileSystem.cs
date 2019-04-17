@@ -26,18 +26,18 @@ namespace FileCurator.Default
         /// <summary>
         /// Name of the file system
         /// </summary>
-        public override string Name => "Resource File System";
+        public override string Name { get; } = "Resource File System";
 
         /// <summary>
         /// Gets the order (lower numbers occur first).
         /// </summary>
         /// <value>The order.</value>
-        public override int Order => int.MaxValue;
+        public override int Order { get; } = int.MaxValue;
 
         /// <summary>
         /// Regex string used to determine if the file system can handle the path
         /// </summary>
-        protected override string HandleRegexString => "^resource://";
+        protected override string HandleRegexString { get; } = "^resource://";
 
         /// <summary>
         /// Gets the directory representation for the directory
