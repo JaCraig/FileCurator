@@ -21,82 +21,97 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace FileCurator.Default
+namespace FileCurator.Default.Memory
 {
     /// <summary>
-    /// Basic local file class
+    /// Memory file
     /// </summary>
-    public class LocalFile : FileBase<System.IO.FileInfo, LocalFile>
+    /// <seealso cref="FileBase{String, MemoryFile}"/>
+    public class MemoryFile : FileBase<string, MemoryFile>
     {
         /// <summary>
-        /// Constructor
+        /// Initializes a new instance of the <see cref="MemoryFile"/> class.
         /// </summary>
-        public LocalFile()
+        public MemoryFile()
         {
         }
 
         /// <summary>
-        /// Constructor
+        /// Initializes a new instance of the <see cref="MemoryFile"/> class.
         /// </summary>
-        /// <param name="path">Path to the file</param>
-        public LocalFile(string path)
-            : base(string.IsNullOrEmpty(path) ? null : new System.IO.FileInfo(path))
+        /// <param name="path">The path.</param>
+        /// <param name="credentials">The credentials.</param>
+        public MemoryFile(string path, Credentials credentials)
+            : base(path, credentials)
         {
+            created = modified = accessed = DateTime.UtcNow;
+            fileData = Array.Empty<byte>();
         }
 
         /// <summary>
-        /// Constructor
+        /// The created
         /// </summary>
-        /// <param name="file">File to use</param>
-        public LocalFile(System.IO.FileInfo file)
-            : base(file)
-        {
-        }
+        private readonly DateTime created;
+
+        /// <summary>
+        /// The accessed
+        /// </summary>
+        private DateTime accessed;
+
+        /// <summary>
+        /// The file data
+        /// </summary>
+        private byte[] fileData;
+
+        /// <summary>
+        /// The modified
+        /// </summary>
+        private DateTime modified;
 
         /// <summary>
         /// Last time accessed (UTC time)
         /// </summary>
-        public override DateTime Accessed => InternalFile?.LastAccessTimeUtc ?? DateTime.Now;
+        public override DateTime Accessed => accessed;
 
         /// <summary>
         /// Time created (UTC time)
         /// </summary>
-        public override DateTime Created => InternalFile?.CreationTimeUtc ?? DateTime.Now;
+        public override DateTime Created => created;
 
         /// <summary>
         /// Directory the file is within
         /// </summary>
-        public override IDirectory Directory => InternalFile == null ? null : new LocalDirectory(InternalFile.Directory);
+        public override IDirectory Directory => InternalFile == null ? null : new MemoryDirectory((string)InternalFile.Left(InternalFile.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
 
         /// <summary>
         /// Does the file exist?
         /// </summary>
-        public override bool Exists => InternalFile?.Exists ?? false;
+        public override bool Exists => InternalFile != null;
 
         /// <summary>
         /// File extension
         /// </summary>
-        public override string Extension => InternalFile?.Extension ?? "";
+        public override string Extension => InternalFile.Right(InternalFile.Length - InternalFile.LastIndexOf('.'));
 
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName => InternalFile?.FullName ?? "";
+        public override string FullName => InternalFile;
 
         /// <summary>
         /// Size of the file
         /// </summary>
-        public override long Length => Exists ? InternalFile.Length : 0;
+        public override long Length => fileData.LongLength;
 
         /// <summary>
         /// Time modified (UTC time)
         /// </summary>
-        public override DateTime Modified => InternalFile?.LastWriteTimeUtc ?? DateTime.Now;
+        public override DateTime Modified => modified;
 
         /// <summary>
         /// Name of the file
         /// </summary>
-        public override string Name => InternalFile?.Name ?? "";
+        public override string Name => InternalFile;
 
         /// <summary>
         /// Copies the file to another directory
@@ -107,9 +122,8 @@ namespace FileCurator.Default
         public override IFile CopyTo(IDirectory directory, bool overwrite)
         {
             if (directory == null || !Exists)
-                return null;
-            directory.Create();
-            var File = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
+                return this;
+            var File = new FileInfo(directory.FullName + "/" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             if (!File.Exists || overwrite)
             {
                 File.Write(ReadBinary());
@@ -124,10 +138,8 @@ namespace FileCurator.Default
         /// <returns>Any response for deleting the resource (usually FTP, HTTP, etc)</returns>
         public override string Delete()
         {
-            if (!Exists)
-                return "";
-            InternalFile.Delete();
-            InternalFile.Refresh();
+            fileData = Array.Empty<byte>();
+            modified = DateTime.UtcNow;
             return "";
         }
 
@@ -135,14 +147,15 @@ namespace FileCurator.Default
         /// Moves the file to a new directory
         /// </summary>
         /// <param name="directory">Directory to move to</param>
+        /// <returns>The resulting file.</returns>
         public override IFile MoveTo(IDirectory directory)
         {
             if (directory == null || !Exists)
                 return this;
-            directory.Create();
-            InternalFile.MoveTo(directory.FullName + "\\" + Name);
-            InternalFile = new System.IO.FileInfo(directory.FullName + "\\" + Name);
-            return this;
+            var TempFile = new FileInfo(directory.FullName + "/" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
+            TempFile.Write(ReadBinary());
+            Delete();
+            return TempFile;
         }
 
         /// <summary>
@@ -151,12 +164,9 @@ namespace FileCurator.Default
         /// <returns>The file contents as a string</returns>
         public override string Read()
         {
-            if (!Exists)
+            if (fileData == null)
                 return "";
-            using (StreamReader Reader = InternalFile.OpenText())
-            {
-                return Reader.ReadToEnd();
-            }
+            return fileData.ToString(Encoding.UTF8);
         }
 
         /// <summary>
@@ -165,26 +175,23 @@ namespace FileCurator.Default
         /// <returns>The file contents as a byte array</returns>
         public override byte[] ReadBinary()
         {
-            if (!Exists)
+            if (fileData == null)
                 return Array.Empty<byte>();
-            using (FileStream Reader = InternalFile.OpenRead())
-            {
-                byte[] Buffer = new byte[Reader.Length];
-                Reader.Read(Buffer, 0, Buffer.Length);
-                return Buffer;
-            }
+            accessed = DateTime.UtcNow;
+            return (byte[])fileData.Clone();
         }
 
         /// <summary>
         /// Renames the file
         /// </summary>
         /// <param name="newName">New name for the file</param>
+        /// <returns>Renames the file.</returns>
         public override IFile Rename(string newName)
         {
             if (string.IsNullOrEmpty(newName) || !Exists)
                 return this;
-            InternalFile.MoveTo(InternalFile.DirectoryName + "\\" + newName);
-            InternalFile = new System.IO.FileInfo(InternalFile.DirectoryName + "\\" + newName);
+            modified = DateTime.UtcNow;
+            InternalFile = Directory + "/" + newName;
             return this;
         }
 
@@ -215,11 +222,18 @@ namespace FileCurator.Default
             if (content == null)
                 content = Array.Empty<byte>();
             Directory.Create();
-            using (FileStream Writer = InternalFile.Open(mode, FileAccess.Write))
+            modified = DateTime.UtcNow;
+            if (mode == FileMode.Append)
             {
-                Writer.Write(content, 0, content.Length);
+                var Result = new byte[fileData.Length + content.Length];
+                Array.Copy(fileData, Result, fileData.Length);
+                Array.Copy(content, 0, Result, fileData.Length, content.Length);
+                fileData = Result;
             }
-            InternalFile.Refresh();
+            else
+            {
+                fileData = content;
+            }
             return content;
         }
     }

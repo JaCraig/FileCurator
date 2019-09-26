@@ -120,7 +120,7 @@ namespace FileCurator
         public static implicit operator byte[] (FileInfo file)
         {
             if (file == null)
-                return new byte[0];
+                return Array.Empty<byte>();
             return file.ReadBinary();
         }
 
@@ -363,7 +363,7 @@ namespace FileCurator
         public byte[] ReadBinary()
         {
             if (InternalFile == null)
-                return new byte[0];
+                return Array.Empty<byte>();
             return InternalFile.ReadBinary();
         }
 

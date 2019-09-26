@@ -14,6 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using System;
 using System.IO;
 using System.Text;
 
@@ -105,7 +106,7 @@ namespace FileCurator.HelperMethods
         public static byte[] ToByteArray(this string input, Encoding encodingUsing = null)
         {
             encodingUsing = encodingUsing ?? Encoding.UTF8;
-            return string.IsNullOrEmpty(input) ? new byte[0] : encodingUsing.GetBytes(input);
+            return string.IsNullOrEmpty(input) ? Array.Empty<byte>() : encodingUsing.GetBytes(input);
         }
 
         /// <summary>

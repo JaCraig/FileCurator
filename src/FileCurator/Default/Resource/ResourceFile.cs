@@ -239,7 +239,7 @@ namespace FileCurator.Default
         public override byte[] ReadBinary()
         {
             if (InternalFile == null || AssemblyFrom == null)
-                return new byte[0];
+                return Array.Empty<byte>();
             using (Stream Reader = AssemblyFrom.GetManifestResourceStream(Resource))
             {
                 byte[] Buffer = new byte[1024];
@@ -285,7 +285,7 @@ namespace FileCurator.Default
         /// <returns>The result of the write or original content</returns>
         public override byte[] Write(byte[] content, FileMode mode = FileMode.Create)
         {
-            return new byte[0];
+            return Array.Empty<byte>();
         }
     }
 }

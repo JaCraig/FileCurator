@@ -121,7 +121,7 @@ namespace FileCurator.BaseClasses
         public static implicit operator byte[] (FileBase<InternalFileType, FileType> file)
         {
             if (file == null)
-                return new byte[0];
+                return Array.Empty<byte>();
             return file.ReadBinary();
         }
 

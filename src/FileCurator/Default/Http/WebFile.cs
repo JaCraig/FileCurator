@@ -174,7 +174,7 @@ namespace FileCurator.Default
         public override byte[] ReadBinary()
         {
             if (InternalFile == null)
-                return new byte[0];
+                return Array.Empty<byte>();
             return Read().ToByteArray();
         }
 
