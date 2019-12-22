@@ -57,10 +57,10 @@ namespace FileCurator.Formats.BaseClasses
             if (HeaderIdentifier.Length == 0)
                 return false;
             stream.Seek(0, SeekOrigin.Begin);
-            byte[] Buffer = new byte[HeaderIdentifier.Length];
+            var Buffer = new byte[HeaderIdentifier.Length];
             stream.Read(Buffer, 0, Buffer.Length);
             stream.Seek(0, SeekOrigin.Begin);
-            for (int x = 0; x < HeaderIdentifier.Length; ++x)
+            for (var x = 0; x < HeaderIdentifier.Length; ++x)
             {
                 if (Buffer[x] != HeaderIdentifier[x]) return false;
             }

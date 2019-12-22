@@ -62,84 +62,60 @@ namespace FileCurator.Data.FixedLength.BaseClasses
         /// <returns>The record requested</returns>
         public IField<TField> this[int index]
         {
-            get { return Fields[index]; }
-            set { Fields[index] = value; }
+            get => Fields[index];
+            set => Fields[index] = value;
         }
 
         /// <summary>
         /// Adds a Field to the file
         /// </summary>
         /// <param name="item">Field to add</param>
-        public void Add(IField<TField> item)
-        {
-            Fields.Add(item);
-        }
+        public void Add(IField<TField> item) => Fields.Add(item);
 
         /// <summary>
         /// Clears the file
         /// </summary>
-        public void Clear()
-        {
-            Fields.Clear();
-        }
+        public void Clear() => Fields.Clear();
 
         /// <summary>
         /// Determines if the file contains a Field
         /// </summary>
         /// <param name="item">Field to check for</param>
         /// <returns>True if it does, false otherwise</returns>
-        public bool Contains(IField<TField> item)
-        {
-            return Fields.Contains(item);
-        }
+        public bool Contains(IField<TField> item) => Fields.Contains(item);
 
         /// <summary>
         /// Copies the delimited file to an array
         /// </summary>
         /// <param name="array">Array to copy to</param>
         /// <param name="arrayIndex">Index to start at</param>
-        public void CopyTo(IField<TField>[] array, int arrayIndex)
-        {
-            Fields.CopyTo(array, arrayIndex);
-        }
+        public void CopyTo(IField<TField>[] array, int arrayIndex) => Fields.CopyTo(array, arrayIndex);
 
         /// <summary>
         /// Gets the enumerator for the file
         /// </summary>
         /// <returns>The enumerator for this file</returns>
-        public IEnumerator<IField<TField>> GetEnumerator()
-        {
-            return Fields.GetEnumerator();
-        }
+        public IEnumerator<IField<TField>> GetEnumerator() => Fields.GetEnumerator();
 
         /// <summary>
         /// Gets the enumerator for the file
         /// </summary>
         /// <returns>The enumerator for this file</returns>
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-        {
-            return Fields.GetEnumerator();
-        }
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => Fields.GetEnumerator();
 
         /// <summary>
         /// Index of a specific Field
         /// </summary>
         /// <param name="item">Field to search for</param>
         /// <returns>The index of a specific Field</returns>
-        public int IndexOf(IField<TField> item)
-        {
-            return Fields.IndexOf(item);
-        }
+        public int IndexOf(IField<TField> item) => Fields.IndexOf(item);
 
         /// <summary>
         /// Inserts a Field at a specific index
         /// </summary>
         /// <param name="index">Index to insert at</param>
         /// <param name="item">Field to insert</param>
-        public void Insert(int index, IField<TField> item)
-        {
-            Fields.Insert(index, item);
-        }
+        public void Insert(int index, IField<TField> item) => Fields.Insert(index, item);
 
         /// <summary>
         /// Parses the record
@@ -153,19 +129,13 @@ namespace FileCurator.Data.FixedLength.BaseClasses
         /// </summary>
         /// <param name="item">Field to remove</param>
         /// <returns>True if it is removed, false otherwise</returns>
-        public bool Remove(IField<TField> item)
-        {
-            return Fields.Remove(item);
-        }
+        public bool Remove(IField<TField> item) => Fields.Remove(item);
 
         /// <summary>
         /// Removes a Field at a specific index
         /// </summary>
         /// <param name="index">Index of the Field to remove</param>
-        public void RemoveAt(int index)
-        {
-            Fields.RemoveAt(index);
-        }
+        public void RemoveAt(int index) => Fields.RemoveAt(index);
 
         /// <summary>
         /// Converts the record to a string
@@ -174,7 +144,7 @@ namespace FileCurator.Data.FixedLength.BaseClasses
         public override string ToString()
         {
             var Builder = new StringBuilder();
-            foreach (IField<TField> Field in Fields)
+            foreach (var Field in Fields)
                 Builder.Append(Field.ToString());
             return Builder.ToString();
         }

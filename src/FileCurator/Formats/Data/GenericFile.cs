@@ -61,28 +61,19 @@ namespace FileCurator.Formats.Data
         /// </summary>
         /// <param name="other">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public override int CompareTo(GenericFile other)
-        {
-            return string.Compare(other.ToString(), ToString(), StringComparison.OrdinalIgnoreCase);
-        }
+        public override int CompareTo(GenericFile other) => string.Compare(other.ToString(), ToString(), StringComparison.OrdinalIgnoreCase);
 
         /// <summary>
         /// Determines if the objects are equal
         /// </summary>
         /// <param name="other">Other object to compare to</param>
         /// <returns>True if they are equal, false otherwise</returns>
-        public override bool Equals(GenericFile other)
-        {
-            return ToString().Equals(other.ToString(), StringComparison.OrdinalIgnoreCase);
-        }
+        public override bool Equals(GenericFile other) => ToString().Equals(other.ToString(), StringComparison.OrdinalIgnoreCase);
 
         /// <summary>
         /// Returns a <see cref="System.String"/> that represents this instance.
         /// </summary>
         /// <returns>A <see cref="System.String"/> that represents this instance.</returns>
-        public override string ToString()
-        {
-            return Content;
-        }
+        public override string ToString() => Content;
     }
 }

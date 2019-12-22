@@ -55,7 +55,7 @@ namespace FileCurator.Data.FixedLength.BaseClasses
         public override string ToString()
         {
             var Builder = new StringBuilder();
-            foreach (IRecord Record in Records)
+            foreach (var Record in Records)
                 Builder.Append(Record.ToString());
             return Builder.ToString();
         }

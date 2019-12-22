@@ -90,7 +90,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override IDirectory Parent => InternalDirectory == null ? null : new WebDirectory((string)InternalDirectory.AbsolutePath.Left(InternalDirectory.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
+        public override IDirectory Parent => InternalDirectory == null ? null : new WebDirectory(InternalDirectory.AbsolutePath.Left(InternalDirectory.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
 
         /// <summary>
         /// Root
@@ -112,7 +112,7 @@ namespace FileCurator.Default
         {
             if (directory == null)
                 return this;
-            string TempName = Name;
+            var TempName = Name;
             if (TempName == "/")
                 TempName = "index.html";
             var NewDirectory = new FileInfo(directory.FullName + "\\" + TempName.Right(TempName.Length - (TempName.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
@@ -157,10 +157,7 @@ namespace FileCurator.Default
         /// <param name="searchPattern"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public override IEnumerable<IDirectory> EnumerateDirectories(string searchPattern, SearchOption options = SearchOption.TopDirectoryOnly)
-        {
-            return new List<WebDirectory>();
-        }
+        public override IEnumerable<IDirectory> EnumerateDirectories(string searchPattern, SearchOption options = SearchOption.TopDirectoryOnly) => new List<WebDirectory>();
 
         /// <summary>
         /// Not used
@@ -168,19 +165,13 @@ namespace FileCurator.Default
         /// <param name="searchPattern"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public override IEnumerable<IFile> EnumerateFiles(string searchPattern = "*", SearchOption options = SearchOption.TopDirectoryOnly)
-        {
-            return new List<WebFile>();
-        }
+        public override IEnumerable<IFile> EnumerateFiles(string searchPattern = "*", SearchOption options = SearchOption.TopDirectoryOnly) => new List<WebFile>();
 
         /// <summary>
         /// Not used
         /// </summary>
         /// <param name="name"></param>
-        public override IDirectory Rename(string name)
-        {
-            return this;
-        }
+        public override IDirectory Rename(string name) => this;
 
         /// <summary>
         /// Sends the request to the URL specified
@@ -192,11 +183,11 @@ namespace FileCurator.Default
             if (request == null)
                 return "";
 
-            using (HttpWebResponse Response = request.GetResponseAsync().GetAwaiter().GetResult() as HttpWebResponse)
+            using (var Response = request.GetResponseAsync().GetAwaiter().GetResult() as HttpWebResponse)
             {
                 if (Response.StatusCode != HttpStatusCode.OK)
                     return "";
-                using (StreamReader Reader = new StreamReader(Response.GetResponseStream()))
+                using (var Reader = new StreamReader(Response.GetResponseStream()))
                 {
                     return Reader.ReadToEnd();
                 }
@@ -217,7 +208,7 @@ namespace FileCurator.Default
                 return;
             }
             var ByteData = data.ToByteArray();
-            using (Stream RequestStream = request.GetRequestStreamAsync().GetAwaiter().GetResult())
+            using (var RequestStream = request.GetRequestStreamAsync().GetAwaiter().GetResult())
             {
                 RequestStream.Write(ByteData, 0, ByteData.Length);
             }

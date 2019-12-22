@@ -90,7 +90,7 @@ namespace FileCurator
         public static TFile Parse<TFile>(this Stream file, MimeType mimeType)
             where TFile : IGenericFile
         {
-            if (!(InternalManager.FindFormat(file, mimeType) is IFormat<TFile>Format))
+            if (!(InternalManager.FindFormat(file, mimeType) is IFormat<TFile> Format))
                 throw new ArgumentException("Could not find file format that returns the specified object type");
             return Format.Read(file);
         }

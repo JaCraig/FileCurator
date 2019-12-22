@@ -117,7 +117,7 @@ namespace FileCurator
         /// </summary>
         /// <param name="file">File to read</param>
         /// <returns>The file as a byte array</returns>
-        public static implicit operator byte[] (FileInfo file)
+        public static implicit operator byte[](FileInfo file)
         {
             if (file == null)
                 return Array.Empty<byte>();
@@ -291,10 +291,7 @@ namespace FileCurator
         /// Gets the hash code for the file
         /// </summary>
         /// <returns>The hash code</returns>
-        public override int GetHashCode()
-        {
-            return FullName.GetHashCode();
-        }
+        public override int GetHashCode() => FullName.GetHashCode();
 
         /// <summary>
         /// Moves the file to a new directory
@@ -319,7 +316,7 @@ namespace FileCurator
         public TFile Parse<TFile>()
             where TFile : IGenericFile
         {
-            if (!(FormatManager.FindFormat(FullName, Credentials) is IFormat<TFile>Format))
+            if (!(FormatManager.FindFormat(FullName, Credentials) is IFormat<TFile> Format))
                 throw new ArgumentException("Could not find file format that returns the specified object type");
             using (var TempStream = new MemoryStream(ReadBinary()))
             {
@@ -383,10 +380,7 @@ namespace FileCurator
         /// Returns the name of the file
         /// </summary>
         /// <returns>The name of the file</returns>
-        public override string ToString()
-        {
-            return FullName;
-        }
+        public override string ToString() => FullName;
 
         /// <summary>
         /// Writes content to the file
@@ -426,7 +420,7 @@ namespace FileCurator
             var Format = FormatManager.FindFormat(FullName, Credentials);
             using (var TempStream = new MemoryStream())
             {
-                bool Success = Format.Write(TempStream, data);
+                var Success = Format.Write(TempStream, data);
                 Write(TempStream.ReadAllBinary(), mode);
                 return Success;
             }

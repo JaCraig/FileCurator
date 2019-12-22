@@ -96,7 +96,7 @@ namespace FileCurator.Formats.PowerPoint
                 // Find all the title shapes.
                 var shapes = slidePart.Slide.Descendants<Shape>().Where(IsTitleShape);
 
-                StringBuilder paragraphText = new StringBuilder();
+                var paragraphText = new StringBuilder();
 
                 foreach (var shape in shapes)
                 {
@@ -152,10 +152,7 @@ namespace FileCurator.Formats.PowerPoint
         /// </summary>
         /// <param name="powerPointDoc">The power point document.</param>
         /// <returns></returns>
-        private string GetMetaData(PresentationDocument powerPointDoc)
-        {
-            return "";
-        }
+        private string GetMetaData(PresentationDocument powerPointDoc) => "";
 
         /// <summary>
         /// Gets the title.
@@ -168,19 +165,19 @@ namespace FileCurator.Formats.PowerPoint
             if (presentationPart?.Presentation != null)
             {
                 // Get a Presentation object from the PresentationPart object.
-                Presentation presentation = presentationPart.Presentation;
+                var presentation = presentationPart.Presentation;
 
                 if (presentation.SlideIdList != null)
                 {
-                    List<string> titlesList = new List<string>();
+                    var titlesList = new List<string>();
 
                     // Get the title of each slide in the slide order.
                     foreach (var slideId in presentation.SlideIdList.Elements<SlideId>())
                     {
-                        SlidePart slidePart = presentationPart.GetPartById(slideId.RelationshipId) as SlidePart;
+                        var slidePart = presentationPart.GetPartById(slideId.RelationshipId) as SlidePart;
 
                         // Get the slide title.
-                        string title = GetSlideTitle(slidePart);
+                        var title = GetSlideTitle(slidePart);
                         if (!string.IsNullOrEmpty(title))
                             return title;
 

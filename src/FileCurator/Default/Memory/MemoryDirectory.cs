@@ -128,13 +128,7 @@ namespace FileCurator.Default.Memory
         /// <summary>
         /// Size (returns 0)
         /// </summary>
-        public override long Size
-        {
-            get
-            {
-                return Files.Sum(x => x.Length) + Directories.Sum(x => x.Size);
-            }
-        }
+        public override long Size => Files.Sum(x => x.Length) + Directories.Sum(x => x.Size);
 
         /// <summary>
         /// Not used
@@ -180,7 +174,7 @@ namespace FileCurator.Default.Memory
         {
             accessed = DateTime.UtcNow;
             searchPattern = searchPattern.Replace("*", ".*");
-            Regex SearchRegex = new Regex(searchPattern);
+            var SearchRegex = new Regex(searchPattern);
             for (int i = 0, DirectoriesCount = Directories.Count; i < DirectoriesCount; i++)
             {
                 var Directory = Directories[i];
@@ -206,7 +200,7 @@ namespace FileCurator.Default.Memory
         {
             accessed = DateTime.UtcNow;
             searchPattern = searchPattern.Replace("*", ".*");
-            Regex SearchRegex = new Regex(searchPattern);
+            var SearchRegex = new Regex(searchPattern);
             for (int i = 0, FilesCount = Files.Count; i < FilesCount; i++)
             {
                 var File = Files[i];

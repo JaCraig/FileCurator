@@ -40,9 +40,6 @@ namespace FileCurator.Formats.Txt
         /// </summary>
         /// <param name="stream">The stream.</param>
         /// <returns>The file</returns>
-        public override IGenericFile Read(Stream stream)
-        {
-            return new GenericFile(stream.ReadAll(), "", "");
-        }
+        public override IGenericFile Read(Stream stream) => new GenericFile(stream.ReadAll(), "", "");
     }
 }

@@ -222,7 +222,7 @@ namespace FileCurator.BaseClasses
             if (ReferenceEquals(InternalDirectory, null) || directory == null)
                 return this;
             directory.Create();
-            foreach (IFile TempFile in EnumerateFiles())
+            foreach (var TempFile in EnumerateFiles())
             {
                 switch (options)
                 {
@@ -249,7 +249,7 @@ namespace FileCurator.BaseClasses
                         break;
                 }
             }
-            foreach (IDirectory SubDirectory in EnumerateDirectories())
+            foreach (var SubDirectory in EnumerateDirectories())
                 SubDirectory.CopyTo(new DirectoryInfo(directory.FullName + "\\" + SubDirectory.Name.Replace("/", "").Replace("\\", ""), Credentials), options);
             return directory;
         }
@@ -278,10 +278,7 @@ namespace FileCurator.BaseClasses
         /// <param name="predicate">Predicate used to filter directories</param>
         /// <param name="options">Search options to use</param>
         /// <returns>The list of directories</returns>
-        public IEnumerable<IDirectory> EnumerateDirectories(Predicate<IDirectory> predicate, SearchOption options = SearchOption.TopDirectoryOnly)
-        {
-            return EnumerateDirectories("*", options).Where(x => predicate(x));
-        }
+        public IEnumerable<IDirectory> EnumerateDirectories(Predicate<IDirectory> predicate, SearchOption options = SearchOption.TopDirectoryOnly) => EnumerateDirectories("*", options).Where(x => predicate(x));
 
         /// <summary>
         /// Enumerates files under this directory
@@ -297,10 +294,7 @@ namespace FileCurator.BaseClasses
         /// <param name="predicate">Predicate used to filter files</param>
         /// <param name="options">Search options to use</param>
         /// <returns>The list of files</returns>
-        public IEnumerable<IFile> EnumerateFiles(Predicate<IFile> predicate, SearchOption options = SearchOption.TopDirectoryOnly)
-        {
-            return EnumerateFiles("*", options).Where(x => predicate(x));
-        }
+        public IEnumerable<IFile> EnumerateFiles(Predicate<IFile> predicate, SearchOption options = SearchOption.TopDirectoryOnly) => EnumerateFiles("*", options).Where(x => predicate(x));
 
         /// <summary>
         /// Determines if the two directories are the same
@@ -331,7 +325,7 @@ namespace FileCurator.BaseClasses
         /// <returns>The files in the directory</returns>
         public IEnumerator<IFile> GetEnumerator()
         {
-            foreach (IFile TempFile in EnumerateFiles())
+            foreach (var TempFile in EnumerateFiles())
                 yield return TempFile;
         }
 
@@ -341,7 +335,7 @@ namespace FileCurator.BaseClasses
         /// <returns>The files and directories</returns>
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            foreach (IFile TempFile in EnumerateFiles())
+            foreach (var TempFile in EnumerateFiles())
                 yield return TempFile;
         }
 
@@ -349,10 +343,7 @@ namespace FileCurator.BaseClasses
         /// Returns the hash code for the directory
         /// </summary>
         /// <returns>The hash code for the directory</returns>
-        public override int GetHashCode()
-        {
-            return FullName.GetHashCode();
-        }
+        public override int GetHashCode() => FullName.GetHashCode();
 
         /// <summary>
         /// Moves this directory under another directory
@@ -375,9 +366,6 @@ namespace FileCurator.BaseClasses
         /// Gets info for the directory
         /// </summary>
         /// <returns>The full path to the directory</returns>
-        public override string ToString()
-        {
-            return FullName;
-        }
+        public override string ToString() => FullName;
     }
 }

@@ -36,7 +36,7 @@ namespace FileCurator
             fileSystems = fileSystems ?? new List<IFileSystem>();
             FileSystems = fileSystems.Where(x => !x.GetType().Namespace.StartsWith("FILECURATOR", StringComparison.OrdinalIgnoreCase))
                                           .ToDictionary(x => x.Name);
-            foreach (IFileSystem FileSystem in fileSystems.Where(x => x.GetType()
+            foreach (var FileSystem in fileSystems.Where(x => x.GetType()
                                                                        .Namespace
                                                                        .StartsWith("FILECURATOR", StringComparison.OrdinalIgnoreCase)))
             {
@@ -55,7 +55,7 @@ namespace FileCurator
         /// </summary>
         /// <param name="name">Name of the file system</param>
         /// <returns>The file system specified</returns>
-        public IFileSystem this[string name] { get { return FileSystems[name]; } }
+        public IFileSystem this[string name] => FileSystems[name];
 
         /// <summary>
         /// Gets the directory representation for the directory
@@ -105,7 +105,7 @@ namespace FileCurator
         {
             var Builder = new StringBuilder();
             Builder.Append("File systems: ");
-            string Splitter = "";
+            var Splitter = "";
             foreach (var FileSystem in FileSystems)
             {
                 Builder.AppendFormat("{0}{1}", Splitter, FileSystem.Key);

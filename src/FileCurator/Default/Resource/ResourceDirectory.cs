@@ -66,13 +66,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName
-        {
-            get
-            {
-                return AssemblyFrom == null ? $"resource://{Resource}" : $"resource://{AssemblyFrom.GetName().Name}/{Resource}";
-            }
-        }
+        public override string FullName => AssemblyFrom == null ? $"resource://{Resource}" : $"resource://{AssemblyFrom.GetName().Name}/{Resource}";
 
         /// <summary>
         /// returns now
@@ -92,13 +86,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Root
         /// </summary>
-        public override IDirectory Root
-        {
-            get
-            {
-                return AssemblyFrom == null ? null : new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
-            }
-        }
+        public override IDirectory Root => AssemblyFrom == null ? null : new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
 
         /// <summary>
         /// Size (returns 0)
@@ -145,18 +133,12 @@ namespace FileCurator.Default
         /// Not used
         /// </summary>
         /// <returns>This</returns>
-        public override IDirectory Create()
-        {
-            return this;
-        }
+        public override IDirectory Create() => this;
 
         /// <summary>
         /// Not used
         /// </summary>
-        public override IDirectory Delete()
-        {
-            return this;
-        }
+        public override IDirectory Delete() => this;
 
         /// <summary>
         /// Not used
@@ -164,10 +146,7 @@ namespace FileCurator.Default
         /// <param name="searchPattern"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public override IEnumerable<IDirectory> EnumerateDirectories(string searchPattern, SearchOption options = SearchOption.TopDirectoryOnly)
-        {
-            return Array.Empty<IDirectory>();
-        }
+        public override IEnumerable<IDirectory> EnumerateDirectories(string searchPattern, SearchOption options = SearchOption.TopDirectoryOnly) => Array.Empty<IDirectory>();
 
         /// <summary>
         /// Not used
@@ -195,9 +174,6 @@ namespace FileCurator.Default
         /// </summary>
         /// <param name="name">The name.</param>
         /// <returns></returns>
-        public override IDirectory Rename(string name)
-        {
-            return this;
-        }
+        public override IDirectory Rename(string name) => this;
     }
 }

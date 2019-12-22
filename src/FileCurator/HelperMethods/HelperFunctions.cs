@@ -54,7 +54,7 @@ namespace FileCurator.HelperMethods
             var InvalidChars = Path.GetInvalidPathChars();
             for (int i = 0, maxLength = InvalidChars.Length; i < maxLength; i++)
             {
-                char Char = InvalidChars[i];
+                var Char = InvalidChars[i];
                 directoryName = directoryName.Replace(Char, replacementChar);
             }
 
@@ -74,7 +74,7 @@ namespace FileCurator.HelperMethods
             var InvalidChars = Path.GetInvalidFileNameChars();
             for (int i = 0, InvalidCharsLength = InvalidChars.Length; i < InvalidCharsLength; i++)
             {
-                char Char = InvalidChars[i];
+                var Char = InvalidChars[i];
                 fileName = fileName.Replace(Char, replacementChar);
             }
 

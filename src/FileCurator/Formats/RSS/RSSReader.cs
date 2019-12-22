@@ -39,9 +39,6 @@ namespace FileCurator.Formats.RSS
         /// </summary>
         /// <param name="stream">The stream.</param>
         /// <returns>The file</returns>
-        public override IFeed Read(Stream stream)
-        {
-            return new Feed(stream.ReadAll());
-        }
+        public override IFeed Read(Stream stream) => new Feed(stream.ReadAll());
     }
 }

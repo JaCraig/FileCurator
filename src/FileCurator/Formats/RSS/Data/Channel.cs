@@ -90,7 +90,7 @@ namespace FileCurator.Formats.RSS.Data
             Node = Element.SelectSingleNode("./pubDate", NamespaceManager);
             if (Node != null)
             {
-                if (DateTime.TryParse(Node.Value.Replace("PDT", "-0700"), out DateTime TempDate))
+                if (DateTime.TryParse(Node.Value.Replace("PDT", "-0700"), out var TempDate))
                 {
                     PubDate = TempDate;
                 }
@@ -236,32 +236,20 @@ namespace FileCurator.Formats.RSS.Data
         /// <returns></returns>
         public IFeedItem this[int index]
         {
-            get
-            {
-                return Items[index];
-            }
-            set
-            {
-                Items[index] = value;
-            }
+            get => Items[index];
+            set => Items[index] = value;
         }
 
         /// <summary>
         /// Adds an item to the <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </summary>
         /// <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
-        public void Add(IFeedItem item)
-        {
-            Items.Add(item);
-        }
+        public void Add(IFeedItem item) => Items.Add(item);
 
         /// <summary>
         /// Removes all items from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </summary>
-        public void Clear()
-        {
-            Items.Clear();
-        }
+        public void Clear() => Items.Clear();
 
         /// <summary>
         /// Determines whether the <see cref="T:System.Collections.Generic.ICollection`1"/> contains
@@ -272,10 +260,7 @@ namespace FileCurator.Formats.RSS.Data
         /// true if <paramref name="item"/> is found in the
         /// <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
         /// </returns>
-        public bool Contains(IFeedItem item)
-        {
-            return Items.Contains(item);
-        }
+        public bool Contains(IFeedItem item) => Items.Contains(item);
 
         /// <summary>
         /// Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"/> to an
@@ -289,19 +274,13 @@ namespace FileCurator.Formats.RSS.Data
         /// <param name="arrayIndex">
         /// The zero-based index in <paramref name="array"/> at which copying begins.
         /// </param>
-        public void CopyTo(IFeedItem[] array, int arrayIndex)
-        {
-            Items.CopyTo(array, arrayIndex);
-        }
+        public void CopyTo(IFeedItem[] array, int arrayIndex) => Items.CopyTo(array, arrayIndex);
 
         /// <summary>
         /// Returns an enumerator that iterates through the collection.
         /// </summary>
         /// <returns>An enumerator that can be used to iterate through the collection.</returns>
-        public IEnumerator<IFeedItem> GetEnumerator()
-        {
-            return Items.GetEnumerator();
-        }
+        public IEnumerator<IFeedItem> GetEnumerator() => Items.GetEnumerator();
 
         /// <summary>
         /// Returns an enumerator that iterates through a collection.
@@ -310,20 +289,14 @@ namespace FileCurator.Formats.RSS.Data
         /// An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate
         /// through the collection.
         /// </returns>
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
         /// <summary>
         /// Determines the index of a specific item in the <see cref="T:System.Collections.Generic.IList`1"/>.
         /// </summary>
         /// <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.IList`1"/>.</param>
         /// <returns>The index of <paramref name="item"/> if found in the list; otherwise, -1.</returns>
-        public int IndexOf(IFeedItem item)
-        {
-            return Items.IndexOf(item);
-        }
+        public int IndexOf(IFeedItem item) => Items.IndexOf(item);
 
         /// <summary>
         /// Inserts an item to the <see cref="T:System.Collections.Generic.IList`1"/> at the
@@ -333,10 +306,7 @@ namespace FileCurator.Formats.RSS.Data
         /// The zero-based index at which <paramref name="item"/> should be inserted.
         /// </param>
         /// <param name="item">The object to insert into the <see cref="T:System.Collections.Generic.IList`1"/>.</param>
-        public void Insert(int index, IFeedItem item)
-        {
-            Items.Insert(index, item);
-        }
+        public void Insert(int index, IFeedItem item) => Items.Insert(index, item);
 
         /// <summary>
         /// Removes the first occurrence of a specific object from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
@@ -347,19 +317,13 @@ namespace FileCurator.Formats.RSS.Data
         /// <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false. This method
         /// also returns false if <paramref name="item"/> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </returns>
-        public bool Remove(IFeedItem item)
-        {
-            return Items.Remove(item);
-        }
+        public bool Remove(IFeedItem item) => Items.Remove(item);
 
         /// <summary>
         /// Removes the <see cref="T:System.Collections.Generic.IList`1"/> item at the specified index.
         /// </summary>
         /// <param name="index">The zero-based index of the item to remove.</param>
-        public void RemoveAt(int index)
-        {
-            Items.RemoveAt(index);
-        }
+        public void RemoveAt(int index) => Items.RemoveAt(index);
 
         /// <summary>
         /// Converts the channel to a string
@@ -382,7 +346,7 @@ namespace FileCurator.Formats.RSS.Data
             ChannelString.Append("<itunes:subtitle>").Append(Utils.StripIllegalCharacters(Title)).Append("</itunes:subtitle>");
             ChannelString.Append("<itunes:summary><![CDATA[").Append(Utils.StripIllegalCharacters(Description)).Append("]]></itunes:summary>");
 
-            foreach (string Category in Categories)
+            foreach (var Category in Categories)
             {
                 ChannelString.Append("<category>").Append(Category).Append("</category>\r\n");
                 ChannelString.Append("<itunes:category text=\"").Append(Category).Append("\" />\r\n");

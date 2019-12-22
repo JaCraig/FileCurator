@@ -80,13 +80,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Directory base path
         /// </summary>
-        public override IDirectory Directory
-        {
-            get
-            {
-                return AssemblyFrom == null ? null : new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
-            }
-        }
+        public override IDirectory Directory => AssemblyFrom == null ? null : new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
 
         /// <summary>
         /// Does it exist? Always true.
@@ -101,13 +95,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName
-        {
-            get
-            {
-                return AssemblyFrom == null ? $"resource://{Resource}" : $"resource://{AssemblyFrom.GetName().Name}/{Resource}";
-            }
-        }
+        public override string FullName => AssemblyFrom == null ? $"resource://{Resource}" : $"resource://{AssemblyFrom.GetName().Name}/{Resource}";
 
         /// <summary>
         /// Size of the file
@@ -118,7 +106,7 @@ namespace FileCurator.Default
             {
                 if (AssemblyFrom == null)
                     return 0;
-                using (Stream TempStream = AssemblyFrom.GetManifestResourceStream(Resource))
+                using (var TempStream = AssemblyFrom.GetManifestResourceStream(Resource))
                 {
                     return TempStream.Length;
                 }
@@ -154,14 +142,8 @@ namespace FileCurator.Default
         /// Gets or sets the assembly this is from.
         /// </summary>
         /// <value>The assembly this is from.</value>
-        private Assembly AssemblyFrom
-        {
-            get
-            {
-                return Canister.Builder.Bootstrapper.Resolve<IEnumerable<Assembly>>()
+        private Assembly AssemblyFrom => Canister.Builder.Bootstrapper.Resolve<IEnumerable<Assembly>>()
                                                     .FirstOrDefault(x => x.GetName().Name == SplitPathRegex.Match(InternalFile).Groups["Assembly"].Value);
-            }
-        }
 
         /// <summary>
         /// Gets or sets the resource.
@@ -199,10 +181,7 @@ namespace FileCurator.Default
         /// Delete (does nothing)
         /// </summary>
         /// <returns>Any response for deleting the resource (usually FTP, HTTP, etc)</returns>
-        public override string Delete()
-        {
-            return "";
-        }
+        public override string Delete() => "";
 
         /// <summary>
         /// Moves the file (not used)
@@ -226,7 +205,7 @@ namespace FileCurator.Default
         {
             if (InternalFile == null || AssemblyFrom == null)
                 return "";
-            using (StreamReader TempStream = new StreamReader(AssemblyFrom.GetManifestResourceStream(Resource)))
+            using (var TempStream = new StreamReader(AssemblyFrom.GetManifestResourceStream(Resource)))
             {
                 return TempStream.ReadToEnd();
             }
@@ -240,10 +219,10 @@ namespace FileCurator.Default
         {
             if (InternalFile == null || AssemblyFrom == null)
                 return Array.Empty<byte>();
-            using (Stream Reader = AssemblyFrom.GetManifestResourceStream(Resource))
+            using (var Reader = AssemblyFrom.GetManifestResourceStream(Resource))
             {
-                byte[] Buffer = new byte[1024];
-                using (MemoryStream Temp = new MemoryStream())
+                var Buffer = new byte[1024];
+                using (var Temp = new MemoryStream())
                 {
                     while (true)
                     {
@@ -260,10 +239,7 @@ namespace FileCurator.Default
         /// Renames the file (not used)
         /// </summary>
         /// <param name="newName">Not used</param>
-        public override IFile Rename(string newName)
-        {
-            return this;
-        }
+        public override IFile Rename(string newName) => this;
 
         /// <summary>
         /// Not used
@@ -272,10 +248,7 @@ namespace FileCurator.Default
         /// <param name="mode">Not used</param>
         /// <param name="encoding">Not used</param>
         /// <returns>The result of the write or original content</returns>
-        public override string Write(string content, FileMode mode = FileMode.Create, Encoding encoding = null)
-        {
-            return "";
-        }
+        public override string Write(string content, FileMode mode = FileMode.Create, Encoding encoding = null) => "";
 
         /// <summary>
         /// Not used
@@ -283,9 +256,6 @@ namespace FileCurator.Default
         /// <param name="content">Not used</param>
         /// <param name="mode">Not used</param>
         /// <returns>The result of the write or original content</returns>
-        public override byte[] Write(byte[] content, FileMode mode = FileMode.Create)
-        {
-            return Array.Empty<byte>();
-        }
+        public override byte[] Write(byte[] content, FileMode mode = FileMode.Create) => Array.Empty<byte>();
     }
 }

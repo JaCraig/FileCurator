@@ -44,7 +44,7 @@ namespace FileCurator.Formats.VCard
         public override ICard Read(Stream stream)
         {
             var ReturnValue = new GenericCard();
-            string Content = stream.ReadAll();
+            var Content = stream.ReadAll();
             foreach (Match TempMatch in Regex.Matches(Content, "(?<Title>[^:]+):(?<Value>.*)"))
             {
                 var Title = TempMatch.Groups["Title"].Value.ToUpperInvariant().Trim();

@@ -135,11 +135,11 @@ namespace FileCurator.Formats.Excel
             Array.Reverse(ColLetters);
 
             var ConvertedValue = 0;
-            for (int i = 0; i < ColLetters.Length; i++)
+            for (var i = 0; i < ColLetters.Length; i++)
             {
-                char Letter = ColLetters[i];
+                var Letter = ColLetters[i];
                 // ASCII 'A' = 65
-                int Current = i == 0 ? Letter - 65 : Letter - 64;
+                var Current = i == 0 ? Letter - 65 : Letter - 64;
                 ConvertedValue += Current * (int)Math.Pow(26, i);
             }
 
@@ -166,8 +166,8 @@ namespace FileCurator.Formats.Excel
         /// <returns>The individual cell.</returns>
         private IEnumerator<Cell> GetExcelCellEnumerator(Row row)
         {
-            int CurrentCount = 0;
-            foreach (Cell CurrentCell in row.Descendants<Cell>())
+            var CurrentCount = 0;
+            foreach (var CurrentCell in row.Descendants<Cell>())
             {
                 var ColumnName = GetColumnName(CurrentCell.CellReference);
 

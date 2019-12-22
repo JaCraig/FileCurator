@@ -75,50 +75,35 @@ namespace FileCurator.Formats.BaseClasses
         /// </summary>
         /// <param name="fileName">Name of the file.</param>
         /// <returns>True if it can, false otherwise</returns>
-        public bool CanRead(string fileName)
-        {
-            return FileTypes.Any(x => fileName.EndsWith(x, System.StringComparison.Ordinal));
-        }
+        public bool CanRead(string fileName) => FileTypes.Any(x => fileName.EndsWith(x, System.StringComparison.Ordinal));
 
         /// <summary>
         /// Determines whether this instance can decode the specified stream.
         /// </summary>
         /// <param name="stream">The stream.</param>
         /// <returns>True if it can, false otherwise</returns>
-        public bool CanRead(Stream stream)
-        {
-            return Reader.CanRead(stream);
-        }
+        public bool CanRead(Stream stream) => Reader.CanRead(stream);
 
         /// <summary>
         /// Determines whether this instance can encode the specified file name.
         /// </summary>
         /// <param name="fileName">Name of the file.</param>
         /// <returns>True if it can, false otherwise</returns>
-        public bool CanWrite(string fileName)
-        {
-            return FileTypes.Any(x => fileName.EndsWith(x, System.StringComparison.Ordinal));
-        }
+        public bool CanWrite(string fileName) => FileTypes.Any(x => fileName.EndsWith(x, System.StringComparison.Ordinal));
 
         /// <summary>
         /// Parses the specified stream.
         /// </summary>
         /// <param name="stream">The stream.</param>
         /// <returns>The resulting file content.</returns>
-        public TFile Read(Stream stream)
-        {
-            return Reader.Read(stream);
-        }
+        public TFile Read(Stream stream) => Reader.Read(stream);
 
         /// <summary>
         /// Reads the base.
         /// </summary>
         /// <param name="stream">The stream.</param>
         /// <returns>Returns an IGenericFile version of the doc.</returns>
-        public IGenericFile ReadBase(Stream stream)
-        {
-            return Read(stream);
-        }
+        public IGenericFile ReadBase(Stream stream) => Read(stream);
 
         /// <summary>
         /// Writes the file to the specified writer.
@@ -126,9 +111,6 @@ namespace FileCurator.Formats.BaseClasses
         /// <param name="writer">The writer.</param>
         /// <param name="file">The file.</param>
         /// <returns>True if it writes successfully, false otherwise.</returns>
-        public bool Write(Stream writer, IGenericFile file)
-        {
-            return Writer.Write(writer, file);
-        }
+        public bool Write(Stream writer, IGenericFile file) => Writer.Write(writer, file);
     }
 }

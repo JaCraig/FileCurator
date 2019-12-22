@@ -118,7 +118,7 @@ namespace FileCurator.BaseClasses
         /// </summary>
         /// <param name="file">File to read</param>
         /// <returns>The file as a byte array</returns>
-        public static implicit operator byte[] (FileBase<InternalFileType, FileType> file)
+        public static implicit operator byte[](FileBase<InternalFileType, FileType> file)
         {
             if (file == null)
                 return Array.Empty<byte>();
@@ -280,10 +280,7 @@ namespace FileCurator.BaseClasses
         /// Gets the hash code for the file
         /// </summary>
         /// <returns>The hash code</returns>
-        public override int GetHashCode()
-        {
-            return FullName.GetHashCode();
-        }
+        public override int GetHashCode() => FullName.GetHashCode();
 
         /// <summary>
         /// Moves the file to a new directory
@@ -313,10 +310,7 @@ namespace FileCurator.BaseClasses
         /// Returns the name of the file
         /// </summary>
         /// <returns>The name of the file</returns>
-        public override string ToString()
-        {
-            return FullName;
-        }
+        public override string ToString() => FullName;
 
         /// <summary>
         /// Writes content to the file

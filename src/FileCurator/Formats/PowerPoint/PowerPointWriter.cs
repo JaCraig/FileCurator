@@ -32,9 +32,6 @@ namespace FileCurator.Formats.PowerPoint
         /// <param name="writer">The writer.</param>
         /// <param name="file">The file.</param>
         /// <returns>True if it writes successfully, false otherwise.</returns>
-        public bool Write(Stream writer, IGenericFile file)
-        {
-            return false;
-        }
+        public bool Write(Stream writer, IGenericFile file) => false;
     }
 }

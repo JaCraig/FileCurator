@@ -37,14 +37,14 @@ namespace FileCurator.Formats.Excel
         /// <returns>The column name</returns>
         public static string Column(int column)
         {
-            string ColumnLetter = "";
-            int Mod = 0;
+            var ColumnLetter = "";
+            var Mod = 0;
 
             while (column > 0)
             {
                 Mod = (column - 1) % 26;
                 ColumnLetter = (char)(65 + Mod) + ColumnLetter;
-                column = (int)((column - Mod) / 26);
+                column = (column - Mod) / 26;
             }
             return ColumnLetter;
         }
@@ -63,9 +63,9 @@ namespace FileCurator.Formats.Excel
                 Document.AddWorkbookPart();
                 Document.WorkbookPart.Workbook = new Workbook();
                 Document.WorkbookPart.Workbook.AppendChild(new Sheets());
-                WorksheetPart WorksheetPart = InsertSheetInWorksheet(Document.WorkbookPart);
-                Worksheet Worksheet = WorksheetPart.Worksheet;
-                SheetData SheetData = Worksheet.GetFirstChild<SheetData>();
+                var WorksheetPart = InsertSheetInWorksheet(Document.WorkbookPart);
+                var Worksheet = WorksheetPart.Worksheet;
+                var SheetData = Worksheet.GetFirstChild<SheetData>();
                 if (TableFile == null)
                 {
                     var Row = new Row { RowIndex = 1 };
@@ -79,12 +79,12 @@ namespace FileCurator.Formats.Excel
                 }
                 else
                 {
-                    int headerOffset = 1;
+                    var headerOffset = 1;
                     if (TableFile.Columns.Count > 0)
                     {
                         headerOffset = 2;
                         var Row = new Row { RowIndex = 1 };
-                        for (int x = 0; x < TableFile.Columns.Count; ++x)
+                        for (var x = 0; x < TableFile.Columns.Count; ++x)
                         {
                             Row.AppendChild(new Cell
                             {
@@ -95,11 +95,11 @@ namespace FileCurator.Formats.Excel
                         }
                         SheetData.AppendChild(Row);
                     }
-                    for (int x = 0; x < TableFile.Rows.Count; ++x)
+                    for (var x = 0; x < TableFile.Rows.Count; ++x)
                     {
                         var Row = new Row { RowIndex = (uint)(x + 2) };
                         SheetData.AppendChild(Row);
-                        for (int y = 0; y < TableFile.Rows[x].Cells.Count; ++y)
+                        for (var y = 0; y < TableFile.Rows[x].Cells.Count; ++y)
                         {
                             Row.AppendChild(new Cell
                             {
@@ -122,12 +122,12 @@ namespace FileCurator.Formats.Excel
         private WorksheetPart InsertSheetInWorksheet(WorkbookPart workbookPart)
         {
             // Add a new worksheet part to the workbook.
-            WorksheetPart newWorksheetPart = workbookPart.AddNewPart<WorksheetPart>();
+            var newWorksheetPart = workbookPart.AddNewPart<WorksheetPart>();
             newWorksheetPart.Worksheet = new Worksheet(new SheetData());
             newWorksheetPart.Worksheet.Save();
 
-            Sheets sheets = workbookPart.Workbook.GetFirstChild<Sheets>();
-            string relationshipId = workbookPart.GetIdOfPart(newWorksheetPart);
+            var sheets = workbookPart.Workbook.GetFirstChild<Sheets>();
+            var relationshipId = workbookPart.GetIdOfPart(newWorksheetPart);
 
             // Get a unique ID for the new sheet.
             uint sheetId = 1;
@@ -136,10 +136,10 @@ namespace FileCurator.Formats.Excel
                 sheetId = sheets.Elements<Sheet>().Select(s => s.SheetId.Value).Max() + 1;
             }
 
-            string sheetName = "Sheet" + sheetId;
+            var sheetName = "Sheet" + sheetId;
 
             // Append the new worksheet and associate it with the workbook.
-            Sheet sheet = new Sheet() { Id = relationshipId, SheetId = sheetId, Name = sheetName };
+            var sheet = new Sheet() { Id = relationshipId, SheetId = sheetId, Name = sheetName };
             sheets.Append(sheet);
             workbookPart.Workbook.Save();
 

@@ -70,7 +70,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Directory base path
         /// </summary>
-        public override IDirectory Directory => InternalFile == null ? null : new WebDirectory((string)InternalFile.AbsolutePath.Left(InternalFile.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
+        public override IDirectory Directory => InternalFile == null ? null : new WebDirectory(InternalFile.AbsolutePath.Left(InternalFile.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
 
         /// <summary>
         /// Does it exist? Always true.
@@ -182,10 +182,7 @@ namespace FileCurator.Default
         /// Renames the file (not used)
         /// </summary>
         /// <param name="newName">Not used</param>
-        public override IFile Rename(string newName)
-        {
-            return this;
-        }
+        public override IFile Rename(string newName) => this;
 
         /// <summary>
         /// Not used
@@ -214,10 +211,7 @@ namespace FileCurator.Default
         /// <param name="content">Not used</param>
         /// <param name="mode">Not used</param>
         /// <returns>The result of the write or original content</returns>
-        public override byte[] Write(byte[] content, FileMode mode = FileMode.Create)
-        {
-            return Write(content.ToString(Encoding.UTF8), mode).ToByteArray();
-        }
+        public override byte[] Write(byte[] content, FileMode mode = FileMode.Create) => Write(content.ToString(Encoding.UTF8), mode).ToByteArray();
 
         /// <summary>
         /// Sends the request to the URL specified
@@ -228,11 +222,11 @@ namespace FileCurator.Default
         {
             if (request == null)
                 return "";
-            using (HttpWebResponse Response = request.GetResponseAsync().GetAwaiter().GetResult() as HttpWebResponse)
+            using (var Response = request.GetResponseAsync().GetAwaiter().GetResult() as HttpWebResponse)
             {
                 if (Response.StatusCode != HttpStatusCode.OK)
                     return "";
-                using (StreamReader Reader = new StreamReader(Response.GetResponseStream()))
+                using (var Reader = new StreamReader(Response.GetResponseStream()))
                 {
                     return Reader.ReadToEnd();
                 }
@@ -253,7 +247,7 @@ namespace FileCurator.Default
                 return;
             }
             var ByteData = data.ToByteArray();
-            using (Stream RequestStream = request.GetRequestStreamAsync().GetAwaiter().GetResult())
+            using (var RequestStream = request.GetRequestStreamAsync().GetAwaiter().GetResult())
             {
                 RequestStream.Write(ByteData, 0, ByteData.Length);
             }

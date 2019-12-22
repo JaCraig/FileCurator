@@ -136,12 +136,12 @@ namespace FileCurator.HelperMethods.Word
         {
             if (docLocations == null || docLocations.Count == 0)
                 return this;
-            MainDocumentPart mainPart = InternalWordDoc.MainDocumentPart;
-            for (int x = 0; x < docLocations.Count; ++x)
+            var mainPart = InternalWordDoc.MainDocumentPart;
+            for (var x = 0; x < docLocations.Count; ++x)
             {
                 var chunk = mainPart.AddAlternativeFormatImportPart(AlternativeFormatImportPartType.WordprocessingML);
                 var altChunkId = mainPart.GetIdOfPart(chunk);
-                using (FileStream fileStream = File.Open(docLocations[x], FileMode.Open))
+                using (var fileStream = File.Open(docLocations[x], FileMode.Open))
                 {
                     chunk.FeedData(fileStream);
                     var altChunk = new AltChunk
@@ -168,7 +168,7 @@ namespace FileCurator.HelperMethods.Word
             if (replacements == null || replacements.Count == 0)
                 return this;
             string docText = null;
-            using (StreamReader reader = new StreamReader(InternalWordDoc.MainDocumentPart.GetStream()))
+            using (var reader = new StreamReader(InternalWordDoc.MainDocumentPart.GetStream()))
             {
                 docText = reader.ReadToEnd();
             }
@@ -176,14 +176,14 @@ namespace FileCurator.HelperMethods.Word
             {
                 docText = docText.Replace(Key, replacements[Key](objectArgs).StripIllegalXML());
             }
-            using (StreamWriter sw = new StreamWriter(InternalWordDoc.MainDocumentPart.GetStream(FileMode.Create)))
+            using (var sw = new StreamWriter(InternalWordDoc.MainDocumentPart.GetStream(FileMode.Create)))
             {
                 sw.Write(docText);
             }
 
             foreach (var WordHeaderPart in InternalWordDoc.MainDocumentPart.HeaderParts)
             {
-                using (StreamReader reader = new StreamReader(WordHeaderPart.GetStream()))
+                using (var reader = new StreamReader(WordHeaderPart.GetStream()))
                 {
                     docText = reader.ReadToEnd();
                 }
@@ -191,7 +191,7 @@ namespace FileCurator.HelperMethods.Word
                 {
                     docText = docText.Replace(Key, replacements[Key](objectArgs));
                 }
-                using (StreamWriter sw = new StreamWriter(WordHeaderPart.GetStream(FileMode.Create)))
+                using (var sw = new StreamWriter(WordHeaderPart.GetStream(FileMode.Create)))
                 {
                     sw.Write(docText);
                 }

@@ -84,7 +84,7 @@ namespace FileCurator.Formats.RSS.Data
             Node = Element.SelectSingleNode("./pubDate", NamespaceManager);
             if (Node != null)
             {
-                if (DateTime.TryParse(Node.Value.Replace("PDT", "-0700"), out DateTime TempDate))
+                if (DateTime.TryParse(Node.Value.Replace("PDT", "-0700"), out var TempDate))
                 {
                     PubDate = TempDate;
                 }
@@ -166,7 +166,7 @@ namespace FileCurator.Formats.RSS.Data
             ItemString.Append("<item><title>").Append(Title).Append("</title>\r\n<link>")
                 .Append(Link).Append("</link>\r\n<author>").Append(Author)
                 .Append("</author>\r\n");
-            foreach (string Category in Categories)
+            foreach (var Category in Categories)
             {
                 ItemString.Append("<category>").Append(Category).Append("</category>\r\n");
             }

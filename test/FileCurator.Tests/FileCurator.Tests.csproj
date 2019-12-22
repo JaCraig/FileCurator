@@ -4,7 +4,7 @@
     <Description>Tests for FileCurator</Description>
     <AssemblyTitle>FileCurator.Tests</AssemblyTitle>
     <Authors>James Craig</Authors>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <DebugType>portable</DebugType>
     <AssemblyName>FileCurator.Tests</AssemblyName>
     <PackageId>FileCurator.Tests</PackageId>

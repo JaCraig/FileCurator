@@ -75,11 +75,11 @@ namespace FileCurator.Formats.Delimited
             if (string.IsNullOrEmpty(content))
                 return ",";
             string[] Delimiters = { ",", "|", "\t", "$", ";", ":" };
-            int[] Count = new int[6];
-            int MaxIndex = 0;
-            for (int x = 0; x < Delimiters.Length; ++x)
+            var Count = new int[6];
+            var MaxIndex = 0;
+            for (var x = 0; x < Delimiters.Length; ++x)
             {
-                string TempDelimiter = Delimiters[x];
+                var TempDelimiter = Delimiters[x];
                 var TempSplitter = new Regex(string.Format(CultureInfo.InvariantCulture, "(?<Value>\"(?:[^\"]|\"\")*\"|[^{0}\r\n]*?)(?<Delimiter>{0}|\r\n|\n|$)", Regex.Escape(TempDelimiter)));
                 Count[x] = TempSplitter.Matches(content).Count;
                 if (Count[MaxIndex] < Count[x])
@@ -104,7 +104,7 @@ namespace FileCurator.Formats.Delimited
             var ReturnValue = new GenericRow();
             var TempSplitter = new Regex(string.Format(CultureInfo.InvariantCulture, "(?<Value>\"(?:[^\"]|\"\")*\"|[^{0}\r\n]*?)(?<Delimiter>{0}|\r\n|\n|$)", Regex.Escape(delimiter)));
             var Matches = TempSplitter.Matches(value);
-            bool Finished = false;
+            var Finished = false;
             foreach (Match TempMatch in Matches)
             {
                 if (!Finished)

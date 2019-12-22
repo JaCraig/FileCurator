@@ -92,32 +92,20 @@ namespace FileCurator.Formats.RSS.Data
         /// <returns></returns>
         public IChannel this[int index]
         {
-            get
-            {
-                return Channels[index];
-            }
-            set
-            {
-                Channels[index] = value;
-            }
+            get => Channels[index];
+            set => Channels[index] = value;
         }
 
         /// <summary>
         /// Adds an item to the <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </summary>
         /// <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
-        public void Add(IChannel item)
-        {
-            Channels.Add(item);
-        }
+        public void Add(IChannel item) => Channels.Add(item);
 
         /// <summary>
         /// Removes all items from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </summary>
-        public void Clear()
-        {
-            Channels.Clear();
-        }
+        public void Clear() => Channels.Clear();
 
         /// <summary>
         /// Determines whether the <see cref="T:System.Collections.Generic.ICollection`1"/> contains
@@ -128,10 +116,7 @@ namespace FileCurator.Formats.RSS.Data
         /// true if <paramref name="item"/> is found in the
         /// <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
         /// </returns>
-        public bool Contains(IChannel item)
-        {
-            return Channels.Contains(item);
-        }
+        public bool Contains(IChannel item) => Channels.Contains(item);
 
         /// <summary>
         /// Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"/> to an
@@ -145,19 +130,13 @@ namespace FileCurator.Formats.RSS.Data
         /// <param name="arrayIndex">
         /// The zero-based index in <paramref name="array"/> at which copying begins.
         /// </param>
-        public void CopyTo(IChannel[] array, int arrayIndex)
-        {
-            Channels.CopyTo(array, arrayIndex);
-        }
+        public void CopyTo(IChannel[] array, int arrayIndex) => Channels.CopyTo(array, arrayIndex);
 
         /// <summary>
         /// Returns an enumerator that iterates through the collection.
         /// </summary>
         /// <returns>An enumerator that can be used to iterate through the collection.</returns>
-        public IEnumerator<IChannel> GetEnumerator()
-        {
-            return Channels.GetEnumerator();
-        }
+        public IEnumerator<IChannel> GetEnumerator() => Channels.GetEnumerator();
 
         /// <summary>
         /// Returns an enumerator that iterates through a collection.
@@ -166,20 +145,14 @@ namespace FileCurator.Formats.RSS.Data
         /// An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate
         /// through the collection.
         /// </returns>
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
         /// <summary>
         /// Determines the index of a specific item in the <see cref="T:System.Collections.Generic.IList`1"/>.
         /// </summary>
         /// <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.IList`1"/>.</param>
         /// <returns>The index of <paramref name="item"/> if found in the list; otherwise, -1.</returns>
-        public int IndexOf(IChannel item)
-        {
-            return Channels.IndexOf(item);
-        }
+        public int IndexOf(IChannel item) => Channels.IndexOf(item);
 
         /// <summary>
         /// Inserts an item to the <see cref="T:System.Collections.Generic.IList`1"/> at the
@@ -189,10 +162,7 @@ namespace FileCurator.Formats.RSS.Data
         /// The zero-based index at which <paramref name="item"/> should be inserted.
         /// </param>
         /// <param name="item">The object to insert into the <see cref="T:System.Collections.Generic.IList`1"/>.</param>
-        public void Insert(int index, IChannel item)
-        {
-            Channels.Insert(index, item);
-        }
+        public void Insert(int index, IChannel item) => Channels.Insert(index, item);
 
         /// <summary>
         /// Removes the first occurrence of a specific object from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
@@ -203,19 +173,13 @@ namespace FileCurator.Formats.RSS.Data
         /// <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false. This method
         /// also returns false if <paramref name="item"/> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </returns>
-        public bool Remove(IChannel item)
-        {
-            return Channels.Remove(item);
-        }
+        public bool Remove(IChannel item) => Channels.Remove(item);
 
         /// <summary>
         /// Removes the <see cref="T:System.Collections.Generic.IList`1"/> item at the specified index.
         /// </summary>
         /// <param name="index">The zero-based index of the item to remove.</param>
-        public void RemoveAt(int index)
-        {
-            Channels.RemoveAt(index);
-        }
+        public void RemoveAt(int index) => Channels.RemoveAt(index);
 
         /// <summary>
         /// string representation of the RSS feed.

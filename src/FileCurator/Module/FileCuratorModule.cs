@@ -29,10 +29,7 @@ namespace FileCurator.Module
         /// <summary>
         /// Order to run it in
         /// </summary>
-        public int Order
-        {
-            get { return 0; }
-        }
+        public int Order => 0;
 
         /// <summary>
         /// Loads the module

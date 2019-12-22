@@ -153,7 +153,7 @@ namespace FileCurator.Default
         {
             if (!Exists)
                 return "";
-            using (StreamReader Reader = InternalFile.OpenText())
+            using (var Reader = InternalFile.OpenText())
             {
                 return Reader.ReadToEnd();
             }
@@ -167,9 +167,9 @@ namespace FileCurator.Default
         {
             if (!Exists)
                 return Array.Empty<byte>();
-            using (FileStream Reader = InternalFile.OpenRead())
+            using (var Reader = InternalFile.OpenRead())
             {
-                byte[] Buffer = new byte[Reader.Length];
+                var Buffer = new byte[Reader.Length];
                 Reader.Read(Buffer, 0, Buffer.Length);
                 return Buffer;
             }
@@ -215,7 +215,7 @@ namespace FileCurator.Default
             if (content == null)
                 content = Array.Empty<byte>();
             Directory.Create();
-            using (FileStream Writer = InternalFile.Open(mode, FileAccess.Write))
+            using (var Writer = InternalFile.Open(mode, FileAccess.Write))
             {
                 Writer.Write(content, 0, content.Length);
             }

@@ -76,9 +76,6 @@ namespace FileCurator.Default
         /// </summary>
         /// <param name="path">Path to convert to absolute</param>
         /// <returns>The absolute path of the path passed in</returns>
-        protected override string AbsolutePath(string path)
-        {
-            return path;
-        }
+        protected override string AbsolutePath(string path) => path;
     }
 }

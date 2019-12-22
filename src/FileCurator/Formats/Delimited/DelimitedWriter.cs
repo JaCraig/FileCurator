@@ -35,7 +35,7 @@ namespace FileCurator.Formats.Delimited
         /// <returns>True if it writes successfully, false otherwise.</returns>
         public bool Write(Stream writer, IGenericFile file)
         {
-            StringBuilder Builder = new StringBuilder();
+            var Builder = new StringBuilder();
             if (file is ITable FileTable)
             {
                 Builder.Append(CreateFromTable(FileTable));
@@ -49,10 +49,7 @@ namespace FileCurator.Formats.Delimited
             return true;
         }
 
-        private string CreateFromFile(IGenericFile file)
-        {
-            return "\"" + file.ToString().Replace("\"", "") + "\"";
-        }
+        private string CreateFromFile(IGenericFile file) => "\"" + file.ToString().Replace("\"", "") + "\"";
 
         /// <summary>
         /// Creates from table.
@@ -62,7 +59,7 @@ namespace FileCurator.Formats.Delimited
         private string CreateFromTable(ITable fileTable)
         {
             var Builder = new StringBuilder();
-            string Seperator = "";
+            var Seperator = "";
             if (fileTable.Columns.Count > 0)
             {
                 foreach (var HeaderColumn in fileTable.Columns)

@@ -115,10 +115,7 @@ namespace FileCurator.Formats.Data.BaseClasses
         /// </summary>
         /// <param name="obj">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public int CompareTo(object obj)
-        {
-            return obj is FormatFileType ? CompareTo((FormatFileType)obj) : -1;
-        }
+        public int CompareTo(object obj) => obj is FormatFileType ? CompareTo((FormatFileType)obj) : -1;
 
         /// <summary>
         /// Compares the object to another object
@@ -143,16 +140,13 @@ namespace FileCurator.Formats.Data.BaseClasses
         {
             if (!(obj is FormatFileType TempItem))
                 return false;
-            return Equals((FormatFileType)TempItem);
+            return Equals(TempItem);
         }
 
         /// <summary>
         /// Gets the hash code for the object
         /// </summary>
         /// <returns>The hash code for the object</returns>
-        public override int GetHashCode()
-        {
-            return ToString().GetHashCode();
-        }
+        public override int GetHashCode() => ToString().GetHashCode();
     }
 }

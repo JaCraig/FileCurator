@@ -81,7 +81,7 @@ namespace FileCurator.Default.Memory
         /// <summary>
         /// Directory the file is within
         /// </summary>
-        public override IDirectory Directory => InternalFile == null ? null : new MemoryDirectory((string)InternalFile.Left(InternalFile.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
+        public override IDirectory Directory => InternalFile == null ? null : new MemoryDirectory(InternalFile.Left(InternalFile.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
 
         /// <summary>
         /// Does the file exist?

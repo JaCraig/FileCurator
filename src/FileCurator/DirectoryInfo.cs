@@ -246,7 +246,7 @@ namespace FileCurator
         {
             if (InternalDirectory != null)
             {
-                foreach (IDirectory TempDirectory in InternalDirectory.EnumerateDirectories(searchPattern, options))
+                foreach (var TempDirectory in InternalDirectory.EnumerateDirectories(searchPattern, options))
                 {
                     yield return new DirectoryInfo(TempDirectory);
                 }
@@ -278,7 +278,7 @@ namespace FileCurator
         {
             if (InternalDirectory != null)
             {
-                foreach (IFile TempFile in InternalDirectory.EnumerateFiles(searchPattern, options))
+                foreach (var TempFile in InternalDirectory.EnumerateFiles(searchPattern, options))
                 {
                     yield return new FileInfo(TempFile);
                 }
@@ -347,10 +347,7 @@ namespace FileCurator
         /// Returns the hash code for the directory
         /// </summary>
         /// <returns>The hash code for the directory</returns>
-        public override int GetHashCode()
-        {
-            return FullName.GetHashCode();
-        }
+        public override int GetHashCode() => FullName.GetHashCode();
 
         /// <summary>
         /// Moves the directory to the specified parent directory
@@ -379,9 +376,6 @@ namespace FileCurator
         /// Gets info for the directory
         /// </summary>
         /// <returns>The full path to the directory</returns>
-        public override string ToString()
-        {
-            return FullName;
-        }
+        public override string ToString() => FullName;
     }
 }
