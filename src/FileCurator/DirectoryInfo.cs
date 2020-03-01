@@ -34,7 +34,7 @@ namespace FileCurator
         /// <param name="path">Path to the directory</param>
         /// <param name="credentials">The credentials.</param>
         public DirectoryInfo(string path, Credentials credentials = null)
-            : this(Canister.Builder.Bootstrapper.Resolve<FileCurator>().Directory(path, credentials))
+            : this(Canister.Builder.Bootstrapper.Resolve<FileSystem>().Directory(path, credentials))
         {
         }
 
@@ -50,12 +50,12 @@ namespace FileCurator
         /// <summary>
         /// Last time it was accessed
         /// </summary>
-        public DateTime Accessed => InternalDirectory == null ? DateTime.Now : InternalDirectory.Accessed;
+        public DateTime Accessed => InternalDirectory?.Accessed ?? DateTime.Now;
 
         /// <summary>
         /// When it was created
         /// </summary>
-        public DateTime Created => InternalDirectory == null ? DateTime.Now : InternalDirectory.Created;
+        public DateTime Created => InternalDirectory?.Created ?? DateTime.Now;
 
         /// <summary>
         /// Does the directory exist
@@ -65,32 +65,32 @@ namespace FileCurator
         /// <summary>
         /// Full path to the directory
         /// </summary>
-        public string FullName => InternalDirectory == null ? "" : InternalDirectory.FullName;
+        public string FullName => InternalDirectory?.FullName ?? "";
 
         /// <summary>
         /// When it was last modified
         /// </summary>
-        public DateTime Modified => InternalDirectory == null ? DateTime.Now : InternalDirectory.Modified;
+        public DateTime Modified => InternalDirectory?.Modified ?? DateTime.Now;
 
         /// <summary>
         /// Name of the directory
         /// </summary>
-        public string Name => InternalDirectory == null ? "" : InternalDirectory.Name;
+        public string Name => InternalDirectory?.Name ?? "";
 
         /// <summary>
         /// Parent directory
         /// </summary>
-        public IDirectory Parent => InternalDirectory == null ? null : new DirectoryInfo(InternalDirectory.Parent);
+        public IDirectory Parent => InternalDirectory is null ? null : new DirectoryInfo(InternalDirectory.Parent);
 
         /// <summary>
         /// Root directory
         /// </summary>
-        public IDirectory Root => InternalDirectory == null ? null : new DirectoryInfo(InternalDirectory.Root);
+        public IDirectory Root => InternalDirectory is null ? null : new DirectoryInfo(InternalDirectory.Root);
 
         /// <summary>
         /// Size of the contents of the directory in bytes
         /// </summary>
-        public long Size => InternalDirectory == null ? 0 : InternalDirectory.Size;
+        public long Size => InternalDirectory?.Size ?? 0;
 
         /// <summary>
         /// Internal directory object
@@ -116,9 +116,9 @@ namespace FileCurator
         /// <returns>The result</returns>
         public static bool operator <(DirectoryInfo directory1, DirectoryInfo directory2)
         {
-            if (directory1 == null || directory2 == null)
-                return false;
-            return string.Compare(directory1.FullName, directory2.FullName, StringComparison.OrdinalIgnoreCase) < 0;
+            return !(directory1 is null)
+                && !(directory2 is null)
+                && string.Compare(directory1.FullName, directory2.FullName, StringComparison.OrdinalIgnoreCase) < 0;
         }
 
         /// <summary>
@@ -129,9 +129,9 @@ namespace FileCurator
         /// <returns>The result</returns>
         public static bool operator <=(DirectoryInfo directory1, DirectoryInfo directory2)
         {
-            if (directory1 == null || directory2 == null)
-                return false;
-            return string.Compare(directory1.FullName, directory2.FullName, StringComparison.OrdinalIgnoreCase) <= 0;
+            return !(directory1 is null)
+                && !(directory2 is null)
+                && string.Compare(directory1.FullName, directory2.FullName, StringComparison.OrdinalIgnoreCase) <= 0;
         }
 
         /// <summary>
@@ -142,11 +142,8 @@ namespace FileCurator
         /// <returns>True if they are, false otherwise</returns>
         public static bool operator ==(DirectoryInfo directory1, DirectoryInfo directory2)
         {
-            if (directory1 is null && directory2 is null)
-                return true;
-            if (directory1 is null || directory2 is null)
-                return false;
-            return directory1.FullName == directory2.FullName;
+            return (directory1 is null && directory2 is null)
+                || (!(directory1 is null) && !(directory2 is null) && directory1.FullName == directory2.FullName);
         }
 
         /// <summary>
@@ -157,9 +154,9 @@ namespace FileCurator
         /// <returns>The result</returns>
         public static bool operator >(DirectoryInfo directory1, DirectoryInfo directory2)
         {
-            if (directory1 == null || directory2 == null)
-                return false;
-            return string.Compare(directory1.FullName, directory2.FullName, StringComparison.OrdinalIgnoreCase) > 0;
+            return !(directory1 is null)
+                && !(directory2 is null)
+                && string.Compare(directory1.FullName, directory2.FullName, StringComparison.OrdinalIgnoreCase) > 0;
         }
 
         /// <summary>
@@ -170,9 +167,9 @@ namespace FileCurator
         /// <returns>The result</returns>
         public static bool operator >=(DirectoryInfo directory1, DirectoryInfo directory2)
         {
-            if (directory1 == null || directory2 == null)
-                return false;
-            return string.Compare(directory1.FullName, directory2.FullName, StringComparison.OrdinalIgnoreCase) >= 0;
+            return !(directory1 is null)
+                && !(directory2 is null)
+                && string.Compare(directory1.FullName, directory2.FullName, StringComparison.OrdinalIgnoreCase) >= 0;
         }
 
         /// <summary>
@@ -182,9 +179,9 @@ namespace FileCurator
         /// <returns></returns>
         public int CompareTo(IDirectory other)
         {
-            if (other == null)
+            if (other is null)
                 return 1;
-            if (InternalDirectory == null)
+            if (InternalDirectory is null)
                 return -1;
             return string.Compare(FullName, other.FullName, StringComparison.OrdinalIgnoreCase);
         }
@@ -209,7 +206,7 @@ namespace FileCurator
         /// <returns>Returns the new directory</returns>
         public IDirectory CopyTo(IDirectory directory, CopyOptions options = CopyOptions.CopyAlways)
         {
-            if (InternalDirectory == null || directory == null)
+            if (InternalDirectory is null || directory is null)
                 return this;
             return InternalDirectory.CopyTo(directory, options);
         }
@@ -219,9 +216,7 @@ namespace FileCurator
         /// </summary>
         public IDirectory Create()
         {
-            if (InternalDirectory == null)
-                return this;
-            InternalDirectory.Create();
+            InternalDirectory?.Create();
             return this;
         }
 
@@ -230,9 +225,7 @@ namespace FileCurator
         /// </summary>
         public IDirectory Delete()
         {
-            if (InternalDirectory == null)
-                return this;
-            InternalDirectory.Delete();
+            InternalDirectory?.Delete();
             return this;
         }
 
@@ -244,12 +237,11 @@ namespace FileCurator
         /// <returns>The list of directories</returns>
         public IEnumerable<IDirectory> EnumerateDirectories(string searchPattern = "*", SearchOption options = SearchOption.TopDirectoryOnly)
         {
-            if (InternalDirectory != null)
+            if (InternalDirectory is null)
+                yield break;
+            foreach (var TempDirectory in InternalDirectory.EnumerateDirectories(searchPattern, options))
             {
-                foreach (var TempDirectory in InternalDirectory.EnumerateDirectories(searchPattern, options))
-                {
-                    yield return new DirectoryInfo(TempDirectory);
-                }
+                yield return new DirectoryInfo(TempDirectory);
             }
         }
 
@@ -261,11 +253,9 @@ namespace FileCurator
         /// <returns>The list of directories</returns>
         public IEnumerable<IDirectory> EnumerateDirectories(Predicate<IDirectory> predicate, SearchOption options = SearchOption.TopDirectoryOnly)
         {
-            if (InternalDirectory != null)
-            {
-                return InternalDirectory.EnumerateDirectories("*", options).Where(x => predicate(x)).Select(x => new DirectoryInfo(x));
-            }
-            return new List<IDirectory>();
+            if (InternalDirectory is null)
+                return Array.Empty<IDirectory>();
+            return InternalDirectory.EnumerateDirectories("*", options).Where(x => predicate(x)).Select(x => new DirectoryInfo(x));
         }
 
         /// <summary>
@@ -276,12 +266,11 @@ namespace FileCurator
         /// <returns>The list of files</returns>
         public IEnumerable<IFile> EnumerateFiles(string searchPattern = "*", SearchOption options = SearchOption.TopDirectoryOnly)
         {
-            if (InternalDirectory != null)
+            if (InternalDirectory is null)
+                yield break;
+            foreach (var TempFile in InternalDirectory.EnumerateFiles(searchPattern, options))
             {
-                foreach (var TempFile in InternalDirectory.EnumerateFiles(searchPattern, options))
-                {
-                    yield return new FileInfo(TempFile);
-                }
+                yield return new FileInfo(TempFile);
             }
         }
 
@@ -293,11 +282,9 @@ namespace FileCurator
         /// <returns>The list of files</returns>
         public IEnumerable<IFile> EnumerateFiles(Predicate<IFile> predicate, SearchOption options = SearchOption.TopDirectoryOnly)
         {
-            if (InternalDirectory != null)
-            {
-                return InternalDirectory.EnumerateFiles("*", options).Where(x => predicate(x)).Select(x => new FileInfo(x));
-            }
-            return new List<IFile>();
+            if (InternalDirectory is null)
+                return Array.Empty<IFile>();
+            return InternalDirectory.EnumerateFiles("*", options).Where(x => predicate(x)).Select(x => new FileInfo(x));
         }
 
         /// <summary>
@@ -307,8 +294,7 @@ namespace FileCurator
         /// <returns>True if they're the same, false otherwise</returns>
         public override bool Equals(object obj)
         {
-            var Other = obj as DirectoryInfo;
-            return Other != null && Other == this;
+            return obj is DirectoryInfo Other && Other == this;
         }
 
         /// <summary>
@@ -318,9 +304,7 @@ namespace FileCurator
         /// <returns>True if they are equal, false otherwise</returns>
         public bool Equals(IDirectory other)
         {
-            if (other == null)
-                return false;
-            return FullName == other.FullName;
+            return FullName == other?.FullName;
         }
 
         /// <summary>
@@ -355,7 +339,7 @@ namespace FileCurator
         /// <param name="directory">Directory to move to</param>
         public IDirectory MoveTo(IDirectory directory)
         {
-            if (InternalDirectory == null || directory == null)
+            if (InternalDirectory is null || directory is null)
                 return this;
             return InternalDirectory.MoveTo(directory);
         }
@@ -366,7 +350,7 @@ namespace FileCurator
         /// <param name="name">The new name of the directory</param>
         public IDirectory Rename(string name)
         {
-            if (InternalDirectory == null || string.IsNullOrEmpty(name))
+            if (InternalDirectory is null || string.IsNullOrEmpty(name))
                 return this;
             InternalDirectory.Rename(name);
             return this;

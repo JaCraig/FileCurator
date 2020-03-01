@@ -115,7 +115,7 @@ namespace FileCurator.Formats.Data.BaseClasses
         /// </summary>
         /// <param name="obj">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public int CompareTo(object obj) => obj is FormatFileType ? CompareTo((FormatFileType)obj) : -1;
+        public int CompareTo(object obj) => obj is FormatFileType formatFileType ? CompareTo(formatFileType) : -1;
 
         /// <summary>
         /// Compares the object to another object
@@ -138,9 +138,7 @@ namespace FileCurator.Formats.Data.BaseClasses
         /// <returns>True if they are equal, false otherwise</returns>
         public override bool Equals(object obj)
         {
-            if (!(obj is FormatFileType TempItem))
-                return false;
-            return Equals(TempItem);
+            return (obj is FormatFileType TempItem) && Equals(TempItem);
         }
 
         /// <summary>

@@ -44,7 +44,7 @@ namespace FileCurator
         /// <param name="Files">List of files</param>
         public static void Delete(this IEnumerable<IFile> Files)
         {
-            if (Files == null)
+            if (Files is null)
                 return;
             Parallel.ForEach(Files, x => x.Delete());
         }
@@ -55,7 +55,7 @@ namespace FileCurator
         /// <param name="Directories">Directories to delete</param>
         public static void Delete(this IEnumerable<IDirectory> Directories)
         {
-            if (Directories == null)
+            if (Directories is null)
                 return;
             Parallel.ForEach(Directories, x => x.Delete());
         }
@@ -72,7 +72,7 @@ namespace FileCurator
         public static IGenericFile Parse(this Stream file, MimeType mimeType)
         {
             var Format = InternalManager.FindFormat(file, mimeType);
-            if (Format == null)
+            if (Format is null)
                 throw new ArgumentException("Could not find file format that returns the specified object type");
             return Format.ReadBase(file);
         }

@@ -86,12 +86,12 @@ namespace FileCurator.Default
         /// <summary>
         /// Parent directory
         /// </summary>
-        public override IDirectory Parent => InternalDirectory == null ? null : new LocalDirectory(InternalDirectory.Parent);
+        public override IDirectory Parent => InternalDirectory is null ? null : new LocalDirectory(InternalDirectory.Parent);
 
         /// <summary>
         /// Root directory
         /// </summary>
-        public override IDirectory Root => InternalDirectory == null ? null : new LocalDirectory(InternalDirectory.Root);
+        public override IDirectory Root => InternalDirectory is null ? null : new LocalDirectory(InternalDirectory.Root);
 
         /// <summary>
         /// Size of the directory
@@ -103,7 +103,7 @@ namespace FileCurator.Default
         /// </summary>
         public override IDirectory Create()
         {
-            if (InternalDirectory == null)
+            if (InternalDirectory is null)
                 return this;
             InternalDirectory.Create();
             InternalDirectory.Refresh();
@@ -169,7 +169,7 @@ namespace FileCurator.Default
         /// <param name="name">Name of the new directory</param>
         public override IDirectory Rename(string name)
         {
-            if (InternalDirectory == null || string.IsNullOrEmpty(name))
+            if (InternalDirectory is null || string.IsNullOrEmpty(name))
                 return this;
             InternalDirectory.MoveTo(Parent.FullName + "\\" + name);
             InternalDirectory = new System.IO.DirectoryInfo(Parent.FullName + "\\" + name);

@@ -120,9 +120,7 @@ namespace FileCurator.BaseClasses
         /// <returns>The file as a byte array</returns>
         public static implicit operator byte[](FileBase<InternalFileType, FileType> file)
         {
-            if (file == null)
-                return Array.Empty<byte>();
-            return file.ReadBinary();
+            return file?.ReadBinary() ?? Array.Empty<byte>();
         }
 
         /// <summary>
@@ -132,9 +130,7 @@ namespace FileCurator.BaseClasses
         /// <returns>The file as a string</returns>
         public static implicit operator string(FileBase<InternalFileType, FileType> file)
         {
-            if (file == null)
-                return "";
-            return file.Read();
+            return file?.Read() ?? "";
         }
 
         /// <summary>
@@ -156,9 +152,9 @@ namespace FileCurator.BaseClasses
         /// <returns>The result</returns>
         public static bool operator <(FileBase<InternalFileType, FileType> file1, IFile file2)
         {
-            if (file1 == null || file2 == null)
-                return false;
-            return string.Compare(file1.FullName, file2.FullName, StringComparison.OrdinalIgnoreCase) < 0;
+            return !(file1 is null)
+                && !(file2 is null)
+                && string.Compare(file1.FullName, file2.FullName, StringComparison.OrdinalIgnoreCase) < 0;
         }
 
         /// <summary>
@@ -169,9 +165,9 @@ namespace FileCurator.BaseClasses
         /// <returns>The result</returns>
         public static bool operator <=(FileBase<InternalFileType, FileType> file1, IFile file2)
         {
-            if (file1 == null || file2 == null)
-                return false;
-            return string.Compare(file1.FullName, file2.FullName, StringComparison.OrdinalIgnoreCase) <= 0;
+            return !(file1 is null)
+                && !(file2 is null)
+                && string.Compare(file1.FullName, file2.FullName, StringComparison.OrdinalIgnoreCase) <= 0;
         }
 
         /// <summary>
@@ -182,11 +178,8 @@ namespace FileCurator.BaseClasses
         /// <returns>True if they are, false otherwise</returns>
         public static bool operator ==(FileBase<InternalFileType, FileType> file1, IFile file2)
         {
-            if (file1 is null && file2 is null)
-                return true;
-            if (file1 is null || file2 is null)
-                return false;
-            return file1.FullName == file2.FullName;
+            return (file1 is null && file2 is null)
+                || (!(file1 is null) && !(file2 is null) && file1.FullName == file2.FullName);
         }
 
         /// <summary>
@@ -197,9 +190,9 @@ namespace FileCurator.BaseClasses
         /// <returns>The result</returns>
         public static bool operator >(FileBase<InternalFileType, FileType> file1, IFile file2)
         {
-            if (file1 == null || file2 == null)
-                return false;
-            return string.Compare(file1.FullName, file2.FullName, StringComparison.OrdinalIgnoreCase) > 0;
+            return !(file1 is null)
+                && !(file2 is null)
+                && string.Compare(file1.FullName, file2.FullName, StringComparison.OrdinalIgnoreCase) > 0;
         }
 
         /// <summary>
@@ -210,9 +203,9 @@ namespace FileCurator.BaseClasses
         /// <returns>The result</returns>
         public static bool operator >=(FileBase<InternalFileType, FileType> file1, IFile file2)
         {
-            if (file1 == null || file2 == null)
-                return false;
-            return string.Compare(file1.FullName, file2.FullName, StringComparison.OrdinalIgnoreCase) >= 0;
+            return !(file1 is null)
+                && !(file2 is null)
+                && string.Compare(file1.FullName, file2.FullName, StringComparison.OrdinalIgnoreCase) >= 0;
         }
 
         /// <summary>
@@ -222,7 +215,7 @@ namespace FileCurator.BaseClasses
         /// <returns></returns>
         public int CompareTo(IFile other)
         {
-            if (other == null)
+            if (other is null)
                 return 1;
             return string.Compare(FullName, other.FullName, StringComparison.OrdinalIgnoreCase);
         }
@@ -260,8 +253,7 @@ namespace FileCurator.BaseClasses
         /// <returns>True if they are equal, false otherwise</returns>
         public override bool Equals(object obj)
         {
-            var File = obj as FileBase<InternalFileType, FileType>;
-            return File != null && File == this;
+            return obj is FileBase<InternalFileType, FileType> File && File == this;
         }
 
         /// <summary>
@@ -271,9 +263,7 @@ namespace FileCurator.BaseClasses
         /// <returns>True if they are equal, false otherwise</returns>
         public bool Equals(IFile other)
         {
-            if (other == null)
-                return false;
-            return other.FullName == FullName;
+            return other?.FullName == FullName;
         }
 
         /// <summary>

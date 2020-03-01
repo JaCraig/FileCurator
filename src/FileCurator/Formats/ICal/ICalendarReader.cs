@@ -37,6 +37,12 @@ namespace FileCurator.Formats.ICal
         public override byte[] HeaderIdentifier { get; } = new byte[] { 0x42, 0x45, 0x47, 0x49, 0x4E, 0x3A, 0x56, 0x43, 0x41, 0x4c, 0x45, 0x4e, 0x44, 0x41, 0x52 };
 
         /// <summary>
+        /// Gets the calendar items.
+        /// </summary>
+        /// <value>The calendar items.</value>
+        private static Regex CalendarItems { get; } = new Regex("(?<Title>[^\r\n:]+):(?<Value>[^\r\n]*)", RegexOptions.Compiled);
+
+        /// <summary>
         /// Reads the specified stream.
         /// </summary>
         /// <param name="stream">The stream.</param>
@@ -45,7 +51,7 @@ namespace FileCurator.Formats.ICal
         {
             var StringData = stream.ReadAll();
             var ReturnValue = new GenericCalendar();
-            foreach (Match TempMatch in Regex.Matches(StringData, "(?<Title>[^\r\n:]+):(?<Value>[^\r\n]*)"))
+            foreach (Match TempMatch in CalendarItems.Matches(StringData))
             {
                 var Title = TempMatch.Groups["Title"].Value.ToUpperInvariant().Trim();
                 var Value = TempMatch.Groups["Value"].Value.Trim();

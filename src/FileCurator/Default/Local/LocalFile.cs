@@ -66,7 +66,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Directory the file is within
         /// </summary>
-        public override IDirectory Directory => InternalFile == null ? null : new LocalDirectory(InternalFile.Directory);
+        public override IDirectory Directory => InternalFile is null ? null : new LocalDirectory(InternalFile.Directory);
 
         /// <summary>
         /// Does the file exist?
@@ -106,7 +106,7 @@ namespace FileCurator.Default
         /// <returns>The newly created file</returns>
         public override IFile CopyTo(IDirectory directory, bool overwrite)
         {
-            if (directory == null || !Exists)
+            if (directory is null || !Exists)
                 return null;
             directory.Create();
             var File = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
@@ -137,7 +137,7 @@ namespace FileCurator.Default
         /// <param name="directory">Directory to move to</param>
         public override IFile MoveTo(IDirectory directory)
         {
-            if (directory == null || !Exists)
+            if (directory is null || !Exists)
                 return this;
             directory.Create();
             InternalFile.MoveTo(directory.FullName + "\\" + Name);
@@ -197,9 +197,9 @@ namespace FileCurator.Default
         /// <returns>The result of the write or original content</returns>
         public override string Write(string content, FileMode mode = FileMode.Create, Encoding encoding = null)
         {
-            if (content == null)
+            if (content is null)
                 content = "";
-            if (encoding == null)
+            if (encoding is null)
                 encoding = Encoding.UTF8;
             return Write(encoding.GetBytes(content), mode).ToString(encoding);
         }
@@ -212,7 +212,7 @@ namespace FileCurator.Default
         /// <returns>The result of the write or original content</returns>
         public override byte[] Write(byte[] content, FileMode mode = FileMode.Create)
         {
-            if (content == null)
+            if (content is null)
                 content = Array.Empty<byte>();
             Directory.Create();
             using (var Writer = InternalFile.Open(mode, FileAccess.Write))

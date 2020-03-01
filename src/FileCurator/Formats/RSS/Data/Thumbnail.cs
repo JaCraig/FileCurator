@@ -40,13 +40,10 @@ namespace FileCurator.Formats.RSS.Data
         /// <param name="doc">XML element holding info for the enclosure</param>
         public Thumbnail(IXPathNavigable doc)
         {
-            if (doc == null)
+            if (doc is null)
                 throw new ArgumentNullException(nameof(doc));
             var Element = doc.CreateNavigator();
-            if (!string.IsNullOrEmpty(Element.GetAttribute("url", "")))
-            {
-                Url = Element.GetAttribute("url", "");
-            }
+            Url = Element.GetAttribute("url", "");
             if (!string.IsNullOrEmpty(Element.GetAttribute("width", "")))
             {
                 Width = int.Parse(Element.GetAttribute("width", ""), CultureInfo.InvariantCulture);

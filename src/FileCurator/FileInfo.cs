@@ -36,7 +36,7 @@ namespace FileCurator
         /// <param name="path">Path to the file</param>
         /// <param name="credentials">The credentials.</param>
         public FileInfo(string path, Credentials credentials = null)
-            : this(Canister.Builder.Bootstrapper.Resolve<FileCurator>().File(path, credentials))
+            : this(Canister.Builder.Bootstrapper.Resolve<FileSystem>().File(path, credentials))
         {
             Credentials = credentials;
         }
@@ -119,7 +119,7 @@ namespace FileCurator
         /// <returns>The file as a byte array</returns>
         public static implicit operator byte[](FileInfo file)
         {
-            if (file == null)
+            if (file is null)
                 return Array.Empty<byte>();
             return file.ReadBinary();
         }
@@ -131,7 +131,7 @@ namespace FileCurator
         /// <returns>The file as a string</returns>
         public static implicit operator string(FileInfo file)
         {
-            if (file == null)
+            if (file is null)
                 return "";
             return file.Read();
         }
@@ -155,7 +155,7 @@ namespace FileCurator
         /// <returns>The result</returns>
         public static bool operator <(FileInfo file1, FileInfo file2)
         {
-            if (file1 == null || file2 == null)
+            if (file1 is null || file2 is null)
                 return false;
             return string.Compare(file1.FullName, file2.FullName, StringComparison.OrdinalIgnoreCase) < 0;
         }
@@ -168,7 +168,7 @@ namespace FileCurator
         /// <returns>The result</returns>
         public static bool operator <=(FileInfo file1, FileInfo file2)
         {
-            if (file1 == null || file2 == null)
+            if (file1 is null || file2 is null)
                 return false;
             return string.Compare(file1.FullName, file2.FullName, StringComparison.OrdinalIgnoreCase) <= 0;
         }
@@ -196,7 +196,7 @@ namespace FileCurator
         /// <returns>The result</returns>
         public static bool operator >(FileInfo file1, FileInfo file2)
         {
-            if (file1 == null || file2 == null)
+            if (file1 is null || file2 is null)
                 return false;
             return string.Compare(file1.FullName, file2.FullName, StringComparison.OrdinalIgnoreCase) > 0;
         }
@@ -209,7 +209,7 @@ namespace FileCurator
         /// <returns>The result</returns>
         public static bool operator >=(FileInfo file1, FileInfo file2)
         {
-            if (file1 == null || file2 == null)
+            if (file1 is null || file2 is null)
                 return false;
             return string.Compare(file1.FullName, file2.FullName, StringComparison.OrdinalIgnoreCase) >= 0;
         }
@@ -221,9 +221,9 @@ namespace FileCurator
         /// <returns></returns>
         public int CompareTo(IFile other)
         {
-            if (other == null)
+            if (other is null)
                 return 1;
-            if (InternalFile == null)
+            if (InternalFile is null)
                 return -1;
             return string.Compare(FullName, other.FullName, StringComparison.OrdinalIgnoreCase);
         }
@@ -248,7 +248,7 @@ namespace FileCurator
         /// <returns>The newly created file</returns>
         public IFile CopyTo(IDirectory directory, bool overwrite)
         {
-            if (directory == null || !Exists)
+            if (directory is null || !Exists)
                 return null;
             return InternalFile.CopyTo(directory, overwrite);
         }
@@ -259,7 +259,7 @@ namespace FileCurator
         /// <returns>Any response for deleting the resource (usually FTP, HTTP, etc)</returns>
         public string Delete()
         {
-            if (InternalFile == null)
+            if (InternalFile is null)
                 return "";
             return InternalFile.Delete();
         }
@@ -282,7 +282,7 @@ namespace FileCurator
         /// <returns>True if they are equal, false otherwise</returns>
         public bool Equals(IFile other)
         {
-            if (other == null)
+            if (other is null)
                 return false;
             return other.FullName == FullName;
         }
@@ -299,7 +299,7 @@ namespace FileCurator
         /// <param name="directory">Directory to move to</param>
         public IFile MoveTo(IDirectory directory)
         {
-            if (InternalFile == null || directory == null)
+            if (InternalFile is null || directory is null)
                 return this;
             InternalFile.MoveTo(directory);
             return this;
@@ -334,7 +334,7 @@ namespace FileCurator
         public IGenericFile Parse()
         {
             var Format = FormatManager.FindFormat(FullName, Credentials);
-            if (Format == null)
+            if (Format is null)
                 throw new ArgumentException("Could not find file format that returns the specified object type");
             using (var TempStream = new MemoryStream(ReadBinary()))
             {
@@ -348,7 +348,7 @@ namespace FileCurator
         /// <returns>The file contents as a string</returns>
         public string Read()
         {
-            if (InternalFile == null)
+            if (InternalFile is null)
                 return "";
             return InternalFile.Read();
         }
@@ -359,7 +359,7 @@ namespace FileCurator
         /// <returns>The file contents as a byte array</returns>
         public byte[] ReadBinary()
         {
-            if (InternalFile == null)
+            if (InternalFile is null)
                 return Array.Empty<byte>();
             return InternalFile.ReadBinary();
         }
@@ -370,7 +370,7 @@ namespace FileCurator
         /// <param name="newName">New name for the file</param>
         public IFile Rename(string newName)
         {
-            if (InternalFile == null || string.IsNullOrEmpty(newName))
+            if (InternalFile is null || string.IsNullOrEmpty(newName))
                 return this;
             InternalFile.Rename(newName);
             return this;
@@ -391,7 +391,7 @@ namespace FileCurator
         /// <returns>The result of the write or original content</returns>
         public string Write(string content, FileMode mode = FileMode.Create, Encoding encoding = null)
         {
-            if (InternalFile == null)
+            if (InternalFile is null)
                 return content;
             return InternalFile.Write(content, mode, encoding);
         }
@@ -404,7 +404,7 @@ namespace FileCurator
         /// <returns>The result of the write or original content</returns>
         public byte[] Write(byte[] content, FileMode mode = FileMode.Create)
         {
-            if (InternalFile == null)
+            if (InternalFile is null)
                 return content;
             return InternalFile.Write(content, mode);
         }

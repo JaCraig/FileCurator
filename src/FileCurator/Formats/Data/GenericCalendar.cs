@@ -113,7 +113,7 @@ namespace FileCurator.Formats.Data
         public override string ToString()
         {
             return "Type:Single Meeting\r\n" +
-                "Organizer:" + (Organizer == null ? "" : Organizer.Name) + "\r\n" +
+                "Organizer:" + (Organizer is null ? "" : Organizer.Name) + "\r\n" +
                 "Start Time:" + StartTime.ToString("dddd, MMMM dd, yyyy") + " " + StartTime.ToString("dddd, MMMM dd, yyyy") + "\r\n" +
                 "End Time:" + EndTime.ToString("dddd, MMMM dd, yyyy") + " " + EndTime.ToString("dddd, MMMM dd, yyyy") + "\r\n" +
                 "Time Zone:" + TimeZoneInfo.Local.StandardName + "\r\n" +

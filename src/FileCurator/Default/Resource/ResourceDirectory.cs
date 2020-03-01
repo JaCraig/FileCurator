@@ -66,7 +66,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName => AssemblyFrom == null ? $"resource://{Resource}" : $"resource://{AssemblyFrom.GetName().Name}/{Resource}";
+        public override string FullName => AssemblyFrom is null ? $"resource://{Resource}" : $"resource://{AssemblyFrom.GetName().Name}/{Resource}";
 
         /// <summary>
         /// returns now
@@ -86,7 +86,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Root
         /// </summary>
-        public override IDirectory Root => AssemblyFrom == null ? null : new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
+        public override IDirectory Root => AssemblyFrom is null ? null : new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
 
         /// <summary>
         /// Size (returns 0)

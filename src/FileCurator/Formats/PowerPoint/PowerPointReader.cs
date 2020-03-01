@@ -83,7 +83,7 @@ namespace FileCurator.Formats.PowerPoint
         /// <exception cref="System.ArgumentNullException">presentationDocument</exception>
         private static string GetSlideTitle(SlidePart slidePart)
         {
-            if (slidePart == null)
+            if (slidePart is null)
             {
                 throw new ArgumentNullException(nameof(slidePart));
             }

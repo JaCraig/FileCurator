@@ -242,7 +242,7 @@ namespace FileCurator.Formats.MSG
         {
             get
             {
-                return this.parentMessage == null;
+                return this.parentMessage is null;
             }
         }
 
@@ -723,7 +723,7 @@ namespace FileCurator.Formats.MSG
                 COMPRESSED_RTF_PREBUF = System.Text.Encoding.ASCII.GetBytes(prebuf);
 
                 // get header fields (as defined in RTFLIB.H)
-                if (src == null || src.Length < 16)
+                if (src is null || src.Length < 16)
                     throw new Exception("Invalid compressed-RTF header");
 
                 var compressedSize = (int)GetU32(src, inPos);
@@ -949,7 +949,7 @@ namespace FileCurator.Formats.MSG
                     var rtfBytes = this.GetMapiPropertyBytes(OutlookStorage.PR_RTF_COMPRESSED);
 
                     //return null if no property value exists
-                    if (rtfBytes == null || rtfBytes.Length == 0)
+                    if (rtfBytes is null || rtfBytes.Length == 0)
                     {
                         return null;
                     }

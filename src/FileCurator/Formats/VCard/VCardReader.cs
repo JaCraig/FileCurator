@@ -37,6 +37,18 @@ namespace FileCurator.Formats.VCard
         public override byte[] HeaderIdentifier { get; } = new byte[] { 0x42, 0x45, 0x47, 0x49, 0x4E, 0x3A, 0x56, 0x43, 0x41, 0x52, 0x44 };
 
         /// <summary>
+        /// Gets the entry regex.
+        /// </summary>
+        /// <value>The entry regex.</value>
+        private static Regex EntryRegex { get; } = new Regex("(?<Title>[^:]+):(?<Value>.*)", RegexOptions.Compiled);
+
+        /// <summary>
+        /// Gets the type regex.
+        /// </summary>
+        /// <value>The type regex.</value>
+        private static Regex TypeRegex { get; } = new Regex("TYPE=(?<Title>[^:]+)", RegexOptions.Compiled);
+
+        /// <summary>
         /// Reads the specified stream.
         /// </summary>
         /// <param name="stream">The stream.</param>
@@ -45,7 +57,7 @@ namespace FileCurator.Formats.VCard
         {
             var ReturnValue = new GenericCard();
             var Content = stream.ReadAll();
-            foreach (Match TempMatch in Regex.Matches(Content, "(?<Title>[^:]+):(?<Value>.*)"))
+            foreach (Match TempMatch in EntryRegex.Matches(Content))
             {
                 var Title = TempMatch.Groups["Title"].Value.ToUpperInvariant().Trim();
                 var Value = TempMatch.Groups["Value"].Value.Trim();
@@ -67,9 +79,9 @@ namespace FileCurator.Formats.VCard
                 }
                 else if (Title.StartsWith("TEL", StringComparison.Ordinal))
                 {
-                    var Type = Regex.Match(Title, "TYPE=(?<Title>[^:]+)");
+                    var Type = TypeRegex.Match(Title);
                     var TypeText = "";
-                    if (Type == null)
+                    if (Type is null)
                         TypeText = "";
                     else
                         TypeText = Type.Groups["Title"].Value;
@@ -81,16 +93,11 @@ namespace FileCurator.Formats.VCard
                 }
                 else if (Title.StartsWith("EMAIL", StringComparison.Ordinal))
                 {
-                    var Type = Regex.Match(Title, "TYPE=(?<Title>[^:]+)");
-                    var TypeText = "";
-                    if (Type == null)
-                        TypeText = "";
-                    else
-                        TypeText = Type.Groups["Title"].Value;
+                    var Type = TypeRegex.Match(Title);
                     ReturnValue.Email.Add(new MailAddress
                     {
                         EmailAddress = Value,
-                        Type = TypeText
+                        Type = TypeRegex.Match(Title)?.Groups["Title"].Value ?? ""
                     });
                 }
                 else if (Title.StartsWith("TITLE", StringComparison.Ordinal))

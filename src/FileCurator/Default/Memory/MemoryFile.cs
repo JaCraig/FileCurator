@@ -81,7 +81,7 @@ namespace FileCurator.Default.Memory
         /// <summary>
         /// Directory the file is within
         /// </summary>
-        public override IDirectory Directory => InternalFile == null ? null : new MemoryDirectory(InternalFile.Left(InternalFile.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
+        public override IDirectory Directory => InternalFile is null ? null : new MemoryDirectory(InternalFile.Left(InternalFile.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
 
         /// <summary>
         /// Does the file exist?
@@ -121,7 +121,7 @@ namespace FileCurator.Default.Memory
         /// <returns>The newly created file</returns>
         public override IFile CopyTo(IDirectory directory, bool overwrite)
         {
-            if (directory == null || !Exists)
+            if (directory is null || !Exists)
                 return this;
             var File = new FileInfo(directory.FullName + "/" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             if (!File.Exists || overwrite)
@@ -150,7 +150,7 @@ namespace FileCurator.Default.Memory
         /// <returns>The resulting file.</returns>
         public override IFile MoveTo(IDirectory directory)
         {
-            if (directory == null || !Exists)
+            if (directory is null || !Exists)
                 return this;
             var TempFile = new FileInfo(directory.FullName + "/" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             TempFile.Write(ReadBinary());
@@ -164,9 +164,8 @@ namespace FileCurator.Default.Memory
         /// <returns>The file contents as a string</returns>
         public override string Read()
         {
-            if (fileData == null)
-                return "";
-            return fileData.ToString(Encoding.UTF8);
+            accessed = DateTime.UtcNow;
+            return fileData?.ToString(Encoding.UTF8) ?? "";
         }
 
         /// <summary>
@@ -175,7 +174,7 @@ namespace FileCurator.Default.Memory
         /// <returns>The file contents as a byte array</returns>
         public override byte[] ReadBinary()
         {
-            if (fileData == null)
+            if (fileData is null)
                 return Array.Empty<byte>();
             accessed = DateTime.UtcNow;
             return (byte[])fileData.Clone();
@@ -204,9 +203,9 @@ namespace FileCurator.Default.Memory
         /// <returns>The result of the write or original content</returns>
         public override string Write(string content, FileMode mode = FileMode.Create, Encoding encoding = null)
         {
-            if (content == null)
+            if (content is null)
                 content = "";
-            if (encoding == null)
+            if (encoding is null)
                 encoding = Encoding.UTF8;
             return Write(encoding.GetBytes(content), mode).ToString(encoding);
         }
@@ -219,7 +218,7 @@ namespace FileCurator.Default.Memory
         /// <returns>The result of the write or original content</returns>
         public override byte[] Write(byte[] content, FileMode mode = FileMode.Create)
         {
-            if (content == null)
+            if (content is null)
                 content = Array.Empty<byte>();
             Directory.Create();
             modified = DateTime.UtcNow;

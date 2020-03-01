@@ -46,37 +46,20 @@ namespace FileCurator.Formats.RSS.Data
         public FeedItem(IXPathNavigable doc)
             : this()
         {
-            if (doc == null)
+            if (doc is null)
                 throw new ArgumentNullException(nameof(doc));
             var Element = doc.CreateNavigator();
             var NamespaceManager = new XmlNamespaceManager(Element.NameTable);
             NamespaceManager.AddNamespace("media", "http://search.yahoo.com/mrss/");
-            var Node = Element.SelectSingleNode("./title", NamespaceManager);
-            if (Node != null)
-            {
-                Title = Node.Value;
-            }
-            Node = Element.SelectSingleNode("./link", NamespaceManager);
-            if (Node != null)
-            {
-                Link = Node.Value;
-            }
-            Node = Element.SelectSingleNode("./description", NamespaceManager);
-            if (Node != null)
-            {
-                Description = Node.Value;
-            }
-            Node = Element.SelectSingleNode("./author", NamespaceManager);
-            if (Node != null)
-            {
-                Author = Node.Value;
-            }
-            var Nodes = Element.Select("./category", NamespaceManager);
-            foreach (XPathNavigator TempNode in Nodes)
+            Title = Element.SelectSingleNode("./title", NamespaceManager)?.Value;
+            Link = Element.SelectSingleNode("./link", NamespaceManager)?.Value;
+            Description = Element.SelectSingleNode("./description", NamespaceManager)?.Value;
+            Author = Element.SelectSingleNode("./author", NamespaceManager)?.Value;
+            foreach (XPathNavigator TempNode in Element.Select("./category", NamespaceManager))
             {
                 Categories.Add(Utils.StripIllegalCharacters(TempNode.Value));
             }
-            Node = Element.SelectSingleNode("./enclosure", NamespaceManager);
+            var Node = Element.SelectSingleNode("./enclosure", NamespaceManager);
             if (Node != null)
             {
                 Enclosure = new Enclosure(Node);

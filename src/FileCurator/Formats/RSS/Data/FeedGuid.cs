@@ -38,7 +38,7 @@ namespace FileCurator.Formats.RSS.Data
         /// <param name="element">XML element holding info for the enclosure</param>
         public FeedGuid(IXPathNavigable element)
         {
-            if (element == null)
+            if (element is null)
                 throw new ArgumentNullException(nameof(element));
             var Navigator = element.CreateNavigator();
             if (!string.IsNullOrEmpty(Navigator.GetAttribute("isPermaLink", "")))
@@ -64,11 +64,9 @@ namespace FileCurator.Formats.RSS.Data
         /// <returns>A string formatted for RSS output</returns>
         public override string ToString()
         {
-            if (!string.IsNullOrEmpty(GuidText))
-            {
-                return "<guid" + (IsPermaLink ? " IsPermaLink='True'" : " IsPermaLink='False'") + ">" + GuidText + "</guid>\r\n";
-            }
-            return string.Empty;
+            if (string.IsNullOrEmpty(GuidText))
+                return string.Empty;
+            return "<guid" + (IsPermaLink ? " IsPermaLink='True'" : " IsPermaLink='False'") + ">" + GuidText + "</guid>\r\n";
         }
     }
 }

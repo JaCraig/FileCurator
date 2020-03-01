@@ -55,8 +55,7 @@ namespace FileCurator.Formats.Word
 
         private void AppendFile(WordprocessingDocument doc, IGenericFile file)
         {
-            var Content = file.ToString().Split('\n');
-            foreach (var ParagraphText in Content)
+            foreach (var ParagraphText in file.ToString().Split('\n'))
             {
                 doc.MainDocumentPart.Document.Body.Append(new Paragraph(
                                     new Run(

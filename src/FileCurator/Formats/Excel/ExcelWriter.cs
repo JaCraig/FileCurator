@@ -38,11 +38,9 @@ namespace FileCurator.Formats.Excel
         public static string Column(int column)
         {
             var ColumnLetter = "";
-            var Mod = 0;
-
             while (column > 0)
             {
-                Mod = (column - 1) % 26;
+                var Mod = (column - 1) % 26;
                 ColumnLetter = (char)(65 + Mod) + ColumnLetter;
                 column = (column - Mod) / 26;
             }
@@ -57,7 +55,6 @@ namespace FileCurator.Formats.Excel
         /// <returns>True if it writes successfully, false otherwise.</returns>
         public bool Write(Stream writer, IGenericFile file)
         {
-            var TableFile = file as ITable;
             using (var Document = SpreadsheetDocument.Create(writer, SpreadsheetDocumentType.Workbook))
             {
                 Document.AddWorkbookPart();
@@ -66,7 +63,7 @@ namespace FileCurator.Formats.Excel
                 var WorksheetPart = InsertSheetInWorksheet(Document.WorkbookPart);
                 var Worksheet = WorksheetPart.Worksheet;
                 var SheetData = Worksheet.GetFirstChild<SheetData>();
-                if (TableFile == null)
+                if (!(file is ITable TableFile))
                 {
                     var Row = new Row { RowIndex = 1 };
                     Row.AppendChild(new Cell
@@ -133,7 +130,7 @@ namespace FileCurator.Formats.Excel
             uint sheetId = 1;
             if (sheets.Elements<Sheet>().Any())
             {
-                sheetId = sheets.Elements<Sheet>().Select(s => s.SheetId.Value).Max() + 1;
+                sheetId = sheets.Elements<Sheet>().Max(s => s.SheetId.Value) + 1;
             }
 
             var sheetName = "Sheet" + sheetId;

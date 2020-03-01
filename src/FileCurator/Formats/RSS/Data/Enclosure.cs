@@ -39,21 +39,13 @@ namespace FileCurator.Formats.RSS.Data
         /// <param name="doc">XML element holding info for the enclosure</param>
         public Enclosure(IXPathNavigable doc)
         {
-            if (doc == null)
+            if (doc is null)
                 throw new ArgumentNullException(nameof(doc));
             var Element = doc.CreateNavigator();
-            if (!string.IsNullOrEmpty(Element.GetAttribute("url", "")))
-            {
-                Url = Element.GetAttribute("url", "");
-            }
-            if (!string.IsNullOrEmpty(Element.GetAttribute("length", "")))
-            {
-                Length = int.Parse(Element.GetAttribute("length", ""));
-            }
-            if (!string.IsNullOrEmpty(Element.GetAttribute("type", "")))
-            {
-                Type = Element.GetAttribute("type", "");
-            }
+            Url = Element.GetAttribute("url", "") ?? "";
+            if (int.TryParse(Element.GetAttribute("length", ""), out var TempLength))
+                Length = TempLength;
+            Type = Element.GetAttribute("type", "") ?? "";
         }
 
         /// <summary>
@@ -77,12 +69,10 @@ namespace FileCurator.Formats.RSS.Data
         /// <returns>A string formatted for RSS output</returns>
         public override string ToString()
         {
-            if (!string.IsNullOrEmpty(Url) && !string.IsNullOrEmpty(Type))
-            {
-                return "<enclosure url=\"" + Url + "\" length=\"" + Length + "\" type=\"" + Type + "\" />\r\n"
-                    + "<media:content url=\"" + Url + "\" fileSize=\"" + Length + "\" type=\"" + Type + "\" />";
-            }
-            return string.Empty;
+            if (string.IsNullOrEmpty(Url) || string.IsNullOrEmpty(Type))
+                return string.Empty;
+            return "<enclosure url=\"" + Url + "\" length=\"" + Length + "\" type=\"" + Type + "\" />\r\n"
+                + "<media:content url=\"" + Url + "\" fileSize=\"" + Length + "\" type=\"" + Type + "\" />";
         }
     }
 }

@@ -41,16 +41,7 @@ namespace FileCurator.BaseClasses
         /// <returns>The directory object</returns>
         public override IDirectory Directory(string path, Credentials credentials = null)
         {
-            path = AbsolutePath(path);
-            return new LocalDirectory(path.RemoveIllegalDirectoryNameCharacters());
-        }
-
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting
-        /// unmanaged resources.
-        /// </summary>
-        public override void Dispose()
-        {
+            return new LocalDirectory(AbsolutePath(path).RemoveIllegalDirectoryNameCharacters());
         }
 
         /// <summary>
@@ -61,8 +52,19 @@ namespace FileCurator.BaseClasses
         /// <returns>The file object</returns>
         public override IFile File(string path, Credentials credentials = null)
         {
-            path = AbsolutePath(path);
-            return new LocalFile(path);
+            return new LocalFile(AbsolutePath(path));
+        }
+
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting
+        /// unmanaged resources.
+        /// </summary>
+        /// <param name="managed">
+        /// <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release
+        /// only unmanaged resources.
+        /// </param>
+        protected override void Dispose(bool managed)
+        {
         }
     }
 }

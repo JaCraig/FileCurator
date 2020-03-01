@@ -231,37 +231,6 @@ namespace FileCurator.Default.Memory
             return ReturnValue;
         }
 
-        //public override IDirectory CopyTo(IDirectory directory, CopyOptions options = CopyOptions.CopyAlways)
-        //{
-        //    if (ReferenceEquals(InternalDirectory, null) || directory == null)
-        //        return this;
-        //    directory.Create();
-        //    foreach (IFile TempFile in EnumerateFiles())
-        //    {
-        //        switch (options)
-        //        {
-        //            case CopyOptions.CopyAlways:
-        //                TempFile.CopyTo(directory, true);
-        //                break;
-
-        // case CopyOptions.CopyIfNewer: if (new FileInfo(directory.FullName + "\\" +
-        // TempFile.Name.Replace("/", "").Replace("\\", ""), Credentials).Exists) { var FileInfo =
-        // new FileInfo(directory.FullName + "\\" + TempFile.Name.Replace("/", "").Replace("\\", ""),
-        // Credentials); if (FileInfo.Modified.CompareTo(TempFile.Modified) < 0)
-        // TempFile.CopyTo(directory, true); } else { TempFile.CopyTo(directory, true); }
-
-        // break;
-
-        //            case CopyOptions.DoNotOverwrite:
-        //                TempFile.CopyTo(directory, false);
-        //                break;
-        //        }
-        //    }
-        //    foreach (IDirectory SubDirectory in EnumerateDirectories())
-        //        SubDirectory.CopyTo(new DirectoryInfo(directory.FullName + "\\" + SubDirectory.Name.Replace("/", "").Replace("\\", ""), Credentials), options);
-        //    return directory;
-        //}
-
         /// <summary>
         /// Not used
         /// </summary>

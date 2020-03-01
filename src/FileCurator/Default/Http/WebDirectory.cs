@@ -90,12 +90,12 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override IDirectory Parent => InternalDirectory == null ? null : new WebDirectory(InternalDirectory.AbsolutePath.Left(InternalDirectory.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
+        public override IDirectory Parent => InternalDirectory is null ? null : new WebDirectory(InternalDirectory.AbsolutePath.Left(InternalDirectory.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
 
         /// <summary>
         /// Root
         /// </summary>
-        public override IDirectory Root => InternalDirectory == null ? null : new WebDirectory(InternalDirectory.Scheme + "://" + InternalDirectory.Host, Credentials);
+        public override IDirectory Root => InternalDirectory is null ? null : new WebDirectory(InternalDirectory.Scheme + "://" + InternalDirectory.Host, Credentials);
 
         /// <summary>
         /// Size (returns 0)
@@ -110,7 +110,7 @@ namespace FileCurator.Default
         /// <returns>Newly created directory</returns>
         public override IDirectory CopyTo(IDirectory directory, CopyOptions options = CopyOptions.CopyAlways)
         {
-            if (directory == null)
+            if (directory is null)
                 return this;
             var TempName = Name;
             if (TempName == "/")
@@ -140,7 +140,7 @@ namespace FileCurator.Default
         /// </summary>
         public override IDirectory Delete()
         {
-            if (InternalDirectory == null)
+            if (InternalDirectory is null)
                 return this;
             var Request = WebRequest.Create(InternalDirectory) as HttpWebRequest;
             Request.Method = "DELETE";
@@ -157,7 +157,7 @@ namespace FileCurator.Default
         /// <param name="searchPattern"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public override IEnumerable<IDirectory> EnumerateDirectories(string searchPattern, SearchOption options = SearchOption.TopDirectoryOnly) => new List<WebDirectory>();
+        public override IEnumerable<IDirectory> EnumerateDirectories(string searchPattern, SearchOption options = SearchOption.TopDirectoryOnly) => Array.Empty<WebDirectory>();
 
         /// <summary>
         /// Not used
@@ -165,7 +165,7 @@ namespace FileCurator.Default
         /// <param name="searchPattern"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public override IEnumerable<IFile> EnumerateFiles(string searchPattern = "*", SearchOption options = SearchOption.TopDirectoryOnly) => new List<WebFile>();
+        public override IEnumerable<IFile> EnumerateFiles(string searchPattern = "*", SearchOption options = SearchOption.TopDirectoryOnly) => Array.Empty<WebFile>();
 
         /// <summary>
         /// Not used
@@ -180,7 +180,7 @@ namespace FileCurator.Default
         /// <returns>The string returned by the service</returns>
         private static string SendRequest(HttpWebRequest request)
         {
-            if (request == null)
+            if (request is null)
                 return "";
 
             using (var Response = request.GetResponseAsync().GetAwaiter().GetResult() as HttpWebResponse)
@@ -201,12 +201,8 @@ namespace FileCurator.Default
         /// <param name="data">Data to send with the request</param>
         private static void SetupData(HttpWebRequest request, string data)
         {
-            if (request == null)
+            if (request is null || string.IsNullOrEmpty(data))
                 return;
-            if (string.IsNullOrEmpty(data))
-            {
-                return;
-            }
             var ByteData = data.ToByteArray();
             using (var RequestStream = request.GetRequestStreamAsync().GetAwaiter().GetResult())
             {
@@ -221,7 +217,7 @@ namespace FileCurator.Default
         /// <param name="request">The web request object</param>
         private void SetupCredentials(HttpWebRequest request)
         {
-            if (Credentials == null)
+            if (Credentials is null)
                 return;
             if (!string.IsNullOrEmpty(Credentials?.UserName) && !string.IsNullOrEmpty(Credentials?.Password))
             {

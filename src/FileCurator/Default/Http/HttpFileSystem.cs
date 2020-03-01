@@ -48,15 +48,7 @@ namespace FileCurator.Default
         /// <returns>The directory object</returns>
         public override IDirectory Directory(string path, Credentials credentials = null)
         {
-            path = AbsolutePath(path);
-            return new WebDirectory(path, credentials);
-        }
-
-        /// <summary>
-        /// Used to dispose of any resources
-        /// </summary>
-        public override void Dispose()
-        {
+            return new WebDirectory(AbsolutePath(path), credentials);
         }
 
         /// <summary>
@@ -67,8 +59,7 @@ namespace FileCurator.Default
         /// <returns>The file object</returns>
         public override IFile File(string path, Credentials credentials = null)
         {
-            path = AbsolutePath(path);
-            return new WebFile(path, credentials);
+            return new WebFile(AbsolutePath(path), credentials);
         }
 
         /// <summary>
@@ -77,5 +68,12 @@ namespace FileCurator.Default
         /// <param name="path">Path to convert to absolute</param>
         /// <returns>The absolute path of the path passed in</returns>
         protected override string AbsolutePath(string path) => path;
+
+        /// <summary>
+        /// Used to dispose of any resources
+        /// </summary>
+        protected override void Dispose(bool managed)
+        {
+        }
     }
 }

@@ -57,68 +57,25 @@ namespace FileCurator.Formats.RSS.Data
             if (!Element.Name.Equals("channel", StringComparison.CurrentCultureIgnoreCase))
                 throw new ArgumentException("Element is not a channel");
             var NamespaceManager = new XmlNamespaceManager(Element.NameTable);
-            var Node = Element.SelectSingleNode("./title", NamespaceManager);
-            if (Node != null)
-            {
-                Title = Node.Value;
-            }
-            Node = Element.SelectSingleNode("./link", NamespaceManager);
-            if (Node != null)
-            {
-                Link = Node.Value;
-            }
-            Node = Element.SelectSingleNode("./description", NamespaceManager);
-            if (Node != null)
-            {
-                Description = Node.Value;
-            }
-            Node = Element.SelectSingleNode("./copyright", NamespaceManager);
-            if (Node != null)
-            {
-                Copyright = Node.Value;
-            }
-            Node = Element.SelectSingleNode("./language", NamespaceManager);
-            if (Node != null)
-            {
-                Language = Node.Value;
-            }
-            Node = Element.SelectSingleNode("./webmaster", NamespaceManager);
-            if (Node != null)
-            {
-                WebMaster = Node.Value;
-            }
-            Node = Element.SelectSingleNode("./pubDate", NamespaceManager);
-            if (Node != null)
-            {
-                if (DateTime.TryParse(Node.Value.Replace("PDT", "-0700"), out var TempDate))
-                {
-                    PubDate = TempDate;
-                }
-                else
-                {
-                    PubDate = DateTime.Now;
-                }
-            }
+            Title = Element.SelectSingleNode("./title", NamespaceManager)?.Value;
+            Link = Element.SelectSingleNode("./link", NamespaceManager)?.Value;
+            Description = Element.SelectSingleNode("./description", NamespaceManager)?.Value;
+            Copyright = Element.SelectSingleNode("./copyright", NamespaceManager)?.Value;
+            Language = Element.SelectSingleNode("./language", NamespaceManager)?.Value;
+            WebMaster = Element.SelectSingleNode("./webmaster", NamespaceManager)?.Value;
+            if (DateTime.TryParse(Element.SelectSingleNode("./pubDate", NamespaceManager)?.Value.Replace("PDT", "-0700"), out var TempDate))
+                PubDate = TempDate;
+            else
+                PubDate = DateTime.Now;
             var Nodes = Element.Select("./category", NamespaceManager);
             foreach (XPathNavigator TempNode in Nodes)
             {
                 Categories.Add(Utils.StripIllegalCharacters(TempNode.Value));
             }
-            Node = Element.SelectSingleNode("./docs", NamespaceManager);
-            if (Node != null)
-            {
-                Docs = Node.Value;
-            }
-            Node = Element.SelectSingleNode("./ttl", NamespaceManager);
-            if (Node != null)
-            {
-                TTL = int.Parse(Node.Value, CultureInfo.InvariantCulture);
-            }
-            Node = Element.SelectSingleNode("./image/url", NamespaceManager);
-            if (Node != null)
-            {
-                ImageUrl = Node.Value;
-            }
+            Docs = Element.SelectSingleNode("./docs", NamespaceManager)?.Value;
+            if (int.TryParse(Element.SelectSingleNode("./ttl", NamespaceManager)?.Value, out var TempTTL))
+                TTL = TempTTL;
+            ImageUrl = Element.SelectSingleNode("./image/url", NamespaceManager)?.Value;
             Nodes = Element.Select("./item", NamespaceManager);
             foreach (XPathNavigator TempNode in Nodes)
             {
@@ -263,8 +220,8 @@ namespace FileCurator.Formats.RSS.Data
         public bool Contains(IFeedItem item) => Items.Contains(item);
 
         /// <summary>
-        /// Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"/> to an
-        /// <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
+        /// Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"/> to
+        /// an <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
         /// </summary>
         /// <param name="array">
         /// The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements

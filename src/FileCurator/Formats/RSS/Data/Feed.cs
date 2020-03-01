@@ -199,7 +199,7 @@ namespace FileCurator.Formats.RSS.Data
         /// <param name="Document">The document.</param>
         private void Load(IXPathNavigable Document)
         {
-            if (Document == null)
+            if (Document is null)
                 return;
             var Navigator = Document.CreateNavigator();
             var NamespaceManager = new XmlNamespaceManager(Navigator.NameTable);

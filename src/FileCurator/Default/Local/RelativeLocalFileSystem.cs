@@ -48,19 +48,17 @@ namespace FileCurator.Default
         protected override string AbsolutePath(string path)
         {
             path = path.Replace("/", "\\");
-            var BaseDirectory = "";
-            var ParentDirectory = "";
-            BaseDirectory = new System.IO.DirectoryInfo(".").FullName;
-            ParentDirectory = new LocalDirectory(BaseDirectory).Parent.FullName;
-            if (path.StartsWith("..\\", StringComparison.OrdinalIgnoreCase))
+            var BaseDirectory = new System.IO.DirectoryInfo(".").FullName;
+            var ParentDirectory = new LocalDirectory(BaseDirectory).Parent.FullName;
+            if (path.StartsWith("..\\", StringComparison.Ordinal))
             {
                 return ParentDirectory + path.Remove(0, 2);
             }
-            else if (path.StartsWith(".\\", StringComparison.OrdinalIgnoreCase))
+            else if (path.StartsWith(".\\", StringComparison.Ordinal))
             {
                 return BaseDirectory + path.Remove(0, 1);
             }
-            else if (path.StartsWith("~\\", StringComparison.OrdinalIgnoreCase))
+            else if (path.StartsWith("~\\", StringComparison.Ordinal))
             {
                 return BaseDirectory + path.Remove(0, 1);
             }

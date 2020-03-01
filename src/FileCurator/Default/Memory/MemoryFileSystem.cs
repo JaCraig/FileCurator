@@ -49,13 +49,6 @@ namespace FileCurator.Default.Memory
         public override Interfaces.IDirectory Directory(string path, Credentials credentials = null) => new MemoryDirectory(path, credentials);
 
         /// <summary>
-        /// Function to override in order to dispose objects
-        /// </summary>
-        public override void Dispose()
-        {
-        }
-
-        /// <summary>
         /// Gets the class representation for the file
         /// </summary>
         /// <param name="path">Path to the file</param>
@@ -69,5 +62,12 @@ namespace FileCurator.Default.Memory
         /// <param name="path">Path to convert to absolute</param>
         /// <returns>The absolute path of the path passed in</returns>
         protected override string AbsolutePath(string path) => path;
+
+        /// <summary>
+        /// Function to override in order to dispose objects
+        /// </summary>
+        protected override void Dispose(bool managed)
+        {
+        }
     }
 }

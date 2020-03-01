@@ -10,14 +10,14 @@ namespace FileCurator.Tests
         [Fact]
         public void Creation()
         {
-            var Temp = new FileCurator(new IFileSystem[] { new AbsoluteLocalFileSystem(), new NetworkFileSystem(), new RelativeLocalFileSystem() });
+            var Temp = new FileSystem(new IFileSystem[] { new AbsoluteLocalFileSystem(), new NetworkFileSystem(), new RelativeLocalFileSystem() });
             Assert.NotNull(Temp);
         }
 
         [Fact]
         public void Directory()
         {
-            var Temp = new FileCurator(new IFileSystem[] { new AbsoluteLocalFileSystem(), new NetworkFileSystem(), new RelativeLocalFileSystem() });
+            var Temp = new FileSystem(new IFileSystem[] { new AbsoluteLocalFileSystem(), new NetworkFileSystem(), new RelativeLocalFileSystem() });
             var Dir = Temp.Directory(@"C:\");
             Assert.NotNull(Dir);
             Assert.IsType<LocalDirectory>(Dir);
@@ -43,7 +43,7 @@ namespace FileCurator.Tests
         [Fact]
         public void File()
         {
-            var Temp = new FileCurator(new IFileSystem[] { new AbsoluteLocalFileSystem(), new NetworkFileSystem(), new RelativeLocalFileSystem() });
+            var Temp = new FileSystem(new IFileSystem[] { new AbsoluteLocalFileSystem(), new NetworkFileSystem(), new RelativeLocalFileSystem() });
             var TestFile = Temp.File(@"C:\Test.txt");
             Assert.NotNull(TestFile);
             Assert.IsType<LocalFile>(TestFile);

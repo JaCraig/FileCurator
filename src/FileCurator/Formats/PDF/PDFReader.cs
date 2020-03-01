@@ -101,7 +101,7 @@ namespace FileCurator.Windows.Formats.PDF
         /// <returns></returns>
         private static string ExtractTextFromPDFBytes(byte[] input)
         {
-            if (input == null || input.Length == 0) return "";
+            if (input is null || input.Length == 0) return "";
             try
             {
                 var resultString = new StringBuilder();

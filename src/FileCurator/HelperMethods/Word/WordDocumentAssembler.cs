@@ -134,7 +134,7 @@ namespace FileCurator.HelperMethods.Word
         /// <returns>This</returns>
         public WordDocumentAssembler CombineDocuments(List<string> docLocations)
         {
-            if (docLocations == null || docLocations.Count == 0)
+            if (docLocations is null || docLocations.Count == 0)
                 return this;
             var mainPart = InternalWordDoc.MainDocumentPart;
             for (var x = 0; x < docLocations.Count; ++x)
@@ -165,7 +165,7 @@ namespace FileCurator.HelperMethods.Word
         /// <param name="replacements">The replacements.</param>
         public WordDocumentAssembler ReplaceContent<T>(T objectArgs, Dictionary<string, Func<T, string>> replacements)
         {
-            if (replacements == null || replacements.Count == 0)
+            if (replacements is null || replacements.Count == 0)
                 return this;
             string docText = null;
             using (var reader = new StreamReader(InternalWordDoc.MainDocumentPart.GetStream()))
@@ -207,11 +207,8 @@ namespace FileCurator.HelperMethods.Word
         /// </param>
         protected override void Dispose(bool Managed)
         {
-            if (InternalWordDoc != null)
-            {
-                InternalWordDoc.Dispose();
-                InternalWordDoc = null;
-            }
+            InternalWordDoc?.Dispose();
+            InternalWordDoc = null;
         }
     }
 }

@@ -38,6 +38,12 @@ namespace FileCurator.Formats.VCalendar
         public override byte[] HeaderIdentifier { get; } = Array.Empty<byte>();
 
         /// <summary>
+        /// Gets the entry regex.
+        /// </summary>
+        /// <value>The entry regex.</value>
+        private static Regex EntryRegex { get; } = new Regex("(?<Title>[^\r\n:]+):(?<Value>[^\r\n]*)", RegexOptions.Compiled);
+
+        /// <summary>
         /// Reads the specified stream.
         /// </summary>
         /// <param name="stream">The stream.</param>
@@ -46,7 +52,7 @@ namespace FileCurator.Formats.VCalendar
         {
             var StringData = stream.ReadAll();
             var ReturnValue = new GenericCalendar();
-            foreach (Match TempMatch in Regex.Matches(StringData, "(?<Title>[^\r\n:]+):(?<Value>[^\r\n]*)"))
+            foreach (Match TempMatch in EntryRegex.Matches(StringData))
             {
                 var Title = TempMatch.Groups["Title"].Value.ToUpperInvariant().Trim();
                 var Value = TempMatch.Groups["Value"].Value.Trim();

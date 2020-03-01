@@ -44,7 +44,7 @@ namespace FileCurator.Formats.ICal
         /// <returns>True if it writes successfully, false otherwise.</returns>
         public bool Write(Stream writer, IGenericFile file)
         {
-            if (file is Data.Interfaces.ICalendar CalendarFile)
+            if (file is ICalendar CalendarFile)
             {
                 WriteCalendar(writer, CalendarFile);
                 return true;
@@ -59,10 +59,7 @@ namespace FileCurator.Formats.ICal
         /// <returns><c>true</c> if the specified input contains HTML; otherwise, <c>false</c>.</returns>
         private static bool ContainsHTML(string Input)
         {
-            if (string.IsNullOrEmpty(Input))
-                return false;
-
-            return STRIP_HTML_REGEX.IsMatch(Input);
+            return !string.IsNullOrEmpty(Input) && STRIP_HTML_REGEX.IsMatch(Input);
         }
 
         /// <summary>
@@ -85,11 +82,11 @@ namespace FileCurator.Formats.ICal
         /// </summary>
         /// <param name="writer">The writer.</param>
         /// <param name="calendarFile">The calendar file.</param>
-        private void WriteCalendar(Stream writer, Data.Interfaces.ICalendar calendarFile)
+        private void WriteCalendar(Stream writer, ICalendar calendarFile)
         {
             var FileOutput = new StringBuilder();
-            var StartTime = (calendarFile.StartTime - calendarFile.CurrentTimeZone.BaseUtcOffset);
-            var EndTime = (calendarFile.EndTime - calendarFile.CurrentTimeZone.BaseUtcOffset);
+            var StartTime = calendarFile.StartTime - calendarFile.CurrentTimeZone.BaseUtcOffset;
+            var EndTime = calendarFile.EndTime - calendarFile.CurrentTimeZone.BaseUtcOffset;
             FileOutput.AppendLine("BEGIN:VCALENDAR")
                       .AppendLineFormat("METHOD:{0}", calendarFile.Cancel ? "CANCEL" : "REQUEST")
                       .AppendLine("PRODID:-//Craigs Utility Library//EN")
@@ -98,7 +95,7 @@ namespace FileCurator.Formats.ICal
                       .AppendLine("CLASS:PUBLIC")
                       .AppendLineFormat("DTSTAMP:{0}", DateTime.Now.ToUniversalTime().ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture))
                       .AppendLineFormat("CREATED:{0}", DateTime.Now.ToUniversalTime().ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture))
-                      .AppendLine(StripHTML(calendarFile.Description.Replace("<br />", System.Environment.NewLine)))
+                      .AppendLine(StripHTML(calendarFile.Description.Replace("<br />", Environment.NewLine)))
                       .AppendLineFormat("DTStart:{0}", StartTime.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture))
                       .AppendLineFormat("DTEnd:{0}", EndTime.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture))
                       .AppendLineFormat("LOCATION:{0}", calendarFile.Location)

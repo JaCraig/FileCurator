@@ -23,6 +23,8 @@ namespace FileCurator.BaseClasses
     /// <summary>
     /// File system base class
     /// </summary>
+    /// <seealso cref="IDisposable"/>
+    /// <seealso cref="IFileSystem"/>
     public abstract class FileSystemBase : IDisposable, IFileSystem
     {
         /// <summary>
@@ -73,7 +75,11 @@ namespace FileCurator.BaseClasses
         /// Performs application-defined tasks associated with freeing, releasing, or resetting
         /// unmanaged resources.
         /// </summary>
-        public abstract void Dispose();
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
 
         /// <summary>
         /// Gets the class representation for the file
@@ -89,5 +95,14 @@ namespace FileCurator.BaseClasses
         /// <param name="path">Path to convert to absolute</param>
         /// <returns>The absolute path of the path passed in</returns>
         protected abstract string AbsolutePath(string path);
+
+        /// <summary>
+        /// Releases unmanaged and - optionally - managed resources.
+        /// </summary>
+        /// <param name="managed">
+        /// <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release
+        /// only unmanaged resources.
+        /// </param>
+        protected abstract void Dispose(bool managed);
     }
 }

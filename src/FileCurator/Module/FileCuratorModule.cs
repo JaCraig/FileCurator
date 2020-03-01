@@ -37,12 +37,10 @@ namespace FileCurator.Module
         /// <param name="bootstrapper">The bootstrapper.</param>
         public void Load(IBootstrapper bootstrapper)
         {
-            if (bootstrapper == null)
-                return;
-            bootstrapper.RegisterAll<IFileSystem>();
-            bootstrapper.Register<FileCurator>(ServiceLifetime.Singleton);
-            bootstrapper.RegisterAll<IFormat>(ServiceLifetime.Singleton);
-            bootstrapper.Register<Formats.Manager>(ServiceLifetime.Singleton);
+            bootstrapper?.RegisterAll<IFileSystem>()
+                .Register<FileSystem>(ServiceLifetime.Singleton)
+                .RegisterAll<IFormat>(ServiceLifetime.Singleton)
+                .Register<Formats.Manager>(ServiceLifetime.Singleton);
         }
     }
 }

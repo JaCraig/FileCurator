@@ -16,6 +16,7 @@ limitations under the License.
 
 using FileCurator.Formats.Data.Interfaces;
 using FileCurator.Formats.Interfaces;
+using System.Buffers;
 using System.IO;
 
 namespace FileCurator.Formats.BaseClasses
@@ -57,13 +58,26 @@ namespace FileCurator.Formats.BaseClasses
             if (HeaderIdentifier.Length == 0)
                 return false;
             stream.Seek(0, SeekOrigin.Begin);
+#if NET462
             var Buffer = new byte[HeaderIdentifier.Length];
+#else
+            var Buffer = ArrayPool<byte>.Shared.Rent(HeaderIdentifier.Length);
+#endif
             stream.Read(Buffer, 0, Buffer.Length);
             stream.Seek(0, SeekOrigin.Begin);
             for (var x = 0; x < HeaderIdentifier.Length; ++x)
             {
-                if (Buffer[x] != HeaderIdentifier[x]) return false;
+                if (Buffer[x] != HeaderIdentifier[x])
+                {
+#if !NET462
+                    ArrayPool<byte>.Shared.Return(Buffer);
+#endif
+                    return false;
+                }
             }
+#if !NET462
+            ArrayPool<byte>.Shared.Return(Buffer);
+#endif
             return InternalCanRead(stream);
         }
 

@@ -40,6 +40,18 @@ namespace FileCurator.Formats.Excel
         public override byte[] HeaderIdentifier { get; } = new byte[] { 0x50, 0x4B, 0x03, 0x04 };
 
         /// <summary>
+        /// Gets the alpha regex.
+        /// </summary>
+        /// <value>The alpha regex.</value>
+        private static Regex AlphaRegex { get; } = new Regex("^[A-Z]+$", RegexOptions.Compiled);
+
+        /// <summary>
+        /// Gets the column name regex.
+        /// </summary>
+        /// <value>The column name regex.</value>
+        private static Regex ColumnNameRegex { get; } = new Regex("[A-Za-z]+", RegexOptions.Compiled);
+
+        /// <summary>
         /// Used to determine if a reader can actually read the file
         /// </summary>
         /// <param name="stream">The stream.</param>
@@ -128,8 +140,7 @@ namespace FileCurator.Formats.Excel
         /// <exception cref="ArgumentException">columnName</exception>
         private int ConvertColumnNameToNumber(string columnName)
         {
-            var Alpha = new Regex("^[A-Z]+$");
-            if (!Alpha.IsMatch(columnName)) throw new ArgumentException(nameof(columnName));
+            if (!AlphaRegex.IsMatch(columnName)) throw new ArgumentException(nameof(columnName));
 
             var ColLetters = columnName.ToCharArray();
             Array.Reverse(ColLetters);
@@ -155,7 +166,7 @@ namespace FileCurator.Formats.Excel
         {
             if (string.IsNullOrEmpty(cellReference))
                 return "";
-            return new Regex("[A-Za-z]+").Match(cellReference)
+            return ColumnNameRegex.Match(cellReference)
                                          .Value;
         }
 
@@ -175,12 +186,11 @@ namespace FileCurator.Formats.Excel
 
                 for (; CurrentCount < CurrentColumnIndex; ++CurrentCount)
                 {
-                    var EmptyCell = new Cell
+                    yield return new Cell
                     {
                         DataType = null,
                         CellValue = new CellValue(string.Empty)
                     };
-                    yield return EmptyCell;
                 }
                 yield return CurrentCell;
                 ++CurrentCount;
@@ -196,7 +206,7 @@ namespace FileCurator.Formats.Excel
         private string ReadExcelCell(Cell cell, WorkbookPart workbookPart)
         {
             var CellValue = cell.CellValue;
-            var Text = (CellValue == null) ? cell.InnerText : CellValue.Text;
+            var Text = (CellValue is null) ? cell.InnerText : CellValue.Text;
             if ((cell.DataType != null) && (cell.DataType == CellValues.SharedString))
             {
                 Text = workbookPart.SharedStringTablePart

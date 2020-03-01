@@ -70,7 +70,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Directory base path
         /// </summary>
-        public override IDirectory Directory => InternalFile == null ? null : new WebDirectory(InternalFile.AbsolutePath.Left(InternalFile.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
+        public override IDirectory Directory => InternalFile is null ? null : new WebDirectory(InternalFile.AbsolutePath.Left(InternalFile.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
 
         /// <summary>
         /// Does it exist? Always true.
@@ -110,7 +110,7 @@ namespace FileCurator.Default
         /// <returns>The newly created file</returns>
         public override IFile CopyTo(IDirectory directory, bool overwrite)
         {
-            if (directory == null)
+            if (directory is null)
                 return this;
             var File = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             if (!File.Exists || overwrite)
@@ -127,7 +127,7 @@ namespace FileCurator.Default
         /// <returns>Any response for deleting the resource (usually FTP, HTTP, etc)</returns>
         public override string Delete()
         {
-            if (InternalFile == null)
+            if (InternalFile is null)
                 return "";
             var Request = WebRequest.Create(InternalFile) as HttpWebRequest;
             Request.Method = "DELETE";
@@ -143,7 +143,7 @@ namespace FileCurator.Default
         /// <param name="directory">Not used</param>
         public override IFile MoveTo(IDirectory directory)
         {
-            if (directory == null || !Exists)
+            if (directory is null || !Exists)
                 return this;
             var TempFile = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             TempFile.Write(ReadBinary());
@@ -157,7 +157,7 @@ namespace FileCurator.Default
         /// <returns>The content as a string</returns>
         public override string Read()
         {
-            if (InternalFile == null)
+            if (InternalFile is null)
                 return "";
             var Request = WebRequest.Create(InternalFile) as HttpWebRequest;
             Request.Method = "GET";
@@ -173,9 +173,7 @@ namespace FileCurator.Default
         /// <returns>The content as a byte array</returns>
         public override byte[] ReadBinary()
         {
-            if (InternalFile == null)
-                return Array.Empty<byte>();
-            return Read().ToByteArray();
+            return InternalFile is null ? Array.Empty<byte>() : Read().ToByteArray();
         }
 
         /// <summary>
@@ -220,7 +218,7 @@ namespace FileCurator.Default
         /// <returns>The string returned by the service</returns>
         private static string SendRequest(HttpWebRequest request)
         {
-            if (request == null)
+            if (request is null)
                 return "";
             using (var Response = request.GetResponseAsync().GetAwaiter().GetResult() as HttpWebResponse)
             {
@@ -240,12 +238,8 @@ namespace FileCurator.Default
         /// <param name="data">Data to send with the request</param>
         private static void SetupData(HttpWebRequest request, string data)
         {
-            if (request == null)
+            if (request is null || string.IsNullOrEmpty(data))
                 return;
-            if (string.IsNullOrEmpty(data))
-            {
-                return;
-            }
             var ByteData = data.ToByteArray();
             using (var RequestStream = request.GetRequestStreamAsync().GetAwaiter().GetResult())
             {
@@ -260,7 +254,7 @@ namespace FileCurator.Default
         /// <param name="request">The web request object</param>
         private void SetupCredentials(HttpWebRequest request)
         {
-            if (Credentials == null)
+            if (Credentials is null)
                 return;
             if (!string.IsNullOrEmpty(Credentials?.UserName) && !string.IsNullOrEmpty(Credentials?.Password))
             {

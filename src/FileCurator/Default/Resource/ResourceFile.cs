@@ -52,35 +52,17 @@ namespace FileCurator.Default
         /// <summary>
         /// Time accessed (Just returns now)
         /// </summary>
-        public override DateTime Accessed
-        {
-            get
-            {
-                if (AssemblyFrom == null)
-                    return DateTime.Now;
-
-                return new System.IO.FileInfo(AssemblyFrom.Location).LastAccessTime;
-            }
-        }
+        public override DateTime Accessed => AssemblyFrom is null ? DateTime.Now : new System.IO.FileInfo(AssemblyFrom.Location).LastAccessTime;
 
         /// <summary>
         /// Time created (Just returns now)
         /// </summary>
-        public override DateTime Created
-        {
-            get
-            {
-                if (AssemblyFrom == null)
-                    return DateTime.Now;
-
-                return new System.IO.FileInfo(AssemblyFrom.Location).CreationTime;
-            }
-        }
+        public override DateTime Created => AssemblyFrom is null ? DateTime.Now : new System.IO.FileInfo(AssemblyFrom.Location).CreationTime;
 
         /// <summary>
         /// Directory base path
         /// </summary>
-        public override IDirectory Directory => AssemblyFrom == null ? null : new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
+        public override IDirectory Directory => AssemblyFrom is null ? null : new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
 
         /// <summary>
         /// Does it exist? Always true.
@@ -95,7 +77,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName => AssemblyFrom == null ? $"resource://{Resource}" : $"resource://{AssemblyFrom.GetName().Name}/{Resource}";
+        public override string FullName => AssemblyFrom is null ? $"resource://{Resource}" : $"resource://{AssemblyFrom.GetName().Name}/{Resource}";
 
         /// <summary>
         /// Size of the file
@@ -104,7 +86,7 @@ namespace FileCurator.Default
         {
             get
             {
-                if (AssemblyFrom == null)
+                if (AssemblyFrom is null)
                     return 0;
                 using (var TempStream = AssemblyFrom.GetManifestResourceStream(Resource))
                 {
@@ -116,16 +98,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Time modified (just returns now)
         /// </summary>
-        public override DateTime Modified
-        {
-            get
-            {
-                if (AssemblyFrom == null)
-                    return DateTime.Now;
-
-                return new System.IO.FileInfo(AssemblyFrom.Location).LastWriteTime;
-            }
-        }
+        public override DateTime Modified => AssemblyFrom is null ? DateTime.Now : new System.IO.FileInfo(AssemblyFrom.Location).LastWriteTime;
 
         /// <summary>
         /// Absolute path of the file (same as FullName)
@@ -166,7 +139,7 @@ namespace FileCurator.Default
         /// <returns>The newly created file</returns>
         public override IFile CopyTo(IDirectory directory, bool overwrite)
         {
-            if (directory == null || !Exists)
+            if (directory is null || !Exists)
                 return this;
             var File = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             if (!File.Exists || overwrite)
@@ -189,7 +162,7 @@ namespace FileCurator.Default
         /// <param name="directory">Not used</param>
         public override IFile MoveTo(IDirectory directory)
         {
-            if (directory == null || !Exists)
+            if (directory is null || !Exists)
                 return this;
             var TempFile = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             TempFile.Write(ReadBinary());
@@ -203,7 +176,7 @@ namespace FileCurator.Default
         /// <returns>The content as a string</returns>
         public override string Read()
         {
-            if (InternalFile == null || AssemblyFrom == null)
+            if (InternalFile is null || AssemblyFrom is null)
                 return "";
             using (var TempStream = new StreamReader(AssemblyFrom.GetManifestResourceStream(Resource)))
             {
@@ -217,21 +190,13 @@ namespace FileCurator.Default
         /// <returns>The content as a byte array</returns>
         public override byte[] ReadBinary()
         {
-            if (InternalFile == null || AssemblyFrom == null)
+            if (InternalFile is null || AssemblyFrom is null)
                 return Array.Empty<byte>();
             using (var Reader = AssemblyFrom.GetManifestResourceStream(Resource))
             {
-                var Buffer = new byte[1024];
-                using (var Temp = new MemoryStream())
-                {
-                    while (true)
-                    {
-                        var Count = Reader.Read(Buffer, 0, Buffer.Length);
-                        if (Count <= 0)
-                            return Temp.ToArray();
-                        Temp.Write(Buffer, 0, Count);
-                    }
-                }
+                var Buffer = new byte[Reader.Length];
+                Reader.Read(Buffer, 0, Buffer.Length);
+                return Buffer;
             }
         }
 

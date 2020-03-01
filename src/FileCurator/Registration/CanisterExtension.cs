@@ -32,10 +32,8 @@ namespace FileCurator.Registration
         /// <returns>The bootstrapper</returns>
         public static IBootstrapper RegisterFileCurator(this IBootstrapper bootstrapper)
         {
-            return bootstrapper == null ?
-                        bootstrapper :
-                        bootstrapper.RegisterBigBookOfDataTypes()
-                                    .AddAssembly(typeof(CanisterExtensions).GetTypeInfo().Assembly);
+            return bootstrapper?.RegisterBigBookOfDataTypes()
+                                .AddAssembly(typeof(CanisterExtensions).GetTypeInfo().Assembly);
         }
     }
 }
