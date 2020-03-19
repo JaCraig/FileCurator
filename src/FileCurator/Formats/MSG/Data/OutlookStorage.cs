@@ -1,5 +1,4 @@
-﻿#if NET462
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -114,12 +113,74 @@ namespace FileCurator.Formats.MSG
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OutlookStorage"/> class on the specified <see cref="NativeMethods.IStorage"/>.
+        /// Initializes a new instance of the <see cref="OutlookStorage"/> class on the specified
+        /// <see cref="NativeMethods.IStorage"/>.
         /// </summary>
         /// <param name="storage">The storage to create the <see cref="OutlookStorage"/> on.</param>
         private OutlookStorage(NativeMethods.IStorage storage)
         {
             this.LoadStorage(storage);
+        }
+
+        /// <summary>
+        /// Releases unmanaged resources and performs other cleanup operations before the is
+        /// reclaimed by garbage collection.
+        /// </summary>
+        ~OutlookStorage()
+        {
+            this.Dispose();
+        }
+
+        /// <summary>
+        /// Gets the received time.
+        /// </summary>
+        /// <value>The received time.</value>
+        public DateTime ReceivedTime
+        {
+            get
+            {
+                return (DateTime)this.GetMapiProperty(OutlookStorage.PR_MESSAGE_DELIVERY_TIME);
+            }
+        }
+
+        /// <summary>
+        /// Gets the sent time.
+        /// </summary>
+        /// <value>The sent time.</value>
+        public DateTime SentTime
+        {
+            get
+            {
+                return (DateTime)this.GetMapiProperty(OutlookStorage.PR_CLIENT_SUBMIT_TIME);
+            }
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether this instance is the top level outlook message.
+        /// </summary>
+        /// <value><c>true</c> if this instance is the top level outlook message; otherwise, <c>false</c>.</value>
+        private bool IsTopParent
+        {
+            get
+            {
+                return this.parentMessage is null;
+            }
+        }
+
+        /// <summary>
+        /// Gets the top level outlook message from a sub message at any level.
+        /// </summary>
+        /// <value>The top level outlook message.</value>
+        private OutlookStorage TopParent
+        {
+            get
+            {
+                if (this.parentMessage != null)
+                {
+                    return this.parentMessage.TopParent;
+                }
+                return this;
+            }
         }
 
         /// <summary>
@@ -209,58 +270,6 @@ namespace FileCurator.Formats.MSG
         /// The IStorage associated with this instance.
         /// </summary>
         private NativeMethods.IStorage storage_;
-
-        /// <summary>
-        /// Gets the received time.
-        /// </summary>
-        /// <value>The received time.</value>
-        public DateTime ReceivedTime
-        {
-            get
-            {
-                return (DateTime)this.GetMapiProperty(OutlookStorage.PR_MESSAGE_DELIVERY_TIME);
-            }
-        }
-
-        /// <summary>
-        /// Gets the sent time.
-        /// </summary>
-        /// <value>The sent time.</value>
-        public DateTime SentTime
-        {
-            get
-            {
-                return (DateTime)this.GetMapiProperty(OutlookStorage.PR_CLIENT_SUBMIT_TIME);
-            }
-        }
-
-        /// <summary>
-        /// Gets a value indicating whether this instance is the top level outlook message.
-        /// </summary>
-        /// <value><c>true</c> if this instance is the top level outlook message; otherwise, <c>false</c>.</value>
-        private bool IsTopParent
-        {
-            get
-            {
-                return this.parentMessage is null;
-            }
-        }
-
-        /// <summary>
-        /// Gets the top level outlook message from a sub message at any level.
-        /// </summary>
-        /// <value>The top level outlook message.</value>
-        private OutlookStorage TopParent
-        {
-            get
-            {
-                if (this.parentMessage != null)
-                {
-                    return this.parentMessage.TopParent;
-                }
-                return this;
-            }
-        }
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting
@@ -550,15 +559,6 @@ namespace FileCurator.Formats.MSG
                 default:
                     throw new ApplicationException("MAPI property has an unsupported type and can not be retrieved.");
             }
-        }
-
-        /// <summary>
-        /// Releases unmanaged resources and performs other cleanup operations before the is
-        /// reclaimed by garbage collection.
-        /// </summary>
-        ~OutlookStorage()
-        {
-            this.Dispose();
         }
 
         /// <summary>
@@ -1799,6 +1799,17 @@ namespace FileCurator.Formats.MSG
             {
             }
 
+            ~ReferenceManager()
+            {
+                foreach (object trackingObject in trackingObjects)
+                {
+                    if (trackingObject != null)
+                    {
+                        Marshal.ReleaseComObject(trackingObject);
+                    }
+                }
+            }
+
             private static readonly ReferenceManager instance = new ReferenceManager();
 
             private readonly List<object> trackingObjects = new List<object>();
@@ -1824,18 +1835,6 @@ namespace FileCurator.Formats.MSG
                     }
                 }
             }
-
-            ~ReferenceManager()
-            {
-                foreach (object trackingObject in trackingObjects)
-                {
-                    if (trackingObject != null)
-                    {
-                        Marshal.ReleaseComObject(trackingObject);
-                    }
-                }
-            }
         }
     }
 }
-#endif

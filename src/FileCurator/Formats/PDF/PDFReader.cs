@@ -1,5 +1,4 @@
-﻿#if NET462
-/*
+﻿/*
 Copyright 2017 James Craig
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,15 +32,15 @@ namespace FileCurator.Windows.Formats.PDF
     public class PDFReader : ReaderBaseClass<IGenericFile>
     {
         /// <summary>
-        /// The number of characters to keep, when extracting text.
-        /// </summary>
-        private const int NumberOfCharsToKeep = 15;
-
-        /// <summary>
         /// Gets the header identifier.
         /// </summary>
         /// <value>The header identifier.</value>
         public override byte[] HeaderIdentifier => new byte[] { 0x25, 0x50, 0x44, 0x46, 0x2D, 0x31, 0x2E };
+
+        /// <summary>
+        /// The number of characters to keep, when extracting text.
+        /// </summary>
+        private const int NumberOfCharsToKeep = 15;
 
         /// <summary>
         /// Reads the specified stream.
@@ -210,4 +209,3 @@ namespace FileCurator.Windows.Formats.PDF
         }
     }
 }
-#endif

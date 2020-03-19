@@ -10,7 +10,7 @@
     <Description>FileCurator is a simple manager for your files. It tries to give them a common interface to deal with files whether on your system or other locations.</Description>
     <AssemblyTitle>FileCurator</AssemblyTitle>
     <Authors>James Craig</Authors>
-    <TargetFrameworks>netstandard2.1;net462</TargetFrameworks>
+    <TargetFrameworks>netstandard2.1</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>FileCurator</AssemblyName>
     <PackageId>FileCurator</PackageId>
@@ -22,38 +22,22 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Version>3.1.$(BuildNumber)</Version>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
-    <PackageReference Include="BigBook" Version="3.0.9" />
+  <ItemGroup>
+    <PackageReference Include="BigBook" Version="3.0.12" />
     <PackageReference Include="Canister.IoC" Version="3.0.2" />
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.10.1" />
-    <PackageReference Include="HtmlAgilityPack" Version="1.11.21" />
-    <PackageReference Include="MimeKit" Version="2.5.1" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.22" />
+    <PackageReference Include="MimeKit" Version="2.5.2" />
     <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
     <PackageReference Include="System.Net.Requests" Version="4.3.0" />
     <PackageReference Include="System.Threading.Tasks.Parallel" Version="4.3.0" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
-    <PackageReference Include="BigBook" Version="2.1.14" />
-    <PackageReference Include="Canister.IoC" Version="2.1.6" />
-    <PackageReference Include="DocumentFormat.OpenXml" Version="2.10.1" />
-    <PackageReference Include="HtmlAgilityPack" Version="1.11.21" />
-    <PackageReference Include="MimeKit" Version="2.5.1" />
-    <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
-    <PackageReference Include="System.Net.Requests" Version="4.3.0" />
-    <PackageReference Include="System.Threading.Tasks.Parallel" Version="4.3.0" />
-    <PackageReference Include="PDFsharp" version="1.50.5147" />
-    <Reference Include="System.Windows.Forms" />
+    <PackageReference Include="PDFsharpNetStandard2" Version="1.51.4845" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Default\Ftp\" />
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Update="NETStandard.Library" Version="2.0.1" />
-  </ItemGroup>
-
 </Project>

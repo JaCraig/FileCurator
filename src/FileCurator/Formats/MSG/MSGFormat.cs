@@ -1,5 +1,4 @@
-﻿#if NET462
-/*
+﻿/*
 Copyright 2017 James Craig
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -45,4 +44,3 @@ namespace FileCurator.Windows.Formats.MSG
         public override string[] FileTypes => new[] { "MSG" };
     }
 }
-#endif
