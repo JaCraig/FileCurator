@@ -32,15 +32,15 @@ namespace FileCurator.Formats.HTML
     public class HTMLReader : ReaderBaseClass<IGenericFile>
     {
         /// <summary>
-        /// The strip HTML regex
-        /// </summary>
-        private static readonly Regex STRIP_HTML_REGEX = new Regex("<[^>]*>", RegexOptions.Compiled);
-
-        /// <summary>
         /// Gets the header identifier.
         /// </summary>
         /// <value>The header identifier.</value>
         public override byte[] HeaderIdentifier { get; } = Array.Empty<byte>();
+
+        /// <summary>
+        /// The strip HTML regex
+        /// </summary>
+        private static readonly Regex STRIP_HTML_REGEX = new Regex("<[^>]*>", RegexOptions.Compiled);
 
         /// <summary>
         /// Reads the specified stream.
@@ -64,11 +64,11 @@ namespace FileCurator.Formats.HTML
                                 .Descendants("script")
                                 .ToList()
                                 .ForEach(x => x.Remove());
-            Content = doc.DocumentNode.SelectSingleNode("//body").InnerText;
+            Content = doc.DocumentNode.SelectSingleNode("//body").InnerHtml;
             Content = StripHTML(Content);
-            Content = Content.Replace("&amp;", "&");
+            Content = Content.Replace("&amp;", "&").Replace("&rsquo;", "'");
             var RemoveSpaces = new Regex(@"\s+", RegexOptions.None);
-            return new GenericFile(RemoveSpaces.Replace(Content, " "), Title, Meta);
+            return new GenericFile(RemoveSpaces.Replace(Content, " ").Trim(), Title, Meta);
         }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace FileCurator.Formats.HTML
         private static string StripHTML(string html)
         {
             if (string.IsNullOrEmpty(html))
-                return "";
-            return STRIP_HTML_REGEX.Replace(html, string.Empty)
+                return string.Empty;
+            return STRIP_HTML_REGEX.Replace(html, " ")
                                    .Replace("&nbsp;", " ")
                                    .Replace("&#160;", string.Empty);
         }
