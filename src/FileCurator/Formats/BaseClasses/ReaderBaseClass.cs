@@ -58,26 +58,20 @@ namespace FileCurator.Formats.BaseClasses
             if (HeaderIdentifier.Length == 0)
                 return false;
             stream.Seek(0, SeekOrigin.Begin);
-#if NET462
-            var Buffer = new byte[HeaderIdentifier.Length];
-#else
+            var StartIndex = FindStartIndex(stream);
+            stream.Seek(StartIndex, SeekOrigin.Begin);
             var Buffer = ArrayPool<byte>.Shared.Rent(HeaderIdentifier.Length);
-#endif
             stream.Read(Buffer, 0, Buffer.Length);
             stream.Seek(0, SeekOrigin.Begin);
             for (var x = 0; x < HeaderIdentifier.Length; ++x)
             {
                 if (Buffer[x] != HeaderIdentifier[x])
                 {
-#if !NET462
                     ArrayPool<byte>.Shared.Return(Buffer);
-#endif
                     return false;
                 }
             }
-#if !NET462
             ArrayPool<byte>.Shared.Return(Buffer);
-#endif
             return InternalCanRead(stream);
         }
 
@@ -94,5 +88,22 @@ namespace FileCurator.Formats.BaseClasses
         /// <param name="stream">The stream.</param>
         /// <returns>The file</returns>
         public abstract TFile Read(Stream stream);
+
+        /// <summary>
+        /// Finds the start index.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <returns></returns>
+        private int FindStartIndex(Stream stream)
+        {
+            if (stream.Length < 3)
+                return 0;
+            var BOMBuffer = ArrayPool<byte>.Shared.Rent(3);
+            stream.Read(BOMBuffer, 0, BOMBuffer.Length);
+            stream.Seek(0, SeekOrigin.Begin);
+            var ReturnValue = BOMBuffer[0] == 0xEF && BOMBuffer[1] == 0xBB && BOMBuffer[2] == 0xBF ? 3 : 0;
+            ArrayPool<byte>.Shared.Return(BOMBuffer);
+            return ReturnValue;
+        }
     }
 }
