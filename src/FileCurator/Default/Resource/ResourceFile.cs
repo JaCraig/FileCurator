@@ -127,7 +127,7 @@ namespace FileCurator.Default
             get
             {
                 var Match = SplitPathRegex.Match(InternalFile).Groups["FileName"];
-                return Match.Success ? Match.Value.Replace("\\", "/").Replace("/", ".") : "";
+                return Match.Success ? Match.Value.Replace("\\", "/").Replace("/", ".").Replace("-", "_") : string.Empty;
             }
         }
 
@@ -177,7 +177,7 @@ namespace FileCurator.Default
         public override string Read()
         {
             if (InternalFile is null || AssemblyFrom is null)
-                return "";
+                return string.Empty;
             using (var TempStream = new StreamReader(AssemblyFrom.GetManifestResourceStream(Resource)))
             {
                 return TempStream.ReadToEnd();
