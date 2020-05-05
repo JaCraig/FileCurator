@@ -38,7 +38,7 @@ namespace FileCurator.Interfaces
         /// <summary>
         /// Directory the file is in
         /// </summary>
-        IDirectory Directory { get; }
+        IDirectory? Directory { get; }
 
         /// <summary>
         /// Does the file exist currently
@@ -76,7 +76,7 @@ namespace FileCurator.Interfaces
         /// <param name="directory">Directory to copy the file to</param>
         /// <param name="overwrite">Should the file overwrite another file if found</param>
         /// <returns>The newly created file</returns>
-        IFile CopyTo(IDirectory directory, bool overwrite);
+        IFile? CopyTo(IDirectory directory, bool overwrite);
 
         /// <summary>
         /// Deletes the file
@@ -115,7 +115,7 @@ namespace FileCurator.Interfaces
         /// <param name="mode">File mode</param>
         /// <param name="encoding">Encoding that the content should be saved as (default is UTF8)</param>
         /// <returns>The result of the write or original content</returns>
-        string Write(string content, FileMode mode = FileMode.Create, Encoding encoding = null);
+        string Write(string content, FileMode mode = FileMode.Create, Encoding? encoding = null);
 
         /// <summary>
         /// Writes content to the file

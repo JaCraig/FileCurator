@@ -41,32 +41,12 @@ namespace FileCurator.Default.Memory
         /// </summary>
         /// <param name="path">The path.</param>
         /// <param name="credentials">The credentials.</param>
-        public MemoryFile(string path, Credentials credentials)
+        public MemoryFile(string path, Credentials? credentials)
             : base(path, credentials)
         {
             created = modified = accessed = DateTime.UtcNow;
             fileData = Array.Empty<byte>();
         }
-
-        /// <summary>
-        /// The created
-        /// </summary>
-        private readonly DateTime created;
-
-        /// <summary>
-        /// The accessed
-        /// </summary>
-        private DateTime accessed;
-
-        /// <summary>
-        /// The file data
-        /// </summary>
-        private byte[] fileData;
-
-        /// <summary>
-        /// The modified
-        /// </summary>
-        private DateTime modified;
 
         /// <summary>
         /// Last time accessed (UTC time)
@@ -114,6 +94,26 @@ namespace FileCurator.Default.Memory
         public override string Name => InternalFile;
 
         /// <summary>
+        /// The created
+        /// </summary>
+        private readonly DateTime created;
+
+        /// <summary>
+        /// The accessed
+        /// </summary>
+        private DateTime accessed;
+
+        /// <summary>
+        /// The file data
+        /// </summary>
+        private byte[] fileData;
+
+        /// <summary>
+        /// The modified
+        /// </summary>
+        private DateTime modified;
+
+        /// <summary>
         /// Copies the file to another directory
         /// </summary>
         /// <param name="directory">Directory to copy the file to</param>
@@ -140,7 +140,7 @@ namespace FileCurator.Default.Memory
         {
             fileData = Array.Empty<byte>();
             modified = DateTime.UtcNow;
-            return "";
+            return string.Empty;
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace FileCurator.Default.Memory
         public override string Read()
         {
             accessed = DateTime.UtcNow;
-            return fileData?.ToString(Encoding.UTF8) ?? "";
+            return fileData?.ToString(Encoding.UTF8) ?? string.Empty;
         }
 
         /// <summary>

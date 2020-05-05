@@ -33,9 +33,9 @@ namespace FileCurator.Formats.Data
         /// <param name="meta">The meta.</param>
         public GenericFile(string content, string title, string meta)
         {
-            Content = content ?? "";
+            Content = content ?? string.Empty;
             Title = title ?? " ";
-            Meta = meta ?? "";
+            Meta = meta ?? string.Empty;
         }
 
         /// <summary>

@@ -46,7 +46,7 @@ namespace FileCurator.Default
         /// <param name="path">Path to the directory</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The directory object</returns>
-        public override IDirectory Directory(string path, Credentials credentials = null)
+        public override IDirectory Directory(string path, Credentials? credentials = null)
         {
             return new WebDirectory(AbsolutePath(path), credentials);
         }
@@ -57,7 +57,7 @@ namespace FileCurator.Default
         /// <param name="path">Path to the file</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The file object</returns>
-        public override IFile File(string path, Credentials credentials = null)
+        public override IFile File(string path, Credentials? credentials = null)
         {
             return new WebFile(AbsolutePath(path), credentials);
         }

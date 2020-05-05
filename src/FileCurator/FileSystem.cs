@@ -33,7 +33,7 @@ namespace FileCurator
         /// <param name="fileSystems">The file systems.</param>
         public FileSystem(IEnumerable<IFileSystem> fileSystems)
         {
-            fileSystems = fileSystems ?? Array.Empty<IFileSystem>();
+            fileSystems ??= Array.Empty<IFileSystem>();
             FileSystems = fileSystems.Where(x => x.GetType().Assembly != typeof(FileSystem).Assembly)
                                           .ToDictionary(x => x.Name);
             foreach (var FileSystem in fileSystems.Where(x => x.GetType().Assembly == typeof(FileSystem).Assembly))
@@ -46,7 +46,7 @@ namespace FileCurator
         /// <summary>
         /// File systems that the library can use
         /// </summary>
-        protected IDictionary<string, IFileSystem> FileSystems { get; private set; }
+        protected IDictionary<string, IFileSystem> FileSystems { get; }
 
         /// <summary>
         /// Gets the file system by name
@@ -61,7 +61,7 @@ namespace FileCurator
         /// <param name="path">Path to the directory</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The directory object</returns>
-        public IDirectory Directory(string path, Credentials credentials = null)
+        public IDirectory? Directory(string path, Credentials? credentials = null)
         {
             return FindSystem(path)?.Directory(path, credentials);
         }
@@ -82,7 +82,7 @@ namespace FileCurator
         /// <param name="path">Path to the file</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The file object</returns>
-        public IFile File(string path, Credentials credentials = null)
+        public IFile? File(string path, Credentials? credentials = null)
         {
             var FileSystem = FindSystem(path);
             return FileSystem?.File(path, credentials);
@@ -120,7 +120,7 @@ namespace FileCurator
             {
                 FileSystem.Dispose();
             }
-            FileSystems = null;
+            FileSystems.Clear();
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace FileCurator
         /// </summary>
         /// <param name="path">Path to search for</param>
         /// <returns>The file system associated with the path</returns>
-        protected IFileSystem FindSystem(string path)
+        protected IFileSystem? FindSystem(string path)
         {
             return FileSystems?.Values.OrderBy(x => x.Order).FirstOrDefault(x => x.CanHandle(path));
         }

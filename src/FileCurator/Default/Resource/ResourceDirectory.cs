@@ -43,7 +43,7 @@ namespace FileCurator.Default
         /// </summary>
         /// <param name="path">Path to the directory</param>
         /// <param name="credentials">The credentials.</param>
-        public ResourceDirectory(string path, Credentials credentials = null)
+        public ResourceDirectory(string path, Credentials? credentials = null)
             : base(path, credentials)
         {
         }
@@ -81,12 +81,12 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override IDirectory Parent { get; } = null;
+        public override IDirectory? Parent { get; } = null;
 
         /// <summary>
         /// Root
         /// </summary>
-        public override IDirectory Root => AssemblyFrom is null ? null : new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
+        public override IDirectory? Root => AssemblyFrom is null ? null : new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
 
         /// <summary>
         /// Size (returns 0)

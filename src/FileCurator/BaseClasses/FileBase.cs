@@ -51,7 +51,7 @@ namespace FileCurator.BaseClasses
         /// </summary>
         /// <param name="internalFile">Internal file</param>
         /// <param name="credentials">The credentials.</param>
-        protected FileBase(InternalFileType internalFile, Credentials credentials = null)
+        protected FileBase(InternalFileType internalFile, Credentials? credentials = null)
             : this(internalFile)
         {
             Credentials = credentials;
@@ -71,12 +71,12 @@ namespace FileCurator.BaseClasses
         /// Gets the credentials.
         /// </summary>
         /// <value>The credentials.</value>
-        public Credentials Credentials { get; }
+        public Credentials? Credentials { get; }
 
         /// <summary>
         /// Directory the file is within
         /// </summary>
-        public abstract IDirectory Directory { get; }
+        public abstract IDirectory? Directory { get; }
 
         /// <summary>
         /// Does the file exist?
@@ -130,7 +130,7 @@ namespace FileCurator.BaseClasses
         /// <returns>The file as a string</returns>
         public static implicit operator string(FileBase<InternalFileType, FileType> file)
         {
-            return file?.Read() ?? "";
+            return file?.Read() ?? string.Empty;
         }
 
         /// <summary>
@@ -309,7 +309,7 @@ namespace FileCurator.BaseClasses
         /// <param name="mode">Mode to open the file as</param>
         /// <param name="encoding">Encoding to use for the content</param>
         /// <returns>The result of the write or original content</returns>
-        public abstract string Write(string content, FileMode mode = FileMode.Create, Encoding encoding = null);
+        public abstract string Write(string content, FileMode mode = FileMode.Create, Encoding? encoding = null);
 
         /// <summary>
         /// Writes content to the file

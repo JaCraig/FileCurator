@@ -52,7 +52,7 @@ namespace FileCurator.Formats.HTML
             var Content = stream.ReadAll();
             var doc = new HtmlAgilityPack.HtmlDocument();
             doc.LoadHtml(Content);
-            var Title = doc.DocumentNode.SelectSingleNode("//head//title")?.InnerText ?? "";
+            var Title = doc.DocumentNode.SelectSingleNode("//head//title")?.InnerText ?? string.Empty;
             var Meta = new Regex(@"<meta\s*name=[""']description[""']\s*content=[""'](?<Content>[^""']*)[""']\s*/>", RegexOptions.IgnoreCase).Match(Content).Groups["Content"].Value;
             Meta += new Regex(@"<meta\s*name=[""']keywords[""']\s*content=[""'](?<Content>[^""']*)[""']\s*/>", RegexOptions.IgnoreCase).Match(Content).Groups["Content"].Value;
             doc.DocumentNode.SelectSingleNode("//body")

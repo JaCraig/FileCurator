@@ -42,7 +42,7 @@ namespace FileCurator.Default
         /// </summary>
         /// <param name="path">Path to the file</param>
         /// <param name="credentials">The credentials.</param>
-        public WebFile(string path, Credentials credentials = null)
+        public WebFile(string path, Credentials? credentials = null)
             : this(string.IsNullOrEmpty(path) ? null : new Uri(path), credentials)
         {
         }
@@ -52,7 +52,7 @@ namespace FileCurator.Default
         /// </summary>
         /// <param name="file">File to use</param>
         /// <param name="credentials">The credentials.</param>
-        public WebFile(Uri file, Credentials credentials)
+        public WebFile(Uri? file, Credentials? credentials)
             : base(file, credentials)
         {
         }
@@ -70,7 +70,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Directory base path
         /// </summary>
-        public override IDirectory Directory => InternalFile is null ? null : new WebDirectory(InternalFile.AbsolutePath.Left(InternalFile.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
+        public override IDirectory? Directory => InternalFile is null ? null : new WebDirectory(InternalFile.AbsolutePath.Left(InternalFile.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
 
         /// <summary>
         /// Does it exist? Always true.
@@ -80,12 +80,12 @@ namespace FileCurator.Default
         /// <summary>
         /// Extension (always empty)
         /// </summary>
-        public override string Extension { get; } = "";
+        public override string Extension { get; } = string.Empty;
 
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName => InternalFile?.ToString() ?? "";
+        public override string FullName => InternalFile?.ToString() ?? string.Empty;
 
         /// <summary>
         /// Size of the file (always 0)
@@ -100,7 +100,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Absolute path of the file (same as FullName)
         /// </summary>
-        public override string Name => InternalFile?.AbsolutePath ?? "";
+        public override string Name => InternalFile?.AbsolutePath ?? string.Empty;
 
         /// <summary>
         /// Copies the file to another directory
@@ -128,8 +128,9 @@ namespace FileCurator.Default
         public override string Delete()
         {
             if (InternalFile is null)
-                return "";
-            var Request = WebRequest.Create(InternalFile) as HttpWebRequest;
+                return string.Empty;
+            if (!(WebRequest.Create(InternalFile) is HttpWebRequest Request))
+                return string.Empty;
             Request.Method = "DELETE";
             Request.ContentType = "text/xml";
             SetupData(Request, "");
@@ -158,8 +159,9 @@ namespace FileCurator.Default
         public override string Read()
         {
             if (InternalFile is null)
-                return "";
-            var Request = WebRequest.Create(InternalFile) as HttpWebRequest;
+                return string.Empty;
+            if (!(WebRequest.Create(InternalFile) is HttpWebRequest Request))
+                return string.Empty;
             Request.Method = "GET";
             Request.ContentType = "text/xml";
             SetupData(Request, "");
@@ -189,10 +191,10 @@ namespace FileCurator.Default
         /// <param name="mode">Not used</param>
         /// <param name="encoding">Not used</param>
         /// <returns>The result of the write or original content</returns>
-        public override string Write(string content, FileMode mode = FileMode.Create, Encoding encoding = null)
+        public override string Write(string content, FileMode mode = FileMode.Create, Encoding? encoding = null)
         {
             if (!(WebRequest.Create(InternalFile) is HttpWebRequest Request))
-                return "";
+                return string.Empty;
             if (mode == FileMode.Append || mode == FileMode.Open)
                 Request.Method = "PUT";
             else if (mode == FileMode.Create || mode == FileMode.CreateNew)
@@ -219,16 +221,12 @@ namespace FileCurator.Default
         private static string SendRequest(HttpWebRequest request)
         {
             if (request is null)
-                return "";
-            using (var Response = request.GetResponseAsync().GetAwaiter().GetResult() as HttpWebResponse)
-            {
-                if (Response.StatusCode != HttpStatusCode.OK)
-                    return "";
-                using (var Reader = new StreamReader(Response.GetResponseStream()))
-                {
-                    return Reader.ReadToEnd();
-                }
-            }
+                return string.Empty;
+            using var Response = request.GetResponseAsync().GetAwaiter().GetResult() as HttpWebResponse;
+            if (Response is null || Response.StatusCode != HttpStatusCode.OK)
+                return string.Empty;
+            using var Reader = new StreamReader(Response.GetResponseStream());
+            return Reader.ReadToEnd();
         }
 
         /// <summary>
@@ -241,10 +239,8 @@ namespace FileCurator.Default
             if (request is null || string.IsNullOrEmpty(data))
                 return;
             var ByteData = data.ToByteArray();
-            using (var RequestStream = request.GetRequestStreamAsync().GetAwaiter().GetResult())
-            {
-                RequestStream.Write(ByteData, 0, ByteData.Length);
-            }
+            using var RequestStream = request.GetRequestStreamAsync().GetAwaiter().GetResult();
+            RequestStream.Write(ByteData, 0, ByteData.Length);
         }
 
         /// <summary>

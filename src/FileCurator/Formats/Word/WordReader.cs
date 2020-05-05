@@ -58,12 +58,10 @@ namespace FileCurator.Formats.Word
         /// <returns>The file</returns>
         public override IGenericFile Read(Stream stream)
         {
-            using (var Doc = WordprocessingDocument.Open(stream, false))
-            {
-                return new GenericFile(Doc.MainDocumentPart.Document.Body.Descendants<Paragraph>().ToString(x => x.InnerText, "\n"),
-                    Doc.PackageProperties.Title,
-                    Doc.PackageProperties.Subject);
-            }
+            using var Doc = WordprocessingDocument.Open(stream, false);
+            return new GenericFile(Doc.MainDocumentPart.Document.Body.Descendants<Paragraph>().ToString(x => x.InnerText, "\n"),
+Doc.PackageProperties.Title,
+Doc.PackageProperties.Subject);
         }
     }
 }

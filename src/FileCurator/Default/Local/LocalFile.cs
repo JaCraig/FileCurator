@@ -76,12 +76,12 @@ namespace FileCurator.Default
         /// <summary>
         /// File extension
         /// </summary>
-        public override string Extension => InternalFile?.Extension ?? "";
+        public override string Extension => InternalFile?.Extension ?? string.Empty;
 
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName => InternalFile?.FullName ?? "";
+        public override string FullName => InternalFile?.FullName ?? string.Empty;
 
         /// <summary>
         /// Size of the file
@@ -96,7 +96,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Name of the file
         /// </summary>
-        public override string Name => InternalFile?.Name ?? "";
+        public override string Name => InternalFile?.Name ?? string.Empty;
 
         /// <summary>
         /// Copies the file to another directory
@@ -125,10 +125,10 @@ namespace FileCurator.Default
         public override string Delete()
         {
             if (!Exists)
-                return "";
+                return string.Empty;
             InternalFile.Delete();
             InternalFile.Refresh();
-            return "";
+            return string.Empty;
         }
 
         /// <summary>
@@ -152,11 +152,9 @@ namespace FileCurator.Default
         public override string Read()
         {
             if (!Exists)
-                return "";
-            using (var Reader = InternalFile.OpenText())
-            {
-                return Reader.ReadToEnd();
-            }
+                return string.Empty;
+            using var Reader = InternalFile.OpenText();
+            return Reader.ReadToEnd();
         }
 
         /// <summary>
@@ -167,12 +165,10 @@ namespace FileCurator.Default
         {
             if (!Exists)
                 return Array.Empty<byte>();
-            using (var Reader = InternalFile.OpenRead())
-            {
-                var Buffer = new byte[Reader.Length];
-                Reader.Read(Buffer, 0, Buffer.Length);
-                return Buffer;
-            }
+            using var Reader = InternalFile.OpenRead();
+            var Buffer = new byte[Reader.Length];
+            Reader.Read(Buffer, 0, Buffer.Length);
+            return Buffer;
         }
 
         /// <summary>

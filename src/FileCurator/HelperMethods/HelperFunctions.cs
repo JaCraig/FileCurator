@@ -34,7 +34,7 @@ namespace FileCurator.HelperMethods
         public static string Left(this string input, int length)
         {
             if (string.IsNullOrEmpty(input) || length <= 0)
-                return "";
+                return string.Empty;
             length = input.Length > length ? length : input.Length;
             return input.Substring(0, length);
         }
@@ -88,7 +88,7 @@ namespace FileCurator.HelperMethods
         public static string Right(this string input, int length)
         {
             if (string.IsNullOrEmpty(input) || length <= 0)
-                return "";
+                return string.Empty;
             length = input.Length > length ? length : input.Length;
             return input.Substring(input.Length - length, length);
         }
@@ -101,7 +101,7 @@ namespace FileCurator.HelperMethods
         /// <returns>the byte array representing the string</returns>
         public static byte[] ToByteArray(this string input, Encoding encodingUsing = null)
         {
-            encodingUsing = encodingUsing ?? Encoding.UTF8;
+            encodingUsing ??= Encoding.UTF8;
             return string.IsNullOrEmpty(input) ? Array.Empty<byte>() : encodingUsing.GetBytes(input);
         }
 
@@ -119,10 +119,10 @@ namespace FileCurator.HelperMethods
         public static string ToString(this byte[] input, Encoding encodingUsing, int index = 0, int count = -1)
         {
             if (input is null)
-                return "";
+                return string.Empty;
             if (count == -1)
                 count = input.Length - index;
-            encodingUsing = encodingUsing ?? Encoding.UTF8;
+            encodingUsing ??= Encoding.UTF8;
             return encodingUsing.GetString(input, index, count);
         }
     }

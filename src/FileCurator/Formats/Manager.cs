@@ -76,19 +76,17 @@ namespace FileCurator.Formats
         /// <param name="fileName">Name of the file.</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The format associated with the file.</returns>
-        public IFormat FindFormat(string fileName, Credentials credentials)
+        public IFormat FindFormat(string fileName, Credentials? credentials)
         {
             if (string.IsNullOrEmpty(fileName))
                 return DefaultFormat;
             fileName = fileName.ToUpperInvariant();
             var TempFile = new FileInfo(fileName, credentials);
-            var Extension = TempFile.Extension.Replace(".", "");
+            var Extension = TempFile.Extension.Replace(".", string.Empty);
             if (FormatsByFileType.ContainsKey(Extension))
                 return FormatsByFileType[Extension];
-            using (var TempStream = new MemoryStream(TempFile.ReadBinary()))
-            {
-                return FindFormat(TempStream, "");
-            }
+            using var TempStream = new MemoryStream(TempFile.ReadBinary());
+            return FindFormat(TempStream, string.Empty);
         }
 
         /// <summary>

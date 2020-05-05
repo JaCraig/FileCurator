@@ -165,7 +165,7 @@ namespace FileCurator.Formats.Excel
         private string GetColumnName(string cellReference)
         {
             if (string.IsNullOrEmpty(cellReference))
-                return "";
+                return string.Empty;
             return ColumnNameRegex.Match(cellReference)
                                          .Value;
         }

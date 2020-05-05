@@ -186,7 +186,7 @@ namespace FileCurator.Formats.PowerPoint
                     }
                 }
             }
-            return "";
+            return string.Empty;
         }
     }
 }

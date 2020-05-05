@@ -35,8 +35,8 @@ namespace FileCurator
         /// </summary>
         /// <param name="path">Path to the file</param>
         /// <param name="credentials">The credentials.</param>
-        public FileInfo(string path, Credentials credentials = null)
-            : this(Canister.Builder.Bootstrapper.Resolve<FileSystem>().File(path, credentials))
+        public FileInfo(string path, Credentials? credentials = null)
+            : this(Canister.Builder.Bootstrapper?.Resolve<FileSystem>().File(path, credentials))
         {
             Credentials = credentials;
         }
@@ -45,7 +45,7 @@ namespace FileCurator
         /// Constructor
         /// </summary>
         /// <param name="internalFile">Internal file</param>
-        public FileInfo(IFile internalFile)
+        public FileInfo(IFile? internalFile)
         {
             InternalFile = internalFile;
         }
@@ -63,7 +63,7 @@ namespace FileCurator
         /// <summary>
         /// Directory the file is within
         /// </summary>
-        public IDirectory Directory => InternalFile?.Directory;
+        public IDirectory? Directory => InternalFile?.Directory;
 
         /// <summary>
         /// Does the file exist?
@@ -73,12 +73,12 @@ namespace FileCurator
         /// <summary>
         /// File extension
         /// </summary>
-        public string Extension => InternalFile?.Extension ?? "";
+        public string Extension => InternalFile?.Extension ?? string.Empty;
 
         /// <summary>
         /// Full path
         /// </summary>
-        public string FullName => InternalFile?.FullName ?? "";
+        public string FullName => InternalFile?.FullName ?? string.Empty;
 
         /// <summary>
         /// Size of the file
@@ -93,24 +93,24 @@ namespace FileCurator
         /// <summary>
         /// Name of the file
         /// </summary>
-        public string Name => InternalFile?.Name ?? "";
+        public string Name => InternalFile?.Name ?? string.Empty;
 
         /// <summary>
         /// Internal directory
         /// </summary>
-        protected IFile InternalFile { get; }
+        protected IFile? InternalFile { get; }
 
         /// <summary>
         /// Gets or sets the credentials.
         /// </summary>
         /// <value>The credentials.</value>
-        private Credentials Credentials { get; }
+        private Credentials? Credentials { get; }
 
         /// <summary>
         /// Gets or sets the internal manager.
         /// </summary>
         /// <value>The internal manager.</value>
-        private Manager FormatManager => Canister.Builder.Bootstrapper.Resolve<Manager>();
+        private Manager? FormatManager => Canister.Builder.Bootstrapper?.Resolve<Manager>();
 
         /// <summary>
         /// Reads the file and converts it to a byte array
@@ -132,7 +132,7 @@ namespace FileCurator
         public static implicit operator string(FileInfo file)
         {
             if (file is null)
-                return "";
+                return string.Empty;
             return file.Read();
         }
 
@@ -246,11 +246,11 @@ namespace FileCurator
         /// <param name="directory">Directory to copy the file to</param>
         /// <param name="overwrite">Should the file overwrite another file if found</param>
         /// <returns>The newly created file</returns>
-        public IFile CopyTo(IDirectory directory, bool overwrite)
+        public IFile? CopyTo(IDirectory directory, bool overwrite)
         {
             if (directory is null || !Exists)
                 return null;
-            return InternalFile.CopyTo(directory, overwrite);
+            return InternalFile?.CopyTo(directory, overwrite);
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace FileCurator
         public string Delete()
         {
             if (InternalFile is null)
-                return "";
+                return string.Empty;
             return InternalFile.Delete();
         }
 
@@ -271,8 +271,7 @@ namespace FileCurator
         /// <returns>True if they are equal, false otherwise</returns>
         public override bool Equals(object obj)
         {
-            var File = obj as FileInfo;
-            return File != null && File == this;
+            return obj is FileInfo File && Equals(File);
         }
 
         /// <summary>
@@ -316,12 +315,10 @@ namespace FileCurator
         public TFile Parse<TFile>()
             where TFile : IGenericFile
         {
-            if (!(FormatManager.FindFormat(FullName, Credentials) is IFormat<TFile> Format))
+            if (!(FormatManager?.FindFormat(FullName, Credentials) is IFormat<TFile> Format))
                 throw new ArgumentException("Could not find file format that returns the specified object type");
-            using (var TempStream = new MemoryStream(ReadBinary()))
-            {
-                return Format.Read(TempStream);
-            }
+            using var TempStream = new MemoryStream(ReadBinary());
+            return Format.Read(TempStream);
         }
 
         /// <summary>
@@ -333,13 +330,11 @@ namespace FileCurator
         /// </exception>
         public IGenericFile Parse()
         {
-            var Format = FormatManager.FindFormat(FullName, Credentials);
+            var Format = FormatManager?.FindFormat(FullName, Credentials);
             if (Format is null)
                 throw new ArgumentException("Could not find file format that returns the specified object type");
-            using (var TempStream = new MemoryStream(ReadBinary()))
-            {
-                return Format.ReadBase(TempStream);
-            }
+            using var TempStream = new MemoryStream(ReadBinary());
+            return Format.ReadBase(TempStream);
         }
 
         /// <summary>
@@ -349,7 +344,7 @@ namespace FileCurator
         public string Read()
         {
             if (InternalFile is null)
-                return "";
+                return string.Empty;
             return InternalFile.Read();
         }
 
@@ -389,7 +384,7 @@ namespace FileCurator
         /// <param name="mode">Mode to open the file as</param>
         /// <param name="encoding">Encoding to use for the content</param>
         /// <returns>The result of the write or original content</returns>
-        public string Write(string content, FileMode mode = FileMode.Create, Encoding encoding = null)
+        public string Write(string content, FileMode mode = FileMode.Create, Encoding? encoding = null)
         {
             if (InternalFile is null)
                 return content;
@@ -417,13 +412,13 @@ namespace FileCurator
         /// <returns>True if it was written successfully, false otherwise.</returns>
         public bool Write(IGenericFile data, FileMode mode = FileMode.Create)
         {
-            var Format = FormatManager.FindFormat(FullName, Credentials);
-            using (var TempStream = new MemoryStream())
-            {
-                var Success = Format.Write(TempStream, data);
-                Write(TempStream.ReadAllBinary(), mode);
-                return Success;
-            }
+            var Format = FormatManager?.FindFormat(FullName, Credentials);
+            if (Format is null)
+                return false;
+            using var TempStream = new MemoryStream();
+            var Success = Format.Write(TempStream, data);
+            Write(TempStream.ReadAllBinary(), mode);
+            return Success;
         }
     }
 }

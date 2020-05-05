@@ -42,10 +42,10 @@ namespace FileCurator.Formats.RSS.Data
             if (doc is null)
                 throw new ArgumentNullException(nameof(doc));
             var Element = doc.CreateNavigator();
-            Url = Element.GetAttribute("url", "") ?? "";
+            Url = Element.GetAttribute("url", "") ?? string.Empty;
             if (int.TryParse(Element.GetAttribute("length", ""), out var TempLength))
                 Length = TempLength;
-            Type = Element.GetAttribute("type", "") ?? "";
+            Type = Element.GetAttribute("type", "") ?? string.Empty;
         }
 
         /// <summary>

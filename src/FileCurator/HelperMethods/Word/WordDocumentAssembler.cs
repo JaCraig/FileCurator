@@ -141,18 +141,16 @@ namespace FileCurator.HelperMethods.Word
             {
                 var chunk = mainPart.AddAlternativeFormatImportPart(AlternativeFormatImportPartType.WordprocessingML);
                 var altChunkId = mainPart.GetIdOfPart(chunk);
-                using (var fileStream = File.Open(docLocations[x], FileMode.Open))
+                using var fileStream = File.Open(docLocations[x], FileMode.Open);
+                chunk.FeedData(fileStream);
+                var altChunk = new AltChunk
                 {
-                    chunk.FeedData(fileStream);
-                    var altChunk = new AltChunk
-                    {
-                        Id = altChunkId
-                    };
-                    AppendPageBreak();
-                    mainPart.Document
-                        .Body
-                        .Append(altChunk);
-                }
+                    Id = altChunkId
+                };
+                AppendPageBreak();
+                mainPart.Document
+                    .Body
+                    .Append(altChunk);
             }
             return this;
         }
@@ -191,10 +189,8 @@ namespace FileCurator.HelperMethods.Word
                 {
                     docText = docText.Replace(Key, replacements[Key](objectArgs));
                 }
-                using (var sw = new StreamWriter(WordHeaderPart.GetStream(FileMode.Create)))
-                {
-                    sw.Write(docText);
-                }
+                using var sw = new StreamWriter(WordHeaderPart.GetStream(FileMode.Create));
+                sw.Write(docText);
             }
             return this;
         }

@@ -71,7 +71,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path of the directory
         /// </summary>
-        public override string FullName => InternalDirectory?.FullName ?? "";
+        public override string FullName => InternalDirectory?.FullName ?? string.Empty;
 
         /// <summary>
         /// Time modified (UTC time)
@@ -81,7 +81,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Name of the directory
         /// </summary>
-        public override string Name => InternalDirectory?.Name ?? "";
+        public override string Name => InternalDirectory?.Name ?? string.Empty;
 
         /// <summary>
         /// Parent directory

@@ -42,7 +42,7 @@ namespace FileCurator.Default
         /// </summary>
         /// <param name="path">Path to the directory</param>
         /// <param name="credentials">The credentials.</param>
-        public WebDirectory(string path, Credentials credentials = null)
+        public WebDirectory(string path, Credentials? credentials = null)
             : this(string.IsNullOrEmpty(path) ? null : new Uri(path), credentials)
         {
         }
@@ -52,7 +52,7 @@ namespace FileCurator.Default
         /// </summary>
         /// <param name="directory">Internal directory</param>
         /// <param name="credentials">The credentials.</param>
-        public WebDirectory(Uri directory, Credentials credentials = null)
+        public WebDirectory(Uri? directory, Credentials? credentials = null)
             : base(directory, credentials)
         {
         }
@@ -75,7 +75,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName => InternalDirectory?.ToString() ?? "";
+        public override string FullName => InternalDirectory?.ToString() ?? string.Empty;
 
         /// <summary>
         /// returns now
@@ -85,7 +85,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override string Name => InternalDirectory?.AbsolutePath ?? "";
+        public override string Name => InternalDirectory?.AbsolutePath ?? string.Empty;
 
         /// <summary>
         /// Full path
@@ -181,17 +181,13 @@ namespace FileCurator.Default
         private static string SendRequest(HttpWebRequest request)
         {
             if (request is null)
-                return "";
+                return string.Empty;
 
-            using (var Response = request.GetResponseAsync().GetAwaiter().GetResult() as HttpWebResponse)
-            {
-                if (Response.StatusCode != HttpStatusCode.OK)
-                    return "";
-                using (var Reader = new StreamReader(Response.GetResponseStream()))
-                {
-                    return Reader.ReadToEnd();
-                }
-            }
+            using var Response = request.GetResponseAsync().GetAwaiter().GetResult() as HttpWebResponse;
+            if (Response.StatusCode != HttpStatusCode.OK)
+                return string.Empty;
+            using var Reader = new StreamReader(Response.GetResponseStream());
+            return Reader.ReadToEnd();
         }
 
         /// <summary>
@@ -204,10 +200,8 @@ namespace FileCurator.Default
             if (request is null || string.IsNullOrEmpty(data))
                 return;
             var ByteData = data.ToByteArray();
-            using (var RequestStream = request.GetRequestStreamAsync().GetAwaiter().GetResult())
-            {
-                RequestStream.Write(ByteData, 0, ByteData.Length);
-            }
+            using var RequestStream = request.GetRequestStreamAsync().GetAwaiter().GetResult();
+            RequestStream.Write(ByteData, 0, ByteData.Length);
         }
 
         /// <summary>

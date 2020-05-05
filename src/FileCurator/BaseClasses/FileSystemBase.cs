@@ -69,7 +69,7 @@ namespace FileCurator.BaseClasses
         /// <param name="path">Path to the directory</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The directory object</returns>
-        public abstract IDirectory Directory(string path, Credentials credentials);
+        public abstract IDirectory Directory(string path, Credentials? credentials = null);
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting
@@ -87,7 +87,7 @@ namespace FileCurator.BaseClasses
         /// <param name="path">Path to the file</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The file object</returns>
-        public abstract IFile File(string path, Credentials credentials);
+        public abstract IFile File(string path, Credentials? credentials = null);
 
         /// <summary>
         /// Gets the absolute path of the variable passed in

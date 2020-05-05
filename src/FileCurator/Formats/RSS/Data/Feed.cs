@@ -76,13 +76,13 @@ namespace FileCurator.Formats.RSS.Data
         /// Gets or sets the meta.
         /// </summary>
         /// <value>The meta.</value>
-        public string Meta => Channels.FirstOrDefault()?.Description ?? "";
+        public string Meta => Channels.FirstOrDefault()?.Description ?? string.Empty;
 
         /// <summary>
         /// Gets or sets the title.
         /// </summary>
         /// <value>The title.</value>
-        public string Title => Channels.FirstOrDefault()?.Title ?? "";
+        public string Title => Channels.FirstOrDefault()?.Title ?? string.Empty;
 
         /// <summary>
         /// Gets or sets the <see cref="IChannel"/> at the specified index.

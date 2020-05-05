@@ -45,7 +45,7 @@ namespace FileCurator.Interfaces
         /// <param name="path">Path to the directory</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The directory object</returns>
-        IDirectory Directory(string path, Credentials credentials);
+        IDirectory Directory(string path, Credentials? credentials = null);
 
         /// <summary>
         /// Gets the class representation for the file
@@ -53,6 +53,6 @@ namespace FileCurator.Interfaces
         /// <param name="path">Path to the file</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The file object</returns>
-        IFile File(string path, Credentials credentials);
+        IFile File(string path, Credentials? credentials = null);
     }
 }

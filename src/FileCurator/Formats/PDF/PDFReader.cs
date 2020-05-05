@@ -54,17 +54,15 @@ namespace FileCurator.Windows.Formats.PDF
             string Meta = "";
             try
             {
-                using (PdfDocument inputDocument = PdfReader.Open(stream, PdfDocumentOpenMode.ReadOnly))
+                using PdfDocument inputDocument = PdfReader.Open(stream, PdfDocumentOpenMode.ReadOnly);
+                Title = inputDocument.Info.Title;
+                Meta = inputDocument.Info.Keywords;
+                foreach (PdfPage page in inputDocument.Pages)
                 {
-                    Title = inputDocument.Info.Title;
-                    Meta = inputDocument.Info.Keywords;
-                    foreach (PdfPage page in inputDocument.Pages)
+                    for (int index = 0; index < page.Contents.Elements.Count; index++)
                     {
-                        for (int index = 0; index < page.Contents.Elements.Count; index++)
-                        {
-                            PdfDictionary.PdfStream tempStream = page.Contents.Elements.GetDictionary(index).Stream;
-                            Builder.Append(ExtractTextFromPDFBytes(tempStream.Value));
-                        }
+                        PdfDictionary.PdfStream tempStream = page.Contents.Elements.GetDictionary(index).Stream;
+                        Builder.Append(ExtractTextFromPDFBytes(tempStream.Value));
                     }
                 }
             }
@@ -100,7 +98,7 @@ namespace FileCurator.Windows.Formats.PDF
         /// <returns></returns>
         private static string ExtractTextFromPDFBytes(byte[] input)
         {
-            if (input is null || input.Length == 0) return "";
+            if (input is null || input.Length == 0) return string.Empty;
             try
             {
                 var resultString = new StringBuilder();
@@ -204,7 +202,7 @@ namespace FileCurator.Windows.Formats.PDF
             }
             catch
             {
-                return "";
+                return string.Empty;
             }
         }
     }

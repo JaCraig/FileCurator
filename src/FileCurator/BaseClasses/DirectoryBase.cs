@@ -26,12 +26,12 @@ namespace FileCurator.BaseClasses
     /// <summary>
     /// Directory base class
     /// </summary>
-    /// <typeparam name="InternalDirectoryType">
+    /// <typeparam name="TInternalDirectoryType">
     /// Data type internally to hold true directory info
     /// </typeparam>
-    /// <typeparam name="DirectoryType">Directory type</typeparam>
-    public abstract class DirectoryBase<InternalDirectoryType, DirectoryType> : IDirectory
-        where DirectoryType : DirectoryBase<InternalDirectoryType, DirectoryType>, new()
+    /// <typeparam name="TDirectoryType">Directory type</typeparam>
+    public abstract class DirectoryBase<TInternalDirectoryType, TDirectoryType> : IDirectory
+        where TDirectoryType : DirectoryBase<TInternalDirectoryType, TDirectoryType>, new()
     {
         /// <summary>
         /// Constructor
@@ -45,7 +45,7 @@ namespace FileCurator.BaseClasses
         /// </summary>
         /// <param name="internalDirectory">Internal directory object</param>
         /// <param name="credentials">The credentials.</param>
-        protected DirectoryBase(InternalDirectoryType internalDirectory, Credentials credentials = null)
+        protected DirectoryBase(TInternalDirectoryType internalDirectory, Credentials? credentials = null)
         {
             Credentials = credentials;
             InternalDirectory = internalDirectory;
@@ -65,7 +65,7 @@ namespace FileCurator.BaseClasses
         /// Gets the credentials.
         /// </summary>
         /// <value>The credentials.</value>
-        public Credentials Credentials { get; }
+        public Credentials? Credentials { get; }
 
         /// <summary>
         /// Does it exist?
@@ -90,12 +90,12 @@ namespace FileCurator.BaseClasses
         /// <summary>
         /// Parent directory
         /// </summary>
-        public abstract IDirectory Parent { get; }
+        public abstract IDirectory? Parent { get; }
 
         /// <summary>
         /// Root directory
         /// </summary>
-        public abstract IDirectory Root { get; }
+        public abstract IDirectory? Root { get; }
 
         /// <summary>
         /// Size of the directory
@@ -105,7 +105,7 @@ namespace FileCurator.BaseClasses
         /// <summary>
         /// Internal directory
         /// </summary>
-        protected InternalDirectoryType InternalDirectory { get; set; }
+        protected TInternalDirectoryType InternalDirectory { get; set; }
 
         /// <summary>
         /// Determines if two directories are not equal
@@ -113,7 +113,7 @@ namespace FileCurator.BaseClasses
         /// <param name="directory1">Directory 1</param>
         /// <param name="directory2">Directory 2</param>
         /// <returns>True if they are not equal, false otherwise</returns>
-        public static bool operator !=(DirectoryBase<InternalDirectoryType, DirectoryType> directory1, IDirectory directory2)
+        public static bool operator !=(DirectoryBase<TInternalDirectoryType, TDirectoryType> directory1, IDirectory directory2)
         {
             return !(directory1 == directory2);
         }
@@ -124,7 +124,7 @@ namespace FileCurator.BaseClasses
         /// <param name="directory1">Directory 1</param>
         /// <param name="directory2">Directory 2</param>
         /// <returns>The result</returns>
-        public static bool operator <(DirectoryBase<InternalDirectoryType, DirectoryType> directory1, IDirectory directory2)
+        public static bool operator <(DirectoryBase<TInternalDirectoryType, TDirectoryType> directory1, IDirectory directory2)
         {
             return !(directory1 is null)
                 && !(directory2 is null)
@@ -137,7 +137,7 @@ namespace FileCurator.BaseClasses
         /// <param name="directory1">Directory 1</param>
         /// <param name="directory2">Directory 2</param>
         /// <returns>The result</returns>
-        public static bool operator <=(DirectoryBase<InternalDirectoryType, DirectoryType> directory1, IDirectory directory2)
+        public static bool operator <=(DirectoryBase<TInternalDirectoryType, TDirectoryType> directory1, IDirectory directory2)
         {
             return !(directory1 is null)
                 && !(directory2 is null)
@@ -150,7 +150,7 @@ namespace FileCurator.BaseClasses
         /// <param name="directory1">Directory 1</param>
         /// <param name="directory2">Directory 2</param>
         /// <returns>True if they are, false otherwise</returns>
-        public static bool operator ==(DirectoryBase<InternalDirectoryType, DirectoryType> directory1, IDirectory directory2)
+        public static bool operator ==(DirectoryBase<TInternalDirectoryType, TDirectoryType> directory1, IDirectory directory2)
         {
             return (directory1 is null && directory2 is null)
                 || (!(directory1 is null) && !(directory2 is null) && directory1.FullName == directory2.FullName);
@@ -162,7 +162,7 @@ namespace FileCurator.BaseClasses
         /// <param name="directory1">Directory 1</param>
         /// <param name="directory2">Directory 2</param>
         /// <returns>The result</returns>
-        public static bool operator >(DirectoryBase<InternalDirectoryType, DirectoryType> directory1, IDirectory directory2)
+        public static bool operator >(DirectoryBase<TInternalDirectoryType, TDirectoryType> directory1, IDirectory directory2)
         {
             return !(directory1 is null)
                 && !(directory2 is null)
@@ -175,7 +175,7 @@ namespace FileCurator.BaseClasses
         /// <param name="directory1">Directory 1</param>
         /// <param name="directory2">Directory 2</param>
         /// <returns>The result</returns>
-        public static bool operator >=(DirectoryBase<InternalDirectoryType, DirectoryType> directory1, IDirectory directory2)
+        public static bool operator >=(DirectoryBase<TInternalDirectoryType, TDirectoryType> directory1, IDirectory directory2)
         {
             return !(directory1 is null)
                 && !(directory2 is null)
@@ -191,7 +191,7 @@ namespace FileCurator.BaseClasses
         {
             if (other is null)
                 return 1;
-            if (ReferenceEquals(InternalDirectory, null))
+            if (InternalDirectory is null)
                 return -1;
             return string.Compare(FullName, other.FullName, StringComparison.OrdinalIgnoreCase);
         }
@@ -216,7 +216,7 @@ namespace FileCurator.BaseClasses
         /// <returns>Returns the new directory</returns>
         public virtual IDirectory CopyTo(IDirectory directory, CopyOptions options = CopyOptions.CopyAlways)
         {
-            if (ReferenceEquals(InternalDirectory, null) || directory is null)
+            if (InternalDirectory is null || directory is null)
                 return this;
             directory.Create();
             foreach (var TempFile in EnumerateFiles())
@@ -300,7 +300,7 @@ namespace FileCurator.BaseClasses
         /// <returns>True if they're the same, false otherwise</returns>
         public override bool Equals(object obj)
         {
-            return obj is DirectoryBase<InternalDirectoryType, DirectoryType> Other && Other == this;
+            return obj is DirectoryBase<TInternalDirectoryType, TDirectoryType> Other && Other == this;
         }
 
         /// <summary>

@@ -88,10 +88,8 @@ namespace FileCurator.Default
             {
                 if (AssemblyFrom is null)
                     return 0;
-                using (var TempStream = AssemblyFrom.GetManifestResourceStream(Resource))
-                {
-                    return TempStream.Length;
-                }
+                using var TempStream = AssemblyFrom.GetManifestResourceStream(Resource);
+                return TempStream.Length;
             }
         }
 
@@ -178,10 +176,8 @@ namespace FileCurator.Default
         {
             if (InternalFile is null || AssemblyFrom is null)
                 return string.Empty;
-            using (var TempStream = new StreamReader(AssemblyFrom.GetManifestResourceStream(Resource)))
-            {
-                return TempStream.ReadToEnd();
-            }
+            using var TempStream = new StreamReader(AssemblyFrom.GetManifestResourceStream(Resource));
+            return TempStream.ReadToEnd();
         }
 
         /// <summary>
@@ -192,12 +188,10 @@ namespace FileCurator.Default
         {
             if (InternalFile is null || AssemblyFrom is null)
                 return Array.Empty<byte>();
-            using (var Reader = AssemblyFrom.GetManifestResourceStream(Resource))
-            {
-                var Buffer = new byte[Reader.Length];
-                Reader.Read(Buffer, 0, Buffer.Length);
-                return Buffer;
-            }
+            using var Reader = AssemblyFrom.GetManifestResourceStream(Resource);
+            var Buffer = new byte[Reader.Length];
+            Reader.Read(Buffer, 0, Buffer.Length);
+            return Buffer;
         }
 
         /// <summary>

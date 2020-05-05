@@ -49,10 +49,8 @@ namespace FileCurator.Formats.Mime
             var ReturnObject = new GenericEmail();
             if (!string.IsNullOrEmpty(Message.HtmlBody))
             {
-                using (var TempStream = new MemoryStream(Message.HtmlBody.ToByteArray()))
-                {
-                    ReturnObject.Content = new HTMLFormat().Read(TempStream).Content;
-                }
+                using var TempStream = new MemoryStream(Message.HtmlBody.ToByteArray());
+                ReturnObject.Content = new HTMLFormat().Read(TempStream).Content;
             }
             else
             {

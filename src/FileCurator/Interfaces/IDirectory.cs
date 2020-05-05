@@ -63,12 +63,12 @@ namespace FileCurator.Interfaces
         /// <summary>
         /// Parent directory
         /// </summary>
-        IDirectory Parent { get; }
+        IDirectory? Parent { get; }
 
         /// <summary>
         /// Root directory
         /// </summary>
-        IDirectory Root { get; }
+        IDirectory? Root { get; }
 
         /// <summary>
         /// Size of the contents of the directory in bytes

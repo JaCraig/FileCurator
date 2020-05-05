@@ -65,7 +65,7 @@ namespace FileCurator
         /// <summary>
         /// Full path to the directory
         /// </summary>
-        public string FullName => InternalDirectory?.FullName ?? "";
+        public string FullName => InternalDirectory?.FullName ?? string.Empty;
 
         /// <summary>
         /// When it was last modified
@@ -75,7 +75,7 @@ namespace FileCurator
         /// <summary>
         /// Name of the directory
         /// </summary>
-        public string Name => InternalDirectory?.Name ?? "";
+        public string Name => InternalDirectory?.Name ?? string.Empty;
 
         /// <summary>
         /// Parent directory

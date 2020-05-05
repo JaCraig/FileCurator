@@ -44,20 +44,18 @@ namespace FileCurator.Windows.Formats.MSG
         /// <returns>The file</returns>
         public override IMessage Read(Stream stream)
         {
-            using (var message = new OutlookStorage.Message(stream))
+            using var message = new OutlookStorage.Message(stream);
+            var ReturnValue = new GenericEmail
             {
-                var ReturnValue = new GenericEmail
-                {
-                    Content = message.BodyText,
-                    Title = message.Subject,
-                    From = message.From,
-                    Sent = message.SentTime
-                };
-                AddRecipients(message, RecipientType.Unknown, x => ReturnValue.BCC.Add(x));
-                AddRecipients(message, RecipientType.CC, x => ReturnValue.CC.Add(x));
-                AddRecipients(message, RecipientType.To, x => ReturnValue.To.Add(x));
-                return ReturnValue;
-            }
+                Content = message.BodyText,
+                Title = message.Subject,
+                From = message.From,
+                Sent = message.SentTime
+            };
+            AddRecipients(message, RecipientType.Unknown, x => ReturnValue.BCC.Add(x));
+            AddRecipients(message, RecipientType.CC, x => ReturnValue.CC.Add(x));
+            AddRecipients(message, RecipientType.To, x => ReturnValue.To.Add(x));
+            return ReturnValue;
         }
 
         /// <summary>

@@ -46,7 +46,7 @@ namespace FileCurator.Default.Memory
         /// <param name="path">Path to the directory</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The directory object</returns>
-        public override Interfaces.IDirectory Directory(string path, Credentials credentials = null) => new MemoryDirectory(path, credentials);
+        public override Interfaces.IDirectory Directory(string path, Credentials? credentials = null) => new MemoryDirectory(path, credentials);
 
         /// <summary>
         /// Gets the class representation for the file
@@ -54,7 +54,7 @@ namespace FileCurator.Default.Memory
         /// <param name="path">Path to the file</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The file object</returns>
-        public override Interfaces.IFile File(string path, Credentials credentials = null) => new MemoryFile(path, credentials);
+        public override Interfaces.IFile File(string path, Credentials? credentials = null) => new MemoryFile(path, credentials);
 
         /// <summary>
         /// Gets the absolute path of the variable passed in

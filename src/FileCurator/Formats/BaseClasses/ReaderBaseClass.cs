@@ -42,10 +42,8 @@ namespace FileCurator.Formats.BaseClasses
         /// <returns>True if it can, false otherwise</returns>
         public bool CanRead(string fileName)
         {
-            using (var File = System.IO.File.OpenRead(fileName))
-            {
-                return CanRead(File);
-            }
+            using var File = System.IO.File.OpenRead(fileName);
+            return CanRead(File);
         }
 
         /// <summary>
