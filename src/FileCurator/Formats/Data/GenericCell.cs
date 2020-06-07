@@ -14,6 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using BigBook;
 using FileCurator.Formats.Data.Interfaces;
 
 namespace FileCurator.Formats.Data
@@ -38,6 +39,16 @@ namespace FileCurator.Formats.Data
         /// </summary>
         /// <value>The content.</value>
         public string Content { get; set; }
+
+        /// <summary>
+        /// Gets the value as the type specified.
+        /// </summary>
+        /// <typeparam name="TValue">The type of the value.</typeparam>
+        /// <returns>The content of the cell as the value type specified.</returns>
+        public TValue GetValue<TValue>()
+        {
+            return Content.To<string, TValue>();
+        }
 
         /// <summary>
         /// Returns a <see cref="System.String"/> that represents this instance.

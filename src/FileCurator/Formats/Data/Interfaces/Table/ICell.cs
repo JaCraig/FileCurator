@@ -26,5 +26,12 @@ namespace FileCurator.Formats.Data.Interfaces
         /// </summary>
         /// <value>The content.</value>
         string Content { get; set; }
+
+        /// <summary>
+        /// Gets the value as the type specified.
+        /// </summary>
+        /// <typeparam name="TValue">The type of the value.</typeparam>
+        /// <returns>The content of the cell as the value type specified.</returns>
+        TValue GetValue<TValue>();
     }
 }
