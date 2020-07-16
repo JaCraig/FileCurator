@@ -14,6 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using BigBook;
+using FileCurator.Formats;
+using FileCurator.Formats.Data.Interfaces;
 using FileCurator.Interfaces;
 using System;
 using System.IO;
@@ -107,6 +110,12 @@ namespace FileCurator.BaseClasses
         /// Name of the file
         /// </summary>
         public abstract string Name { get; }
+
+        /// <summary>
+        /// Gets or sets the internal manager.
+        /// </summary>
+        /// <value>The internal manager.</value>
+        protected Manager? FormatManager => Canister.Builder.Bootstrapper?.Resolve<Manager>();
 
         /// <summary>
         /// Internal directory
@@ -318,5 +327,22 @@ namespace FileCurator.BaseClasses
         /// <param name="mode">Mode to open the file as</param>
         /// <returns>The result of the write or original content</returns>
         public abstract byte[] Write(byte[] content, FileMode mode = FileMode.Create);
+
+        /// <summary>
+        /// Writes the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="mode">The mode.</param>
+        /// <returns>True if it was written successfully, false otherwise.</returns>
+        public bool Write(IGenericFile data, FileMode mode = FileMode.Create)
+        {
+            var Format = FormatManager?.FindFormat(FullName, Credentials);
+            if (Format is null)
+                return false;
+            using var TempStream = new MemoryStream();
+            var Success = Format.Write(TempStream, data);
+            Write(TempStream.ReadAllBinary(), mode);
+            return Success;
+        }
     }
 }

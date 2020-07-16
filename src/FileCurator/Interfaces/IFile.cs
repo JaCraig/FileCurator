@@ -14,6 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using FileCurator.Formats.Data.Interfaces;
 using System;
 using System.IO;
 using System.Text;
@@ -124,5 +125,13 @@ namespace FileCurator.Interfaces
         /// <param name="mode">File mode</param>
         /// <returns>The result of the write or original content</returns>
         byte[] Write(byte[] content, FileMode mode = FileMode.Create);
+
+        /// <summary>
+        /// Writes the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="mode">The mode.</param>
+        /// <returns>True if it was written successfully, false otherwise.</returns>
+        bool Write(IGenericFile data, FileMode mode = FileMode.Create);
     }
 }

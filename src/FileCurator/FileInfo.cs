@@ -96,6 +96,12 @@ namespace FileCurator
         public string Name => InternalFile?.Name ?? string.Empty;
 
         /// <summary>
+        /// Gets or sets the internal manager.
+        /// </summary>
+        /// <value>The internal manager.</value>
+        protected Manager? FormatManager => Canister.Builder.Bootstrapper?.Resolve<Manager>();
+
+        /// <summary>
         /// Internal directory
         /// </summary>
         protected IFile? InternalFile { get; }
@@ -105,12 +111,6 @@ namespace FileCurator
         /// </summary>
         /// <value>The credentials.</value>
         private Credentials? Credentials { get; }
-
-        /// <summary>
-        /// Gets or sets the internal manager.
-        /// </summary>
-        /// <value>The internal manager.</value>
-        private Manager? FormatManager => Canister.Builder.Bootstrapper?.Resolve<Manager>();
 
         /// <summary>
         /// Reads the file and converts it to a byte array
@@ -378,6 +378,23 @@ namespace FileCurator
         public override string ToString() => FullName;
 
         /// <summary>
+        /// Writes the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="mode">The mode.</param>
+        /// <returns>True if it was written successfully, false otherwise.</returns>
+        public bool Write(IGenericFile data, FileMode mode = FileMode.Create)
+        {
+            var Format = FormatManager?.FindFormat(FullName, Credentials);
+            if (Format is null)
+                return false;
+            using var TempStream = new MemoryStream();
+            var Success = Format.Write(TempStream, data);
+            Write(TempStream.ReadAllBinary(), mode);
+            return Success;
+        }
+
+        /// <summary>
         /// Writes content to the file
         /// </summary>
         /// <param name="content">Content to write</param>
@@ -402,23 +419,6 @@ namespace FileCurator
             if (InternalFile is null)
                 return content;
             return InternalFile.Write(content, mode);
-        }
-
-        /// <summary>
-        /// Writes the specified data.
-        /// </summary>
-        /// <param name="data">The data.</param>
-        /// <param name="mode">The mode.</param>
-        /// <returns>True if it was written successfully, false otherwise.</returns>
-        public bool Write(IGenericFile data, FileMode mode = FileMode.Create)
-        {
-            var Format = FormatManager?.FindFormat(FullName, Credentials);
-            if (Format is null)
-                return false;
-            using var TempStream = new MemoryStream();
-            var Success = Format.Write(TempStream, data);
-            Write(TempStream.ReadAllBinary(), mode);
-            return Success;
         }
     }
 }
