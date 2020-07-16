@@ -34,5 +34,12 @@ namespace FileCurator.Formats.Data.Interfaces
         /// </summary>
         /// <value>The data rows.</value>
         IList<IRow> Rows { get; }
+
+        /// <summary>
+        /// Converts this instance into the object array of the type specified.
+        /// </summary>
+        /// <typeparam name="TObject">The type of the object.</typeparam>
+        /// <returns>The resulting array.</returns>
+        List<TObject> Convert<TObject>();
     }
 }

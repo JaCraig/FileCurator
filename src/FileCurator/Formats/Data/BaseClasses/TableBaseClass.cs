@@ -17,6 +17,7 @@ limitations under the License.
 using BigBook;
 using FileCurator.Formats.Data.Interfaces;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Text;
 
 namespace FileCurator.Formats.Data.BaseClasses
@@ -27,6 +28,14 @@ namespace FileCurator.Formats.Data.BaseClasses
     /// <seealso cref="ITable"/>
     public abstract class TableBaseClass : FileBaseClass<TableBaseClass>, ITable
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableBaseClass"/> class.
+        /// </summary>
+        protected TableBaseClass()
+        {
+            Canister.Builder.Bootstrapper.Resolve<BigBook.DataMapper.Manager>();
+        }
+
         /// <summary>
         /// Gets the headers.
         /// </summary>
@@ -56,6 +65,26 @@ namespace FileCurator.Formats.Data.BaseClasses
         /// </summary>
         /// <value>The title.</value>
         public override string Title { get; set; }
+
+        /// <summary>
+        /// Converts this instance into the object array of the type specified.
+        /// </summary>
+        /// <typeparam name="TObject">The type of the object.</typeparam>
+        /// <returns>The resulting array.</returns>
+        public List<TObject> Convert<TObject>()
+        {
+            var ReturnValues = new List<TObject>();
+            for (var x = 0; x < Rows.Count; ++x)
+            {
+                IDictionary<string, object> TempValue = new ExpandoObject();
+                for (var y = 0; y < Columns.Count; ++y)
+                {
+                    TempValue[Columns[y]] = Rows[x].Cells[y].Content;
+                }
+                ReturnValues.Add(TempValue.To<IDictionary<string, object>, TObject>());
+            }
+            return ReturnValues;
+        }
 
         /// <summary>
         /// Returns a <see cref="System.String"/> that represents this instance.
