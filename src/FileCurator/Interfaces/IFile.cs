@@ -92,6 +92,25 @@ namespace FileCurator.Interfaces
         IFile MoveTo(IDirectory directory);
 
         /// <summary>
+        /// Parses this instance.
+        /// </summary>
+        /// <typeparam name="TFile">The type of the file object expected.</typeparam>
+        /// <returns>The parsed file</returns>
+        /// <exception cref="ArgumentException">
+        /// Could not find file format that returns the specified object type
+        /// </exception>
+        TFile Parse<TFile>() where TFile : IGenericFile;
+
+        /// <summary>
+        /// Parses this instance.
+        /// </summary>
+        /// <returns>The parsed file</returns>
+        /// <exception cref="ArgumentException">
+        /// Could not find file format that returns the specified object type
+        /// </exception>
+        IGenericFile Parse();
+
+        /// <summary>
         /// Reads the file to the end as a string
         /// </summary>
         /// <returns>A string containing the contents of the file</returns>

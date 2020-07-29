@@ -17,6 +17,7 @@ limitations under the License.
 using BigBook;
 using FileCurator.Formats;
 using FileCurator.Formats.Data.Interfaces;
+using FileCurator.Formats.Interfaces;
 using FileCurator.Interfaces;
 using System;
 using System.IO;
@@ -286,6 +287,39 @@ namespace FileCurator.BaseClasses
         /// </summary>
         /// <param name="directory">Directory to move to</param>
         public abstract IFile MoveTo(IDirectory directory);
+
+        /// <summary>
+        /// Parses this instance.
+        /// </summary>
+        /// <typeparam name="TFile">The type of the file object expected.</typeparam>
+        /// <returns>The parsed file</returns>
+        /// <exception cref="ArgumentException">
+        /// Could not find file format that returns the specified object type
+        /// </exception>
+        public TFile Parse<TFile>()
+            where TFile : IGenericFile
+        {
+            if (!(FormatManager?.FindFormat(FullName, Credentials) is IFormat<TFile> Format))
+                throw new ArgumentException("Could not find file format that returns the specified object type");
+            using var TempStream = new MemoryStream(ReadBinary());
+            return Format.Read(TempStream);
+        }
+
+        /// <summary>
+        /// Parses this instance.
+        /// </summary>
+        /// <returns>The parsed file</returns>
+        /// <exception cref="ArgumentException">
+        /// Could not find file format that returns the specified object type
+        /// </exception>
+        public IGenericFile Parse()
+        {
+            var Format = FormatManager?.FindFormat(FullName, Credentials);
+            if (Format is null)
+                throw new ArgumentException("Could not find file format that returns the specified object type");
+            using var TempStream = new MemoryStream(ReadBinary());
+            return Format.ReadBase(TempStream);
+        }
 
         /// <summary>
         /// Reads the file in as a string
