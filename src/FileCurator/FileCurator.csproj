@@ -36,8 +36,4 @@
     <PackageReference Include="System.Threading.Tasks.Parallel" Version="4.3.0" />
     <PackageReference Include="PDFsharpNetStandard2" Version="1.51.4845" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Default\Ftp\" />
-  </ItemGroup>
 </Project>
