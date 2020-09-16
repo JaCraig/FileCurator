@@ -31,14 +31,10 @@ namespace FileCurator.Formats.Data
     public class GenericCard : ICard
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GenericCard"/> class.
+        /// Gets or sets the addresses.
         /// </summary>
-        public GenericCard()
-        {
-            Relationships = new List<Relationship>();
-            DirectDial = new List<IPhoneNumber>();
-            Email = new List<IMailAddress>();
-        }
+        /// <value>The addresses.</value>
+        public IList<IAddress> Addresses { get; set; } = new List<IAddress>();
 
         /// <summary>
         /// Parsed content
@@ -49,12 +45,12 @@ namespace FileCurator.Formats.Data
         /// <summary>
         /// Work phone number of the individual
         /// </summary>
-        public IList<IPhoneNumber> DirectDial { get; set; }
+        public IList<IPhoneNumber> DirectDial { get; set; } = new List<IPhoneNumber>();
 
         /// <summary>
         /// Email of the individual
         /// </summary>
-        public IList<IMailAddress> Email { get; set; }
+        public IList<IMailAddress> Email { get; set; } = new List<IMailAddress>();
 
         /// <summary>
         /// First name
@@ -116,7 +112,7 @@ namespace FileCurator.Formats.Data
         /// <summary>
         /// Relationship to the person (uses XFN)
         /// </summary>
-        public IList<Relationship> Relationships { get; }
+        public IList<Relationship> Relationships { get; } = new List<Relationship>();
 
         /// <summary>
         /// Gets the subject.
@@ -156,6 +152,7 @@ namespace FileCurator.Formats.Data
                 .AppendFormat(CultureInfo.CurrentCulture, "N:{0}\r\n", Name)
                 .AppendLine(DirectDial.ToString(x => $"TEL;TYPE={x.Type}:{x.Number}", "\n"))
                 .AppendLine(Email.ToString(x => $"EMAIL;TYPE={x.Type}:{x.EmailAddress}", "\n"))
+                .AppendLine(Addresses.ToString(x => $"ADR;TYPE={x.Type}:{x.Name};{x.Street};{x.City};{x.StateOrProvence};{x.ZipCode};{x.Country}", "\n"))
                 .AppendFormat(CultureInfo.CurrentCulture, "TITLE:{0}\r\n", Title)
                 .AppendFormat(CultureInfo.CurrentCulture, "ORG:{0}\r\n", Organization)
                 .AppendFormat(CultureInfo.CurrentCulture, "END:VCARD\r\n")

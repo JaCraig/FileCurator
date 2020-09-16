@@ -55,6 +55,7 @@ namespace FileCurator.Formats.VCard
                 .AppendFormat(CultureInfo.CurrentCulture, "N:{0}\r\n", $"{fileCard.LastName};{fileCard.FirstName};{fileCard.MiddleName};{fileCard.Prefix};{fileCard.Suffix}")
                 .AppendLine(fileCard.DirectDial.ToString(x => $"TEL;TYPE={x.Type}:{x.Number}", "\r\n"))
                 .AppendLine(fileCard.Email.ToString(x => $"EMAIL;TYPE={x.Type}:{x.EmailAddress}", "\r\n"))
+                .AppendLine(fileCard.Addresses.ToString(x => $"ADR;TYPE={x.Type}:;{x.Name};{x.Street};{x.City};{x.StateOrProvence};{x.ZipCode};{x.Country}", "\n"))
                 .AppendFormat(CultureInfo.CurrentCulture, "TITLE:{0}\r\n", fileCard.Title)
                 .AppendFormat(CultureInfo.CurrentCulture, "ORG:{0}\r\n", fileCard.Organization)
                 .AppendFormat(CultureInfo.CurrentCulture, "URL:{0}\r\n", fileCard.Url)

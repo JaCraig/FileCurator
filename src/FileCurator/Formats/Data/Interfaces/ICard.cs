@@ -27,6 +27,12 @@ namespace FileCurator.Formats.Data.Interfaces
     public interface ICard : IGenericFile
     {
         /// <summary>
+        /// Gets or sets the addresses.
+        /// </summary>
+        /// <value>The addresses.</value>
+        IList<IAddress> Addresses { get; set; }
+
+        /// <summary>
         /// Work phone number of the individual
         /// </summary>
         IList<IPhoneNumber> DirectDial { get; set; }

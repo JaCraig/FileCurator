@@ -17,6 +17,7 @@ namespace FileCurator.Tests.Formats.VCard
             Assert.Contains(Result.DirectDial, x => x.Type == "CELL,VOICE" && x.Number == "555-555-1113");
             Assert.Contains(Result.Email, x => x.Type == "HOME" && x.EmailAddress == "home@example.com");
             Assert.Contains(Result.Email, x => x.Type == "WORK" && x.EmailAddress == "work@example.com");
+            Assert.Contains(Result.Addresses, x => x.Type == "WORK" && x.Street == "WorkStreet");
             Assert.Equal("FirstName", Result.FirstName);
             Assert.Equal("Prefix FirstName MiddleName LastName Suffix", Result.FullName);
             Assert.Equal("LastName", Result.LastName);

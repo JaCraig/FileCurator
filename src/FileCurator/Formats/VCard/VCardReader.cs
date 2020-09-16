@@ -56,7 +56,7 @@ namespace FileCurator.Formats.VCard
         public override ICard Read(Stream stream)
         {
             var ReturnValue = new GenericCard();
-            var Content = stream.ReadAll();
+            var Content = stream.ReadAll().Replace("\r\n ", string.Empty);
             foreach (Match TempMatch in EntryRegex.Matches(Content))
             {
                 var Title = TempMatch.Groups["Title"].Value.ToUpperInvariant().Trim();
@@ -80,15 +80,10 @@ namespace FileCurator.Formats.VCard
                 else if (Title.StartsWith("TEL", StringComparison.Ordinal))
                 {
                     var Type = TypeRegex.Match(Title);
-                    var TypeText = "";
-                    if (Type is null)
-                        TypeText = "";
-                    else
-                        TypeText = Type.Groups["Title"].Value;
                     ReturnValue.DirectDial.Add(new PhoneNumber
                     {
                         Number = Value,
-                        Type = TypeText
+                        Type = Type?.Groups["Title"].Value ?? string.Empty
                     });
                 }
                 else if (Title.StartsWith("EMAIL", StringComparison.Ordinal))
@@ -97,7 +92,7 @@ namespace FileCurator.Formats.VCard
                     ReturnValue.Email.Add(new MailAddress
                     {
                         EmailAddress = Value,
-                        Type = TypeRegex.Match(Title)?.Groups["Title"].Value ?? ""
+                        Type = Type?.Groups["Title"].Value ?? string.Empty
                     });
                 }
                 else if (Title.StartsWith("TITLE", StringComparison.Ordinal))
@@ -111,6 +106,21 @@ namespace FileCurator.Formats.VCard
                 else if (Title.StartsWith("URL", StringComparison.Ordinal))
                 {
                     ReturnValue.Url = Value;
+                }
+                else if (Title.StartsWith("ADR", StringComparison.Ordinal))
+                {
+                    var Type = TypeRegex.Match(Title);
+                    var Name = Value.Split(';');
+                    ReturnValue.Addresses.Add(new Address
+                    {
+                        Name = Name[1],
+                        Type = Type?.Groups["Title"].Value ?? string.Empty,
+                        Street = Name[2],
+                        City = Name[3],
+                        StateOrProvence = Name[4],
+                        ZipCode = Name[5],
+                        Country = Name[6]
+                    });
                 }
             }
             return ReturnValue;

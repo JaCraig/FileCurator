@@ -20,11 +20,24 @@ namespace FileCurator.Tests.Formats.VCard
             {
                 Assert.True(TestObject.Write(ResultFile, new GenericCard
                 {
-                    DirectDial = new IPhoneNumber[] {new PhoneNumber
+                    Addresses = new IAddress[]
                     {
-                        Number="111-1111",
-                        Type="Work"
-                    }
+                        new Address
+                        {
+                            Street="111 Floyd Ave.",
+                            City="NumberPlace",
+                            StateOrProvence="ThatOne",
+                            ZipCode="11122",
+                            Type="home"
+                        }
+                    }.ToList(),
+                    DirectDial = new IPhoneNumber[]
+                    {
+                        new PhoneNumber
+                        {
+                            Number="111-1111",
+                            Type="Work"
+                        }
                     }.ToList(),
                     Email = new IMailAddress[]
                     {
@@ -49,6 +62,7 @@ namespace FileCurator.Tests.Formats.VCard
                 var Result = ResultReader.Read(ResultFile);
                 Assert.Contains(Result.DirectDial, x => x.Type == "WORK" && x.Number == "111-1111");
                 Assert.Contains(Result.Email, x => x.Type == "WORK" && x.EmailAddress == "something@someplace.com");
+                Assert.Contains(Result.Addresses, x => x.Type == "HOME" && x.Street == "111 Floyd Ave." && x.City == "NumberPlace" && x.StateOrProvence == "ThatOne" && x.ZipCode == "11122");
                 Assert.Equal("FirstName", Result.FirstName);
                 Assert.Equal("Prefix FirstName MiddleName LastName Suffix", Result.FullName);
                 Assert.Equal("LastName", Result.LastName);
