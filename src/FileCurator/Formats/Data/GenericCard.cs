@@ -152,7 +152,7 @@ namespace FileCurator.Formats.Data
                 .AppendFormat(CultureInfo.CurrentCulture, "N:{0}\r\n", Name)
                 .AppendLine(DirectDial.ToString(x => $"TEL;TYPE={x.Type}:{x.Number}", "\n"))
                 .AppendLine(Email.ToString(x => $"EMAIL;TYPE={x.Type}:{x.EmailAddress}", "\n"))
-                .AppendLine(Addresses.ToString(x => $"ADR;TYPE={x.Type}:{x.Name};{x.Street};{x.City};{x.StateOrProvence};{x.ZipCode};{x.Country}", "\n"))
+                .AppendLine(Addresses.ToString(x => $"ADR;TYPE={x.Type}:;{x.Name};{x.Street};{x.City};{x.StateOrProvence};{x.ZipCode};{x.Country}", "\n"))
                 .AppendFormat(CultureInfo.CurrentCulture, "TITLE:{0}\r\n", Title)
                 .AppendFormat(CultureInfo.CurrentCulture, "ORG:{0}\r\n", Organization)
                 .AppendFormat(CultureInfo.CurrentCulture, "END:VCARD\r\n")
