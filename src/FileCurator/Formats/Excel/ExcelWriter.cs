@@ -21,6 +21,7 @@ using FileCurator.Formats.Data.Interfaces;
 using FileCurator.Formats.Interfaces;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FileCurator.Formats.Excel
 {
@@ -110,6 +111,14 @@ namespace FileCurator.Formats.Excel
             }
             return true;
         }
+
+        /// <summary>
+        /// Writes the file to the specified writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="file">The file.</param>
+        /// <returns>True if it writes successfully, false otherwise.</returns>
+        public Task<bool> WriteAsync(Stream writer, IGenericFile file) => Task.FromResult(Write(writer, file));
 
         /// <summary>
         /// Inserts the sheet in worksheet.

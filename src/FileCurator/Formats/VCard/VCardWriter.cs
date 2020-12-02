@@ -20,6 +20,7 @@ using FileCurator.Formats.Interfaces;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FileCurator.Formats.VCard
 {
@@ -43,14 +44,26 @@ namespace FileCurator.Formats.VCard
         }
 
         /// <summary>
-        /// Writers the card.
+        /// Writes the file to the specified writer.
         /// </summary>
         /// <param name="writer">The writer.</param>
+        /// <param name="file">The file.</param>
+        /// <returns>True if it writes successfully, false otherwise.</returns>
+        public Task<bool> WriteAsync(Stream writer, IGenericFile file)
+        {
+            if (file is ICard FileCard)
+                return WriterCardAsync(writer, FileCard);
+            return Task.FromResult(false);
+        }
+
+        /// <summary>
+        /// Generates the card.
+        /// </summary>
         /// <param name="fileCard">The file card.</param>
         /// <returns></returns>
-        private bool WriterCard(Stream writer, ICard fileCard)
+        private static string GenerateCard(ICard fileCard)
         {
-            var Result = new StringBuilder().Append("BEGIN:VCARD\r\nVERSION:2.1\r\n")
+            return new StringBuilder().Append("BEGIN:VCARD\r\nVERSION:2.1\r\n")
                 .AppendFormat(CultureInfo.CurrentCulture, "FN:{0}\r\n", fileCard.FullName)
                 .AppendFormat(CultureInfo.CurrentCulture, "N:{0}\r\n", $"{fileCard.LastName};{fileCard.FirstName};{fileCard.MiddleName};{fileCard.Prefix};{fileCard.Suffix}")
                 .AppendLine(fileCard.DirectDial.ToString(x => $"TEL;TYPE={x.Type}:{x.Number}", "\r\n"))
@@ -61,8 +74,33 @@ namespace FileCurator.Formats.VCard
                 .AppendFormat(CultureInfo.CurrentCulture, "URL:{0}\r\n", fileCard.Url)
                 .AppendFormat(CultureInfo.CurrentCulture, "END:VCARD\r\n")
                 .ToString();
+        }
+
+        /// <summary>
+        /// Writers the card.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="fileCard">The file card.</param>
+        /// <returns></returns>
+        private bool WriterCard(Stream writer, ICard fileCard)
+        {
+            var Result = GenerateCard(fileCard);
             var ByteData = Encoding.UTF8.GetBytes(Result);
             writer.Write(ByteData, 0, ByteData.Length);
+            return true;
+        }
+
+        /// <summary>
+        /// Writers the card.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="fileCard">The file card.</param>
+        /// <returns></returns>
+        private async Task<bool> WriterCardAsync(Stream writer, ICard fileCard)
+        {
+            string Result = GenerateCard(fileCard);
+            var ByteData = Encoding.UTF8.GetBytes(Result);
+            await writer.WriteAsync(ByteData, 0, ByteData.Length).ConfigureAwait(false);
             return true;
         }
     }

@@ -22,6 +22,7 @@ using FileCurator.Interfaces;
 using System;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FileCurator
 {
@@ -254,6 +255,19 @@ namespace FileCurator
         }
 
         /// <summary>
+        /// Copies the file to another directory
+        /// </summary>
+        /// <param name="directory">Directory to copy the file to</param>
+        /// <param name="overwrite">Should the file overwrite another file if found</param>
+        /// <returns>The newly created file</returns>
+        public Task<IFile?> CopyToAsync(IDirectory directory, bool overwrite)
+        {
+            if (directory is null || !Exists || InternalFile is null)
+                return Task.FromResult<IFile?>(null);
+            return InternalFile.CopyToAsync(directory, overwrite);
+        }
+
+        /// <summary>
         /// Deletes the file
         /// </summary>
         /// <returns>Any response for deleting the resource (usually FTP, HTTP, etc)</returns>
@@ -262,6 +276,17 @@ namespace FileCurator
             if (InternalFile is null)
                 return string.Empty;
             return InternalFile.Delete();
+        }
+
+        /// <summary>
+        /// Deletes the file
+        /// </summary>
+        /// <returns>Any response for deleting the resource (usually FTP, HTTP, etc)</returns>
+        public Task<string> DeleteAsync()
+        {
+            if (InternalFile is null)
+                return Task.FromResult(string.Empty);
+            return InternalFile.DeleteAsync();
         }
 
         /// <summary>
@@ -305,6 +330,19 @@ namespace FileCurator
         }
 
         /// <summary>
+        /// Moves the file to another directory
+        /// </summary>
+        /// <param name="directory">Directory to move the file to</param>
+        /// <returns></returns>
+        public async Task<IFile> MoveToAsync(IDirectory directory)
+        {
+            if (InternalFile is null || directory is null)
+                return this;
+            await InternalFile.MoveToAsync(directory).ConfigureAwait(false);
+            return this;
+        }
+
+        /// <summary>
         /// Parses this instance.
         /// </summary>
         /// <typeparam name="TFile">The type of the file object expected.</typeparam>
@@ -338,6 +376,38 @@ namespace FileCurator
         }
 
         /// <summary>
+        /// Parses this instance.
+        /// </summary>
+        /// <typeparam name="TFile">The type of the file object expected.</typeparam>
+        /// <returns>The parsed file</returns>
+        /// <exception cref="ArgumentException">
+        /// Could not find file format that returns the specified object type
+        /// </exception>
+        public async Task<TFile> ParseAsync<TFile>() where TFile : IGenericFile
+        {
+            if (!(FormatManager?.FindFormat(FullName, Credentials) is IFormat<TFile> Format))
+                throw new ArgumentException("Could not find file format that returns the specified object type");
+            using var TempStream = new MemoryStream(await ReadBinaryAsync().ConfigureAwait(false));
+            return await Format.ReadAsync(TempStream).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Parses this instance.
+        /// </summary>
+        /// <returns>The parsed file</returns>
+        /// <exception cref="ArgumentException">
+        /// Could not find file format that returns the specified object type
+        /// </exception>
+        public async Task<IGenericFile> ParseAsync()
+        {
+            var Format = FormatManager?.FindFormat(FullName, Credentials);
+            if (Format is null)
+                throw new ArgumentException("Could not find file format that returns the specified object type");
+            using var TempStream = new MemoryStream(await ReadBinaryAsync().ConfigureAwait(false));
+            return await Format.ReadBaseAsync(TempStream).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Reads the file in as a string
         /// </summary>
         /// <returns>The file contents as a string</returns>
@@ -346,6 +416,17 @@ namespace FileCurator
             if (InternalFile is null)
                 return string.Empty;
             return InternalFile.Read();
+        }
+
+        /// <summary>
+        /// Reads the file to the end as a string
+        /// </summary>
+        /// <returns>A string containing the contents of the file</returns>
+        public Task<string> ReadAsync()
+        {
+            if (InternalFile is null)
+                return Task.FromResult(string.Empty);
+            return InternalFile.ReadAsync();
         }
 
         /// <summary>
@@ -360,6 +441,17 @@ namespace FileCurator
         }
 
         /// <summary>
+        /// Reads the file to the end as a byte array
+        /// </summary>
+        /// <returns>A byte array containing the contents of the file</returns>
+        public Task<byte[]> ReadBinaryAsync()
+        {
+            if (InternalFile is null)
+                return Task.FromResult(Array.Empty<byte>());
+            return InternalFile.ReadBinaryAsync();
+        }
+
+        /// <summary>
         /// Renames the file
         /// </summary>
         /// <param name="newName">New name for the file</param>
@@ -368,6 +460,19 @@ namespace FileCurator
             if (InternalFile is null || string.IsNullOrEmpty(newName))
                 return this;
             InternalFile.Rename(newName);
+            return this;
+        }
+
+        /// <summary>
+        /// Renames the file
+        /// </summary>
+        /// <param name="newName">New file name</param>
+        /// <returns></returns>
+        public async Task<IFile> RenameAsync(string newName)
+        {
+            if (InternalFile is null || string.IsNullOrEmpty(newName))
+                return this;
+            await InternalFile.RenameAsync(newName).ConfigureAwait(false);
             return this;
         }
 
@@ -419,6 +524,50 @@ namespace FileCurator
             if (InternalFile is null)
                 return content;
             return InternalFile.Write(content, mode);
+        }
+
+        /// <summary>
+        /// Writes content to the file
+        /// </summary>
+        /// <param name="content">Content to write</param>
+        /// <param name="mode">File mode</param>
+        /// <param name="encoding">Encoding that the content should be saved as (default is UTF8)</param>
+        /// <returns>The result of the write or original content</returns>
+        public Task<string> WriteAsync(string content, FileMode mode = FileMode.Create, Encoding? encoding = null)
+        {
+            if (InternalFile is null)
+                return Task.FromResult(content);
+            return InternalFile.WriteAsync(content, mode, encoding);
+        }
+
+        /// <summary>
+        /// Writes content to the file
+        /// </summary>
+        /// <param name="content">Content to write</param>
+        /// <param name="mode">File mode</param>
+        /// <returns>The result of the write or original content</returns>
+        public Task<byte[]> WriteAsync(byte[] content, FileMode mode = FileMode.Create)
+        {
+            if (InternalFile is null)
+                return Task.FromResult(content);
+            return InternalFile.WriteAsync(content, mode);
+        }
+
+        /// <summary>
+        /// Writes the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="mode">The mode.</param>
+        /// <returns>True if it was written successfully, false otherwise.</returns>
+        public async Task<bool> WriteAsync(IGenericFile data, FileMode mode = FileMode.Create)
+        {
+            var Format = FormatManager?.FindFormat(FullName, Credentials);
+            if (Format is null)
+                return false;
+            using var TempStream = new MemoryStream();
+            var Success = await Format.WriteAsync(TempStream, data).ConfigureAwait(false);
+            await WriteAsync(await TempStream.ReadAllBinaryAsync().ConfigureAwait(false), mode).ConfigureAwait(false);
+            return Success;
         }
     }
 }

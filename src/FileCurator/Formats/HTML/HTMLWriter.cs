@@ -18,6 +18,7 @@ using FileCurator.Formats.Data.Interfaces;
 using FileCurator.Formats.Interfaces;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FileCurator.Formats.HTML
 {
@@ -37,6 +38,19 @@ namespace FileCurator.Formats.HTML
         {
             var TempData = Encoding.UTF8.GetBytes(file.ToString());
             writer.Write(TempData, 0, TempData.Length);
+            return true;
+        }
+
+        /// <summary>
+        /// Writes the file to the specified writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="file">The file.</param>
+        /// <returns>True if it writes successfully, false otherwise.</returns>
+        public async Task<bool> WriteAsync(Stream writer, IGenericFile file)
+        {
+            var TempData = Encoding.UTF8.GetBytes(file.ToString());
+            await writer.WriteAsync(TempData, 0, TempData.Length).ConfigureAwait(false);
             return true;
         }
     }

@@ -2,6 +2,7 @@
 using FileCurator.Tests.BaseClasses;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace FileCurator.Tests
@@ -15,6 +16,16 @@ namespace FileCurator.Tests
             Temp.Create();
             Assert.True(Temp.Exists);
             Temp.Delete();
+            Assert.False(Temp.Exists);
+        }
+
+        [Fact]
+        public async Task CreateAndDeleteAsync()
+        {
+            var Temp = new DirectoryInfo("./Test");
+            await Temp.CreateAsync().ConfigureAwait(false);
+            Assert.True(Temp.Exists);
+            await Temp.DeleteAsync().ConfigureAwait(false);
             Assert.False(Temp.Exists);
         }
 
@@ -90,6 +101,21 @@ namespace FileCurator.Tests
             Assert.True(Temp2.Exists);
             Assert.Equal(Temp, Temp2.Parent);
             Temp.Delete();
+            Assert.False(Temp.Exists);
+        }
+
+        [Fact]
+        public async Task MoveAsync()
+        {
+            IDirectory Temp = new DirectoryInfo("./Test");
+            IDirectory Temp2 = new DirectoryInfo("./Test2");
+            await Temp.CreateAsync().ConfigureAwait(false);
+            await Temp2.CreateAsync().ConfigureAwait(false);
+            Temp2 = await Temp2.MoveToAsync(Temp).ConfigureAwait(false);
+            Assert.True(Temp.Exists);
+            Assert.True(Temp2.Exists);
+            Assert.Equal(Temp, Temp2.Parent);
+            await Temp.DeleteAsync().ConfigureAwait(false);
             Assert.False(Temp.Exists);
         }
     }

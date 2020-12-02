@@ -17,6 +17,7 @@ limitations under the License.
 using FileCurator.Formats.Data.Interfaces;
 using FileCurator.Formats.Interfaces;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace FileCurator.Windows.Formats.MSG
 {
@@ -36,5 +37,13 @@ namespace FileCurator.Windows.Formats.MSG
         {
             return false;
         }
+
+        /// <summary>
+        /// Writes the file to the specified writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="file">The file.</param>
+        /// <returns>True if it writes successfully, false otherwise.</returns>
+        public Task<bool> WriteAsync(Stream writer, IGenericFile file) => Task.FromResult(false);
     }
 }

@@ -18,6 +18,7 @@ using FileCurator.Formats.Data.Interfaces;
 using FileCurator.Formats.Interfaces;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FileCurator.Formats.Delimited
 {
@@ -46,6 +47,28 @@ namespace FileCurator.Formats.Delimited
             }
             var ByteData = Encoding.UTF8.GetBytes(Builder.ToString());
             writer.Write(ByteData, 0, ByteData.Length);
+            return true;
+        }
+
+        /// <summary>
+        /// Writes the file to the specified writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="file">The file.</param>
+        /// <returns>True if it writes successfully, false otherwise.</returns>
+        public async Task<bool> WriteAsync(Stream writer, IGenericFile file)
+        {
+            var Builder = new StringBuilder();
+            if (file is ITable FileTable)
+            {
+                Builder.Append(CreateFromTable(FileTable));
+            }
+            else
+            {
+                Builder.Append(CreateFromFile(file));
+            }
+            var ByteData = Encoding.UTF8.GetBytes(Builder.ToString());
+            await writer.WriteAsync(ByteData, 0, ByteData.Length).ConfigureAwait(false);
             return true;
         }
 

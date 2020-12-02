@@ -20,6 +20,7 @@ using FileCurator.Formats.Interfaces;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FileCurator.Formats.VCalendar
 {
@@ -46,13 +47,29 @@ namespace FileCurator.Formats.VCalendar
         }
 
         /// <summary>
-        /// Writes the calendar.
+        /// Writes the file to the specified writer.
         /// </summary>
         /// <param name="writer">The writer.</param>
-        /// <param name="calendarFile">The calendar file.</param>
-        private void WriteCalendar(Stream writer, ICalendar calendarFile)
+        /// <param name="file">The file.</param>
+        /// <returns>True if it writes successfully, false otherwise.</returns>
+        public async Task<bool> WriteAsync(Stream writer, IGenericFile file)
         {
-            var ByteData = Encoding.UTF8.GetBytes(new StringBuilder().AppendLine("BEGIN:VCALENDAR")
+            if (file is ICalendar CalendarFile)
+            {
+                await WriteCalendarAsync(writer, CalendarFile).ConfigureAwait(false);
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Generates the file.
+        /// </summary>
+        /// <param name="calendarFile">The calendar file.</param>
+        /// <returns></returns>
+        private static byte[] GenerateFile(ICalendar calendarFile)
+        {
+            return Encoding.UTF8.GetBytes(new StringBuilder().AppendLine("BEGIN:VCALENDAR")
                       .AppendLine("VERSION:1.0")
                       .AppendLine("BEGIN:VEVENT")
                       .AppendLineFormat("DTStart:{0}Z", (calendarFile.StartTime - calendarFile.CurrentTimeZone.BaseUtcOffset).ToString("yyyyMMddTHHmmss", CultureInfo.InvariantCulture))
@@ -65,7 +82,29 @@ namespace FileCurator.Formats.VCalendar
                       .AppendLine("End:VEVENT")
                       .AppendLine("End:VCALENDAR")
                       .ToString());
+        }
+
+        /// <summary>
+        /// Writes the calendar.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="calendarFile">The calendar file.</param>
+        private void WriteCalendar(Stream writer, ICalendar calendarFile)
+        {
+            byte[] ByteData = GenerateFile(calendarFile);
             writer.Write(ByteData, 0, ByteData.Length);
+        }
+
+        /// <summary>
+        /// Writes the calendar asynchronous.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="calendarFile">The calendar file.</param>
+        /// <returns></returns>
+        private Task WriteCalendarAsync(Stream writer, ICalendar calendarFile)
+        {
+            byte[] ByteData = GenerateFile(calendarFile);
+            return writer.WriteAsync(ByteData, 0, ByteData.Length);
         }
     }
 }

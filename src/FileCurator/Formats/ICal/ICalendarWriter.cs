@@ -22,6 +22,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace FileCurator.Formats.ICal
 {
@@ -53,6 +54,22 @@ namespace FileCurator.Formats.ICal
         }
 
         /// <summary>
+        /// Writes the file to the specified writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="file">The file.</param>
+        /// <returns>True if it writes successfully, false otherwise.</returns>
+        public async Task<bool> WriteAsync(Stream writer, IGenericFile file)
+        {
+            if (file is ICalendar CalendarFile)
+            {
+                await WriteCalendarAsync(writer, CalendarFile).ConfigureAwait(false);
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
         /// Determines whether the specified input contains HTML.
         /// </summary>
         /// <param name="Input">The input.</param>
@@ -63,26 +80,11 @@ namespace FileCurator.Formats.ICal
         }
 
         /// <summary>
-        /// Strips the HTML.
+        /// Generates the file.
         /// </summary>
-        /// <param name="TempHTML">The HTML.</param>
-        /// <returns></returns>
-        private static string StripHTML(string TempHTML)
-        {
-            if (string.IsNullOrEmpty(TempHTML))
-                return string.Empty;
-
-            TempHTML = STRIP_HTML_REGEX.Replace(TempHTML, string.Empty);
-            TempHTML = TempHTML.Replace("&nbsp;", " ");
-            return TempHTML.Replace("&#160;", string.Empty);
-        }
-
-        /// <summary>
-        /// Writes the calendar.
-        /// </summary>
-        /// <param name="writer">The writer.</param>
         /// <param name="calendarFile">The calendar file.</param>
-        private void WriteCalendar(Stream writer, ICalendar calendarFile)
+        /// <returns></returns>
+        private static StringBuilder GenerateFile(ICalendar calendarFile)
         {
             var FileOutput = new StringBuilder();
             var StartTime = calendarFile.StartTime - calendarFile.CurrentTimeZone.BaseUtcOffset;
@@ -134,8 +136,46 @@ namespace FileCurator.Formats.ICal
                              .AppendLine("END:VALARM")
                              .AppendLine("END:VEVENT")
                              .AppendLine("END:VCALENDAR");
+            return FileOutput;
+        }
+
+        /// <summary>
+        /// Strips the HTML.
+        /// </summary>
+        /// <param name="TempHTML">The HTML.</param>
+        /// <returns></returns>
+        private static string StripHTML(string TempHTML)
+        {
+            if (string.IsNullOrEmpty(TempHTML))
+                return string.Empty;
+
+            TempHTML = STRIP_HTML_REGEX.Replace(TempHTML, string.Empty);
+            TempHTML = TempHTML.Replace("&nbsp;", " ");
+            return TempHTML.Replace("&#160;", string.Empty);
+        }
+
+        /// <summary>
+        /// Writes the calendar.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="calendarFile">The calendar file.</param>
+        private void WriteCalendar(Stream writer, ICalendar calendarFile)
+        {
+            StringBuilder FileOutput = GenerateFile(calendarFile);
             var ByteData = Encoding.UTF8.GetBytes(FileOutput.ToString());
             writer.Write(ByteData, 0, ByteData.Length);
+        }
+
+        /// <summary>
+        /// Writes the calendar asynchronous.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="calendarFile">The calendar file.</param>
+        private async Task WriteCalendarAsync(Stream writer, ICalendar calendarFile)
+        {
+            StringBuilder FileOutput = GenerateFile(calendarFile);
+            var ByteData = Encoding.UTF8.GetBytes(FileOutput.ToString());
+            await writer.WriteAsync(ByteData, 0, ByteData.Length).ConfigureAwait(false);
         }
     }
 }

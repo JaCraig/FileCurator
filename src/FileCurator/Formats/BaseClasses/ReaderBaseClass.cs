@@ -18,6 +18,7 @@ using FileCurator.Formats.Data.Interfaces;
 using FileCurator.Formats.Interfaces;
 using System.Buffers;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace FileCurator.Formats.BaseClasses
 {
@@ -86,6 +87,16 @@ namespace FileCurator.Formats.BaseClasses
         /// <param name="stream">The stream.</param>
         /// <returns>The file</returns>
         public abstract TFile Read(Stream stream);
+
+        /// <summary>
+        /// Reads the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <returns>The file</returns>
+        public virtual Task<TFile> ReadAsync(Stream stream)
+        {
+            return Task.FromResult(Read(stream));
+        }
 
         /// <summary>
         /// Finds the start index.

@@ -18,6 +18,7 @@ using FileCurator.Formats.Data.Interfaces;
 using FileCurator.Formats.Interfaces;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FileCurator.Formats.RSS
 {
@@ -44,6 +45,22 @@ namespace FileCurator.Formats.RSS
         }
 
         /// <summary>
+        /// Writes the file to the specified writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="file">The file.</param>
+        /// <returns>True if it writes successfully, false otherwise.</returns>
+        public async Task<bool> WriteAsync(Stream writer, IGenericFile file)
+        {
+            if (file is IFeed FeedFile)
+            {
+                await WriteFeedAsync(writer, FeedFile).ConfigureAwait(false);
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
         /// Writes the feed.
         /// </summary>
         /// <param name="writer">The writer.</param>
@@ -52,6 +69,17 @@ namespace FileCurator.Formats.RSS
         {
             var TempData = Encoding.UTF8.GetBytes(feedFile.ToString());
             writer.Write(TempData, 0, TempData.Length);
+        }
+
+        /// <summary>
+        /// Writes the feed.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="feedFile">The feed file.</param>
+        private Task WriteFeedAsync(Stream writer, IFeed feedFile)
+        {
+            var TempData = Encoding.UTF8.GetBytes(feedFile.ToString());
+            return writer.WriteAsync(TempData, 0, TempData.Length);
         }
     }
 }

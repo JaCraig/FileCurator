@@ -16,6 +16,7 @@ limitations under the License.
 
 using FileCurator.Formats.Data.Interfaces;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace FileCurator.Formats.Interfaces
 {
@@ -77,12 +78,27 @@ namespace FileCurator.Formats.Interfaces
         IGenericFile ReadBase(Stream stream);
 
         /// <summary>
+        /// Reads the base.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <returns>Returns an IGenericFile version of the doc.</returns>
+        Task<IGenericFile> ReadBaseAsync(Stream stream);
+
+        /// <summary>
         /// Writes the file to the specified writer.
         /// </summary>
         /// <param name="writer">The writer.</param>
         /// <param name="file">The file.</param>
         /// <returns>True if it writes successfully, false otherwise.</returns>
         bool Write(Stream writer, IGenericFile file);
+
+        /// <summary>
+        /// Writes the file to the specified writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="file">The file.</param>
+        /// <returns>True if it writes successfully, false otherwise.</returns>
+        Task<bool> WriteAsync(Stream writer, IGenericFile file);
     }
 
     /// <summary>
@@ -98,5 +114,12 @@ namespace FileCurator.Formats.Interfaces
         /// <param name="stream">The stream.</param>
         /// <returns>The resulting file content.</returns>
         TFile Read(Stream stream);
+
+        /// <summary>
+        /// Parses the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <returns>The resulting file content.</returns>
+        Task<TFile> ReadAsync(Stream stream);
     }
 }

@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FileCurator
 {
@@ -33,8 +34,8 @@ namespace FileCurator
         /// </summary>
         /// <param name="path">Path to the directory</param>
         /// <param name="credentials">The credentials.</param>
-        public DirectoryInfo(string path, Credentials credentials = null)
-            : this(Canister.Builder.Bootstrapper.Resolve<FileSystem>().Directory(path, credentials))
+        public DirectoryInfo(string path, Credentials? credentials = null)
+            : this(Canister.Builder.Bootstrapper?.Resolve<FileSystem>().Directory(path, credentials))
         {
         }
 
@@ -42,7 +43,7 @@ namespace FileCurator
         /// Constructor
         /// </summary>
         /// <param name="directory">Directory object</param>
-        public DirectoryInfo(IDirectory directory)
+        public DirectoryInfo(IDirectory? directory)
         {
             InternalDirectory = directory;
         }
@@ -80,12 +81,12 @@ namespace FileCurator
         /// <summary>
         /// Parent directory
         /// </summary>
-        public IDirectory Parent => InternalDirectory is null ? null : new DirectoryInfo(InternalDirectory.Parent);
+        public IDirectory? Parent => InternalDirectory is null ? null : new DirectoryInfo(InternalDirectory.Parent);
 
         /// <summary>
         /// Root directory
         /// </summary>
-        public IDirectory Root => InternalDirectory is null ? null : new DirectoryInfo(InternalDirectory.Root);
+        public IDirectory? Root => InternalDirectory is null ? null : new DirectoryInfo(InternalDirectory.Root);
 
         /// <summary>
         /// Size of the contents of the directory in bytes
@@ -95,7 +96,7 @@ namespace FileCurator
         /// <summary>
         /// Internal directory object
         /// </summary>
-        protected IDirectory InternalDirectory { get; }
+        protected IDirectory? InternalDirectory { get; }
 
         /// <summary>
         /// Determines if two directories are not equal
@@ -177,7 +178,7 @@ namespace FileCurator
         /// </summary>
         /// <param name="other">Directory to compare to</param>
         /// <returns></returns>
-        public int CompareTo(IDirectory other)
+        public int CompareTo(IDirectory? other)
         {
             if (other is null)
                 return 1;
@@ -204,11 +205,24 @@ namespace FileCurator
         /// <param name="directory">Directory to copy to</param>
         /// <param name="options">Copy options</param>
         /// <returns>Returns the new directory</returns>
-        public IDirectory CopyTo(IDirectory directory, CopyOptions options = CopyOptions.CopyAlways)
+        public IDirectory CopyTo(IDirectory? directory, CopyOptions options = CopyOptions.CopyAlways)
         {
             if (InternalDirectory is null || directory is null)
                 return this;
             return InternalDirectory.CopyTo(directory, options);
+        }
+
+        /// <summary>
+        /// Copies the directory to the specified parent directory
+        /// </summary>
+        /// <param name="directory">Directory to copy to</param>
+        /// <param name="options">Copy options</param>
+        /// <returns></returns>
+        public Task<IDirectory> CopyToAsync(IDirectory directory, CopyOptions options = CopyOptions.CopyAlways)
+        {
+            if (InternalDirectory is null || directory is null)
+                return Task.FromResult<IDirectory>(this);
+            return InternalDirectory.CopyToAsync(directory, options);
         }
 
         /// <summary>
@@ -221,11 +235,35 @@ namespace FileCurator
         }
 
         /// <summary>
+        /// Creates the directory if it does not currently exist
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IDirectory> CreateAsync()
+        {
+            if (InternalDirectory is null)
+                return this;
+            await InternalDirectory.CreateAsync().ConfigureAwait(false);
+            return this;
+        }
+
+        /// <summary>
         /// Deletes the directory
         /// </summary>
         public IDirectory Delete()
         {
             InternalDirectory?.Delete();
+            return this;
+        }
+
+        /// <summary>
+        /// Deletes the directory
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IDirectory> DeleteAsync()
+        {
+            if (InternalDirectory is null)
+                return this;
+            await InternalDirectory.DeleteAsync().ConfigureAwait(false);
             return this;
         }
 
@@ -302,7 +340,7 @@ namespace FileCurator
         /// </summary>
         /// <param name="other">Other directory</param>
         /// <returns>True if they are equal, false otherwise</returns>
-        public bool Equals(IDirectory other)
+        public bool Equals(IDirectory? other)
         {
             return FullName == other?.FullName;
         }
@@ -337,11 +375,23 @@ namespace FileCurator
         /// Moves the directory to the specified parent directory
         /// </summary>
         /// <param name="directory">Directory to move to</param>
-        public IDirectory MoveTo(IDirectory directory)
+        public IDirectory MoveTo(IDirectory? directory)
         {
             if (InternalDirectory is null || directory is null)
                 return this;
             return InternalDirectory.MoveTo(directory);
+        }
+
+        /// <summary>
+        /// Moves the directory to the specified parent directory
+        /// </summary>
+        /// <param name="directory">Directory to move to</param>
+        /// <returns></returns>
+        public Task<IDirectory> MoveToAsync(IDirectory directory)
+        {
+            if (InternalDirectory is null || directory is null)
+                return Task.FromResult<IDirectory>(this);
+            return InternalDirectory.MoveToAsync(directory);
         }
 
         /// <summary>
@@ -353,6 +403,19 @@ namespace FileCurator
             if (InternalDirectory is null || string.IsNullOrEmpty(name))
                 return this;
             InternalDirectory.Rename(name);
+            return this;
+        }
+
+        /// <summary>
+        /// Renames the directory
+        /// </summary>
+        /// <param name="name">The new name of the directory</param>
+        /// <returns></returns>
+        public async Task<IDirectory> RenameAsync(string name)
+        {
+            if (InternalDirectory is null || string.IsNullOrEmpty(name))
+                return this;
+            await InternalDirectory.RenameAsync(name).ConfigureAwait(false);
             return this;
         }
 

@@ -22,6 +22,7 @@ using FileCurator.Interfaces;
 using System;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FileCurator.BaseClasses
 {
@@ -251,10 +252,30 @@ namespace FileCurator.BaseClasses
         public abstract IFile CopyTo(IDirectory directory, bool overwrite);
 
         /// <summary>
+        /// Copies the file to another directory
+        /// </summary>
+        /// <param name="directory">Directory to copy the file to</param>
+        /// <param name="overwrite">Should the file overwrite another file if found</param>
+        /// <returns>The newly created file</returns>
+        public virtual Task<IFile?> CopyToAsync(IDirectory directory, bool overwrite)
+        {
+            return Task.FromResult<IFile?>(CopyTo(directory, overwrite));
+        }
+
+        /// <summary>
         /// Deletes the file
         /// </summary>
         /// <returns>Any response for deleting the resource (usually FTP, HTTP, etc)</returns>
         public abstract string Delete();
+
+        /// <summary>
+        /// Deletes the file
+        /// </summary>
+        /// <returns>Any response for deleting the resource (usually FTP, HTTP, etc)</returns>
+        public virtual Task<string> DeleteAsync()
+        {
+            return Task.FromResult(Delete());
+        }
 
         /// <summary>
         /// Determines if the objects are equal
@@ -287,6 +308,16 @@ namespace FileCurator.BaseClasses
         /// </summary>
         /// <param name="directory">Directory to move to</param>
         public abstract IFile MoveTo(IDirectory directory);
+
+        /// <summary>
+        /// Moves the file to another directory
+        /// </summary>
+        /// <param name="directory">Directory to move the file to</param>
+        /// <returns></returns>
+        public virtual Task<IFile> MoveToAsync(IDirectory directory)
+        {
+            return Task.FromResult(MoveTo(directory));
+        }
 
         /// <summary>
         /// Parses this instance.
@@ -322,10 +353,51 @@ namespace FileCurator.BaseClasses
         }
 
         /// <summary>
+        /// Parses this instance.
+        /// </summary>
+        /// <typeparam name="TFile">The type of the file object expected.</typeparam>
+        /// <returns>The parsed file</returns>
+        /// <exception cref="ArgumentException">
+        /// Could not find file format that returns the specified object type
+        /// </exception>
+        public async Task<TFile> ParseAsync<TFile>() where TFile : IGenericFile
+        {
+            if (!(FormatManager?.FindFormat(FullName, Credentials) is IFormat<TFile> Format))
+                throw new ArgumentException("Could not find file format that returns the specified object type");
+            using var TempStream = new MemoryStream(await ReadBinaryAsync().ConfigureAwait(false));
+            return await Format.ReadAsync(TempStream).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Parses this instance.
+        /// </summary>
+        /// <returns>The parsed file</returns>
+        /// <exception cref="ArgumentException">
+        /// Could not find file format that returns the specified object type
+        /// </exception>
+        public async Task<IGenericFile> ParseAsync()
+        {
+            var Format = FormatManager?.FindFormat(FullName, Credentials);
+            if (Format is null)
+                throw new ArgumentException("Could not find file format that returns the specified object type");
+            using var TempStream = new MemoryStream(await ReadBinaryAsync().ConfigureAwait(false));
+            return await Format.ReadBaseAsync(TempStream).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Reads the file in as a string
         /// </summary>
         /// <returns>The file contents as a string</returns>
         public abstract string Read();
+
+        /// <summary>
+        /// Reads the file to the end as a string
+        /// </summary>
+        /// <returns>A string containing the contents of the file</returns>
+        public virtual Task<string> ReadAsync()
+        {
+            return Task.FromResult(Read());
+        }
 
         /// <summary>
         /// Reads a file as binary
@@ -334,10 +406,29 @@ namespace FileCurator.BaseClasses
         public abstract byte[] ReadBinary();
 
         /// <summary>
+        /// Reads the file to the end as a byte array
+        /// </summary>
+        /// <returns>A byte array containing the contents of the file</returns>
+        public virtual Task<byte[]> ReadBinaryAsync()
+        {
+            return Task.FromResult(ReadBinary());
+        }
+
+        /// <summary>
         /// Renames the file
         /// </summary>
         /// <param name="newName">New name for the file</param>
         public abstract IFile Rename(string newName);
+
+        /// <summary>
+        /// Renames the file
+        /// </summary>
+        /// <param name="newName">New file name</param>
+        /// <returns></returns>
+        public virtual Task<IFile> RenameAsync(string newName)
+        {
+            return Task.FromResult(Rename(newName));
+        }
 
         /// <summary>
         /// Returns the name of the file
@@ -376,6 +467,46 @@ namespace FileCurator.BaseClasses
             using var TempStream = new MemoryStream();
             var Success = Format.Write(TempStream, data);
             Write(TempStream.ReadAllBinary(), mode);
+            return Success;
+        }
+
+        /// <summary>
+        /// Writes content to the file
+        /// </summary>
+        /// <param name="content">Content to write</param>
+        /// <param name="mode">File mode</param>
+        /// <param name="encoding">Encoding that the content should be saved as (default is UTF8)</param>
+        /// <returns>The result of the write or original content</returns>
+        public virtual Task<string> WriteAsync(string content, FileMode mode = FileMode.Create, Encoding? encoding = null)
+        {
+            return Task.FromResult(Write(content, mode, encoding));
+        }
+
+        /// <summary>
+        /// Writes content to the file
+        /// </summary>
+        /// <param name="content">Content to write</param>
+        /// <param name="mode">File mode</param>
+        /// <returns>The result of the write or original content</returns>
+        public virtual Task<byte[]> WriteAsync(byte[] content, FileMode mode = FileMode.Create)
+        {
+            return Task.FromResult(Write(content, mode));
+        }
+
+        /// <summary>
+        /// Writes the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="mode">The mode.</param>
+        /// <returns>True if it was written successfully, false otherwise.</returns>
+        public async Task<bool> WriteAsync(IGenericFile data, FileMode mode = FileMode.Create)
+        {
+            var Format = FormatManager?.FindFormat(FullName, Credentials);
+            if (Format is null)
+                return false;
+            using var TempStream = new MemoryStream();
+            var Success = await Format.WriteAsync(TempStream, data).ConfigureAwait(false);
+            await WriteAsync(await TempStream.ReadAllBinaryAsync().ConfigureAwait(false), mode).ConfigureAwait(false);
             return Success;
         }
     }

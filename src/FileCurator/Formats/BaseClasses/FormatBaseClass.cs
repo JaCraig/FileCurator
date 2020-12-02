@@ -18,6 +18,7 @@ using FileCurator.Formats.Data.Interfaces;
 using FileCurator.Formats.Interfaces;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FileCurator.Formats.BaseClasses
 {
@@ -99,11 +100,25 @@ namespace FileCurator.Formats.BaseClasses
         public TFile Read(Stream stream) => Reader.Read(stream);
 
         /// <summary>
+        /// Parses the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <returns>The resulting file content.</returns>
+        public Task<TFile> ReadAsync(Stream stream) => Reader.ReadAsync(stream);
+
+        /// <summary>
         /// Reads the base.
         /// </summary>
         /// <param name="stream">The stream.</param>
         /// <returns>Returns an IGenericFile version of the doc.</returns>
         public IGenericFile ReadBase(Stream stream) => Read(stream);
+
+        /// <summary>
+        /// Reads the base.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <returns>Returns an IGenericFile version of the doc.</returns>
+        public async Task<IGenericFile> ReadBaseAsync(Stream stream) => await ReadAsync(stream).ConfigureAwait(false);
 
         /// <summary>
         /// Writes the file to the specified writer.
@@ -112,5 +127,13 @@ namespace FileCurator.Formats.BaseClasses
         /// <param name="file">The file.</param>
         /// <returns>True if it writes successfully, false otherwise.</returns>
         public bool Write(Stream writer, IGenericFile file) => Writer.Write(writer, file);
+
+        /// <summary>
+        /// Writes the file to the specified writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="file">The file.</param>
+        /// <returns>True if it writes successfully, false otherwise.</returns>
+        public Task<bool> WriteAsync(Stream writer, IGenericFile file) => Writer.WriteAsync(writer, file);
     }
 }

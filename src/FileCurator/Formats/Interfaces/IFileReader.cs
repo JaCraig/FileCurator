@@ -16,6 +16,7 @@ limitations under the License.
 
 using FileCurator.Formats.Data.Interfaces;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace FileCurator.Formats.Interfaces
 {
@@ -52,5 +53,12 @@ namespace FileCurator.Formats.Interfaces
         /// <param name="stream">The stream.</param>
         /// <returns>The file</returns>
         TFile Read(Stream stream);
+
+        /// <summary>
+        /// Reads the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <returns>The file</returns>
+        Task<TFile> ReadAsync(Stream stream);
     }
 }

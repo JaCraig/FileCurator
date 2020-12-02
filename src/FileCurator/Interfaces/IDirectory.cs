@@ -18,6 +18,7 @@ using FileCurator.Enums;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace FileCurator.Interfaces
 {
@@ -83,14 +84,31 @@ namespace FileCurator.Interfaces
         IDirectory CopyTo(IDirectory directory, CopyOptions options = CopyOptions.CopyAlways);
 
         /// <summary>
+        /// Copies the directory to the specified parent directory
+        /// </summary>
+        /// <param name="directory">Directory to copy to</param>
+        /// <param name="options">Copy options</param>
+        Task<IDirectory> CopyToAsync(IDirectory directory, CopyOptions options = CopyOptions.CopyAlways);
+
+        /// <summary>
         /// Creates the directory if it does not currently exist
         /// </summary>
         IDirectory Create();
 
         /// <summary>
+        /// Creates the directory if it does not currently exist
+        /// </summary>
+        Task<IDirectory> CreateAsync();
+
+        /// <summary>
         /// Deletes the directory
         /// </summary>
         IDirectory Delete();
+
+        /// <summary>
+        /// Deletes the directory
+        /// </summary>
+        Task<IDirectory> DeleteAsync();
 
         /// <summary>
         /// Enumerates sub directories (defaults to top level sub directories)
@@ -131,9 +149,21 @@ namespace FileCurator.Interfaces
         IDirectory MoveTo(IDirectory directory);
 
         /// <summary>
+        /// Moves the directory to the specified parent directory
+        /// </summary>
+        /// <param name="directory">Directory to move to</param>
+        Task<IDirectory> MoveToAsync(IDirectory directory);
+
+        /// <summary>
         /// Renames the directory
         /// </summary>
         /// <param name="name">The new name of the directory</param>
         IDirectory Rename(string name);
+
+        /// <summary>
+        /// Renames the directory
+        /// </summary>
+        /// <param name="name">The new name of the directory</param>
+        Task<IDirectory> RenameAsync(string name);
     }
 }

@@ -18,6 +18,7 @@ using FileCurator.Formats.Data.Interfaces;
 using System;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FileCurator.Interfaces
 {
@@ -80,16 +81,36 @@ namespace FileCurator.Interfaces
         IFile? CopyTo(IDirectory directory, bool overwrite);
 
         /// <summary>
+        /// Copies the file to another directory
+        /// </summary>
+        /// <param name="directory">Directory to copy the file to</param>
+        /// <param name="overwrite">Should the file overwrite another file if found</param>
+        /// <returns>The newly created file</returns>
+        Task<IFile?> CopyToAsync(IDirectory directory, bool overwrite);
+
+        /// <summary>
         /// Deletes the file
         /// </summary>
         /// <returns>Any response for deleting the resource (usually FTP, HTTP, etc)</returns>
         string Delete();
 
         /// <summary>
+        /// Deletes the file
+        /// </summary>
+        /// <returns>Any response for deleting the resource (usually FTP, HTTP, etc)</returns>
+        Task<string> DeleteAsync();
+
+        /// <summary>
         /// Moves the file to another directory
         /// </summary>
         /// <param name="directory">Directory to move the file to</param>
         IFile MoveTo(IDirectory directory);
+
+        /// <summary>
+        /// Moves the file to another directory
+        /// </summary>
+        /// <param name="directory">Directory to move the file to</param>
+        Task<IFile> MoveToAsync(IDirectory directory);
 
         /// <summary>
         /// Parses this instance.
@@ -111,10 +132,35 @@ namespace FileCurator.Interfaces
         IGenericFile Parse();
 
         /// <summary>
+        /// Parses this instance.
+        /// </summary>
+        /// <typeparam name="TFile">The type of the file object expected.</typeparam>
+        /// <returns>The parsed file</returns>
+        /// <exception cref="ArgumentException">
+        /// Could not find file format that returns the specified object type
+        /// </exception>
+        Task<TFile> ParseAsync<TFile>() where TFile : IGenericFile;
+
+        /// <summary>
+        /// Parses this instance.
+        /// </summary>
+        /// <returns>The parsed file</returns>
+        /// <exception cref="ArgumentException">
+        /// Could not find file format that returns the specified object type
+        /// </exception>
+        Task<IGenericFile> ParseAsync();
+
+        /// <summary>
         /// Reads the file to the end as a string
         /// </summary>
         /// <returns>A string containing the contents of the file</returns>
         string Read();
+
+        /// <summary>
+        /// Reads the file to the end as a string
+        /// </summary>
+        /// <returns>A string containing the contents of the file</returns>
+        Task<string> ReadAsync();
 
         /// <summary>
         /// Reads the file to the end as a byte array
@@ -123,10 +169,22 @@ namespace FileCurator.Interfaces
         byte[] ReadBinary();
 
         /// <summary>
+        /// Reads the file to the end as a byte array
+        /// </summary>
+        /// <returns>A byte array containing the contents of the file</returns>
+        Task<byte[]> ReadBinaryAsync();
+
+        /// <summary>
         /// Renames the file
         /// </summary>
         /// <param name="newName">New file name</param>
         IFile Rename(string newName);
+
+        /// <summary>
+        /// Renames the file
+        /// </summary>
+        /// <param name="newName">New file name</param>
+        Task<IFile> RenameAsync(string newName);
 
         /// <summary>
         /// Writes content to the file
@@ -152,5 +210,30 @@ namespace FileCurator.Interfaces
         /// <param name="mode">The mode.</param>
         /// <returns>True if it was written successfully, false otherwise.</returns>
         bool Write(IGenericFile data, FileMode mode = FileMode.Create);
+
+        /// <summary>
+        /// Writes content to the file
+        /// </summary>
+        /// <param name="content">Content to write</param>
+        /// <param name="mode">File mode</param>
+        /// <param name="encoding">Encoding that the content should be saved as (default is UTF8)</param>
+        /// <returns>The result of the write or original content</returns>
+        Task<string> WriteAsync(string content, FileMode mode = FileMode.Create, Encoding? encoding = null);
+
+        /// <summary>
+        /// Writes content to the file
+        /// </summary>
+        /// <param name="content">Content to write</param>
+        /// <param name="mode">File mode</param>
+        /// <returns>The result of the write or original content</returns>
+        Task<byte[]> WriteAsync(byte[] content, FileMode mode = FileMode.Create);
+
+        /// <summary>
+        /// Writes the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="mode">The mode.</param>
+        /// <returns>True if it was written successfully, false otherwise.</returns>
+        Task<bool> WriteAsync(IGenericFile data, FileMode mode = FileMode.Create);
     }
 }

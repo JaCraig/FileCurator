@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FileCurator.BaseClasses
 {
@@ -252,14 +253,81 @@ namespace FileCurator.BaseClasses
         }
 
         /// <summary>
+        /// Copies the directory to the specified parent directory
+        /// </summary>
+        /// <param name="directory">Directory to copy to</param>
+        /// <param name="options">Copy options</param>
+        /// <returns></returns>
+        public async Task<IDirectory> CopyToAsync(IDirectory directory, CopyOptions options = CopyOptions.CopyAlways)
+        {
+            if (InternalDirectory is null || directory is null)
+                return this;
+            directory.Create();
+            List<Task> Tasks = new List<Task>();
+            foreach (var TempFile in EnumerateFiles())
+            {
+                switch (options)
+                {
+                    case CopyOptions.CopyAlways:
+                        Tasks.Add(TempFile.CopyToAsync(directory, true));
+                        break;
+
+                    case CopyOptions.CopyIfNewer:
+                        if (new FileInfo(directory.FullName + "\\" + TempFile.Name.Replace("/", "").Replace("\\", ""), Credentials).Exists)
+                        {
+                            var FileInfo = new FileInfo(directory.FullName + "\\" + TempFile.Name.Replace("/", "").Replace("\\", ""), Credentials);
+                            if (FileInfo.Modified.CompareTo(TempFile.Modified) < 0)
+                                Tasks.Add(TempFile.CopyToAsync(directory, true));
+                        }
+                        else
+                        {
+                            Tasks.Add(TempFile.CopyToAsync(directory, true));
+                        }
+
+                        break;
+
+                    case CopyOptions.DoNotOverwrite:
+                        Tasks.Add(TempFile.CopyToAsync(directory, true));
+                        break;
+                }
+            }
+            await Task.WhenAll(Tasks).ConfigureAwait(false);
+            Tasks.Clear();
+            foreach (var SubDirectory in EnumerateDirectories())
+            {
+                Tasks.Add(SubDirectory.CopyToAsync(new DirectoryInfo(directory.FullName + "\\" + SubDirectory.Name.Replace("/", "").Replace("\\", ""), Credentials), options));
+            }
+            await Task.WhenAll(Tasks).ConfigureAwait(false);
+            return directory;
+        }
+
+        /// <summary>
         /// Creates the directory
         /// </summary>
         public abstract IDirectory Create();
 
         /// <summary>
+        /// Creates the directory if it does not currently exist
+        /// </summary>
+        /// <returns></returns>
+        public virtual Task<IDirectory> CreateAsync()
+        {
+            return Task.FromResult(Create());
+        }
+
+        /// <summary>
         /// Deletes the directory
         /// </summary>
         public abstract IDirectory Delete();
+
+        /// <summary>
+        /// Deletes the directory
+        /// </summary>
+        /// <returns></returns>
+        public virtual Task<IDirectory> DeleteAsync()
+        {
+            return Task.FromResult(Delete());
+        }
 
         /// <summary>
         /// Enumerates directories under this directory
@@ -351,10 +419,32 @@ namespace FileCurator.BaseClasses
         }
 
         /// <summary>
+        /// Moves the directory to the specified parent directory
+        /// </summary>
+        /// <param name="directory">Directory to move to</param>
+        /// <returns></returns>
+        public async Task<IDirectory> MoveToAsync(IDirectory directory)
+        {
+            var ReturnValue = await CopyToAsync(new DirectoryInfo(directory.FullName + "\\" + Name.Replace("/", "").Replace("\\", ""), Credentials)).ConfigureAwait(false);
+            await DeleteAsync().ConfigureAwait(false);
+            return ReturnValue;
+        }
+
+        /// <summary>
         /// Renames the directory
         /// </summary>
         /// <param name="name">Name of the new directory</param>
         public abstract IDirectory Rename(string name);
+
+        /// <summary>
+        /// Renames the directory
+        /// </summary>
+        /// <param name="name">The new name of the directory</param>
+        /// <returns></returns>
+        public virtual Task<IDirectory> RenameAsync(string name)
+        {
+            return Task.FromResult(Rename(name));
+        }
 
         /// <summary>
         /// Gets info for the directory
