@@ -23,6 +23,8 @@ namespace FileCurator.Tests.Formats
             {"TestPPTX.pptx","PowerPoint" },
             {"TestXLSX.xlsx","Excel" },
             {"TestDocx.docx","Word" },
+            {"TestRSS2.rss","RSS" },
+            {"TestRSS.rss","RSS" }
         };
 
         public static readonly TheoryData<string, string, string> FormatDataByMimeType = new TheoryData<string, string, string>
@@ -39,6 +41,7 @@ namespace FileCurator.Tests.Formats
             {"TestPPSX.ppsx","PowerPoint","application/vnd.openxmlformats-officedocument.presentationml.slideshow" },
             {"TestPPTX.pptx","PowerPoint","application/vnd.openxmlformats-officedocument.presentationml.slideshow" },
             {"TestRSS.rss","RSS","APPLICATION/RSS+XML" },
+            {"TestRSS2.rss","RSS","APPLICATION/RSS+XML" },
             {"TestTXT.txt","Text","text/plain" },
             {"TestVCal.vcs","VCal","text/x-vcalendar" },
             {"TestVCF.vcf","vCard","text/vcard" },
@@ -58,6 +61,7 @@ namespace FileCurator.Tests.Formats
             {"TestPPSX.ppsx","PowerPoint" },
             {"TestPPTX.pptx","PowerPoint" },
             {"TestRSS.rss","RSS" },
+            {"TestRSS2.rss","RSS" },
             {"TestTXT.txt","Text" },
             {"TestVCal.vcs","VCal" },
             {"TestVCF.vcf","vCard" },
