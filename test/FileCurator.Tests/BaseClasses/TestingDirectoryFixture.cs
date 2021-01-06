@@ -1,8 +1,5 @@
-﻿using FileCurator.Registration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Reflection;
 using Xunit;
 
 namespace FileCurator.Tests.BaseClasses
@@ -14,10 +11,8 @@ namespace FileCurator.Tests.BaseClasses
         {
             if (Canister.Builder.Bootstrapper == null)
             {
-                Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
-                   .RegisterFileCurator()
-                   .AddAssembly(typeof(TestingDirectoryFixture).GetTypeInfo().Assembly)
-                   .Build();
+                new ServiceCollection().AddCanisterModules(configure => configure.RegisterFileCurator()
+                .AddAssembly(typeof(TestingDirectoryFixture).Assembly));
             }
 
             new DirectoryInfo(@".\Testing").Create();
