@@ -8,9 +8,7 @@ FileCurator is a library used to simplify file access and management on your sys
 
 The system relies on an IoC wrapper called [Canister](https://github.com/JaCraig/Canister). While Canister has a built in IoC container, it's purpose is to actually wrap your container of choice in a way that simplifies setup and usage for other libraries that don't want to be tied to a specific IoC container. FileCurator uses it to detect and pull in file system providers. As such you must set up Canister in order to use FileCurator:
 
-    Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
-                .RegisterFileCurator()
-                .Build();
+    services.AddCanisterModules(configure => configure.RegisterFileCurator());
 	
 This line is required prior to using the extension methods, FileInfo, and DirectoryInfo classes for the first time. Once Canister is set up, you can call the classes provided:
 
