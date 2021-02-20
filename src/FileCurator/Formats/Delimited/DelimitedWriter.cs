@@ -87,7 +87,7 @@ namespace FileCurator.Formats.Delimited
             {
                 foreach (var HeaderColumn in fileTable.Columns)
                 {
-                    Builder.Append(Seperator).Append("\"").Append(HeaderColumn.Replace("\"", "")).Append("\"");
+                    Builder.Append(Seperator).Append("\"").Append(HeaderColumn?.Replace("\"", "") ?? "").Append("\"");
                     Seperator = ",";
                 }
                 Builder.AppendLine();
@@ -97,7 +97,7 @@ namespace FileCurator.Formats.Delimited
                 Seperator = "";
                 foreach (var CurrentCell in Row.Cells)
                 {
-                    Builder.Append(Seperator).Append("\"").Append(CurrentCell.Content.Replace("\"", "")).Append("\"");
+                    Builder.Append(Seperator).Append("\"").Append(CurrentCell.Content?.Replace("\"", "") ?? "").Append("\"");
                     Seperator = ",";
                 }
                 Builder.AppendLine();
