@@ -28,10 +28,10 @@ namespace FileCurator.Formats.RSS.Data
         /// <returns>string stripped of certain characters.</returns>
         public static string StripIllegalCharacters(string original)
         {
-            return original.Replace("&nbsp;", " ")
+            return original?.Replace("&nbsp;", " ")
                 .Replace("&#160;", string.Empty)
                 .Trim()
-                .Replace("&", "and");
+                .Replace("&", "and") ?? "";
         }
     }
 }
