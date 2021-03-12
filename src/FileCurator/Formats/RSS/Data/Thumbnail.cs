@@ -77,7 +77,7 @@ namespace FileCurator.Formats.RSS.Data
         {
             if (!string.IsNullOrEmpty(Url))
             {
-                return "<media:thumbnail url=\"" + Url + "\" width=\"" + Width.ToString(CultureInfo.InvariantCulture) + "\" height=\"" + Height + "\" />\r\n";
+                return $"<media:thumbnail url=\"{Url}\" width=\"{Width.ToString(CultureInfo.InvariantCulture)}\" height=\"{Height}\" />\r\n";
             }
             return string.Empty;
         }

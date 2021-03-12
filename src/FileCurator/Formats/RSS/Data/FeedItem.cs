@@ -146,12 +146,12 @@ namespace FileCurator.Formats.RSS.Data
         public override string ToString()
         {
             var ItemString = new StringBuilder();
-            ItemString.Append("<item><title>").Append(Title).Append("</title>\r\n<link>")
-                .Append(Link).Append("</link>\r\n<author>").Append(Author)
+            ItemString.Append("<item><title>").Append(Utils.StripIllegalCharacters(Title)).Append("</title>\r\n<link>")
+                .Append(Link).Append("</link>\r\n<author>").Append(Utils.StripIllegalCharacters(Author))
                 .Append("</author>\r\n");
             foreach (var Category in Categories)
             {
-                ItemString.Append("<category>").Append(Category).Append("</category>\r\n");
+                ItemString.Append("<category>").Append(Utils.StripIllegalCharacters(Category)).Append("</category>\r\n");
             }
             ItemString.Append("<pubDate>").Append(PubDate.ToString("r", CultureInfo.InvariantCulture)).Append("</pubDate>\r\n");
             if (Enclosure != null)
@@ -161,7 +161,7 @@ namespace FileCurator.Formats.RSS.Data
             ItemString.Append("<description><![CDATA[").Append(Description).Append("]]></description>\r\n");
             if (GUID != null)
                 ItemString.Append(GUID.ToString());
-            ItemString.Append("<itunes:subtitle>").Append(Title).Append("</itunes:subtitle>");
+            ItemString.Append("<itunes:subtitle>").Append(Utils.StripIllegalCharacters(Title)).Append("</itunes:subtitle>");
             ItemString.Append("<itunes:summary><![CDATA[").Append(Description).Append("]]></itunes:summary>");
             ItemString.Append("</item>\r\n");
             return ItemString.ToString();

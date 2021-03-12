@@ -125,8 +125,8 @@ namespace FileCurator.Formats.RSS.Data
         public string Docs { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether this
-        /// <see cref="T:FileCurator.Formats.Data.Interfaces.IChannel"/> is explicit.
+        /// Gets or sets a value indicating whether this <see
+        /// cref="T:FileCurator.Formats.Data.Interfaces.IChannel"/> is explicit.
         /// </summary>
         /// <value><c>true</c> if explicit; otherwise, <c>false</c>.</value>
         public bool Explicit { get; set; }
@@ -138,8 +138,8 @@ namespace FileCurator.Formats.RSS.Data
         public string ImageUrl { get; set; }
 
         /// <summary>
-        /// Gets a value indicating whether the
-        /// <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
+        /// Gets a value indicating whether the <see
+        /// cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
         /// </summary>
         public bool IsReadOnly => Items.IsReadOnly;
 
@@ -214,8 +214,8 @@ namespace FileCurator.Formats.RSS.Data
         /// </summary>
         /// <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
         /// <returns>
-        /// true if <paramref name="item"/> is found in the
-        /// <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
+        /// true if <paramref name="item"/> is found in the <see
+        /// cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
         /// </returns>
         public bool Contains(IFeedItem item) => Items.Contains(item);
 
@@ -225,8 +225,8 @@ namespace FileCurator.Formats.RSS.Data
         /// </summary>
         /// <param name="array">
         /// The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements
-        /// copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The
-        /// <see cref="T:System.Array"/> must have zero-based indexing.
+        /// copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The <see
+        /// cref="T:System.Array"/> must have zero-based indexing.
         /// </param>
         /// <param name="arrayIndex">
         /// The zero-based index in <paramref name="array"/> at which copying begins.
@@ -270,9 +270,9 @@ namespace FileCurator.Formats.RSS.Data
         /// </summary>
         /// <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
         /// <returns>
-        /// true if <paramref name="item"/> was successfully removed from the
-        /// <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false. This method
-        /// also returns false if <paramref name="item"/> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"/>.
+        /// true if <paramref name="item"/> was successfully removed from the <see
+        /// cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false. This method also
+        /// returns false if <paramref name="item"/> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"/>.
         /// </returns>
         public bool Remove(IFeedItem item) => Items.Remove(item);
 
@@ -296,8 +296,8 @@ namespace FileCurator.Formats.RSS.Data
 
             ChannelString.Append("<description><![CDATA[").Append(Utils.StripIllegalCharacters(Description)).Append("]]></description>\r\n");
             ChannelString.Append("<language>").Append(Language).Append("</language>\r\n");
-            ChannelString.Append("<copyright>").Append(Copyright).Append("</copyright>\r\n");
-            ChannelString.Append("<webMaster>").Append(WebMaster).Append("</webMaster>\r\n");
+            ChannelString.Append("<copyright>").Append(Utils.StripIllegalCharacters(Copyright)).Append("</copyright>\r\n");
+            ChannelString.Append("<webMaster>").Append(Utils.StripIllegalCharacters(WebMaster)).Append("</webMaster>\r\n");
             ChannelString.Append("<pubDate>").Append(PubDate.ToString("Ddd, dd MMM yyyy HH':'mm':'ss", CultureInfo.InvariantCulture)).Append("</pubDate>\r\n");
             ChannelString.Append("<itunes:explicit>").Append(Explicit ? "yes" : "no").Append("</itunes:explicit>");
             ChannelString.Append("<itunes:subtitle>").Append(Utils.StripIllegalCharacters(Title)).Append("</itunes:subtitle>");
@@ -305,14 +305,14 @@ namespace FileCurator.Formats.RSS.Data
 
             foreach (var Category in Categories)
             {
-                ChannelString.Append("<category>").Append(Category).Append("</category>\r\n");
+                ChannelString.Append("<category>").Append(Utils.StripIllegalCharacters(Category)).Append("</category>\r\n");
                 ChannelString.Append("<itunes:category text=\"").Append(Category).Append("\" />\r\n");
             }
             ChannelString.Append("<docs>").Append(Docs).Append("</docs>\r\n");
             ChannelString.Append("<ttl>").Append(TTL.ToString(CultureInfo.InvariantCulture)).Append("</ttl>\r\n");
             if (!string.IsNullOrEmpty(ImageUrl))
             {
-                ChannelString.Append("<image><url>").Append(ImageUrl).Append("</url>\r\n<title>").Append(Title).Append("</title>\r\n<link>").Append(Link).Append("</link>\r\n</image>\r\n");
+                ChannelString.Append("<image><url>").Append(ImageUrl).Append("</url>\r\n<title>").Append(Utils.StripIllegalCharacters(Title)).Append("</title>\r\n<link>").Append(Link).Append("</link>\r\n</image>\r\n");
             }
             foreach (FeedItem CurrentItem in Items)
             {
