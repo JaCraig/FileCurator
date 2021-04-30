@@ -7,8 +7,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Default
 {
-    public class WebDirectoryTests : TestingDirectoryFixture
+    public class WebDirectoryTests : TestBaseClass<WebDirectory>
     {
+        public WebDirectoryTests()
+        {
+            TestObject = new WebDirectory();
+        }
+
         [Fact]
         public void Copy()
         {

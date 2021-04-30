@@ -7,8 +7,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.VCalendar
 {
-    public class VCalWriterTests : TestingDirectoryFixture
+    public class VCalWriterTests : TestBaseClass<VCalendarWriter>
     {
+        public VCalWriterTests()
+        {
+            TestObject = new VCalendarWriter();
+        }
+
         [Fact]
         public void WriteACalendar()
         {

@@ -4,8 +4,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Default
 {
-    public class AbsoluteFileSystemTests : TestingDirectoryFixture
+    public class AbsoluteFileSystemTests : TestBaseClass<AbsoluteLocalFileSystem>
     {
+        public AbsoluteFileSystemTests()
+        {
+            TestObject = new AbsoluteLocalFileSystem();
+        }
+
         [Fact]
         public void CanHandle()
         {

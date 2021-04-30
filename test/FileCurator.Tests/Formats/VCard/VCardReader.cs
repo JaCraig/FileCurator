@@ -5,8 +5,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.VCard
 {
-    public class VCardReaderTests : TestingDirectoryFixture
+    public class VCardReaderTests : TestBaseClass<VCardReader>
     {
+        public VCardReaderTests()
+        {
+            TestObject = new VCardReader();
+        }
+
         [Fact]
         public void Read()
         {

@@ -7,8 +7,13 @@ using Xunit;
 
 namespace FileCurator.Tests
 {
-    public class DirectoryInfoTests : TestingDirectoryFixture
+    public class DirectoryInfoTests : TestBaseClass<DirectoryInfo>
     {
+        public DirectoryInfoTests()
+        {
+            TestObject = null;
+        }
+
         [Fact]
         public void CreateAndDelete()
         {

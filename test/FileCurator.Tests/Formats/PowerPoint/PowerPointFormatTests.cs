@@ -1,11 +1,17 @@
 ﻿using FileCurator.Formats.PowerPoint;
+using FileCurator.Tests.BaseClasses;
 using System.IO;
 using Xunit;
 
 namespace FileCurator.Tests.Formats.PowerPoint
 {
-    public class PowerPointFormatTests
+    public class PowerPointFormatTests : TestBaseClass<PowerPointFormat>
     {
+        public PowerPointFormatTests()
+        {
+            TestObject = new PowerPointFormat();
+        }
+
         [Fact]
         public void ReadPPSX()
         {

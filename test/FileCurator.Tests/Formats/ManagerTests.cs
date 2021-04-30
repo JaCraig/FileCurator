@@ -6,8 +6,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats
 {
-    public class ManagerTests : TestingDirectoryFixture
+    public class ManagerTests : TestBaseClass<Manager>
     {
+        public ManagerTests()
+        {
+            TestObject = null;
+        }
+
         public static readonly TheoryData<string, string> FormatDataByFileContents = new TheoryData<string, string>
         {
             {"TestCSV.csv","Text" },

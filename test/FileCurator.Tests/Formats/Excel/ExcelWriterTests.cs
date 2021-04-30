@@ -7,8 +7,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.Excel
 {
-    public class ExcelWriterTests : TestingDirectoryFixture
+    public class ExcelWriterTests : TestBaseClass<ExcelWriter>
     {
+        public ExcelWriterTests()
+        {
+            TestObject = new ExcelWriter();
+        }
+
         [Fact]
         public void GetColumnName()
         {

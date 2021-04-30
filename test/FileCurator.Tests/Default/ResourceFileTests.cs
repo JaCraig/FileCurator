@@ -4,8 +4,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Default
 {
-    public class ResourceFileTests : TestingDirectoryFixture
+    public class ResourceFileTests : TestBaseClass<ResourceFile>
     {
+        public ResourceFileTests()
+        {
+            TestObject = new ResourceFile();
+        }
+
         [Fact]
         public void Creation()
         {

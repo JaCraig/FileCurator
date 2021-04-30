@@ -9,8 +9,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.VCard
 {
-    public class VCardWriterTests : TestingDirectoryFixture
+    public class VCardWriterTests : TestBaseClass<VCardWriter>
     {
+        public VCardWriterTests()
+        {
+            TestObject = new VCardWriter();
+        }
+
         [Fact]
         public void WriteACard()
         {

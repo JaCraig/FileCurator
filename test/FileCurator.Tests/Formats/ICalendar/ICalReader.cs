@@ -6,8 +6,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.ICalendar
 {
-    public class ICalReader : TestingDirectoryFixture
+    public class ICalReader : TestBaseClass<ICalendarReader>
     {
+        public ICalReader()
+        {
+            TestObject = new ICalendarReader();
+        }
+
         [Fact]
         public void Read()
         {

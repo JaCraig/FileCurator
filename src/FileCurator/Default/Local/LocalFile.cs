@@ -193,10 +193,8 @@ namespace FileCurator.Default
         /// <returns>The result of the write or original content</returns>
         public override string Write(string content, FileMode mode = FileMode.Create, Encoding encoding = null)
         {
-            if (content is null)
-                content = "";
-            if (encoding is null)
-                encoding = Encoding.UTF8;
+            content ??= "";
+            encoding ??= Encoding.UTF8;
             return Write(encoding.GetBytes(content), mode).ToString(encoding);
         }
 
@@ -208,9 +206,8 @@ namespace FileCurator.Default
         /// <returns>The result of the write or original content</returns>
         public override byte[] Write(byte[] content, FileMode mode = FileMode.Create)
         {
-            if (content is null)
-                content = Array.Empty<byte>();
-            Directory.Create();
+            content ??= Array.Empty<byte>();
+            Directory?.Create();
             using (var Writer = InternalFile.Open(mode, FileAccess.Write))
             {
                 Writer.Write(content, 0, content.Length);

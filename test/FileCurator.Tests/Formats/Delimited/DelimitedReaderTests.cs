@@ -6,8 +6,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.Delimited
 {
-    public class DelimitedReaderTests : TestingDirectoryFixture
+    public class DelimitedReaderTests : TestBaseClass<DelimitedReader>
     {
+        public DelimitedReaderTests()
+        {
+            TestObject = new DelimitedReader();
+        }
+
         [Fact]
         public void Read()
         {

@@ -5,8 +5,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Default
 {
-    public class LocalDirectoryTests : TestingDirectoryFixture
+    public class LocalDirectoryTests : TestBaseClass<LocalDirectory>
     {
+        public LocalDirectoryTests()
+        {
+            TestObject = new LocalDirectory();
+        }
+
         [Fact]
         public void Copy()
         {

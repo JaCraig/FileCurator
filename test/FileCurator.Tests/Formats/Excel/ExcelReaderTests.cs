@@ -5,8 +5,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.Excel
 {
-    public class ExcelReaderTests : TestingDirectoryFixture
+    public class ExcelReaderTests : TestBaseClass<ExcelReader>
     {
+        public ExcelReaderTests()
+        {
+            TestObject = new ExcelReader();
+        }
+
         [Fact]
         public void Convert()
         {

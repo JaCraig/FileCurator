@@ -4,8 +4,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Default
 {
-    public class MemoryFileSystemTests : TestingDirectoryFixture
+    public class MemoryFileSystemTests : TestBaseClass<MemoryFileSystem>
     {
+        public MemoryFileSystemTests()
+        {
+            TestObject = new MemoryFileSystem();
+        }
+
         [Fact]
         public void CanHandle()
         {

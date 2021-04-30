@@ -5,8 +5,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.Txt
 {
-    public class TxtFormatTests : TestingDirectoryFixture
+    public class TxtFormatTests : TestBaseClass<TxtFormat>
     {
+        public TxtFormatTests()
+        {
+            TestObject = new TxtFormat();
+        }
+
         [Fact]
         public void ReadWrite()
         {

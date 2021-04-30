@@ -5,8 +5,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.RSS
 {
-    public class RSSReaderTests : TestingDirectoryFixture
+    public class RSSReaderTests : TestBaseClass<RSSReader>
     {
+        public RSSReaderTests()
+        {
+            TestObject = new RSSReader();
+        }
+
         [Fact]
         public void Read()
         {

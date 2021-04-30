@@ -5,8 +5,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.PDF
 {
-    public class PDFReaderTests : TestingDirectoryFixture
+    public class PDFReaderTests : TestBaseClass<PDFReader>
     {
+        public PDFReaderTests()
+        {
+            TestObject = new PDFReader();
+        }
+
         [Fact]
         public void Read()
         {

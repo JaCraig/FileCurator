@@ -4,8 +4,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Default
 {
-    public class WebFileTests : TestingDirectoryFixture
+    public class WebFileTests : TestBaseClass<WebFile>
     {
+        public WebFileTests()
+        {
+            TestObject = new WebFile();
+        }
+
         [Fact]
         public void Clone()
         {

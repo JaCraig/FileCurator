@@ -6,8 +6,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.HTML
 {
-    public class HTMLFormatTests : TestingDirectoryFixture
+    public class HTMLFormatTests : TestBaseClass<HTMLFormat>
     {
+        public HTMLFormatTests()
+        {
+            TestObject = new HTMLFormat();
+        }
+
         [Fact]
         public void Read()
         {

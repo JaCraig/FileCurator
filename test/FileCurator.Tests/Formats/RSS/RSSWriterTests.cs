@@ -2,13 +2,17 @@
 using FileCurator.Formats.Txt;
 using FileCurator.Tests.BaseClasses;
 using System.IO;
-using System.Linq;
 using Xunit;
 
 namespace FileCurator.Tests.Formats.RSS
 {
-    public class RSSWriterTests : TestingDirectoryFixture
+    public class RSSWriterTests : TestBaseClass<RSSWriter>
     {
+        public RSSWriterTests()
+        {
+            TestObject = new RSSWriter();
+        }
+
         [Fact]
         public void WriteAFeed()
         {

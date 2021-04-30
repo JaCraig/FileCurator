@@ -7,8 +7,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.ICalendar
 {
-    public class ICalWriterTests : TestingDirectoryFixture
+    public class ICalWriterTests : TestBaseClass<ICalendarWriter>
     {
+        public ICalWriterTests()
+        {
+            TestObject = new ICalendarWriter();
+        }
+
         [Fact]
         public void WriteACalendar()
         {

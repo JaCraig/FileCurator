@@ -6,8 +6,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.VCalendar
 {
-    public class VCalReader : TestingDirectoryFixture
+    public class VCalReader : TestBaseClass<VCalendarReader>
     {
+        public VCalReader()
+        {
+            TestObject = new VCalendarReader();
+        }
+
         [Fact]
         public void Read()
         {

@@ -4,8 +4,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Default
 {
-    public class NetworkFileSystemTests : TestingDirectoryFixture
+    public class NetworkFileSystemTests : TestBaseClass<NetworkFileSystem>
     {
+        public NetworkFileSystemTests()
+        {
+            TestObject = new NetworkFileSystem();
+        }
+
         [Fact]
         public void CanHandle()
         {

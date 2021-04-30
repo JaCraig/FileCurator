@@ -61,7 +61,7 @@ namespace FileCurator.BaseClasses
         /// </summary>
         /// <param name="path">The path to check against</param>
         /// <returns>True if it can handle the path, false otherwise</returns>
-        public bool CanHandle(string path) => HandleRegex.IsMatch(path);
+        public bool CanHandle(string path) => !string.IsNullOrEmpty(path) && HandleRegex.IsMatch(path);
 
         /// <summary>
         /// Gets the directory representation for the directory

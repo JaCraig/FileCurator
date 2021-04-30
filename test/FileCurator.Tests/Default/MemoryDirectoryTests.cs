@@ -5,8 +5,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Default
 {
-    public class MemoryDirectoryTests : TestingDirectoryFixture
+    public class MemoryDirectoryTests : TestBaseClass<MemoryDirectory>
     {
+        public MemoryDirectoryTests()
+        {
+            TestObject = new MemoryDirectory();
+        }
+
         [Fact]
         public void Copy()
         {

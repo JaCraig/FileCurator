@@ -5,8 +5,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.Mime
 {
-    public class MimeFormatTests : TestingDirectoryFixture
+    public class MimeFormatTests : TestBaseClass<MimeFormat>
     {
+        public MimeFormatTests()
+        {
+            TestObject = new MimeFormat();
+        }
+
         [Fact]
         public void Read()
         {

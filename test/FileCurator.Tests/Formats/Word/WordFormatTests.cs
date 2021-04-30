@@ -6,8 +6,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.Word
 {
-    public class WordFormatTests : TestingDirectoryFixture
+    public class WordFormatTests : TestBaseClass<WordFormat>
     {
+        public WordFormatTests()
+        {
+            TestObject = new WordFormat();
+        }
+
         [Fact]
         public void Read()
         {

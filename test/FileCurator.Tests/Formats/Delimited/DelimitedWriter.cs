@@ -7,8 +7,13 @@ using Xunit;
 
 namespace FileCurator.Tests.Formats.Delimited
 {
-    public class DelimitedWriterTests : TestingDirectoryFixture
+    public class DelimitedWriterTests : TestBaseClass<DelimitedWriter>
     {
+        public DelimitedWriterTests()
+        {
+            TestObject = new DelimitedWriter();
+        }
+
         [Fact]
         public void WriteATable()
         {

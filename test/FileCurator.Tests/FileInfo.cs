@@ -8,8 +8,13 @@ using Xunit;
 
 namespace FileCurator.Tests
 {
-    public class FileInfoTests : TestingDirectoryFixture
+    public class FileInfoTests : TestBaseClass<FileInfo>
     {
+        public FileInfoTests()
+        {
+            TestObject = null;
+        }
+
         [Fact]
         public void Creation()
         {
