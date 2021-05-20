@@ -50,7 +50,7 @@ namespace FileCurator.Formats.VCalendar
         /// <returns>The file</returns>
         public override ICalendar Read(Stream stream)
         {
-            var StringData = stream.ReadAll();
+            string StringData = GetData(stream);
             var ReturnValue = new GenericCalendar();
             foreach (Match TempMatch in EntryRegex.Matches(StringData))
             {
@@ -82,6 +82,23 @@ namespace FileCurator.Formats.VCalendar
                 }
             }
             return ReturnValue;
+        }
+
+        /// <summary>
+        /// Gets the data.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <returns></returns>
+        private static string GetData(Stream stream)
+        {
+            try
+            {
+                return stream?.ReadAll() ?? "";
+            }
+            catch
+            {
+                return "";
+            }
         }
     }
 }

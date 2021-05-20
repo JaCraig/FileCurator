@@ -76,7 +76,7 @@ namespace FileCurator.Formats.BaseClasses
         /// </summary>
         /// <param name="fileName">Name of the file.</param>
         /// <returns>True if it can, false otherwise</returns>
-        public bool CanRead(string fileName) => FileTypes.Any(x => fileName.EndsWith(x, System.StringComparison.Ordinal));
+        public bool CanRead(string fileName) => !string.IsNullOrEmpty(fileName) && FileTypes.Any(x => fileName.EndsWith(x, System.StringComparison.Ordinal));
 
         /// <summary>
         /// Determines whether this instance can decode the specified stream.
@@ -90,7 +90,7 @@ namespace FileCurator.Formats.BaseClasses
         /// </summary>
         /// <param name="fileName">Name of the file.</param>
         /// <returns>True if it can, false otherwise</returns>
-        public bool CanWrite(string fileName) => FileTypes.Any(x => fileName.EndsWith(x, System.StringComparison.Ordinal));
+        public bool CanWrite(string fileName) => !string.IsNullOrEmpty(fileName) && FileTypes.Any(x => fileName.EndsWith(x, System.StringComparison.Ordinal));
 
         /// <summary>
         /// Parses the specified stream.

@@ -25,13 +25,13 @@ namespace FileCurator
         /// Gets or sets the domain.
         /// </summary>
         /// <value>The domain.</value>
-        public string Domain { get; set; }
+        public string? Domain { get; set; }
 
         /// <summary>
         /// Gets or sets the password.
         /// </summary>
         /// <value>The password.</value>
-        public string Password { get; set; }
+        public string? Password { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether [use default credentials].
@@ -43,6 +43,6 @@ namespace FileCurator
         /// Gets or sets the name of the user.
         /// </summary>
         /// <value>The name of the user.</value>
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
     }
 }

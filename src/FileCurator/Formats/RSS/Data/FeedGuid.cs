@@ -51,7 +51,7 @@ namespace FileCurator.Formats.RSS.Data
         /// <summary>
         /// GUID Text
         /// </summary>
-        public string GuidText { get; set; }
+        public string? GuidText { get; set; }
 
         /// <summary>
         /// Is this a perma link?

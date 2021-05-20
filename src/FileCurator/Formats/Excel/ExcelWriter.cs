@@ -56,8 +56,11 @@ namespace FileCurator.Formats.Excel
         /// <returns>True if it writes successfully, false otherwise.</returns>
         public bool Write(Stream writer, IGenericFile file)
         {
-            using (var Document = SpreadsheetDocument.Create(writer, SpreadsheetDocumentType.Workbook))
+            if (writer is null || file is null)
+                return false;
+            try
             {
+                using var Document = SpreadsheetDocument.Create(writer, SpreadsheetDocumentType.Workbook);
                 Document.AddWorkbookPart();
                 Document.WorkbookPart.Workbook = new Workbook();
                 Document.WorkbookPart.Workbook.AppendChild(new Sheets());
@@ -109,6 +112,7 @@ namespace FileCurator.Formats.Excel
                     }
                 }
             }
+            catch { return false; }
             return true;
         }
 

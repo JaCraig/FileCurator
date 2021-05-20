@@ -49,26 +49,35 @@ namespace FileCurator.Formats.HTML
         /// <returns>The file</returns>
         public override IGenericFile Read(Stream stream)
         {
-            var Content = stream.ReadAll();
-            var doc = new HtmlAgilityPack.HtmlDocument();
-            doc.LoadHtml(Content);
-            var Title = doc.DocumentNode.SelectSingleNode("//head//title")?.InnerText ?? string.Empty;
-            var Meta = new Regex(@"<meta\s*name=[""']description[""']\s*content=[""'](?<Content>[^""']*)[""']\s*/>", RegexOptions.IgnoreCase).Match(Content).Groups["Content"].Value;
-            Meta += new Regex(@"<meta\s*name=[""']keywords[""']\s*content=[""'](?<Content>[^""']*)[""']\s*/>", RegexOptions.IgnoreCase).Match(Content).Groups["Content"].Value;
-            doc.DocumentNode.SelectSingleNode("//body")
-                            .Descendants("style")
-                            .ToList()
-                            .ForEach(x => x.Remove());
-
-            doc.DocumentNode.SelectSingleNode("//body")
-                                .Descendants("script")
+            if (stream is null)
+                return new GenericFile("", "", "");
+            try
+            {
+                var Content = stream.ReadAll();
+                var doc = new HtmlAgilityPack.HtmlDocument();
+                doc.LoadHtml(Content);
+                var Title = doc.DocumentNode.SelectSingleNode("//head//title")?.InnerText ?? string.Empty;
+                var Meta = new Regex(@"<meta\s*name=[""']description[""']\s*content=[""'](?<Content>[^""']*)[""']\s*/>", RegexOptions.IgnoreCase).Match(Content).Groups["Content"].Value;
+                Meta += new Regex(@"<meta\s*name=[""']keywords[""']\s*content=[""'](?<Content>[^""']*)[""']\s*/>", RegexOptions.IgnoreCase).Match(Content).Groups["Content"].Value;
+                doc.DocumentNode.SelectSingleNode("//body")
+                                .Descendants("style")
                                 .ToList()
                                 .ForEach(x => x.Remove());
-            Content = doc.DocumentNode.SelectSingleNode("//body").InnerHtml;
-            Content = StripHTML(Content);
-            Content = Content.Replace("&amp;", "&").Replace("&rsquo;", "'");
-            var RemoveSpaces = new Regex(@"\s+", RegexOptions.None);
-            return new GenericFile(RemoveSpaces.Replace(Content, " ").Trim(), Title, Meta);
+
+                doc.DocumentNode.SelectSingleNode("//body")
+                                    .Descendants("script")
+                                    .ToList()
+                                    .ForEach(x => x.Remove());
+                Content = doc.DocumentNode.SelectSingleNode("//body").InnerHtml;
+                Content = StripHTML(Content);
+                Content = Content.Replace("&amp;", "&").Replace("&rsquo;", "'");
+                var RemoveSpaces = new Regex(@"\s+", RegexOptions.None);
+                return new GenericFile(RemoveSpaces.Replace(Content, " ").Trim(), Title, Meta);
+            }
+            catch
+            {
+                return new GenericFile("", "", "");
+            }
         }
 
         /// <summary>

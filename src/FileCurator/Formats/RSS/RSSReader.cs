@@ -56,6 +56,28 @@ namespace FileCurator.Formats.RSS
         /// </summary>
         /// <param name="stream">The stream.</param>
         /// <returns>The file</returns>
-        public override IFeed Read(Stream stream) => new Feed(stream.ReadAll());
+        public override IFeed Read(Stream stream)
+        {
+            if (stream is null)
+                return new Feed();
+            return new Feed(GetData(stream));
+        }
+
+        /// <summary>
+        /// Gets the data.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <returns>The data</returns>
+        private static string GetData(Stream stream)
+        {
+            try
+            {
+                return stream.ReadAll();
+            }
+            catch
+            {
+                return "";
+            }
+        }
     }
 }

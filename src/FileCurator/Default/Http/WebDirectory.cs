@@ -110,7 +110,7 @@ namespace FileCurator.Default
         /// <returns>Newly created directory</returns>
         public override IDirectory CopyTo(IDirectory directory, CopyOptions options = CopyOptions.CopyAlways)
         {
-            if (directory is null)
+            if (directory is null || InternalDirectory is null || string.IsNullOrEmpty(directory.FullName))
                 return this;
             var TempName = Name;
             if (TempName == "/")
@@ -126,6 +126,8 @@ namespace FileCurator.Default
         /// </summary>
         public override IDirectory Create()
         {
+            if (InternalDirectory is null)
+                return this;
             var Request = WebRequest.Create(InternalDirectory) as HttpWebRequest;
             Request.Method = "POST";
             Request.ContentType = "text/xml";

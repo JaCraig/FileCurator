@@ -125,10 +125,8 @@ namespace FileCurator.Tests.Formats.Excel
             var TestReader = new ExcelReader();
             using (var ResultFile = File.Open("./Results/WriteATable.xlsx", FileMode.OpenOrCreate))
             {
-                using (var TestFile = File.OpenRead("../../../TestData/TestXLSX.xlsx"))
-                {
-                    Assert.True(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
-                }
+                using var TestFile = File.OpenRead("../../../TestData/TestXLSX.xlsx");
+                Assert.True(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
             }
             using (var ResultFile = File.Open("./Results/WriteATable.xlsx", FileMode.OpenOrCreate))
             {
@@ -151,10 +149,8 @@ namespace FileCurator.Tests.Formats.Excel
             var ResultReader = new ExcelReader();
             using (var ResultFile = File.Open("./Results/WriteNotATable.xlsx", FileMode.OpenOrCreate))
             {
-                using (var TestFile = File.OpenRead("../../../TestData/TestTXT.txt"))
-                {
-                    Assert.True(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
-                }
+                using var TestFile = File.OpenRead("../../../TestData/TestTXT.txt");
+                Assert.True(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
             }
             using (var ResultFile = File.Open("./Results/WriteNotATable.xlsx", FileMode.OpenOrCreate))
             {

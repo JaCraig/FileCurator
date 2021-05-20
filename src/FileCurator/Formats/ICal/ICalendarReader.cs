@@ -49,8 +49,12 @@ namespace FileCurator.Formats.ICal
         /// <returns>The file</returns>
         public override Data.Interfaces.ICalendar Read(Stream stream)
         {
-            var StringData = stream.ReadAll();
             var ReturnValue = new GenericCalendar();
+            if (stream is null)
+                return ReturnValue;
+            string StringData = GetData(stream);
+            if (string.IsNullOrEmpty(StringData))
+                return ReturnValue;
             foreach (Match TempMatch in CalendarItems.Matches(StringData))
             {
                 var Title = TempMatch.Groups["Title"].Value.ToUpperInvariant().Trim();
@@ -95,6 +99,23 @@ namespace FileCurator.Formats.ICal
                 }
             }
             return ReturnValue;
+        }
+
+        /// <summary>
+        /// Gets the data.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <returns>The data</returns>
+        private static string GetData(Stream stream)
+        {
+            try
+            {
+                return stream.ReadAll();
+            }
+            catch
+            {
+                return "";
+            }
         }
     }
 }

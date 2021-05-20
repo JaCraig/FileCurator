@@ -31,7 +31,7 @@ namespace FileCurator.Formats.Data.Interfaces
         /// Gets or sets the URL.
         /// </summary>
         /// <value>The URL.</value>
-        string Url { get; set; }
+        string? Url { get; set; }
 
         /// <summary>
         /// Gets or sets the width.

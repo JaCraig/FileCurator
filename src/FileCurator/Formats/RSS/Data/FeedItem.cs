@@ -35,8 +35,6 @@ namespace FileCurator.Formats.RSS.Data
         /// </summary>
         public FeedItem()
         {
-            Categories = new List<string>();
-            PubDate = DateTime.Now;
         }
 
         /// <summary>
@@ -51,10 +49,10 @@ namespace FileCurator.Formats.RSS.Data
             var Element = doc.CreateNavigator();
             var NamespaceManager = new XmlNamespaceManager(Element.NameTable);
             NamespaceManager.AddNamespace("media", "http://search.yahoo.com/mrss/");
-            Title = Element.SelectSingleNode("./title", NamespaceManager)?.Value;
-            Link = Element.SelectSingleNode("./link", NamespaceManager)?.Value;
-            Description = Element.SelectSingleNode("./description", NamespaceManager)?.Value;
-            Author = Element.SelectSingleNode("./author", NamespaceManager)?.Value;
+            Title = Element.SelectSingleNode("./title", NamespaceManager)?.Value ?? "";
+            Link = Element.SelectSingleNode("./link", NamespaceManager)?.Value ?? "";
+            Description = Element.SelectSingleNode("./description", NamespaceManager)?.Value ?? "";
+            Author = Element.SelectSingleNode("./author", NamespaceManager)?.Value ?? "";
             foreach (XPathNavigator TempNode in Element.Select("./category", NamespaceManager))
             {
                 Categories.Add(Utils.StripIllegalCharacters(TempNode.Value));
@@ -91,53 +89,53 @@ namespace FileCurator.Formats.RSS.Data
         /// <summary>
         /// Author
         /// </summary>
-        public string Author { get; set; }
+        public string? Author { get; set; }
 
         /// <summary>
         /// Categories
         /// </summary>
-        public IList<string> Categories { get; }
+        public IList<string> Categories { get; } = new List<string>();
 
         /// <summary>
         /// Gets the content.
         /// </summary>
         /// <value>The content.</value>
-        public string Content => Description;
+        public string Content => Description ?? "";
 
         /// <summary>
         /// Description
         /// </summary>
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Enclosure
         /// </summary>
-        public IEnclosure Enclosure { get; set; }
+        public IEnclosure? Enclosure { get; set; }
 
         /// <summary>
         /// GUID for the item
         /// </summary>
-        public virtual IFeedGuid GUID { get; set; }
+        public virtual IFeedGuid? GUID { get; set; }
 
         /// <summary>
         /// Link
         /// </summary>
-        public string Link { get; set; }
+        public string? Link { get; set; }
 
         /// <summary>
         /// Publication date
         /// </summary>
-        public DateTime PubDate { get; set; }
+        public DateTime PubDate { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Thumbnail
         /// </summary>
-        public IThumbnail Thumbnail { get; set; }
+        public IThumbnail? Thumbnail { get; set; }
 
         /// <summary>
         /// Title
         /// </summary>
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// Outputs a string ready for RSS
@@ -146,8 +144,8 @@ namespace FileCurator.Formats.RSS.Data
         public override string ToString()
         {
             var ItemString = new StringBuilder();
-            ItemString.Append("<item><title>").Append(Utils.StripIllegalCharacters(Title)).Append("</title>\r\n<link>")
-                .Append(Link).Append("</link>\r\n<author>").Append(Utils.StripIllegalCharacters(Author))
+            ItemString.Append("<item><title>").Append(Utils.StripIllegalCharacters(Title ?? "")).Append("</title>\r\n<link>")
+                .Append(Link).Append("</link>\r\n<author>").Append(Utils.StripIllegalCharacters(Author ?? ""))
                 .Append("</author>\r\n");
             foreach (var Category in Categories)
             {

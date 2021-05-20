@@ -34,6 +34,8 @@ namespace FileCurator.Default.Memory
         /// </summary>
         public MemoryFile()
         {
+            created = modified = accessed = DateTime.UtcNow;
+            fileData = Array.Empty<byte>();
         }
 
         /// <summary>
@@ -71,17 +73,17 @@ namespace FileCurator.Default.Memory
         /// <summary>
         /// File extension
         /// </summary>
-        public override string Extension => InternalFile.Right(InternalFile.Length - InternalFile.LastIndexOf('.'));
+        public override string Extension => InternalFile?.Right(InternalFile.Length - InternalFile.LastIndexOf('.')) ?? "";
 
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName => InternalFile;
+        public override string FullName => InternalFile ?? "";
 
         /// <summary>
         /// Size of the file
         /// </summary>
-        public override long Length => fileData.LongLength;
+        public override long Length => fileData?.LongLength ?? 0;
 
         /// <summary>
         /// Time modified (UTC time)
@@ -91,7 +93,7 @@ namespace FileCurator.Default.Memory
         /// <summary>
         /// Name of the file
         /// </summary>
-        public override string Name => InternalFile;
+        public override string Name => InternalFile ?? "";
 
         /// <summary>
         /// The created
@@ -121,7 +123,7 @@ namespace FileCurator.Default.Memory
         /// <returns>The newly created file</returns>
         public override IFile CopyTo(IDirectory directory, bool overwrite)
         {
-            if (directory is null || !Exists)
+            if (directory is null || !Exists || string.IsNullOrEmpty(directory.FullName))
                 return this;
             var File = new FileInfo(directory.FullName + "/" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             if (!File.Exists || overwrite)
@@ -150,7 +152,7 @@ namespace FileCurator.Default.Memory
         /// <returns>The resulting file.</returns>
         public override IFile MoveTo(IDirectory directory)
         {
-            if (directory is null || !Exists)
+            if (directory is null || !Exists || string.IsNullOrEmpty(directory.FullName))
                 return this;
             var TempFile = new FileInfo(directory.FullName + "/" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             TempFile.Write(ReadBinary());
@@ -220,7 +222,7 @@ namespace FileCurator.Default.Memory
         {
             if (content is null)
                 content = Array.Empty<byte>();
-            Directory.Create();
+            Directory?.Create();
             modified = DateTime.UtcNow;
             if (mode == FileMode.Append)
             {

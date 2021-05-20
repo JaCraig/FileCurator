@@ -45,8 +45,10 @@ namespace FileCurator.Formats.Delimited
         /// <returns>The file</returns>
         public override ITable Read(Stream stream)
         {
-            var FileContent = stream.ReadAll();
             var ReturnValue = new GenericTable();
+            if (stream is null)
+                return ReturnValue;
+            string FileContent = GetContent(stream);
             var Delimiter = "";
             if (string.IsNullOrEmpty(FileContent))
                 return ReturnValue;
@@ -86,6 +88,20 @@ namespace FileCurator.Formats.Delimited
                     MaxIndex = x;
             }
             return Count[MaxIndex] > 1 ? Delimiters[MaxIndex] : ",";
+        }
+
+        /// <summary>
+        /// Gets the content.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <returns>The content in the stream.</returns>
+        private static string GetContent(Stream stream)
+        {
+            try
+            {
+                return stream.ReadAll();
+            }
+            catch { return ""; }
         }
 
         /// <summary>

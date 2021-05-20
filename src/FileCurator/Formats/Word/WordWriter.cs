@@ -38,18 +38,27 @@ namespace FileCurator.Formats.Word
         /// <returns>True if it writes successfully, false otherwise.</returns>
         public bool Write(Stream writer, IGenericFile file)
         {
-            using (var Doc = WordprocessingDocument.Create(writer, DocumentFormat.OpenXml.WordprocessingDocumentType.Document))
+            if (writer is null || file is null)
+                return false;
+            try
             {
-                Doc.PackageProperties.Title = file.Title;
-                Doc.AddMainDocumentPart();
-                Doc.MainDocumentPart.Document = new Document
+                using (var Doc = WordprocessingDocument.Create(writer, DocumentFormat.OpenXml.WordprocessingDocumentType.Document))
                 {
-                    Body = new Body()
-                };
-                if (file is ITable TableFile)
-                    AppendTable(Doc, TableFile);
-                else
-                    AppendFile(Doc, file);
+                    Doc.PackageProperties.Title = file.Title;
+                    Doc.AddMainDocumentPart();
+                    Doc.MainDocumentPart.Document = new Document
+                    {
+                        Body = new Body()
+                    };
+                    if (file is ITable TableFile)
+                        AppendTable(Doc, TableFile);
+                    else
+                        AppendFile(Doc, file);
+                }
+            }
+            catch
+            {
+                return false;
             }
             return true;
         }

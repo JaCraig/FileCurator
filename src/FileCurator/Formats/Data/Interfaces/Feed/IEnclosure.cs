@@ -31,12 +31,12 @@ namespace FileCurator.Formats.Data.Interfaces
         /// Gets or sets the type.
         /// </summary>
         /// <value>The type.</value>
-        string Type { get; set; }
+        string? Type { get; set; }
 
         /// <summary>
         /// Gets or sets the URL.
         /// </summary>
         /// <value>The URL.</value>
-        string Url { get; set; }
+        string? Url { get; set; }
     }
 }

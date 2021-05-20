@@ -43,38 +43,11 @@ namespace FileCurator.Default.Memory
         /// </summary>
         /// <param name="path">Path to the directory</param>
         /// <param name="credentials">The credentials.</param>
-        public MemoryDirectory(string path, Credentials credentials = null)
-            : base(path.Replace("\\", "/"), credentials)
+        public MemoryDirectory(string path, Credentials? credentials = null)
+            : base(path?.Replace("\\", "/") ?? "", credentials)
         {
-            Files = new List<IFile>();
-            Directories = new List<IDirectory>();
             Created = modified = accessed = DateTime.UtcNow;
         }
-
-        /// <summary>
-        /// The directories
-        /// </summary>
-        private readonly List<IDirectory> Directories;
-
-        /// <summary>
-        /// The file data
-        /// </summary>
-        private readonly List<IFile> Files;
-
-        /// <summary>
-        /// The accessed
-        /// </summary>
-        private DateTime accessed;
-
-        /// <summary>
-        /// The exists
-        /// </summary>
-        private bool exists;
-
-        /// <summary>
-        /// The modified
-        /// </summary>
-        private DateTime modified;
 
         /// <summary>
         /// returns now
@@ -94,7 +67,7 @@ namespace FileCurator.Default.Memory
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName => InternalDirectory;
+        public override string FullName => InternalDirectory ?? "";
 
         /// <summary>
         /// returns now
@@ -104,12 +77,12 @@ namespace FileCurator.Default.Memory
         /// <summary>
         /// Full path
         /// </summary>
-        public override string Name => InternalDirectory;
+        public override string Name => InternalDirectory ?? "";
 
         /// <summary>
         /// Full path
         /// </summary>
-        public override IDirectory Parent
+        public override IDirectory? Parent
         {
             get
             {
@@ -129,6 +102,31 @@ namespace FileCurator.Default.Memory
         /// Size (returns 0)
         /// </summary>
         public override long Size => Files.Sum(x => x.Length) + Directories.Sum(x => x.Size);
+
+        /// <summary>
+        /// The directories
+        /// </summary>
+        private readonly List<IDirectory> Directories = new List<IDirectory>();
+
+        /// <summary>
+        /// The file data
+        /// </summary>
+        private readonly List<IFile> Files = new List<IFile>();
+
+        /// <summary>
+        /// The accessed
+        /// </summary>
+        private DateTime accessed;
+
+        /// <summary>
+        /// The exists
+        /// </summary>
+        private bool exists;
+
+        /// <summary>
+        /// The modified
+        /// </summary>
+        private DateTime modified;
 
         /// <summary>
         /// Not used
@@ -226,6 +224,8 @@ namespace FileCurator.Default.Memory
         /// <returns></returns>
         public override IDirectory MoveTo(IDirectory directory)
         {
+            if (directory is null)
+                return this;
             var ReturnValue = CopyTo(new DirectoryInfo(directory.FullName + "\\" + Name.Replace("mem://", "").Replace("/", "").Replace("\\", ""), Credentials));
             Delete();
             return ReturnValue;

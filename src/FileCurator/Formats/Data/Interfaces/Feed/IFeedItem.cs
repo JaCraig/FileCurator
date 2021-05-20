@@ -28,7 +28,7 @@ namespace FileCurator.Formats.Data.Interfaces
         /// Gets or sets the author.
         /// </summary>
         /// <value>The author.</value>
-        string Author { get; set; }
+        string? Author { get; set; }
 
         /// <summary>
         /// Gets or sets the categories.
@@ -46,25 +46,25 @@ namespace FileCurator.Formats.Data.Interfaces
         /// Gets or sets the description.
         /// </summary>
         /// <value>The description.</value>
-        string Description { get; set; }
+        string? Description { get; set; }
 
         /// <summary>
         /// Gets or sets the enclosure.
         /// </summary>
         /// <value>The enclosure.</value>
-        IEnclosure Enclosure { get; set; }
+        IEnclosure? Enclosure { get; set; }
 
         /// <summary>
         /// Gets or sets the unique identifier.
         /// </summary>
         /// <value>The unique identifier.</value>
-        IFeedGuid GUID { get; set; }
+        IFeedGuid? GUID { get; set; }
 
         /// <summary>
         /// Gets or sets the link.
         /// </summary>
         /// <value>The link.</value>
-        string Link { get; set; }
+        string? Link { get; set; }
 
         /// <summary>
         /// Gets or sets the pub date.
@@ -76,12 +76,12 @@ namespace FileCurator.Formats.Data.Interfaces
         /// Gets or sets the thumbnail.
         /// </summary>
         /// <value>The thumbnail.</value>
-        IThumbnail Thumbnail { get; set; }
+        IThumbnail? Thumbnail { get; set; }
 
         /// <summary>
         /// Gets or sets the title.
         /// </summary>
         /// <value>The title.</value>
-        string Title { get; set; }
+        string? Title { get; set; }
     }
 }

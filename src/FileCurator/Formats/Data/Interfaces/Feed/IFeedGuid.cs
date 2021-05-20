@@ -25,7 +25,7 @@ namespace FileCurator.Formats.Data.Interfaces
         /// Gets or sets the unique identifier text.
         /// </summary>
         /// <value>The unique identifier text.</value>
-        string GuidText { get; set; }
+        string? GuidText { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is perma link.

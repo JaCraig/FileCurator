@@ -36,6 +36,8 @@ namespace FileCurator.Formats.Delimited
         /// <returns>True if it writes successfully, false otherwise.</returns>
         public bool Write(Stream writer, IGenericFile file)
         {
+            if (writer is null || file is null)
+                return false;
             var Builder = new StringBuilder();
             if (file is ITable FileTable)
             {
@@ -46,7 +48,14 @@ namespace FileCurator.Formats.Delimited
                 Builder.Append(CreateFromFile(file));
             }
             var ByteData = Encoding.UTF8.GetBytes(Builder.ToString());
-            writer.Write(ByteData, 0, ByteData.Length);
+            try
+            {
+                writer.Write(ByteData, 0, ByteData.Length);
+            }
+            catch
+            {
+                return false;
+            }
             return true;
         }
 
@@ -58,6 +67,8 @@ namespace FileCurator.Formats.Delimited
         /// <returns>True if it writes successfully, false otherwise.</returns>
         public async Task<bool> WriteAsync(Stream writer, IGenericFile file)
         {
+            if (writer is null || file is null)
+                return false;
             var Builder = new StringBuilder();
             if (file is ITable FileTable)
             {
@@ -68,11 +79,18 @@ namespace FileCurator.Formats.Delimited
                 Builder.Append(CreateFromFile(file));
             }
             var ByteData = Encoding.UTF8.GetBytes(Builder.ToString());
-            await writer.WriteAsync(ByteData, 0, ByteData.Length).ConfigureAwait(false);
+            try
+            {
+                await writer.WriteAsync(ByteData, 0, ByteData.Length).ConfigureAwait(false);
+            }
+            catch
+            {
+                return false;
+            }
             return true;
         }
 
-        private string CreateFromFile(IGenericFile file) => "\"" + file.ToString().Replace("\"", "") + "\"";
+        private string CreateFromFile(IGenericFile file) => "\"" + file?.ToString().Replace("\"", "") + "\"";
 
         /// <summary>
         /// Creates from table.

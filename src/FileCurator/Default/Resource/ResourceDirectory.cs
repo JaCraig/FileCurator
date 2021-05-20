@@ -76,7 +76,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override string Name => SplitPathRegex.Match(InternalDirectory).Groups["Assembly"].Value;
+        public override string Name => string.IsNullOrEmpty(InternalDirectory) ? "" : SplitPathRegex.Match(InternalDirectory).Groups["Assembly"].Value;
 
         /// <summary>
         /// Full path
@@ -103,13 +103,14 @@ namespace FileCurator.Default
         /// Gets or sets the assembly this is from.
         /// </summary>
         /// <value>The assembly this is from.</value>
-        private Assembly AssemblyFrom
+        private Assembly? AssemblyFrom
         {
             get
             {
+                if (string.IsNullOrEmpty(InternalDirectory))
+                    return null;
                 var AssemblyName = SplitPathRegex.Match(InternalDirectory).Groups["Assembly"].Value;
-                var Assemblies = Canister.Builder.Bootstrapper.Resolve<IEnumerable<Assembly>>();
-                return Assemblies.FirstOrDefault(x => x.GetName().Name == AssemblyName);
+                return Canister.Builder.Bootstrapper.Resolve<IEnumerable<Assembly>>().FirstOrDefault(x => x.GetName().Name == AssemblyName);
             }
         }
 
@@ -121,6 +122,8 @@ namespace FileCurator.Default
         {
             get
             {
+                if (string.IsNullOrEmpty(InternalDirectory))
+                    return "";
                 var Match = SplitPathRegex.Match(InternalDirectory).Groups["FileName"];
                 var ReturnValue = Match.Success ? Match.Value.Replace("\\", "/").Replace("/", ".") : "";
                 if (ReturnValue.EndsWith(".", StringComparison.Ordinal))
@@ -156,15 +159,14 @@ namespace FileCurator.Default
         /// <returns></returns>
         public override IEnumerable<IFile> EnumerateFiles(string searchPattern = "*", SearchOption options = SearchOption.TopDirectoryOnly)
         {
-            if (AssemblyFrom != null)
+            if (AssemblyFrom is null)
+                yield break;
+            foreach (var TempFile in AssemblyFrom.GetManifestResourceNames() ?? Array.Empty<string>())
             {
-                foreach (var TempFile in AssemblyFrom?.GetManifestResourceNames() ?? Array.Empty<string>())
+                var TempResource = new ResourceFile($"resource://{AssemblyFrom.GetName().Name}/{TempFile}", Credentials);
+                if (TempResource.FullName.StartsWith(FullName, StringComparison.OrdinalIgnoreCase))
                 {
-                    var TempResource = new ResourceFile($"resource://{AssemblyFrom.GetName().Name}/{TempFile}", Credentials);
-                    if (TempResource.FullName.StartsWith(FullName, StringComparison.OrdinalIgnoreCase))
-                    {
-                        yield return TempResource;
-                    }
+                    yield return TempResource;
                 }
             }
         }

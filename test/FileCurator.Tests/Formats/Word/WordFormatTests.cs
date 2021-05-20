@@ -17,11 +17,9 @@ namespace FileCurator.Tests.Formats.Word
         public void Read()
         {
             var TestObject = new WordFormat();
-            using (var TestFile = File.OpenRead("../../../TestData/TestDocx.docx"))
-            {
-                var Result = TestObject.Read(TestFile);
-                Assert.Equal("This is a test docx", Result.ToString());
-            }
+            using var TestFile = File.OpenRead("../../../TestData/TestDocx.docx");
+            var Result = TestObject.Read(TestFile);
+            Assert.Equal("This is a test docx", Result.ToString());
         }
 
         [Fact]

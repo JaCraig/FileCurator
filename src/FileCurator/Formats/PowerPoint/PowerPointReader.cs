@@ -47,6 +47,8 @@ namespace FileCurator.Formats.PowerPoint
         /// <returns>True if it can, false otherwise</returns>
         public override bool InternalCanRead(Stream stream)
         {
+            if (stream is null)
+                return false;
             try
             {
                 PresentationDocument.Open(stream, false);
@@ -62,17 +64,26 @@ namespace FileCurator.Formats.PowerPoint
         /// <returns>The file</returns>
         public override IGenericFile Read(Stream stream)
         {
-            var PowerPointDoc = PresentationDocument.Open(stream, false);
-            return new GenericFile(PowerPointDoc.PresentationPart
-                                .SlideParts
-                                .ToString(x => x.Slide
-                                                .CommonSlideData
-                                                .ShapeTree
-                                                .ChildElements
-                                                .ToString(y => y.InnerText, " "),
-                                          "\n"),
-                                    GetTitle(PowerPointDoc),
-                                    GetMetaData(PowerPointDoc));
+            if (stream is null)
+                return new GenericFile("", "", "");
+            try
+            {
+                var PowerPointDoc = PresentationDocument.Open(stream, false);
+                return new GenericFile(PowerPointDoc.PresentationPart
+                                    .SlideParts
+                                    .ToString(x => x.Slide
+                                                    .CommonSlideData
+                                                    .ShapeTree
+                                                    .ChildElements
+                                                    .ToString(y => y.InnerText, " "),
+                                              "\n"),
+                                        GetTitle(PowerPointDoc),
+                                        GetMetaData(PowerPointDoc));
+            }
+            catch
+            {
+                return new GenericFile("", "", "");
+            }
         }
 
         /// <summary>

@@ -22,10 +22,8 @@ namespace FileCurator.Tests.Formats.Delimited
             var ResultReader = new DelimitedReader();
             using (var ResultFile = File.Open("./Results/WriteATable.csv", FileMode.OpenOrCreate))
             {
-                using (var TestFile = File.OpenRead("../../../TestData/TestXLSX.xlsx"))
-                {
-                    Assert.True(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
-                }
+                using var TestFile = File.OpenRead("../../../TestData/TestXLSX.xlsx");
+                Assert.True(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
             }
             using (var ResultFile = File.Open("./Results/WriteATable.csv", FileMode.OpenOrCreate))
             {
@@ -48,10 +46,8 @@ namespace FileCurator.Tests.Formats.Delimited
             var ResultReader = new DelimitedReader();
             using (var ResultFile = File.Open("./Results/WriteNotATable.csv", FileMode.OpenOrCreate))
             {
-                using (var TestFile = File.OpenRead("../../../TestData/TestTXT.txt"))
-                {
-                    Assert.True(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
-                }
+                using var TestFile = File.OpenRead("../../../TestData/TestTXT.txt");
+                Assert.True(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
             }
             using (var ResultFile = File.Open("./Results/WriteNotATable.csv", FileMode.OpenOrCreate))
             {

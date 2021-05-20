@@ -56,12 +56,12 @@ namespace FileCurator.Formats.RSS.Data
         /// <summary>
         /// File type
         /// </summary>
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Location of the item
         /// </summary>
-        public string Url { get; set; }
+        public string? Url { get; set; }
 
         /// <summary>
         /// to string item. Used for outputting the item to RSS.

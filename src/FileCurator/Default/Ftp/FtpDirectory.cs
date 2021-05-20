@@ -5,7 +5,6 @@ using FileCurator.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 
 namespace FileCurator.Default.Ftp
@@ -96,7 +95,7 @@ namespace FileCurator.Default.Ftp
         /// <returns>Newly created directory</returns>
         public override IDirectory CopyTo(IDirectory directory, CopyOptions options = CopyOptions.CopyAlways)
         {
-            if (directory is null)
+            if (directory is null || string.IsNullOrEmpty(directory.FullName))
                 return this;
             var TempName = Name;
             var NewDirectory = new FileInfo(directory.FullName + "\\" + TempName.Right(TempName.Length - (TempName.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
@@ -110,8 +109,7 @@ namespace FileCurator.Default.Ftp
         /// </summary>
         public override IDirectory Create()
         {
-            var Request = WebRequest.Create(InternalDirectory) as FtpWebRequest;
-            if (Request is null)
+            if (!(WebRequest.Create(InternalDirectory) is FtpWebRequest Request))
                 return this;
             Request.Method = WebRequestMethods.Ftp.MakeDirectory;
             SetupData(Request, null);
@@ -125,8 +123,7 @@ namespace FileCurator.Default.Ftp
         /// </summary>
         public override IDirectory Delete()
         {
-            var Request = WebRequest.Create(InternalDirectory) as FtpWebRequest;
-            if (Request is null)
+            if (!(WebRequest.Create(InternalDirectory) is FtpWebRequest Request))
                 return this;
             Request.Method = WebRequestMethods.Ftp.RemoveDirectory;
             SetupData(Request, null);
@@ -159,7 +156,7 @@ namespace FileCurator.Default.Ftp
             var Directories = new List<IDirectory>();
             for (int i = 0; i < Folders.Length; i++)
             {
-                var DetailedFolder = DetailedFolders.FirstOrDefault(x => x.EndsWith(Folders[i], StringComparison.OrdinalIgnoreCase));
+                var DetailedFolder = Array.Find(DetailedFolders, x => x.EndsWith(Folders[i], StringComparison.OrdinalIgnoreCase));
                 if (!string.IsNullOrEmpty(DetailedFolder)
                     && DetailedFolder.StartsWith("d", StringComparison.OrdinalIgnoreCase)
                     && !DetailedFolder.EndsWith(".", StringComparison.OrdinalIgnoreCase))
@@ -194,7 +191,7 @@ namespace FileCurator.Default.Ftp
             var Directories = new List<IFile>();
             for (int i = 0; i < Folders.Length; i++)
             {
-                var DetailedFolder = DetailedFolders.FirstOrDefault(x => x.EndsWith(Folders[i], StringComparison.OrdinalIgnoreCase));
+                var DetailedFolder = Array.Find(DetailedFolders, x => x.EndsWith(Folders[i], StringComparison.OrdinalIgnoreCase));
                 if (!string.IsNullOrEmpty(DetailedFolder) && !DetailedFolder.StartsWith("d", StringComparison.OrdinalIgnoreCase))
                 {
                     Directories.Add(new FileInfo(FullName + "/" + Folders[i], Credentials));

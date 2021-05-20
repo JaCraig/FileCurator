@@ -88,11 +88,9 @@ namespace FileCurator.Tests.Formats
         public void FindFormatByStreamNoMimeType(string fileName, string expectedFormat)
         {
             var TestObject = new Manager(Canister.Builder.Bootstrapper.ResolveAll<IFormat>());
-            using (var TempFile = File.OpenRead("../../../TestData/" + fileName))
-            {
-                var Format = TestObject.FindFormat(TempFile, "");
-                Assert.Equal(expectedFormat, Format.DisplayName);
-            }
+            using var TempFile = File.OpenRead("../../../TestData/" + fileName);
+            var Format = TestObject.FindFormat(TempFile, "");
+            Assert.Equal(expectedFormat, Format.DisplayName);
         }
 
         [Theory]
@@ -100,11 +98,9 @@ namespace FileCurator.Tests.Formats
         public void FindFormatByStreamWithMimeType(string fileName, string expectedFormat, string mimeType)
         {
             var TestObject = new Manager(Canister.Builder.Bootstrapper.ResolveAll<IFormat>());
-            using (var TempFile = File.OpenRead("../../../TestData/" + fileName))
-            {
-                var Format = TestObject.FindFormat(TempFile, mimeType);
-                Assert.Equal(expectedFormat, Format.DisplayName);
-            }
+            using var TempFile = File.OpenRead("../../../TestData/" + fileName);
+            var Format = TestObject.FindFormat(TempFile, mimeType);
+            Assert.Equal(expectedFormat, Format.DisplayName);
         }
     }
 }

@@ -21,10 +21,8 @@ namespace FileCurator.Tests.Formats.RSS
             var ResultReader = new RSSReader();
             using (var ResultFile = File.Open("./Results/WriteAFeed.rss", FileMode.OpenOrCreate))
             {
-                using (var TestFile = File.OpenRead("../../../TestData/TestRSS.rss"))
-                {
-                    Assert.True(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
-                }
+                using var TestFile = File.OpenRead("../../../TestData/TestRSS.rss");
+                Assert.True(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
             }
             using (var ResultFile = File.Open("./Results/WriteAFeed.rss", FileMode.OpenOrCreate))
             {
@@ -40,13 +38,9 @@ namespace FileCurator.Tests.Formats.RSS
         {
             var TestObject = new RSSWriter();
             var TestReader = new TxtReader();
-            using (var ResultFile = File.Open("./Results/WriteAFeed.rss", FileMode.OpenOrCreate))
-            {
-                using (var TestFile = File.OpenRead("../../../TestData/TestTxt.txt"))
-                {
-                    Assert.False(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
-                }
-            }
+            using var ResultFile = File.Open("./Results/WriteAFeed.rss", FileMode.OpenOrCreate);
+            using var TestFile = File.OpenRead("../../../TestData/TestTxt.txt");
+            Assert.False(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
         }
     }
 }

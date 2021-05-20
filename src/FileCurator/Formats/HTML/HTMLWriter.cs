@@ -36,8 +36,17 @@ namespace FileCurator.Formats.HTML
         /// <returns>True if it writes successfully, false otherwise.</returns>
         public bool Write(Stream writer, IGenericFile file)
         {
+            if (writer is null || file is null)
+                return false;
             var TempData = Encoding.UTF8.GetBytes(file.ToString());
-            writer.Write(TempData, 0, TempData.Length);
+            try
+            {
+                writer.Write(TempData, 0, TempData.Length);
+            }
+            catch
+            {
+                return false;
+            }
             return true;
         }
 
@@ -49,8 +58,17 @@ namespace FileCurator.Formats.HTML
         /// <returns>True if it writes successfully, false otherwise.</returns>
         public async Task<bool> WriteAsync(Stream writer, IGenericFile file)
         {
+            if (writer is null || file is null)
+                return false;
             var TempData = Encoding.UTF8.GetBytes(file.ToString());
-            await writer.WriteAsync(TempData, 0, TempData.Length).ConfigureAwait(false);
+            try
+            {
+                await writer.WriteAsync(TempData, 0, TempData.Length).ConfigureAwait(false);
+            }
+            catch
+            {
+                return false;
+            }
             return true;
         }
     }

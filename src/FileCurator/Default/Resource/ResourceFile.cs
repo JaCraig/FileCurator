@@ -44,7 +44,7 @@ namespace FileCurator.Default
         /// </summary>
         /// <param name="path">Path to the file</param>
         /// <param name="credentials">The credentials.</param>
-        public ResourceFile(string path, Credentials credentials = null)
+        public ResourceFile(string path, Credentials? credentials = null)
             : base(path, credentials)
         {
         }
@@ -113,8 +113,16 @@ namespace FileCurator.Default
         /// Gets or sets the assembly this is from.
         /// </summary>
         /// <value>The assembly this is from.</value>
-        private Assembly AssemblyFrom => Canister.Builder.Bootstrapper.Resolve<IEnumerable<Assembly>>()
-                                                    .FirstOrDefault(x => x.GetName().Name == SplitPathRegex.Match(InternalFile).Groups["Assembly"].Value);
+        private Assembly? AssemblyFrom
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(InternalFile))
+                    return null;
+                var AssemblyName = SplitPathRegex.Match(InternalFile).Groups["Assembly"].Value;
+                return Canister.Builder.Bootstrapper.Resolve<IEnumerable<Assembly>>().FirstOrDefault(x => x.GetName().Name == AssemblyName);
+            }
+        }
 
         /// <summary>
         /// Gets or sets the resource.
@@ -124,6 +132,8 @@ namespace FileCurator.Default
         {
             get
             {
+                if (string.IsNullOrEmpty(InternalFile))
+                    return "";
                 var Match = SplitPathRegex.Match(InternalFile).Groups["FileName"];
                 return Match.Success ? Match.Value.Replace("\\", "/").Replace("/", ".").Replace("-", "_") : string.Empty;
             }
@@ -137,7 +147,7 @@ namespace FileCurator.Default
         /// <returns>The newly created file</returns>
         public override IFile CopyTo(IDirectory directory, bool overwrite)
         {
-            if (directory is null || !Exists)
+            if (directory is null || !Exists || string.IsNullOrEmpty(directory.FullName))
                 return this;
             var File = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             if (!File.Exists || overwrite)
@@ -160,7 +170,7 @@ namespace FileCurator.Default
         /// <param name="directory">Not used</param>
         public override IFile MoveTo(IDirectory directory)
         {
-            if (directory is null || !Exists)
+            if (directory is null || !Exists || string.IsNullOrEmpty(directory.FullName))
                 return this;
             var TempFile = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             TempFile.Write(ReadBinary());

@@ -217,7 +217,7 @@ namespace FileCurator.BaseClasses
         /// <returns>Returns the new directory</returns>
         public virtual IDirectory CopyTo(IDirectory directory, CopyOptions options = CopyOptions.CopyAlways)
         {
-            if (InternalDirectory is null || directory is null)
+            if (InternalDirectory is null || directory is null || string.IsNullOrEmpty(directory.FullName))
                 return this;
             directory.Create();
             foreach (var TempFile in EnumerateFiles())
@@ -260,7 +260,7 @@ namespace FileCurator.BaseClasses
         /// <returns></returns>
         public async Task<IDirectory> CopyToAsync(IDirectory directory, CopyOptions options = CopyOptions.CopyAlways)
         {
-            if (InternalDirectory is null || directory is null)
+            if (InternalDirectory is null || directory is null || string.IsNullOrEmpty(directory.FullName))
                 return this;
             directory.Create();
             List<Task> Tasks = new List<Task>();
@@ -413,6 +413,8 @@ namespace FileCurator.BaseClasses
         /// <param name="directory">Directory to move to</param>
         public virtual IDirectory MoveTo(IDirectory directory)
         {
+            if (directory is null || string.IsNullOrEmpty(directory.FullName))
+                return this;
             var ReturnValue = CopyTo(new DirectoryInfo(directory.FullName + "\\" + Name.Replace("/", "").Replace("\\", ""), Credentials));
             Delete();
             return ReturnValue;
@@ -425,6 +427,8 @@ namespace FileCurator.BaseClasses
         /// <returns></returns>
         public async Task<IDirectory> MoveToAsync(IDirectory directory)
         {
+            if (directory is null || string.IsNullOrEmpty(directory.FullName))
+                return this;
             var ReturnValue = await CopyToAsync(new DirectoryInfo(directory.FullName + "\\" + Name.Replace("/", "").Replace("\\", ""), Credentials)).ConfigureAwait(false);
             await DeleteAsync().ConfigureAwait(false);
             return ReturnValue;

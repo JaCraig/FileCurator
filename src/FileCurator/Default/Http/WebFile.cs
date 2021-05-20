@@ -110,7 +110,7 @@ namespace FileCurator.Default
         /// <returns>The newly created file</returns>
         public override IFile CopyTo(IDirectory directory, bool overwrite)
         {
-            if (directory is null)
+            if (directory is null || string.IsNullOrEmpty(directory.FullName))
                 return this;
             var File = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             if (!File.Exists || overwrite)
@@ -144,7 +144,7 @@ namespace FileCurator.Default
         /// <param name="directory">Not used</param>
         public override IFile MoveTo(IDirectory directory)
         {
-            if (directory is null || !Exists)
+            if (directory is null || !Exists || string.IsNullOrEmpty(directory.FullName))
                 return this;
             var TempFile = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             TempFile.Write(ReadBinary());
@@ -193,6 +193,8 @@ namespace FileCurator.Default
         /// <returns>The result of the write or original content</returns>
         public override string Write(string content, FileMode mode = FileMode.Create, Encoding? encoding = null)
         {
+            if (InternalFile is null)
+                return "";
             if (!(WebRequest.Create(InternalFile) is HttpWebRequest Request))
                 return string.Empty;
             if (mode == FileMode.Append || mode == FileMode.Open)

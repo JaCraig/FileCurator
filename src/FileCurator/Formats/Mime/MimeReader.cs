@@ -44,9 +44,12 @@ namespace FileCurator.Formats.Mime
         /// <returns>The file</returns>
         public override IMessage Read(Stream stream)
         {
-            var Parser = new MimeParser(stream);
-            var Message = Parser.ParseMessage();
             var ReturnObject = new GenericEmail();
+            if (stream is null)
+                return ReturnObject;
+            MimeMessage? Message = GetMessage(stream);
+            if (Message is null)
+                return ReturnObject;
             if (!string.IsNullOrEmpty(Message.HtmlBody))
             {
                 using var TempStream = new MemoryStream(Message.HtmlBody.ToByteArray());
@@ -58,11 +61,24 @@ namespace FileCurator.Formats.Mime
             }
             ReturnObject.BCC.Add(Message.Bcc.Select(x => x.Name));
             ReturnObject.CC.Add(Message.Cc.Select(x => x.Name));
-            ReturnObject.From = Message.From.Mailboxes.FirstOrDefault()?.Address;
+            ReturnObject.From = Message.From.Mailboxes.FirstOrDefault()?.Address ?? "";
             ReturnObject.Sent = Message.Date.UtcDateTime;
             ReturnObject.Title = Message.Subject;
             ReturnObject.To.Add(Message.To.Select(x => x.Name));
             return ReturnObject;
+        }
+
+        private static MimeMessage? GetMessage(Stream stream)
+        {
+            try
+            {
+                var Parser = new MimeParser(stream);
+                return Parser.ParseMessage();
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

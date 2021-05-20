@@ -43,6 +43,8 @@ namespace FileCurator.Formats.BaseClasses
         /// <returns>True if it can, false otherwise</returns>
         public bool CanRead(string fileName)
         {
+            if (string.IsNullOrEmpty(fileName) || !System.IO.File.Exists(fileName))
+                return false;
             using var File = System.IO.File.OpenRead(fileName);
             return CanRead(File);
         }
@@ -54,24 +56,31 @@ namespace FileCurator.Formats.BaseClasses
         /// <returns>True if it can, false otherwise</returns>
         public bool CanRead(Stream stream)
         {
-            if (HeaderIdentifier.Length == 0)
+            if (stream is null || HeaderIdentifier.Length == 0)
                 return false;
-            stream.Seek(0, SeekOrigin.Begin);
-            var StartIndex = FindStartIndex(stream);
-            stream.Seek(StartIndex, SeekOrigin.Begin);
-            var Buffer = ArrayPool<byte>.Shared.Rent(HeaderIdentifier.Length);
-            stream.Read(Buffer, 0, Buffer.Length);
-            stream.Seek(0, SeekOrigin.Begin);
-            for (var x = 0; x < HeaderIdentifier.Length; ++x)
+            try
             {
-                if (Buffer[x] != HeaderIdentifier[x])
+                stream.Seek(0, SeekOrigin.Begin);
+                var StartIndex = FindStartIndex(stream);
+                stream.Seek(StartIndex, SeekOrigin.Begin);
+                var Buffer = ArrayPool<byte>.Shared.Rent(HeaderIdentifier.Length);
+                stream.Read(Buffer, 0, Buffer.Length);
+                stream.Seek(0, SeekOrigin.Begin);
+                for (var x = 0; x < HeaderIdentifier.Length; ++x)
                 {
-                    ArrayPool<byte>.Shared.Return(Buffer);
-                    return false;
+                    if (Buffer[x] != HeaderIdentifier[x])
+                    {
+                        ArrayPool<byte>.Shared.Return(Buffer);
+                        return false;
+                    }
                 }
+                ArrayPool<byte>.Shared.Return(Buffer);
+                return InternalCanRead(stream);
             }
-            ArrayPool<byte>.Shared.Return(Buffer);
-            return InternalCanRead(stream);
+            catch
+            {
+                return false;
+            }
         }
 
         /// <summary>

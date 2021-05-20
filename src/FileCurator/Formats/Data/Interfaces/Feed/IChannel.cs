@@ -34,7 +34,7 @@ namespace FileCurator.Formats.Data.Interfaces
         /// Gets the cloud.
         /// </summary>
         /// <value>The cloud.</value>
-        string Cloud { get; set; }
+        string? Cloud { get; set; }
 
         /// <summary>
         /// Gets the content.
@@ -52,7 +52,7 @@ namespace FileCurator.Formats.Data.Interfaces
         /// Gets the description.
         /// </summary>
         /// <value>The description.</value>
-        string Description { get; set; }
+        string? Description { get; set; }
 
         /// <summary>
         /// Gets the docs.
@@ -70,7 +70,7 @@ namespace FileCurator.Formats.Data.Interfaces
         /// Gets or sets the image URL.
         /// </summary>
         /// <value>The image URL.</value>
-        string ImageUrl { get; set; }
+        string? ImageUrl { get; set; }
 
         /// <summary>
         /// Gets or sets the language.
@@ -82,7 +82,7 @@ namespace FileCurator.Formats.Data.Interfaces
         /// Gets or sets the link.
         /// </summary>
         /// <value>The link.</value>
-        string Link { get; set; }
+        string? Link { get; set; }
 
         /// <summary>
         /// Gets or sets the pub date.
@@ -94,7 +94,7 @@ namespace FileCurator.Formats.Data.Interfaces
         /// Gets or sets the title.
         /// </summary>
         /// <value>The title.</value>
-        string Title { get; set; }
+        string? Title { get; set; }
 
         /// <summary>
         /// Gets or sets the TTL.
@@ -106,6 +106,6 @@ namespace FileCurator.Formats.Data.Interfaces
         /// Gets or sets the web master.
         /// </summary>
         /// <value>The web master.</value>
-        string WebMaster { get; set; }
+        string? WebMaster { get; set; }
     }
 }

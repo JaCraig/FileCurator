@@ -37,13 +37,6 @@ namespace FileCurator.Formats.RSS.Data
         /// </summary>
         public Channel()
         {
-            Copyright = "Copyright " + DateTime.Now.ToString("yyyy", CultureInfo.InvariantCulture) + ". All rights reserved.";
-            Language = "en-us";
-            PubDate = DateTime.Now;
-            Categories = new List<string>();
-            Docs = "http://blogs.law.harvard.edu/tech/rss";
-            TTL = 5;
-            Items = new List<IFeedItem>();
         }
 
         /// <summary>
@@ -51,18 +44,17 @@ namespace FileCurator.Formats.RSS.Data
         /// </summary>
         /// <param name="doc">XML representation of the channel</param>
         public Channel(IXPathNavigable doc)
-            : this()
         {
             var Element = doc.CreateNavigator();
             if (!Element.Name.Equals("channel", StringComparison.CurrentCultureIgnoreCase))
                 throw new ArgumentException("Element is not a channel");
             var NamespaceManager = new XmlNamespaceManager(Element.NameTable);
-            Title = Element.SelectSingleNode("./title", NamespaceManager)?.Value;
-            Link = Element.SelectSingleNode("./link", NamespaceManager)?.Value;
-            Description = Element.SelectSingleNode("./description", NamespaceManager)?.Value;
-            Copyright = Element.SelectSingleNode("./copyright", NamespaceManager)?.Value;
-            Language = Element.SelectSingleNode("./language", NamespaceManager)?.Value;
-            WebMaster = Element.SelectSingleNode("./webmaster", NamespaceManager)?.Value;
+            Title = Element.SelectSingleNode("./title", NamespaceManager)?.Value ?? "";
+            Link = Element.SelectSingleNode("./link", NamespaceManager)?.Value ?? "";
+            Description = Element.SelectSingleNode("./description", NamespaceManager)?.Value ?? "";
+            Copyright = Element.SelectSingleNode("./copyright", NamespaceManager)?.Value ?? "";
+            Language = Element.SelectSingleNode("./language", NamespaceManager)?.Value ?? "";
+            WebMaster = Element.SelectSingleNode("./webmaster", NamespaceManager)?.Value ?? "";
             if (DateTime.TryParse(Element.SelectSingleNode("./pubDate", NamespaceManager)?.Value.Replace("PDT", "-0700"), out var TempDate))
                 PubDate = TempDate;
             else
@@ -72,10 +64,10 @@ namespace FileCurator.Formats.RSS.Data
             {
                 Categories.Add(Utils.StripIllegalCharacters(TempNode.Value));
             }
-            Docs = Element.SelectSingleNode("./docs", NamespaceManager)?.Value;
+            Docs = Element.SelectSingleNode("./docs", NamespaceManager)?.Value ?? "";
             if (int.TryParse(Element.SelectSingleNode("./ttl", NamespaceManager)?.Value, out var TempTTL))
                 TTL = TempTTL;
-            ImageUrl = Element.SelectSingleNode("./image/url", NamespaceManager)?.Value;
+            ImageUrl = Element.SelectSingleNode("./image/url", NamespaceManager)?.Value ?? "";
             Nodes = Element.Select("./item", NamespaceManager);
             foreach (XPathNavigator TempNode in Nodes)
             {
@@ -87,13 +79,13 @@ namespace FileCurator.Formats.RSS.Data
         /// Gets the categories.
         /// </summary>
         /// <value>The categories.</value>
-        public IList<string> Categories { get; }
+        public IList<string> Categories { get; } = new List<string>();
 
         /// <summary>
         /// Gets the cloud.
         /// </summary>
         /// <value>The cloud.</value>
-        public string Cloud { get; set; }
+        public string? Cloud { get; set; }
 
         /// <summary>
         /// Gets the content.
@@ -105,7 +97,7 @@ namespace FileCurator.Formats.RSS.Data
         /// Gets the copyright.
         /// </summary>
         /// <value>The copyright.</value>
-        public string Copyright { get; set; }
+        public string Copyright { get; set; } = "Copyright " + DateTime.Now.ToString("yyyy", CultureInfo.InvariantCulture) + ". All rights reserved.";
 
         /// <summary>
         /// Gets the number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
@@ -116,13 +108,13 @@ namespace FileCurator.Formats.RSS.Data
         /// Gets the description.
         /// </summary>
         /// <value>The description.</value>
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Gets the docs.
         /// </summary>
         /// <value>The docs.</value>
-        public string Docs { get; set; }
+        public string Docs { get; set; } = "http://blogs.law.harvard.edu/tech/rss";
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see
@@ -135,7 +127,7 @@ namespace FileCurator.Formats.RSS.Data
         /// Gets or sets the image URL.
         /// </summary>
         /// <value>The image URL.</value>
-        public string ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
 
         /// <summary>
         /// Gets a value indicating whether the <see
@@ -147,43 +139,43 @@ namespace FileCurator.Formats.RSS.Data
         /// Gets the items.
         /// </summary>
         /// <value>The items.</value>
-        public IList<IFeedItem> Items { get; }
+        public IList<IFeedItem> Items { get; } = new List<IFeedItem>();
 
         /// <summary>
         /// Gets or sets the language.
         /// </summary>
         /// <value>The language.</value>
-        public string Language { get; set; }
+        public string Language { get; set; } = "en-us";
 
         /// <summary>
         /// Gets or sets the link.
         /// </summary>
         /// <value>The link.</value>
-        public string Link { get; set; }
+        public string? Link { get; set; }
 
         /// <summary>
         /// Gets or sets the pub date.
         /// </summary>
         /// <value>The pub date.</value>
-        public DateTime PubDate { get; set; }
+        public DateTime PubDate { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Gets or sets the title.
         /// </summary>
         /// <value>The title.</value>
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// Gets or sets the TTL.
         /// </summary>
         /// <value>The TTL.</value>
-        public int TTL { get; set; }
+        public int TTL { get; set; } = 5;
 
         /// <summary>
         /// Gets or sets the web master.
         /// </summary>
         /// <value>The web master.</value>
-        public string WebMaster { get; set; }
+        public string? WebMaster { get; set; }
 
         /// <summary>
         /// Gets or sets the <see cref="IFeedItem"/> at the specified index.
@@ -290,18 +282,18 @@ namespace FileCurator.Formats.RSS.Data
         {
             var ChannelString = new StringBuilder();
             ChannelString.Append("<channel>");
-            ChannelString.Append("<title>").Append(Utils.StripIllegalCharacters(Title)).Append("</title>\r\n");
+            ChannelString.Append("<title>").Append(Utils.StripIllegalCharacters(Title ?? "")).Append("</title>\r\n");
             ChannelString.Append("<link>").Append(Link).Append("</link>\r\n");
             ChannelString.Append("<atom:link xmlns:atom=\"http://www.w3.org/2005/Atom\" rel=\"self\" href=\"").Append(Link).Append("\" type=\"application/rss+xml\" />");
 
-            ChannelString.Append("<description><![CDATA[").Append(Utils.StripIllegalCharacters(Description)).Append("]]></description>\r\n");
+            ChannelString.Append("<description><![CDATA[").Append(Utils.StripIllegalCharacters(Description ?? "")).Append("]]></description>\r\n");
             ChannelString.Append("<language>").Append(Language).Append("</language>\r\n");
             ChannelString.Append("<copyright>").Append(Utils.StripIllegalCharacters(Copyright)).Append("</copyright>\r\n");
-            ChannelString.Append("<webMaster>").Append(Utils.StripIllegalCharacters(WebMaster)).Append("</webMaster>\r\n");
+            ChannelString.Append("<webMaster>").Append(Utils.StripIllegalCharacters(WebMaster ?? "")).Append("</webMaster>\r\n");
             ChannelString.Append("<pubDate>").Append(PubDate.ToString("Ddd, dd MMM yyyy HH':'mm':'ss", CultureInfo.InvariantCulture)).Append("</pubDate>\r\n");
             ChannelString.Append("<itunes:explicit>").Append(Explicit ? "yes" : "no").Append("</itunes:explicit>");
-            ChannelString.Append("<itunes:subtitle>").Append(Utils.StripIllegalCharacters(Title)).Append("</itunes:subtitle>");
-            ChannelString.Append("<itunes:summary><![CDATA[").Append(Utils.StripIllegalCharacters(Description)).Append("]]></itunes:summary>");
+            ChannelString.Append("<itunes:subtitle>").Append(Utils.StripIllegalCharacters(Title ?? "")).Append("</itunes:subtitle>");
+            ChannelString.Append("<itunes:summary><![CDATA[").Append(Utils.StripIllegalCharacters(Description ?? "")).Append("]]></itunes:summary>");
 
             foreach (var Category in Categories)
             {
@@ -312,7 +304,7 @@ namespace FileCurator.Formats.RSS.Data
             ChannelString.Append("<ttl>").Append(TTL.ToString(CultureInfo.InvariantCulture)).Append("</ttl>\r\n");
             if (!string.IsNullOrEmpty(ImageUrl))
             {
-                ChannelString.Append("<image><url>").Append(ImageUrl).Append("</url>\r\n<title>").Append(Utils.StripIllegalCharacters(Title)).Append("</title>\r\n<link>").Append(Link).Append("</link>\r\n</image>\r\n");
+                ChannelString.Append("<image><url>").Append(ImageUrl).Append("</url>\r\n<title>").Append(Utils.StripIllegalCharacters(Title ?? "")).Append("</title>\r\n<link>").Append(Link).Append("</link>\r\n</image>\r\n");
             }
             foreach (FeedItem CurrentItem in Items)
             {

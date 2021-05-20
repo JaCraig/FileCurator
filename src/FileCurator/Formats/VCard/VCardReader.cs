@@ -56,7 +56,7 @@ namespace FileCurator.Formats.VCard
         public override ICard Read(Stream stream)
         {
             var ReturnValue = new GenericCard();
-            var Content = stream.ReadAll().Replace("\r\n ", string.Empty);
+            string Content = GetData(stream);
             foreach (Match TempMatch in EntryRegex.Matches(Content))
             {
                 var Title = TempMatch.Groups["Title"].Value.ToUpperInvariant().Trim();
@@ -124,6 +124,23 @@ namespace FileCurator.Formats.VCard
                 }
             }
             return ReturnValue;
+        }
+
+        /// <summary>
+        /// Gets the data.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <returns></returns>
+        private static string GetData(Stream stream)
+        {
+            try
+            {
+                return stream?.ReadAll().Replace("\r\n ", string.Empty) ?? "";
+            }
+            catch
+            {
+                return "";
+            }
         }
     }
 }

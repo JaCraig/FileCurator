@@ -47,6 +47,8 @@ namespace FileCurator.Default
         /// <returns>The absolute path of the path passed in</returns>
         protected override string AbsolutePath(string path)
         {
+            if (string.IsNullOrEmpty(path))
+                return path;
             path = path.Replace("/", "\\");
             var BaseDirectory = new System.IO.DirectoryInfo(".").FullName;
             var ParentDirectory = new LocalDirectory(BaseDirectory).Parent.FullName;
