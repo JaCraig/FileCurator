@@ -16,7 +16,7 @@ namespace FileCurator.Tests.BaseClasses
         /// </summary>
         protected TestBaseClass()
         {
-            ObjectType = typeof(TTestObject);
+            ObjectType = null;
         }
 
         /// <summary>
@@ -52,7 +52,10 @@ namespace FileCurator.Tests.BaseClasses
         /// </summary>
         protected TestBaseClass()
         {
-            _ = Mech.Default;
+            lock (LockObject)
+            {
+                _ = Mech.Default;
+            }
         }
 
         /// <summary>
@@ -60,6 +63,8 @@ namespace FileCurator.Tests.BaseClasses
         /// </summary>
         /// <value>The type of the object.</value>
         protected abstract Type ObjectType { get; }
+
+        private static object LockObject = new object();
 
         /// <summary>
         /// Attempts to break the object.
