@@ -16,6 +16,7 @@ limitations under the License.
 
 using BigBook;
 using FileCurator.Formats.Data.Interfaces;
+using ObjectCartographer;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Text;
@@ -33,7 +34,6 @@ namespace FileCurator.Formats.Data.BaseClasses
         /// </summary>
         protected TableBaseClass()
         {
-            Canister.Builder.Bootstrapper.Resolve<BigBook.DataMapper.Manager>();
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace FileCurator.Formats.Data.BaseClasses
                 {
                     TempValue[Columns[y]] = Rows[x].Cells[y].Content;
                 }
-                ReturnValues.Add(TempValue.To<IDictionary<string, object>, TObject>());
+                ReturnValues.Add(TempValue.To<TObject>());
             }
             return ReturnValues;
         }

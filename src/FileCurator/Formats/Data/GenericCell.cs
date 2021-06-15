@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-using BigBook;
 using FileCurator.Formats.Data.Interfaces;
+using ObjectCartographer;
 
 namespace FileCurator.Formats.Data
 {
@@ -47,7 +47,7 @@ namespace FileCurator.Formats.Data
         /// <returns>The content of the cell as the value type specified.</returns>
         public TValue GetValue<TValue>()
         {
-            return Content.To<string, TValue>();
+            return Content.To<TValue>();
         }
 
         /// <summary>
