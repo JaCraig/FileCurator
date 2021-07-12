@@ -14,12 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using BigBook;
 using FileCurator.BaseClasses;
-using FileCurator.HelperMethods;
 using FileCurator.Interfaces;
 using System;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 
 namespace FileCurator.Default
@@ -41,20 +42,23 @@ namespace FileCurator.Default
         /// Constructor
         /// </summary>
         /// <param name="path">Path to the file</param>
+        /// <param name="client">The client.</param>
         /// <param name="credentials">The credentials.</param>
-        public WebFile(string path, Credentials? credentials = null)
-            : this(string.IsNullOrEmpty(path) ? null : new Uri(path), credentials)
+        public WebFile(string path, HttpClient? client, Credentials? credentials = null)
+            : this(string.IsNullOrEmpty(path) ? null : new Uri(path), client, credentials)
         {
         }
 
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="file">File to use</param>
+        /// <param name="directory">Internal directory</param>
+        /// <param name="client">The client.</param>
         /// <param name="credentials">The credentials.</param>
-        public WebFile(Uri? file, Credentials? credentials)
-            : base(file, credentials)
+        public WebFile(Uri? directory, HttpClient? client, Credentials? credentials = null)
+            : base(directory, credentials)
         {
+            Client = client;
         }
 
         /// <summary>
@@ -70,7 +74,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Directory base path
         /// </summary>
-        public override IDirectory? Directory => InternalFile is null ? null : new WebDirectory(InternalFile.AbsolutePath.Left(InternalFile.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
+        public override IDirectory? Directory => InternalFile is null ? null : new WebDirectory(InternalFile.AbsolutePath.Left(InternalFile.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Client, Credentials);
 
         /// <summary>
         /// Does it exist? Always true.
@@ -103,6 +107,12 @@ namespace FileCurator.Default
         public override string Name => InternalFile?.AbsolutePath ?? string.Empty;
 
         /// <summary>
+        /// Gets the client.
+        /// </summary>
+        /// <value>The client.</value>
+        private HttpClient? Client { get; }
+
+        /// <summary>
         /// Copies the file to another directory
         /// </summary>
         /// <param name="directory">Directory to copy the file to</param>
@@ -129,13 +139,9 @@ namespace FileCurator.Default
         {
             if (InternalFile is null)
                 return string.Empty;
-            if (!(WebRequest.Create(InternalFile) is HttpWebRequest Request))
-                return string.Empty;
-            Request.Method = "DELETE";
-            Request.ContentType = "text/xml";
+            var Request = new HttpRequestMessage(HttpMethod.Delete, InternalFile);
             SetupData(Request, "");
-            SetupCredentials(Request);
-            return SendRequest(Request);
+            return SendRequest(Client, Request);
         }
 
         /// <summary>
@@ -160,13 +166,9 @@ namespace FileCurator.Default
         {
             if (InternalFile is null)
                 return string.Empty;
-            if (!(WebRequest.Create(InternalFile) is HttpWebRequest Request))
-                return string.Empty;
-            Request.Method = "GET";
-            Request.ContentType = "text/xml";
+            var Request = new HttpRequestMessage(HttpMethod.Get, InternalFile);
             SetupData(Request, "");
-            SetupCredentials(Request);
-            return SendRequest(Request);
+            return SendRequest(Client, Request);
         }
 
         /// <summary>
@@ -195,16 +197,10 @@ namespace FileCurator.Default
         {
             if (InternalFile is null)
                 return "";
-            if (!(WebRequest.Create(InternalFile) is HttpWebRequest Request))
-                return string.Empty;
-            if (mode == FileMode.Append || mode == FileMode.Open)
-                Request.Method = "PUT";
-            else if (mode == FileMode.Create || mode == FileMode.CreateNew)
-                Request.Method = "POST";
-            Request.ContentType = "text/xml";
+            var Method = (mode == FileMode.Append || mode == FileMode.Open) ? HttpMethod.Put : HttpMethod.Post;
+            var Request = new HttpRequestMessage(Method, InternalFile);
             SetupData(Request, content);
-            SetupCredentials(Request);
-            return SendRequest(Request);
+            return SendRequest(Client, Request);
         }
 
         /// <summary>
@@ -218,17 +214,21 @@ namespace FileCurator.Default
         /// <summary>
         /// Sends the request to the URL specified
         /// </summary>
+        /// <param name="client">The client.</param>
         /// <param name="request">The web request object</param>
         /// <returns>The string returned by the service</returns>
-        private static string SendRequest(HttpWebRequest request)
+        private static string SendRequest(HttpClient? client, HttpRequestMessage? request)
         {
-            if (request is null)
-                return string.Empty;
-            using var Response = request.GetResponseAsync().GetAwaiter().GetResult() as HttpWebResponse;
-            if (Response is null || Response.StatusCode != HttpStatusCode.OK)
-                return string.Empty;
-            using var Reader = new StreamReader(Response.GetResponseStream());
-            return Reader.ReadToEnd();
+            if (request is null || client is null)
+                return "";
+
+            var Result = AsyncHelper.RunSync(() => client.SendAsync(request));
+            if (Result.StatusCode != HttpStatusCode.OK)
+            {
+                Result.EnsureSuccessStatusCode();
+                return "";
+            }
+            return AsyncHelper.RunSync(() => Result.Content.ReadAsStringAsync());
         }
 
         /// <summary>
@@ -236,35 +236,12 @@ namespace FileCurator.Default
         /// </summary>
         /// <param name="request">The web request object</param>
         /// <param name="data">Data to send with the request</param>
-        private static void SetupData(HttpWebRequest request, string data)
+        private static void SetupData(HttpRequestMessage? request, string data)
         {
             if (request is null || string.IsNullOrEmpty(data))
                 return;
             var ByteData = data.ToByteArray();
-            using var RequestStream = request.GetRequestStreamAsync().GetAwaiter().GetResult();
-            RequestStream.Write(ByteData, 0, ByteData.Length);
-        }
-
-        /// <summary>
-        /// Sets up any credentials (basic authentication, for OAuth, please use the OAuth class to
-        /// create the URL)
-        /// </summary>
-        /// <param name="request">The web request object</param>
-        private void SetupCredentials(HttpWebRequest request)
-        {
-            if (Credentials is null)
-                return;
-            if (!string.IsNullOrEmpty(Credentials?.UserName) && !string.IsNullOrEmpty(Credentials?.Password))
-            {
-                if (!string.IsNullOrEmpty(Credentials?.Domain))
-                    request.Credentials = new NetworkCredential(Credentials?.UserName, Credentials?.Password, Credentials?.Domain);
-                else
-                    request.Credentials = new NetworkCredential(Credentials?.UserName, Credentials?.Password);
-            }
-            else
-            {
-                request.UseDefaultCredentials = true;
-            }
+            request.Content = new ByteArrayContent(ByteData);
         }
     }
 }

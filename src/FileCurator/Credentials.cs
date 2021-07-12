@@ -14,6 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using System;
+
 namespace FileCurator
 {
     /// <summary>
@@ -21,6 +23,12 @@ namespace FileCurator
     /// </summary>
     public class Credentials
     {
+        /// <summary>
+        /// Gets the no credentials.
+        /// </summary>
+        /// <value>The no credentials.</value>
+        public static Credentials NoCredentials => new Credentials();
+
         /// <summary>
         /// Gets or sets the domain.
         /// </summary>
@@ -44,5 +52,35 @@ namespace FileCurator
         /// </summary>
         /// <value>The name of the user.</value>
         public string? UserName { get; set; }
+
+        /// <summary>
+        /// Determines whether the specified <see cref="System.Object"/>, is equal to this instance.
+        /// </summary>
+        /// <param name="obj">The <see cref="System.Object"/> to compare with this instance.</param>
+        /// <returns>
+        /// <c>true</c> if the specified <see cref="System.Object"/> is equal to this instance;
+        /// otherwise, <c>false</c>.
+        /// </returns>
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Credentials CredentialsObj))
+                return false;
+            return UserName == CredentialsObj.UserName
+                && Password == CredentialsObj.Password
+                && UseDefaultCredentials == CredentialsObj.UseDefaultCredentials
+                && Domain == CredentialsObj.Domain;
+        }
+
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A hash code for this instance, suitable for use in hashing algorithms and data
+        /// structures like a hash table.
+        /// </returns>
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(UserName, Password, Domain, UseDefaultCredentials);
+        }
     }
 }

@@ -14,14 +14,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using BigBook;
 using FileCurator.BaseClasses;
 using FileCurator.Enums;
-using FileCurator.HelperMethods;
 using FileCurator.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 
 namespace FileCurator.Default
 {
@@ -41,9 +42,10 @@ namespace FileCurator.Default
         /// Constructor
         /// </summary>
         /// <param name="path">Path to the directory</param>
+        /// <param name="client">The client.</param>
         /// <param name="credentials">The credentials.</param>
-        public WebDirectory(string path, Credentials? credentials = null)
-            : this(string.IsNullOrEmpty(path) ? null : new Uri(path), credentials)
+        public WebDirectory(string path, HttpClient? client, Credentials? credentials = null)
+            : this(string.IsNullOrEmpty(path) ? null : new Uri(path), client, credentials)
         {
         }
 
@@ -51,10 +53,12 @@ namespace FileCurator.Default
         /// Constructor
         /// </summary>
         /// <param name="directory">Internal directory</param>
+        /// <param name="client">The client.</param>
         /// <param name="credentials">The credentials.</param>
-        public WebDirectory(Uri? directory, Credentials? credentials = null)
+        public WebDirectory(Uri? directory, HttpClient? client, Credentials? credentials = null)
             : base(directory, credentials)
         {
+            Client = client;
         }
 
         /// <summary>
@@ -90,17 +94,23 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override IDirectory Parent => InternalDirectory is null ? null : new WebDirectory(InternalDirectory.AbsolutePath.Left(InternalDirectory.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
+        public override IDirectory Parent => InternalDirectory is null ? null : new WebDirectory(InternalDirectory.AbsolutePath.Left(InternalDirectory.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Client, Credentials);
 
         /// <summary>
         /// Root
         /// </summary>
-        public override IDirectory Root => InternalDirectory is null ? null : new WebDirectory(InternalDirectory.Scheme + "://" + InternalDirectory.Host, Credentials);
+        public override IDirectory Root => InternalDirectory is null ? null : new WebDirectory(InternalDirectory.Scheme + "://" + InternalDirectory.Host, Client, Credentials);
 
         /// <summary>
         /// Size (returns 0)
         /// </summary>
         public override long Size { get; } = 0;
+
+        /// <summary>
+        /// Gets the client.
+        /// </summary>
+        /// <value>The client.</value>
+        private HttpClient? Client { get; }
 
         /// <summary>
         /// Copies the directory to the specified parent directory
@@ -128,12 +138,9 @@ namespace FileCurator.Default
         {
             if (InternalDirectory is null)
                 return this;
-            var Request = WebRequest.Create(InternalDirectory) as HttpWebRequest;
-            Request.Method = "POST";
-            Request.ContentType = "text/xml";
+            var Request = new HttpRequestMessage(HttpMethod.Post, InternalDirectory);
             SetupData(Request, "");
-            SetupCredentials(Request);
-            SendRequest(Request);
+            SendRequest(Client, Request);
             return this;
         }
 
@@ -144,12 +151,9 @@ namespace FileCurator.Default
         {
             if (InternalDirectory is null)
                 return this;
-            var Request = WebRequest.Create(InternalDirectory) as HttpWebRequest;
-            Request.Method = "DELETE";
-            Request.ContentType = "text/xml";
+            var Request = new HttpRequestMessage(HttpMethod.Delete, InternalDirectory);
             SetupData(Request, "");
-            SetupCredentials(Request);
-            SendRequest(Request);
+            SendRequest(Client, Request);
             return this;
         }
 
@@ -178,18 +182,21 @@ namespace FileCurator.Default
         /// <summary>
         /// Sends the request to the URL specified
         /// </summary>
+        /// <param name="client">The client.</param>
         /// <param name="request">The web request object</param>
         /// <returns>The string returned by the service</returns>
-        private static string SendRequest(HttpWebRequest request)
+        private static string SendRequest(HttpClient client, HttpRequestMessage request)
         {
-            if (request is null)
-                return string.Empty;
+            if (request is null || client is null)
+                return "";
 
-            using var Response = request.GetResponseAsync().GetAwaiter().GetResult() as HttpWebResponse;
-            if (Response.StatusCode != HttpStatusCode.OK)
-                return string.Empty;
-            using var Reader = new StreamReader(Response.GetResponseStream());
-            return Reader.ReadToEnd();
+            var Result = AsyncHelper.RunSync(() => client.SendAsync(request));
+            if (Result.StatusCode != HttpStatusCode.OK)
+            {
+                Result.EnsureSuccessStatusCode();
+                return "";
+            }
+            return AsyncHelper.RunSync(() => Result.Content.ReadAsStringAsync());
         }
 
         /// <summary>
@@ -197,35 +204,12 @@ namespace FileCurator.Default
         /// </summary>
         /// <param name="request">The web request object</param>
         /// <param name="data">Data to send with the request</param>
-        private static void SetupData(HttpWebRequest request, string data)
+        private static void SetupData(HttpRequestMessage request, string data)
         {
             if (request is null || string.IsNullOrEmpty(data))
                 return;
             var ByteData = data.ToByteArray();
-            using var RequestStream = request.GetRequestStreamAsync().GetAwaiter().GetResult();
-            RequestStream.Write(ByteData, 0, ByteData.Length);
-        }
-
-        /// <summary>
-        /// Sets up any credentials (basic authentication, for OAuth, please use the OAuth class to
-        /// create the URL)
-        /// </summary>
-        /// <param name="request">The web request object</param>
-        private void SetupCredentials(HttpWebRequest request)
-        {
-            if (Credentials is null)
-                return;
-            if (!string.IsNullOrEmpty(Credentials?.UserName) && !string.IsNullOrEmpty(Credentials?.Password))
-            {
-                if (!string.IsNullOrEmpty(Credentials?.Domain))
-                    request.Credentials = new NetworkCredential(Credentials?.UserName, Credentials?.Password, Credentials?.Domain);
-                else
-                    request.Credentials = new NetworkCredential(Credentials?.UserName, Credentials?.Password);
-            }
-            else
-            {
-                request.UseDefaultCredentials = true;
-            }
+            request.Content = new ByteArrayContent(ByteData);
         }
     }
 }

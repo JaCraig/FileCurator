@@ -31,7 +31,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BigBook" Version="4.0.5" />
+    <PackageReference Include="BigBook" Version="4.0.12" />
     <PackageReference Include="Canister.IoC" Version="4.0.2" />
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.13.0" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.34" />

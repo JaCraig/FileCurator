@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 using FileCurator.BaseClasses;
+using FileCurator.HelperMethods;
 using FileCurator.Interfaces;
 
 namespace FileCurator.Default
@@ -24,6 +25,15 @@ namespace FileCurator.Default
     /// </summary>
     public class HttpFileSystem : FileSystemBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HttpFileSystem"/> class.
+        /// </summary>
+        /// <param name="httpClientFactory">The HTTP client factory.</param>
+        public HttpFileSystem(InternalHttpClientFactory httpClientFactory)
+        {
+            HttpClientFactory = httpClientFactory;
+        }
+
         /// <summary>
         /// Name of the file system
         /// </summary>
@@ -41,6 +51,12 @@ namespace FileCurator.Default
         protected override string HandleRegexString { get; } = @"^https?://|^www\.";
 
         /// <summary>
+        /// Gets the HTTP client factory.
+        /// </summary>
+        /// <value>The HTTP client factory.</value>
+        private InternalHttpClientFactory HttpClientFactory { get; }
+
+        /// <summary>
         /// Gets the directory representation for the directory
         /// </summary>
         /// <param name="path">Path to the directory</param>
@@ -48,7 +64,7 @@ namespace FileCurator.Default
         /// <returns>The directory object</returns>
         public override IDirectory Directory(string path, Credentials? credentials = null)
         {
-            return new WebDirectory(AbsolutePath(path), credentials);
+            return new WebDirectory(AbsolutePath(path), HttpClientFactory.GetClient(credentials), credentials);
         }
 
         /// <summary>
@@ -59,7 +75,7 @@ namespace FileCurator.Default
         /// <returns>The file object</returns>
         public override IFile File(string path, Credentials? credentials = null)
         {
-            return new WebFile(AbsolutePath(path), credentials);
+            return new WebFile(AbsolutePath(path), HttpClientFactory.GetClient(credentials), credentials);
         }
 
         /// <summary>

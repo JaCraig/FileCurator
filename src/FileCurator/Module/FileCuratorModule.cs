@@ -16,6 +16,7 @@ limitations under the License.
 
 using Canister.Interfaces;
 using FileCurator.Formats.Interfaces;
+using FileCurator.HelperMethods;
 using FileCurator.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -35,12 +36,13 @@ namespace FileCurator.Module
         /// Loads the module
         /// </summary>
         /// <param name="bootstrapper">The bootstrapper.</param>
-        public void Load(IBootstrapper bootstrapper)
+        public void Load(IBootstrapper? bootstrapper)
         {
             bootstrapper?.RegisterAll<IFileSystem>()
                 .Register<FileSystem>(ServiceLifetime.Singleton)
                 .RegisterAll<IFormat>(ServiceLifetime.Singleton)
-                .Register<Formats.Manager>(ServiceLifetime.Singleton);
+                .Register<Formats.Manager>(ServiceLifetime.Singleton)
+                .Register<InternalHttpClientFactory>(ServiceLifetime.Singleton);
         }
     }
 }
