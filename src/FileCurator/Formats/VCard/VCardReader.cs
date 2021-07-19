@@ -113,13 +113,13 @@ namespace FileCurator.Formats.VCard
                     var Name = Value.Split(';');
                     ReturnValue.Addresses.Add(new Address
                     {
-                        Name = Name[1],
+                        Name = Name.Length > 1 ? Name[1] : "",
                         Type = Type?.Groups["Title"].Value ?? string.Empty,
-                        Street = Name[2],
-                        City = Name[3],
-                        StateOrProvence = Name[4],
-                        ZipCode = Name[5],
-                        Country = Name[6]
+                        Street = Name.Length > 2 ? Name[2] : "",
+                        City = Name.Length > 3 ? Name[3] : "",
+                        StateOrProvence = Name.Length > 4 ? Name[4] : "",
+                        ZipCode = Name.Length > 5 ? Name[5] : "",
+                        Country = Name.Length > 6 ? Name[6] : ""
                     });
                 }
             }
