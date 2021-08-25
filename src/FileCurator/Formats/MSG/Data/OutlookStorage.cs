@@ -64,7 +64,7 @@ namespace FileCurator.Formats.MSG
 
             //open and load IStorage from file
             NativeMethods.StgOpenStorage(storageFilePath, null, NativeMethods.STGM.READ | NativeMethods.STGM.SHARE_DENY_WRITE, IntPtr.Zero, 0, out NativeMethods.IStorage fileStorage);
-            this.LoadStorage(fileStorage);
+            LoadStorage(fileStorage);
         }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace FileCurator.Formats.MSG
         /// <param name="storageStream">The <see cref="Stream"/> containing an IStorage.</param>
         private OutlookStorage(Stream storageStream)
         {
-            NativeMethods.IStorage memoryStorage = null;
-            NativeMethods.ILockBytes memoryStorageBytes = null;
+            NativeMethods.IStorage? memoryStorage = null;
+            NativeMethods.ILockBytes? memoryStorageBytes = null;
             try
             {
                 //read stream into buffer
@@ -94,7 +94,7 @@ namespace FileCurator.Formats.MSG
 
                 //open and load IStorage on the ILockBytes
                 NativeMethods.StgOpenStorageOnILockBytes(memoryStorageBytes, null, NativeMethods.STGM.READ | NativeMethods.STGM.SHARE_DENY_WRITE, IntPtr.Zero, 0, out memoryStorage);
-                this.LoadStorage(memoryStorage);
+                LoadStorage(memoryStorage);
             }
             catch
             {
@@ -117,9 +117,9 @@ namespace FileCurator.Formats.MSG
         /// <see cref="NativeMethods.IStorage"/>.
         /// </summary>
         /// <param name="storage">The storage to create the <see cref="OutlookStorage"/> on.</param>
-        private OutlookStorage(NativeMethods.IStorage storage)
+        private OutlookStorage(NativeMethods.IStorage? storage)
         {
-            this.LoadStorage(storage);
+            LoadStorage(storage);
         }
 
         /// <summary>
@@ -128,44 +128,26 @@ namespace FileCurator.Formats.MSG
         /// </summary>
         ~OutlookStorage()
         {
-            this.Dispose();
+            Dispose();
         }
 
         /// <summary>
         /// Gets the received time.
         /// </summary>
         /// <value>The received time.</value>
-        public DateTime ReceivedTime
-        {
-            get
-            {
-                return (DateTime)this.GetMapiProperty(OutlookStorage.PR_MESSAGE_DELIVERY_TIME);
-            }
-        }
+        public DateTime? ReceivedTime => (DateTime?)GetMapiProperty(PR_MESSAGE_DELIVERY_TIME);
 
         /// <summary>
         /// Gets the sent time.
         /// </summary>
         /// <value>The sent time.</value>
-        public DateTime SentTime
-        {
-            get
-            {
-                return (DateTime)this.GetMapiProperty(OutlookStorage.PR_CLIENT_SUBMIT_TIME);
-            }
-        }
+        public DateTime? SentTime => (DateTime?)GetMapiProperty(PR_CLIENT_SUBMIT_TIME);
 
         /// <summary>
         /// Gets a value indicating whether this instance is the top level outlook message.
         /// </summary>
         /// <value><c>true</c> if this instance is the top level outlook message; otherwise, <c>false</c>.</value>
-        private bool IsTopParent
-        {
-            get
-            {
-                return this.parentMessage is null;
-            }
-        }
+        private bool IsTopParent => parentMessage is null;
 
         /// <summary>
         /// Gets the top level outlook message from a sub message at any level.
@@ -175,9 +157,9 @@ namespace FileCurator.Formats.MSG
         {
             get
             {
-                if (this.parentMessage != null)
+                if (parentMessage != null)
                 {
-                    return this.parentMessage.TopParent;
+                    return parentMessage.TopParent;
                 }
                 return this;
             }
@@ -264,12 +246,12 @@ namespace FileCurator.Formats.MSG
         /// <summary>
         /// Header size of the property stream in the IStorage associated with this instance.
         /// </summary>
-        private int propHeaderSize = OutlookStorage.PROPERTIES_STREAM_HEADER_TOP;
+        private int propHeaderSize = PROPERTIES_STREAM_HEADER_TOP;
 
         /// <summary>
         /// The IStorage associated with this instance.
         /// </summary>
-        private NativeMethods.IStorage storage_;
+        private NativeMethods.IStorage? storage_;
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting
@@ -277,18 +259,18 @@ namespace FileCurator.Formats.MSG
         /// </summary>
         public void Dispose()
         {
-            if (!this.disposed)
+            if (!disposed)
             {
                 //ensure only disposed once
-                this.disposed = true;
+                disposed = true;
 
                 //call virtual disposing method to let sub classes clean up
-                this.Disposing();
+                Disposing();
                 if (storage_ != null)
                 {
                     //release COM storage object and suppress finalizer
-                    ReferenceManager.RemoveItem(this.storage_);
-                    Marshal.ReleaseComObject(this.storage_);
+                    ReferenceManager.RemoveItem(storage_);
+                    Marshal.ReleaseComObject(storage_);
                     GC.SuppressFinalize(this);
                 }
             }
@@ -299,14 +281,13 @@ namespace FileCurator.Formats.MSG
         /// </summary>
         /// <param name="propIdentifier">The 4 char hexadecimal prop identifier.</param>
         /// <returns>The raw value of the MAPI property.</returns>
-        public object GetMapiProperty(string propIdentifier)
+        public object? GetMapiProperty(string propIdentifier)
         {
             //try get prop value from stream or storage
-            var propValue = this.GetMapiPropertyFromStreamOrStorage(propIdentifier) ?? this.GetMapiPropertyFromPropertyStream(propIdentifier);
 
             //if not found in stream or storage try get prop value from property stream
 
-            return propValue;
+            return GetMapiPropertyFromStreamOrStorage(propIdentifier) ?? GetMapiPropertyFromPropertyStream(propIdentifier);
         }
 
         /// <summary>
@@ -314,9 +295,9 @@ namespace FileCurator.Formats.MSG
         /// </summary>
         /// <param name="propIdentifier">The 4 char hexadecimal prop identifier.</param>
         /// <returns>The value of the MAPI property as a byte array.</returns>
-        public byte[] GetMapiPropertyBytes(string propIdentifier)
+        public byte[]? GetMapiPropertyBytes(string propIdentifier)
         {
-            return (byte[])this.GetMapiProperty(propIdentifier);
+            return GetMapiProperty(propIdentifier) as byte[];
         }
 
         /// <summary>
@@ -324,9 +305,9 @@ namespace FileCurator.Formats.MSG
         /// </summary>
         /// <param name="propIdentifier">The 4 char hexadecimal prop identifier.</param>
         /// <returns>The value of the MAPI property as a short.</returns>
-        public Int16 GetMapiPropertyInt16(string propIdentifier)
+        public short GetMapiPropertyInt16(string propIdentifier)
         {
-            return (Int16)this.GetMapiProperty(propIdentifier);
+            return (short)GetMapiProperty(propIdentifier)!;
         }
 
         /// <summary>
@@ -336,7 +317,7 @@ namespace FileCurator.Formats.MSG
         /// <returns>The value of the MAPI property as a integer.</returns>
         public int GetMapiPropertyInt32(string propIdentifier)
         {
-            return (int)this.GetMapiProperty(propIdentifier);
+            return (int)GetMapiProperty(propIdentifier)!;
         }
 
         /// <summary>
@@ -344,9 +325,9 @@ namespace FileCurator.Formats.MSG
         /// </summary>
         /// <param name="propIdentifier">The 4 char hexadecimal prop identifier.</param>
         /// <returns>The value of the MAPI property as a string.</returns>
-        public string GetMapiPropertyString(string propIdentifier)
+        public string? GetMapiPropertyString(string propIdentifier)
         {
-            return this.GetMapiProperty(propIdentifier) as string;
+            return GetMapiProperty(propIdentifier) as string;
         }
 
         /// <summary>
@@ -358,7 +339,7 @@ namespace FileCurator.Formats.MSG
         /// <returns>The data in the specified stream as a string.</returns>
         public string GetStreamAsString(string streamName, Encoding streamEncoding)
         {
-            var streamReader = new StreamReader(new MemoryStream(this.GetStreamBytes(streamName)), streamEncoding);
+            var streamReader = new StreamReader(new MemoryStream(GetStreamBytes(streamName)), streamEncoding);
             var streamContent = streamReader.ReadToEnd();
             streamReader.Close();
 
@@ -373,18 +354,18 @@ namespace FileCurator.Formats.MSG
         public byte[] GetStreamBytes(string streamName)
         {
             //get statistics for stream
-            System.Runtime.InteropServices.ComTypes.STATSTG streamStatStg = this.streamStatistics[streamName];
+            System.Runtime.InteropServices.ComTypes.STATSTG streamStatStg = streamStatistics[streamName];
 
             byte[] iStreamContent;
-            System.Runtime.InteropServices.ComTypes.IStream stream = null;
+            System.Runtime.InteropServices.ComTypes.IStream? stream = null;
             try
             {
                 //open stream from the storage
-                stream = this.storage_.OpenStream(streamStatStg.pwcsName, IntPtr.Zero, NativeMethods.STGM.READ | NativeMethods.STGM.SHARE_EXCLUSIVE, 0);
+                stream = storage_?.OpenStream(streamStatStg.pwcsName, IntPtr.Zero, NativeMethods.STGM.READ | NativeMethods.STGM.SHARE_EXCLUSIVE, 0);
 
                 //read the stream into a managed byte array
                 iStreamContent = new byte[streamStatStg.cbSize];
-                stream.Read(iStreamContent, iStreamContent.Length, IntPtr.Zero);
+                stream?.Read(iStreamContent, iStreamContent.Length, IntPtr.Zero);
             }
             finally
             {
@@ -407,18 +388,18 @@ namespace FileCurator.Formats.MSG
         /// Processes sub streams and storages on the specified storage.
         /// </summary>
         /// <param name="storage">The storage to get sub streams and storages for.</param>
-        protected virtual void LoadStorage(NativeMethods.IStorage storage)
+        protected virtual void LoadStorage(NativeMethods.IStorage? storage)
         {
-            this.storage_ = storage;
+            storage_ = storage;
 
             //ensures memory is released
-            ReferenceManager.AddItem(this.storage_);
+            ReferenceManager.AddItem(storage_);
 
-            NativeMethods.IEnumSTATSTG storageElementEnum = null;
+            NativeMethods.IEnumSTATSTG? storageElementEnum = null;
             try
             {
                 //enum all elements of the storage
-                storage.EnumElements(0, IntPtr.Zero, 0, out storageElementEnum);
+                storage?.EnumElements(0, IntPtr.Zero, 0, out storageElementEnum);
 
                 //iterate elements
                 while (true)
@@ -463,19 +444,19 @@ namespace FileCurator.Formats.MSG
         /// </summary>
         /// <param name="propIdentifier">The 4 char hexadecimal prop identifier.</param>
         /// <returns>The value of the MAPI property or null if not found.</returns>
-        private object GetMapiPropertyFromPropertyStream(string propIdentifier)
+        private object? GetMapiPropertyFromPropertyStream(string propIdentifier)
         {
             //if no property stream return null
-            if (!this.streamStatistics.ContainsKey(OutlookStorage.PROPERTIES_STREAM))
+            if (!streamStatistics.ContainsKey(PROPERTIES_STREAM))
             {
                 return null;
             }
 
             //get the raw bytes for the property stream
-            var propBytes = this.GetStreamBytes(OutlookStorage.PROPERTIES_STREAM);
+            var propBytes = GetStreamBytes(PROPERTIES_STREAM);
 
             //iterate over property stream in 16 byte chunks starting from end of header
-            for (int i = this.propHeaderSize; i < propBytes.Length; i += 16)
+            for (int i = propHeaderSize; i < propBytes.Length; i += 16)
             {
                 //get property type located in the 1st and 2nd bytes as a unsigned short value
                 var propType = BitConverter.ToUInt16(propBytes, i);
@@ -517,15 +498,15 @@ namespace FileCurator.Formats.MSG
         /// </summary>
         /// <param name="propIdentifier">The 4 char hexadecimal prop identifier.</param>
         /// <returns>The value of the MAPI property or null if not found.</returns>
-        private object GetMapiPropertyFromStreamOrStorage(string propIdentifier)
+        private object? GetMapiPropertyFromStreamOrStorage(string propIdentifier)
         {
             //get list of stream and storage identifiers which map to properties
             var propKeys = new List<string>();
-            propKeys.AddRange(this.streamStatistics.Keys);
-            propKeys.AddRange(this.subStorageStatistics.Keys);
+            propKeys.AddRange(streamStatistics.Keys);
+            propKeys.AddRange(subStorageStatistics.Keys);
 
             //determine if the property identifier is in a stream or sub storage
-            string propTag = null;
+            string? propTag = null;
             ushort propType = NativeMethods.PT_UNSPECIFIED;
             foreach (string propKey in propKeys)
             {
@@ -539,26 +520,15 @@ namespace FileCurator.Formats.MSG
 
             //depending on prop type use method to get property value
             string containerName = "__substg1.0_" + propTag;
-            switch (propType)
+            return propType switch
             {
-                case NativeMethods.PT_UNSPECIFIED:
-                    return null;
-
-                case NativeMethods.PT_STRING8:
-                    return this.GetStreamAsString(containerName, Encoding.UTF8);
-
-                case NativeMethods.PT_UNICODE:
-                    return this.GetStreamAsString(containerName, Encoding.Unicode);
-
-                case NativeMethods.PT_BINARY:
-                    return this.GetStreamBytes(containerName);
-
-                case NativeMethods.PT_OBJECT:
-                    return NativeMethods.CloneStorage(this.storage_.OpenStorage(containerName, IntPtr.Zero, NativeMethods.STGM.READ | NativeMethods.STGM.SHARE_EXCLUSIVE, IntPtr.Zero, 0), true);
-
-                default:
-                    throw new ApplicationException("MAPI property has an unsupported type and can not be retrieved.");
-            }
+                NativeMethods.PT_UNSPECIFIED => null,
+                NativeMethods.PT_STRING8 => GetStreamAsString(containerName, Encoding.UTF8),
+                NativeMethods.PT_UNICODE => GetStreamAsString(containerName, Encoding.Unicode),
+                NativeMethods.PT_BINARY => GetStreamBytes(containerName),
+                NativeMethods.PT_OBJECT => NativeMethods.CloneStorage(storage_.OpenStorage(containerName, IntPtr.Zero, NativeMethods.STGM.READ | NativeMethods.STGM.SHARE_EXCLUSIVE, IntPtr.Zero, 0), true),
+                _ => throw new ApplicationException("MAPI property has an unsupported type and can not be retrieved."),
+            };
         }
 
         /// <summary>
@@ -664,7 +634,7 @@ namespace FileCurator.Formats.MSG
                 0x2D02EF8D
             };
 
-            private static byte[] COMPRESSED_RTF_PREBUF;
+            private static byte[]? COMPRESSED_RTF_PREBUF;
             /* The lookup table used in the CRC32 calculation */
             /*
              * Calculates the CRC32 of the given bytes.
@@ -720,7 +690,7 @@ namespace FileCurator.Formats.MSG
                 int inPos = 0; // current position in src array
                 int outPos = 0; // current position in dst array
 
-                COMPRESSED_RTF_PREBUF = System.Text.Encoding.ASCII.GetBytes(prebuf);
+                COMPRESSED_RTF_PREBUF = Encoding.ASCII.GetBytes(prebuf);
 
                 // get header fields (as defined in RTFLIB.H)
                 if (src is null || src.Length < 16)
@@ -851,43 +821,37 @@ namespace FileCurator.Formats.MSG
                 : base(message.storage_)
             {
                 GC.SuppressFinalize(message);
-                this.propHeaderSize = OutlookStorage.PROPERTIES_STREAM_HEADER_ATTACH_OR_RECIP;
+                propHeaderSize = PROPERTIES_STREAM_HEADER_ATTACH_OR_RECIP;
             }
 
             /// <summary>
             /// Gets the content id.
             /// </summary>
             /// <value>The content id.</value>
-            public string ContentId
-            {
-                get { return this.GetMapiPropertyString(OutlookStorage.PR_ATTACH_CONTENT_ID); }
-            }
+            public string? ContentId => GetMapiPropertyString(PR_ATTACH_CONTENT_ID);
 
             /// <summary>
             /// Gets the data.
             /// </summary>
             /// <value>The data.</value>
-            public byte[] Data
-            {
-                get { return this.GetMapiPropertyBytes(OutlookStorage.PR_ATTACH_DATA); }
-            }
+            public byte[]? Data => GetMapiPropertyBytes(PR_ATTACH_DATA);
 
             /// <summary>
             /// Gets the filename.
             /// </summary>
             /// <value>The filename.</value>
-            public string Filename
+            public string? Filename
             {
                 get
                 {
-                    var filename = this.GetMapiPropertyString(OutlookStorage.PR_ATTACH_LONG_FILENAME);
-                    if (String.IsNullOrEmpty(filename))
+                    var filename = GetMapiPropertyString(PR_ATTACH_LONG_FILENAME);
+                    if (string.IsNullOrEmpty(filename))
                     {
-                        filename = this.GetMapiPropertyString(OutlookStorage.PR_ATTACH_FILENAME);
+                        filename = GetMapiPropertyString(PR_ATTACH_FILENAME);
                     }
-                    if (String.IsNullOrEmpty(filename))
+                    if (string.IsNullOrEmpty(filename))
                     {
-                        filename = this.GetMapiPropertyString(OutlookStorage.PR_DISPLAY_NAME);
+                        filename = GetMapiPropertyString(PR_DISPLAY_NAME);
                     }
                     return filename;
                 }
@@ -897,10 +861,7 @@ namespace FileCurator.Formats.MSG
             /// Gets the rendering posisiton.
             /// </summary>
             /// <value>The rendering posisiton.</value>
-            public int RenderingPosisiton
-            {
-                get { return this.GetMapiPropertyInt32(OutlookStorage.PR_RENDERING_POSITION); }
-            }
+            public int RenderingPosisiton => GetMapiPropertyInt32(PR_RENDERING_POSITION);
         }
 
         /// <summary>
@@ -925,10 +886,10 @@ namespace FileCurator.Formats.MSG
             /// Initializes a new instance of the <see cref="Message"/> class on the specified <see cref="NativeMethods.IStorage"/>.
             /// </summary>
             /// <param name="storage">The storage to create the <see cref="Message"/> on.</param>
-            private Message(NativeMethods.IStorage storage)
+            private Message(NativeMethods.IStorage? storage)
                 : base(storage)
             {
-                this.propHeaderSize = OutlookStorage.PROPERTIES_STREAM_HEADER_TOP;
+                propHeaderSize = PROPERTIES_STREAM_HEADER_TOP;
             }
 
             /// <summary>
@@ -941,12 +902,12 @@ namespace FileCurator.Formats.MSG
             /// Gets the body of the outlook message in RTF format.
             /// </summary>
             /// <value>The body of the outlook message in RTF format.</value>
-            public String BodyRTF
+            public string? BodyRTF
             {
                 get
                 {
                     //get value for the RTF compressed MAPI property
-                    var rtfBytes = this.GetMapiPropertyBytes(OutlookStorage.PR_RTF_COMPRESSED);
+                    var rtfBytes = GetMapiPropertyBytes(PR_RTF_COMPRESSED);
 
                     //return null if no property value exists
                     if (rtfBytes is null || rtfBytes.Length == 0)
@@ -966,19 +927,13 @@ namespace FileCurator.Formats.MSG
             /// Gets the body of the outlook message in plain text format.
             /// </summary>
             /// <value>The body of the outlook message in plain text format.</value>
-            public String BodyText
-            {
-                get { return this.GetMapiPropertyString(OutlookStorage.PR_BODY); }
-            }
+            public string? BodyText => GetMapiPropertyString(PR_BODY);
 
             /// <summary>
             /// Gets the display value of the contact that sent the email.
             /// </summary>
             /// <value>The display value of the contact that sent the email.</value>
-            public String From
-            {
-                get { return this.GetMapiPropertyString(OutlookStorage.PR_SENDER_NAME); }
-            }
+            public string? From => GetMapiPropertyString(PR_SENDER_NAME);
 
             /// <summary>
             /// Gets the list of sub messages in the outlook message.
@@ -996,10 +951,7 @@ namespace FileCurator.Formats.MSG
             /// Gets the subject of the outlook message.
             /// </summary>
             /// <value>The subject of the outlook message.</value>
-            public String Subject
-            {
-                get { return this.GetMapiPropertyString(OutlookStorage.PR_SUBJECT); }
-            }
+            public string? Subject => GetMapiPropertyString(PR_SUBJECT);
 
             /// <summary>
             /// Saves this <see cref="Message"/> to the specified file name.
@@ -1007,8 +959,8 @@ namespace FileCurator.Formats.MSG
             /// <param name="fileName">Name of the file.</param>
             public void Save(string fileName)
             {
-                var saveFileStream = System.IO.File.Open(fileName, FileMode.Create, FileAccess.ReadWrite);
-                this.Save(saveFileStream);
+                var saveFileStream = File.Open(fileName, FileMode.Create, FileAccess.ReadWrite);
+                Save(saveFileStream);
                 saveFileStream.Close();
             }
 
@@ -1022,10 +974,9 @@ namespace FileCurator.Formats.MSG
                 OutlookStorage saveMsg = this;
 
                 byte[] memoryStorageContent;
-                NativeMethods.IStorage memoryStorage = null;
-                NativeMethods.IStorage nameIdStorage = null;
-                NativeMethods.IStorage nameIdSourceStorage = null;
-                NativeMethods.ILockBytes memoryStorageBytes = null;
+                NativeMethods.IStorage? memoryStorage = null;
+                NativeMethods.IStorage? nameIdSourceStorage = null;
+                NativeMethods.ILockBytes? memoryStorageBytes = null;
                 try
                 {
                     //create a ILockBytes (unmanaged byte array) and then create a IStorage using the byte array as a backing store
@@ -1038,17 +989,17 @@ namespace FileCurator.Formats.MSG
                     memoryStorage.Commit(0);
 
                     //if not the top parent then the name id mapping needs to be copied from top parent to this message and the property stream header needs to be padded by 8 bytes
-                    if (!this.IsTopParent)
+                    if (!IsTopParent)
                     {
                         //create a new name id storage and get the source name id storage to copy from
-                        nameIdStorage = memoryStorage.CreateStorage(OutlookStorage.NAMEID_STORAGE, NativeMethods.STGM.CREATE | NativeMethods.STGM.READWRITE | NativeMethods.STGM.SHARE_EXCLUSIVE, 0, 0);
-                        nameIdSourceStorage = this.TopParent.storage_.OpenStorage(OutlookStorage.NAMEID_STORAGE, IntPtr.Zero, NativeMethods.STGM.READ | NativeMethods.STGM.SHARE_EXCLUSIVE, IntPtr.Zero, 0);
+                        NativeMethods.IStorage? nameIdStorage = memoryStorage.CreateStorage(NAMEID_STORAGE, NativeMethods.STGM.CREATE | NativeMethods.STGM.READWRITE | NativeMethods.STGM.SHARE_EXCLUSIVE, 0, 0);
+                        nameIdSourceStorage = TopParent.storage_.OpenStorage(NAMEID_STORAGE, IntPtr.Zero, NativeMethods.STGM.READ | NativeMethods.STGM.SHARE_EXCLUSIVE, IntPtr.Zero, 0);
 
                         //copy the name id storage from the parent to the new name id storage
                         nameIdSourceStorage.CopyTo(0, null, IntPtr.Zero, nameIdStorage);
 
                         //get the property bytes for the storage being copied
-                        var props = saveMsg.GetStreamBytes(OutlookStorage.PROPERTIES_STREAM);
+                        var props = saveMsg.GetStreamBytes(PROPERTIES_STREAM);
 
                         //create new array to store a copy of the properties that is 8 bytes larger than the old so the header can be padded
                         byte[] newProps = new byte[props.Length + 8];
@@ -1058,7 +1009,7 @@ namespace FileCurator.Formats.MSG
                         Buffer.BlockCopy(props, 24, newProps, 32, props.Length - 24);
 
                         //remove the copied prop bytes so it can be replaced with the padded version
-                        memoryStorage.DestroyElement(OutlookStorage.PROPERTIES_STREAM);
+                        memoryStorage.DestroyElement(PROPERTIES_STREAM);
 
                         //create the property stream again and write in the padded version
                         var propStream = memoryStorage.CreateStream(PROPERTIES_STREAM, NativeMethods.STGM.READWRITE | NativeMethods.STGM.SHARE_EXCLUSIVE, 0, 0);
@@ -1104,19 +1055,19 @@ namespace FileCurator.Formats.MSG
             protected override void Disposing()
             {
                 //dispose sub storages
-                foreach (OutlookStorage subMsg in this.Messages)
+                foreach (OutlookStorage subMsg in Messages)
                 {
                     subMsg.Dispose();
                 }
 
                 //dispose sub storages
-                foreach (OutlookStorage recip in this.Recipients)
+                foreach (OutlookStorage recip in Recipients)
                 {
                     recip.Dispose();
                 }
 
                 //dispose sub storages
-                foreach (OutlookStorage attach in this.Attachments)
+                foreach (OutlookStorage attach in Attachments)
                 {
                     attach.Dispose();
                 }
@@ -1126,24 +1077,24 @@ namespace FileCurator.Formats.MSG
             /// Processes sub storages on the specified storage to capture attachment and recipient data.
             /// </summary>
             /// <param name="storage">The storage to check for attachment and recipient data.</param>
-            protected override void LoadStorage(NativeMethods.IStorage storage)
+            protected override void LoadStorage(NativeMethods.IStorage? storage)
             {
                 base.LoadStorage(storage);
 
-                foreach (System.Runtime.InteropServices.ComTypes.STATSTG storageStat in this.subStorageStatistics.Values)
+                foreach (System.Runtime.InteropServices.ComTypes.STATSTG storageStat in subStorageStatistics.Values)
                 {
                     //element is a storage. get it and add its statistics object to the sub storage dictionary
-                    var subStorage = this.storage_.OpenStorage(storageStat.pwcsName, IntPtr.Zero, NativeMethods.STGM.READ | NativeMethods.STGM.SHARE_EXCLUSIVE, IntPtr.Zero, 0);
+                    var subStorage = storage_.OpenStorage(storageStat.pwcsName, IntPtr.Zero, NativeMethods.STGM.READ | NativeMethods.STGM.SHARE_EXCLUSIVE, IntPtr.Zero, 0);
 
                     //run specific load method depending on sub storage name prefix
-                    if (storageStat.pwcsName.StartsWith(OutlookStorage.RECIP_STORAGE_PREFIX, StringComparison.Ordinal))
+                    if (storageStat.pwcsName.StartsWith(RECIP_STORAGE_PREFIX, StringComparison.Ordinal))
                     {
                         var recipient = new Recipient(new OutlookStorage(subStorage));
-                        this.Recipients.Add(recipient);
+                        Recipients.Add(recipient);
                     }
-                    else if (storageStat.pwcsName.StartsWith(OutlookStorage.ATTACH_STORAGE_PREFIX, StringComparison.Ordinal))
+                    else if (storageStat.pwcsName.StartsWith(ATTACH_STORAGE_PREFIX, StringComparison.Ordinal))
                     {
-                        this.LoadAttachmentStorage(subStorage);
+                        LoadAttachmentStorage(subStorage);
                     }
                     else
                     {
@@ -1163,23 +1114,23 @@ namespace FileCurator.Formats.MSG
                 var attachment = new Attachment(new OutlookStorage(storage));
 
                 //if attachment is a embeded msg handle differently than an normal attachment
-                var attachMethod = attachment.GetMapiPropertyInt32(OutlookStorage.PR_ATTACH_METHOD);
-                if (attachMethod == OutlookStorage.ATTACH_EMBEDDED_MSG)
+                var attachMethod = attachment.GetMapiPropertyInt32(PR_ATTACH_METHOD);
+                if (attachMethod == ATTACH_EMBEDDED_MSG)
                 {
                     //create new Message and set parent and header size
-                    var subMsg = new Message(attachment.GetMapiProperty(OutlookStorage.PR_ATTACH_DATA) as NativeMethods.IStorage)
+                    var subMsg = new Message(attachment.GetMapiProperty(PR_ATTACH_DATA) as NativeMethods.IStorage)
                     {
                         parentMessage = this,
-                        propHeaderSize = OutlookStorage.PROPERTIES_STREAM_HEADER_EMBEDED
+                        propHeaderSize = PROPERTIES_STREAM_HEADER_EMBEDED
                     };
 
                     //add to messages list
-                    this.Messages.Add(subMsg);
+                    Messages.Add(subMsg);
                 }
                 else
                 {
                     //add attachment to attachment list
-                    this.Attachments.Add(attachment);
+                    Attachments.Add(attachment);
                 }
             }
         }
@@ -1198,30 +1149,27 @@ namespace FileCurator.Formats.MSG
                 : base(message.storage_)
             {
                 GC.SuppressFinalize(message);
-                this.propHeaderSize = OutlookStorage.PROPERTIES_STREAM_HEADER_ATTACH_OR_RECIP;
+                propHeaderSize = PROPERTIES_STREAM_HEADER_ATTACH_OR_RECIP;
             }
 
             /// <summary>
             /// Gets the display name.
             /// </summary>
             /// <value>The display name.</value>
-            public string DisplayName
-            {
-                get { return this.GetMapiPropertyString(OutlookStorage.PR_DISPLAY_NAME); }
-            }
+            public string? DisplayName => GetMapiPropertyString(PR_DISPLAY_NAME);
 
             /// <summary>
             /// Gets the recipient email.
             /// </summary>
             /// <value>The recipient email.</value>
-            public string Email
+            public string? Email
             {
                 get
                 {
-                    var email = this.GetMapiPropertyString(OutlookStorage.PR_EMAIL);
-                    if (String.IsNullOrEmpty(email))
+                    var email = GetMapiPropertyString(PR_EMAIL);
+                    if (string.IsNullOrEmpty(email))
                     {
-                        email = this.GetMapiPropertyString(OutlookStorage.PR_EMAIL_2);
+                        email = GetMapiPropertyString(PR_EMAIL_2);
                     }
                     return email;
                 }
@@ -1235,16 +1183,13 @@ namespace FileCurator.Formats.MSG
             {
                 get
                 {
-                    var recipientType = this.GetMapiPropertyInt32(OutlookStorage.PR_RECIPIENT_TYPE);
-                    switch (recipientType)
+                    var recipientType = GetMapiPropertyInt32(PR_RECIPIENT_TYPE);
+                    return recipientType switch
                     {
-                        case OutlookStorage.MAPI_TO:
-                            return RecipientType.To;
-
-                        case OutlookStorage.MAPI_CC:
-                            return RecipientType.CC;
-                    }
-                    return RecipientType.Unknown;
+                        MAPI_TO => RecipientType.To,
+                        MAPI_CC => RecipientType.CC,
+                        _ => RecipientType.Unknown,
+                    };
                 }
             }
         }
@@ -1345,15 +1290,15 @@ namespace FileCurator.Formats.MSG
             /// <param name="source">The source.</param>
             /// <param name="closeSource">if set to <c>true</c> [close source].</param>
             /// <returns></returns>
-            public static IStorage CloneStorage(IStorage source, bool closeSource)
+            public static IStorage? CloneStorage(IStorage source, bool closeSource)
             {
-                NativeMethods.IStorage memoryStorage = null;
-                NativeMethods.ILockBytes memoryStorageBytes = null;
+                NativeMethods.IStorage? memoryStorage = null;
+                NativeMethods.ILockBytes? memoryStorageBytes = null;
                 try
                 {
                     //create a ILockBytes (unmanaged byte array) and then create a IStorage using the byte array as a backing store
-                    NativeMethods.CreateILockBytesOnHGlobal(IntPtr.Zero, true, out memoryStorageBytes);
-                    NativeMethods.StgCreateDocfileOnILockBytes(memoryStorageBytes, NativeMethods.STGM.CREATE | NativeMethods.STGM.READWRITE | NativeMethods.STGM.SHARE_EXCLUSIVE, 0, out memoryStorage);
+                    CreateILockBytesOnHGlobal(IntPtr.Zero, true, out memoryStorageBytes);
+                    StgCreateDocfileOnILockBytes(memoryStorageBytes, STGM.CREATE | STGM.READWRITE | STGM.SHARE_EXCLUSIVE, 0, out memoryStorage);
 
                     //copy the source storage into the new storage
                     source.CopyTo(0, null, IntPtr.Zero, memoryStorage);
@@ -1434,7 +1379,7 @@ namespace FileCurator.Formats.MSG
             /// <param name="ppstgOpen">The PPSTG open.</param>
             /// <returns></returns>
             [DllImport("ole32.DLL")]
-            public static extern int StgOpenStorage([MarshalAs(UnmanagedType.LPWStr)] string wcsName, IStorage pstgPriority, STGM grfMode, IntPtr snbExclude, int reserved, out IStorage ppstgOpen);
+            public static extern int StgOpenStorage([MarshalAs(UnmanagedType.LPWStr)] string wcsName, IStorage? pstgPriority, STGM grfMode, IntPtr snbExclude, int reserved, out IStorage ppstgOpen);
 
             //[DllImport("ole32.DLL", CharSet = CharSet.Auto, PreserveSig = false)]
             //public static extern IntPtr GetHGlobalFromILockBytes(ILockBytes pLockBytes);
@@ -1448,7 +1393,7 @@ namespace FileCurator.Formats.MSG
             /// <param name="reserved">The reserved.</param>
             /// <param name="ppstgOpen">The PPSTG open.</param>
             [DllImport("ole32.DLL")]
-            public static extern void StgOpenStorageOnILockBytes(ILockBytes plkbyt, IStorage pstgPriority, STGM grfMode, IntPtr snbExclude, uint reserved, out IStorage ppstgOpen);
+            public static extern void StgOpenStorageOnILockBytes(ILockBytes plkbyt, IStorage? pstgPriority, STGM grfMode, IntPtr snbExclude, uint reserved, out IStorage ppstgOpen);
 
             [DllImport("kernel32.dll")]
             private static extern IntPtr GlobalLock(IntPtr hMem);
@@ -1467,12 +1412,12 @@ namespace FileCurator.Formats.MSG
                 /// <summary>
                 /// The read
                 /// </summary>
-                READ = 0x00000000,
+                READ = DIRECT,
 
                 /// <summary>
                 /// The failifthere
                 /// </summary>
-                FAILIFTHERE = 0x00000000,
+                FAILIFTHERE = DIRECT,
 
                 /// <summary>
                 /// The write
@@ -1497,7 +1442,7 @@ namespace FileCurator.Formats.MSG
                 /// <summary>
                 /// The shar e_ den y_ read
                 /// </summary>
-                SHARE_DENY_READ = 0x00000030,
+                SHARE_DENY_READ = SHARE_EXCLUSIVE | SHARE_DENY_WRITE,
 
                 /// <summary>
                 /// The shar e_ den y_ none
@@ -1596,7 +1541,7 @@ namespace FileCurator.Formats.MSG
                 /// <param name="pv">The pv.</param>
                 /// <param name="cb">The cb.</param>
                 /// <param name="pcbRead">The PCB read.</param>
-                void ReadAt([In, MarshalAs(UnmanagedType.U8)] long ulOffset, [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pv, [In, MarshalAs(UnmanagedType.U4)] int cb, [Out, MarshalAs(UnmanagedType.LPArray)] int[] pcbRead);
+                void ReadAt([In, MarshalAs(UnmanagedType.U8)] long ulOffset, [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pv, [In, MarshalAs(UnmanagedType.U4)] int cb, [Out, MarshalAs(UnmanagedType.LPArray)] int[]? pcbRead);
 
                 /// <summary>
                 /// Writes at.
@@ -1605,7 +1550,7 @@ namespace FileCurator.Formats.MSG
                 /// <param name="pv">The pv.</param>
                 /// <param name="cb">The cb.</param>
                 /// <param name="pcbWritten">The PCB written.</param>
-                void WriteAt([In, MarshalAs(UnmanagedType.U8)] long ulOffset, [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pv, [In, MarshalAs(UnmanagedType.U4)] int cb, [Out, MarshalAs(UnmanagedType.LPArray)] int[] pcbWritten);
+                void WriteAt([In, MarshalAs(UnmanagedType.U8)] long ulOffset, [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pv, [In, MarshalAs(UnmanagedType.U4)] int cb, [Out, MarshalAs(UnmanagedType.LPArray)] int[]? pcbWritten);
 
                 /// <summary>
                 /// Flushes this instance.
@@ -1639,7 +1584,7 @@ namespace FileCurator.Formats.MSG
                 /// </summary>
                 /// <param name="pstatstg">The pstatstg.</param>
                 /// <param name="grfStatFlag">The GRF stat flag.</param>
-                void Stat([Out]out System.Runtime.InteropServices.ComTypes.STATSTG pstatstg, [In, MarshalAs(UnmanagedType.U4)] int grfStatFlag);
+                void Stat([Out] out System.Runtime.InteropServices.ComTypes.STATSTG pstatstg, [In, MarshalAs(UnmanagedType.U4)] int grfStatFlag);
             }
 
             /// <summary>
@@ -1700,7 +1645,7 @@ namespace FileCurator.Formats.MSG
                 /// <param name="pIIDExclude">The p iid exclude.</param>
                 /// <param name="snbExclude">The SNB exclude.</param>
                 /// <param name="stgDest">The STG dest.</param>
-                void CopyTo(int ciidExclude, [In, MarshalAs(UnmanagedType.LPArray)] Guid[] pIIDExclude, IntPtr snbExclude, [In, MarshalAs(UnmanagedType.Interface)] IStorage stgDest);
+                void CopyTo(int ciidExclude, [In, MarshalAs(UnmanagedType.LPArray)] Guid[]? pIIDExclude, IntPtr snbExclude, [In, MarshalAs(UnmanagedType.Interface)] IStorage stgDest);
 
                 /// <summary>
                 /// Moves the element to.
@@ -1771,7 +1716,7 @@ namespace FileCurator.Formats.MSG
                 /// </summary>
                 /// <param name="pStatStg">The p stat STG.</param>
                 /// <param name="grfStatFlag">The GRF stat flag.</param>
-                void Stat([Out]out System.Runtime.InteropServices.ComTypes.STATSTG pStatStg, int grfStatFlag);
+                void Stat([Out] out System.Runtime.InteropServices.ComTypes.STATSTG pStatStg, int grfStatFlag);
             }
 
             /* (Reserved for interface use) type doesn't matter to caller */
@@ -1814,13 +1759,13 @@ namespace FileCurator.Formats.MSG
 
             private readonly List<object> trackingObjects = new List<object>();
 
-            public static void AddItem(object track)
+            public static void AddItem(object? track)
             {
                 lock (instance)
                 {
-                    if (!instance.trackingObjects.Contains(track))
+                    if (!instance.trackingObjects.Contains(track!))
                     {
-                        instance.trackingObjects.Add(track);
+                        instance.trackingObjects.Add(track!);
                     }
                 }
             }

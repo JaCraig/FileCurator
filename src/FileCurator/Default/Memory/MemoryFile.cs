@@ -63,7 +63,7 @@ namespace FileCurator.Default.Memory
         /// <summary>
         /// Directory the file is within
         /// </summary>
-        public override IDirectory Directory => InternalFile is null ? null : new MemoryDirectory(InternalFile.Left(InternalFile.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
+        public override IDirectory? Directory => InternalFile is null ? null : new MemoryDirectory(InternalFile.Left(InternalFile.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
 
         /// <summary>
         /// Does the file exist?
@@ -203,12 +203,10 @@ namespace FileCurator.Default.Memory
         /// <param name="mode">Mode to open the file as</param>
         /// <param name="encoding">Encoding to use for the content</param>
         /// <returns>The result of the write or original content</returns>
-        public override string Write(string content, FileMode mode = FileMode.Create, Encoding encoding = null)
+        public override string Write(string content, FileMode mode = FileMode.Create, Encoding? encoding = null)
         {
-            if (content is null)
-                content = "";
-            if (encoding is null)
-                encoding = Encoding.UTF8;
+            content ??= "";
+            encoding ??= Encoding.UTF8;
             return Write(encoding.GetBytes(content), mode).ToString(encoding);
         }
 
@@ -220,8 +218,7 @@ namespace FileCurator.Default.Memory
         /// <returns>The result of the write or original content</returns>
         public override byte[] Write(byte[] content, FileMode mode = FileMode.Create)
         {
-            if (content is null)
-                content = Array.Empty<byte>();
+            content ??= Array.Empty<byte>();
             Directory?.Create();
             modified = DateTime.UtcNow;
             if (mode == FileMode.Append)

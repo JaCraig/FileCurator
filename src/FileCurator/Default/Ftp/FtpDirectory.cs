@@ -12,7 +12,7 @@ namespace FileCurator.Default.Ftp
     /// <summary>
     /// Ftp directory
     /// </summary>
-    /// <seealso cref="DirectoryBase{System.Uri, Default.FtpDirectory}"/>
+    /// <seealso cref="DirectoryBase{Uri, FtpDirectory}"/>
     public class FtpDirectory : DirectoryBase<Uri, FtpDirectory>
     {
         /// <summary>
@@ -75,12 +75,12 @@ namespace FileCurator.Default.Ftp
         /// <summary>
         /// Full path
         /// </summary>
-        public override IDirectory Parent => InternalDirectory is null ? null : new FtpDirectory(InternalDirectory.AbsolutePath.Left(InternalDirectory.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
+        public override IDirectory? Parent => InternalDirectory is null ? null : new FtpDirectory(InternalDirectory.AbsolutePath.Left(InternalDirectory.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Credentials);
 
         /// <summary>
         /// Root
         /// </summary>
-        public override IDirectory Root => InternalDirectory is null ? null : new FtpDirectory(InternalDirectory.Scheme + "://" + InternalDirectory.Host, Credentials);
+        public override IDirectory? Root => InternalDirectory is null ? null : new FtpDirectory(InternalDirectory.Scheme + "://" + InternalDirectory.Host, Credentials);
 
         /// <summary>
         /// Size (returns 0)
@@ -140,7 +140,8 @@ namespace FileCurator.Default.Ftp
         /// <returns></returns>
         public override IEnumerable<IDirectory> EnumerateDirectories(string searchPattern, SearchOption options = SearchOption.TopDirectoryOnly)
         {
-            var Request = WebRequest.Create(InternalDirectory) as FtpWebRequest;
+            if (!(WebRequest.Create(InternalDirectory) is FtpWebRequest Request))
+                return Array.Empty<IDirectory>();
             Request.Method = WebRequestMethods.Ftp.ListDirectory;
             SetupData(Request, null);
             SetupCredentials(Request);
@@ -175,7 +176,8 @@ namespace FileCurator.Default.Ftp
         /// <returns></returns>
         public override IEnumerable<IFile> EnumerateFiles(string searchPattern = "*", SearchOption options = SearchOption.TopDirectoryOnly)
         {
-            var Request = WebRequest.Create(InternalDirectory) as FtpWebRequest;
+            if (!(WebRequest.Create(InternalDirectory) is FtpWebRequest Request))
+                return this;
             Request.Method = WebRequestMethods.Ftp.ListDirectory;
             SetupData(Request, null);
             SetupCredentials(Request);
@@ -206,7 +208,8 @@ namespace FileCurator.Default.Ftp
         /// <param name="name"></param>
         public override IDirectory Rename(string name)
         {
-            var Request = WebRequest.Create(InternalDirectory) as FtpWebRequest;
+            if (!(WebRequest.Create(InternalDirectory) is FtpWebRequest Request))
+                return this;
             Request.Method = WebRequestMethods.Ftp.Rename;
             Request.RenameTo = Name;
             SetupData(Request, null);
@@ -223,8 +226,8 @@ namespace FileCurator.Default.Ftp
         /// <returns>The string returned by the service</returns>
         private static string SendRequest(FtpWebRequest request)
         {
-            using FtpWebResponse Response = request.GetResponse() as FtpWebResponse;
-            using StreamReader Reader = new StreamReader(Response.GetResponseStream());
+            using FtpWebResponse? Response = request.GetResponse() as FtpWebResponse;
+            using StreamReader Reader = new StreamReader(Response?.GetResponseStream());
             return Reader.ReadToEnd();
         }
 
@@ -255,7 +258,7 @@ namespace FileCurator.Default.Ftp
         /// </summary>
         /// <param name="request">The web request object</param>
         /// <param name="data">Data to send with the request</param>
-        private void SetupData(FtpWebRequest request, byte[] data)
+        private void SetupData(FtpWebRequest request, byte[]? data)
         {
             request.UsePassive = true;
             request.KeepAlive = false;

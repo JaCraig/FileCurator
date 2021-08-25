@@ -21,7 +21,7 @@ namespace Microsoft.Extensions.DependencyInjection
     /// <summary>
     /// Canister registration extension
     /// </summary>
-    public static class CanisterExtensions
+    public static class FileCuratorCanisterExtensions
     {
         /// <summary>
         /// Registers the big book of data types.
@@ -31,7 +31,7 @@ namespace Microsoft.Extensions.DependencyInjection
         public static ICanisterConfiguration? RegisterFileCurator(this ICanisterConfiguration? bootstrapper)
         {
             return bootstrapper?.RegisterBigBookOfDataTypes()
-                                .AddAssembly(typeof(CanisterExtensions).Assembly);
+                               ?.AddAssembly(typeof(FileCuratorCanisterExtensions).Assembly);
         }
     }
 }

@@ -17,7 +17,6 @@ limitations under the License.
 using FileCurator.Formats.BaseClasses;
 using FileCurator.Formats.Data;
 using FileCurator.Formats.Data.Interfaces;
-using FileCurator.Formats.MSG;
 using System;
 using System.IO;
 using System.Linq;
@@ -44,13 +43,13 @@ namespace FileCurator.Windows.Formats.MSG
         /// <returns>The file</returns>
         public override IMessage Read(Stream stream)
         {
-            using var message = new OutlookStorage.Message(stream);
+            using var message = new Message(stream);
             var ReturnValue = new GenericEmail
             {
-                Content = message.BodyText,
-                Title = message.Subject,
-                From = message.From,
-                Sent = message.SentTime
+                Content = message.BodyText ?? "",
+                Title = message.Subject ?? "",
+                From = message.From ?? "",
+                Sent = message.SentTime ?? DateTime.Now
             };
             AddRecipients(message, RecipientType.Unknown, x => ReturnValue.BCC.Add(x));
             AddRecipients(message, RecipientType.CC, x => ReturnValue.CC.Add(x));
@@ -66,8 +65,7 @@ namespace FileCurator.Windows.Formats.MSG
         /// <param name="action">The action.</param>
         private void AddRecipients(Message message, RecipientType type, Action<string> action)
         {
-            var Result = message.Recipients.Where(x => x.Type == type).Select(x => x.Email);
-            foreach (var Item in Result)
+            foreach (var Item in message.Recipients.Where(x => x.Type == type).Select(x => x.Email))
             {
                 action(Item);
             }

@@ -94,12 +94,12 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override IDirectory Parent => InternalDirectory is null ? null : new WebDirectory(InternalDirectory.AbsolutePath.Left(InternalDirectory.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Client, Credentials);
+        public override IDirectory? Parent => InternalDirectory is null ? null : new WebDirectory(InternalDirectory.AbsolutePath.Left(InternalDirectory.AbsolutePath.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) - 1), Client, Credentials);
 
         /// <summary>
         /// Root
         /// </summary>
-        public override IDirectory Root => InternalDirectory is null ? null : new WebDirectory(InternalDirectory.Scheme + "://" + InternalDirectory.Host, Client, Credentials);
+        public override IDirectory? Root => InternalDirectory is null ? null : new WebDirectory(InternalDirectory.Scheme + "://" + InternalDirectory.Host, Client, Credentials);
 
         /// <summary>
         /// Size (returns 0)
@@ -185,7 +185,7 @@ namespace FileCurator.Default
         /// <param name="client">The client.</param>
         /// <param name="request">The web request object</param>
         /// <returns>The string returned by the service</returns>
-        private static string SendRequest(HttpClient client, HttpRequestMessage request)
+        private static string SendRequest(HttpClient? client, HttpRequestMessage request)
         {
             if (request is null || client is null)
                 return "";

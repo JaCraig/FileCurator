@@ -11,7 +11,7 @@ namespace FileCurator.Default.Ftp
     /// <summary>
     /// Ftp File
     /// </summary>
-    /// <seealso cref="BaseClasses.FileBase{System.Uri, Ftp.FtpFile}"/>
+    /// <seealso cref="FileBase{Uri, FtpFile}"/>
     public class FtpFile : FileBase<Uri, FtpFile>
     {
         /// <summary>
@@ -111,7 +111,8 @@ namespace FileCurator.Default.Ftp
         /// <returns>Any response for deleting the resource (usually FTP, HTTP, etc)</returns>
         public override string Delete()
         {
-            var Request = WebRequest.Create(InternalFile) as FtpWebRequest;
+            if (!(WebRequest.Create(InternalFile) is FtpWebRequest Request))
+                return "";
             Request.Method = WebRequestMethods.Ftp.DeleteFile;
             SetupData(Request, null);
             SetupCredentials(Request);
@@ -138,7 +139,8 @@ namespace FileCurator.Default.Ftp
         /// <returns>The content as a string</returns>
         public override string Read()
         {
-            var Request = WebRequest.Create(InternalFile) as FtpWebRequest;
+            if (!(WebRequest.Create(InternalFile) is FtpWebRequest Request))
+                return "";
             Request.Method = WebRequestMethods.Ftp.DownloadFile;
             SetupData(Request, null);
             SetupCredentials(Request);
@@ -160,13 +162,14 @@ namespace FileCurator.Default.Ftp
         /// <param name="newName">Not used</param>
         public override IFile Rename(string newName)
         {
-            var Request = WebRequest.Create(InternalFile) as FtpWebRequest;
+            if (!(WebRequest.Create(InternalFile) is FtpWebRequest Request))
+                return this;
             Request.Method = WebRequestMethods.Ftp.Rename;
             Request.RenameTo = newName;
             SetupData(Request, null);
             SetupCredentials(Request);
             SendRequest(Request);
-            InternalFile = new Uri(Directory.FullName + "/" + newName);
+            InternalFile = new Uri(Directory?.FullName + "/" + newName);
             return this;
         }
 
@@ -190,7 +193,8 @@ namespace FileCurator.Default.Ftp
         /// <returns>The result of the write or original content</returns>
         public override byte[] Write(byte[] content, FileMode mode = FileMode.Create)
         {
-            var Request = WebRequest.Create(InternalFile) as FtpWebRequest;
+            if (!(WebRequest.Create(InternalFile) is FtpWebRequest Request))
+                return Array.Empty<byte>();
             Request.Method = WebRequestMethods.Ftp.UploadFile;
             SetupData(Request, content);
             SetupCredentials(Request);
@@ -204,7 +208,9 @@ namespace FileCurator.Default.Ftp
         /// <returns>The string returned by the service</returns>
         private static string SendRequest(FtpWebRequest request)
         {
-            using FtpWebResponse Response = request.GetResponse() as FtpWebResponse;
+            using FtpWebResponse? Response = request.GetResponse() as FtpWebResponse;
+            if (Response is null)
+                return "";
             using StreamReader Reader = new StreamReader(Response.GetResponseStream());
             return Reader.ReadToEnd();
         }
@@ -236,7 +242,7 @@ namespace FileCurator.Default.Ftp
         /// </summary>
         /// <param name="request">The web request object</param>
         /// <param name="data">Data to send with the request</param>
-        private void SetupData(FtpWebRequest request, byte[] data)
+        private void SetupData(FtpWebRequest request, byte[]? data)
         {
             request.UsePassive = true;
             request.KeepAlive = false;

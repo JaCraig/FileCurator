@@ -99,7 +99,7 @@ namespace FileCurator.HelperMethods
         /// <param name="input">input string</param>
         /// <param name="encodingUsing">The type of encoding the string is using (defaults to UTF8)</param>
         /// <returns>the byte array representing the string</returns>
-        public static byte[] ToByteArray(this string input, Encoding encodingUsing = null)
+        public static byte[] ToByteArray(this string input, Encoding? encodingUsing = null)
         {
             encodingUsing ??= Encoding.UTF8;
             return string.IsNullOrEmpty(input) ? Array.Empty<byte>() : encodingUsing.GetBytes(input);

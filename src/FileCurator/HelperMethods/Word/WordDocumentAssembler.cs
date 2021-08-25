@@ -45,14 +45,14 @@ namespace FileCurator.HelperMethods.Word
         /// Gets or sets the internal word document.
         /// </summary>
         /// <value>The internal word document.</value>
-        private WordprocessingDocument InternalWordDoc { get; set; }
+        private WordprocessingDocument? InternalWordDoc { get; set; }
 
         /// <summary>
         /// Creates the document at the specified path.
         /// </summary>
         /// <param name="path">The path.</param>
         /// <returns>The new document assembler object</returns>
-        public static WordDocumentAssembler Create(string path)
+        public static WordDocumentAssembler? Create(string path)
         {
             if (string.IsNullOrEmpty(path)) return null;
             return new WordDocumentAssembler(WordprocessingDocument.Create(path, WordprocessingDocumentType.Document));
@@ -63,7 +63,7 @@ namespace FileCurator.HelperMethods.Word
         /// </summary>
         /// <param name="path">The path.</param>
         /// <returns>The new document assembler object</returns>
-        public static WordDocumentAssembler Open(string path)
+        public static WordDocumentAssembler? Open(string path)
         {
             if (string.IsNullOrEmpty(path)) return null;
             return new WordDocumentAssembler(WordprocessingDocument.Open(path, true));
@@ -73,12 +73,13 @@ namespace FileCurator.HelperMethods.Word
         /// Appends a page break to the end of the document.
         /// </summary>
         /// <returns>This</returns>
-        public WordDocumentAssembler AppendPageBreak()
+        public WordDocumentAssembler? AppendPageBreak()
         {
-            InternalWordDoc.MainDocumentPart
-                        .Document
+            InternalWordDoc
+                        ?.MainDocumentPart
+                        ?.Document
                         .Body
-                        .Append(new Paragraph(
+                        ?.Append(new Paragraph(
                                     new Run(
                                     new Break { Type = BreakValues.Page })));
             return this;
@@ -122,7 +123,7 @@ namespace FileCurator.HelperMethods.Word
                 }
                 TempTable.Append(TempRow);
             }
-            InternalWordDoc.MainDocumentPart.Document.Body.Append(TempTable);
+            InternalWordDoc?.MainDocumentPart?.Document.Body?.Append(TempTable);
             return this;
         }
 
@@ -134,8 +135,14 @@ namespace FileCurator.HelperMethods.Word
         /// <returns>This</returns>
         public WordDocumentAssembler CombineDocuments(List<string> docLocations)
         {
-            if (docLocations is null || docLocations.Count == 0)
+            if (docLocations is null
+                || docLocations.Count == 0
+                || InternalWordDoc is null
+                || InternalWordDoc.MainDocumentPart is null)
+            {
                 return this;
+            }
+
             var mainPart = InternalWordDoc.MainDocumentPart;
             for (var x = 0; x < docLocations.Count; ++x)
             {
@@ -150,7 +157,7 @@ namespace FileCurator.HelperMethods.Word
                 AppendPageBreak();
                 mainPart.Document
                     .Body
-                    .Append(altChunk);
+                    ?.Append(altChunk);
             }
             return this;
         }
@@ -163,9 +170,15 @@ namespace FileCurator.HelperMethods.Word
         /// <param name="replacements">The replacements.</param>
         public WordDocumentAssembler ReplaceContent<T>(T objectArgs, Dictionary<string, Func<T, string>> replacements)
         {
-            if (replacements is null || replacements.Count == 0)
+            if (replacements is null
+                || replacements.Count == 0
+                || InternalWordDoc is null
+                || InternalWordDoc.MainDocumentPart is null)
+            {
                 return this;
-            string docText = null;
+            }
+
+            string? docText = null;
             using (var reader = new StreamReader(InternalWordDoc.MainDocumentPart.GetStream()))
             {
                 docText = reader.ReadToEnd();

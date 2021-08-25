@@ -76,18 +76,20 @@ namespace FileCurator.Formats.Excel
             var data = new GenericTable();
 
             // Open the excel document
-            WorkbookPart workbookPart; List<Row> rows;
+            WorkbookPart? workbookPart; List<Row> rows;
             try
             {
                 var document = SpreadsheetDocument.Open(stream, false);
                 workbookPart = document.WorkbookPart;
+                if (workbookPart is null)
+                    return data;
 
                 var sheets = workbookPart.Workbook.Descendants<Sheet>();
                 var sheet = sheets.First();
-                data.Title = sheet.Name;
+                data.Title = sheet.Name?.ToString() ?? "";
 
                 var workSheet = ((WorksheetPart)workbookPart
-                    .GetPartById(sheet.Id)).Worksheet;
+                    .GetPartById(sheet.Id!)).Worksheet;
                 var columns = workSheet.Descendants<Columns>().FirstOrDefault();
 
                 var sheetData = workSheet.Elements<SheetData>().First();
