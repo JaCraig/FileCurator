@@ -82,7 +82,7 @@ namespace FileCurator.Formats
                 return DefaultFormat;
             fileName = fileName.ToUpperInvariant();
             var TempFile = new FileInfo(fileName, credentials);
-            var Extension = TempFile.Extension.Replace(".", string.Empty);
+            var Extension = TempFile.Extension.Replace(".", string.Empty).ToUpperInvariant();
             if (FormatsByFileType.ContainsKey(Extension))
                 return FormatsByFileType[Extension];
             using var TempStream = new MemoryStream(TempFile.ReadBinary());
