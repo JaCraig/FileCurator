@@ -367,6 +367,10 @@ namespace FileCurator.Formats.MSG
                 iStreamContent = new byte[streamStatStg.cbSize];
                 stream?.Read(iStreamContent, iStreamContent.Length, IntPtr.Zero);
             }
+            catch (InvalidComObjectException)
+            {
+                return Array.Empty<byte>();
+            }
             finally
             {
                 if (stream != null)
@@ -382,7 +386,8 @@ namespace FileCurator.Formats.MSG
         /// <summary>
         /// Gives sub classes the chance to free resources during object disposal.
         /// </summary>
-        protected virtual void Disposing() { }
+        protected virtual void Disposing()
+        { }
 
         /// <summary>
         /// Processes sub streams and storages on the specified storage.
@@ -655,7 +660,7 @@ namespace FileCurator.Formats.MSG
             /// <param name="off">The off.</param>
             /// <param name="len">The length.</param>
             /// <returns></returns>
-            static public int CalculateCRC32(byte[] buf, int off, int len)
+            public static int CalculateCRC32(byte[] buf, int off, int len)
             {
                 uint c = 0;
                 int end = off + len;
