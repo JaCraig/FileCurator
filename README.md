@@ -30,25 +30,9 @@ Where resource:// lets the system know you want to retrieve an embedded resource
 
     resource://MyDLL/MyDLL.MyFile.txt
 
-Another item to keep in mind is that you must register the assembly that you want to be able to pull the resource from with Canister:
-
-    Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
-    		.RegisterFileCurator()
-		.AddAssembly(typeof(TypeInTheAssemblyWithTheResources).GetTypeInfo().Assembly)
-		.Build();
-
 ## Adding File Systems
 
-The system comes with a couple of built in file systems for dealing with local files, however you may wish to add other targets as well. In order to do this all that you need to do is create a class that inherits from IFileSystem, a class that inherits from IFile, and one for IDirectory.
-	
-After the classes are created, you must tell Canister where to look for it. So modify the initialization line accordingly:
-
-    Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
-    		.RegisterFileCurator()
-		.AddAssembly(typeof(MyFileSystem).GetTypeInfo().Assembly)
-		.Build();
-	
-From there the system will find the new provider and use it when called.
+The system comes with a couple of built in file systems for dealing with local files, however you may wish to add other targets as well. In order to do this all that you need to do is create a class that inherits from IFileSystem, a class that inherits from IFile, and one for IDirectory. From there the system will find the new provider and use it when called.
 
 ## Overriding File Systems
 
@@ -76,13 +60,6 @@ By default the system comes with a couple of file systems for dealing with local
             ...
         }
     }
-	
-After the class is created, you must tell Canister where to look for it. So modify the initialization line accordingly:
-
-    Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
-    		.RegisterFileCurator()
-		.AddAssembly(typeof(MyLocalFileSystem).GetTypeInfo().Assembly)
-		.Build();
 	
 From there the system will override the default "Relative Local" provider with your own.
 
@@ -243,14 +220,7 @@ And a writer class:
         }
     }
 	
-You can create something similar for your formats as well. Just make sure that you tell Canister where to look for it. So modify the initialization line accordingly:
-
-    Canister.Builder.CreateContainer(new List<ServiceDescriptor>())
-    	.RegisterFileCurator()
-		.AddAssembly(typeof(TxtFormat).GetTypeInfo().Assembly)
-		.Build();
-		
-From there the system will automatically pick up your format and use it when appropriate. You can also override the existing formats with your own. You just need to state the content type and file types that you wish to intercept and it will use your items instead of the corresponding items in FileCurator.
+You can create something similar for your formats as well. From there the system will automatically pick up your format and use it when appropriate. You can also override the existing formats with your own. You just need to state the content type and file types that you wish to intercept and it will use your items instead of the corresponding items in FileCurator.
 
 ## Installation
 
@@ -262,13 +232,13 @@ The file parsers that are not .Net Standard yet are also available with the pack
 
 Install-Package FileCurator.Windows
 
-This package, however, requires the full version of .Net and is not considered stable. As things become available in .Net Standard, they will be moved out of there and new items may move in as formats are added.
+This package, however, is .Net Framework only and generally not needed as most formats have been moved to .Net Standard/.Net 5+.
 
 ## Build Process
 
 In order to build the library you will require the following as a minimum:
 
-1. Visual Studio 2017
-2. .Net Core 1.0 SDK
+1. Visual Studio 2019
+2. .Net 5
 
 Other than that, just clone the project and you should be able to load the solution and build without too much effort.
