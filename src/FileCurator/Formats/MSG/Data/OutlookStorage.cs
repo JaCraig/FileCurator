@@ -371,6 +371,10 @@ namespace FileCurator.Formats.MSG
             {
                 return Array.Empty<byte>();
             }
+            catch (COMException)
+            {
+                return Array.Empty<byte>();
+            }
             finally
             {
                 if (stream != null)
