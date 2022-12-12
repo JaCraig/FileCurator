@@ -35,7 +35,7 @@ namespace FileCurator
         /// <param name="path">Path to the directory</param>
         /// <param name="credentials">The credentials.</param>
         public DirectoryInfo(string path, Credentials? credentials = null)
-            : this(Canister.Builder.Bootstrapper?.Resolve<FileSystem>().Directory(path, credentials))
+            : this(FileSystem.Instance?.Directory(path, credentials))
         {
         }
 

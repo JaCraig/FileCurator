@@ -36,13 +36,13 @@ namespace FileCurator.Module
         /// Loads the module
         /// </summary>
         /// <param name="bootstrapper">The bootstrapper.</param>
-        public void Load(IBootstrapper? bootstrapper)
+        public void Load(IServiceCollection? bootstrapper)
         {
-            bootstrapper?.RegisterAll<IFileSystem>()
-                .Register<FileSystem>(ServiceLifetime.Singleton)
-                .RegisterAll<IFormat>(ServiceLifetime.Singleton)
-                .Register<Formats.Manager>(ServiceLifetime.Singleton)
-                .Register<InternalHttpClientFactory>(ServiceLifetime.Singleton);
+            bootstrapper?.AddAllTransient<IFileSystem>()
+                ?.AddSingleton<FileSystem>()
+                .AddAllSingleton<IFormat>()
+                ?.AddSingleton<Formats.Manager>()
+                .AddSingleton<InternalHttpClientFactory>();
         }
     }
 }

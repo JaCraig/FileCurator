@@ -37,7 +37,7 @@ namespace FileCurator
         /// <param name="path">Path to the file</param>
         /// <param name="credentials">The credentials.</param>
         public FileInfo(string path, Credentials? credentials = null)
-            : this(Canister.Builder.Bootstrapper?.Resolve<FileSystem>().File(path, credentials))
+            : this(FileSystem.Instance?.File(path, credentials))
         {
             Credentials = credentials;
         }
@@ -100,7 +100,7 @@ namespace FileCurator
         /// Gets or sets the internal manager.
         /// </summary>
         /// <value>The internal manager.</value>
-        protected Manager? FormatManager => Canister.Builder.Bootstrapper?.Resolve<Manager>();
+        protected Manager? FormatManager => Manager.Instance;
 
         /// <summary>
         /// Internal directory

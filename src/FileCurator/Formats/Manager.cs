@@ -17,6 +17,8 @@ limitations under the License.
 using BigBook;
 using FileCurator.Formats.Interfaces;
 using FileCurator.Formats.Txt;
+using FileCurator.HelperMethods;
+using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
@@ -44,6 +46,18 @@ namespace FileCurator.Formats
             AddFormats(LocalFormats);
             DefaultFormat = new TxtFormat();
             Formats = FormatsByFileType.Values.Distinct();
+        }
+
+        /// <summary>
+        /// Gets the instance.
+        /// </summary>
+        /// <value>The instance.</value>
+        public static Manager? Instance
+        {
+            get
+            {
+                return Services.ServiceProvider?.GetService<Manager>();
+            }
         }
 
         /// <summary>

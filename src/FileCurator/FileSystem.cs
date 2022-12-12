@@ -14,7 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using FileCurator.HelperMethods;
 using FileCurator.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +44,12 @@ namespace FileCurator
                     FileSystems.Add(FileSystem.Name, FileSystem);
             }
         }
+
+        /// <summary>
+        /// Gets the instance.
+        /// </summary>
+        /// <value>The instance.</value>
+        public static FileSystem? Instance => Services.ServiceProvider?.GetService<FileSystem>();
 
         /// <summary>
         /// File systems that the library can use

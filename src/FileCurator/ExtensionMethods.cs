@@ -36,7 +36,7 @@ namespace FileCurator
         /// Gets the internal manager.
         /// </summary>
         /// <value>The internal manager.</value>
-        private static Formats.Manager InternalManager => Canister.Builder.Bootstrapper.Resolve<Formats.Manager>();
+        private static Formats.Manager? InternalManager => Formats.Manager.Instance;
 
         /// <summary>
         /// Deletes a list of files

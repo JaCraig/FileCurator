@@ -14,9 +14,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using BigBook;
 using FileCurator.BaseClasses;
 using FileCurator.HelperMethods;
 using FileCurator.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -120,7 +122,7 @@ namespace FileCurator.Default
                 if (string.IsNullOrEmpty(InternalFile))
                     return null;
                 var AssemblyName = SplitPathRegex.Match(InternalFile).Groups["Assembly"].Value;
-                return Canister.Builder.Bootstrapper.Resolve<IEnumerable<Assembly>>().FirstOrDefault(x => x.GetName().Name == AssemblyName);
+                return Services.ServiceProvider?.GetService<IEnumerable<Assembly>>()?.FirstOrDefault(x => x.GetName().Name == AssemblyName);
             }
         }
 

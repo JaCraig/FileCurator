@@ -16,7 +16,9 @@ limitations under the License.
 
 using BigBook;
 using FileCurator.BaseClasses;
+using FileCurator.HelperMethods;
 using FileCurator.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -110,7 +112,7 @@ namespace FileCurator.Default
                 if (string.IsNullOrEmpty(InternalDirectory))
                     return null;
                 var AssemblyName = SplitPathRegex.Match(InternalDirectory).Groups["Assembly"].Value;
-                return Canister.Builder.Bootstrapper.Resolve<IEnumerable<Assembly>>().FirstOrDefault(x => x.GetName().Name == AssemblyName);
+                return Services.ServiceProvider?.GetService<IEnumerable<Assembly>>()?.FirstOrDefault(x => x.GetName().Name == AssemblyName);
             }
         }
 

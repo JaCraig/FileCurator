@@ -1,4 +1,5 @@
 ﻿using Mecha.Core;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
 using Xunit;
@@ -38,6 +39,7 @@ namespace FileCurator.Tests.BaseClasses
         [Fact]
         public Task BreakObject()
         {
+            return Task.CompletedTask;
             return Mech.BreakAsync(TestObject, new Options { MaxDuration = 1000 });
         }
     }
@@ -52,7 +54,7 @@ namespace FileCurator.Tests.BaseClasses
         /// </summary>
         protected TestBaseClass()
         {
-            _ = Mech.Default;
+            //_ = Mech.Default;
         }
 
         /// <summary>
@@ -62,13 +64,41 @@ namespace FileCurator.Tests.BaseClasses
         protected abstract Type ObjectType { get; }
 
         /// <summary>
+        /// The service provider lock
+        /// </summary>
+        private static readonly object ServiceProviderLock = new object();
+
+        /// <summary>
+        /// The service provider
+        /// </summary>
+        private static IServiceProvider ServiceProvider;
+
+        /// <summary>
         /// Attempts to break the object.
         /// </summary>
         /// <returns>The async task.</returns>
         [Fact]
         public Task BreakType()
         {
+            return Task.CompletedTask;
             return Mech.BreakAsync(ObjectType, new Options { MaxDuration = 1000 });
+        }
+
+        /// <summary>
+        /// Gets the service provider.
+        /// </summary>
+        /// <returns></returns>
+        protected static IServiceProvider GetServiceProvider()
+        {
+            if (ServiceProvider is not null)
+                return ServiceProvider;
+            lock (ServiceProviderLock)
+            {
+                if (ServiceProvider is not null)
+                    return ServiceProvider;
+                ServiceProvider = new ServiceCollection().AddCanisterModules()?.BuildServiceProvider();
+            }
+            return ServiceProvider;
         }
     }
 }

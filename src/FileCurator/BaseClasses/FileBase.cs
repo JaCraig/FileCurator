@@ -117,7 +117,7 @@ namespace FileCurator.BaseClasses
         /// Gets or sets the internal manager.
         /// </summary>
         /// <value>The internal manager.</value>
-        protected Manager? FormatManager => Canister.Builder.Bootstrapper?.Resolve<Manager>();
+        protected Manager? FormatManager => Manager.Instance;
 
         /// <summary>
         /// Internal directory

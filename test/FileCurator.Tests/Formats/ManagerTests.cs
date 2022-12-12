@@ -1,6 +1,7 @@
 ﻿using FileCurator.Formats;
 using FileCurator.Formats.Interfaces;
 using FileCurator.Tests.BaseClasses;
+using Microsoft.Extensions.DependencyInjection;
 using System.IO;
 using Xunit;
 
@@ -78,7 +79,7 @@ namespace FileCurator.Tests.Formats
         [MemberData(nameof(FormatDataByName))]
         public void FindFormatByName(string fileName, string expectedFormat)
         {
-            var TestObject = new Manager(Canister.Builder.Bootstrapper.ResolveAll<IFormat>());
+            var TestObject = new Manager(GetServiceProvider().GetServices<IFormat>());
             var Format = TestObject.FindFormat("../../../TestData/" + fileName, null);
             Assert.Equal(expectedFormat, Format.DisplayName);
         }
@@ -87,7 +88,7 @@ namespace FileCurator.Tests.Formats
         [MemberData(nameof(FormatDataByFileContents))]
         public void FindFormatByStreamNoMimeType(string fileName, string expectedFormat)
         {
-            var TestObject = new Manager(Canister.Builder.Bootstrapper.ResolveAll<IFormat>());
+            var TestObject = new Manager(GetServiceProvider().GetServices<IFormat>());
             using var TempFile = File.OpenRead("../../../TestData/" + fileName);
             var Format = TestObject.FindFormat(TempFile, "");
             Assert.Equal(expectedFormat, Format.DisplayName);
@@ -97,7 +98,7 @@ namespace FileCurator.Tests.Formats
         [MemberData(nameof(FormatDataByMimeType))]
         public void FindFormatByStreamWithMimeType(string fileName, string expectedFormat, string mimeType)
         {
-            var TestObject = new Manager(Canister.Builder.Bootstrapper.ResolveAll<IFormat>());
+            var TestObject = new Manager(GetServiceProvider().GetServices<IFormat>());
             using var TempFile = File.OpenRead("../../../TestData/" + fileName);
             var Format = TestObject.FindFormat(TempFile, mimeType);
             Assert.Equal(expectedFormat, Format.DisplayName);

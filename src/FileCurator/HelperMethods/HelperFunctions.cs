@@ -26,20 +26,6 @@ namespace FileCurator.HelperMethods
     internal static class HelperFunctions
     {
         /// <summary>
-        /// Gets the last x number of characters from the right hand side
-        /// </summary>
-        /// <param name="input">Input string</param>
-        /// <param name="length">x number of characters to return</param>
-        /// <returns>The resulting string</returns>
-        public static string Left(this string input, int length)
-        {
-            if (string.IsNullOrEmpty(input) || length <= 0)
-                return string.Empty;
-            length = input.Length > length ? length : input.Length;
-            return input.Substring(0, length);
-        }
-
-        /// <summary>
         /// Removes illegal characters from a directory
         /// </summary>
         /// <param name="directoryName">Directory name</param>
@@ -80,20 +66,6 @@ namespace FileCurator.HelperMethods
         }
 
         /// <summary>
-        /// Gets the last x number of characters from the right hand side
-        /// </summary>
-        /// <param name="input">Input string</param>
-        /// <param name="length">x number of characters to return</param>
-        /// <returns>The resulting string</returns>
-        public static string Right(this string input, int length)
-        {
-            if (string.IsNullOrEmpty(input) || length <= 0)
-                return string.Empty;
-            length = input.Length > length ? length : input.Length;
-            return input.Substring(input.Length - length, length);
-        }
-
-        /// <summary>
         /// Converts a string to a byte array
         /// </summary>
         /// <param name="input">input string</param>
@@ -103,27 +75,6 @@ namespace FileCurator.HelperMethods
         {
             encodingUsing ??= Encoding.UTF8;
             return string.IsNullOrEmpty(input) ? Array.Empty<byte>() : encodingUsing.GetBytes(input);
-        }
-
-        /// <summary>
-        /// Converts a byte array to a string
-        /// </summary>
-        /// <param name="input">input array</param>
-        /// <param name="encodingUsing">The type of encoding the string is using (defaults to UTF8)</param>
-        /// <param name="index">Index to start at</param>
-        /// <param name="count">
-        /// Number of bytes starting at the index to convert (use -1 for the entire array starting
-        /// at the index)
-        /// </param>
-        /// <returns>string of the byte array</returns>
-        public static string ToString(this byte[] input, Encoding encodingUsing, int index = 0, int count = -1)
-        {
-            if (input is null)
-                return string.Empty;
-            if (count == -1)
-                count = input.Length - index;
-            encodingUsing ??= Encoding.UTF8;
-            return encodingUsing.GetString(input, index, count);
         }
     }
 }
