@@ -38,6 +38,7 @@ namespace FileCurator.Module
         /// <param name="bootstrapper">The bootstrapper.</param>
         public void Load(IServiceCollection? bootstrapper)
         {
+            Services.ServiceDescriptors = bootstrapper;
             bootstrapper?.AddAllTransient<IFileSystem>()
                 ?.AddSingleton<FileSystem>()
                 .AddAllSingleton<IFormat>()

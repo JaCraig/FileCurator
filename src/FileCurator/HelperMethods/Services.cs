@@ -20,11 +20,16 @@ namespace FileCurator.HelperMethods
                     return _ServiceProvider;
                 lock (ServiceProviderLock)
                 {
-                    _ServiceProvider = new ServiceCollection().AddCanisterModules()?.BuildServiceProvider();
+                    _ServiceProvider = (ServiceDescriptors ?? new ServiceCollection().AddCanisterModules())?.BuildServiceProvider();
                 }
                 return _ServiceProvider;
             }
         }
+
+        /// <summary>
+        /// The service descriptors
+        /// </summary>
+        internal static IServiceCollection? ServiceDescriptors;
 
         /// <summary>
         /// The service provider lock

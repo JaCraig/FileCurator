@@ -37,11 +37,7 @@ namespace FileCurator.Tests.BaseClasses
         /// </summary>
         /// <returns>The async task.</returns>
         [Fact]
-        public Task BreakObject()
-        {
-            return Task.CompletedTask;
-            return Mech.BreakAsync(TestObject, new Options { MaxDuration = 1000 });
-        }
+        public Task BreakObject() => Mech.BreakAsync(TestObject, new Options { MaxDuration = 100 });
     }
 
     /// <summary>
@@ -54,7 +50,7 @@ namespace FileCurator.Tests.BaseClasses
         /// </summary>
         protected TestBaseClass()
         {
-            //_ = Mech.Default;
+            _ = Mech.Default;
         }
 
         /// <summary>
@@ -66,7 +62,7 @@ namespace FileCurator.Tests.BaseClasses
         /// <summary>
         /// The service provider lock
         /// </summary>
-        private static readonly object ServiceProviderLock = new object();
+        private static readonly object ServiceProviderLock = new();
 
         /// <summary>
         /// The service provider
@@ -78,11 +74,7 @@ namespace FileCurator.Tests.BaseClasses
         /// </summary>
         /// <returns>The async task.</returns>
         [Fact]
-        public Task BreakType()
-        {
-            return Task.CompletedTask;
-            return Mech.BreakAsync(ObjectType, new Options { MaxDuration = 1000 });
-        }
+        public Task BreakType() => Mech.BreakAsync(ObjectType, new Options { MaxDuration = 100 });
 
         /// <summary>
         /// Gets the service provider.
