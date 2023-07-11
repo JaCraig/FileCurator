@@ -1,0 +1,1831 @@
+{
+  "homepages": [],
+  "source_base_path": "/home/runner/work/FileCurator/FileCurator/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.BaseClasses.DirectoryBase-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.BaseClasses.DirectoryBase-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.BaseClasses.FileBase-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.BaseClasses.FileBase-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.BaseClasses.FileSystemBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.BaseClasses.FileSystemBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.BaseClasses.LocalFileSystemBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.BaseClasses.LocalFileSystemBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Credentials.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Credentials.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Data.FixedLength.BaseClasses.FieldBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Data.FixedLength.BaseClasses.FieldBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Data.FixedLength.BaseClasses.FixedLengthBaseClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Data.FixedLength.BaseClasses.FixedLengthBaseClass.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Data.FixedLength.BaseClasses.RecordBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Data.FixedLength.BaseClasses.RecordBase-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Data.FixedLength.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Data.FixedLength.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Data.FixedLength.Interfaces.IField-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Data.FixedLength.Interfaces.IField-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Data.FixedLength.Interfaces.IRecord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Data.FixedLength.Interfaces.IRecord.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Data.FixedLength.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Data.FixedLength.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Data.FixedLength.StringField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Data.FixedLength.StringField.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Data.FixedLength.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Data.FixedLength.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.AbsoluteLocalFileSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.AbsoluteLocalFileSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.Ftp.FtpDirectory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.Ftp.FtpDirectory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.Ftp.FtpFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.Ftp.FtpFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.Ftp.FtpFileSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.Ftp.FtpFileSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.Ftp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.Ftp.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.HttpFileSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.HttpFileSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.LocalDirectory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.LocalDirectory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.LocalFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.LocalFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.Memory.MemoryDirectory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.Memory.MemoryDirectory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.Memory.MemoryFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.Memory.MemoryFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.Memory.MemoryFileSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.Memory.MemoryFileSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.Memory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.Memory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.NetworkFileSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.NetworkFileSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.RelativeLocalFileSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.RelativeLocalFileSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.ResourceDirectory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.ResourceDirectory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.ResourceFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.ResourceFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.ResourceFileSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.ResourceFileSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.WebDirectory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.WebDirectory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.WebFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.WebFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Default.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Default.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.DirectoryInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.DirectoryInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Enums.CopyOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Enums.CopyOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Enums.MimeType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Enums.MimeType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Enums.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.FileInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.FileInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.FileSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.FileSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.BaseClasses.FormatBaseClass-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.BaseClasses.FormatBaseClass-3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.BaseClasses.ReaderBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.BaseClasses.ReaderBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Address.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Address.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.BaseClasses.TableBaseClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.BaseClasses.TableBaseClass.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Enums.Relationship.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Enums.Relationship.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Enums.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.GenericCalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.GenericCalendar.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.GenericCard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.GenericCard.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.GenericCell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.GenericCell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.GenericEmail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.GenericEmail.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.GenericFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.GenericFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.GenericRow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.GenericRow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.GenericTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.GenericTable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interface.IPhoneNumber.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interface.IPhoneNumber.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interface.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.IAddress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.IAddress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.ICalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.ICalendar.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.ICard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.ICard.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.ICell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.ICell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.IChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.IChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.IEnclosure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.IEnclosure.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.IFeed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.IFeed.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.IFeedGuid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.IFeedGuid.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.IFeedItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.IFeedItem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.IGenericFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.IGenericFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.IMailAddress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.IMailAddress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.IMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.IMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.IRow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.IRow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.ITable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.ITable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.IThumbnail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.IThumbnail.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.MailAddress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.MailAddress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.PhoneNumber.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.PhoneNumber.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Delimited.DelimitedFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Delimited.DelimitedFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Delimited.DelimitedReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Delimited.DelimitedReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Delimited.DelimitedWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Delimited.DelimitedWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Delimited.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Delimited.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Excel.ExcelFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Excel.ExcelFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Excel.ExcelReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Excel.ExcelReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Excel.ExcelWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Excel.ExcelWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Excel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Excel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.HTML.HTMLFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.HTML.HTMLFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.HTML.HTMLReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.HTML.HTMLReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.HTML.HTMLWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.HTML.HTMLWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.HTML.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.HTML.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.ICal.ICalendarFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.ICal.ICalendarFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.ICal.ICalendarReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.ICal.ICalendarReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.ICal.ICalendarWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.ICal.ICalendarWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.ICal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.ICal.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Interfaces.IFormat-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Interfaces.IFormat-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Interfaces.IFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Interfaces.IFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Interfaces.IGenericFileReader-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Interfaces.IGenericFileReader-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Interfaces.IGenericFileWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Interfaces.IGenericFileWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.Attachment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.Attachment.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.CLZF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.CLZF.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.Message.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.Message.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IEnumSTATSTG.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IEnumSTATSTG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.Recipient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.Recipient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.RecipientType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.RecipientType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.MSG.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.MSG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Manager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Manager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Mime.MimeFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Mime.MimeFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Mime.MimeReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Mime.MimeReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Mime.MimeWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Mime.MimeWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Mime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Mime.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.PowerPoint.PowerPointFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.PowerPoint.PowerPointFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.PowerPoint.PowerPointReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.PowerPoint.PowerPointReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.PowerPoint.PowerPointWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.PowerPoint.PowerPointWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.PowerPoint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.PowerPoint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.RSS.Data.Channel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.RSS.Data.Channel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.RSS.Data.Enclosure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.RSS.Data.Enclosure.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.RSS.Data.Feed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.RSS.Data.Feed.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.RSS.Data.FeedGuid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.RSS.Data.FeedGuid.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.RSS.Data.FeedItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.RSS.Data.FeedItem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.RSS.Data.Thumbnail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.RSS.Data.Thumbnail.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.RSS.Data.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.RSS.Data.Utils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.RSS.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.RSS.Data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.RSS.RSSFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.RSS.RSSFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.RSS.RSSReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.RSS.RSSReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.RSS.RSSWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.RSS.RSSWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.RSS.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.RSS.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Txt.TxtFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Txt.TxtFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Txt.TxtReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Txt.TxtReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Txt.TxtWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Txt.TxtWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Txt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Txt.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.VCalendar.VCalendarFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.VCalendar.VCalendarFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.VCalendar.VCalendarReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.VCalendar.VCalendarReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.VCalendar.VCalendarWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.VCalendar.VCalendarWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.VCalendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.VCalendar.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.VCard.VCardFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.VCard.VCardFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.VCard.VCardReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.VCard.VCardReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.VCard.VCardWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.VCard.VCardWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.VCard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.VCard.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Word.WordFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Word.WordFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Word.WordReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Word.WordReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Word.WordWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Word.WordWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.Word.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.Word.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.XML.XMLFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.XML.XMLFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.XML.XMLReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.XML.XMLReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.XML.XMLWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.XML.XMLWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.XML.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.XML.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.HelperMethods.InternalHttpClientFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.HelperMethods.InternalHttpClientFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.HelperMethods.Word.WordDocumentAssembler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.HelperMethods.Word.WordDocumentAssembler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.HelperMethods.Word.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.HelperMethods.Word.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.HelperMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.HelperMethods.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Interfaces.IDirectory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Interfaces.IDirectory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Interfaces.IFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Interfaces.IFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Interfaces.IFileSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Interfaces.IFileSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Module.FileCuratorModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Module.FileCuratorModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Module.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Module.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Windows.Formats.MSG.MSGFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Windows.Formats.MSG.MSGFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Windows.Formats.MSG.MSGReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Windows.Formats.MSG.MSGReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Windows.Formats.MSG.MSGWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Windows.Formats.MSG.MSGWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Windows.Formats.MSG.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Windows.Formats.MSG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Windows.Formats.PDF.PDFFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Windows.Formats.PDF.PDFFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Windows.Formats.PDF.PDFReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Windows.Formats.PDF.PDFReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Windows.Formats.PDF.PDFWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Windows.Formats.PDF.PDFWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Windows.Formats.PDF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Windows.Formats.PDF.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/icon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

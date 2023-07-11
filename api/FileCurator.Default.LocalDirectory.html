@@ -1,0 +1,911 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class LocalDirectory
+ | FileCurator API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class LocalDirectory
+ | FileCurator API Reference ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/discord.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../images/icon.png" alt="FileCurator" class="logomark">
+              <span class="brand-title">FileCurator</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../images/icon.png" alt="FileCurator" class="logomark">
+                          <span class="brand-title">FileCurator</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  <strong><a href='https://github.com/JaCraig/FileCurator'>Open in Github</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="FileCurator.Default.LocalDirectory">
+
+
+
+  <h1 id="FileCurator_Default_LocalDirectory" data-uid="FileCurator.Default.LocalDirectory" class="text-break">Class LocalDirectory
+</h1>
+  <div class="markdown level0 summary"><p>Local directory class</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html">DirectoryBase</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.directoryinfo">DirectoryInfo</a>, <a class="xref" href="FileCurator.Default.LocalDirectory.html">LocalDirectory</a>&gt;</div>
+    <div class="level2"><span class="xref">LocalDirectory</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Accessed">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Accessed</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Created">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Created</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Credentials">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Credentials</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Exists">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Exists</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_FullName">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.FullName</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Modified">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Modified</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Name">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Parent">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Root">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Root</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Size">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Size</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_InternalDirectory">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.InternalDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_CompareTo_FileCurator_Interfaces_IDirectory_">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.CompareTo(IDirectory)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_CompareTo_System_Object_">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.CompareTo(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_CopyTo_FileCurator_Interfaces_IDirectory_FileCurator_Enums_CopyOptions_">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.CopyTo(IDirectory, CopyOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_CopyToAsync_FileCurator_Interfaces_IDirectory_FileCurator_Enums_CopyOptions_">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.CopyToAsync(IDirectory, CopyOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Create">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Create()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_CreateAsync">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.CreateAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Delete">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Delete()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_DeleteAsync">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.DeleteAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_EnumerateDirectories_System_String_System_IO_SearchOption_">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.EnumerateDirectories(string, SearchOption)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_EnumerateDirectories_System_Predicate_FileCurator_Interfaces_IDirectory__System_IO_SearchOption_">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.EnumerateDirectories(Predicate&lt;IDirectory&gt;, SearchOption)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_EnumerateFiles_System_String_System_IO_SearchOption_">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.EnumerateFiles(string, SearchOption)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_EnumerateFiles_System_Predicate_FileCurator_Interfaces_IFile__System_IO_SearchOption_">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.EnumerateFiles(Predicate&lt;IFile&gt;, SearchOption)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Equals_System_Object_">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Equals_FileCurator_Interfaces_IDirectory_">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Equals(IDirectory)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_GetEnumerator">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_GetHashCode">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_MoveTo_FileCurator_Interfaces_IDirectory_">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.MoveTo(IDirectory)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_MoveToAsync_FileCurator_Interfaces_IDirectory_">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.MoveToAsync(IDirectory)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Rename_System_String_">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Rename(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_RenameAsync_System_String_">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.RenameAsync(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_ToString">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="FileCurator.html">FileCurator</a>.<a class="xref" href="FileCurator.Default.html">Default</a></h6>
+  <h6><strong>Assembly</strong>: FileCurator.dll</h6>
+  <h5 id="FileCurator_Default_LocalDirectory_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class LocalDirectory : DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;, IDirectory, IComparable&lt;IDirectory&gt;, IEnumerable&lt;IFile&gt;, IEnumerable, IComparable, IEquatable&lt;IDirectory&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory__ctor.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L34">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory__ctor_" data-uid="FileCurator.Default.LocalDirectory.#ctor*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory__ctor" data-uid="FileCurator.Default.LocalDirectory.#ctor">LocalDirectory()</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LocalDirectory()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory__ctor_System_IO_DirectoryInfo_.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.%23ctor(System.IO.DirectoryInfo)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L51">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory__ctor_" data-uid="FileCurator.Default.LocalDirectory.#ctor*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory__ctor_System_IO_DirectoryInfo_" data-uid="FileCurator.Default.LocalDirectory.#ctor(System.IO.DirectoryInfo)">LocalDirectory(DirectoryInfo)</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LocalDirectory(DirectoryInfo directory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.directoryinfo">DirectoryInfo</a></td>
+        <td><span class="parametername">directory</span></td>
+        <td><p>Internal directory</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory__ctor_System_String_.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.%23ctor(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L42">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory__ctor_" data-uid="FileCurator.Default.LocalDirectory.#ctor*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory__ctor_System_String_" data-uid="FileCurator.Default.LocalDirectory.#ctor(System.String)">LocalDirectory(string)</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LocalDirectory(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>Path to the directory</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory_Accessed.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.Accessed%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L59">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory_Accessed_" data-uid="FileCurator.Default.LocalDirectory.Accessed*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory_Accessed" data-uid="FileCurator.Default.LocalDirectory.Accessed">Accessed</h4>
+  <div class="markdown level1 summary"><p>Time accessed (UTC time)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override DateTime Accessed { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.html#FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.Accessed">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Accessed</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory_Created.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.Created%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L64">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory_Created_" data-uid="FileCurator.Default.LocalDirectory.Created*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory_Created" data-uid="FileCurator.Default.LocalDirectory.Created">Created</h4>
+  <div class="markdown level1 summary"><p>Time created (UTC time)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override DateTime Created { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.html#FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.Created">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Created</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory_Exists.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.Exists%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L69">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory_Exists_" data-uid="FileCurator.Default.LocalDirectory.Exists*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory_Exists" data-uid="FileCurator.Default.LocalDirectory.Exists">Exists</h4>
+  <div class="markdown level1 summary"><p>Does the directory exist?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Exists { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.html#FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.Exists">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Exists</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory_FullName.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.FullName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L74">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory_FullName_" data-uid="FileCurator.Default.LocalDirectory.FullName*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory_FullName" data-uid="FileCurator.Default.LocalDirectory.FullName">FullName</h4>
+  <div class="markdown level1 summary"><p>Full path of the directory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string FullName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.html#FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.FullName">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.FullName</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory_Modified.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.Modified%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L79">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory_Modified_" data-uid="FileCurator.Default.LocalDirectory.Modified*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory_Modified" data-uid="FileCurator.Default.LocalDirectory.Modified">Modified</h4>
+  <div class="markdown level1 summary"><p>Time modified (UTC time)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override DateTime Modified { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.html#FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.Modified">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Modified</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory_Name.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.Name%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L84">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory_Name_" data-uid="FileCurator.Default.LocalDirectory.Name*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory_Name" data-uid="FileCurator.Default.LocalDirectory.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Name of the directory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string Name { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.html#FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.Name">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Name</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory_Parent.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.Parent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L89">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory_Parent_" data-uid="FileCurator.Default.LocalDirectory.Parent*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory_Parent" data-uid="FileCurator.Default.LocalDirectory.Parent">Parent</h4>
+  <div class="markdown level1 summary"><p>Parent directory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IDirectory Parent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.html#FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.Parent">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Parent</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory_Root.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.Root%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L94">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory_Root_" data-uid="FileCurator.Default.LocalDirectory.Root*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory_Root" data-uid="FileCurator.Default.LocalDirectory.Root">Root</h4>
+  <div class="markdown level1 summary"><p>Root directory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IDirectory Root { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.html#FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.Root">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Root</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory_Size.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.Size%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L99">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory_Size_" data-uid="FileCurator.Default.LocalDirectory.Size*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory_Size" data-uid="FileCurator.Default.LocalDirectory.Size">Size</h4>
+  <div class="markdown level1 summary"><p>Size of the directory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override long Size { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.html#FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.Size">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Size</a></div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory_Create.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.Create%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L104">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory_Create_" data-uid="FileCurator.Default.LocalDirectory.Create*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory_Create" data-uid="FileCurator.Default.LocalDirectory.Create">Create()</h4>
+  <div class="markdown level1 summary"><p>Creates the directory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IDirectory Create()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.html#FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.Create">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Create()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory_Delete.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.Delete%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L116">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory_Delete_" data-uid="FileCurator.Default.LocalDirectory.Delete*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory_Delete" data-uid="FileCurator.Default.LocalDirectory.Delete">Delete()</h4>
+  <div class="markdown level1 summary"><p>Deletes the directory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IDirectory Delete()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.html#FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.Delete">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Delete()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory_EnumerateDirectories_System_String_System_IO_SearchOption_.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.EnumerateDirectories(System.String%2CSystem.IO.SearchOption)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L139">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory_EnumerateDirectories_" data-uid="FileCurator.Default.LocalDirectory.EnumerateDirectories*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory_EnumerateDirectories_System_String_System_IO_SearchOption_" data-uid="FileCurator.Default.LocalDirectory.EnumerateDirectories(System.String,System.IO.SearchOption)">EnumerateDirectories(string, SearchOption)</h4>
+  <div class="markdown level1 summary"><p>Enumerates directories under this directory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;IDirectory&gt; EnumerateDirectories(string searchPattern = &quot;*&quot;, SearchOption options = SearchOption.TopDirectoryOnly)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">searchPattern</span></td>
+        <td><p>Search pattern</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.searchoption">SearchOption</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>Search options</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a>&gt;</td>
+        <td><p>List of directories under this directory</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.html#FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.EnumerateDirectories(System.String,System.IO.SearchOption)">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.EnumerateDirectories(string, SearchOption)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory_EnumerateFiles_System_String_System_IO_SearchOption_.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.EnumerateFiles(System.String%2CSystem.IO.SearchOption)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L156">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory_EnumerateFiles_" data-uid="FileCurator.Default.LocalDirectory.EnumerateFiles*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory_EnumerateFiles_System_String_System_IO_SearchOption_" data-uid="FileCurator.Default.LocalDirectory.EnumerateFiles(System.String,System.IO.SearchOption)">EnumerateFiles(string, SearchOption)</h4>
+  <div class="markdown level1 summary"><p>Enumerates files under this directory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;IFile&gt; EnumerateFiles(string searchPattern = &quot;*&quot;, SearchOption options = SearchOption.TopDirectoryOnly)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">searchPattern</span></td>
+        <td><p>Search pattern</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.searchoption">SearchOption</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>Search options</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</td>
+        <td><p>List of files under this directory</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.html#FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.EnumerateFiles(System.String,System.IO.SearchOption)">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.EnumerateFiles(string, SearchOption)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_LocalDirectory_Rename_System_String_.md&amp;value=---%0Auid%3A%20FileCurator.Default.LocalDirectory.Rename(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Local/LocalDirectory.cs/#L170">View Source</a>
+  </span>
+  <a id="FileCurator_Default_LocalDirectory_Rename_" data-uid="FileCurator.Default.LocalDirectory.Rename*"></a>
+  <h4 id="FileCurator_Default_LocalDirectory_Rename_System_String_" data-uid="FileCurator.Default.LocalDirectory.Rename(System.String)">Rename(string)</h4>
+  <div class="markdown level1 summary"><p>Renames the directory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IDirectory Rename(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name of the new directory</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.html#FileCurator.BaseClasses.DirectoryBase{System.IO.DirectoryInfo,FileCurator.Default.LocalDirectory}.Rename(System.String)">DirectoryBase&lt;DirectoryInfo, LocalDirectory&gt;.Rename(string)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>&#169; James Craig. All rights reserved.</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

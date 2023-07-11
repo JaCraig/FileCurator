@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Code | FileCurator API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Code | FileCurator API Reference ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/discord.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../images/icon.png" alt="FileCurator" class="logomark">
+              <span class="brand-title">FileCurator</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../images/icon.png" alt="FileCurator" class="logomark">
+                          <span class="brand-title">FileCurator</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  <strong><a href='https://github.com/JaCraig/FileCurator'>Open in Github</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/JaCraig/FileCurator/blob/master/docfx_project/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="">
+<h1 id="code">Code</h1>
+
+<pre><code class="lang-csharp">using BigBook;
+using FileCurator.Formats.Data.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace FileCurator.Example
+{
+    /// &lt;summary&gt;
+    /// Example program to show how to use the FileCurator library
+    /// &lt;/summary&gt;
+    internal class Program
+    {
+        /// &lt;summary&gt;
+        /// Defines the entry point of the application.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;args&quot;&gt;The arguments.&lt;/param&gt;
+        private static void Main(string[] args)
+        {
+            // Create a service provider.
+            var ServiceProvider = new ServiceCollection().AddCanisterModules()?.BuildServiceProvider();
+
+            // Let's load a generic file and view it's details.
+            var MyFile = new FileInfo(&quot;./MyFile.txt&quot;);
+            Console.WriteLine(&quot;File Info:&quot;);
+            Console.WriteLine($&quot;File: {MyFile.FullName}&quot;);
+            Console.WriteLine($&quot;File Exists: {MyFile.Exists}&quot;);
+            Console.WriteLine($&quot;File Extension: {MyFile.Extension}&quot;);
+            Console.WriteLine($&quot;File Name: {MyFile.Name}&quot;);
+            Console.WriteLine($&quot;File length: {MyFile.Length}&quot;);
+            Console.WriteLine();
+
+            // We can also parse the file and view it's contents.
+            var PDFContent = new FileInfo(&quot;./TestPDF.pdf&quot;).Parse&lt;IGenericFile&gt;();
+            Console.WriteLine(&quot;PDF Content:&quot;);
+            Console.WriteLine(PDFContent.Content);
+            Console.WriteLine();
+
+            // Including more structured files like CSVs. This will parse the CSV into a table.
+            var CSVContent = new FileInfo(&quot;./TestCSV.csv&quot;).Parse&lt;ITable&gt;();
+            Console.WriteLine(&quot;CSV Content:&quot;);
+            Console.WriteLine(CSVContent.Content);
+            Console.WriteLine($&quot;Columns: {CSVContent.Columns.ToString(x =&gt; x)}&quot;);
+            Console.WriteLine($&quot;Rows: {CSVContent.Rows.ToString(x =&gt; x.Cells.ToString(x =&gt; x.Content, &quot;, &quot;), &quot;\n&quot;)}&quot;);
+            Console.WriteLine();
+
+            // We can also write structured content to a file.
+            var NewCSVFile = new FileInfo(&quot;./NewCSV.csv&quot;);
+            NewCSVFile.Write(CSVContent);
+
+            // And then read it as a string.
+            Console.WriteLine(NewCSVFile.Read());
+        }
+    }
+}
+</code></pre><h1 id="output">Output</h1>
+<pre><code>File Info:
+File: C:\*********\MyFile.txt
+File Exists: True
+File Extension: .txt
+File Name: MyFile.txt
+File length: 24
+
+PDF Content:
+This is a test docx
+
+CSV Content:
+Header 1 Header 2 Header 3 Header 4 Header 5 Header 6
+This is a test CSV file
+Tons of data in here is super
+important
+Columns: Header 1,Header 2,Header 3,Header 4,Header 5,Header 6
+Rows: This, is, a, test, CSV, file
+Tons, of, data, in here, is, super
+important
+
+&quot;Header 1&quot;,&quot;Header 2&quot;,&quot;Header 3&quot;,&quot;Header 4&quot;,&quot;Header 5&quot;,&quot;Header 6&quot;
+&quot;This&quot;,&quot;is&quot;,&quot;a&quot;,&quot;test&quot;,&quot;CSV&quot;,&quot;file&quot;
+&quot;Tons&quot;,&quot;of&quot;,&quot;data&quot;,&quot;in here&quot;,&quot;is&quot;,&quot;super&quot;
+&quot;important&quot;
+</code></pre>
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>&#169; James Craig. All rights reserved.</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

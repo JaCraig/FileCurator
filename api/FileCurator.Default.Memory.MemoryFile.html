@@ -1,0 +1,1132 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class MemoryFile
+ | FileCurator API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class MemoryFile
+ | FileCurator API Reference ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/discord.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../images/icon.png" alt="FileCurator" class="logomark">
+              <span class="brand-title">FileCurator</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../images/icon.png" alt="FileCurator" class="logomark">
+                          <span class="brand-title">FileCurator</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  <strong><a href='https://github.com/JaCraig/FileCurator'>Open in Github</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="FileCurator.Default.Memory.MemoryFile">
+
+
+
+  <h1 id="FileCurator_Default_Memory_MemoryFile" data-uid="FileCurator.Default.Memory.MemoryFile" class="text-break">Class MemoryFile
+</h1>
+  <div class="markdown level0 summary"><p>Memory file</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="FileCurator.Default.Memory.MemoryFile.html">MemoryFile</a>&gt;</div>
+    <div class="level2"><span class="xref">MemoryFile</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Accessed">FileBase&lt;string, MemoryFile&gt;.Accessed</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Created">FileBase&lt;string, MemoryFile&gt;.Created</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Credentials">FileBase&lt;string, MemoryFile&gt;.Credentials</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Directory">FileBase&lt;string, MemoryFile&gt;.Directory</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Exists">FileBase&lt;string, MemoryFile&gt;.Exists</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Extension">FileBase&lt;string, MemoryFile&gt;.Extension</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_FullName">FileBase&lt;string, MemoryFile&gt;.FullName</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Length">FileBase&lt;string, MemoryFile&gt;.Length</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Modified">FileBase&lt;string, MemoryFile&gt;.Modified</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Name">FileBase&lt;string, MemoryFile&gt;.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_FormatManager">FileBase&lt;string, MemoryFile&gt;.FormatManager</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_InternalFile">FileBase&lt;string, MemoryFile&gt;.InternalFile</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_CompareTo_FileCurator_Interfaces_IFile_">FileBase&lt;string, MemoryFile&gt;.CompareTo(IFile)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_CompareTo_System_Object_">FileBase&lt;string, MemoryFile&gt;.CompareTo(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_CopyTo_FileCurator_Interfaces_IDirectory_System_Boolean_">FileBase&lt;string, MemoryFile&gt;.CopyTo(IDirectory, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_CopyToAsync_FileCurator_Interfaces_IDirectory_System_Boolean_">FileBase&lt;string, MemoryFile&gt;.CopyToAsync(IDirectory, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Delete">FileBase&lt;string, MemoryFile&gt;.Delete()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_DeleteAsync">FileBase&lt;string, MemoryFile&gt;.DeleteAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Equals_System_Object_">FileBase&lt;string, MemoryFile&gt;.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Equals_FileCurator_Interfaces_IFile_">FileBase&lt;string, MemoryFile&gt;.Equals(IFile)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_GetHashCode">FileBase&lt;string, MemoryFile&gt;.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_MoveTo_FileCurator_Interfaces_IDirectory_">FileBase&lt;string, MemoryFile&gt;.MoveTo(IDirectory)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_MoveToAsync_FileCurator_Interfaces_IDirectory_">FileBase&lt;string, MemoryFile&gt;.MoveToAsync(IDirectory)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Parse__1">FileBase&lt;string, MemoryFile&gt;.Parse&lt;TFile&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Parse">FileBase&lt;string, MemoryFile&gt;.Parse()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_ParseAsync__1">FileBase&lt;string, MemoryFile&gt;.ParseAsync&lt;TFile&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_ParseAsync">FileBase&lt;string, MemoryFile&gt;.ParseAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Read">FileBase&lt;string, MemoryFile&gt;.Read()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_ReadAsync">FileBase&lt;string, MemoryFile&gt;.ReadAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_ReadBinary">FileBase&lt;string, MemoryFile&gt;.ReadBinary()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_ReadBinaryAsync">FileBase&lt;string, MemoryFile&gt;.ReadBinaryAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Rename_System_String_">FileBase&lt;string, MemoryFile&gt;.Rename(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_RenameAsync_System_String_">FileBase&lt;string, MemoryFile&gt;.RenameAsync(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_ToString">FileBase&lt;string, MemoryFile&gt;.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Write_System_String_System_IO_FileMode_System_Text_Encoding_">FileBase&lt;string, MemoryFile&gt;.Write(string, FileMode, Encoding)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Write_System_Byte___System_IO_FileMode_">FileBase&lt;string, MemoryFile&gt;.Write(byte[], FileMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Write_FileCurator_Formats_Data_Interfaces_IGenericFile_System_IO_FileMode_">FileBase&lt;string, MemoryFile&gt;.Write(IGenericFile, FileMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_WriteAsync_System_String_System_IO_FileMode_System_Text_Encoding_">FileBase&lt;string, MemoryFile&gt;.WriteAsync(string, FileMode, Encoding)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_WriteAsync_System_Byte___System_IO_FileMode_">FileBase&lt;string, MemoryFile&gt;.WriteAsync(byte[], FileMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_WriteAsync_FileCurator_Formats_Data_Interfaces_IGenericFile_System_IO_FileMode_">FileBase&lt;string, MemoryFile&gt;.WriteAsync(IGenericFile, FileMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="FileCurator.html">FileCurator</a>.<a class="xref" href="FileCurator.Default.html">Default</a>.<a class="xref" href="FileCurator.Default.Memory.html">Memory</a></h6>
+  <h6><strong>Assembly</strong>: FileCurator.dll</h6>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MemoryFile : FileBase&lt;string, MemoryFile&gt;, IFile, IComparable&lt;IFile&gt;, IComparable, IEquatable&lt;IFile&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile__ctor.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L36">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile__ctor_" data-uid="FileCurator.Default.Memory.MemoryFile.#ctor*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile__ctor" data-uid="FileCurator.Default.Memory.MemoryFile.#ctor">MemoryFile()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="FileCurator.Default.Memory.MemoryFile.html">MemoryFile</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MemoryFile()</code></pre>
+  </div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile__ctor_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile__ctor_System_String_FileCurator_Credentials_.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.%23ctor(System.String%2CFileCurator.Credentials)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L47">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile__ctor_" data-uid="FileCurator.Default.Memory.MemoryFile.#ctor*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile__ctor_System_String_FileCurator_Credentials_" data-uid="FileCurator.Default.Memory.MemoryFile.#ctor(System.String,FileCurator.Credentials)">MemoryFile(string, Credentials?)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="FileCurator.Default.Memory.MemoryFile.html">MemoryFile</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MemoryFile(string path, Credentials? credentials)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="FileCurator.Credentials.html">Credentials</a></td>
+        <td><span class="parametername">credentials</span></td>
+        <td><p>The credentials.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Default_Memory_MemoryFile__ctor_System_String_FileCurator_Credentials__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_Accessed.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.Accessed%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L57">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_Accessed_" data-uid="FileCurator.Default.Memory.MemoryFile.Accessed*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_Accessed" data-uid="FileCurator.Default.Memory.MemoryFile.Accessed">Accessed</h4>
+  <div class="markdown level1 summary"><p>Last time accessed (UTC time)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override DateTime Accessed { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.Accessed">FileBase&lt;string, MemoryFile&gt;.Accessed</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_Accessed_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_Created.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.Created%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L62">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_Created_" data-uid="FileCurator.Default.Memory.MemoryFile.Created*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_Created" data-uid="FileCurator.Default.Memory.MemoryFile.Created">Created</h4>
+  <div class="markdown level1 summary"><p>Time created (UTC time)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override DateTime Created { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.Created">FileBase&lt;string, MemoryFile&gt;.Created</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_Created_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_Directory.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.Directory%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L67">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_Directory_" data-uid="FileCurator.Default.Memory.MemoryFile.Directory*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_Directory" data-uid="FileCurator.Default.Memory.MemoryFile.Directory">Directory</h4>
+  <div class="markdown level1 summary"><p>Directory the file is within</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IDirectory? Directory { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.Directory">FileBase&lt;string, MemoryFile&gt;.Directory</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_Directory_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_Exists.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.Exists%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L72">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_Exists_" data-uid="FileCurator.Default.Memory.MemoryFile.Exists*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_Exists" data-uid="FileCurator.Default.Memory.MemoryFile.Exists">Exists</h4>
+  <div class="markdown level1 summary"><p>Does the file exist?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Exists { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.Exists">FileBase&lt;string, MemoryFile&gt;.Exists</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_Exists_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_Extension.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.Extension%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L77">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_Extension_" data-uid="FileCurator.Default.Memory.MemoryFile.Extension*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_Extension" data-uid="FileCurator.Default.Memory.MemoryFile.Extension">Extension</h4>
+  <div class="markdown level1 summary"><p>File extension</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string Extension { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.Extension">FileBase&lt;string, MemoryFile&gt;.Extension</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_Extension_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_FullName.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.FullName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L82">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_FullName_" data-uid="FileCurator.Default.Memory.MemoryFile.FullName*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_FullName" data-uid="FileCurator.Default.Memory.MemoryFile.FullName">FullName</h4>
+  <div class="markdown level1 summary"><p>Full path</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string FullName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.FullName">FileBase&lt;string, MemoryFile&gt;.FullName</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_FullName_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_Length.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.Length%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L87">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_Length_" data-uid="FileCurator.Default.Memory.MemoryFile.Length*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_Length" data-uid="FileCurator.Default.Memory.MemoryFile.Length">Length</h4>
+  <div class="markdown level1 summary"><p>Size of the file</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override long Length { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.Length">FileBase&lt;string, MemoryFile&gt;.Length</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_Length_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_Modified.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.Modified%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L92">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_Modified_" data-uid="FileCurator.Default.Memory.MemoryFile.Modified*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_Modified" data-uid="FileCurator.Default.Memory.MemoryFile.Modified">Modified</h4>
+  <div class="markdown level1 summary"><p>Time modified (UTC time)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override DateTime Modified { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.Modified">FileBase&lt;string, MemoryFile&gt;.Modified</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_Modified_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_Name.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.Name%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L97">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_Name_" data-uid="FileCurator.Default.Memory.MemoryFile.Name*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_Name" data-uid="FileCurator.Default.Memory.MemoryFile.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Name of the file</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string Name { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.Name">FileBase&lt;string, MemoryFile&gt;.Name</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_Name_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_CopyTo_FileCurator_Interfaces_IDirectory_System_Boolean_.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.CopyTo(FileCurator.Interfaces.IDirectory%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L125">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_CopyTo_" data-uid="FileCurator.Default.Memory.MemoryFile.CopyTo*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_CopyTo_FileCurator_Interfaces_IDirectory_System_Boolean_" data-uid="FileCurator.Default.Memory.MemoryFile.CopyTo(FileCurator.Interfaces.IDirectory,System.Boolean)">CopyTo(IDirectory, bool)</h4>
+  <div class="markdown level1 summary"><p>Copies the file to another directory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IFile CopyTo(IDirectory directory, bool overwrite)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
+        <td><span class="parametername">directory</span></td>
+        <td><p>Directory to copy the file to</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">overwrite</span></td>
+        <td><p>Should the file overwrite another file if found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></td>
+        <td><p>The newly created file</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.CopyTo(FileCurator.Interfaces.IDirectory,System.Boolean)">FileBase&lt;string, MemoryFile&gt;.CopyTo(IDirectory, bool)</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_CopyTo_FileCurator_Interfaces_IDirectory_System_Boolean__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_Delete.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.Delete%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L142">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_Delete_" data-uid="FileCurator.Default.Memory.MemoryFile.Delete*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_Delete" data-uid="FileCurator.Default.Memory.MemoryFile.Delete">Delete()</h4>
+  <div class="markdown level1 summary"><p>Deletes the file</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string Delete()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>Any response for deleting the resource (usually FTP, HTTP, etc)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.Delete">FileBase&lt;string, MemoryFile&gt;.Delete()</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_Delete_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_MoveTo_FileCurator_Interfaces_IDirectory_.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.MoveTo(FileCurator.Interfaces.IDirectory)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L154">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_MoveTo_" data-uid="FileCurator.Default.Memory.MemoryFile.MoveTo*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_MoveTo_FileCurator_Interfaces_IDirectory_" data-uid="FileCurator.Default.Memory.MemoryFile.MoveTo(FileCurator.Interfaces.IDirectory)">MoveTo(IDirectory)</h4>
+  <div class="markdown level1 summary"><p>Moves the file to a new directory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IFile MoveTo(IDirectory directory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
+        <td><span class="parametername">directory</span></td>
+        <td><p>Directory to move to</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></td>
+        <td><p>The resulting file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.MoveTo(FileCurator.Interfaces.IDirectory)">FileBase&lt;string, MemoryFile&gt;.MoveTo(IDirectory)</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_MoveTo_FileCurator_Interfaces_IDirectory__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_Read.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.Read%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L168">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_Read_" data-uid="FileCurator.Default.Memory.MemoryFile.Read*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_Read" data-uid="FileCurator.Default.Memory.MemoryFile.Read">Read()</h4>
+  <div class="markdown level1 summary"><p>Reads the file in as a string</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string Read()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The file contents as a string</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.Read">FileBase&lt;string, MemoryFile&gt;.Read()</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_Read_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_ReadBinary.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.ReadBinary%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L178">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_ReadBinary_" data-uid="FileCurator.Default.Memory.MemoryFile.ReadBinary*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_ReadBinary" data-uid="FileCurator.Default.Memory.MemoryFile.ReadBinary">ReadBinary()</h4>
+  <div class="markdown level1 summary"><p>Reads a file as binary</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override byte[] ReadBinary()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
+        <td><p>The file contents as a byte array</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.ReadBinary">FileBase&lt;string, MemoryFile&gt;.ReadBinary()</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_ReadBinary_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_Rename_System_String_.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.Rename(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L191">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_Rename_" data-uid="FileCurator.Default.Memory.MemoryFile.Rename*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_Rename_System_String_" data-uid="FileCurator.Default.Memory.MemoryFile.Rename(System.String)">Rename(string)</h4>
+  <div class="markdown level1 summary"><p>Renames the file</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IFile Rename(string newName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">newName</span></td>
+        <td><p>New name for the file</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></td>
+        <td><p>Renames the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.Rename(System.String)">FileBase&lt;string, MemoryFile&gt;.Rename(string)</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_Rename_System_String__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_Write_System_Byte___System_IO_FileMode_.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.Write(System.Byte%5B%5D%2CSystem.IO.FileMode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L220">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_Write_" data-uid="FileCurator.Default.Memory.MemoryFile.Write*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_Write_System_Byte___System_IO_FileMode_" data-uid="FileCurator.Default.Memory.MemoryFile.Write(System.Byte[],System.IO.FileMode)">Write(byte[], FileMode)</h4>
+  <div class="markdown level1 summary"><p>Writes content to the file</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override byte[] Write(byte[] content, FileMode mode = FileMode.Create)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
+        <td><span class="parametername">content</span></td>
+        <td><p>Content to write</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>Mode to open the file as</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
+        <td><p>The result of the write or original content</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.Write(System.Byte[],System.IO.FileMode)">FileBase&lt;string, MemoryFile&gt;.Write(byte[], FileMode)</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_Write_System_Byte___System_IO_FileMode__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Memory_MemoryFile_Write_System_String_System_IO_FileMode_System_Text_Encoding_.md&amp;value=---%0Auid%3A%20FileCurator.Default.Memory.MemoryFile.Write(System.String%2CSystem.IO.FileMode%2CSystem.Text.Encoding)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Memory/MemoryFile.cs/#L207">View Source</a>
+  </span>
+  <a id="FileCurator_Default_Memory_MemoryFile_Write_" data-uid="FileCurator.Default.Memory.MemoryFile.Write*"></a>
+  <h4 id="FileCurator_Default_Memory_MemoryFile_Write_System_String_System_IO_FileMode_System_Text_Encoding_" data-uid="FileCurator.Default.Memory.MemoryFile.Write(System.String,System.IO.FileMode,System.Text.Encoding)">Write(string, FileMode, Encoding?)</h4>
+  <div class="markdown level1 summary"><p>Writes content to the file</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string Write(string content, FileMode mode = FileMode.Create, Encoding? encoding = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">content</span></td>
+        <td><p>Content to write</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>Mode to open the file as</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.encoding">Encoding</a></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>Encoding to use for the content</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The result of the write or original content</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.html#FileCurator.BaseClasses.FileBase{System.String,FileCurator.Default.Memory.MemoryFile}.Write(System.String,System.IO.FileMode,System.Text.Encoding)">FileBase&lt;string, MemoryFile&gt;.Write(string, FileMode, Encoding)</a></div>
+  <h5 id="FileCurator_Default_Memory_MemoryFile_Write_System_String_System_IO_FileMode_System_Text_Encoding__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
+  </div>
+
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>&#169; James Craig. All rights reserved.</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

@@ -1,0 +1,1344 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Channel
+ | FileCurator API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Channel
+ | FileCurator API Reference ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/discord.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../images/icon.png" alt="FileCurator" class="logomark">
+              <span class="brand-title">FileCurator</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../images/icon.png" alt="FileCurator" class="logomark">
+                          <span class="brand-title">FileCurator</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  <strong><a href='https://github.com/JaCraig/FileCurator'>Open in Github</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="FileCurator.Formats.RSS.Data.Channel">
+
+
+
+  <h1 id="FileCurator_Formats_RSS_Data_Channel" data-uid="FileCurator.Formats.RSS.Data.Channel" class="text-break">Class Channel
+</h1>
+  <div class="markdown level0 summary"><p>Channel</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">Channel</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="FileCurator.Formats.Data.Interfaces.IFeedItem.html">IFeedItem</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="FileCurator.Formats.Data.Interfaces.IFeedItem.html">IFeedItem</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="FileCurator.Formats.Data.Interfaces.IFeedItem.html">IFeedItem</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="FileCurator.html">FileCurator</a>.<a class="xref" href="FileCurator.Formats.html">Formats</a>.<a class="xref" href="FileCurator.Formats.RSS.html">RSS</a>.<a class="xref" href="FileCurator.Formats.RSS.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: FileCurator.dll</h6>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Channel : IChannel, IList&lt;IFeedItem&gt;, ICollection&lt;IFeedItem&gt;, IEnumerable&lt;IFeedItem&gt;, IEnumerable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel__ctor.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L38">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel__ctor_" data-uid="FileCurator.Formats.RSS.Data.Channel.#ctor*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel__ctor" data-uid="FileCurator.Formats.RSS.Data.Channel.#ctor">Channel()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="FileCurator.Formats.RSS.Data.Channel.html">Channel</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Channel()</code></pre>
+  </div>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel__ctor_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel__ctor_System_Xml_XPath_IXPathNavigable_.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.%23ctor(System.Xml.XPath.IXPathNavigable)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L46">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel__ctor_" data-uid="FileCurator.Formats.RSS.Data.Channel.#ctor*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel__ctor_System_Xml_XPath_IXPathNavigable_" data-uid="FileCurator.Formats.RSS.Data.Channel.#ctor(System.Xml.XPath.IXPathNavigable)">Channel(IXPathNavigable)</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Channel(IXPathNavigable doc)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xpath.ixpathnavigable">IXPathNavigable</a></td>
+        <td><span class="parametername">doc</span></td>
+        <td><p>XML representation of the channel</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel__ctor_System_Xml_XPath_IXPathNavigable__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Categories.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Categories%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L82">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Categories_" data-uid="FileCurator.Formats.RSS.Data.Channel.Categories*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Categories" data-uid="FileCurator.Formats.RSS.Data.Channel.Categories">Categories</h4>
+  <div class="markdown level1 summary"><p>Gets the categories.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IList&lt;string&gt; Categories { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td><p>The categories.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Categories_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Cloud.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Cloud%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L88">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Cloud_" data-uid="FileCurator.Formats.RSS.Data.Channel.Cloud*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Cloud" data-uid="FileCurator.Formats.RSS.Data.Channel.Cloud">Cloud</h4>
+  <div class="markdown level1 summary"><p>Gets the cloud.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Cloud { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The cloud.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Cloud_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Content.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Content%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L94">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Content_" data-uid="FileCurator.Formats.RSS.Data.Channel.Content*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Content" data-uid="FileCurator.Formats.RSS.Data.Channel.Content">Content</h4>
+  <div class="markdown level1 summary"><p>Gets the content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Content { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Content_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Copyright.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Copyright%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L100">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Copyright_" data-uid="FileCurator.Formats.RSS.Data.Channel.Copyright*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Copyright" data-uid="FileCurator.Formats.RSS.Data.Channel.Copyright">Copyright</h4>
+  <div class="markdown level1 summary"><p>Gets the copyright.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Copyright { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The copyright.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Copyright_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Count.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Count%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L105">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Count_" data-uid="FileCurator.Formats.RSS.Data.Channel.Count*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Count" data-uid="FileCurator.Formats.RSS.Data.Channel.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Gets the number of elements contained in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Count_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Description.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Description%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L111">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Description_" data-uid="FileCurator.Formats.RSS.Data.Channel.Description*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Description" data-uid="FileCurator.Formats.RSS.Data.Channel.Description">Description</h4>
+  <div class="markdown level1 summary"><p>Gets the description.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Description { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The description.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Description_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Docs.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Docs%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L117">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Docs_" data-uid="FileCurator.Formats.RSS.Data.Channel.Docs*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Docs" data-uid="FileCurator.Formats.RSS.Data.Channel.Docs">Docs</h4>
+  <div class="markdown level1 summary"><p>Gets the docs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Docs { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The docs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Docs_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Explicit.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Explicit%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L124">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Explicit_" data-uid="FileCurator.Formats.RSS.Data.Channel.Explicit*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Explicit" data-uid="FileCurator.Formats.RSS.Data.Channel.Explicit">Explicit</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether this <a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a> is explicit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Explicit { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><code>true</code> if explicit; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Explicit_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_ImageUrl.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.ImageUrl%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L130">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_ImageUrl_" data-uid="FileCurator.Formats.RSS.Data.Channel.ImageUrl*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_ImageUrl" data-uid="FileCurator.Formats.RSS.Data.Channel.ImageUrl">ImageUrl</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the image URL.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? ImageUrl { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The image URL.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_ImageUrl_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_IsReadOnly.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.IsReadOnly%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L136">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_IsReadOnly_" data-uid="FileCurator.Formats.RSS.Data.Channel.IsReadOnly*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_IsReadOnly" data-uid="FileCurator.Formats.RSS.Data.Channel.IsReadOnly">IsReadOnly</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsReadOnly { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_IsReadOnly_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Item_System_Int32_.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Item(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L186">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Item_" data-uid="FileCurator.Formats.RSS.Data.Channel.Item*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Item_System_Int32_" data-uid="FileCurator.Formats.RSS.Data.Channel.Item(System.Int32)">this[int]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="FileCurator.Formats.Data.Interfaces.IFeedItem.html">IFeedItem</a> at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IFeedItem this[int index] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Formats.Data.Interfaces.IFeedItem.html">IFeedItem</a></td>
+        <td><p>The <a class="xref" href="FileCurator.Formats.Data.Interfaces.IFeedItem.html">IFeedItem</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Item_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Items.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Items%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L142">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Items_" data-uid="FileCurator.Formats.RSS.Data.Channel.Items*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Items" data-uid="FileCurator.Formats.RSS.Data.Channel.Items">Items</h4>
+  <div class="markdown level1 summary"><p>Gets the items.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IList&lt;IFeedItem&gt; Items { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="FileCurator.Formats.Data.Interfaces.IFeedItem.html">IFeedItem</a>&gt;</td>
+        <td><p>The items.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Items_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Language.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Language%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L148">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Language_" data-uid="FileCurator.Formats.RSS.Data.Channel.Language*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Language" data-uid="FileCurator.Formats.RSS.Data.Channel.Language">Language</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the language.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Language { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The language.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Language_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Link.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Link%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L154">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Link_" data-uid="FileCurator.Formats.RSS.Data.Channel.Link*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Link" data-uid="FileCurator.Formats.RSS.Data.Channel.Link">Link</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the link.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Link { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The link.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Link_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_PubDate.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.PubDate%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L160">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_PubDate_" data-uid="FileCurator.Formats.RSS.Data.Channel.PubDate*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_PubDate" data-uid="FileCurator.Formats.RSS.Data.Channel.PubDate">PubDate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the pub date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime PubDate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td><p>The pub date.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_PubDate_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_TTL.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.TTL%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L172">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_TTL_" data-uid="FileCurator.Formats.RSS.Data.Channel.TTL*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_TTL" data-uid="FileCurator.Formats.RSS.Data.Channel.TTL">TTL</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the TTL.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TTL { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The TTL.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_TTL_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Title.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Title%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L166">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Title_" data-uid="FileCurator.Formats.RSS.Data.Channel.Title*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Title" data-uid="FileCurator.Formats.RSS.Data.Channel.Title">Title</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the title.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Title { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The title.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Title_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_WebMaster.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.WebMaster%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L178">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_WebMaster_" data-uid="FileCurator.Formats.RSS.Data.Channel.WebMaster*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_WebMaster" data-uid="FileCurator.Formats.RSS.Data.Channel.WebMaster">WebMaster</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the web master.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? WebMaster { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The web master.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_WebMaster_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Add_FileCurator_Formats_Data_Interfaces_IFeedItem_.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Add(FileCurator.Formats.Data.Interfaces.IFeedItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L196">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Add_" data-uid="FileCurator.Formats.RSS.Data.Channel.Add*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Add_FileCurator_Formats_Data_Interfaces_IFeedItem_" data-uid="FileCurator.Formats.RSS.Data.Channel.Add(FileCurator.Formats.Data.Interfaces.IFeedItem)">Add(IFeedItem)</h4>
+  <div class="markdown level1 summary"><p>Adds an item to the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(IFeedItem item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Formats.Data.Interfaces.IFeedItem.html">IFeedItem</a></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The object to add to the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Add_FileCurator_Formats_Data_Interfaces_IFeedItem__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Clear.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Clear%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L201">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Clear_" data-uid="FileCurator.Formats.RSS.Data.Channel.Clear*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Clear" data-uid="FileCurator.Formats.RSS.Data.Channel.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Removes all items from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Clear_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Contains_FileCurator_Formats_Data_Interfaces_IFeedItem_.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Contains(FileCurator.Formats.Data.Interfaces.IFeedItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L212">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Contains_" data-uid="FileCurator.Formats.RSS.Data.Channel.Contains*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Contains_FileCurator_Formats_Data_Interfaces_IFeedItem_" data-uid="FileCurator.Formats.RSS.Data.Channel.Contains(FileCurator.Formats.Data.Interfaces.IFeedItem)">Contains(IFeedItem)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> contains
+a specific value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Contains(IFeedItem item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Formats.Data.Interfaces.IFeedItem.html">IFeedItem</a></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The object to locate in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if <code class="paramref">item</code> is found in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Contains_FileCurator_Formats_Data_Interfaces_IFeedItem__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_CopyTo_FileCurator_Formats_Data_Interfaces_IFeedItem___System_Int32_.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.CopyTo(FileCurator.Formats.Data.Interfaces.IFeedItem%5B%5D%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L226">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_CopyTo_" data-uid="FileCurator.Formats.RSS.Data.Channel.CopyTo*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_CopyTo_FileCurator_Formats_Data_Interfaces_IFeedItem___System_Int32_" data-uid="FileCurator.Formats.RSS.Data.Channel.CopyTo(FileCurator.Formats.Data.Interfaces.IFeedItem[],System.Int32)">CopyTo(IFeedItem[], int)</h4>
+  <div class="markdown level1 summary"><p>Copies the elements of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> to
+an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a>, starting at a particular <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyTo(IFeedItem[] array, int arrayIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Formats.Data.Interfaces.IFeedItem.html">IFeedItem</a>[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>The one-dimensional <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> that is the destination of the elements
+copied from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> must have zero-based indexing.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">arrayIndex</span></td>
+        <td><p>The zero-based index in <code class="paramref">array</code> at which copying begins.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_CopyTo_FileCurator_Formats_Data_Interfaces_IFeedItem___System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_GetEnumerator.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.GetEnumerator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L232">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_GetEnumerator_" data-uid="FileCurator.Formats.RSS.Data.Channel.GetEnumerator*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_GetEnumerator" data-uid="FileCurator.Formats.RSS.Data.Channel.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;IFeedItem&gt; GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;<a class="xref" href="FileCurator.Formats.Data.Interfaces.IFeedItem.html">IFeedItem</a>&gt;</td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_GetEnumerator_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_IndexOf_FileCurator_Formats_Data_Interfaces_IFeedItem_.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.IndexOf(FileCurator.Formats.Data.Interfaces.IFeedItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L248">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_IndexOf_" data-uid="FileCurator.Formats.RSS.Data.Channel.IndexOf*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_IndexOf_FileCurator_Formats_Data_Interfaces_IFeedItem_" data-uid="FileCurator.Formats.RSS.Data.Channel.IndexOf(FileCurator.Formats.Data.Interfaces.IFeedItem)">IndexOf(IFeedItem)</h4>
+  <div class="markdown level1 summary"><p>Determines the index of a specific item in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IndexOf(IFeedItem item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Formats.Data.Interfaces.IFeedItem.html">IFeedItem</a></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The object to locate in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The index of <code class="paramref">item</code> if found in the list; otherwise, -1.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_IndexOf_FileCurator_Formats_Data_Interfaces_IFeedItem__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Insert_System_Int32_FileCurator_Formats_Data_Interfaces_IFeedItem_.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Insert(System.Int32%2CFileCurator.Formats.Data.Interfaces.IFeedItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L258">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Insert_" data-uid="FileCurator.Formats.RSS.Data.Channel.Insert*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Insert_System_Int32_FileCurator_Formats_Data_Interfaces_IFeedItem_" data-uid="FileCurator.Formats.RSS.Data.Channel.Insert(System.Int32,FileCurator.Formats.Data.Interfaces.IFeedItem)">Insert(int, IFeedItem)</h4>
+  <div class="markdown level1 summary"><p>Inserts an item to the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList&lt;T&gt;</a> at the
+specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(int index, IFeedItem item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The zero-based index at which <code class="paramref">item</code> should be inserted.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="FileCurator.Formats.Data.Interfaces.IFeedItem.html">IFeedItem</a></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The object to insert into the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Insert_System_Int32_FileCurator_Formats_Data_Interfaces_IFeedItem__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_Remove_FileCurator_Formats_Data_Interfaces_IFeedItem_.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.Remove(FileCurator.Formats.Data.Interfaces.IFeedItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L269">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_Remove_" data-uid="FileCurator.Formats.RSS.Data.Channel.Remove*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_Remove_FileCurator_Formats_Data_Interfaces_IFeedItem_" data-uid="FileCurator.Formats.RSS.Data.Channel.Remove(FileCurator.Formats.Data.Interfaces.IFeedItem)">Remove(IFeedItem)</h4>
+  <div class="markdown level1 summary"><p>Removes the first occurrence of a specific object from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(IFeedItem item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="FileCurator.Formats.Data.Interfaces.IFeedItem.html">IFeedItem</a></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The object to remove from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if <code class="paramref">item</code> was successfully removed from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>; otherwise, false. This method also
+returns false if <code class="paramref">item</code> is not found in the original <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_Remove_FileCurator_Formats_Data_Interfaces_IFeedItem__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_RemoveAt_System_Int32_.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.RemoveAt(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L275">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_RemoveAt_" data-uid="FileCurator.Formats.RSS.Data.Channel.RemoveAt*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_RemoveAt_System_Int32_" data-uid="FileCurator.Formats.RSS.Data.Channel.RemoveAt(System.Int32)">RemoveAt(int)</h4>
+  <div class="markdown level1 summary"><p>Removes the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList&lt;T&gt;</a> item at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveAt(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The zero-based index of the item to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_RemoveAt_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_RSS_Data_Channel_ToString.md&amp;value=---%0Auid%3A%20FileCurator.Formats.RSS.Data.Channel.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/RSS/Data/Channel.cs/#L281">View Source</a>
+  </span>
+  <a id="FileCurator_Formats_RSS_Data_Channel_ToString_" data-uid="FileCurator.Formats.RSS.Data.Channel.ToString*"></a>
+  <h4 id="FileCurator_Formats_RSS_Data_Channel_ToString" data-uid="FileCurator.Formats.RSS.Data.Channel.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Converts the channel to a string</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The channel as a string</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
+  <h5 id="FileCurator_Formats_RSS_Data_Channel_ToString_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="FileCurator.Formats.Data.Interfaces.IChannel.html">IChannel</a></div>
+  </div>
+
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>&#169; James Craig. All rights reserved.</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

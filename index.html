@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>FileCurator | FileCurator API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="FileCurator | FileCurator API Reference ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="styles/config.css">
+      <link rel="stylesheet" href="styles/discord.css">
+      <link rel="stylesheet" href="styles/singulink.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="index.html">
+              <img src="images/icon.png" alt="FileCurator" class="logomark">
+              <span class="brand-title">FileCurator</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="index.html">
+                          <img src="images/icon.png" alt="FileCurator" class="logomark">
+                          <span class="brand-title">FileCurator</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+                </div>
+                <div class="footer">
+  <strong><a href='https://github.com/JaCraig/FileCurator'>Open in Github</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/JaCraig/FileCurator/blob/master/docfx_project/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="">
+<h1 id="filecurator">FileCurator</h1>
+
+<p><a href="https://ci.appveyor.com/project/JaCraig/filecurator"><img src="https://ci.appveyor.com/api/projects/status/3qlv7ffawn9lhxav?svg=true" alt="Build status"></a></p>
+<p>FileCurator is a library used to simplify file access and management on your system. It aims to make accessing a local file as simple as accessing a URL or 3rd party system like Dropbox.</p>
+<h2 id="basic-usage">Basic Usage</h2>
+<p>The system relies on an IoC wrapper called <a href="https://github.com/JaCraig/Canister">Canister</a>. While Canister has a built in IoC container, it's purpose is to actually wrap your container of choice in a way that simplifies setup and usage for other libraries that don't want to be tied to a specific IoC container. FileCurator uses it to detect and pull in file system providers. As such you must set up Canister in order to use FileCurator:</p>
+<pre><code>services.AddCanisterModules(configure =&gt; configure.RegisterFileCurator());
+</code></pre>
+<p>This line is required prior to using the extension methods, FileInfo, and DirectoryInfo classes for the first time. Once Canister is set up, you can call the classes provided:</p>
+<pre><code>var MyFile = new FileInfo(&quot;~/MyFile.txt&quot;);
+MyFile = new FileInfo(&quot;./MyFile.txt&quot;);
+MyFile = new FileInfo(&quot;MyFile.txt&quot;);
+MyFile = new FileInfo(&quot;http://www.google.com&quot;);
+MyFile = new FileInfo(&quot;resource://MyDLL/MyDLL.Resources.MyFile.txt&quot;);
+</code></pre>
+<p>The FileInfo and DirectoryInfo classes take a string for the file path as well as a user name, password, and domain, assuming the file system you are trying to reach requires it. It translates ~ and . to be the local base directory. From there you will have access to the file's contents and information. Similarly you can pass in web addresses or the location of embedded resource files and will be able to read them accordingly.</p>
+<h2 id="embedded-resources">Embedded Resources</h2>
+<p>For embedded resources, the syntax is:</p>
+<pre><code>resource://MyDLL/MyDLL.Resources.Directory.MyFile.txt
+</code></pre>
+<p>Where resource:// lets the system know you want to retrieve an embedded resource. MyDLL is the name of the Assembly that the resource is found in. And MyFile.txt is the name of the file. Depending on where you placed the file the path inside the project will be the Resources.Directory portion of the above example. In the above case it was placed in the /Resources/Directory folder inside the assembly. Instead of slashes the system separates them with a period instead. If you placed the resources at the base of the project, then the Resouces.Directory portion can be left out and it would just be:</p>
+<pre><code>resource://MyDLL/MyDLL.MyFile.txt
+</code></pre>
+<h2 id="adding-file-systems">Adding File Systems</h2>
+<p>The system comes with a couple of built in file systems for dealing with local files, however you may wish to add other targets as well. In order to do this all that you need to do is create a class that inherits from IFileSystem, a class that inherits from IFile, and one for IDirectory. From there the system will find the new provider and use it when called.</p>
+<h2 id="overriding-file-systems">Overriding File Systems</h2>
+<p>By default the system comes with a couple of file systems for dealing with local files. However it is possible to override these by simply creating a class that inherits from IFileSystem and setting the correct Name to match the one that you wish to override. There is a base class called LocalFileSystemBase that can help with most of the functions for the file system as well. For instance to override the &quot;Relative Local&quot; system with your own you would do the following:</p>
+<pre><code>public class MyLocalFileSystem : LocalFileSystemBase
+{
+    /// &lt;summary&gt;
+    /// Name of the file system
+    /// &lt;/summary&gt;
+    public override string Name { get { return &quot;Relative Local&quot;; } }
+
+    /// &lt;summary&gt;
+    /// Relative starter
+    /// &lt;/summary&gt;
+    protected override string HandleRegexString { get { return @&quot;^[~|\.]&quot;; } }
+
+    /// &lt;summary&gt;
+    /// Gets the absolute path of the variable passed in
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;path&quot;&gt;Path to convert to absolute&lt;/param&gt;
+    /// &lt;returns&gt;The absolute path of the path passed in&lt;/returns&gt;
+    protected override string AbsolutePath(string path)
+    {
+        ...
+    }
+}
+</code></pre>
+<p>From there the system will override the default &quot;Relative Local&quot; provider with your own.</p>
+<h2 id="parsing-files">Parsing Files</h2>
+<p>FileCurator also has a number of file formats that it understands and can parse:</p>
+<ul>
+<li>CSV</li>
+<li>TSV</li>
+<li>Tab delimited</li>
+<li>Excel (XLSX files only)</li>
+<li>HTML files</li>
+<li>ICS (iCalendar files)</li>
+<li>EML</li>
+<li>MHT</li>
+<li>PowerPoint (PPTX and PPSX)</li>
+<li>RSS</li>
+<li>VCS (vCal files)</li>
+<li>VCF (vCard files)</li>
+<li>Word (DOCX files only)</li>
+<li>XML</li>
+<li>And of course TXT files...</li>
+</ul>
+<p>There are also a few items that are not .Net Core/.Net Standard supported in the FileCurator.Windows package:</p>
+<ul>
+<li>PDF</li>
+<li>MSG files</li>
+<li>RTF</li>
+</ul>
+<p>Once a .Net Standard library is available to parse these items that is open sourced (and without a funky license), these will be moved into the main library. Anyway, in order to parse a file you would do the following:</p>
+<pre><code>var MyFile = new FileInfo(&quot;~/MyFile.txt&quot;).Parse();
+</code></pre>
+<p>The above code opens the MyFile.txt document and parses it into a IGenericFile object. This object contains a Content property, a Title property, and a Meta property. For the above text file, only the Content property is filled in. However you can also do this:</p>
+<pre><code>var MyEmail = new FileInfo(&quot;~/MyEmail.eml&quot;).Parse();
+</code></pre>
+<p>This will take the content of the email and place it in the Content property, the subject of the email is in Title. However you may be saying, what about To, or BCC, or From fields? That's why there is another Parse method:</p>
+<pre><code>var MyEmail = new FileInfo(&quot;~/MyEmail.eml&quot;).Parse&lt;IMessage&gt;();
+</code></pre>
+<p>This time we get back an IMessage object instead of an IGenericFile object. And the IMessage object has fields for To, BCC, CC, From, Sent date, etc. The Parse&lt;&gt;() method takes any type that inherits from IGenericFile. The built in types are:</p>
+<ul>
+<li>IMessage</li>
+<li>ITable</li>
+<li>IFeed</li>
+<li>ICard</li>
+<li>ICalendar</li>
+</ul>
+<p>And each of these correspond to a particular set of file formats:</p>
+<ul>
+<li>IMessage - EML, MHT, and MSG files.</li>
+<li>ITable - Delimited (CSV, TSV, etc.) and Excel files.</li>
+<li>IFeed - RSS files.</li>
+<li>ICard - vCards</li>
+<li>ICalendar - iCal and vCal files.</li>
+</ul>
+<p>All other file types are parsed as IGenericFile objects. And calling for an object of type A when the parser returns type B will throw an exception. So if you have no idea what the file is, it's best to just use the Parse() method instead.</p>
+<p>Writing an object to a file is similarly simple:</p>
+<pre><code>var MyTable = new GenericTable();
+MyTable.Columns.Add(&quot;Column Header 1&quot;);
+MyTable.Columns.Add(&quot;Column Header 2&quot;);
+MyTable.Rows.Add(new GenericRow());
+MyTable.Rows[0].Cells.Add(new GenericCell(&quot;My Data&quot;));
+MyTable.Rows[0].Cells.Add(new GenericCell(&quot;Goes Here&quot;));
+new FileInfo(&quot;~/MyFile.xlsx&quot;).Write(MyTable);
+</code></pre>
+<p>The above code creates a table object with 2 column headers and a single row containing two cells, the first contains &quot;My Data&quot; and the second contains &quot;Goes Here&quot;. The FileInfo object then takes the extension of the file that you are saving to and sends it to the proper format handler for writing the data to disk. In the above case it would be the Excel handler. You can similarly take the ITable object and save it as a CSV:</p>
+<pre><code>new FileInfo(&quot;~/MyFile.csv&quot;).Write(MyTable);
+</code></pre>
+<p>No other code needs to change, just the file extension and it saves it properly as a CSV.</p>
+<p>There are also extension methods to work with Streams instead of just FileInfo objects:</p>
+<pre><code>using(var TempStream = new MemoryStream())
+{
+    TempStream.Write(new GenericFile(&quot;This is my content&quot;,&quot;My Title&quot;,&quot;&quot;), MimeType.Word);
+}
+</code></pre>
+<p>The above code would write to the TempStream object a word doc that contains &quot;This is my content&quot; in the body and have a title of &quot;My Title&quot;. You can similarly parse Stream objects like the FileInfo object but the only difference is that it takes in a MimeType object. This is to help it figure out what sort of file is in the stream. However for unknown files you can specify MimeType.Unknown. The system will then try its best to figure out what the file is and act accordingly.</p>
+<h2 id="writing-your-own-format-parser">Writing Your Own Format Parser</h2>
+<p>All format parsers must inherit from the IFormat<tfile> interface. However there is a base class to help simplify some of the process called FormatBaseClass&lt;TFileReader, TFileWriter, TFile&gt;, but it is not required. As an example:</tfile></p>
+<pre><code>/// &lt;summary&gt;
+/// Text format
+/// &lt;/summary&gt;
+/// &lt;seealso cref=&quot;BaseClasses.FormatBaseClass{TxtReader, TxtWriter, IGenericFile}&quot;/&gt;
+public class TxtFormat : FormatBaseClass&lt;TxtReader, TxtWriter, IGenericFile&gt;
+{
+    /// &lt;summary&gt;
+    /// Gets the content types.
+    /// &lt;/summary&gt;
+    /// &lt;value&gt;The content types.&lt;/value&gt;
+    public override string[] ContentTypes =&gt; new[] { &quot;TEXT/PLAIN&quot; };
+
+    /// &lt;summary&gt;
+    /// Gets or sets the display name.
+    /// &lt;/summary&gt;
+    /// &lt;value&gt;The display name.&lt;/value&gt;
+    public override string DisplayName =&gt; &quot;Text&quot;;
+
+    /// &lt;summary&gt;
+    /// Gets or sets the file types.
+    /// &lt;/summary&gt;
+    /// &lt;value&gt;The file types.&lt;/value&gt;
+    public override string[] FileTypes =&gt; new[] { &quot;TXT&quot; };
+}
+</code></pre>
+<p>The above class is the TXT file parser. It also has a reader class:</p>
+<pre><code>/// &lt;summary&gt;
+/// TXT file reader
+/// &lt;/summary&gt;
+/// &lt;seealso cref=&quot;Interfaces.IGenericFileReader{IGenericFile}&quot;/&gt;
+public class TxtReader : ReaderBaseClass&lt;IGenericFile&gt;
+{
+    /// &lt;summary&gt;
+    /// Gets the header identifier.
+    /// &lt;/summary&gt;
+    /// &lt;value&gt;The header identifier.&lt;/value&gt;
+    public override byte[] HeaderIdentifier =&gt; new byte[0];
+
+    /// &lt;summary&gt;
+    /// Reads the specified stream.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;stream&quot;&gt;The stream.&lt;/param&gt;
+    /// &lt;returns&gt;The file&lt;/returns&gt;
+    public override IGenericFile Read(Stream stream)
+    {
+        return new GenericFile(stream.ReadAll(), &quot;&quot;, &quot;&quot;);
+    }
+}
+</code></pre>
+<p>And a writer class:</p>
+<pre><code>/// &lt;summary&gt;
+/// Txt Writer
+/// &lt;/summary&gt;
+/// &lt;seealso cref=&quot;IGenericFileWriter&quot;/&gt;
+public class TxtWriter : IGenericFileWriter
+{
+    /// &lt;summary&gt;
+    /// Writes the file to the specified writer.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;writer&quot;&gt;The writer.&lt;/param&gt;
+    /// &lt;param name=&quot;file&quot;&gt;The file.&lt;/param&gt;
+    /// &lt;returns&gt;True if it writes successfully, false otherwise.&lt;/returns&gt;
+    public bool Write(Stream writer, IGenericFile file)
+    {
+        var TempData = Encoding.UTF8.GetBytes(file.ToString());
+        writer.Write(TempData, 0, TempData.Length);
+        return true;
+    }
+}
+</code></pre>
+<p>You can create something similar for your formats as well. From there the system will automatically pick up your format and use it when appropriate. You can also override the existing formats with your own. You just need to state the content type and file types that you wish to intercept and it will use your items instead of the corresponding items in FileCurator.</p>
+<h2 id="installation">Installation</h2>
+<p>The library is available via Nuget with the package name &quot;FileCurator&quot;. To install it run the following command in the Package Manager Console:</p>
+<p>Install-Package FileCurator</p>
+<p>The file parsers that are not .Net Standard yet are also available with the package name of &quot;FileCurator.Windows&quot;. To install it run the following command in the Package Manager Console:</p>
+<p>Install-Package FileCurator.Windows</p>
+<p>This package, however, is .Net Framework only and generally not needed as most formats have been moved to .Net Standard/.Net 5+.</p>
+<h2 id="build-process">Build Process</h2>
+<p>In order to build the library you will require the following as a minimum:</p>
+<ol>
+<li>Visual Studio 2019</li>
+<li>.Net 5</li>
+</ol>
+<p>Other than that, just clone the project and you should be able to load the solution and build without too much effort.</p>
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>&#169; James Craig. All rights reserved.</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="styles/docfx.js"></script>
+        <script type="text/javascript" src="styles/main.js"></script>
+        <script type="text/javascript" src="styles/singulink.js"></script>    </body>
+</html>
