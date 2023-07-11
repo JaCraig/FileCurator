@@ -17,7 +17,7 @@ namespace FileCurator.Tests.Formats.Word
         public void Read()
         {
             var TestObject = new WordFormat();
-            using var TestFile = File.OpenRead("./TestData/TestDocx.docx");
+            using var TestFile = File.OpenRead("./TestData/TestDOCX.docx");
             var Result = TestObject.Read(TestFile);
             Assert.Equal("This is a test docx", Result.ToString());
         }
@@ -27,11 +27,11 @@ namespace FileCurator.Tests.Formats.Word
         {
             Directory.CreateDirectory("./Results");
             var TestObject = new WordFormat();
-            using (var ResultFile = File.Open("./Results/TestDocx.docx", FileMode.OpenOrCreate))
+            using (var ResultFile = File.Open("./Results/TestDOCX.docx", FileMode.OpenOrCreate))
             {
                 Assert.True(TestObject.Write(ResultFile, new GenericFile("Paragraph 1 text.\nParagraph 2 text.", "My title", "")));
             }
-            using (var ResultFile = File.Open("./Results/TestDocx.docx", FileMode.OpenOrCreate))
+            using (var ResultFile = File.Open("./Results/TestDOCX.docx", FileMode.OpenOrCreate))
             {
                 var Result = TestObject.Read(ResultFile);
                 Assert.Equal("Paragraph 1 text.\nParagraph 2 text.", Result.ToString());
@@ -44,7 +44,7 @@ namespace FileCurator.Tests.Formats.Word
         {
             Directory.CreateDirectory("./Results");
             var TestObject = new WordFormat();
-            using (var ResultFile = File.Open("./Results/TestDocx.docx", FileMode.OpenOrCreate))
+            using (var ResultFile = File.Open("./Results/TestDOCX.docx", FileMode.OpenOrCreate))
             {
                 var Table = new GenericTable
                 {
@@ -70,7 +70,7 @@ namespace FileCurator.Tests.Formats.Word
                 Table.Rows.Add(Row3);
                 Assert.True(TestObject.Write(ResultFile, Table));
             }
-            using (var ResultFile = File.Open("./Results/TestDocx.docx", FileMode.OpenOrCreate))
+            using (var ResultFile = File.Open("./Results/TestDOCX.docx", FileMode.OpenOrCreate))
             {
                 var Result = TestObject.Read(ResultFile);
                 Assert.Equal("A\nB\nC\nThis\nis\na\ntest\ndoc\nwith\na\ntable\ninside", Result.ToString());
