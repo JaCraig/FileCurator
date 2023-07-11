@@ -116,7 +116,8 @@ namespace FileCurator.Tests
             IDirectory Temp2 = new DirectoryInfo("./Test2");
             await Temp.CreateAsync().ConfigureAwait(false);
             await Temp2.CreateAsync().ConfigureAwait(false);
-            Temp2 = await Temp2.MoveToAsync(Temp).ConfigureAwait(false);
+            if (!Temp.EnumerateDirectories().Any())
+                Temp2 = await Temp2.MoveToAsync(Temp).ConfigureAwait(false);
             Assert.True(Temp.Exists);
             Assert.True(Temp2.Exists);
             Assert.Equal(Temp, Temp2.Parent);

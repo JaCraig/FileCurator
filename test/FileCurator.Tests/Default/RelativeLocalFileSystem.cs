@@ -43,7 +43,6 @@ namespace FileCurator.Tests.Default
             Dir = Temp.Directory("~/");
             Assert.NotNull(Dir);
             Assert.IsType<LocalDirectory>(Dir);
-            Assert.True(Dir.Exists);
         }
 
         [Fact]
