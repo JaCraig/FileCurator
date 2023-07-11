@@ -44,10 +44,35 @@ namespace FileCurator.Default.Memory
         /// <param name="path">Path to the directory</param>
         /// <param name="credentials">The credentials.</param>
         public MemoryDirectory(string path, Credentials? credentials = null)
-            : base(path?.Replace("\\", "/") ?? "", credentials)
+            : base(path?.Replace(Path.DirectorySeparatorChar, '/') ?? "", credentials)
         {
             Created = modified = accessed = DateTime.UtcNow;
         }
+
+        /// <summary>
+        /// The directories
+        /// </summary>
+        private readonly List<IDirectory> Directories = new List<IDirectory>();
+
+        /// <summary>
+        /// The file data
+        /// </summary>
+        private readonly List<IFile> Files = new List<IFile>();
+
+        /// <summary>
+        /// The accessed
+        /// </summary>
+        private DateTime accessed;
+
+        /// <summary>
+        /// The exists
+        /// </summary>
+        private bool exists;
+
+        /// <summary>
+        /// The modified
+        /// </summary>
+        private DateTime modified;
 
         /// <summary>
         /// returns now
@@ -102,31 +127,6 @@ namespace FileCurator.Default.Memory
         /// Size (returns 0)
         /// </summary>
         public override long Size => Files.Sum(x => x.Length) + Directories.Sum(x => x.Size);
-
-        /// <summary>
-        /// The directories
-        /// </summary>
-        private readonly List<IDirectory> Directories = new List<IDirectory>();
-
-        /// <summary>
-        /// The file data
-        /// </summary>
-        private readonly List<IFile> Files = new List<IFile>();
-
-        /// <summary>
-        /// The accessed
-        /// </summary>
-        private DateTime accessed;
-
-        /// <summary>
-        /// The exists
-        /// </summary>
-        private bool exists;
-
-        /// <summary>
-        /// The modified
-        /// </summary>
-        private DateTime modified;
 
         /// <summary>
         /// Not used
@@ -226,7 +226,7 @@ namespace FileCurator.Default.Memory
         {
             if (directory is null)
                 return this;
-            var ReturnValue = CopyTo(new DirectoryInfo(directory.FullName + "\\" + Name.Replace("mem://", "").Replace("/", "").Replace("\\", ""), Credentials));
+            var ReturnValue = CopyTo(new DirectoryInfo(directory.FullName + Path.DirectorySeparatorChar + Name.Replace("mem://", "").Replace("/", "").Replace(new string(new char[] { Path.DirectorySeparatorChar }), ""), Credentials));
             Delete();
             return ReturnValue;
         }

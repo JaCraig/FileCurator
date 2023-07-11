@@ -137,7 +137,7 @@ namespace FileCurator.Default
                 if (string.IsNullOrEmpty(InternalFile))
                     return "";
                 var Match = SplitPathRegex.Match(InternalFile).Groups["FileName"];
-                return Match.Success ? Match.Value.Replace("\\", "/").Replace("/", ".").Replace("-", "_") : string.Empty;
+                return Match.Success ? Match.Value.Replace(new string(new char[] { Path.DirectorySeparatorChar }), "/").Replace("/", ".").Replace("-", "_") : string.Empty;
             }
         }
 
@@ -151,7 +151,7 @@ namespace FileCurator.Default
         {
             if (directory is null || !Exists || string.IsNullOrEmpty(directory.FullName))
                 return this;
-            var File = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
+            var File = new FileInfo(directory.FullName + Path.DirectorySeparatorChar + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             if (!File.Exists || overwrite)
             {
                 File.Write(ReadBinary());
@@ -174,7 +174,7 @@ namespace FileCurator.Default
         {
             if (directory is null || !Exists || string.IsNullOrEmpty(directory.FullName))
                 return this;
-            var TempFile = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
+            var TempFile = new FileInfo(directory.FullName + Path.DirectorySeparatorChar + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             TempFile.Write(ReadBinary());
             Delete();
             return TempFile;

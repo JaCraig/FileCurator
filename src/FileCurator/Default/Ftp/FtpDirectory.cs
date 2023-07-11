@@ -98,7 +98,7 @@ namespace FileCurator.Default.Ftp
             if (directory is null || string.IsNullOrEmpty(directory.FullName))
                 return this;
             var TempName = Name;
-            var NewDirectory = new FileInfo(directory.FullName + "\\" + TempName.Right(TempName.Length - (TempName.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
+            var NewDirectory = new FileInfo(directory.FullName + Path.DirectorySeparatorChar + TempName.Right(TempName.Length - (TempName.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             var OldFile = new FileInfo(InternalDirectory.AbsoluteUri, Credentials);
             NewDirectory.Write(OldFile.Read(), FileMode.Create);
             return directory;

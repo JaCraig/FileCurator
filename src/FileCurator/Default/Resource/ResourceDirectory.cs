@@ -131,7 +131,7 @@ namespace FileCurator.Default
                 var Match = SplitPathRegex.Match(InternalDirectory)?.Groups["FileName"];
                 if (Match is null)
                     return "";
-                var ReturnValue = Match.Success ? Match.Value.Replace("\\", "/").Replace("/", ".") : "";
+                var ReturnValue = Match.Success ? Match.Value.Replace(new string(new char[] { Path.DirectorySeparatorChar }), "/").Replace("/", ".") : "";
                 if (ReturnValue.EndsWith(".", StringComparison.Ordinal))
                     return ReturnValue.Left(ReturnValue.Length - 1);
                 return ReturnValue;

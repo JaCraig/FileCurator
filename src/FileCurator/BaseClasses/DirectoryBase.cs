@@ -229,9 +229,9 @@ namespace FileCurator.BaseClasses
                         break;
 
                     case CopyOptions.CopyIfNewer:
-                        if (new FileInfo(directory.FullName + "\\" + TempFile.Name.Replace("/", "").Replace("\\", ""), Credentials).Exists)
+                        if (new FileInfo(directory.FullName + Path.DirectorySeparatorChar + TempFile.Name.Replace("/", "").Replace(new string(new char[] { Path.DirectorySeparatorChar }), ""), Credentials).Exists)
                         {
-                            var FileInfo = new FileInfo(directory.FullName + "\\" + TempFile.Name.Replace("/", "").Replace("\\", ""), Credentials);
+                            var FileInfo = new FileInfo(directory.FullName + Path.DirectorySeparatorChar + TempFile.Name.Replace("/", "").Replace(new string(new char[] { Path.DirectorySeparatorChar }), ""), Credentials);
                             if (FileInfo.Modified.CompareTo(TempFile.Modified) < 0)
                                 TempFile.CopyTo(directory, true);
                         }
@@ -248,7 +248,7 @@ namespace FileCurator.BaseClasses
                 }
             }
             foreach (var SubDirectory in EnumerateDirectories())
-                SubDirectory.CopyTo(new DirectoryInfo(directory.FullName + "\\" + SubDirectory.Name.Replace("/", "").Replace("\\", ""), Credentials), options);
+                SubDirectory.CopyTo(new DirectoryInfo(directory.FullName + Path.DirectorySeparatorChar + SubDirectory.Name.Replace("/", "").Replace(new string(new char[] { Path.DirectorySeparatorChar }), ""), Credentials), options);
             return directory;
         }
 
@@ -273,9 +273,9 @@ namespace FileCurator.BaseClasses
                         break;
 
                     case CopyOptions.CopyIfNewer:
-                        if (new FileInfo(directory.FullName + "\\" + TempFile.Name.Replace("/", "").Replace("\\", ""), Credentials).Exists)
+                        if (new FileInfo(directory.FullName + Path.DirectorySeparatorChar + TempFile.Name.Replace("/", "").Replace(new string(new char[] { Path.DirectorySeparatorChar }), ""), Credentials).Exists)
                         {
-                            var FileInfo = new FileInfo(directory.FullName + "\\" + TempFile.Name.Replace("/", "").Replace("\\", ""), Credentials);
+                            var FileInfo = new FileInfo(directory.FullName + Path.DirectorySeparatorChar + TempFile.Name.Replace("/", "").Replace(new string(new char[] { Path.DirectorySeparatorChar }), ""), Credentials);
                             if (FileInfo.Modified.CompareTo(TempFile.Modified) < 0)
                                 Tasks.Add(TempFile.CopyToAsync(directory, true));
                         }
@@ -295,7 +295,7 @@ namespace FileCurator.BaseClasses
             Tasks.Clear();
             foreach (var SubDirectory in EnumerateDirectories())
             {
-                Tasks.Add(SubDirectory.CopyToAsync(new DirectoryInfo(directory.FullName + "\\" + SubDirectory.Name.Replace("/", "").Replace("\\", ""), Credentials), options));
+                Tasks.Add(SubDirectory.CopyToAsync(new DirectoryInfo(directory.FullName + Path.DirectorySeparatorChar + SubDirectory.Name.Replace("/", "").Replace(new string(new char[] { Path.DirectorySeparatorChar }), ""), Credentials), options));
             }
             await Task.WhenAll(Tasks).ConfigureAwait(false);
             return directory;
@@ -415,7 +415,7 @@ namespace FileCurator.BaseClasses
         {
             if (directory is null || string.IsNullOrEmpty(directory.FullName))
                 return this;
-            var ReturnValue = CopyTo(new DirectoryInfo(directory.FullName + "\\" + Name.Replace("/", "").Replace("\\", ""), Credentials));
+            var ReturnValue = CopyTo(new DirectoryInfo(directory.FullName + Path.DirectorySeparatorChar + Name.Replace("/", "").Replace(new string(new char[] { Path.DirectorySeparatorChar }), ""), Credentials));
             Delete();
             return ReturnValue;
         }
@@ -429,7 +429,7 @@ namespace FileCurator.BaseClasses
         {
             if (directory is null || string.IsNullOrEmpty(directory.FullName))
                 return this;
-            var ReturnValue = await CopyToAsync(new DirectoryInfo(directory.FullName + "\\" + Name.Replace("/", "").Replace("\\", ""), Credentials)).ConfigureAwait(false);
+            var ReturnValue = await CopyToAsync(new DirectoryInfo(directory.FullName + Path.DirectorySeparatorChar + Name.Replace("/", "").Replace(new string(new char[] { Path.DirectorySeparatorChar }), ""), Credentials)).ConfigureAwait(false);
             await DeleteAsync().ConfigureAwait(false);
             return ReturnValue;
         }

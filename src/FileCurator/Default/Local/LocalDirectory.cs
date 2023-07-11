@@ -171,8 +171,8 @@ namespace FileCurator.Default
         {
             if (InternalDirectory is null || string.IsNullOrEmpty(name))
                 return this;
-            InternalDirectory.MoveTo(Parent.FullName + "\\" + name);
-            InternalDirectory = new System.IO.DirectoryInfo(Parent.FullName + "\\" + name);
+            InternalDirectory.MoveTo(Parent.FullName + Path.DirectorySeparatorChar + name);
+            InternalDirectory = new System.IO.DirectoryInfo(Parent.FullName + Path.DirectorySeparatorChar + name);
             return this;
         }
     }

@@ -109,7 +109,7 @@ namespace FileCurator.Default
             if (directory is null || !Exists || string.IsNullOrEmpty(directory.FullName))
                 return null;
             directory.Create();
-            var File = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
+            var File = new FileInfo(directory.FullName + Path.DirectorySeparatorChar + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             if (!File.Exists || overwrite)
             {
                 File.Write(ReadBinary());
@@ -140,8 +140,8 @@ namespace FileCurator.Default
             if (directory is null || !Exists || string.IsNullOrEmpty(directory.FullName))
                 return this;
             directory.Create();
-            InternalFile.MoveTo(directory.FullName + "\\" + Name);
-            InternalFile = new System.IO.FileInfo(directory.FullName + "\\" + Name);
+            InternalFile.MoveTo(directory.FullName + Path.DirectorySeparatorChar + Name);
+            InternalFile = new System.IO.FileInfo(directory.FullName + Path.DirectorySeparatorChar + Name);
             return this;
         }
 
@@ -179,8 +179,8 @@ namespace FileCurator.Default
         {
             if (string.IsNullOrEmpty(newName) || !Exists)
                 return this;
-            InternalFile.MoveTo(InternalFile.DirectoryName + "\\" + newName);
-            InternalFile = new System.IO.FileInfo(InternalFile.DirectoryName + "\\" + newName);
+            InternalFile.MoveTo(InternalFile.DirectoryName + Path.DirectorySeparatorChar + newName);
+            InternalFile = new System.IO.FileInfo(InternalFile.DirectoryName + Path.DirectorySeparatorChar + newName);
             return this;
         }
 

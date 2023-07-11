@@ -16,6 +16,7 @@ limitations under the License.
 
 using FileCurator.BaseClasses;
 using System;
+using System.IO;
 
 namespace FileCurator.Default
 {
@@ -49,7 +50,7 @@ namespace FileCurator.Default
         {
             if (string.IsNullOrEmpty(path))
                 return path;
-            path = path.Replace("/", "\\");
+            path = path.Replace('/', Path.DirectorySeparatorChar);
             var BaseDirectory = new System.IO.DirectoryInfo(".").FullName;
             var ParentDirectory = new LocalDirectory(BaseDirectory).Parent.FullName;
             if (path.StartsWith("..\\", StringComparison.Ordinal))

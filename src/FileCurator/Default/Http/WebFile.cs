@@ -122,7 +122,7 @@ namespace FileCurator.Default
         {
             if (directory is null || string.IsNullOrEmpty(directory.FullName))
                 return this;
-            var File = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
+            var File = new FileInfo(directory.FullName + Path.DirectorySeparatorChar + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             if (!File.Exists || overwrite)
             {
                 File.Write(ReadBinary());
@@ -152,7 +152,7 @@ namespace FileCurator.Default
         {
             if (directory is null || !Exists || string.IsNullOrEmpty(directory.FullName))
                 return this;
-            var TempFile = new FileInfo(directory.FullName + "\\" + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
+            var TempFile = new FileInfo(directory.FullName + Path.DirectorySeparatorChar + Name.Right(Name.Length - (Name.LastIndexOf("/", StringComparison.OrdinalIgnoreCase) + 1)), Credentials);
             TempFile.Write(ReadBinary());
             Delete();
             return TempFile;
