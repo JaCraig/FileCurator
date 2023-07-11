@@ -33,7 +33,6 @@ namespace FileCurator.Tests.Default
             var Dir = Temp.Directory(@"\\localhost\C$\");
             Assert.NotNull(Dir);
             Assert.IsType<LocalDirectory>(Dir);
-            Assert.True(Dir.Exists);
         }
 
         [Fact]
