@@ -60,7 +60,9 @@ namespace FileCurator.Formats.Excel
         {
             try
             {
-                SpreadsheetDocument.Open(stream, false);
+                var Result = SpreadsheetDocument.Open(stream, false);
+                if (Result.RootPart?.ContentType != "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml")
+                    return false;
             }
             catch { return false; }
             return true;

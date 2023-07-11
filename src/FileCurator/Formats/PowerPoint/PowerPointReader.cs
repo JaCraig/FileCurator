@@ -51,7 +51,12 @@ namespace FileCurator.Formats.PowerPoint
                 return false;
             try
             {
-                PresentationDocument.Open(stream, false);
+                var Result = PresentationDocument.Open(stream, false);
+                if (Result.RootPart?.ContentType != "application/vnd.openxmlformats-officedocument.presentationml.presentation.main+xml"
+                    && Result.RootPart?.ContentType != "application/vnd.openxmlformats-officedocument.presentationml.slideshow.main+xml")
+                {
+                    return false;
+                }
             }
             catch { return false; }
             return true;

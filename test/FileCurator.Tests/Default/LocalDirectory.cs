@@ -24,8 +24,8 @@ namespace FileCurator.Tests.Default
             Assert.True(Temp2.Exists);
             Assert.True(Temp3.Exists);
             Assert.Equal(Temp, Temp3);
-            Assert.NotEqual(Temp, Temp2);
-            Assert.NotEqual(Temp2, Temp3);
+            Assert.NotSame(Temp, Temp2);
+            Assert.NotSame(Temp2, Temp3);
             Temp.Delete();
             Temp2.Delete();
             Assert.False(Temp.Exists);

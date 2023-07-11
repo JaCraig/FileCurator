@@ -45,7 +45,9 @@ namespace FileCurator.Formats.Word
         {
             try
             {
-                WordprocessingDocument.Open(stream, false);
+                var Result = WordprocessingDocument.Open(stream, false);
+                if (Result.MainDocumentPart?.ContentType != "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml")
+                    return false;
             }
             catch { return false; }
             return true;
