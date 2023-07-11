@@ -41,7 +41,7 @@ namespace FileCurator.Tests.Formats.RSS
             var TestObject = new RSSWriter();
             var TestReader = new TxtReader();
             using var ResultFile = File.Open("./Results/WriteAFeed.rss", FileMode.OpenOrCreate);
-            using var TestFile = File.OpenRead("./TestData/TestTxt.txt");
+            using var TestFile = File.OpenRead("./TestData/TestTXT.txt");
             Assert.False(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
         }
     }
