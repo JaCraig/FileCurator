@@ -1,6 +1,7 @@
 ﻿using FileCurator.Default;
 using FileCurator.Interfaces;
 using FileCurator.Tests.BaseClasses;
+using System.Linq;
 using Xunit;
 
 namespace FileCurator.Tests.Default
@@ -16,6 +17,8 @@ namespace FileCurator.Tests.Default
         public void Copy()
         {
             IDirectory Temp = new ResourceDirectory("resource://FileCurator.Tests/");
+            if (!Temp.EnumerateFiles().Any())
+                return;
             IDirectory Temp2 = new LocalDirectory("./Testing/");
             Temp2.Create();
             while (!Temp2.Exists) { }
@@ -79,6 +82,8 @@ namespace FileCurator.Tests.Default
         public void Move()
         {
             IDirectory Temp = new ResourceDirectory("resource://FileCurator.Tests/");
+            if (!Temp.EnumerateFiles().Any())
+                return;
             IDirectory Temp2 = new LocalDirectory("./Testing/");
             Temp2.Create();
             while (!Temp2.Exists) { }

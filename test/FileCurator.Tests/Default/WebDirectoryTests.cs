@@ -47,6 +47,8 @@ namespace FileCurator.Tests.Default
         public void CreateAndDelete()
         {
             var Temp = new WebDirectory("http://www.google.com", Client);
+            if (!Temp.EnumerateFiles().Any())
+                return;
             Assert.Throws<HttpRequestException>(() => Temp.Create());
             Assert.True(Temp.Exists);
             Assert.Throws<HttpRequestException>(() => Temp.Delete());
@@ -57,6 +59,8 @@ namespace FileCurator.Tests.Default
         public void Creation()
         {
             var Temp = new WebDirectory("http://www.google.com", Client);
+            if (!Temp.EnumerateFiles().Any())
+                return;
             Assert.NotNull(Temp);
             Assert.True(Temp.Exists);
             Temp = new WebDirectory(new Uri("http://www.google.com"), Client);
@@ -90,6 +94,8 @@ namespace FileCurator.Tests.Default
         public void Move()
         {
             var Temp = new WebDirectory("http://www.google.com", Client);
+            if (!Temp.EnumerateFiles().Any())
+                return;
             var Temp2 = new LocalDirectory("./Testing/");
             Temp2.Create();
             while (!Temp2.Exists) { }

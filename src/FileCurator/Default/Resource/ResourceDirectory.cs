@@ -68,7 +68,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Full path
         /// </summary>
-        public override string FullName => AssemblyFrom is null ? $"resource://{Resource}" : $"resource://{AssemblyFrom.GetName().Name}/{Resource}";
+        public override string FullName => AssemblyFrom is null ? $"resource://{Resource}" : $"resource://{AssemblyFrom.GetName()?.Name}/{Resource}";
 
         /// <summary>
         /// returns now
@@ -88,7 +88,7 @@ namespace FileCurator.Default
         /// <summary>
         /// Root
         /// </summary>
-        public override IDirectory? Root => AssemblyFrom is null ? null : new ResourceDirectory("resource://" + AssemblyFrom.GetName().Name + "/", Credentials);
+        public override IDirectory? Root => AssemblyFrom is null ? null : new ResourceDirectory("resource://" + AssemblyFrom.GetName()?.Name + "/", Credentials);
 
         /// <summary>
         /// Size (returns 0)
@@ -112,7 +112,9 @@ namespace FileCurator.Default
                 if (string.IsNullOrEmpty(InternalDirectory))
                     return null;
                 var AssemblyName = SplitPathRegex.Match(InternalDirectory).Groups["Assembly"].Value;
-                return Services.ServiceProvider?.GetService<IEnumerable<Assembly>>()?.FirstOrDefault(x => x.GetName().Name == AssemblyName);
+                if (string.IsNullOrEmpty(AssemblyName))
+                    return null;
+                return Services.ServiceProvider?.GetService<IEnumerable<Assembly>>()?.FirstOrDefault(x => x.GetName()?.Name == AssemblyName);
             }
         }
 
@@ -126,7 +128,9 @@ namespace FileCurator.Default
             {
                 if (string.IsNullOrEmpty(InternalDirectory))
                     return "";
-                var Match = SplitPathRegex.Match(InternalDirectory).Groups["FileName"];
+                var Match = SplitPathRegex.Match(InternalDirectory)?.Groups["FileName"];
+                if (Match is null)
+                    return "";
                 var ReturnValue = Match.Success ? Match.Value.Replace("\\", "/").Replace("/", ".") : "";
                 if (ReturnValue.EndsWith(".", StringComparison.Ordinal))
                     return ReturnValue.Left(ReturnValue.Length - 1);
@@ -165,7 +169,7 @@ namespace FileCurator.Default
                 yield break;
             foreach (var TempFile in AssemblyFrom.GetManifestResourceNames() ?? Array.Empty<string>())
             {
-                var TempResource = new ResourceFile($"resource://{AssemblyFrom.GetName().Name}/{TempFile}", Credentials);
+                var TempResource = new ResourceFile($"resource://{AssemblyFrom.GetName()?.Name}/{TempFile}", Credentials);
                 if (TempResource.FullName.StartsWith(FullName, StringComparison.OrdinalIgnoreCase))
                 {
                     yield return TempResource;
