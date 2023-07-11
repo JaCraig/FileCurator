@@ -53,15 +53,15 @@ namespace FileCurator.Default
             path = path.Replace('/', Path.DirectorySeparatorChar);
             var BaseDirectory = new System.IO.DirectoryInfo(".").FullName;
             var ParentDirectory = new LocalDirectory(BaseDirectory).Parent.FullName;
-            if (path.StartsWith("..\\", StringComparison.Ordinal))
+            if (path.StartsWith(".." + Path.DirectorySeparatorChar, StringComparison.Ordinal))
             {
                 return ParentDirectory + path.Remove(0, 2);
             }
-            else if (path.StartsWith(".\\", StringComparison.Ordinal))
+            else if (path.StartsWith("." + Path.DirectorySeparatorChar, StringComparison.Ordinal))
             {
                 return BaseDirectory + path.Remove(0, 1);
             }
-            else if (path.StartsWith("~\\", StringComparison.Ordinal))
+            else if (path.StartsWith("~" + Path.DirectorySeparatorChar, StringComparison.Ordinal))
             {
                 return BaseDirectory + path.Remove(0, 1);
             }

@@ -104,7 +104,7 @@ namespace FileCurator.Tests
             Temp2 = Temp2.MoveTo(Temp);
             Assert.True(Temp.Exists);
             //Assert.True(Temp2.Exists);
-            Assert.Equal(Temp, Temp2.Parent);
+            Assert.Equal(Temp.FullName, Temp2.Parent.FullName);
             Temp.Delete();
             Assert.False(Temp.Exists);
         }
@@ -120,7 +120,7 @@ namespace FileCurator.Tests
                 Temp2 = await Temp2.MoveToAsync(Temp).ConfigureAwait(false);
             Assert.True(Temp.Exists);
             //Assert.True(Temp2.Exists);
-            Assert.Equal(Temp, Temp2.Parent);
+            Assert.Equal(Temp.FullName, Temp2.Parent.FullName);
             await Temp.DeleteAsync().ConfigureAwait(false);
             Assert.False(Temp.Exists);
         }
