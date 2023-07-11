@@ -15,10 +15,11 @@ namespace FileCurator.Tests.Formats.Txt
         [Fact]
         public void ReadWrite()
         {
+            Directory.CreateDirectory("./Results");
             var TestObject = new TxtFormat();
             using (var ResultFile = File.Open("./Results/TxtWrite.txt", FileMode.OpenOrCreate))
             {
-                using var TestFile = File.OpenRead("../../../TestData/TestTXT.txt");
+                using var TestFile = File.OpenRead("./TestData/TestTXT.txt");
                 Assert.True(TestObject.Write(ResultFile, TestObject.Read(TestFile)));
             }
             using (var ResultFile = File.Open("./Results/TxtWrite.txt", FileMode.OpenOrCreate))

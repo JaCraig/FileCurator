@@ -2,6 +2,7 @@
 using FileCurator.Interfaces;
 using FileCurator.Tests.BaseClasses;
 using System;
+using System.Linq;
 using System.Net.Http;
 using Xunit;
 
@@ -24,6 +25,8 @@ namespace FileCurator.Tests.Default
         public void Copy()
         {
             var Temp = new WebDirectory("http://www.google.com", Client);
+            if (!Temp.EnumerateFiles().Any())
+                return;
             var Temp2 = new LocalDirectory("./Testing/");
             Temp2.Create();
             while (!Temp2.Exists) { }

@@ -17,7 +17,7 @@ namespace FileCurator.Tests.Formats.Word
         public void Read()
         {
             var TestObject = new WordFormat();
-            using var TestFile = File.OpenRead("../../../TestData/TestDocx.docx");
+            using var TestFile = File.OpenRead("./TestData/TestDocx.docx");
             var Result = TestObject.Read(TestFile);
             Assert.Equal("This is a test docx", Result.ToString());
         }
@@ -25,6 +25,7 @@ namespace FileCurator.Tests.Formats.Word
         [Fact]
         public void Write()
         {
+            Directory.CreateDirectory("./Results");
             var TestObject = new WordFormat();
             using (var ResultFile = File.Open("./Results/TestDocx.docx", FileMode.OpenOrCreate))
             {
@@ -41,6 +42,7 @@ namespace FileCurator.Tests.Formats.Word
         [Fact]
         public void WriteTable()
         {
+            Directory.CreateDirectory("./Results");
             var TestObject = new WordFormat();
             using (var ResultFile = File.Open("./Results/TestDocx.docx", FileMode.OpenOrCreate))
             {

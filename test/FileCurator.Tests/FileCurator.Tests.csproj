@@ -20,6 +20,85 @@
 
   <ItemGroup>
     <None Remove="Resources\TextFile1.txt" />
+    <None Remove="TestData\TestCSV.csv" />
+    <None Remove="TestData\TestDefault.boop" />
+    <None Remove="TestData\TestDOCX.docx" />
+    <None Remove="TestData\TestEml.eml" />
+    <None Remove="TestData\TestHTML.htm" />
+    <None Remove="TestData\TestICal.ics" />
+    <None Remove="TestData\TestMHTML.mht" />
+    <None Remove="TestData\TestMSG.msg" />
+    <None Remove="TestData\TestPDF.pdf" />
+    <None Remove="TestData\TestPPSX.ppsx" />
+    <None Remove="TestData\TestPPTX.pptx" />
+    <None Remove="TestData\TestRSS.rss" />
+    <None Remove="TestData\TestRSS2.rss" />
+    <None Remove="TestData\TestRTF.rtf" />
+    <None Remove="TestData\TestTXT.txt" />
+    <None Remove="TestData\TestVCal.vcs" />
+    <None Remove="TestData\TestVCF.vcf" />
+    <None Remove="TestData\TestXLSX.xlsx" />
+    <None Remove="TestData\TestXML.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TestData\TestCSV.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestDefault.boop">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestDOCX.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestEml.eml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestHTML.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestICal.ics">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestMHTML.mht">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestMSG.msg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestPDF.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestPPSX.ppsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestPPTX.pptx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestRSS.rss">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestRSS2.rss">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestRTF.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestTXT.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestVCal.vcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestVCF.vcf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestXLSX.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TestXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

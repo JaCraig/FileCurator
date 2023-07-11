@@ -19,6 +19,7 @@ namespace FileCurator.Tests.Formats.VCard
         [Fact]
         public void WriteACard()
         {
+            Directory.CreateDirectory("./Results");
             var TestObject = new VCardWriter();
             var ResultReader = new VCardReader();
             using (var ResultFile = File.Open("./Results/WriteACard.vcf", FileMode.OpenOrCreate))
@@ -74,7 +75,7 @@ namespace FileCurator.Tests.Formats.VCard
                 Assert.Equal("MiddleName", Result.MiddleName);
                 Assert.Equal("OrgName", Result.Organization);
                 Assert.Equal("Prefix", Result.Prefix);
-                Assert.Equal(0, Result.Relationships.Count);
+                Assert.Empty(Result.Relationships);
                 Assert.Equal("Suffix", Result.Suffix);
                 Assert.Equal("Title", Result.Title);
                 Assert.Equal("http://www.somewhere.com", Result.Url);

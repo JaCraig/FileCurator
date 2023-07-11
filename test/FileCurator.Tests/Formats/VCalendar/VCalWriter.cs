@@ -17,6 +17,7 @@ namespace FileCurator.Tests.Formats.VCalendar
         [Fact]
         public void WriteACalendar()
         {
+            Directory.CreateDirectory("./Results");
             var TestObject = new VCalendarWriter();
             var ResultReader = new VCalendarReader();
             using (var ResultFile = File.Open("./Results/WriteACalendar.vcs", FileMode.OpenOrCreate))

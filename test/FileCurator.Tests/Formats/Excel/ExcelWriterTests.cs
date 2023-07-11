@@ -106,11 +106,12 @@ namespace FileCurator.Tests.Formats.Excel
             TempRow.Cells.Add(new GenericCell("5/2/2018 4:00:04 PM"));
             TempRow.Cells.Add(new GenericCell("3"));
             TestTable.Rows.Add(TempRow);
+            Directory.CreateDirectory("./Results");
             using (var ResultFile = File.Open("./Results/WriteAGenericTable.xlsx", FileMode.OpenOrCreate))
             {
                 Assert.True(TestObject.Write(ResultFile, TestTable));
             }
-
+            Directory.CreateDirectory("./Results");
             using (var ResultFile = File.Open("./Results/WriteAGenericTable.xlsx", FileMode.OpenOrCreate))
             {
                 var Result = TestReader.Read(ResultFile);
@@ -123,9 +124,10 @@ namespace FileCurator.Tests.Formats.Excel
         {
             var TestObject = new ExcelWriter();
             var TestReader = new ExcelReader();
+            Directory.CreateDirectory("./Results");
             using (var ResultFile = File.Open("./Results/WriteATable.xlsx", FileMode.OpenOrCreate))
             {
-                using var TestFile = File.OpenRead("../../../TestData/TestXLSX.xlsx");
+                using var TestFile = File.OpenRead("./TestData/TestXLSX.xlsx");
                 Assert.True(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
             }
             using (var ResultFile = File.Open("./Results/WriteATable.xlsx", FileMode.OpenOrCreate))
@@ -147,15 +149,16 @@ namespace FileCurator.Tests.Formats.Excel
             var TestObject = new ExcelWriter();
             var TestReader = new TxtFormat();
             var ResultReader = new ExcelReader();
+            Directory.CreateDirectory("./Results");
             using (var ResultFile = File.Open("./Results/WriteNotATable.xlsx", FileMode.OpenOrCreate))
             {
-                using var TestFile = File.OpenRead("../../../TestData/TestTXT.txt");
+                using var TestFile = File.OpenRead("./TestData/TestTXT.txt");
                 Assert.True(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
             }
             using (var ResultFile = File.Open("./Results/WriteNotATable.xlsx", FileMode.OpenOrCreate))
             {
                 var Result = ResultReader.Read(ResultFile);
-                Assert.Equal(1, Result.Columns.Count);
+                Assert.Single(Result.Columns);
                 Assert.Equal("This is a test docx", Result.Columns[0]);
             }
         }

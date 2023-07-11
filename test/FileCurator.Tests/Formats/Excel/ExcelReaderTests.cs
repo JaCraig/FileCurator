@@ -16,7 +16,7 @@ namespace FileCurator.Tests.Formats.Excel
         public void Convert()
         {
             var TestObject = new ExcelReader();
-            var Result = TestObject.Read(File.OpenRead("../../../TestData/TestXLSX.xlsx"));
+            var Result = TestObject.Read(File.OpenRead("./TestData/TestXLSX.xlsx"));
             var Results = Result.Convert<ExcelTestData>();
             Assert.Equal(2, Results.Count);
             Assert.Equal("Goes", Results[0].Test);
@@ -29,7 +29,7 @@ namespace FileCurator.Tests.Formats.Excel
         public void Read()
         {
             var TestObject = new ExcelReader();
-            var Result = TestObject.Read(File.OpenRead("../../../TestData/TestXLSX.xlsx"));
+            var Result = TestObject.Read(File.OpenRead("./TestData/TestXLSX.xlsx"));
             Assert.Equal(2, Result.Rows.Count);
             Assert.Equal(2, Result.Columns.Count);
             Assert.Equal("Test", Result.Columns[0]);

@@ -17,12 +17,13 @@ namespace FileCurator.Tests.Formats.Delimited
         [Fact]
         public void WriteATable()
         {
+            Directory.CreateDirectory("./Results");
             var TestObject = new DelimitedWriter();
             var TestReader = new ExcelReader();
             var ResultReader = new DelimitedReader();
             using (var ResultFile = File.Open("./Results/WriteATable.csv", FileMode.OpenOrCreate))
             {
-                using var TestFile = File.OpenRead("../../../TestData/TestXLSX.xlsx");
+                using var TestFile = File.OpenRead("./TestData/TestXLSX.xlsx");
                 Assert.True(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
             }
             using (var ResultFile = File.Open("./Results/WriteATable.csv", FileMode.OpenOrCreate))
@@ -41,18 +42,19 @@ namespace FileCurator.Tests.Formats.Delimited
         [Fact]
         public void WriteNotATable()
         {
+            Directory.CreateDirectory("./Results");
             var TestObject = new DelimitedWriter();
             var TestReader = new TxtFormat();
             var ResultReader = new DelimitedReader();
             using (var ResultFile = File.Open("./Results/WriteNotATable.csv", FileMode.OpenOrCreate))
             {
-                using var TestFile = File.OpenRead("../../../TestData/TestTXT.txt");
+                using var TestFile = File.OpenRead("./TestData/TestTXT.txt");
                 Assert.True(TestObject.Write(ResultFile, TestReader.Read(TestFile)));
             }
             using (var ResultFile = File.Open("./Results/WriteNotATable.csv", FileMode.OpenOrCreate))
             {
                 var Result = ResultReader.Read(ResultFile);
-                Assert.Equal(1, Result.Columns.Count);
+                Assert.Single(Result.Columns);
                 Assert.Equal("This is a test docx", Result.Columns[0]);
             }
         }

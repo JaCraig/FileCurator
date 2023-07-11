@@ -17,6 +17,7 @@ namespace FileCurator.Tests.Formats.ICalendar
         [Fact]
         public void WriteACalendar()
         {
+            Directory.CreateDirectory("./Results");
             var TestObject = new ICalendarWriter();
             var ResultReader = new ICalendarReader();
             using (var ResultFile = File.Open("./Results/WriteACalendar.ics", FileMode.OpenOrCreate))

@@ -52,7 +52,7 @@ namespace FileCurator.Tests
         [Fact]
         public void Parse()
         {
-            var Result = new FileInfo("../../../TestData/TestCSV.csv").Parse<ITable>();
+            var Result = new FileInfo("./TestData/TestCSV.csv").Parse<ITable>();
             Assert.Equal(3, Result.Rows.Count);
             Assert.Equal(6, Result.Columns.Count);
             Assert.Equal("Header 1", Result.Columns[0]);
@@ -82,7 +82,7 @@ namespace FileCurator.Tests
         [Fact]
         public void ParseAsGenericFile()
         {
-            var Result = new FileInfo("../../../TestData/TestXLSX.xlsx").Parse();
+            var Result = new FileInfo("./TestData/TestXLSX.xlsx").Parse();
             Assert.NotNull(Result);
             Assert.Equal("Test Data\nGoes here\n 1", Result.Content);
         }
@@ -90,7 +90,7 @@ namespace FileCurator.Tests
         [Fact]
         public async Task ParseAsGenericFileAsync()
         {
-            var Result = await new FileInfo("../../../TestData/TestXLSX.xlsx").ParseAsync().ConfigureAwait(false);
+            var Result = await new FileInfo("./TestData/TestXLSX.xlsx").ParseAsync().ConfigureAwait(false);
             Assert.NotNull(Result);
             Assert.Equal("Test Data\nGoes here\n 1", Result.Content);
         }
@@ -98,7 +98,7 @@ namespace FileCurator.Tests
         [Fact]
         public async Task ParseAsync()
         {
-            var Result = await new FileInfo("../../../TestData/TestCSV.csv").ParseAsync<ITable>().ConfigureAwait(false);
+            var Result = await new FileInfo("./TestData/TestCSV.csv").ParseAsync<ITable>().ConfigureAwait(false);
             Assert.Equal(3, Result.Rows.Count);
             Assert.Equal(6, Result.Columns.Count);
             Assert.Equal("Header 1", Result.Columns[0]);
@@ -128,7 +128,7 @@ namespace FileCurator.Tests
         [Fact]
         public void ParseXLSX()
         {
-            var Result = new FileInfo("../../../TestData/TestXLSX.xlsx").Parse<ITable>();
+            var Result = new FileInfo("./TestData/TestXLSX.xlsx").Parse<ITable>();
             Assert.Equal(2, Result.Rows.Count);
             Assert.Equal(2, Result.Columns.Count);
             Assert.Equal("Test", Result.Columns[0]);
@@ -141,7 +141,7 @@ namespace FileCurator.Tests
         [Fact]
         public async Task ParseXLSXAsync()
         {
-            var Result = await new FileInfo("../../../TestData/TestXLSX.xlsx").ParseAsync<ITable>().ConfigureAwait(false);
+            var Result = await new FileInfo("./TestData/TestXLSX.xlsx").ParseAsync<ITable>().ConfigureAwait(false);
             Assert.Equal(2, Result.Rows.Count);
             Assert.Equal(2, Result.Columns.Count);
             Assert.Equal("Test", Result.Columns[0]);

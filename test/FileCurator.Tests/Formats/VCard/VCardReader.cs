@@ -16,7 +16,7 @@ namespace FileCurator.Tests.Formats.VCard
         public void Read()
         {
             var TestObject = new VCardReader();
-            var Result = TestObject.Read(File.OpenRead("../../../TestData/TestVCF.vcf"));
+            var Result = TestObject.Read(File.OpenRead("./TestData/TestVCF.vcf"));
             Assert.Contains(Result.DirectDial, x => x.Type == "HOME,VOICE" && x.Number == "555-555-1111");
             Assert.Contains(Result.DirectDial, x => x.Type == "WORK,VOICE" && x.Number == "555-555-1112");
             Assert.Contains(Result.DirectDial, x => x.Type == "CELL,VOICE" && x.Number == "555-555-1113");
@@ -29,7 +29,7 @@ namespace FileCurator.Tests.Formats.VCard
             Assert.Equal("MiddleName", Result.MiddleName);
             Assert.Equal("Organization2;Department2", Result.Organization);
             Assert.Equal("Prefix", Result.Prefix);
-            Assert.Equal(0, Result.Relationships.Count);
+            Assert.Empty(Result.Relationships);
             Assert.Equal("Suffix", Result.Suffix);
             Assert.Equal("Title2", Result.Title);
             Assert.Equal("http://www.custom.com", Result.Url);

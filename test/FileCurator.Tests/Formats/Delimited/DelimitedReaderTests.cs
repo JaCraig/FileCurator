@@ -17,7 +17,7 @@ namespace FileCurator.Tests.Formats.Delimited
         public void Read()
         {
             var TestObject = new DelimitedReader();
-            var Result = TestObject.Read(File.OpenRead("../../../TestData/TestCSV.csv"));
+            var Result = TestObject.Read(File.OpenRead("./TestData/TestCSV.csv"));
             Assert.Equal(3, Result.Rows.Count);
             Assert.Equal(6, Result.Columns.Count);
             Assert.Equal("Header 1", Result.Columns[0]);

@@ -18,8 +18,8 @@ namespace FileCurator.Tests.Formats.ICalendar
         {
             var TimeZone = TimeZoneInfo.Local;
             var TestObject = new ICalendarReader();
-            var Result = TestObject.Read(File.OpenRead("../../../TestData/TestICal.ics"));
-            Assert.Equal(1, Result.AttendeeList.Count);
+            var Result = TestObject.Read(File.OpenRead("./TestData/TestICal.ics"));
+            Assert.Single(Result.AttendeeList);
             Assert.Equal("EMPLOYEE-A@EXAMPLE.COM", Result.AttendeeList[0].EmailAddress);
             Assert.False(Result.Cancel);
             Assert.Equal("Project XYZ Review Meeting", Result.Content);

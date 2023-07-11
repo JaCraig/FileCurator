@@ -18,8 +18,8 @@ namespace FileCurator.Tests.Formats.VCalendar
         {
             var TimeZone = TimeZoneInfo.Local;
             var TestObject = new VCalendarReader();
-            var Result = TestObject.Read(File.OpenRead("../../../TestData/TestVCal.vcs"));
-            Assert.Equal(0, Result.AttendeeList.Count);
+            var Result = TestObject.Read(File.OpenRead("./TestData/TestVCal.vcs"));
+            Assert.Empty(Result.AttendeeList);
             Assert.False(Result.Cancel);
             Assert.Equal("Networld+Interop Conference and Exhibit\nAtlanta World Congress Center\n Atlanta, Georgia", Result.Content);
             Assert.Equal("Networld+Interop Conference and Exhibit\nAtlanta World Congress Center\n Atlanta, Georgia", Result.Description);
