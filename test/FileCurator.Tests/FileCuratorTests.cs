@@ -25,7 +25,7 @@ namespace FileCurator.Tests
             var Temp = new FileSystem(new IFileSystem[] { new AbsoluteLocalFileSystem(), new NetworkFileSystem(), new RelativeLocalFileSystem() });
             var Dir = Temp.Directory(@"C:\");
             if (!Dir.Exists)
-                Dir = Temp.Directory("/var");
+                Dir = Temp.Directory("/home");
             Assert.NotNull(Dir);
             Assert.IsType<LocalDirectory>(Dir);
             Assert.True(Dir.Exists);
