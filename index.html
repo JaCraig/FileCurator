@@ -94,7 +94,7 @@
                     <article class="content wrap" id="_content" data-uid="">
 <h1 id="filecurator">FileCurator</h1>
 
-<p><a href="https://ci.appveyor.com/project/JaCraig/filecurator"><img src="https://ci.appveyor.com/api/projects/status/3qlv7ffawn9lhxav?svg=true" alt="Build status"></a></p>
+<p><a href="https://github.com/JaCraig/FileCurator/actions/workflows/dotnet-publish.yml"><img src="https://github.com/JaCraig/FileCurator/actions/workflows/dotnet-publish.yml/badge.svg" alt=".NET Publish"></a></p>
 <p>FileCurator is a library used to simplify file access and management on your system. It aims to make accessing a local file as simple as accessing a URL or 3rd party system like Dropbox.</p>
 <h2 id="basic-usage">Basic Usage</h2>
 <p>The system relies on an IoC wrapper called <a href="https://github.com/JaCraig/Canister">Canister</a>. While Canister has a built in IoC container, it's purpose is to actually wrap your container of choice in a way that simplifies setup and usage for other libraries that don't want to be tied to a specific IoC container. FileCurator uses it to detect and pull in file system providers. As such you must set up Canister in order to use FileCurator:</p>
