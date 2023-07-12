@@ -1,6 +1,6 @@
 # FileCurator
 
-[![Build status](https://ci.appveyor.com/api/projects/status/3qlv7ffawn9lhxav?svg=true)](https://ci.appveyor.com/project/JaCraig/filecurator)
+[![.NET Publish](https://github.com/JaCraig/FileCurator/actions/workflows/dotnet-publish.yml/badge.svg)](https://github.com/JaCraig/FileCurator/actions/workflows/dotnet-publish.yml)
 
 FileCurator is a library used to simplify file access and management on your system. It aims to make accessing a local file as simple as accessing a URL or 3rd party system like Dropbox.
 
