@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{60019F34-7D69-4E64-9293-E472360F1A52}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{15AB3E7C-F88D-4FE7-8E60-980B1A81AAE7}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4E3A6A17-29C8-4A85-8B84-1E2D2487AE77}"
 EndProject
@@ -13,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileCurator", "src\FileCura
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileCurator.Tests", "test\FileCurator.Tests\FileCurator.Tests.csproj", "{92A08683-DE2A-4D41-9713-EB766589329E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileCurator.Example", "FileCurator.Example\FileCurator.Example.csproj", "{C35EDEC9-B798-424C-8FCA-C796C166278A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileCurator.Example", "FileCurator.Example\FileCurator.Example.csproj", "{C35EDEC9-B798-424C-8FCA-C796C166278A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
