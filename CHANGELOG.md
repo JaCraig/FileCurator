@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.5"></a>
+## [4.0.5](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.5) (2023-7-19)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([eed7a2b](https://www.github.com/JaCraig/FileCurator/commit/eed7a2b4fb85dad957af3361a3cc06c41cb9b4a0))
+
+### Other
+
+* Merge pull request #10 from JaCraig/dependabot/github_actions/dependencies-0717129e0a ([f2f18dd](https://www.github.com/JaCraig/FileCurator/commit/f2f18dd1e21c24f52619ea4f30ef1d68b4b71bcc))
+* Merge pull request #11 from JaCraig/dependabot/nuget/dependencies-34df00f1b9 ([32c9c10](https://www.github.com/JaCraig/FileCurator/commit/32c9c105c83a884394f842ec19cd8551ddf26870))
+* Adding editorconfig ([fbfadb4](https://www.github.com/JaCraig/FileCurator/commit/fbfadb4c0184edc745dfed90af94599312323330))
+* bump the dependencies group with 2 updates ([1c990f0](https://www.github.com/JaCraig/FileCurator/commit/1c990f0f52d896df494bfe40b6e94fac4fcbb0b1))
+* Updating dependabot to see about github actions ([edfd0fd](https://www.github.com/JaCraig/FileCurator/commit/edfd0fdf492a7f90d8129ddb58ddd4067c2383d8))
+
 <a name="4.0.4"></a>
 ## [4.0.4](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.4) (2023-7-14)
 
