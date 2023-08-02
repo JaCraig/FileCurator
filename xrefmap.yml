@@ -462,6 +462,110 @@ references:
   fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Name
   nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Name
   nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Name
+- uid: FileCurator.BaseClasses.DirectoryBase`2.Parent
+  name: Parent
+  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Parent
+  commentId: P:FileCurator.BaseClasses.DirectoryBase`2.Parent
+  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Parent
+  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Parent
+  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Parent
+  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Parent
+- uid: FileCurator.BaseClasses.DirectoryBase`2.Parent*
+  name: Parent
+  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Parent_
+  commentId: Overload:FileCurator.BaseClasses.DirectoryBase`2.Parent
+  isSpec: "True"
+  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Parent
+  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Parent
+  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Parent
+  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Parent
+- uid: FileCurator.BaseClasses.DirectoryBase`2.Rename(System.String)
+  name: Rename(string)
+  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Rename_System_String_
+  commentId: M:FileCurator.BaseClasses.DirectoryBase`2.Rename(System.String)
+  name.vb: Rename(String)
+  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Rename(string)
+  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Rename(String)
+  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Rename(string)
+  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Rename(String)
+- uid: FileCurator.BaseClasses.DirectoryBase`2.Rename*
+  name: Rename
+  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Rename_
+  commentId: Overload:FileCurator.BaseClasses.DirectoryBase`2.Rename
+  isSpec: "True"
+  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Rename
+  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Rename
+  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Rename
+  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Rename
+- uid: FileCurator.BaseClasses.DirectoryBase`2.RenameAsync(System.String)
+  name: RenameAsync(string)
+  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_RenameAsync_System_String_
+  commentId: M:FileCurator.BaseClasses.DirectoryBase`2.RenameAsync(System.String)
+  name.vb: RenameAsync(String)
+  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.RenameAsync(string)
+  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).RenameAsync(String)
+  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.RenameAsync(string)
+  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).RenameAsync(String)
+- uid: FileCurator.BaseClasses.DirectoryBase`2.RenameAsync*
+  name: RenameAsync
+  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_RenameAsync_
+  commentId: Overload:FileCurator.BaseClasses.DirectoryBase`2.RenameAsync
+  isSpec: "True"
+  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.RenameAsync
+  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).RenameAsync
+  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.RenameAsync
+  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).RenameAsync
+- uid: FileCurator.BaseClasses.DirectoryBase`2.Root
+  name: Root
+  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Root
+  commentId: P:FileCurator.BaseClasses.DirectoryBase`2.Root
+  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Root
+  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Root
+  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Root
+  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Root
+- uid: FileCurator.BaseClasses.DirectoryBase`2.Root*
+  name: Root
+  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Root_
+  commentId: Overload:FileCurator.BaseClasses.DirectoryBase`2.Root
+  isSpec: "True"
+  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Root
+  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Root
+  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Root
+  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Root
+- uid: FileCurator.BaseClasses.DirectoryBase`2.Size
+  name: Size
+  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Size
+  commentId: P:FileCurator.BaseClasses.DirectoryBase`2.Size
+  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Size
+  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Size
+  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Size
+  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Size
+- uid: FileCurator.BaseClasses.DirectoryBase`2.Size*
+  name: Size
+  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Size_
+  commentId: Overload:FileCurator.BaseClasses.DirectoryBase`2.Size
+  isSpec: "True"
+  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Size
+  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Size
+  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Size
+  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Size
+- uid: FileCurator.BaseClasses.DirectoryBase`2.ToString
+  name: ToString()
+  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_ToString
+  commentId: M:FileCurator.BaseClasses.DirectoryBase`2.ToString
+  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.ToString()
+  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).ToString()
+  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.ToString()
+  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).ToString()
+- uid: FileCurator.BaseClasses.DirectoryBase`2.ToString*
+  name: ToString
+  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_ToString_
+  commentId: Overload:FileCurator.BaseClasses.DirectoryBase`2.ToString
+  isSpec: "True"
+  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.ToString
+  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).ToString
+  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.ToString
+  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).ToString
 - uid: FileCurator.BaseClasses.DirectoryBase`2.op_Equality(FileCurator.BaseClasses.DirectoryBase{`0,`1},FileCurator.Interfaces.IDirectory)
   name: operator ==(DirectoryBase<TInternalDirectoryType, TDirectoryType>, IDirectory)
   href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_op_Equality_FileCurator_BaseClasses_DirectoryBase__0__1__FileCurator_Interfaces_IDirectory_
@@ -576,110 +680,6 @@ references:
   fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).<=
   nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.operator <=
   nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).<=
-- uid: FileCurator.BaseClasses.DirectoryBase`2.Parent
-  name: Parent
-  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Parent
-  commentId: P:FileCurator.BaseClasses.DirectoryBase`2.Parent
-  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Parent
-  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Parent
-  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Parent
-  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Parent
-- uid: FileCurator.BaseClasses.DirectoryBase`2.Parent*
-  name: Parent
-  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Parent_
-  commentId: Overload:FileCurator.BaseClasses.DirectoryBase`2.Parent
-  isSpec: "True"
-  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Parent
-  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Parent
-  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Parent
-  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Parent
-- uid: FileCurator.BaseClasses.DirectoryBase`2.Rename(System.String)
-  name: Rename(string)
-  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Rename_System_String_
-  commentId: M:FileCurator.BaseClasses.DirectoryBase`2.Rename(System.String)
-  name.vb: Rename(String)
-  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Rename(string)
-  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Rename(String)
-  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Rename(string)
-  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Rename(String)
-- uid: FileCurator.BaseClasses.DirectoryBase`2.Rename*
-  name: Rename
-  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Rename_
-  commentId: Overload:FileCurator.BaseClasses.DirectoryBase`2.Rename
-  isSpec: "True"
-  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Rename
-  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Rename
-  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Rename
-  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Rename
-- uid: FileCurator.BaseClasses.DirectoryBase`2.RenameAsync(System.String)
-  name: RenameAsync(string)
-  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_RenameAsync_System_String_
-  commentId: M:FileCurator.BaseClasses.DirectoryBase`2.RenameAsync(System.String)
-  name.vb: RenameAsync(String)
-  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.RenameAsync(string)
-  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).RenameAsync(String)
-  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.RenameAsync(string)
-  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).RenameAsync(String)
-- uid: FileCurator.BaseClasses.DirectoryBase`2.RenameAsync*
-  name: RenameAsync
-  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_RenameAsync_
-  commentId: Overload:FileCurator.BaseClasses.DirectoryBase`2.RenameAsync
-  isSpec: "True"
-  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.RenameAsync
-  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).RenameAsync
-  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.RenameAsync
-  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).RenameAsync
-- uid: FileCurator.BaseClasses.DirectoryBase`2.Root
-  name: Root
-  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Root
-  commentId: P:FileCurator.BaseClasses.DirectoryBase`2.Root
-  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Root
-  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Root
-  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Root
-  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Root
-- uid: FileCurator.BaseClasses.DirectoryBase`2.Root*
-  name: Root
-  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Root_
-  commentId: Overload:FileCurator.BaseClasses.DirectoryBase`2.Root
-  isSpec: "True"
-  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Root
-  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Root
-  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Root
-  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Root
-- uid: FileCurator.BaseClasses.DirectoryBase`2.Size
-  name: Size
-  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Size
-  commentId: P:FileCurator.BaseClasses.DirectoryBase`2.Size
-  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Size
-  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Size
-  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Size
-  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Size
-- uid: FileCurator.BaseClasses.DirectoryBase`2.Size*
-  name: Size
-  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_Size_
-  commentId: Overload:FileCurator.BaseClasses.DirectoryBase`2.Size
-  isSpec: "True"
-  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.Size
-  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Size
-  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.Size
-  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).Size
-- uid: FileCurator.BaseClasses.DirectoryBase`2.ToString
-  name: ToString()
-  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_ToString
-  commentId: M:FileCurator.BaseClasses.DirectoryBase`2.ToString
-  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.ToString()
-  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).ToString()
-  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.ToString()
-  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).ToString()
-- uid: FileCurator.BaseClasses.DirectoryBase`2.ToString*
-  name: ToString
-  href: api/FileCurator.BaseClasses.DirectoryBase-2.html#FileCurator_BaseClasses_DirectoryBase_2_ToString_
-  commentId: Overload:FileCurator.BaseClasses.DirectoryBase`2.ToString
-  isSpec: "True"
-  fullName: FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>.ToString
-  fullName.vb: FileCurator.BaseClasses.DirectoryBase(Of TInternalDirectoryType, TDirectoryType).ToString
-  nameWithType: DirectoryBase<TInternalDirectoryType, TDirectoryType>.ToString
-  nameWithType.vb: DirectoryBase(Of TInternalDirectoryType, TDirectoryType).ToString
 - uid: FileCurator.BaseClasses.FileBase`2
   name: FileBase<InternalFileType, FileType>
   href: api/FileCurator.BaseClasses.FileBase-2.html
@@ -698,15 +698,6 @@ references:
   fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).New()
   nameWithType: FileBase<InternalFileType, FileType>.FileBase()
   nameWithType.vb: FileBase(Of InternalFileType, FileType).New()
-- uid: FileCurator.BaseClasses.FileBase`2.#ctor(`0,FileCurator.Credentials)
-  name: FileBase(InternalFileType, Credentials?)
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2__ctor__0_FileCurator_Credentials_
-  commentId: M:FileCurator.BaseClasses.FileBase`2.#ctor(`0,FileCurator.Credentials)
-  name.vb: New(InternalFileType, Credentials)
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.FileBase(InternalFileType, FileCurator.Credentials?)
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).New(InternalFileType, FileCurator.Credentials)
-  nameWithType: FileBase<InternalFileType, FileType>.FileBase(InternalFileType, Credentials?)
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).New(InternalFileType, Credentials)
 - uid: FileCurator.BaseClasses.FileBase`2.#ctor(`0)
   name: FileBase(InternalFileType)
   href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2__ctor__0_
@@ -716,6 +707,15 @@ references:
   fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).New(InternalFileType)
   nameWithType: FileBase<InternalFileType, FileType>.FileBase(InternalFileType)
   nameWithType.vb: FileBase(Of InternalFileType, FileType).New(InternalFileType)
+- uid: FileCurator.BaseClasses.FileBase`2.#ctor(`0,FileCurator.Credentials)
+  name: FileBase(InternalFileType, Credentials?)
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2__ctor__0_FileCurator_Credentials_
+  commentId: M:FileCurator.BaseClasses.FileBase`2.#ctor(`0,FileCurator.Credentials)
+  name.vb: New(InternalFileType, Credentials)
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.FileBase(InternalFileType, FileCurator.Credentials?)
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).New(InternalFileType, FileCurator.Credentials)
+  nameWithType: FileBase<InternalFileType, FileType>.FileBase(InternalFileType, Credentials?)
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).New(InternalFileType, Credentials)
 - uid: FileCurator.BaseClasses.FileBase`2.#ctor*
   name: FileBase
   href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2__ctor_
@@ -1103,148 +1103,6 @@ references:
   fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).Name
   nameWithType: FileBase<InternalFileType, FileType>.Name
   nameWithType.vb: FileBase(Of InternalFileType, FileType).Name
-- uid: FileCurator.BaseClasses.FileBase`2.op_Equality(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
-  name: operator ==(FileBase<InternalFileType, FileType>, IFile)
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_Equality_FileCurator_BaseClasses_FileBase__0__1__FileCurator_Interfaces_IFile_
-  commentId: M:FileCurator.BaseClasses.FileBase`2.op_Equality(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
-  name.vb: =(FileBase(Of InternalFileType, FileType), IFile)
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator ==(FileCurator.BaseClasses.FileBase<InternalFileType, FileType>, FileCurator.Interfaces.IFile)
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).=(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType), FileCurator.Interfaces.IFile)
-  nameWithType: FileBase<InternalFileType, FileType>.operator ==(FileBase<InternalFileType, FileType>, IFile)
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).=(FileBase(Of InternalFileType, FileType), IFile)
-- uid: FileCurator.BaseClasses.FileBase`2.op_Equality*
-  name: operator ==
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_Equality_
-  commentId: Overload:FileCurator.BaseClasses.FileBase`2.op_Equality
-  isSpec: "True"
-  name.vb: =
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator ==
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).=
-  nameWithType: FileBase<InternalFileType, FileType>.operator ==
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).=
-- uid: FileCurator.BaseClasses.FileBase`2.op_GreaterThan(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
-  name: operator >(FileBase<InternalFileType, FileType>, IFile)
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_GreaterThan_FileCurator_BaseClasses_FileBase__0__1__FileCurator_Interfaces_IFile_
-  commentId: M:FileCurator.BaseClasses.FileBase`2.op_GreaterThan(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
-  name.vb: '>(FileBase(Of InternalFileType, FileType), IFile)'
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator >(FileCurator.BaseClasses.FileBase<InternalFileType, FileType>, FileCurator.Interfaces.IFile)
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).>(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType), FileCurator.Interfaces.IFile)
-  nameWithType: FileBase<InternalFileType, FileType>.operator >(FileBase<InternalFileType, FileType>, IFile)
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).>(FileBase(Of InternalFileType, FileType), IFile)
-- uid: FileCurator.BaseClasses.FileBase`2.op_GreaterThan*
-  name: operator >
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_GreaterThan_
-  commentId: Overload:FileCurator.BaseClasses.FileBase`2.op_GreaterThan
-  isSpec: "True"
-  name.vb: '>'
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator >
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).>
-  nameWithType: FileBase<InternalFileType, FileType>.operator >
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).>
-- uid: FileCurator.BaseClasses.FileBase`2.op_GreaterThanOrEqual(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
-  name: operator >=(FileBase<InternalFileType, FileType>, IFile)
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_GreaterThanOrEqual_FileCurator_BaseClasses_FileBase__0__1__FileCurator_Interfaces_IFile_
-  commentId: M:FileCurator.BaseClasses.FileBase`2.op_GreaterThanOrEqual(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
-  name.vb: '>=(FileBase(Of InternalFileType, FileType), IFile)'
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator >=(FileCurator.BaseClasses.FileBase<InternalFileType, FileType>, FileCurator.Interfaces.IFile)
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).>=(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType), FileCurator.Interfaces.IFile)
-  nameWithType: FileBase<InternalFileType, FileType>.operator >=(FileBase<InternalFileType, FileType>, IFile)
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).>=(FileBase(Of InternalFileType, FileType), IFile)
-- uid: FileCurator.BaseClasses.FileBase`2.op_GreaterThanOrEqual*
-  name: operator >=
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_GreaterThanOrEqual_
-  commentId: Overload:FileCurator.BaseClasses.FileBase`2.op_GreaterThanOrEqual
-  isSpec: "True"
-  name.vb: '>='
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator >=
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).>=
-  nameWithType: FileBase<InternalFileType, FileType>.operator >=
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).>=
-- uid: FileCurator.BaseClasses.FileBase`2.op_Implicit(FileCurator.BaseClasses.FileBase{`0,`1})~System.Byte[]
-  name: implicit operator byte[](FileBase<InternalFileType, FileType>)
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_Implicit_FileCurator_BaseClasses_FileBase__0__1___System_Byte__
-  commentId: M:FileCurator.BaseClasses.FileBase`2.op_Implicit(FileCurator.BaseClasses.FileBase{`0,`1})~System.Byte[]
-  name.vb: CType(FileBase(Of InternalFileType, FileType))
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.implicit operator byte[](FileCurator.BaseClasses.FileBase<InternalFileType, FileType>)
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).CType(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType))
-  nameWithType: FileBase<InternalFileType, FileType>.implicit operator byte[](FileBase<InternalFileType, FileType>)
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).CType(FileBase(Of InternalFileType, FileType))
-- uid: FileCurator.BaseClasses.FileBase`2.op_Implicit(FileCurator.BaseClasses.FileBase{`0,`1})~System.String
-  name: implicit operator string(FileBase<InternalFileType, FileType>)
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_Implicit_FileCurator_BaseClasses_FileBase__0__1___System_String
-  commentId: M:FileCurator.BaseClasses.FileBase`2.op_Implicit(FileCurator.BaseClasses.FileBase{`0,`1})~System.String
-  name.vb: CType(FileBase(Of InternalFileType, FileType))
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.implicit operator string(FileCurator.BaseClasses.FileBase<InternalFileType, FileType>)
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).CType(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType))
-  nameWithType: FileBase<InternalFileType, FileType>.implicit operator string(FileBase<InternalFileType, FileType>)
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).CType(FileBase(Of InternalFileType, FileType))
-- uid: FileCurator.BaseClasses.FileBase`2.op_Implicit*
-  name: implicit operator
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_Implicit_
-  commentId: Overload:FileCurator.BaseClasses.FileBase`2.op_Implicit
-  isSpec: "True"
-  name.vb: CType
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.implicit operator
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).CType
-  nameWithType: FileBase<InternalFileType, FileType>.implicit operator
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).CType
-- uid: FileCurator.BaseClasses.FileBase`2.op_Inequality(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
-  name: operator !=(FileBase<InternalFileType, FileType>, IFile)
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_Inequality_FileCurator_BaseClasses_FileBase__0__1__FileCurator_Interfaces_IFile_
-  commentId: M:FileCurator.BaseClasses.FileBase`2.op_Inequality(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
-  name.vb: <>(FileBase(Of InternalFileType, FileType), IFile)
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator !=(FileCurator.BaseClasses.FileBase<InternalFileType, FileType>, FileCurator.Interfaces.IFile)
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).<>(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType), FileCurator.Interfaces.IFile)
-  nameWithType: FileBase<InternalFileType, FileType>.operator !=(FileBase<InternalFileType, FileType>, IFile)
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).<>(FileBase(Of InternalFileType, FileType), IFile)
-- uid: FileCurator.BaseClasses.FileBase`2.op_Inequality*
-  name: operator !=
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_Inequality_
-  commentId: Overload:FileCurator.BaseClasses.FileBase`2.op_Inequality
-  isSpec: "True"
-  name.vb: <>
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator !=
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).<>
-  nameWithType: FileBase<InternalFileType, FileType>.operator !=
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).<>
-- uid: FileCurator.BaseClasses.FileBase`2.op_LessThan(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
-  name: operator <(FileBase<InternalFileType, FileType>, IFile)
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_LessThan_FileCurator_BaseClasses_FileBase__0__1__FileCurator_Interfaces_IFile_
-  commentId: M:FileCurator.BaseClasses.FileBase`2.op_LessThan(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
-  name.vb: <(FileBase(Of InternalFileType, FileType), IFile)
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator <(FileCurator.BaseClasses.FileBase<InternalFileType, FileType>, FileCurator.Interfaces.IFile)
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).<(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType), FileCurator.Interfaces.IFile)
-  nameWithType: FileBase<InternalFileType, FileType>.operator <(FileBase<InternalFileType, FileType>, IFile)
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).<(FileBase(Of InternalFileType, FileType), IFile)
-- uid: FileCurator.BaseClasses.FileBase`2.op_LessThan*
-  name: operator <
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_LessThan_
-  commentId: Overload:FileCurator.BaseClasses.FileBase`2.op_LessThan
-  isSpec: "True"
-  name.vb: <
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator <
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).<
-  nameWithType: FileBase<InternalFileType, FileType>.operator <
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).<
-- uid: FileCurator.BaseClasses.FileBase`2.op_LessThanOrEqual(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
-  name: operator <=(FileBase<InternalFileType, FileType>, IFile)
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_LessThanOrEqual_FileCurator_BaseClasses_FileBase__0__1__FileCurator_Interfaces_IFile_
-  commentId: M:FileCurator.BaseClasses.FileBase`2.op_LessThanOrEqual(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
-  name.vb: <=(FileBase(Of InternalFileType, FileType), IFile)
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator <=(FileCurator.BaseClasses.FileBase<InternalFileType, FileType>, FileCurator.Interfaces.IFile)
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).<=(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType), FileCurator.Interfaces.IFile)
-  nameWithType: FileBase<InternalFileType, FileType>.operator <=(FileBase<InternalFileType, FileType>, IFile)
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).<=(FileBase(Of InternalFileType, FileType), IFile)
-- uid: FileCurator.BaseClasses.FileBase`2.op_LessThanOrEqual*
-  name: operator <=
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_LessThanOrEqual_
-  commentId: Overload:FileCurator.BaseClasses.FileBase`2.op_LessThanOrEqual
-  isSpec: "True"
-  name.vb: <=
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator <=
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).<=
-  nameWithType: FileBase<InternalFileType, FileType>.operator <=
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).<=
 - uid: FileCurator.BaseClasses.FileBase`2.Parse
   name: Parse()
   href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Parse
@@ -1262,15 +1120,6 @@ references:
   fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).Parse
   nameWithType: FileBase<InternalFileType, FileType>.Parse
   nameWithType.vb: FileBase(Of InternalFileType, FileType).Parse
-- uid: FileCurator.BaseClasses.FileBase`2.Parse``1
-  name: Parse<TFile>()
-  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Parse__1
-  commentId: M:FileCurator.BaseClasses.FileBase`2.Parse``1
-  name.vb: Parse(Of TFile)()
-  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.Parse<TFile>()
-  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).Parse(Of TFile)()
-  nameWithType: FileBase<InternalFileType, FileType>.Parse<TFile>()
-  nameWithType.vb: FileBase(Of InternalFileType, FileType).Parse(Of TFile)()
 - uid: FileCurator.BaseClasses.FileBase`2.ParseAsync
   name: ParseAsync()
   href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_ParseAsync
@@ -1297,6 +1146,15 @@ references:
   fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).ParseAsync(Of TFile)()
   nameWithType: FileBase<InternalFileType, FileType>.ParseAsync<TFile>()
   nameWithType.vb: FileBase(Of InternalFileType, FileType).ParseAsync(Of TFile)()
+- uid: FileCurator.BaseClasses.FileBase`2.Parse``1
+  name: Parse<TFile>()
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Parse__1
+  commentId: M:FileCurator.BaseClasses.FileBase`2.Parse``1
+  name.vb: Parse(Of TFile)()
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.Parse<TFile>()
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).Parse(Of TFile)()
+  nameWithType: FileBase<InternalFileType, FileType>.Parse<TFile>()
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).Parse(Of TFile)()
 - uid: FileCurator.BaseClasses.FileBase`2.Read
   name: Read()
   href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Read
@@ -1488,6 +1346,148 @@ references:
   fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).WriteAsync
   nameWithType: FileBase<InternalFileType, FileType>.WriteAsync
   nameWithType.vb: FileBase(Of InternalFileType, FileType).WriteAsync
+- uid: FileCurator.BaseClasses.FileBase`2.op_Equality(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
+  name: operator ==(FileBase<InternalFileType, FileType>, IFile)
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_Equality_FileCurator_BaseClasses_FileBase__0__1__FileCurator_Interfaces_IFile_
+  commentId: M:FileCurator.BaseClasses.FileBase`2.op_Equality(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
+  name.vb: =(FileBase(Of InternalFileType, FileType), IFile)
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator ==(FileCurator.BaseClasses.FileBase<InternalFileType, FileType>, FileCurator.Interfaces.IFile)
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).=(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType), FileCurator.Interfaces.IFile)
+  nameWithType: FileBase<InternalFileType, FileType>.operator ==(FileBase<InternalFileType, FileType>, IFile)
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).=(FileBase(Of InternalFileType, FileType), IFile)
+- uid: FileCurator.BaseClasses.FileBase`2.op_Equality*
+  name: operator ==
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_Equality_
+  commentId: Overload:FileCurator.BaseClasses.FileBase`2.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator ==
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).=
+  nameWithType: FileBase<InternalFileType, FileType>.operator ==
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).=
+- uid: FileCurator.BaseClasses.FileBase`2.op_GreaterThan(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
+  name: operator >(FileBase<InternalFileType, FileType>, IFile)
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_GreaterThan_FileCurator_BaseClasses_FileBase__0__1__FileCurator_Interfaces_IFile_
+  commentId: M:FileCurator.BaseClasses.FileBase`2.op_GreaterThan(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
+  name.vb: '>(FileBase(Of InternalFileType, FileType), IFile)'
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator >(FileCurator.BaseClasses.FileBase<InternalFileType, FileType>, FileCurator.Interfaces.IFile)
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).>(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType), FileCurator.Interfaces.IFile)
+  nameWithType: FileBase<InternalFileType, FileType>.operator >(FileBase<InternalFileType, FileType>, IFile)
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).>(FileBase(Of InternalFileType, FileType), IFile)
+- uid: FileCurator.BaseClasses.FileBase`2.op_GreaterThan*
+  name: operator >
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_GreaterThan_
+  commentId: Overload:FileCurator.BaseClasses.FileBase`2.op_GreaterThan
+  isSpec: "True"
+  name.vb: '>'
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator >
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).>
+  nameWithType: FileBase<InternalFileType, FileType>.operator >
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).>
+- uid: FileCurator.BaseClasses.FileBase`2.op_GreaterThanOrEqual(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
+  name: operator >=(FileBase<InternalFileType, FileType>, IFile)
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_GreaterThanOrEqual_FileCurator_BaseClasses_FileBase__0__1__FileCurator_Interfaces_IFile_
+  commentId: M:FileCurator.BaseClasses.FileBase`2.op_GreaterThanOrEqual(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
+  name.vb: '>=(FileBase(Of InternalFileType, FileType), IFile)'
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator >=(FileCurator.BaseClasses.FileBase<InternalFileType, FileType>, FileCurator.Interfaces.IFile)
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).>=(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType), FileCurator.Interfaces.IFile)
+  nameWithType: FileBase<InternalFileType, FileType>.operator >=(FileBase<InternalFileType, FileType>, IFile)
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).>=(FileBase(Of InternalFileType, FileType), IFile)
+- uid: FileCurator.BaseClasses.FileBase`2.op_GreaterThanOrEqual*
+  name: operator >=
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_GreaterThanOrEqual_
+  commentId: Overload:FileCurator.BaseClasses.FileBase`2.op_GreaterThanOrEqual
+  isSpec: "True"
+  name.vb: '>='
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator >=
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).>=
+  nameWithType: FileBase<InternalFileType, FileType>.operator >=
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).>=
+- uid: FileCurator.BaseClasses.FileBase`2.op_Implicit(FileCurator.BaseClasses.FileBase{`0,`1})~System.Byte[]
+  name: implicit operator byte[](FileBase<InternalFileType, FileType>)
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_Implicit_FileCurator_BaseClasses_FileBase__0__1___System_Byte__
+  commentId: M:FileCurator.BaseClasses.FileBase`2.op_Implicit(FileCurator.BaseClasses.FileBase{`0,`1})~System.Byte[]
+  name.vb: CType(FileBase(Of InternalFileType, FileType))
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.implicit operator byte[](FileCurator.BaseClasses.FileBase<InternalFileType, FileType>)
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).CType(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType))
+  nameWithType: FileBase<InternalFileType, FileType>.implicit operator byte[](FileBase<InternalFileType, FileType>)
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).CType(FileBase(Of InternalFileType, FileType))
+- uid: FileCurator.BaseClasses.FileBase`2.op_Implicit(FileCurator.BaseClasses.FileBase{`0,`1})~System.String
+  name: implicit operator string(FileBase<InternalFileType, FileType>)
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_Implicit_FileCurator_BaseClasses_FileBase__0__1___System_String
+  commentId: M:FileCurator.BaseClasses.FileBase`2.op_Implicit(FileCurator.BaseClasses.FileBase{`0,`1})~System.String
+  name.vb: CType(FileBase(Of InternalFileType, FileType))
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.implicit operator string(FileCurator.BaseClasses.FileBase<InternalFileType, FileType>)
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).CType(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType))
+  nameWithType: FileBase<InternalFileType, FileType>.implicit operator string(FileBase<InternalFileType, FileType>)
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).CType(FileBase(Of InternalFileType, FileType))
+- uid: FileCurator.BaseClasses.FileBase`2.op_Implicit*
+  name: implicit operator
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_Implicit_
+  commentId: Overload:FileCurator.BaseClasses.FileBase`2.op_Implicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.implicit operator
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).CType
+  nameWithType: FileBase<InternalFileType, FileType>.implicit operator
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).CType
+- uid: FileCurator.BaseClasses.FileBase`2.op_Inequality(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
+  name: operator !=(FileBase<InternalFileType, FileType>, IFile)
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_Inequality_FileCurator_BaseClasses_FileBase__0__1__FileCurator_Interfaces_IFile_
+  commentId: M:FileCurator.BaseClasses.FileBase`2.op_Inequality(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
+  name.vb: <>(FileBase(Of InternalFileType, FileType), IFile)
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator !=(FileCurator.BaseClasses.FileBase<InternalFileType, FileType>, FileCurator.Interfaces.IFile)
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).<>(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType), FileCurator.Interfaces.IFile)
+  nameWithType: FileBase<InternalFileType, FileType>.operator !=(FileBase<InternalFileType, FileType>, IFile)
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).<>(FileBase(Of InternalFileType, FileType), IFile)
+- uid: FileCurator.BaseClasses.FileBase`2.op_Inequality*
+  name: operator !=
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_Inequality_
+  commentId: Overload:FileCurator.BaseClasses.FileBase`2.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator !=
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).<>
+  nameWithType: FileBase<InternalFileType, FileType>.operator !=
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).<>
+- uid: FileCurator.BaseClasses.FileBase`2.op_LessThan(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
+  name: operator <(FileBase<InternalFileType, FileType>, IFile)
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_LessThan_FileCurator_BaseClasses_FileBase__0__1__FileCurator_Interfaces_IFile_
+  commentId: M:FileCurator.BaseClasses.FileBase`2.op_LessThan(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
+  name.vb: <(FileBase(Of InternalFileType, FileType), IFile)
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator <(FileCurator.BaseClasses.FileBase<InternalFileType, FileType>, FileCurator.Interfaces.IFile)
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).<(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType), FileCurator.Interfaces.IFile)
+  nameWithType: FileBase<InternalFileType, FileType>.operator <(FileBase<InternalFileType, FileType>, IFile)
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).<(FileBase(Of InternalFileType, FileType), IFile)
+- uid: FileCurator.BaseClasses.FileBase`2.op_LessThan*
+  name: operator <
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_LessThan_
+  commentId: Overload:FileCurator.BaseClasses.FileBase`2.op_LessThan
+  isSpec: "True"
+  name.vb: <
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator <
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).<
+  nameWithType: FileBase<InternalFileType, FileType>.operator <
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).<
+- uid: FileCurator.BaseClasses.FileBase`2.op_LessThanOrEqual(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
+  name: operator <=(FileBase<InternalFileType, FileType>, IFile)
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_LessThanOrEqual_FileCurator_BaseClasses_FileBase__0__1__FileCurator_Interfaces_IFile_
+  commentId: M:FileCurator.BaseClasses.FileBase`2.op_LessThanOrEqual(FileCurator.BaseClasses.FileBase{`0,`1},FileCurator.Interfaces.IFile)
+  name.vb: <=(FileBase(Of InternalFileType, FileType), IFile)
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator <=(FileCurator.BaseClasses.FileBase<InternalFileType, FileType>, FileCurator.Interfaces.IFile)
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).<=(FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType), FileCurator.Interfaces.IFile)
+  nameWithType: FileBase<InternalFileType, FileType>.operator <=(FileBase<InternalFileType, FileType>, IFile)
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).<=(FileBase(Of InternalFileType, FileType), IFile)
+- uid: FileCurator.BaseClasses.FileBase`2.op_LessThanOrEqual*
+  name: operator <=
+  href: api/FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_op_LessThanOrEqual_
+  commentId: Overload:FileCurator.BaseClasses.FileBase`2.op_LessThanOrEqual
+  isSpec: "True"
+  name.vb: <=
+  fullName: FileCurator.BaseClasses.FileBase<InternalFileType, FileType>.operator <=
+  fullName.vb: FileCurator.BaseClasses.FileBase(Of InternalFileType, FileType).<=
+  nameWithType: FileBase<InternalFileType, FileType>.operator <=
+  nameWithType.vb: FileBase(Of InternalFileType, FileType).<=
 - uid: FileCurator.BaseClasses.FileSystemBase
   name: FileSystemBase
   href: api/FileCurator.BaseClasses.FileSystemBase.html
@@ -5969,6 +5969,90 @@ references:
   isSpec: "True"
   fullName: FileCurator.DirectoryInfo.Name
   nameWithType: DirectoryInfo.Name
+- uid: FileCurator.DirectoryInfo.Parent
+  name: Parent
+  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Parent
+  commentId: P:FileCurator.DirectoryInfo.Parent
+  fullName: FileCurator.DirectoryInfo.Parent
+  nameWithType: DirectoryInfo.Parent
+- uid: FileCurator.DirectoryInfo.Parent*
+  name: Parent
+  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Parent_
+  commentId: Overload:FileCurator.DirectoryInfo.Parent
+  isSpec: "True"
+  fullName: FileCurator.DirectoryInfo.Parent
+  nameWithType: DirectoryInfo.Parent
+- uid: FileCurator.DirectoryInfo.Rename(System.String)
+  name: Rename(string)
+  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Rename_System_String_
+  commentId: M:FileCurator.DirectoryInfo.Rename(System.String)
+  name.vb: Rename(String)
+  fullName: FileCurator.DirectoryInfo.Rename(string)
+  fullName.vb: FileCurator.DirectoryInfo.Rename(String)
+  nameWithType: DirectoryInfo.Rename(string)
+  nameWithType.vb: DirectoryInfo.Rename(String)
+- uid: FileCurator.DirectoryInfo.Rename*
+  name: Rename
+  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Rename_
+  commentId: Overload:FileCurator.DirectoryInfo.Rename
+  isSpec: "True"
+  fullName: FileCurator.DirectoryInfo.Rename
+  nameWithType: DirectoryInfo.Rename
+- uid: FileCurator.DirectoryInfo.RenameAsync(System.String)
+  name: RenameAsync(string)
+  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_RenameAsync_System_String_
+  commentId: M:FileCurator.DirectoryInfo.RenameAsync(System.String)
+  name.vb: RenameAsync(String)
+  fullName: FileCurator.DirectoryInfo.RenameAsync(string)
+  fullName.vb: FileCurator.DirectoryInfo.RenameAsync(String)
+  nameWithType: DirectoryInfo.RenameAsync(string)
+  nameWithType.vb: DirectoryInfo.RenameAsync(String)
+- uid: FileCurator.DirectoryInfo.RenameAsync*
+  name: RenameAsync
+  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_RenameAsync_
+  commentId: Overload:FileCurator.DirectoryInfo.RenameAsync
+  isSpec: "True"
+  fullName: FileCurator.DirectoryInfo.RenameAsync
+  nameWithType: DirectoryInfo.RenameAsync
+- uid: FileCurator.DirectoryInfo.Root
+  name: Root
+  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Root
+  commentId: P:FileCurator.DirectoryInfo.Root
+  fullName: FileCurator.DirectoryInfo.Root
+  nameWithType: DirectoryInfo.Root
+- uid: FileCurator.DirectoryInfo.Root*
+  name: Root
+  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Root_
+  commentId: Overload:FileCurator.DirectoryInfo.Root
+  isSpec: "True"
+  fullName: FileCurator.DirectoryInfo.Root
+  nameWithType: DirectoryInfo.Root
+- uid: FileCurator.DirectoryInfo.Size
+  name: Size
+  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Size
+  commentId: P:FileCurator.DirectoryInfo.Size
+  fullName: FileCurator.DirectoryInfo.Size
+  nameWithType: DirectoryInfo.Size
+- uid: FileCurator.DirectoryInfo.Size*
+  name: Size
+  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Size_
+  commentId: Overload:FileCurator.DirectoryInfo.Size
+  isSpec: "True"
+  fullName: FileCurator.DirectoryInfo.Size
+  nameWithType: DirectoryInfo.Size
+- uid: FileCurator.DirectoryInfo.ToString
+  name: ToString()
+  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_ToString
+  commentId: M:FileCurator.DirectoryInfo.ToString
+  fullName: FileCurator.DirectoryInfo.ToString()
+  nameWithType: DirectoryInfo.ToString()
+- uid: FileCurator.DirectoryInfo.ToString*
+  name: ToString
+  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_ToString_
+  commentId: Overload:FileCurator.DirectoryInfo.ToString
+  isSpec: "True"
+  fullName: FileCurator.DirectoryInfo.ToString
+  nameWithType: DirectoryInfo.ToString
 - uid: FileCurator.DirectoryInfo.op_Equality(FileCurator.DirectoryInfo,FileCurator.DirectoryInfo)
   name: operator ==(DirectoryInfo, DirectoryInfo)
   href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_op_Equality_FileCurator_DirectoryInfo_FileCurator_DirectoryInfo_
@@ -6083,90 +6167,6 @@ references:
   fullName.vb: FileCurator.DirectoryInfo.<=
   nameWithType: DirectoryInfo.operator <=
   nameWithType.vb: DirectoryInfo.<=
-- uid: FileCurator.DirectoryInfo.Parent
-  name: Parent
-  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Parent
-  commentId: P:FileCurator.DirectoryInfo.Parent
-  fullName: FileCurator.DirectoryInfo.Parent
-  nameWithType: DirectoryInfo.Parent
-- uid: FileCurator.DirectoryInfo.Parent*
-  name: Parent
-  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Parent_
-  commentId: Overload:FileCurator.DirectoryInfo.Parent
-  isSpec: "True"
-  fullName: FileCurator.DirectoryInfo.Parent
-  nameWithType: DirectoryInfo.Parent
-- uid: FileCurator.DirectoryInfo.Rename(System.String)
-  name: Rename(string)
-  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Rename_System_String_
-  commentId: M:FileCurator.DirectoryInfo.Rename(System.String)
-  name.vb: Rename(String)
-  fullName: FileCurator.DirectoryInfo.Rename(string)
-  fullName.vb: FileCurator.DirectoryInfo.Rename(String)
-  nameWithType: DirectoryInfo.Rename(string)
-  nameWithType.vb: DirectoryInfo.Rename(String)
-- uid: FileCurator.DirectoryInfo.Rename*
-  name: Rename
-  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Rename_
-  commentId: Overload:FileCurator.DirectoryInfo.Rename
-  isSpec: "True"
-  fullName: FileCurator.DirectoryInfo.Rename
-  nameWithType: DirectoryInfo.Rename
-- uid: FileCurator.DirectoryInfo.RenameAsync(System.String)
-  name: RenameAsync(string)
-  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_RenameAsync_System_String_
-  commentId: M:FileCurator.DirectoryInfo.RenameAsync(System.String)
-  name.vb: RenameAsync(String)
-  fullName: FileCurator.DirectoryInfo.RenameAsync(string)
-  fullName.vb: FileCurator.DirectoryInfo.RenameAsync(String)
-  nameWithType: DirectoryInfo.RenameAsync(string)
-  nameWithType.vb: DirectoryInfo.RenameAsync(String)
-- uid: FileCurator.DirectoryInfo.RenameAsync*
-  name: RenameAsync
-  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_RenameAsync_
-  commentId: Overload:FileCurator.DirectoryInfo.RenameAsync
-  isSpec: "True"
-  fullName: FileCurator.DirectoryInfo.RenameAsync
-  nameWithType: DirectoryInfo.RenameAsync
-- uid: FileCurator.DirectoryInfo.Root
-  name: Root
-  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Root
-  commentId: P:FileCurator.DirectoryInfo.Root
-  fullName: FileCurator.DirectoryInfo.Root
-  nameWithType: DirectoryInfo.Root
-- uid: FileCurator.DirectoryInfo.Root*
-  name: Root
-  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Root_
-  commentId: Overload:FileCurator.DirectoryInfo.Root
-  isSpec: "True"
-  fullName: FileCurator.DirectoryInfo.Root
-  nameWithType: DirectoryInfo.Root
-- uid: FileCurator.DirectoryInfo.Size
-  name: Size
-  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Size
-  commentId: P:FileCurator.DirectoryInfo.Size
-  fullName: FileCurator.DirectoryInfo.Size
-  nameWithType: DirectoryInfo.Size
-- uid: FileCurator.DirectoryInfo.Size*
-  name: Size
-  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_Size_
-  commentId: Overload:FileCurator.DirectoryInfo.Size
-  isSpec: "True"
-  fullName: FileCurator.DirectoryInfo.Size
-  nameWithType: DirectoryInfo.Size
-- uid: FileCurator.DirectoryInfo.ToString
-  name: ToString()
-  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_ToString
-  commentId: M:FileCurator.DirectoryInfo.ToString
-  fullName: FileCurator.DirectoryInfo.ToString()
-  nameWithType: DirectoryInfo.ToString()
-- uid: FileCurator.DirectoryInfo.ToString*
-  name: ToString
-  href: api/FileCurator.DirectoryInfo.html#FileCurator_DirectoryInfo_ToString_
-  commentId: Overload:FileCurator.DirectoryInfo.ToString
-  isSpec: "True"
-  fullName: FileCurator.DirectoryInfo.ToString
-  nameWithType: DirectoryInfo.ToString
 - uid: FileCurator.Enums
   name: FileCurator.Enums
   href: api/FileCurator.Enums.html
@@ -6274,34 +6274,6 @@ references:
   isSpec: "True"
   fullName: FileCurator.Enums.MimeType.ICal
   nameWithType: MimeType.ICal
-- uid: FileCurator.Enums.MimeType.op_Implicit(FileCurator.Enums.MimeType)~System.String
-  name: implicit operator string(MimeType)
-  href: api/FileCurator.Enums.MimeType.html#FileCurator_Enums_MimeType_op_Implicit_FileCurator_Enums_MimeType__System_String
-  commentId: M:FileCurator.Enums.MimeType.op_Implicit(FileCurator.Enums.MimeType)~System.String
-  name.vb: CType(MimeType)
-  fullName: FileCurator.Enums.MimeType.implicit operator string(FileCurator.Enums.MimeType)
-  fullName.vb: FileCurator.Enums.MimeType.CType(FileCurator.Enums.MimeType)
-  nameWithType: MimeType.implicit operator string(MimeType)
-  nameWithType.vb: MimeType.CType(MimeType)
-- uid: FileCurator.Enums.MimeType.op_Implicit(System.String)~FileCurator.Enums.MimeType
-  name: implicit operator MimeType(string)
-  href: api/FileCurator.Enums.MimeType.html#FileCurator_Enums_MimeType_op_Implicit_System_String__FileCurator_Enums_MimeType
-  commentId: M:FileCurator.Enums.MimeType.op_Implicit(System.String)~FileCurator.Enums.MimeType
-  name.vb: CType(String)
-  fullName: FileCurator.Enums.MimeType.implicit operator FileCurator.Enums.MimeType(string)
-  fullName.vb: FileCurator.Enums.MimeType.CType(String)
-  nameWithType: MimeType.implicit operator MimeType(string)
-  nameWithType.vb: MimeType.CType(String)
-- uid: FileCurator.Enums.MimeType.op_Implicit*
-  name: implicit operator
-  href: api/FileCurator.Enums.MimeType.html#FileCurator_Enums_MimeType_op_Implicit_
-  commentId: Overload:FileCurator.Enums.MimeType.op_Implicit
-  isSpec: "True"
-  name.vb: CType
-  fullName: FileCurator.Enums.MimeType.implicit operator
-  fullName.vb: FileCurator.Enums.MimeType.CType
-  nameWithType: MimeType.implicit operator
-  nameWithType.vb: MimeType.CType
 - uid: FileCurator.Enums.MimeType.PowerPoint
   name: PowerPoint
   href: api/FileCurator.Enums.MimeType.html#FileCurator_Enums_MimeType_PowerPoint
@@ -6419,6 +6391,34 @@ references:
   isSpec: "True"
   fullName: FileCurator.Enums.MimeType.XML
   nameWithType: MimeType.XML
+- uid: FileCurator.Enums.MimeType.op_Implicit(FileCurator.Enums.MimeType)~System.String
+  name: implicit operator string(MimeType)
+  href: api/FileCurator.Enums.MimeType.html#FileCurator_Enums_MimeType_op_Implicit_FileCurator_Enums_MimeType__System_String
+  commentId: M:FileCurator.Enums.MimeType.op_Implicit(FileCurator.Enums.MimeType)~System.String
+  name.vb: CType(MimeType)
+  fullName: FileCurator.Enums.MimeType.implicit operator string(FileCurator.Enums.MimeType)
+  fullName.vb: FileCurator.Enums.MimeType.CType(FileCurator.Enums.MimeType)
+  nameWithType: MimeType.implicit operator string(MimeType)
+  nameWithType.vb: MimeType.CType(MimeType)
+- uid: FileCurator.Enums.MimeType.op_Implicit(System.String)~FileCurator.Enums.MimeType
+  name: implicit operator MimeType(string)
+  href: api/FileCurator.Enums.MimeType.html#FileCurator_Enums_MimeType_op_Implicit_System_String__FileCurator_Enums_MimeType
+  commentId: M:FileCurator.Enums.MimeType.op_Implicit(System.String)~FileCurator.Enums.MimeType
+  name.vb: CType(String)
+  fullName: FileCurator.Enums.MimeType.implicit operator FileCurator.Enums.MimeType(string)
+  fullName.vb: FileCurator.Enums.MimeType.CType(String)
+  nameWithType: MimeType.implicit operator MimeType(string)
+  nameWithType.vb: MimeType.CType(String)
+- uid: FileCurator.Enums.MimeType.op_Implicit*
+  name: implicit operator
+  href: api/FileCurator.Enums.MimeType.html#FileCurator_Enums_MimeType_op_Implicit_
+  commentId: Overload:FileCurator.Enums.MimeType.op_Implicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: FileCurator.Enums.MimeType.implicit operator
+  fullName.vb: FileCurator.Enums.MimeType.CType
+  nameWithType: MimeType.implicit operator
+  nameWithType.vb: MimeType.CType
 - uid: FileCurator.FileInfo
   name: FileInfo
   href: api/FileCurator.FileInfo.html
@@ -6737,148 +6737,6 @@ references:
   isSpec: "True"
   fullName: FileCurator.FileInfo.Name
   nameWithType: FileInfo.Name
-- uid: FileCurator.FileInfo.op_Equality(FileCurator.FileInfo,FileCurator.FileInfo)
-  name: operator ==(FileInfo, FileInfo)
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_Equality_FileCurator_FileInfo_FileCurator_FileInfo_
-  commentId: M:FileCurator.FileInfo.op_Equality(FileCurator.FileInfo,FileCurator.FileInfo)
-  name.vb: =(FileInfo, FileInfo)
-  fullName: FileCurator.FileInfo.operator ==(FileCurator.FileInfo, FileCurator.FileInfo)
-  fullName.vb: FileCurator.FileInfo.=(FileCurator.FileInfo, FileCurator.FileInfo)
-  nameWithType: FileInfo.operator ==(FileInfo, FileInfo)
-  nameWithType.vb: FileInfo.=(FileInfo, FileInfo)
-- uid: FileCurator.FileInfo.op_Equality*
-  name: operator ==
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_Equality_
-  commentId: Overload:FileCurator.FileInfo.op_Equality
-  isSpec: "True"
-  name.vb: =
-  fullName: FileCurator.FileInfo.operator ==
-  fullName.vb: FileCurator.FileInfo.=
-  nameWithType: FileInfo.operator ==
-  nameWithType.vb: FileInfo.=
-- uid: FileCurator.FileInfo.op_GreaterThan(FileCurator.FileInfo,FileCurator.FileInfo)
-  name: operator >(FileInfo, FileInfo)
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_GreaterThan_FileCurator_FileInfo_FileCurator_FileInfo_
-  commentId: M:FileCurator.FileInfo.op_GreaterThan(FileCurator.FileInfo,FileCurator.FileInfo)
-  name.vb: '>(FileInfo, FileInfo)'
-  fullName: FileCurator.FileInfo.operator >(FileCurator.FileInfo, FileCurator.FileInfo)
-  fullName.vb: FileCurator.FileInfo.>(FileCurator.FileInfo, FileCurator.FileInfo)
-  nameWithType: FileInfo.operator >(FileInfo, FileInfo)
-  nameWithType.vb: FileInfo.>(FileInfo, FileInfo)
-- uid: FileCurator.FileInfo.op_GreaterThan*
-  name: operator >
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_GreaterThan_
-  commentId: Overload:FileCurator.FileInfo.op_GreaterThan
-  isSpec: "True"
-  name.vb: '>'
-  fullName: FileCurator.FileInfo.operator >
-  fullName.vb: FileCurator.FileInfo.>
-  nameWithType: FileInfo.operator >
-  nameWithType.vb: FileInfo.>
-- uid: FileCurator.FileInfo.op_GreaterThanOrEqual(FileCurator.FileInfo,FileCurator.FileInfo)
-  name: operator >=(FileInfo, FileInfo)
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_GreaterThanOrEqual_FileCurator_FileInfo_FileCurator_FileInfo_
-  commentId: M:FileCurator.FileInfo.op_GreaterThanOrEqual(FileCurator.FileInfo,FileCurator.FileInfo)
-  name.vb: '>=(FileInfo, FileInfo)'
-  fullName: FileCurator.FileInfo.operator >=(FileCurator.FileInfo, FileCurator.FileInfo)
-  fullName.vb: FileCurator.FileInfo.>=(FileCurator.FileInfo, FileCurator.FileInfo)
-  nameWithType: FileInfo.operator >=(FileInfo, FileInfo)
-  nameWithType.vb: FileInfo.>=(FileInfo, FileInfo)
-- uid: FileCurator.FileInfo.op_GreaterThanOrEqual*
-  name: operator >=
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_GreaterThanOrEqual_
-  commentId: Overload:FileCurator.FileInfo.op_GreaterThanOrEqual
-  isSpec: "True"
-  name.vb: '>='
-  fullName: FileCurator.FileInfo.operator >=
-  fullName.vb: FileCurator.FileInfo.>=
-  nameWithType: FileInfo.operator >=
-  nameWithType.vb: FileInfo.>=
-- uid: FileCurator.FileInfo.op_Implicit(FileCurator.FileInfo)~System.Byte[]
-  name: implicit operator byte[](FileInfo)
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_Implicit_FileCurator_FileInfo__System_Byte__
-  commentId: M:FileCurator.FileInfo.op_Implicit(FileCurator.FileInfo)~System.Byte[]
-  name.vb: CType(FileInfo)
-  fullName: FileCurator.FileInfo.implicit operator byte[](FileCurator.FileInfo)
-  fullName.vb: FileCurator.FileInfo.CType(FileCurator.FileInfo)
-  nameWithType: FileInfo.implicit operator byte[](FileInfo)
-  nameWithType.vb: FileInfo.CType(FileInfo)
-- uid: FileCurator.FileInfo.op_Implicit(FileCurator.FileInfo)~System.String
-  name: implicit operator string(FileInfo)
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_Implicit_FileCurator_FileInfo__System_String
-  commentId: M:FileCurator.FileInfo.op_Implicit(FileCurator.FileInfo)~System.String
-  name.vb: CType(FileInfo)
-  fullName: FileCurator.FileInfo.implicit operator string(FileCurator.FileInfo)
-  fullName.vb: FileCurator.FileInfo.CType(FileCurator.FileInfo)
-  nameWithType: FileInfo.implicit operator string(FileInfo)
-  nameWithType.vb: FileInfo.CType(FileInfo)
-- uid: FileCurator.FileInfo.op_Implicit*
-  name: implicit operator
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_Implicit_
-  commentId: Overload:FileCurator.FileInfo.op_Implicit
-  isSpec: "True"
-  name.vb: CType
-  fullName: FileCurator.FileInfo.implicit operator
-  fullName.vb: FileCurator.FileInfo.CType
-  nameWithType: FileInfo.implicit operator
-  nameWithType.vb: FileInfo.CType
-- uid: FileCurator.FileInfo.op_Inequality(FileCurator.FileInfo,FileCurator.FileInfo)
-  name: operator !=(FileInfo, FileInfo)
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_Inequality_FileCurator_FileInfo_FileCurator_FileInfo_
-  commentId: M:FileCurator.FileInfo.op_Inequality(FileCurator.FileInfo,FileCurator.FileInfo)
-  name.vb: <>(FileInfo, FileInfo)
-  fullName: FileCurator.FileInfo.operator !=(FileCurator.FileInfo, FileCurator.FileInfo)
-  fullName.vb: FileCurator.FileInfo.<>(FileCurator.FileInfo, FileCurator.FileInfo)
-  nameWithType: FileInfo.operator !=(FileInfo, FileInfo)
-  nameWithType.vb: FileInfo.<>(FileInfo, FileInfo)
-- uid: FileCurator.FileInfo.op_Inequality*
-  name: operator !=
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_Inequality_
-  commentId: Overload:FileCurator.FileInfo.op_Inequality
-  isSpec: "True"
-  name.vb: <>
-  fullName: FileCurator.FileInfo.operator !=
-  fullName.vb: FileCurator.FileInfo.<>
-  nameWithType: FileInfo.operator !=
-  nameWithType.vb: FileInfo.<>
-- uid: FileCurator.FileInfo.op_LessThan(FileCurator.FileInfo,FileCurator.FileInfo)
-  name: operator <(FileInfo, FileInfo)
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_LessThan_FileCurator_FileInfo_FileCurator_FileInfo_
-  commentId: M:FileCurator.FileInfo.op_LessThan(FileCurator.FileInfo,FileCurator.FileInfo)
-  name.vb: <(FileInfo, FileInfo)
-  fullName: FileCurator.FileInfo.operator <(FileCurator.FileInfo, FileCurator.FileInfo)
-  fullName.vb: FileCurator.FileInfo.<(FileCurator.FileInfo, FileCurator.FileInfo)
-  nameWithType: FileInfo.operator <(FileInfo, FileInfo)
-  nameWithType.vb: FileInfo.<(FileInfo, FileInfo)
-- uid: FileCurator.FileInfo.op_LessThan*
-  name: operator <
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_LessThan_
-  commentId: Overload:FileCurator.FileInfo.op_LessThan
-  isSpec: "True"
-  name.vb: <
-  fullName: FileCurator.FileInfo.operator <
-  fullName.vb: FileCurator.FileInfo.<
-  nameWithType: FileInfo.operator <
-  nameWithType.vb: FileInfo.<
-- uid: FileCurator.FileInfo.op_LessThanOrEqual(FileCurator.FileInfo,FileCurator.FileInfo)
-  name: operator <=(FileInfo, FileInfo)
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_LessThanOrEqual_FileCurator_FileInfo_FileCurator_FileInfo_
-  commentId: M:FileCurator.FileInfo.op_LessThanOrEqual(FileCurator.FileInfo,FileCurator.FileInfo)
-  name.vb: <=(FileInfo, FileInfo)
-  fullName: FileCurator.FileInfo.operator <=(FileCurator.FileInfo, FileCurator.FileInfo)
-  fullName.vb: FileCurator.FileInfo.<=(FileCurator.FileInfo, FileCurator.FileInfo)
-  nameWithType: FileInfo.operator <=(FileInfo, FileInfo)
-  nameWithType.vb: FileInfo.<=(FileInfo, FileInfo)
-- uid: FileCurator.FileInfo.op_LessThanOrEqual*
-  name: operator <=
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_LessThanOrEqual_
-  commentId: Overload:FileCurator.FileInfo.op_LessThanOrEqual
-  isSpec: "True"
-  name.vb: <=
-  fullName: FileCurator.FileInfo.operator <=
-  fullName.vb: FileCurator.FileInfo.<=
-  nameWithType: FileInfo.operator <=
-  nameWithType.vb: FileInfo.<=
 - uid: FileCurator.FileInfo.Parse
   name: Parse()
   href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_Parse
@@ -6892,15 +6750,6 @@ references:
   isSpec: "True"
   fullName: FileCurator.FileInfo.Parse
   nameWithType: FileInfo.Parse
-- uid: FileCurator.FileInfo.Parse``1
-  name: Parse<TFile>()
-  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_Parse__1
-  commentId: M:FileCurator.FileInfo.Parse``1
-  name.vb: Parse(Of TFile)()
-  fullName: FileCurator.FileInfo.Parse<TFile>()
-  fullName.vb: FileCurator.FileInfo.Parse(Of TFile)()
-  nameWithType: FileInfo.Parse<TFile>()
-  nameWithType.vb: FileInfo.Parse(Of TFile)()
 - uid: FileCurator.FileInfo.ParseAsync
   name: ParseAsync()
   href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_ParseAsync
@@ -6923,6 +6772,15 @@ references:
   fullName.vb: FileCurator.FileInfo.ParseAsync(Of TFile)()
   nameWithType: FileInfo.ParseAsync<TFile>()
   nameWithType.vb: FileInfo.ParseAsync(Of TFile)()
+- uid: FileCurator.FileInfo.Parse``1
+  name: Parse<TFile>()
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_Parse__1
+  commentId: M:FileCurator.FileInfo.Parse``1
+  name.vb: Parse(Of TFile)()
+  fullName: FileCurator.FileInfo.Parse<TFile>()
+  fullName.vb: FileCurator.FileInfo.Parse(Of TFile)()
+  nameWithType: FileInfo.Parse<TFile>()
+  nameWithType.vb: FileInfo.Parse(Of TFile)()
 - uid: FileCurator.FileInfo.Read
   name: Read()
   href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_Read
@@ -7082,6 +6940,148 @@ references:
   isSpec: "True"
   fullName: FileCurator.FileInfo.WriteAsync
   nameWithType: FileInfo.WriteAsync
+- uid: FileCurator.FileInfo.op_Equality(FileCurator.FileInfo,FileCurator.FileInfo)
+  name: operator ==(FileInfo, FileInfo)
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_Equality_FileCurator_FileInfo_FileCurator_FileInfo_
+  commentId: M:FileCurator.FileInfo.op_Equality(FileCurator.FileInfo,FileCurator.FileInfo)
+  name.vb: =(FileInfo, FileInfo)
+  fullName: FileCurator.FileInfo.operator ==(FileCurator.FileInfo, FileCurator.FileInfo)
+  fullName.vb: FileCurator.FileInfo.=(FileCurator.FileInfo, FileCurator.FileInfo)
+  nameWithType: FileInfo.operator ==(FileInfo, FileInfo)
+  nameWithType.vb: FileInfo.=(FileInfo, FileInfo)
+- uid: FileCurator.FileInfo.op_Equality*
+  name: operator ==
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_Equality_
+  commentId: Overload:FileCurator.FileInfo.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: FileCurator.FileInfo.operator ==
+  fullName.vb: FileCurator.FileInfo.=
+  nameWithType: FileInfo.operator ==
+  nameWithType.vb: FileInfo.=
+- uid: FileCurator.FileInfo.op_GreaterThan(FileCurator.FileInfo,FileCurator.FileInfo)
+  name: operator >(FileInfo, FileInfo)
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_GreaterThan_FileCurator_FileInfo_FileCurator_FileInfo_
+  commentId: M:FileCurator.FileInfo.op_GreaterThan(FileCurator.FileInfo,FileCurator.FileInfo)
+  name.vb: '>(FileInfo, FileInfo)'
+  fullName: FileCurator.FileInfo.operator >(FileCurator.FileInfo, FileCurator.FileInfo)
+  fullName.vb: FileCurator.FileInfo.>(FileCurator.FileInfo, FileCurator.FileInfo)
+  nameWithType: FileInfo.operator >(FileInfo, FileInfo)
+  nameWithType.vb: FileInfo.>(FileInfo, FileInfo)
+- uid: FileCurator.FileInfo.op_GreaterThan*
+  name: operator >
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_GreaterThan_
+  commentId: Overload:FileCurator.FileInfo.op_GreaterThan
+  isSpec: "True"
+  name.vb: '>'
+  fullName: FileCurator.FileInfo.operator >
+  fullName.vb: FileCurator.FileInfo.>
+  nameWithType: FileInfo.operator >
+  nameWithType.vb: FileInfo.>
+- uid: FileCurator.FileInfo.op_GreaterThanOrEqual(FileCurator.FileInfo,FileCurator.FileInfo)
+  name: operator >=(FileInfo, FileInfo)
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_GreaterThanOrEqual_FileCurator_FileInfo_FileCurator_FileInfo_
+  commentId: M:FileCurator.FileInfo.op_GreaterThanOrEqual(FileCurator.FileInfo,FileCurator.FileInfo)
+  name.vb: '>=(FileInfo, FileInfo)'
+  fullName: FileCurator.FileInfo.operator >=(FileCurator.FileInfo, FileCurator.FileInfo)
+  fullName.vb: FileCurator.FileInfo.>=(FileCurator.FileInfo, FileCurator.FileInfo)
+  nameWithType: FileInfo.operator >=(FileInfo, FileInfo)
+  nameWithType.vb: FileInfo.>=(FileInfo, FileInfo)
+- uid: FileCurator.FileInfo.op_GreaterThanOrEqual*
+  name: operator >=
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_GreaterThanOrEqual_
+  commentId: Overload:FileCurator.FileInfo.op_GreaterThanOrEqual
+  isSpec: "True"
+  name.vb: '>='
+  fullName: FileCurator.FileInfo.operator >=
+  fullName.vb: FileCurator.FileInfo.>=
+  nameWithType: FileInfo.operator >=
+  nameWithType.vb: FileInfo.>=
+- uid: FileCurator.FileInfo.op_Implicit(FileCurator.FileInfo)~System.Byte[]
+  name: implicit operator byte[](FileInfo)
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_Implicit_FileCurator_FileInfo__System_Byte__
+  commentId: M:FileCurator.FileInfo.op_Implicit(FileCurator.FileInfo)~System.Byte[]
+  name.vb: CType(FileInfo)
+  fullName: FileCurator.FileInfo.implicit operator byte[](FileCurator.FileInfo)
+  fullName.vb: FileCurator.FileInfo.CType(FileCurator.FileInfo)
+  nameWithType: FileInfo.implicit operator byte[](FileInfo)
+  nameWithType.vb: FileInfo.CType(FileInfo)
+- uid: FileCurator.FileInfo.op_Implicit(FileCurator.FileInfo)~System.String
+  name: implicit operator string(FileInfo)
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_Implicit_FileCurator_FileInfo__System_String
+  commentId: M:FileCurator.FileInfo.op_Implicit(FileCurator.FileInfo)~System.String
+  name.vb: CType(FileInfo)
+  fullName: FileCurator.FileInfo.implicit operator string(FileCurator.FileInfo)
+  fullName.vb: FileCurator.FileInfo.CType(FileCurator.FileInfo)
+  nameWithType: FileInfo.implicit operator string(FileInfo)
+  nameWithType.vb: FileInfo.CType(FileInfo)
+- uid: FileCurator.FileInfo.op_Implicit*
+  name: implicit operator
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_Implicit_
+  commentId: Overload:FileCurator.FileInfo.op_Implicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: FileCurator.FileInfo.implicit operator
+  fullName.vb: FileCurator.FileInfo.CType
+  nameWithType: FileInfo.implicit operator
+  nameWithType.vb: FileInfo.CType
+- uid: FileCurator.FileInfo.op_Inequality(FileCurator.FileInfo,FileCurator.FileInfo)
+  name: operator !=(FileInfo, FileInfo)
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_Inequality_FileCurator_FileInfo_FileCurator_FileInfo_
+  commentId: M:FileCurator.FileInfo.op_Inequality(FileCurator.FileInfo,FileCurator.FileInfo)
+  name.vb: <>(FileInfo, FileInfo)
+  fullName: FileCurator.FileInfo.operator !=(FileCurator.FileInfo, FileCurator.FileInfo)
+  fullName.vb: FileCurator.FileInfo.<>(FileCurator.FileInfo, FileCurator.FileInfo)
+  nameWithType: FileInfo.operator !=(FileInfo, FileInfo)
+  nameWithType.vb: FileInfo.<>(FileInfo, FileInfo)
+- uid: FileCurator.FileInfo.op_Inequality*
+  name: operator !=
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_Inequality_
+  commentId: Overload:FileCurator.FileInfo.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: FileCurator.FileInfo.operator !=
+  fullName.vb: FileCurator.FileInfo.<>
+  nameWithType: FileInfo.operator !=
+  nameWithType.vb: FileInfo.<>
+- uid: FileCurator.FileInfo.op_LessThan(FileCurator.FileInfo,FileCurator.FileInfo)
+  name: operator <(FileInfo, FileInfo)
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_LessThan_FileCurator_FileInfo_FileCurator_FileInfo_
+  commentId: M:FileCurator.FileInfo.op_LessThan(FileCurator.FileInfo,FileCurator.FileInfo)
+  name.vb: <(FileInfo, FileInfo)
+  fullName: FileCurator.FileInfo.operator <(FileCurator.FileInfo, FileCurator.FileInfo)
+  fullName.vb: FileCurator.FileInfo.<(FileCurator.FileInfo, FileCurator.FileInfo)
+  nameWithType: FileInfo.operator <(FileInfo, FileInfo)
+  nameWithType.vb: FileInfo.<(FileInfo, FileInfo)
+- uid: FileCurator.FileInfo.op_LessThan*
+  name: operator <
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_LessThan_
+  commentId: Overload:FileCurator.FileInfo.op_LessThan
+  isSpec: "True"
+  name.vb: <
+  fullName: FileCurator.FileInfo.operator <
+  fullName.vb: FileCurator.FileInfo.<
+  nameWithType: FileInfo.operator <
+  nameWithType.vb: FileInfo.<
+- uid: FileCurator.FileInfo.op_LessThanOrEqual(FileCurator.FileInfo,FileCurator.FileInfo)
+  name: operator <=(FileInfo, FileInfo)
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_LessThanOrEqual_FileCurator_FileInfo_FileCurator_FileInfo_
+  commentId: M:FileCurator.FileInfo.op_LessThanOrEqual(FileCurator.FileInfo,FileCurator.FileInfo)
+  name.vb: <=(FileInfo, FileInfo)
+  fullName: FileCurator.FileInfo.operator <=(FileCurator.FileInfo, FileCurator.FileInfo)
+  fullName.vb: FileCurator.FileInfo.<=(FileCurator.FileInfo, FileCurator.FileInfo)
+  nameWithType: FileInfo.operator <=(FileInfo, FileInfo)
+  nameWithType.vb: FileInfo.<=(FileInfo, FileInfo)
+- uid: FileCurator.FileInfo.op_LessThanOrEqual*
+  name: operator <=
+  href: api/FileCurator.FileInfo.html#FileCurator_FileInfo_op_LessThanOrEqual_
+  commentId: Overload:FileCurator.FileInfo.op_LessThanOrEqual
+  isSpec: "True"
+  name.vb: <=
+  fullName: FileCurator.FileInfo.operator <=
+  fullName.vb: FileCurator.FileInfo.<=
+  nameWithType: FileInfo.operator <=
+  nameWithType.vb: FileInfo.<=
 - uid: FileCurator.FileSystem
   name: FileSystem
   href: api/FileCurator.FileSystem.html
@@ -7725,14 +7725,6 @@ references:
   fullName.vb: FileCurator.Formats.Data.BaseClasses.FileBaseClass(Of FormatFileType)
   nameWithType: FileBaseClass<FormatFileType>
   nameWithType.vb: FileBaseClass(Of FormatFileType)
-- uid: FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.CompareTo(`0)
-  name: CompareTo(FormatFileType)
-  href: api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html#FileCurator_Formats_Data_BaseClasses_FileBaseClass_1_CompareTo__0_
-  commentId: M:FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.CompareTo(`0)
-  fullName: FileCurator.Formats.Data.BaseClasses.FileBaseClass<FormatFileType>.CompareTo(FormatFileType)
-  fullName.vb: FileCurator.Formats.Data.BaseClasses.FileBaseClass(Of FormatFileType).CompareTo(FormatFileType)
-  nameWithType: FileBaseClass<FormatFileType>.CompareTo(FormatFileType)
-  nameWithType.vb: FileBaseClass(Of FormatFileType).CompareTo(FormatFileType)
 - uid: FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.CompareTo(System.Object)
   name: CompareTo(object)
   href: api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html#FileCurator_Formats_Data_BaseClasses_FileBaseClass_1_CompareTo_System_Object_
@@ -7742,6 +7734,14 @@ references:
   fullName.vb: FileCurator.Formats.Data.BaseClasses.FileBaseClass(Of FormatFileType).CompareTo(Object)
   nameWithType: FileBaseClass<FormatFileType>.CompareTo(object)
   nameWithType.vb: FileBaseClass(Of FormatFileType).CompareTo(Object)
+- uid: FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.CompareTo(`0)
+  name: CompareTo(FormatFileType)
+  href: api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html#FileCurator_Formats_Data_BaseClasses_FileBaseClass_1_CompareTo__0_
+  commentId: M:FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.CompareTo(`0)
+  fullName: FileCurator.Formats.Data.BaseClasses.FileBaseClass<FormatFileType>.CompareTo(FormatFileType)
+  fullName.vb: FileCurator.Formats.Data.BaseClasses.FileBaseClass(Of FormatFileType).CompareTo(FormatFileType)
+  nameWithType: FileBaseClass<FormatFileType>.CompareTo(FormatFileType)
+  nameWithType.vb: FileBaseClass(Of FormatFileType).CompareTo(FormatFileType)
 - uid: FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.CompareTo*
   name: CompareTo
   href: api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html#FileCurator_Formats_Data_BaseClasses_FileBaseClass_1_CompareTo_
@@ -7768,14 +7768,6 @@ references:
   fullName.vb: FileCurator.Formats.Data.BaseClasses.FileBaseClass(Of FormatFileType).Content
   nameWithType: FileBaseClass<FormatFileType>.Content
   nameWithType.vb: FileBaseClass(Of FormatFileType).Content
-- uid: FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.Equals(`0)
-  name: Equals(FormatFileType)
-  href: api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html#FileCurator_Formats_Data_BaseClasses_FileBaseClass_1_Equals__0_
-  commentId: M:FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.Equals(`0)
-  fullName: FileCurator.Formats.Data.BaseClasses.FileBaseClass<FormatFileType>.Equals(FormatFileType)
-  fullName.vb: FileCurator.Formats.Data.BaseClasses.FileBaseClass(Of FormatFileType).Equals(FormatFileType)
-  nameWithType: FileBaseClass<FormatFileType>.Equals(FormatFileType)
-  nameWithType.vb: FileBaseClass(Of FormatFileType).Equals(FormatFileType)
 - uid: FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.Equals(System.Object)
   name: Equals(object)
   href: api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html#FileCurator_Formats_Data_BaseClasses_FileBaseClass_1_Equals_System_Object_
@@ -7785,6 +7777,14 @@ references:
   fullName.vb: FileCurator.Formats.Data.BaseClasses.FileBaseClass(Of FormatFileType).Equals(Object)
   nameWithType: FileBaseClass<FormatFileType>.Equals(object)
   nameWithType.vb: FileBaseClass(Of FormatFileType).Equals(Object)
+- uid: FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.Equals(`0)
+  name: Equals(FormatFileType)
+  href: api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html#FileCurator_Formats_Data_BaseClasses_FileBaseClass_1_Equals__0_
+  commentId: M:FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.Equals(`0)
+  fullName: FileCurator.Formats.Data.BaseClasses.FileBaseClass<FormatFileType>.Equals(FormatFileType)
+  fullName.vb: FileCurator.Formats.Data.BaseClasses.FileBaseClass(Of FormatFileType).Equals(FormatFileType)
+  nameWithType: FileBaseClass<FormatFileType>.Equals(FormatFileType)
+  nameWithType.vb: FileBaseClass(Of FormatFileType).Equals(FormatFileType)
 - uid: FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.Equals*
   name: Equals
   href: api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html#FileCurator_Formats_Data_BaseClasses_FileBaseClass_1_Equals_
@@ -7828,6 +7828,23 @@ references:
   fullName.vb: FileCurator.Formats.Data.BaseClasses.FileBaseClass(Of FormatFileType).Meta
   nameWithType: FileBaseClass<FormatFileType>.Meta
   nameWithType.vb: FileBaseClass(Of FormatFileType).Meta
+- uid: FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.Title
+  name: Title
+  href: api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html#FileCurator_Formats_Data_BaseClasses_FileBaseClass_1_Title
+  commentId: P:FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.Title
+  fullName: FileCurator.Formats.Data.BaseClasses.FileBaseClass<FormatFileType>.Title
+  fullName.vb: FileCurator.Formats.Data.BaseClasses.FileBaseClass(Of FormatFileType).Title
+  nameWithType: FileBaseClass<FormatFileType>.Title
+  nameWithType.vb: FileBaseClass(Of FormatFileType).Title
+- uid: FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.Title*
+  name: Title
+  href: api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html#FileCurator_Formats_Data_BaseClasses_FileBaseClass_1_Title_
+  commentId: Overload:FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.Title
+  isSpec: "True"
+  fullName: FileCurator.Formats.Data.BaseClasses.FileBaseClass<FormatFileType>.Title
+  fullName.vb: FileCurator.Formats.Data.BaseClasses.FileBaseClass(Of FormatFileType).Title
+  nameWithType: FileBaseClass<FormatFileType>.Title
+  nameWithType.vb: FileBaseClass(Of FormatFileType).Title
 - uid: FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.op_Equality(FileCurator.Formats.Data.BaseClasses.FileBaseClass{`0},FileCurator.Formats.Data.BaseClasses.FileBaseClass{`0})
   name: operator ==(FileBaseClass<FormatFileType>, FileBaseClass<FormatFileType>)
   href: api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html#FileCurator_Formats_Data_BaseClasses_FileBaseClass_1_op_Equality_FileCurator_Formats_Data_BaseClasses_FileBaseClass__0__FileCurator_Formats_Data_BaseClasses_FileBaseClass__0__
@@ -7942,23 +7959,6 @@ references:
   fullName.vb: FileCurator.Formats.Data.BaseClasses.FileBaseClass(Of FormatFileType).<=
   nameWithType: FileBaseClass<FormatFileType>.operator <=
   nameWithType.vb: FileBaseClass(Of FormatFileType).<=
-- uid: FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.Title
-  name: Title
-  href: api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html#FileCurator_Formats_Data_BaseClasses_FileBaseClass_1_Title
-  commentId: P:FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.Title
-  fullName: FileCurator.Formats.Data.BaseClasses.FileBaseClass<FormatFileType>.Title
-  fullName.vb: FileCurator.Formats.Data.BaseClasses.FileBaseClass(Of FormatFileType).Title
-  nameWithType: FileBaseClass<FormatFileType>.Title
-  nameWithType.vb: FileBaseClass(Of FormatFileType).Title
-- uid: FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.Title*
-  name: Title
-  href: api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html#FileCurator_Formats_Data_BaseClasses_FileBaseClass_1_Title_
-  commentId: Overload:FileCurator.Formats.Data.BaseClasses.FileBaseClass`1.Title
-  isSpec: "True"
-  fullName: FileCurator.Formats.Data.BaseClasses.FileBaseClass<FormatFileType>.Title
-  fullName.vb: FileCurator.Formats.Data.BaseClasses.FileBaseClass(Of FormatFileType).Title
-  nameWithType: FileBaseClass<FormatFileType>.Title
-  nameWithType.vb: FileBaseClass(Of FormatFileType).Title
 - uid: FileCurator.Formats.Data.BaseClasses.TableBaseClass
   name: TableBaseClass
   href: api/FileCurator.Formats.Data.BaseClasses.TableBaseClass.html
@@ -8102,18 +8102,6 @@ references:
   commentId: F:FileCurator.Formats.Data.Enums.Relationship.Child
   fullName: FileCurator.Formats.Data.Enums.Relationship.Child
   nameWithType: Relationship.Child
-- uid: FileCurator.Formats.Data.Enums.Relationship.Colleague
-  name: Colleague
-  href: api/FileCurator.Formats.Data.Enums.Relationship.html#FileCurator_Formats_Data_Enums_Relationship_Colleague
-  commentId: F:FileCurator.Formats.Data.Enums.Relationship.Colleague
-  fullName: FileCurator.Formats.Data.Enums.Relationship.Colleague
-  nameWithType: Relationship.Colleague
-- uid: FileCurator.Formats.Data.Enums.Relationship.Contact
-  name: Contact
-  href: api/FileCurator.Formats.Data.Enums.Relationship.html#FileCurator_Formats_Data_Enums_Relationship_Contact
-  commentId: F:FileCurator.Formats.Data.Enums.Relationship.Contact
-  fullName: FileCurator.Formats.Data.Enums.Relationship.Contact
-  nameWithType: Relationship.Contact
 - uid: FileCurator.Formats.Data.Enums.Relationship.CoResident
   name: CoResident
   href: api/FileCurator.Formats.Data.Enums.Relationship.html#FileCurator_Formats_Data_Enums_Relationship_CoResident
@@ -8126,6 +8114,18 @@ references:
   commentId: F:FileCurator.Formats.Data.Enums.Relationship.CoWorker
   fullName: FileCurator.Formats.Data.Enums.Relationship.CoWorker
   nameWithType: Relationship.CoWorker
+- uid: FileCurator.Formats.Data.Enums.Relationship.Colleague
+  name: Colleague
+  href: api/FileCurator.Formats.Data.Enums.Relationship.html#FileCurator_Formats_Data_Enums_Relationship_Colleague
+  commentId: F:FileCurator.Formats.Data.Enums.Relationship.Colleague
+  fullName: FileCurator.Formats.Data.Enums.Relationship.Colleague
+  nameWithType: Relationship.Colleague
+- uid: FileCurator.Formats.Data.Enums.Relationship.Contact
+  name: Contact
+  href: api/FileCurator.Formats.Data.Enums.Relationship.html#FileCurator_Formats_Data_Enums_Relationship_Contact
+  commentId: F:FileCurator.Formats.Data.Enums.Relationship.Contact
+  fullName: FileCurator.Formats.Data.Enums.Relationship.Contact
+  nameWithType: Relationship.Contact
 - uid: FileCurator.Formats.Data.Enums.Relationship.Crush
   name: Crush
   href: api/FileCurator.Formats.Data.Enums.Relationship.html#FileCurator_Formats_Data_Enums_Relationship_Crush
@@ -9651,19 +9651,6 @@ references:
   isSpec: "True"
   fullName: FileCurator.Formats.Data.Interfaces.IChannel.PubDate
   nameWithType: IChannel.PubDate
-- uid: FileCurator.Formats.Data.Interfaces.IChannel.Title
-  name: Title
-  href: api/FileCurator.Formats.Data.Interfaces.IChannel.html#FileCurator_Formats_Data_Interfaces_IChannel_Title
-  commentId: P:FileCurator.Formats.Data.Interfaces.IChannel.Title
-  fullName: FileCurator.Formats.Data.Interfaces.IChannel.Title
-  nameWithType: IChannel.Title
-- uid: FileCurator.Formats.Data.Interfaces.IChannel.Title*
-  name: Title
-  href: api/FileCurator.Formats.Data.Interfaces.IChannel.html#FileCurator_Formats_Data_Interfaces_IChannel_Title_
-  commentId: Overload:FileCurator.Formats.Data.Interfaces.IChannel.Title
-  isSpec: "True"
-  fullName: FileCurator.Formats.Data.Interfaces.IChannel.Title
-  nameWithType: IChannel.Title
 - uid: FileCurator.Formats.Data.Interfaces.IChannel.TTL
   name: TTL
   href: api/FileCurator.Formats.Data.Interfaces.IChannel.html#FileCurator_Formats_Data_Interfaces_IChannel_TTL
@@ -9677,6 +9664,19 @@ references:
   isSpec: "True"
   fullName: FileCurator.Formats.Data.Interfaces.IChannel.TTL
   nameWithType: IChannel.TTL
+- uid: FileCurator.Formats.Data.Interfaces.IChannel.Title
+  name: Title
+  href: api/FileCurator.Formats.Data.Interfaces.IChannel.html#FileCurator_Formats_Data_Interfaces_IChannel_Title
+  commentId: P:FileCurator.Formats.Data.Interfaces.IChannel.Title
+  fullName: FileCurator.Formats.Data.Interfaces.IChannel.Title
+  nameWithType: IChannel.Title
+- uid: FileCurator.Formats.Data.Interfaces.IChannel.Title*
+  name: Title
+  href: api/FileCurator.Formats.Data.Interfaces.IChannel.html#FileCurator_Formats_Data_Interfaces_IChannel_Title_
+  commentId: Overload:FileCurator.Formats.Data.Interfaces.IChannel.Title
+  isSpec: "True"
+  fullName: FileCurator.Formats.Data.Interfaces.IChannel.Title
+  nameWithType: IChannel.Title
 - uid: FileCurator.Formats.Data.Interfaces.IChannel.WebMaster
   name: WebMaster
   href: api/FileCurator.Formats.Data.Interfaces.IChannel.html#FileCurator_Formats_Data_Interfaces_IChannel_WebMaster
@@ -11076,236 +11076,6 @@ references:
   isSpec: "True"
   fullName: FileCurator.Formats.Interfaces.IGenericFileWriter.WriteAsync
   nameWithType: IGenericFileWriter.WriteAsync
-- uid: FileCurator.Formats.Manager
-  name: Manager
-  href: api/FileCurator.Formats.Manager.html
-  commentId: T:FileCurator.Formats.Manager
-  fullName: FileCurator.Formats.Manager
-  nameWithType: Manager
-- uid: FileCurator.Formats.Manager.#ctor(System.Collections.Generic.IEnumerable{FileCurator.Formats.Interfaces.IFormat})
-  name: Manager(IEnumerable<IFormat>)
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager__ctor_System_Collections_Generic_IEnumerable_FileCurator_Formats_Interfaces_IFormat__
-  commentId: M:FileCurator.Formats.Manager.#ctor(System.Collections.Generic.IEnumerable{FileCurator.Formats.Interfaces.IFormat})
-  name.vb: New(IEnumerable(Of IFormat))
-  fullName: FileCurator.Formats.Manager.Manager(System.Collections.Generic.IEnumerable<FileCurator.Formats.Interfaces.IFormat>)
-  fullName.vb: FileCurator.Formats.Manager.New(System.Collections.Generic.IEnumerable(Of FileCurator.Formats.Interfaces.IFormat))
-  nameWithType: Manager.Manager(IEnumerable<IFormat>)
-  nameWithType.vb: Manager.New(IEnumerable(Of IFormat))
-- uid: FileCurator.Formats.Manager.#ctor*
-  name: Manager
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager__ctor_
-  commentId: Overload:FileCurator.Formats.Manager.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: FileCurator.Formats.Manager.Manager
-  fullName.vb: FileCurator.Formats.Manager.New
-  nameWithType: Manager.Manager
-  nameWithType.vb: Manager.New
-- uid: FileCurator.Formats.Manager.DefaultFormat
-  name: DefaultFormat
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_DefaultFormat
-  commentId: P:FileCurator.Formats.Manager.DefaultFormat
-  fullName: FileCurator.Formats.Manager.DefaultFormat
-  nameWithType: Manager.DefaultFormat
-- uid: FileCurator.Formats.Manager.DefaultFormat*
-  name: DefaultFormat
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_DefaultFormat_
-  commentId: Overload:FileCurator.Formats.Manager.DefaultFormat
-  isSpec: "True"
-  fullName: FileCurator.Formats.Manager.DefaultFormat
-  nameWithType: Manager.DefaultFormat
-- uid: FileCurator.Formats.Manager.FindFormat(System.IO.Stream,System.String)
-  name: FindFormat(Stream, string)
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_FindFormat_System_IO_Stream_System_String_
-  commentId: M:FileCurator.Formats.Manager.FindFormat(System.IO.Stream,System.String)
-  name.vb: FindFormat(Stream, String)
-  fullName: FileCurator.Formats.Manager.FindFormat(System.IO.Stream, string)
-  fullName.vb: FileCurator.Formats.Manager.FindFormat(System.IO.Stream, String)
-  nameWithType: Manager.FindFormat(Stream, string)
-  nameWithType.vb: Manager.FindFormat(Stream, String)
-- uid: FileCurator.Formats.Manager.FindFormat(System.String,FileCurator.Credentials)
-  name: FindFormat(string, Credentials?)
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_FindFormat_System_String_FileCurator_Credentials_
-  commentId: M:FileCurator.Formats.Manager.FindFormat(System.String,FileCurator.Credentials)
-  name.vb: FindFormat(String, Credentials)
-  fullName: FileCurator.Formats.Manager.FindFormat(string, FileCurator.Credentials?)
-  fullName.vb: FileCurator.Formats.Manager.FindFormat(String, FileCurator.Credentials)
-  nameWithType: Manager.FindFormat(string, Credentials?)
-  nameWithType.vb: Manager.FindFormat(String, Credentials)
-- uid: FileCurator.Formats.Manager.FindFormat*
-  name: FindFormat
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_FindFormat_
-  commentId: Overload:FileCurator.Formats.Manager.FindFormat
-  isSpec: "True"
-  fullName: FileCurator.Formats.Manager.FindFormat
-  nameWithType: Manager.FindFormat
-- uid: FileCurator.Formats.Manager.Formats
-  name: Formats
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_Formats
-  commentId: P:FileCurator.Formats.Manager.Formats
-  fullName: FileCurator.Formats.Manager.Formats
-  nameWithType: Manager.Formats
-- uid: FileCurator.Formats.Manager.Formats*
-  name: Formats
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_Formats_
-  commentId: Overload:FileCurator.Formats.Manager.Formats
-  isSpec: "True"
-  fullName: FileCurator.Formats.Manager.Formats
-  nameWithType: Manager.Formats
-- uid: FileCurator.Formats.Manager.FormatsByFileType
-  name: FormatsByFileType
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_FormatsByFileType
-  commentId: P:FileCurator.Formats.Manager.FormatsByFileType
-  fullName: FileCurator.Formats.Manager.FormatsByFileType
-  nameWithType: Manager.FormatsByFileType
-- uid: FileCurator.Formats.Manager.FormatsByFileType*
-  name: FormatsByFileType
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_FormatsByFileType_
-  commentId: Overload:FileCurator.Formats.Manager.FormatsByFileType
-  isSpec: "True"
-  fullName: FileCurator.Formats.Manager.FormatsByFileType
-  nameWithType: Manager.FormatsByFileType
-- uid: FileCurator.Formats.Manager.FormatsByMimeType
-  name: FormatsByMimeType
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_FormatsByMimeType
-  commentId: P:FileCurator.Formats.Manager.FormatsByMimeType
-  fullName: FileCurator.Formats.Manager.FormatsByMimeType
-  nameWithType: Manager.FormatsByMimeType
-- uid: FileCurator.Formats.Manager.FormatsByMimeType*
-  name: FormatsByMimeType
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_FormatsByMimeType_
-  commentId: Overload:FileCurator.Formats.Manager.FormatsByMimeType
-  isSpec: "True"
-  fullName: FileCurator.Formats.Manager.FormatsByMimeType
-  nameWithType: Manager.FormatsByMimeType
-- uid: FileCurator.Formats.Manager.Instance
-  name: Instance
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_Instance
-  commentId: P:FileCurator.Formats.Manager.Instance
-  fullName: FileCurator.Formats.Manager.Instance
-  nameWithType: Manager.Instance
-- uid: FileCurator.Formats.Manager.Instance*
-  name: Instance
-  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_Instance_
-  commentId: Overload:FileCurator.Formats.Manager.Instance
-  isSpec: "True"
-  fullName: FileCurator.Formats.Manager.Instance
-  nameWithType: Manager.Instance
-- uid: FileCurator.Formats.Mime
-  name: FileCurator.Formats.Mime
-  href: api/FileCurator.Formats.Mime.html
-  commentId: N:FileCurator.Formats.Mime
-  fullName: FileCurator.Formats.Mime
-  nameWithType: FileCurator.Formats.Mime
-- uid: FileCurator.Formats.Mime.MimeFormat
-  name: MimeFormat
-  href: api/FileCurator.Formats.Mime.MimeFormat.html
-  commentId: T:FileCurator.Formats.Mime.MimeFormat
-  fullName: FileCurator.Formats.Mime.MimeFormat
-  nameWithType: MimeFormat
-- uid: FileCurator.Formats.Mime.MimeFormat.ContentTypes
-  name: ContentTypes
-  href: api/FileCurator.Formats.Mime.MimeFormat.html#FileCurator_Formats_Mime_MimeFormat_ContentTypes
-  commentId: P:FileCurator.Formats.Mime.MimeFormat.ContentTypes
-  fullName: FileCurator.Formats.Mime.MimeFormat.ContentTypes
-  nameWithType: MimeFormat.ContentTypes
-- uid: FileCurator.Formats.Mime.MimeFormat.ContentTypes*
-  name: ContentTypes
-  href: api/FileCurator.Formats.Mime.MimeFormat.html#FileCurator_Formats_Mime_MimeFormat_ContentTypes_
-  commentId: Overload:FileCurator.Formats.Mime.MimeFormat.ContentTypes
-  isSpec: "True"
-  fullName: FileCurator.Formats.Mime.MimeFormat.ContentTypes
-  nameWithType: MimeFormat.ContentTypes
-- uid: FileCurator.Formats.Mime.MimeFormat.DisplayName
-  name: DisplayName
-  href: api/FileCurator.Formats.Mime.MimeFormat.html#FileCurator_Formats_Mime_MimeFormat_DisplayName
-  commentId: P:FileCurator.Formats.Mime.MimeFormat.DisplayName
-  fullName: FileCurator.Formats.Mime.MimeFormat.DisplayName
-  nameWithType: MimeFormat.DisplayName
-- uid: FileCurator.Formats.Mime.MimeFormat.DisplayName*
-  name: DisplayName
-  href: api/FileCurator.Formats.Mime.MimeFormat.html#FileCurator_Formats_Mime_MimeFormat_DisplayName_
-  commentId: Overload:FileCurator.Formats.Mime.MimeFormat.DisplayName
-  isSpec: "True"
-  fullName: FileCurator.Formats.Mime.MimeFormat.DisplayName
-  nameWithType: MimeFormat.DisplayName
-- uid: FileCurator.Formats.Mime.MimeFormat.FileTypes
-  name: FileTypes
-  href: api/FileCurator.Formats.Mime.MimeFormat.html#FileCurator_Formats_Mime_MimeFormat_FileTypes
-  commentId: P:FileCurator.Formats.Mime.MimeFormat.FileTypes
-  fullName: FileCurator.Formats.Mime.MimeFormat.FileTypes
-  nameWithType: MimeFormat.FileTypes
-- uid: FileCurator.Formats.Mime.MimeFormat.FileTypes*
-  name: FileTypes
-  href: api/FileCurator.Formats.Mime.MimeFormat.html#FileCurator_Formats_Mime_MimeFormat_FileTypes_
-  commentId: Overload:FileCurator.Formats.Mime.MimeFormat.FileTypes
-  isSpec: "True"
-  fullName: FileCurator.Formats.Mime.MimeFormat.FileTypes
-  nameWithType: MimeFormat.FileTypes
-- uid: FileCurator.Formats.Mime.MimeReader
-  name: MimeReader
-  href: api/FileCurator.Formats.Mime.MimeReader.html
-  commentId: T:FileCurator.Formats.Mime.MimeReader
-  fullName: FileCurator.Formats.Mime.MimeReader
-  nameWithType: MimeReader
-- uid: FileCurator.Formats.Mime.MimeReader.HeaderIdentifier
-  name: HeaderIdentifier
-  href: api/FileCurator.Formats.Mime.MimeReader.html#FileCurator_Formats_Mime_MimeReader_HeaderIdentifier
-  commentId: P:FileCurator.Formats.Mime.MimeReader.HeaderIdentifier
-  fullName: FileCurator.Formats.Mime.MimeReader.HeaderIdentifier
-  nameWithType: MimeReader.HeaderIdentifier
-- uid: FileCurator.Formats.Mime.MimeReader.HeaderIdentifier*
-  name: HeaderIdentifier
-  href: api/FileCurator.Formats.Mime.MimeReader.html#FileCurator_Formats_Mime_MimeReader_HeaderIdentifier_
-  commentId: Overload:FileCurator.Formats.Mime.MimeReader.HeaderIdentifier
-  isSpec: "True"
-  fullName: FileCurator.Formats.Mime.MimeReader.HeaderIdentifier
-  nameWithType: MimeReader.HeaderIdentifier
-- uid: FileCurator.Formats.Mime.MimeReader.Read(System.IO.Stream)
-  name: Read(Stream)
-  href: api/FileCurator.Formats.Mime.MimeReader.html#FileCurator_Formats_Mime_MimeReader_Read_System_IO_Stream_
-  commentId: M:FileCurator.Formats.Mime.MimeReader.Read(System.IO.Stream)
-  fullName: FileCurator.Formats.Mime.MimeReader.Read(System.IO.Stream)
-  nameWithType: MimeReader.Read(Stream)
-- uid: FileCurator.Formats.Mime.MimeReader.Read*
-  name: Read
-  href: api/FileCurator.Formats.Mime.MimeReader.html#FileCurator_Formats_Mime_MimeReader_Read_
-  commentId: Overload:FileCurator.Formats.Mime.MimeReader.Read
-  isSpec: "True"
-  fullName: FileCurator.Formats.Mime.MimeReader.Read
-  nameWithType: MimeReader.Read
-- uid: FileCurator.Formats.Mime.MimeWriter
-  name: MimeWriter
-  href: api/FileCurator.Formats.Mime.MimeWriter.html
-  commentId: T:FileCurator.Formats.Mime.MimeWriter
-  fullName: FileCurator.Formats.Mime.MimeWriter
-  nameWithType: MimeWriter
-- uid: FileCurator.Formats.Mime.MimeWriter.Write(System.IO.Stream,FileCurator.Formats.Data.Interfaces.IGenericFile)
-  name: Write(Stream, IGenericFile)
-  href: api/FileCurator.Formats.Mime.MimeWriter.html#FileCurator_Formats_Mime_MimeWriter_Write_System_IO_Stream_FileCurator_Formats_Data_Interfaces_IGenericFile_
-  commentId: M:FileCurator.Formats.Mime.MimeWriter.Write(System.IO.Stream,FileCurator.Formats.Data.Interfaces.IGenericFile)
-  fullName: FileCurator.Formats.Mime.MimeWriter.Write(System.IO.Stream, FileCurator.Formats.Data.Interfaces.IGenericFile)
-  nameWithType: MimeWriter.Write(Stream, IGenericFile)
-- uid: FileCurator.Formats.Mime.MimeWriter.Write*
-  name: Write
-  href: api/FileCurator.Formats.Mime.MimeWriter.html#FileCurator_Formats_Mime_MimeWriter_Write_
-  commentId: Overload:FileCurator.Formats.Mime.MimeWriter.Write
-  isSpec: "True"
-  fullName: FileCurator.Formats.Mime.MimeWriter.Write
-  nameWithType: MimeWriter.Write
-- uid: FileCurator.Formats.Mime.MimeWriter.WriteAsync(System.IO.Stream,FileCurator.Formats.Data.Interfaces.IGenericFile)
-  name: WriteAsync(Stream, IGenericFile)
-  href: api/FileCurator.Formats.Mime.MimeWriter.html#FileCurator_Formats_Mime_MimeWriter_WriteAsync_System_IO_Stream_FileCurator_Formats_Data_Interfaces_IGenericFile_
-  commentId: M:FileCurator.Formats.Mime.MimeWriter.WriteAsync(System.IO.Stream,FileCurator.Formats.Data.Interfaces.IGenericFile)
-  fullName: FileCurator.Formats.Mime.MimeWriter.WriteAsync(System.IO.Stream, FileCurator.Formats.Data.Interfaces.IGenericFile)
-  nameWithType: MimeWriter.WriteAsync(Stream, IGenericFile)
-- uid: FileCurator.Formats.Mime.MimeWriter.WriteAsync*
-  name: WriteAsync
-  href: api/FileCurator.Formats.Mime.MimeWriter.html#FileCurator_Formats_Mime_MimeWriter_WriteAsync_
-  commentId: Overload:FileCurator.Formats.Mime.MimeWriter.WriteAsync
-  isSpec: "True"
-  fullName: FileCurator.Formats.Mime.MimeWriter.WriteAsync
-  nameWithType: MimeWriter.WriteAsync
 - uid: FileCurator.Formats.MSG
   name: FileCurator.Formats.MSG
   href: api/FileCurator.Formats.MSG.html
@@ -12372,48 +12142,6 @@ references:
   commentId: F:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_UNSPECIFIED
   fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_UNSPECIFIED
   nameWithType: OutlookStorage.NativeMethods.PT_UNSPECIFIED
-- uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.UInt32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)
-  name: StgCreateDocfileOnILockBytes(ILockBytes, STGM, uint, out IStorage)
-  href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgCreateDocfileOnILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_ILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_STGM_System_UInt32_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage__
-  commentId: M:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.UInt32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)
-  name.vb: StgCreateDocfileOnILockBytes(ILockBytes, STGM, UInteger, IStorage)
-  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, uint, out FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
-  fullName.vb: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, UInteger, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
-  nameWithType: OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes(OutlookStorage.NativeMethods.ILockBytes, OutlookStorage.NativeMethods.STGM, uint, out OutlookStorage.NativeMethods.IStorage)
-  nameWithType.vb: OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes(OutlookStorage.NativeMethods.ILockBytes, OutlookStorage.NativeMethods.STGM, UInteger, OutlookStorage.NativeMethods.IStorage)
-- uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes*
-  name: StgCreateDocfileOnILockBytes
-  href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgCreateDocfileOnILockBytes_
-  commentId: Overload:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes
-  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes
-  nameWithType: OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes
-- uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile(System.String)
-  name: StgIsStorageFile(string)
-  href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgIsStorageFile_System_String_
-  commentId: M:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile(System.String)
-  name.vb: StgIsStorageFile(String)
-  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile(string)
-  fullName.vb: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile(String)
-  nameWithType: OutlookStorage.NativeMethods.StgIsStorageFile(string)
-  nameWithType.vb: OutlookStorage.NativeMethods.StgIsStorageFile(String)
-- uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile*
-  name: StgIsStorageFile
-  href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgIsStorageFile_
-  commentId: Overload:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile
-  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile
-  nameWithType: OutlookStorage.NativeMethods.StgIsStorageFile
-- uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes)
-  name: StgIsStorageILockBytes(ILockBytes)
-  href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgIsStorageILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_ILockBytes_
-  commentId: M:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes)
-  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes)
-  nameWithType: OutlookStorage.NativeMethods.StgIsStorageILockBytes(OutlookStorage.NativeMethods.ILockBytes)
-- uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes*
-  name: StgIsStorageILockBytes
-  href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgIsStorageILockBytes_
-  commentId: Overload:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes
-  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes
-  nameWithType: OutlookStorage.NativeMethods.StgIsStorageILockBytes
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM
   name: OutlookStorage.NativeMethods.STGM
   href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM.html
@@ -12528,6 +12256,48 @@ references:
   commentId: F:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM.WRITE
   fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM.WRITE
   nameWithType: OutlookStorage.NativeMethods.STGM.WRITE
+- uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.UInt32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)
+  name: StgCreateDocfileOnILockBytes(ILockBytes, STGM, uint, out IStorage)
+  href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgCreateDocfileOnILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_ILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_STGM_System_UInt32_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage__
+  commentId: M:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.UInt32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)
+  name.vb: StgCreateDocfileOnILockBytes(ILockBytes, STGM, UInteger, IStorage)
+  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, uint, out FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
+  fullName.vb: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, UInteger, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
+  nameWithType: OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes(OutlookStorage.NativeMethods.ILockBytes, OutlookStorage.NativeMethods.STGM, uint, out OutlookStorage.NativeMethods.IStorage)
+  nameWithType.vb: OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes(OutlookStorage.NativeMethods.ILockBytes, OutlookStorage.NativeMethods.STGM, UInteger, OutlookStorage.NativeMethods.IStorage)
+- uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes*
+  name: StgCreateDocfileOnILockBytes
+  href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgCreateDocfileOnILockBytes_
+  commentId: Overload:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes
+  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes
+  nameWithType: OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes
+- uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile(System.String)
+  name: StgIsStorageFile(string)
+  href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgIsStorageFile_System_String_
+  commentId: M:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile(System.String)
+  name.vb: StgIsStorageFile(String)
+  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile(string)
+  fullName.vb: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile(String)
+  nameWithType: OutlookStorage.NativeMethods.StgIsStorageFile(string)
+  nameWithType.vb: OutlookStorage.NativeMethods.StgIsStorageFile(String)
+- uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile*
+  name: StgIsStorageFile
+  href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgIsStorageFile_
+  commentId: Overload:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile
+  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile
+  nameWithType: OutlookStorage.NativeMethods.StgIsStorageFile
+- uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes)
+  name: StgIsStorageILockBytes(ILockBytes)
+  href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgIsStorageILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_ILockBytes_
+  commentId: M:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes)
+  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes)
+  nameWithType: OutlookStorage.NativeMethods.StgIsStorageILockBytes(OutlookStorage.NativeMethods.ILockBytes)
+- uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes*
+  name: StgIsStorageILockBytes
+  href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgIsStorageILockBytes_
+  commentId: Overload:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes
+  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes
+  nameWithType: OutlookStorage.NativeMethods.StgIsStorageILockBytes
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorage(System.String,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.IntPtr,System.Int32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)
   name: StgOpenStorage(string, IStorage?, STGM, IntPtr, int, out IStorage)
   href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgOpenStorage_System_String_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_STGM_System_IntPtr_System_Int32_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage__
@@ -12684,6 +12454,236 @@ references:
   commentId: F:FileCurator.Formats.MSG.OutlookStorage.subStorageStatistics
   fullName: FileCurator.Formats.MSG.OutlookStorage.subStorageStatistics
   nameWithType: OutlookStorage.subStorageStatistics
+- uid: FileCurator.Formats.Manager
+  name: Manager
+  href: api/FileCurator.Formats.Manager.html
+  commentId: T:FileCurator.Formats.Manager
+  fullName: FileCurator.Formats.Manager
+  nameWithType: Manager
+- uid: FileCurator.Formats.Manager.#ctor(System.Collections.Generic.IEnumerable{FileCurator.Formats.Interfaces.IFormat})
+  name: Manager(IEnumerable<IFormat>)
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager__ctor_System_Collections_Generic_IEnumerable_FileCurator_Formats_Interfaces_IFormat__
+  commentId: M:FileCurator.Formats.Manager.#ctor(System.Collections.Generic.IEnumerable{FileCurator.Formats.Interfaces.IFormat})
+  name.vb: New(IEnumerable(Of IFormat))
+  fullName: FileCurator.Formats.Manager.Manager(System.Collections.Generic.IEnumerable<FileCurator.Formats.Interfaces.IFormat>)
+  fullName.vb: FileCurator.Formats.Manager.New(System.Collections.Generic.IEnumerable(Of FileCurator.Formats.Interfaces.IFormat))
+  nameWithType: Manager.Manager(IEnumerable<IFormat>)
+  nameWithType.vb: Manager.New(IEnumerable(Of IFormat))
+- uid: FileCurator.Formats.Manager.#ctor*
+  name: Manager
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager__ctor_
+  commentId: Overload:FileCurator.Formats.Manager.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: FileCurator.Formats.Manager.Manager
+  fullName.vb: FileCurator.Formats.Manager.New
+  nameWithType: Manager.Manager
+  nameWithType.vb: Manager.New
+- uid: FileCurator.Formats.Manager.DefaultFormat
+  name: DefaultFormat
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_DefaultFormat
+  commentId: P:FileCurator.Formats.Manager.DefaultFormat
+  fullName: FileCurator.Formats.Manager.DefaultFormat
+  nameWithType: Manager.DefaultFormat
+- uid: FileCurator.Formats.Manager.DefaultFormat*
+  name: DefaultFormat
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_DefaultFormat_
+  commentId: Overload:FileCurator.Formats.Manager.DefaultFormat
+  isSpec: "True"
+  fullName: FileCurator.Formats.Manager.DefaultFormat
+  nameWithType: Manager.DefaultFormat
+- uid: FileCurator.Formats.Manager.FindFormat(System.IO.Stream,System.String)
+  name: FindFormat(Stream, string)
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_FindFormat_System_IO_Stream_System_String_
+  commentId: M:FileCurator.Formats.Manager.FindFormat(System.IO.Stream,System.String)
+  name.vb: FindFormat(Stream, String)
+  fullName: FileCurator.Formats.Manager.FindFormat(System.IO.Stream, string)
+  fullName.vb: FileCurator.Formats.Manager.FindFormat(System.IO.Stream, String)
+  nameWithType: Manager.FindFormat(Stream, string)
+  nameWithType.vb: Manager.FindFormat(Stream, String)
+- uid: FileCurator.Formats.Manager.FindFormat(System.String,FileCurator.Credentials)
+  name: FindFormat(string, Credentials?)
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_FindFormat_System_String_FileCurator_Credentials_
+  commentId: M:FileCurator.Formats.Manager.FindFormat(System.String,FileCurator.Credentials)
+  name.vb: FindFormat(String, Credentials)
+  fullName: FileCurator.Formats.Manager.FindFormat(string, FileCurator.Credentials?)
+  fullName.vb: FileCurator.Formats.Manager.FindFormat(String, FileCurator.Credentials)
+  nameWithType: Manager.FindFormat(string, Credentials?)
+  nameWithType.vb: Manager.FindFormat(String, Credentials)
+- uid: FileCurator.Formats.Manager.FindFormat*
+  name: FindFormat
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_FindFormat_
+  commentId: Overload:FileCurator.Formats.Manager.FindFormat
+  isSpec: "True"
+  fullName: FileCurator.Formats.Manager.FindFormat
+  nameWithType: Manager.FindFormat
+- uid: FileCurator.Formats.Manager.Formats
+  name: Formats
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_Formats
+  commentId: P:FileCurator.Formats.Manager.Formats
+  fullName: FileCurator.Formats.Manager.Formats
+  nameWithType: Manager.Formats
+- uid: FileCurator.Formats.Manager.Formats*
+  name: Formats
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_Formats_
+  commentId: Overload:FileCurator.Formats.Manager.Formats
+  isSpec: "True"
+  fullName: FileCurator.Formats.Manager.Formats
+  nameWithType: Manager.Formats
+- uid: FileCurator.Formats.Manager.FormatsByFileType
+  name: FormatsByFileType
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_FormatsByFileType
+  commentId: P:FileCurator.Formats.Manager.FormatsByFileType
+  fullName: FileCurator.Formats.Manager.FormatsByFileType
+  nameWithType: Manager.FormatsByFileType
+- uid: FileCurator.Formats.Manager.FormatsByFileType*
+  name: FormatsByFileType
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_FormatsByFileType_
+  commentId: Overload:FileCurator.Formats.Manager.FormatsByFileType
+  isSpec: "True"
+  fullName: FileCurator.Formats.Manager.FormatsByFileType
+  nameWithType: Manager.FormatsByFileType
+- uid: FileCurator.Formats.Manager.FormatsByMimeType
+  name: FormatsByMimeType
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_FormatsByMimeType
+  commentId: P:FileCurator.Formats.Manager.FormatsByMimeType
+  fullName: FileCurator.Formats.Manager.FormatsByMimeType
+  nameWithType: Manager.FormatsByMimeType
+- uid: FileCurator.Formats.Manager.FormatsByMimeType*
+  name: FormatsByMimeType
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_FormatsByMimeType_
+  commentId: Overload:FileCurator.Formats.Manager.FormatsByMimeType
+  isSpec: "True"
+  fullName: FileCurator.Formats.Manager.FormatsByMimeType
+  nameWithType: Manager.FormatsByMimeType
+- uid: FileCurator.Formats.Manager.Instance
+  name: Instance
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_Instance
+  commentId: P:FileCurator.Formats.Manager.Instance
+  fullName: FileCurator.Formats.Manager.Instance
+  nameWithType: Manager.Instance
+- uid: FileCurator.Formats.Manager.Instance*
+  name: Instance
+  href: api/FileCurator.Formats.Manager.html#FileCurator_Formats_Manager_Instance_
+  commentId: Overload:FileCurator.Formats.Manager.Instance
+  isSpec: "True"
+  fullName: FileCurator.Formats.Manager.Instance
+  nameWithType: Manager.Instance
+- uid: FileCurator.Formats.Mime
+  name: FileCurator.Formats.Mime
+  href: api/FileCurator.Formats.Mime.html
+  commentId: N:FileCurator.Formats.Mime
+  fullName: FileCurator.Formats.Mime
+  nameWithType: FileCurator.Formats.Mime
+- uid: FileCurator.Formats.Mime.MimeFormat
+  name: MimeFormat
+  href: api/FileCurator.Formats.Mime.MimeFormat.html
+  commentId: T:FileCurator.Formats.Mime.MimeFormat
+  fullName: FileCurator.Formats.Mime.MimeFormat
+  nameWithType: MimeFormat
+- uid: FileCurator.Formats.Mime.MimeFormat.ContentTypes
+  name: ContentTypes
+  href: api/FileCurator.Formats.Mime.MimeFormat.html#FileCurator_Formats_Mime_MimeFormat_ContentTypes
+  commentId: P:FileCurator.Formats.Mime.MimeFormat.ContentTypes
+  fullName: FileCurator.Formats.Mime.MimeFormat.ContentTypes
+  nameWithType: MimeFormat.ContentTypes
+- uid: FileCurator.Formats.Mime.MimeFormat.ContentTypes*
+  name: ContentTypes
+  href: api/FileCurator.Formats.Mime.MimeFormat.html#FileCurator_Formats_Mime_MimeFormat_ContentTypes_
+  commentId: Overload:FileCurator.Formats.Mime.MimeFormat.ContentTypes
+  isSpec: "True"
+  fullName: FileCurator.Formats.Mime.MimeFormat.ContentTypes
+  nameWithType: MimeFormat.ContentTypes
+- uid: FileCurator.Formats.Mime.MimeFormat.DisplayName
+  name: DisplayName
+  href: api/FileCurator.Formats.Mime.MimeFormat.html#FileCurator_Formats_Mime_MimeFormat_DisplayName
+  commentId: P:FileCurator.Formats.Mime.MimeFormat.DisplayName
+  fullName: FileCurator.Formats.Mime.MimeFormat.DisplayName
+  nameWithType: MimeFormat.DisplayName
+- uid: FileCurator.Formats.Mime.MimeFormat.DisplayName*
+  name: DisplayName
+  href: api/FileCurator.Formats.Mime.MimeFormat.html#FileCurator_Formats_Mime_MimeFormat_DisplayName_
+  commentId: Overload:FileCurator.Formats.Mime.MimeFormat.DisplayName
+  isSpec: "True"
+  fullName: FileCurator.Formats.Mime.MimeFormat.DisplayName
+  nameWithType: MimeFormat.DisplayName
+- uid: FileCurator.Formats.Mime.MimeFormat.FileTypes
+  name: FileTypes
+  href: api/FileCurator.Formats.Mime.MimeFormat.html#FileCurator_Formats_Mime_MimeFormat_FileTypes
+  commentId: P:FileCurator.Formats.Mime.MimeFormat.FileTypes
+  fullName: FileCurator.Formats.Mime.MimeFormat.FileTypes
+  nameWithType: MimeFormat.FileTypes
+- uid: FileCurator.Formats.Mime.MimeFormat.FileTypes*
+  name: FileTypes
+  href: api/FileCurator.Formats.Mime.MimeFormat.html#FileCurator_Formats_Mime_MimeFormat_FileTypes_
+  commentId: Overload:FileCurator.Formats.Mime.MimeFormat.FileTypes
+  isSpec: "True"
+  fullName: FileCurator.Formats.Mime.MimeFormat.FileTypes
+  nameWithType: MimeFormat.FileTypes
+- uid: FileCurator.Formats.Mime.MimeReader
+  name: MimeReader
+  href: api/FileCurator.Formats.Mime.MimeReader.html
+  commentId: T:FileCurator.Formats.Mime.MimeReader
+  fullName: FileCurator.Formats.Mime.MimeReader
+  nameWithType: MimeReader
+- uid: FileCurator.Formats.Mime.MimeReader.HeaderIdentifier
+  name: HeaderIdentifier
+  href: api/FileCurator.Formats.Mime.MimeReader.html#FileCurator_Formats_Mime_MimeReader_HeaderIdentifier
+  commentId: P:FileCurator.Formats.Mime.MimeReader.HeaderIdentifier
+  fullName: FileCurator.Formats.Mime.MimeReader.HeaderIdentifier
+  nameWithType: MimeReader.HeaderIdentifier
+- uid: FileCurator.Formats.Mime.MimeReader.HeaderIdentifier*
+  name: HeaderIdentifier
+  href: api/FileCurator.Formats.Mime.MimeReader.html#FileCurator_Formats_Mime_MimeReader_HeaderIdentifier_
+  commentId: Overload:FileCurator.Formats.Mime.MimeReader.HeaderIdentifier
+  isSpec: "True"
+  fullName: FileCurator.Formats.Mime.MimeReader.HeaderIdentifier
+  nameWithType: MimeReader.HeaderIdentifier
+- uid: FileCurator.Formats.Mime.MimeReader.Read(System.IO.Stream)
+  name: Read(Stream)
+  href: api/FileCurator.Formats.Mime.MimeReader.html#FileCurator_Formats_Mime_MimeReader_Read_System_IO_Stream_
+  commentId: M:FileCurator.Formats.Mime.MimeReader.Read(System.IO.Stream)
+  fullName: FileCurator.Formats.Mime.MimeReader.Read(System.IO.Stream)
+  nameWithType: MimeReader.Read(Stream)
+- uid: FileCurator.Formats.Mime.MimeReader.Read*
+  name: Read
+  href: api/FileCurator.Formats.Mime.MimeReader.html#FileCurator_Formats_Mime_MimeReader_Read_
+  commentId: Overload:FileCurator.Formats.Mime.MimeReader.Read
+  isSpec: "True"
+  fullName: FileCurator.Formats.Mime.MimeReader.Read
+  nameWithType: MimeReader.Read
+- uid: FileCurator.Formats.Mime.MimeWriter
+  name: MimeWriter
+  href: api/FileCurator.Formats.Mime.MimeWriter.html
+  commentId: T:FileCurator.Formats.Mime.MimeWriter
+  fullName: FileCurator.Formats.Mime.MimeWriter
+  nameWithType: MimeWriter
+- uid: FileCurator.Formats.Mime.MimeWriter.Write(System.IO.Stream,FileCurator.Formats.Data.Interfaces.IGenericFile)
+  name: Write(Stream, IGenericFile)
+  href: api/FileCurator.Formats.Mime.MimeWriter.html#FileCurator_Formats_Mime_MimeWriter_Write_System_IO_Stream_FileCurator_Formats_Data_Interfaces_IGenericFile_
+  commentId: M:FileCurator.Formats.Mime.MimeWriter.Write(System.IO.Stream,FileCurator.Formats.Data.Interfaces.IGenericFile)
+  fullName: FileCurator.Formats.Mime.MimeWriter.Write(System.IO.Stream, FileCurator.Formats.Data.Interfaces.IGenericFile)
+  nameWithType: MimeWriter.Write(Stream, IGenericFile)
+- uid: FileCurator.Formats.Mime.MimeWriter.Write*
+  name: Write
+  href: api/FileCurator.Formats.Mime.MimeWriter.html#FileCurator_Formats_Mime_MimeWriter_Write_
+  commentId: Overload:FileCurator.Formats.Mime.MimeWriter.Write
+  isSpec: "True"
+  fullName: FileCurator.Formats.Mime.MimeWriter.Write
+  nameWithType: MimeWriter.Write
+- uid: FileCurator.Formats.Mime.MimeWriter.WriteAsync(System.IO.Stream,FileCurator.Formats.Data.Interfaces.IGenericFile)
+  name: WriteAsync(Stream, IGenericFile)
+  href: api/FileCurator.Formats.Mime.MimeWriter.html#FileCurator_Formats_Mime_MimeWriter_WriteAsync_System_IO_Stream_FileCurator_Formats_Data_Interfaces_IGenericFile_
+  commentId: M:FileCurator.Formats.Mime.MimeWriter.WriteAsync(System.IO.Stream,FileCurator.Formats.Data.Interfaces.IGenericFile)
+  fullName: FileCurator.Formats.Mime.MimeWriter.WriteAsync(System.IO.Stream, FileCurator.Formats.Data.Interfaces.IGenericFile)
+  nameWithType: MimeWriter.WriteAsync(Stream, IGenericFile)
+- uid: FileCurator.Formats.Mime.MimeWriter.WriteAsync*
+  name: WriteAsync
+  href: api/FileCurator.Formats.Mime.MimeWriter.html#FileCurator_Formats_Mime_MimeWriter_WriteAsync_
+  commentId: Overload:FileCurator.Formats.Mime.MimeWriter.WriteAsync
+  isSpec: "True"
+  fullName: FileCurator.Formats.Mime.MimeWriter.WriteAsync
+  nameWithType: MimeWriter.WriteAsync
 - uid: FileCurator.Formats.PowerPoint
   name: FileCurator.Formats.PowerPoint
   href: api/FileCurator.Formats.PowerPoint.html
@@ -12936,19 +12936,6 @@ references:
   isSpec: "True"
   fullName: FileCurator.Formats.RSS.Data.Channel.Content
   nameWithType: Channel.Content
-- uid: FileCurator.Formats.RSS.Data.Channel.Copyright
-  name: Copyright
-  href: api/FileCurator.Formats.RSS.Data.Channel.html#FileCurator_Formats_RSS_Data_Channel_Copyright
-  commentId: P:FileCurator.Formats.RSS.Data.Channel.Copyright
-  fullName: FileCurator.Formats.RSS.Data.Channel.Copyright
-  nameWithType: Channel.Copyright
-- uid: FileCurator.Formats.RSS.Data.Channel.Copyright*
-  name: Copyright
-  href: api/FileCurator.Formats.RSS.Data.Channel.html#FileCurator_Formats_RSS_Data_Channel_Copyright_
-  commentId: Overload:FileCurator.Formats.RSS.Data.Channel.Copyright
-  isSpec: "True"
-  fullName: FileCurator.Formats.RSS.Data.Channel.Copyright
-  nameWithType: Channel.Copyright
 - uid: FileCurator.Formats.RSS.Data.Channel.CopyTo(FileCurator.Formats.Data.Interfaces.IFeedItem[],System.Int32)
   name: CopyTo(IFeedItem[], int)
   href: api/FileCurator.Formats.RSS.Data.Channel.html#FileCurator_Formats_RSS_Data_Channel_CopyTo_FileCurator_Formats_Data_Interfaces_IFeedItem___System_Int32_
@@ -12965,6 +12952,19 @@ references:
   isSpec: "True"
   fullName: FileCurator.Formats.RSS.Data.Channel.CopyTo
   nameWithType: Channel.CopyTo
+- uid: FileCurator.Formats.RSS.Data.Channel.Copyright
+  name: Copyright
+  href: api/FileCurator.Formats.RSS.Data.Channel.html#FileCurator_Formats_RSS_Data_Channel_Copyright
+  commentId: P:FileCurator.Formats.RSS.Data.Channel.Copyright
+  fullName: FileCurator.Formats.RSS.Data.Channel.Copyright
+  nameWithType: Channel.Copyright
+- uid: FileCurator.Formats.RSS.Data.Channel.Copyright*
+  name: Copyright
+  href: api/FileCurator.Formats.RSS.Data.Channel.html#FileCurator_Formats_RSS_Data_Channel_Copyright_
+  commentId: Overload:FileCurator.Formats.RSS.Data.Channel.Copyright
+  isSpec: "True"
+  fullName: FileCurator.Formats.RSS.Data.Channel.Copyright
+  nameWithType: Channel.Copyright
 - uid: FileCurator.Formats.RSS.Data.Channel.Count
   name: Count
   href: api/FileCurator.Formats.RSS.Data.Channel.html#FileCurator_Formats_RSS_Data_Channel_Count
@@ -13185,6 +13185,19 @@ references:
   isSpec: "True"
   fullName: FileCurator.Formats.RSS.Data.Channel.RemoveAt
   nameWithType: Channel.RemoveAt
+- uid: FileCurator.Formats.RSS.Data.Channel.TTL
+  name: TTL
+  href: api/FileCurator.Formats.RSS.Data.Channel.html#FileCurator_Formats_RSS_Data_Channel_TTL
+  commentId: P:FileCurator.Formats.RSS.Data.Channel.TTL
+  fullName: FileCurator.Formats.RSS.Data.Channel.TTL
+  nameWithType: Channel.TTL
+- uid: FileCurator.Formats.RSS.Data.Channel.TTL*
+  name: TTL
+  href: api/FileCurator.Formats.RSS.Data.Channel.html#FileCurator_Formats_RSS_Data_Channel_TTL_
+  commentId: Overload:FileCurator.Formats.RSS.Data.Channel.TTL
+  isSpec: "True"
+  fullName: FileCurator.Formats.RSS.Data.Channel.TTL
+  nameWithType: Channel.TTL
 - uid: FileCurator.Formats.RSS.Data.Channel.Title
   name: Title
   href: api/FileCurator.Formats.RSS.Data.Channel.html#FileCurator_Formats_RSS_Data_Channel_Title
@@ -13211,19 +13224,6 @@ references:
   isSpec: "True"
   fullName: FileCurator.Formats.RSS.Data.Channel.ToString
   nameWithType: Channel.ToString
-- uid: FileCurator.Formats.RSS.Data.Channel.TTL
-  name: TTL
-  href: api/FileCurator.Formats.RSS.Data.Channel.html#FileCurator_Formats_RSS_Data_Channel_TTL
-  commentId: P:FileCurator.Formats.RSS.Data.Channel.TTL
-  fullName: FileCurator.Formats.RSS.Data.Channel.TTL
-  nameWithType: Channel.TTL
-- uid: FileCurator.Formats.RSS.Data.Channel.TTL*
-  name: TTL
-  href: api/FileCurator.Formats.RSS.Data.Channel.html#FileCurator_Formats_RSS_Data_Channel_TTL_
-  commentId: Overload:FileCurator.Formats.RSS.Data.Channel.TTL
-  isSpec: "True"
-  fullName: FileCurator.Formats.RSS.Data.Channel.TTL
-  nameWithType: Channel.TTL
 - uid: FileCurator.Formats.RSS.Data.Channel.WebMaster
   name: WebMaster
   href: api/FileCurator.Formats.RSS.Data.Channel.html#FileCurator_Formats_RSS_Data_Channel_WebMaster
@@ -15358,15 +15358,6 @@ references:
   isSpec: "True"
   fullName: FileCurator.Interfaces.IFile.Parse
   nameWithType: IFile.Parse
-- uid: FileCurator.Interfaces.IFile.Parse``1
-  name: Parse<TFile>()
-  href: api/FileCurator.Interfaces.IFile.html#FileCurator_Interfaces_IFile_Parse__1
-  commentId: M:FileCurator.Interfaces.IFile.Parse``1
-  name.vb: Parse(Of TFile)()
-  fullName: FileCurator.Interfaces.IFile.Parse<TFile>()
-  fullName.vb: FileCurator.Interfaces.IFile.Parse(Of TFile)()
-  nameWithType: IFile.Parse<TFile>()
-  nameWithType.vb: IFile.Parse(Of TFile)()
 - uid: FileCurator.Interfaces.IFile.ParseAsync
   name: ParseAsync()
   href: api/FileCurator.Interfaces.IFile.html#FileCurator_Interfaces_IFile_ParseAsync
@@ -15389,6 +15380,15 @@ references:
   fullName.vb: FileCurator.Interfaces.IFile.ParseAsync(Of TFile)()
   nameWithType: IFile.ParseAsync<TFile>()
   nameWithType.vb: IFile.ParseAsync(Of TFile)()
+- uid: FileCurator.Interfaces.IFile.Parse``1
+  name: Parse<TFile>()
+  href: api/FileCurator.Interfaces.IFile.html#FileCurator_Interfaces_IFile_Parse__1
+  commentId: M:FileCurator.Interfaces.IFile.Parse``1
+  name.vb: Parse(Of TFile)()
+  fullName: FileCurator.Interfaces.IFile.Parse<TFile>()
+  fullName.vb: FileCurator.Interfaces.IFile.Parse(Of TFile)()
+  nameWithType: IFile.Parse<TFile>()
+  nameWithType.vb: IFile.Parse(Of TFile)()
 - uid: FileCurator.Interfaces.IFile.Read
   name: Read()
   href: api/FileCurator.Interfaces.IFile.html#FileCurator_Interfaces_IFile_Read
