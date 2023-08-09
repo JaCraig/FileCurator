@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.10"></a>
+## [4.0.10](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.10) (2023-8-9)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([cc463f7](https://www.github.com/JaCraig/FileCurator/commit/cc463f7367d2deffa80ea97482c69fef3bfc7c4c))
+
+### Other
+
+* Merge pull request #16 from JaCraig/dependabot/nuget/dependencies-416c6046e2 ([0d87a92](https://www.github.com/JaCraig/FileCurator/commit/0d87a92d21401918fa7d5e7f8c7854af1a0008fc))
+* Merge pull request #17 from JaCraig/dependabot/nuget/dependencies-eec3f11c63 ([ff3354a](https://www.github.com/JaCraig/FileCurator/commit/ff3354a8efd79fc569f17e3c4c5b8e844a9a4632))
+* bump the dependencies group with 1 update ([737c6c3](https://www.github.com/JaCraig/FileCurator/commit/737c6c3b4590f17ce67ca577e389dfd776d02f3a))
+* Update dependabot.yml ([17d3380](https://www.github.com/JaCraig/FileCurator/commit/17d3380db5fd18110aa9b36ac9f46dee41814c90))
+
 <a name="4.0.9"></a>
 ## [4.0.9](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.9) (2023-8-8)
 
