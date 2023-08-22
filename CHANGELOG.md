@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.12"></a>
+## [4.0.12](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.12) (2023-8-22)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([94545ce](https://www.github.com/JaCraig/FileCurator/commit/94545ce721b14fd5316af5315663f868d9f643cd))
+
+### Other
+
+* Merge pull request #22 from JaCraig/dependabot/nuget/dependencies-d09bdfa4cc ([3b7cf4a](https://www.github.com/JaCraig/FileCurator/commit/3b7cf4af5df7d66f2b96b032eb267bbc23154432))
+* Merge pull request #23 from JaCraig/dependabot/nuget/dependencies-98216efdac ([1c78c97](https://www.github.com/JaCraig/FileCurator/commit/1c78c972bfc01de4a1d407121162da904d2458e7))
+* Merge pull request #24 from JaCraig/dependabot/nuget/dependencies-16491106ec ([a858e45](https://www.github.com/JaCraig/FileCurator/commit/a858e457c76f96982a1824783464cfe36f95f981))
+* bump the dependencies group with 1 update ([381e82b](https://www.github.com/JaCraig/FileCurator/commit/381e82bb38b3e66cfc031662998e4f7fe1378cf6))
+* bump the dependencies group with 1 update ([3760443](https://www.github.com/JaCraig/FileCurator/commit/37604433d2182f08a55dc550e6263397ef813636))
+
 <a name="4.0.11"></a>
 ## [4.0.11](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.11) (2023-8-17)
 
