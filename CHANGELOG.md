@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.19"></a>
+## [4.0.19](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.19) (2023-9-4)
+
+### Bug Fixes
+
+* bump the dependencies group with 3 updates ([8d22fd6](https://www.github.com/JaCraig/FileCurator/commit/8d22fd67c9c091319dfca7e77388bd3c7bf1b897))
+
+### Other
+
+* Merge pull request #39 from JaCraig/dependabot/github_actions/dependencies-8a9da2b879 ([ad38140](https://www.github.com/JaCraig/FileCurator/commit/ad381404e05593860830f487ef1b18ae09c72292))
+* Merge pull request #40 from JaCraig/dependabot/nuget/dependencies-4fe17a6144 ([17271b9](https://www.github.com/JaCraig/FileCurator/commit/17271b973dc86ec285feb3b3ec22b22ba499bba3))
+* Merge pull request #41 from JaCraig/dependabot/nuget/dependencies-b468b93801 ([d7e4774](https://www.github.com/JaCraig/FileCurator/commit/d7e47740b0cbe86ec66ba1502bc62c851f1392dc))
+* bump the dependencies group with 1 update ([b1ed080](https://www.github.com/JaCraig/FileCurator/commit/b1ed0801856e4fa749577ec48ccb31a2a2615bd0))
+* bump the dependencies group with 1 update ([a2bdb26](https://www.github.com/JaCraig/FileCurator/commit/a2bdb26519906d070f958b742b0a7af87d237f73))
+
 <a name="4.0.18"></a>
 ## [4.0.18](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.18) (2023-9-1)
 
