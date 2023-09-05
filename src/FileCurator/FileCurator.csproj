@@ -46,7 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BigBook" Version="5.0.18" />
+    <PackageReference Include="BigBook" Version="5.0.19" />
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.20.0" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.52" />
     <PackageReference Include="MimeKit" Version="4.2.0" />
