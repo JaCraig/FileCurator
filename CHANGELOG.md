@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.22"></a>
+## [4.0.22](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.22) (2023-9-11)
+
+### Bug Fixes
+
+* bump the dependencies group with 2 updates ([d36ccd9](https://www.github.com/JaCraig/FileCurator/commit/d36ccd930b690857db0a207c955b4dda9af01902))
+
+### Other
+
+* Merge pull request #45 from JaCraig/dependabot/nuget/dependencies-b7b1c47501 ([057c0a0](https://www.github.com/JaCraig/FileCurator/commit/057c0a025005eccac886a3a883899d62f3cb2e15))
+* Merge pull request #46 from JaCraig/dependabot/nuget/dependencies-4a6e914b81 ([0b4ad19](https://www.github.com/JaCraig/FileCurator/commit/0b4ad19c7b440109d78b3759cde77a0d9f1708f3))
+* Merge pull request #47 from JaCraig/dependabot/nuget/dependencies-a36d827776 ([af9e205](https://www.github.com/JaCraig/FileCurator/commit/af9e205ce165a10bfda89a46079ae4cd997fe638))
+* Merge pull request #48 from JaCraig/dependabot/nuget/dependencies-2560c786da ([a10adf1](https://www.github.com/JaCraig/FileCurator/commit/a10adf1427ea74dfe0c3429c690d3569e2deeb91))
+* Merge pull request #49 from JaCraig/dependabot/nuget/dependencies-18289d991d ([9aa2789](https://www.github.com/JaCraig/FileCurator/commit/9aa2789df56dd914cc7fd58f080b862e318c7e69))
+* bump the dependencies group with 1 update ([1f4ee2b](https://www.github.com/JaCraig/FileCurator/commit/1f4ee2b4893af0fceaf6c8240e545e388d1ce11b))
+* bump the dependencies group with 1 update ([40181cc](https://www.github.com/JaCraig/FileCurator/commit/40181ccb4c25b9cb9f934e2d47bae65724342c70))
+* bump the dependencies group with 1 update ([51a3720](https://www.github.com/JaCraig/FileCurator/commit/51a37202be765b3f244499bd1a832c4d870291dd))
+* bump the dependencies group with 1 update ([f8b6665](https://www.github.com/JaCraig/FileCurator/commit/f8b66652faedbb69497551470ad8cc7726d6aab1))
+
 <a name="4.0.21"></a>
 ## [4.0.21](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.21) (2023-9-6)
 
