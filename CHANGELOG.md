@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.23"></a>
+## [4.0.23](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.23) (2023-9-12)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([7d33238](https://www.github.com/JaCraig/FileCurator/commit/7d332385a7516e1e935847008be117ac66f91d8a))
+
+### Other
+
+* Merge pull request #50 from JaCraig/dependabot/nuget/dependencies-57e0346c22 ([5573163](https://www.github.com/JaCraig/FileCurator/commit/5573163cc8767e13dbd585475c51dcb805d6cb92))
+* Update dependabot.yml ([1110533](https://www.github.com/JaCraig/FileCurator/commit/1110533ba25d446aad5d4eae36f747b82ace0c45))
+
 <a name="4.0.22"></a>
 ## [4.0.22](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.22) (2023-9-11)
 
