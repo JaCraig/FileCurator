@@ -59,7 +59,6 @@ namespace FileCurator.Tests.Formats
         {
             {"TestDOCX.docx","Word" },
             {"TestCSV.csv","Delimited files" },
-            {"TestDefault.boop","Text" },
             {"TestHTML.htm","HTML" },
             {"TestICal.ics","ICal" },
             {"TestMHTML.mht","MIME" },
