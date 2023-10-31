@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.32"></a>
+## [4.0.32](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.32) (2023-10-31)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([955d820](https://www.github.com/JaCraig/FileCurator/commit/955d820610177e53b001ffb5dff614fbe548bc57))
+
+### Other
+
+* Merge pull request #79 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-5cf7b2c746 ([4429fc8](https://www.github.com/JaCraig/FileCurator/commit/4429fc8d33df8c2f261ccc0b2ac9249684bad6cb))
+* Merge pull request #80 from JaCraig/dependabot/nuget/dependencies-52d7dee324 ([c42cfd3](https://www.github.com/JaCraig/FileCurator/commit/c42cfd3277fb0716025e923216ab8dc342ac4b0b))
+* bump the dependencies group ([7975086](https://www.github.com/JaCraig/FileCurator/commit/7975086bc89f54c78510856615764f7d6151ec46))
+
 <a name="4.0.31"></a>
 ## [4.0.31](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.31) (2023-10-30)
 
