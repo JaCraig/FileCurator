@@ -105,7 +105,7 @@ namespace FileCurator.Formats.PowerPoint
             }
 
             // Declare a paragraph separator.
-            string paragraphSeparator = null;
+            string? paragraphSeparator = null;
 
             if (slidePart.Slide != null)
             {
@@ -147,18 +147,7 @@ namespace FileCurator.Formats.PowerPoint
             var placeholderShape = shape.NonVisualShapeProperties.ApplicationNonVisualDrawingProperties.GetFirstChild<PlaceholderShape>();
             if (placeholderShape?.Type?.HasValue == true)
             {
-                switch ((PlaceholderValues)placeholderShape.Type)
-                {
-                    // Any title shape.
-                    case PlaceholderValues.Title:
-
-                    // A centered title.
-                    case PlaceholderValues.CenteredTitle:
-                        return true;
-
-                    default:
-                        return false;
-                }
+                return (PlaceholderValues)placeholderShape.Type == PlaceholderValues.Title || (PlaceholderValues)placeholderShape.Type == PlaceholderValues.CenteredTitle;
             }
             return false;
         }
