@@ -1,126 +1,138 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
       <title>Class FtpFile
  | FileCurator API Reference </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class FtpFile
  | FileCurator API Reference ">
-      <meta name="generator" content="docfx ">
-  
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
-      <link rel="stylesheet" href="../styles/config.css">
-      <link rel="stylesheet" href="../styles/discord.css">
-      <link rel="stylesheet" href="../styles/singulink.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.json">
-      <meta property="docfx:tocrel" content="toc.json">
-  
-  <meta property="docfx:rel" content="../">
-  <meta property="docfx:newtab" content="true">
-    </head>
-    <body>
-        <div class="top-navbar">
-            <a class="burger-icon" onclick="toggleMenu()">
-                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
-            </a>
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
 
 
-            <a class="brand" href="../index.html">
-              <img src="../images/icon.png" alt="FileCurator" class="logomark">
-              <span class="brand-title">FileCurator</span>
-            </a>        </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="FileCurator">
+            FileCurator
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <div class="body-content">
-            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
-            <nav id="sidebar" role="navigation">
-                <div class="sidebar">
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                    <div>
-                      <div class="mobile-hide">
+          <nav id="breadcrumb"></nav>
+        </div>
 
-                        <a class="brand" href="../index.html">
-                          <img src="../images/icon.png" alt="FileCurator" class="logomark">
-                          <span class="brand-title">FileCurator</span>
-                        </a>                      </div>
-
-                      <div class="sidesearch">
-                        <form id="search" role="search" class="search">
-                            <i class="bi bi-search search-icon"></i>
-                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
-                        </form>
-                      </div>
-
-                      <div id="navbar">
-                      </div>
-                    </div>                    <div class="sidebar-item-separator"></div>
-
-                        <div id="sidetoggle">
-                          <div id="sidetoc"></div>
-                        </div>
-                </div>
-                <div class="footer">
-  <strong><a href='https://github.com/JaCraig/FileCurator'>Open in Github</a></strong>
-  
-                </div>            </nav>
-
-            <main class="main-panel">
-
-                <div id="search-results" style="display: none;">
-                  <h1 class="search-list">Search Results for <span></span></h1>
-                  <div class="sr-items">
-                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
-                  </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
-                </div>
- 
-
-                <div role="main" class="hide-when-search">
-
-                        <div class="subnav navbar navbar-default">
-                          <div class="container hide-when-search" id="breadcrumb">
-                            <ul class="breadcrumb">
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-
-                         <div id="contribution">
-                               <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                         </div>
-
-                    <article class="content wrap" id="_content" data-uid="FileCurator.Default.Ftp.FtpFile">
+        <article data-uid="FileCurator.Default.Ftp.FtpFile">
 
 
 
-  <h1 id="FileCurator_Default_Ftp_FtpFile" data-uid="FileCurator.Default.Ftp.FtpFile" class="text-break">Class FtpFile
-</h1>
-  <div class="markdown level0 summary"><p>Ftp File</p>
+  <h1 id="FileCurator_Default_Ftp_FtpFile" data-uid="FileCurator.Default.Ftp.FtpFile" class="text-break">
+    Class FtpFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="FileCurator.html">FileCurator</a>.<a class="xref" href="FileCurator.Default.html">Default</a>.<a class="xref" href="FileCurator.Default.Ftp.html">Ftp</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>FileCurator.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Ftp File</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>, <a class="xref" href="FileCurator.Default.Ftp.FtpFile.html">FtpFile</a>&gt;</div>
-    <div class="level2"><span class="xref">FtpFile</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class FtpFile : FileBase&lt;Uri, FtpFile&gt;, IFile, IComparable&lt;IFile&gt;, IComparable, IEquatable&lt;IFile&gt;</code></pre>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>, <a class="xref" href="FileCurator.Default.Ftp.FtpFile.html">FtpFile</a>&gt;</div>
+      <div><span class="xref">FtpFile</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Accessed">FileBase&lt;Uri, FtpFile&gt;.Accessed</a>
     </div>
@@ -262,913 +274,743 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="FileCurator.html">FileCurator</a>.<a class="xref" href="FileCurator.Default.html">Default</a>.<a class="xref" href="FileCurator.Default.Ftp.html">Ftp</a></h6>
-  <h6><strong>Assembly</strong>: FileCurator.dll</h6>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class FtpFile : FileBase&lt;Uri, FtpFile&gt;, IFile, IComparable&lt;IFile&gt;, IComparable, IEquatable&lt;IFile&gt;</code></pre>
-  </div>
-  <h3 id="constructors">Constructors
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile__ctor.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L20">View Source</a>
-  </span>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="FileCurator_Default_Ftp_FtpFile__ctor_" data-uid="FileCurator.Default.Ftp.FtpFile.#ctor*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile__ctor" data-uid="FileCurator.Default.Ftp.FtpFile.#ctor">FtpFile()</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile__ctor" data-uid="FileCurator.Default.Ftp.FtpFile.#ctor">
+  FtpFile()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Constructor</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public FtpFile()</code></pre>
   </div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile__ctor_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile__ctor_System_String_FileCurator_Credentials_.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.%23ctor(System.String%2CFileCurator.Credentials)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L29">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile__ctor_" data-uid="FileCurator.Default.Ftp.FtpFile.#ctor*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile__ctor_System_String_FileCurator_Credentials_" data-uid="FileCurator.Default.Ftp.FtpFile.#ctor(System.String,FileCurator.Credentials)">FtpFile(string, Credentials?)</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile__ctor_System_String_FileCurator_Credentials_" data-uid="FileCurator.Default.Ftp.FtpFile.#ctor(System.String,FileCurator.Credentials)">
+  FtpFile(string, Credentials?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Constructor</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public FtpFile(string path, Credentials? credentials = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">path</span></td>
-        <td><p>Path to the file</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.Credentials.html">Credentials</a></td>
-        <td><span class="parametername">credentials</span></td>
-        <td><p>The credentials.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="FileCurator_Default_Ftp_FtpFile__ctor_System_String_FileCurator_Credentials__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile__ctor_System_Uri_FileCurator_Credentials_.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.%23ctor(System.Uri%2CFileCurator.Credentials)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L39">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Path to the file</p>
+</dd>
+    <dt><code>credentials</code> <a class="xref" href="FileCurator.Credentials.html">Credentials</a></dt>
+    <dd><p>The credentials.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile__ctor_" data-uid="FileCurator.Default.Ftp.FtpFile.#ctor*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile__ctor_System_Uri_FileCurator_Credentials_" data-uid="FileCurator.Default.Ftp.FtpFile.#ctor(System.Uri,FileCurator.Credentials)">FtpFile(Uri?, Credentials?)</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile__ctor_System_Uri_FileCurator_Credentials_" data-uid="FileCurator.Default.Ftp.FtpFile.#ctor(System.Uri,FileCurator.Credentials)">
+  FtpFile(Uri?, Credentials?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Constructor</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public FtpFile(Uri? file, Credentials? credentials)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
-        <td><span class="parametername">file</span></td>
-        <td><p>File to use</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.Credentials.html">Credentials</a></td>
-        <td><span class="parametername">credentials</span></td>
-        <td><p>The credentials.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="FileCurator_Default_Ftp_FtpFile__ctor_System_Uri_FileCurator_Credentials__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_Accessed.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.Accessed%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L47">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>file</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></dt>
+    <dd><p>File to use</p>
+</dd>
+    <dt><code>credentials</code> <a class="xref" href="FileCurator.Credentials.html">Credentials</a></dt>
+    <dd><p>The credentials.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_Accessed_" data-uid="FileCurator.Default.Ftp.FtpFile.Accessed*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_Accessed" data-uid="FileCurator.Default.Ftp.FtpFile.Accessed">Accessed</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_Accessed" data-uid="FileCurator.Default.Ftp.FtpFile.Accessed">
+  Accessed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Time accessed (Just returns now)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override DateTime Accessed { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Accessed">FileBase&lt;Uri, FtpFile&gt;.Accessed</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_Accessed_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_Created.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.Created%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L52">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_Created_" data-uid="FileCurator.Default.Ftp.FtpFile.Created*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_Created" data-uid="FileCurator.Default.Ftp.FtpFile.Created">Created</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_Created" data-uid="FileCurator.Default.Ftp.FtpFile.Created">
+  Created
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Time created (Just returns now)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override DateTime Created { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Created">FileBase&lt;Uri, FtpFile&gt;.Created</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_Created_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_Directory.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.Directory%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L57">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_Directory_" data-uid="FileCurator.Default.Ftp.FtpFile.Directory*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_Directory" data-uid="FileCurator.Default.Ftp.FtpFile.Directory">Directory</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_Directory" data-uid="FileCurator.Default.Ftp.FtpFile.Directory">
+  Directory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Directory base path</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IDirectory? Directory { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Directory">FileBase&lt;Uri, FtpFile&gt;.Directory</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_Directory_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_Exists.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.Exists%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L62">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_Exists_" data-uid="FileCurator.Default.Ftp.FtpFile.Exists*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_Exists" data-uid="FileCurator.Default.Ftp.FtpFile.Exists">Exists</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_Exists" data-uid="FileCurator.Default.Ftp.FtpFile.Exists">
+  Exists
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Does it exist? Always true.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool Exists { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Exists">FileBase&lt;Uri, FtpFile&gt;.Exists</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_Exists_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_Extension.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.Extension%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L67">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_Extension_" data-uid="FileCurator.Default.Ftp.FtpFile.Extension*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_Extension" data-uid="FileCurator.Default.Ftp.FtpFile.Extension">Extension</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_Extension" data-uid="FileCurator.Default.Ftp.FtpFile.Extension">
+  Extension
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Extension (always empty)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string Extension { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Extension">FileBase&lt;Uri, FtpFile&gt;.Extension</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_Extension_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_FullName.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.FullName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L72">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_FullName_" data-uid="FileCurator.Default.Ftp.FtpFile.FullName*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_FullName" data-uid="FileCurator.Default.Ftp.FtpFile.FullName">FullName</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_FullName" data-uid="FileCurator.Default.Ftp.FtpFile.FullName">
+  FullName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Full path</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string FullName { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_FullName">FileBase&lt;Uri, FtpFile&gt;.FullName</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_FullName_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_Length.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.Length%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L77">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_Length_" data-uid="FileCurator.Default.Ftp.FtpFile.Length*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_Length" data-uid="FileCurator.Default.Ftp.FtpFile.Length">Length</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_Length" data-uid="FileCurator.Default.Ftp.FtpFile.Length">
+  Length
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Size of the file (always 0)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override long Length { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Length">FileBase&lt;Uri, FtpFile&gt;.Length</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_Length_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_Modified.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.Modified%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L82">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_Modified_" data-uid="FileCurator.Default.Ftp.FtpFile.Modified*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_Modified" data-uid="FileCurator.Default.Ftp.FtpFile.Modified">Modified</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_Modified" data-uid="FileCurator.Default.Ftp.FtpFile.Modified">
+  Modified
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Time modified (just returns now)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override DateTime Modified { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Modified">FileBase&lt;Uri, FtpFile&gt;.Modified</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_Modified_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_Name.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.Name%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L87">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_Name_" data-uid="FileCurator.Default.Ftp.FtpFile.Name*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_Name" data-uid="FileCurator.Default.Ftp.FtpFile.Name">Name</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_Name" data-uid="FileCurator.Default.Ftp.FtpFile.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Absolute path of the file (same as FullName)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string Name { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Name">FileBase&lt;Uri, FtpFile&gt;.Name</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_Name_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_CopyTo_FileCurator_Interfaces_IDirectory_System_Boolean_.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.CopyTo(FileCurator.Interfaces.IDirectory%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L95">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_CopyTo_" data-uid="FileCurator.Default.Ftp.FtpFile.CopyTo*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_CopyTo_FileCurator_Interfaces_IDirectory_System_Boolean_" data-uid="FileCurator.Default.Ftp.FtpFile.CopyTo(FileCurator.Interfaces.IDirectory,System.Boolean)">CopyTo(IDirectory, bool)</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_CopyTo_FileCurator_Interfaces_IDirectory_System_Boolean_" data-uid="FileCurator.Default.Ftp.FtpFile.CopyTo(FileCurator.Interfaces.IDirectory,System.Boolean)">
+  CopyTo(IDirectory, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Copies the file to another directory</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IFile CopyTo(IDirectory directory, bool overwrite)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
-        <td><span class="parametername">directory</span></td>
-        <td><p>Directory to copy the file to</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">overwrite</span></td>
-        <td><p>Should the file overwrite another file if found</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></td>
-        <td><p>The newly created file</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_CopyTo_FileCurator_Interfaces_IDirectory_System_Boolean_">FileBase&lt;Uri, FtpFile&gt;.CopyTo(IDirectory, bool)</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_CopyTo_FileCurator_Interfaces_IDirectory_System_Boolean__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_Delete.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.Delete%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L112">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>directory</code> <a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></dt>
+    <dd><p>Directory to copy the file to</p>
+</dd>
+    <dt><code>overwrite</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Should the file overwrite another file if found</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></dt>
+    <dd><p>The newly created file</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_Delete_" data-uid="FileCurator.Default.Ftp.FtpFile.Delete*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_Delete" data-uid="FileCurator.Default.Ftp.FtpFile.Delete">Delete()</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_Delete" data-uid="FileCurator.Default.Ftp.FtpFile.Delete">
+  Delete()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Delete (does nothing)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string Delete()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>Any response for deleting the resource (usually FTP, HTTP, etc)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Delete">FileBase&lt;Uri, FtpFile&gt;.Delete()</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_Delete_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_MoveTo_FileCurator_Interfaces_IDirectory_.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.MoveTo(FileCurator.Interfaces.IDirectory)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L126">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Any response for deleting the resource (usually FTP, HTTP, etc)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_MoveTo_" data-uid="FileCurator.Default.Ftp.FtpFile.MoveTo*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_MoveTo_FileCurator_Interfaces_IDirectory_" data-uid="FileCurator.Default.Ftp.FtpFile.MoveTo(FileCurator.Interfaces.IDirectory)">MoveTo(IDirectory)</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_MoveTo_FileCurator_Interfaces_IDirectory_" data-uid="FileCurator.Default.Ftp.FtpFile.MoveTo(FileCurator.Interfaces.IDirectory)">
+  MoveTo(IDirectory)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Moves the file (not used)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IFile MoveTo(IDirectory directory)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
-        <td><span class="parametername">directory</span></td>
-        <td><p>Not used</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_MoveTo_FileCurator_Interfaces_IDirectory_">FileBase&lt;Uri, FtpFile&gt;.MoveTo(IDirectory)</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_MoveTo_FileCurator_Interfaces_IDirectory__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_Read.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.Read%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L140">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>directory</code> <a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></dt>
+    <dd><p>Not used</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_Read_" data-uid="FileCurator.Default.Ftp.FtpFile.Read*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_Read" data-uid="FileCurator.Default.Ftp.FtpFile.Read">Read()</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_Read" data-uid="FileCurator.Default.Ftp.FtpFile.Read">
+  Read()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Reads the web page</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string Read()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The content as a string</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Read">FileBase&lt;Uri, FtpFile&gt;.Read()</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_Read_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_ReadBinary.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.ReadBinary%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L154">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The content as a string</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_ReadBinary_" data-uid="FileCurator.Default.Ftp.FtpFile.ReadBinary*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_ReadBinary" data-uid="FileCurator.Default.Ftp.FtpFile.ReadBinary">ReadBinary()</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_ReadBinary" data-uid="FileCurator.Default.Ftp.FtpFile.ReadBinary">
+  ReadBinary()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L154"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Reads the web page</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override byte[] ReadBinary()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><p>The content as a byte array</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_ReadBinary">FileBase&lt;Uri, FtpFile&gt;.ReadBinary()</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_ReadBinary_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_Rename_System_String_.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.Rename(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L163">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The content as a byte array</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_Rename_" data-uid="FileCurator.Default.Ftp.FtpFile.Rename*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_Rename_System_String_" data-uid="FileCurator.Default.Ftp.FtpFile.Rename(System.String)">Rename(string)</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_Rename_System_String_" data-uid="FileCurator.Default.Ftp.FtpFile.Rename(System.String)">
+  Rename(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L163"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Renames the file (not used)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IFile Rename(string newName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">newName</span></td>
-        <td><p>Not used</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Rename_System_String_">FileBase&lt;Uri, FtpFile&gt;.Rename(string)</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_Rename_System_String__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_Write_System_Byte___System_IO_FileMode_.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.Write(System.Byte%5B%5D%2CSystem.IO.FileMode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L194">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Not used</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_Write_" data-uid="FileCurator.Default.Ftp.FtpFile.Write*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_Write_System_Byte___System_IO_FileMode_" data-uid="FileCurator.Default.Ftp.FtpFile.Write(System.Byte[],System.IO.FileMode)">Write(byte[], FileMode)</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_Write_System_Byte___System_IO_FileMode_" data-uid="FileCurator.Default.Ftp.FtpFile.Write(System.Byte[],System.IO.FileMode)">
+  Write(byte[], FileMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Not used</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override byte[] Write(byte[] content, FileMode mode = FileMode.Create)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><span class="parametername">content</span></td>
-        <td><p>Not used</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></td>
-        <td><span class="parametername">mode</span></td>
-        <td><p>Not used</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><p>The result of the write or original content</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Write_System_Byte___System_IO_FileMode_">FileBase&lt;Uri, FtpFile&gt;.Write(byte[], FileMode)</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_Write_System_Byte___System_IO_FileMode__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Default_Ftp_FtpFile_Write_System_String_System_IO_FileMode_System_Text_Encoding_.md&amp;value=---%0Auid%3A%20FileCurator.Default.Ftp.FtpFile.Write(System.String%2CSystem.IO.FileMode%2CSystem.Text.Encoding)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L183">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>content</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>Not used</p>
+</dd>
+    <dt><code>mode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></dt>
+    <dd><p>Not used</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The result of the write or original content</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_Default_Ftp_FtpFile_Write_" data-uid="FileCurator.Default.Ftp.FtpFile.Write*"></a>
-  <h4 id="FileCurator_Default_Ftp_FtpFile_Write_System_String_System_IO_FileMode_System_Text_Encoding_" data-uid="FileCurator.Default.Ftp.FtpFile.Write(System.String,System.IO.FileMode,System.Text.Encoding)">Write(string, FileMode, Encoding?)</h4>
+
+  <h3 id="FileCurator_Default_Ftp_FtpFile_Write_System_String_System_IO_FileMode_System_Text_Encoding_" data-uid="FileCurator.Default.Ftp.FtpFile.Write(System.String,System.IO.FileMode,System.Text.Encoding)">
+  Write(string, FileMode, Encoding?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L183"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Not used</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string Write(string content, FileMode mode = FileMode.Create, Encoding? encoding = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">content</span></td>
-        <td><p>Not used</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></td>
-        <td><span class="parametername">mode</span></td>
-        <td><p>Not used</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.encoding">Encoding</a></td>
-        <td><span class="parametername">encoding</span></td>
-        <td><p>Not used</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The result of the write or original content</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html#FileCurator_BaseClasses_FileBase_2_Write_System_String_System_IO_FileMode_System_Text_Encoding_">FileBase&lt;Uri, FtpFile&gt;.Write(string, FileMode, Encoding)</a></div>
-  <h5 id="FileCurator_Default_Ftp_FtpFile_Write_System_String_System_IO_FileMode_System_Text_Encoding__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
-  </div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
-  </div>
-  <h3 id="seealso">See Also</h3>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>content</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Not used</p>
+</dd>
+    <dt><code>mode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></dt>
+    <dd><p>Not used</p>
+</dd>
+    <dt><code>encoding</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.encoding">Encoding</a></dt>
+    <dd><p>Not used</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The result of the write or original content</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="seealso">See Also</h2>
   <div class="seealso">
       <div><a class="xref" href="FileCurator.BaseClasses.FileBase-2.html">FileBase</a>&lt;InternalFileType, FileType&gt;</div>
   </div>
 
 </article>
-                </div>
 
-                <div class="copyright-footer">
-                    <span>&#169; James Craig. All rights reserved.</span>
-                </div>
-            </main>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Default/Ftp/FtpFile.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
-        <script type="text/javascript" src="../styles/url.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
-        <script type="text/javascript" src="../styles/docfx.js"></script>
-        <script type="text/javascript" src="../styles/main.js"></script>
-        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <strong><a href='https://github.com/JaCraig/FileCurator'>Open in Github</a></strong>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

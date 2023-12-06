@@ -1,125 +1,137 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
       <title>Class FileInfo
  | FileCurator API Reference </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class FileInfo
  | FileCurator API Reference ">
-      <meta name="generator" content="docfx ">
-  
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
-      <link rel="stylesheet" href="../styles/config.css">
-      <link rel="stylesheet" href="../styles/discord.css">
-      <link rel="stylesheet" href="../styles/singulink.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.json">
-      <meta property="docfx:tocrel" content="toc.json">
-  
-  <meta property="docfx:rel" content="../">
-  <meta property="docfx:newtab" content="true">
-    </head>
-    <body>
-        <div class="top-navbar">
-            <a class="burger-icon" onclick="toggleMenu()">
-                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
-            </a>
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
 
 
-            <a class="brand" href="../index.html">
-              <img src="../images/icon.png" alt="FileCurator" class="logomark">
-              <span class="brand-title">FileCurator</span>
-            </a>        </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="FileCurator">
+            FileCurator
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <div class="body-content">
-            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
-            <nav id="sidebar" role="navigation">
-                <div class="sidebar">
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                    <div>
-                      <div class="mobile-hide">
+          <nav id="breadcrumb"></nav>
+        </div>
 
-                        <a class="brand" href="../index.html">
-                          <img src="../images/icon.png" alt="FileCurator" class="logomark">
-                          <span class="brand-title">FileCurator</span>
-                        </a>                      </div>
-
-                      <div class="sidesearch">
-                        <form id="search" role="search" class="search">
-                            <i class="bi bi-search search-icon"></i>
-                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
-                        </form>
-                      </div>
-
-                      <div id="navbar">
-                      </div>
-                    </div>                    <div class="sidebar-item-separator"></div>
-
-                        <div id="sidetoggle">
-                          <div id="sidetoc"></div>
-                        </div>
-                </div>
-                <div class="footer">
-  <strong><a href='https://github.com/JaCraig/FileCurator'>Open in Github</a></strong>
-  
-                </div>            </nav>
-
-            <main class="main-panel">
-
-                <div id="search-results" style="display: none;">
-                  <h1 class="search-list">Search Results for <span></span></h1>
-                  <div class="sr-items">
-                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
-                  </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
-                </div>
- 
-
-                <div role="main" class="hide-when-search">
-
-                        <div class="subnav navbar navbar-default">
-                          <div class="container hide-when-search" id="breadcrumb">
-                            <ul class="breadcrumb">
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-
-                         <div id="contribution">
-                               <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                         </div>
-
-                    <article class="content wrap" id="_content" data-uid="FileCurator.FileInfo">
+        <article data-uid="FileCurator.FileInfo">
 
 
 
-  <h1 id="FileCurator_FileInfo" data-uid="FileCurator.FileInfo" class="text-break">Class FileInfo
-</h1>
-  <div class="markdown level0 summary"><p>File info class</p>
+  <h1 id="FileCurator_FileInfo" data-uid="FileCurator.FileInfo" class="text-break">
+    Class FileInfo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="FileCurator.html">FileCurator</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>FileCurator.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>File info class</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">FileInfo</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class FileInfo : IFile, IComparable&lt;IFile&gt;, IComparable, IEquatable&lt;IFile&gt;</code></pre>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">FileInfo</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
@@ -132,2246 +144,1884 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="FileCurator.html">FileCurator</a></h6>
-  <h6><strong>Assembly</strong>: FileCurator.dll</h6>
-  <h5 id="FileCurator_FileInfo_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class FileInfo : IFile, IComparable&lt;IFile&gt;, IComparable, IEquatable&lt;IFile&gt;</code></pre>
-  </div>
-  <h3 id="constructors">Constructors
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo__ctor_FileCurator_Interfaces_IFile_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.%23ctor(FileCurator.Interfaces.IFile)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L49">View Source</a>
-  </span>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="FileCurator_FileInfo__ctor_" data-uid="FileCurator.FileInfo.#ctor*"></a>
-  <h4 id="FileCurator_FileInfo__ctor_FileCurator_Interfaces_IFile_" data-uid="FileCurator.FileInfo.#ctor(FileCurator.Interfaces.IFile)">FileInfo(IFile?)</h4>
+
+  <h3 id="FileCurator_FileInfo__ctor_FileCurator_Interfaces_IFile_" data-uid="FileCurator.FileInfo.#ctor(FileCurator.Interfaces.IFile)">
+  FileInfo(IFile?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Constructor</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public FileInfo(IFile? internalFile)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></td>
-        <td><span class="parametername">internalFile</span></td>
-        <td><p>Internal file</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo__ctor_System_String_FileCurator_Credentials_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.%23ctor(System.String%2CFileCurator.Credentials)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L39">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>internalFile</code> <a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></dt>
+    <dd><p>Internal file</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo__ctor_" data-uid="FileCurator.FileInfo.#ctor*"></a>
-  <h4 id="FileCurator_FileInfo__ctor_System_String_FileCurator_Credentials_" data-uid="FileCurator.FileInfo.#ctor(System.String,FileCurator.Credentials)">FileInfo(string, Credentials?)</h4>
+
+  <h3 id="FileCurator_FileInfo__ctor_System_String_FileCurator_Credentials_" data-uid="FileCurator.FileInfo.#ctor(System.String,FileCurator.Credentials)">
+  FileInfo(string, Credentials?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Constructor</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public FileInfo(string path, Credentials? credentials = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">path</span></td>
-        <td><p>Path to the file</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.Credentials.html">Credentials</a></td>
-        <td><span class="parametername">credentials</span></td>
-        <td><p>The credentials.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Accessed.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Accessed%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L57">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Path to the file</p>
+</dd>
+    <dt><code>credentials</code> <a class="xref" href="FileCurator.Credentials.html">Credentials</a></dt>
+    <dd><p>The credentials.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="FileCurator_FileInfo_Accessed_" data-uid="FileCurator.FileInfo.Accessed*"></a>
-  <h4 id="FileCurator_FileInfo_Accessed" data-uid="FileCurator.FileInfo.Accessed">Accessed</h4>
+
+  <h3 id="FileCurator_FileInfo_Accessed" data-uid="FileCurator.FileInfo.Accessed">
+  Accessed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Last time accessed (UTC time)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DateTime Accessed { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Created.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Created%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L62">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Created_" data-uid="FileCurator.FileInfo.Created*"></a>
-  <h4 id="FileCurator_FileInfo_Created" data-uid="FileCurator.FileInfo.Created">Created</h4>
+
+  <h3 id="FileCurator_FileInfo_Created" data-uid="FileCurator.FileInfo.Created">
+  Created
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Time created (UTC time)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DateTime Created { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Directory.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Directory%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L67">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Directory_" data-uid="FileCurator.FileInfo.Directory*"></a>
-  <h4 id="FileCurator_FileInfo_Directory" data-uid="FileCurator.FileInfo.Directory">Directory</h4>
+
+  <h3 id="FileCurator_FileInfo_Directory" data-uid="FileCurator.FileInfo.Directory">
+  Directory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Directory the file is within</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IDirectory? Directory { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Exists.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Exists%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L72">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Exists_" data-uid="FileCurator.FileInfo.Exists*"></a>
-  <h4 id="FileCurator_FileInfo_Exists" data-uid="FileCurator.FileInfo.Exists">Exists</h4>
+
+  <h3 id="FileCurator_FileInfo_Exists" data-uid="FileCurator.FileInfo.Exists">
+  Exists
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Does the file exist?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Exists { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Extension.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Extension%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L77">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Extension_" data-uid="FileCurator.FileInfo.Extension*"></a>
-  <h4 id="FileCurator_FileInfo_Extension" data-uid="FileCurator.FileInfo.Extension">Extension</h4>
+
+  <h3 id="FileCurator_FileInfo_Extension" data-uid="FileCurator.FileInfo.Extension">
+  Extension
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>File extension</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Extension { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_FormatManager.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.FormatManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L103">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_FormatManager_" data-uid="FileCurator.FileInfo.FormatManager*"></a>
-  <h4 id="FileCurator_FileInfo_FormatManager" data-uid="FileCurator.FileInfo.FormatManager">FormatManager</h4>
+
+  <h3 id="FileCurator_FileInfo_FormatManager" data-uid="FileCurator.FileInfo.FormatManager">
+  FormatManager
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets the internal manager.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected Manager? FormatManager { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.Manager.html">Manager</a></td>
-        <td><p>The internal manager.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_FullName.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.FullName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L82">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="FileCurator.Formats.Manager.html">Manager</a></dt>
+    <dd><p>The internal manager.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_FullName_" data-uid="FileCurator.FileInfo.FullName*"></a>
-  <h4 id="FileCurator_FileInfo_FullName" data-uid="FileCurator.FileInfo.FullName">FullName</h4>
+
+  <h3 id="FileCurator_FileInfo_FullName" data-uid="FileCurator.FileInfo.FullName">
+  FullName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Full path</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string FullName { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_InternalFile.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.InternalFile%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L108">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_InternalFile_" data-uid="FileCurator.FileInfo.InternalFile*"></a>
-  <h4 id="FileCurator_FileInfo_InternalFile" data-uid="FileCurator.FileInfo.InternalFile">InternalFile</h4>
+
+  <h3 id="FileCurator_FileInfo_InternalFile" data-uid="FileCurator.FileInfo.InternalFile">
+  InternalFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Internal directory</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected IFile? InternalFile { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Length.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Length%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L87">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Length_" data-uid="FileCurator.FileInfo.Length*"></a>
-  <h4 id="FileCurator_FileInfo_Length" data-uid="FileCurator.FileInfo.Length">Length</h4>
+
+  <h3 id="FileCurator_FileInfo_Length" data-uid="FileCurator.FileInfo.Length">
+  Length
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Size of the file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public long Length { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Modified.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Modified%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L92">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Modified_" data-uid="FileCurator.FileInfo.Modified*"></a>
-  <h4 id="FileCurator_FileInfo_Modified" data-uid="FileCurator.FileInfo.Modified">Modified</h4>
+
+  <h3 id="FileCurator_FileInfo_Modified" data-uid="FileCurator.FileInfo.Modified">
+  Modified
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Time modified (UTC time)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DateTime Modified { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Name.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Name%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L97">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Name_" data-uid="FileCurator.FileInfo.Name*"></a>
-  <h4 id="FileCurator_FileInfo_Name" data-uid="FileCurator.FileInfo.Name">Name</h4>
+
+  <h3 id="FileCurator_FileInfo_Name" data-uid="FileCurator.FileInfo.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Name of the file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_CompareTo_FileCurator_Interfaces_IFile_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.CompareTo(FileCurator.Interfaces.IFile)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L223">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="FileCurator_FileInfo_CompareTo_" data-uid="FileCurator.FileInfo.CompareTo*"></a>
-  <h4 id="FileCurator_FileInfo_CompareTo_FileCurator_Interfaces_IFile_" data-uid="FileCurator.FileInfo.CompareTo(FileCurator.Interfaces.IFile)">CompareTo(IFile)</h4>
+
+  <h3 id="FileCurator_FileInfo_CompareTo_FileCurator_Interfaces_IFile_" data-uid="FileCurator.FileInfo.CompareTo(FileCurator.Interfaces.IFile)">
+  CompareTo(IFile)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L223"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Compares this to another file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int CompareTo(IFile other)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>File to compare to</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_CompareTo_System_Object_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.CompareTo(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L237">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></dt>
+    <dd><p>File to compare to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_CompareTo_" data-uid="FileCurator.FileInfo.CompareTo*"></a>
-  <h4 id="FileCurator_FileInfo_CompareTo_System_Object_" data-uid="FileCurator.FileInfo.CompareTo(System.Object)">CompareTo(object)</h4>
+
+  <h3 id="FileCurator_FileInfo_CompareTo_System_Object_" data-uid="FileCurator.FileInfo.CompareTo(System.Object)">
+  CompareTo(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L237"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Compares this object to another object</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int CompareTo(object obj)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">obj</span></td>
-        <td><p>Object to compare it to</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_CopyTo_FileCurator_Interfaces_IDirectory_System_Boolean_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.CopyTo(FileCurator.Interfaces.IDirectory%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L250">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>Object to compare it to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_CopyTo_" data-uid="FileCurator.FileInfo.CopyTo*"></a>
-  <h4 id="FileCurator_FileInfo_CopyTo_FileCurator_Interfaces_IDirectory_System_Boolean_" data-uid="FileCurator.FileInfo.CopyTo(FileCurator.Interfaces.IDirectory,System.Boolean)">CopyTo(IDirectory, bool)</h4>
+
+  <h3 id="FileCurator_FileInfo_CopyTo_FileCurator_Interfaces_IDirectory_System_Boolean_" data-uid="FileCurator.FileInfo.CopyTo(FileCurator.Interfaces.IDirectory,System.Boolean)">
+  CopyTo(IDirectory, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L250"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Copies the file to another directory</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IFile? CopyTo(IDirectory directory, bool overwrite)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
-        <td><span class="parametername">directory</span></td>
-        <td><p>Directory to copy the file to</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">overwrite</span></td>
-        <td><p>Should the file overwrite another file if found</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></td>
-        <td><p>The newly created file</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_CopyToAsync_FileCurator_Interfaces_IDirectory_System_Boolean_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.CopyToAsync(FileCurator.Interfaces.IDirectory%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L263">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>directory</code> <a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></dt>
+    <dd><p>Directory to copy the file to</p>
+</dd>
+    <dt><code>overwrite</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Should the file overwrite another file if found</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></dt>
+    <dd><p>The newly created file</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_CopyToAsync_" data-uid="FileCurator.FileInfo.CopyToAsync*"></a>
-  <h4 id="FileCurator_FileInfo_CopyToAsync_FileCurator_Interfaces_IDirectory_System_Boolean_" data-uid="FileCurator.FileInfo.CopyToAsync(FileCurator.Interfaces.IDirectory,System.Boolean)">CopyToAsync(IDirectory, bool)</h4>
+
+  <h3 id="FileCurator_FileInfo_CopyToAsync_FileCurator_Interfaces_IDirectory_System_Boolean_" data-uid="FileCurator.FileInfo.CopyToAsync(FileCurator.Interfaces.IDirectory,System.Boolean)">
+  CopyToAsync(IDirectory, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L263"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Copies the file to another directory</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Task&lt;IFile?&gt; CopyToAsync(IDirectory directory, bool overwrite)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
-        <td><span class="parametername">directory</span></td>
-        <td><p>Directory to copy the file to</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">overwrite</span></td>
-        <td><p>Should the file overwrite another file if found</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</td>
-        <td><p>The newly created file</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Delete.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Delete%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L274">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>directory</code> <a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></dt>
+    <dd><p>Directory to copy the file to</p>
+</dd>
+    <dt><code>overwrite</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Should the file overwrite another file if found</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</dt>
+    <dd><p>The newly created file</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Delete_" data-uid="FileCurator.FileInfo.Delete*"></a>
-  <h4 id="FileCurator_FileInfo_Delete" data-uid="FileCurator.FileInfo.Delete">Delete()</h4>
+
+  <h3 id="FileCurator_FileInfo_Delete" data-uid="FileCurator.FileInfo.Delete">
+  Delete()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L274"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Deletes the file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Delete()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>Any response for deleting the resource (usually FTP, HTTP, etc)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_DeleteAsync.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.DeleteAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L285">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Any response for deleting the resource (usually FTP, HTTP, etc)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_DeleteAsync_" data-uid="FileCurator.FileInfo.DeleteAsync*"></a>
-  <h4 id="FileCurator_FileInfo_DeleteAsync" data-uid="FileCurator.FileInfo.DeleteAsync">DeleteAsync()</h4>
+
+  <h3 id="FileCurator_FileInfo_DeleteAsync" data-uid="FileCurator.FileInfo.DeleteAsync">
+  DeleteAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L285"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Deletes the file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Task&lt;string&gt; DeleteAsync()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
-        <td><p>Any response for deleting the resource (usually FTP, HTTP, etc)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Equals_FileCurator_Interfaces_IFile_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Equals(FileCurator.Interfaces.IFile)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L307">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Any response for deleting the resource (usually FTP, HTTP, etc)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Equals_" data-uid="FileCurator.FileInfo.Equals*"></a>
-  <h4 id="FileCurator_FileInfo_Equals_FileCurator_Interfaces_IFile_" data-uid="FileCurator.FileInfo.Equals(FileCurator.Interfaces.IFile)">Equals(IFile)</h4>
+
+  <h3 id="FileCurator_FileInfo_Equals_FileCurator_Interfaces_IFile_" data-uid="FileCurator.FileInfo.Equals(FileCurator.Interfaces.IFile)">
+  Equals(IFile)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L307"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines if the files are equal</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Equals(IFile other)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>Other file</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>True if they are equal, false otherwise</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Equals_System_Object_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Equals(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L297">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></dt>
+    <dd><p>Other file</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if they are equal, false otherwise</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Equals_" data-uid="FileCurator.FileInfo.Equals*"></a>
-  <h4 id="FileCurator_FileInfo_Equals_System_Object_" data-uid="FileCurator.FileInfo.Equals(System.Object)">Equals(object)</h4>
+
+  <h3 id="FileCurator_FileInfo_Equals_System_Object_" data-uid="FileCurator.FileInfo.Equals(System.Object)">
+  Equals(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L297"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines if the objects are equal</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">obj</span></td>
-        <td><p>Object to compare to</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>True if they are equal, false otherwise</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_GetHashCode.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.GetHashCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L318">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>Object to compare to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if they are equal, false otherwise</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_GetHashCode_" data-uid="FileCurator.FileInfo.GetHashCode*"></a>
-  <h4 id="FileCurator_FileInfo_GetHashCode" data-uid="FileCurator.FileInfo.GetHashCode">GetHashCode()</h4>
+
+  <h3 id="FileCurator_FileInfo_GetHashCode" data-uid="FileCurator.FileInfo.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L318"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the hash code for the file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>The hash code</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_MoveTo_FileCurator_Interfaces_IDirectory_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.MoveTo(FileCurator.Interfaces.IDirectory)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L324">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The hash code</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_MoveTo_" data-uid="FileCurator.FileInfo.MoveTo*"></a>
-  <h4 id="FileCurator_FileInfo_MoveTo_FileCurator_Interfaces_IDirectory_" data-uid="FileCurator.FileInfo.MoveTo(FileCurator.Interfaces.IDirectory)">MoveTo(IDirectory)</h4>
+
+  <h3 id="FileCurator_FileInfo_MoveTo_FileCurator_Interfaces_IDirectory_" data-uid="FileCurator.FileInfo.MoveTo(FileCurator.Interfaces.IDirectory)">
+  MoveTo(IDirectory)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Moves the file to a new directory</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IFile MoveTo(IDirectory directory)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
-        <td><span class="parametername">directory</span></td>
-        <td><p>Directory to move to</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_MoveToAsync_FileCurator_Interfaces_IDirectory_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.MoveToAsync(FileCurator.Interfaces.IDirectory)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L337">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>directory</code> <a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></dt>
+    <dd><p>Directory to move to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_MoveToAsync_" data-uid="FileCurator.FileInfo.MoveToAsync*"></a>
-  <h4 id="FileCurator_FileInfo_MoveToAsync_FileCurator_Interfaces_IDirectory_" data-uid="FileCurator.FileInfo.MoveToAsync(FileCurator.Interfaces.IDirectory)">MoveToAsync(IDirectory)</h4>
+
+  <h3 id="FileCurator_FileInfo_MoveToAsync_FileCurator_Interfaces_IDirectory_" data-uid="FileCurator.FileInfo.MoveToAsync(FileCurator.Interfaces.IDirectory)">
+  MoveToAsync(IDirectory)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L337"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Moves the file to another directory</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Task&lt;IFile&gt; MoveToAsync(IDirectory directory)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></td>
-        <td><span class="parametername">directory</span></td>
-        <td><p>Directory to move the file to</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Parse.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Parse%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L369">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>directory</code> <a class="xref" href="FileCurator.Interfaces.IDirectory.html">IDirectory</a></dt>
+    <dd><p>Directory to move the file to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Parse_" data-uid="FileCurator.FileInfo.Parse*"></a>
-  <h4 id="FileCurator_FileInfo_Parse" data-uid="FileCurator.FileInfo.Parse">Parse()</h4>
+
+  <h3 id="FileCurator_FileInfo_Parse" data-uid="FileCurator.FileInfo.Parse">
+  Parse()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L369"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IGenericFile Parse()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.Data.Interfaces.IGenericFile.html">IGenericFile</a></td>
-        <td><p>The parsed file</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
-        <td><p>Could not find file format that returns the specified object type</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_ParseAsync.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.ParseAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L401">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="FileCurator.Formats.Data.Interfaces.IGenericFile.html">IGenericFile</a></dt>
+    <dd><p>The parsed file</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Could not find file format that returns the specified object type</p>
+</dd>
+  </dl>
+
+
+
   <a id="FileCurator_FileInfo_ParseAsync_" data-uid="FileCurator.FileInfo.ParseAsync*"></a>
-  <h4 id="FileCurator_FileInfo_ParseAsync" data-uid="FileCurator.FileInfo.ParseAsync">ParseAsync()</h4>
+
+  <h3 id="FileCurator_FileInfo_ParseAsync" data-uid="FileCurator.FileInfo.ParseAsync">
+  ParseAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L401"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Task&lt;IGenericFile&gt; ParseAsync()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="FileCurator.Formats.Data.Interfaces.IGenericFile.html">IGenericFile</a>&gt;</td>
-        <td><p>The parsed file</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
-        <td><p>Could not find file format that returns the specified object type</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_ParseAsync__1.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.ParseAsync%60%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L386">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="FileCurator.Formats.Data.Interfaces.IGenericFile.html">IGenericFile</a>&gt;</dt>
+    <dd><p>The parsed file</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Could not find file format that returns the specified object type</p>
+</dd>
+  </dl>
+
+
+
   <a id="FileCurator_FileInfo_ParseAsync_" data-uid="FileCurator.FileInfo.ParseAsync*"></a>
-  <h4 id="FileCurator_FileInfo_ParseAsync__1" data-uid="FileCurator.FileInfo.ParseAsync``1">ParseAsync&lt;TFile&gt;()</h4>
+
+  <h3 id="FileCurator_FileInfo_ParseAsync__1" data-uid="FileCurator.FileInfo.ParseAsync``1">
+  ParseAsync&lt;TFile&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L386"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Task&lt;TFile&gt; ParseAsync&lt;TFile&gt;() where TFile : IGenericFile</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TFile&gt;</td>
-        <td><p>The parsed file</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TFile</span></td>
-        <td><p>The type of the file object expected.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
-        <td><p>Could not find file format that returns the specified object type</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Parse__1.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Parse%60%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L353">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TFile&gt;</dt>
+    <dd><p>The parsed file</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TFile</code></dt>
+    <dd><p>The type of the file object expected.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Could not find file format that returns the specified object type</p>
+</dd>
+  </dl>
+
+
+
   <a id="FileCurator_FileInfo_Parse_" data-uid="FileCurator.FileInfo.Parse*"></a>
-  <h4 id="FileCurator_FileInfo_Parse__1" data-uid="FileCurator.FileInfo.Parse``1">Parse&lt;TFile&gt;()</h4>
+
+  <h3 id="FileCurator_FileInfo_Parse__1" data-uid="FileCurator.FileInfo.Parse``1">
+  Parse&lt;TFile&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L353"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TFile Parse&lt;TFile&gt;() where TFile : IGenericFile</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TFile</span></td>
-        <td><p>The parsed file</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TFile</span></td>
-        <td><p>The type of the file object expected.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
-        <td><p>Could not find file format that returns the specified object type</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Read.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Read%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L414">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TFile</span></dt>
+    <dd><p>The parsed file</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TFile</code></dt>
+    <dd><p>The type of the file object expected.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Could not find file format that returns the specified object type</p>
+</dd>
+  </dl>
+
+
+
   <a id="FileCurator_FileInfo_Read_" data-uid="FileCurator.FileInfo.Read*"></a>
-  <h4 id="FileCurator_FileInfo_Read" data-uid="FileCurator.FileInfo.Read">Read()</h4>
+
+  <h3 id="FileCurator_FileInfo_Read" data-uid="FileCurator.FileInfo.Read">
+  Read()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L414"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Reads the file in as a string</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Read()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The file contents as a string</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_ReadAsync.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.ReadAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L425">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The file contents as a string</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_ReadAsync_" data-uid="FileCurator.FileInfo.ReadAsync*"></a>
-  <h4 id="FileCurator_FileInfo_ReadAsync" data-uid="FileCurator.FileInfo.ReadAsync">ReadAsync()</h4>
+
+  <h3 id="FileCurator_FileInfo_ReadAsync" data-uid="FileCurator.FileInfo.ReadAsync">
+  ReadAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L425"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Reads the file to the end as a string</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Task&lt;string&gt; ReadAsync()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
-        <td><p>A string containing the contents of the file</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_ReadBinary.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.ReadBinary%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L436">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>A string containing the contents of the file</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_ReadBinary_" data-uid="FileCurator.FileInfo.ReadBinary*"></a>
-  <h4 id="FileCurator_FileInfo_ReadBinary" data-uid="FileCurator.FileInfo.ReadBinary">ReadBinary()</h4>
+
+  <h3 id="FileCurator_FileInfo_ReadBinary" data-uid="FileCurator.FileInfo.ReadBinary">
+  ReadBinary()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L436"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Reads a file as binary</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public byte[] ReadBinary()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><p>The file contents as a byte array</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_ReadBinaryAsync.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.ReadBinaryAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L447">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The file contents as a byte array</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_ReadBinaryAsync_" data-uid="FileCurator.FileInfo.ReadBinaryAsync*"></a>
-  <h4 id="FileCurator_FileInfo_ReadBinaryAsync" data-uid="FileCurator.FileInfo.ReadBinaryAsync">ReadBinaryAsync()</h4>
+
+  <h3 id="FileCurator_FileInfo_ReadBinaryAsync" data-uid="FileCurator.FileInfo.ReadBinaryAsync">
+  ReadBinaryAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L447"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Reads the file to the end as a byte array</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Task&lt;byte[]&gt; ReadBinaryAsync()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</td>
-        <td><p>A byte array containing the contents of the file</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Rename_System_String_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Rename(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L458">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</dt>
+    <dd><p>A byte array containing the contents of the file</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Rename_" data-uid="FileCurator.FileInfo.Rename*"></a>
-  <h4 id="FileCurator_FileInfo_Rename_System_String_" data-uid="FileCurator.FileInfo.Rename(System.String)">Rename(string)</h4>
+
+  <h3 id="FileCurator_FileInfo_Rename_System_String_" data-uid="FileCurator.FileInfo.Rename(System.String)">
+  Rename(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L458"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Renames the file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IFile Rename(string newName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">newName</span></td>
-        <td><p>New name for the file</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_RenameAsync_System_String_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.RenameAsync(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L471">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>New name for the file</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_RenameAsync_" data-uid="FileCurator.FileInfo.RenameAsync*"></a>
-  <h4 id="FileCurator_FileInfo_RenameAsync_System_String_" data-uid="FileCurator.FileInfo.RenameAsync(System.String)">RenameAsync(string)</h4>
+
+  <h3 id="FileCurator_FileInfo_RenameAsync_System_String_" data-uid="FileCurator.FileInfo.RenameAsync(System.String)">
+  RenameAsync(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L471"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Renames the file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Task&lt;IFile&gt; RenameAsync(string newName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">newName</span></td>
-        <td><p>New file name</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_ToString.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L483">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>New file name</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_ToString_" data-uid="FileCurator.FileInfo.ToString*"></a>
-  <h4 id="FileCurator_FileInfo_ToString" data-uid="FileCurator.FileInfo.ToString">ToString()</h4>
+
+  <h3 id="FileCurator_FileInfo_ToString" data-uid="FileCurator.FileInfo.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L483"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns the name of the file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The name of the file</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Write_FileCurator_Formats_Data_Interfaces_IGenericFile_System_IO_FileMode_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Write(FileCurator.Formats.Data.Interfaces.IGenericFile%2CSystem.IO.FileMode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L491">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the file</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Write_" data-uid="FileCurator.FileInfo.Write*"></a>
-  <h4 id="FileCurator_FileInfo_Write_FileCurator_Formats_Data_Interfaces_IGenericFile_System_IO_FileMode_" data-uid="FileCurator.FileInfo.Write(FileCurator.Formats.Data.Interfaces.IGenericFile,System.IO.FileMode)">Write(IGenericFile, FileMode)</h4>
+
+  <h3 id="FileCurator_FileInfo_Write_FileCurator_Formats_Data_Interfaces_IGenericFile_System_IO_FileMode_" data-uid="FileCurator.FileInfo.Write(FileCurator.Formats.Data.Interfaces.IGenericFile,System.IO.FileMode)">
+  Write(IGenericFile, FileMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L491"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the specified data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Write(IGenericFile data, FileMode mode = FileMode.Create)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.Data.Interfaces.IGenericFile.html">IGenericFile</a></td>
-        <td><span class="parametername">data</span></td>
-        <td><p>The data.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></td>
-        <td><span class="parametername">mode</span></td>
-        <td><p>The mode.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>True if it was written successfully, false otherwise.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Write_System_Byte___System_IO_FileMode_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Write(System.Byte%5B%5D%2CSystem.IO.FileMode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L522">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="FileCurator.Formats.Data.Interfaces.IGenericFile.html">IGenericFile</a></dt>
+    <dd><p>The data.</p>
+</dd>
+    <dt><code>mode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></dt>
+    <dd><p>The mode.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if it was written successfully, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Write_" data-uid="FileCurator.FileInfo.Write*"></a>
-  <h4 id="FileCurator_FileInfo_Write_System_Byte___System_IO_FileMode_" data-uid="FileCurator.FileInfo.Write(System.Byte[],System.IO.FileMode)">Write(byte[], FileMode)</h4>
+
+  <h3 id="FileCurator_FileInfo_Write_System_Byte___System_IO_FileMode_" data-uid="FileCurator.FileInfo.Write(System.Byte[],System.IO.FileMode)">
+  Write(byte[], FileMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L522"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes content to the file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public byte[] Write(byte[] content, FileMode mode = FileMode.Create)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><span class="parametername">content</span></td>
-        <td><p>Content to write</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></td>
-        <td><span class="parametername">mode</span></td>
-        <td><p>Mode to open the file as</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><p>The result of the write or original content</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_Write_System_String_System_IO_FileMode_System_Text_Encoding_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.Write(System.String%2CSystem.IO.FileMode%2CSystem.Text.Encoding)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L509">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>content</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>Content to write</p>
+</dd>
+    <dt><code>mode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></dt>
+    <dd><p>Mode to open the file as</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The result of the write or original content</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_Write_" data-uid="FileCurator.FileInfo.Write*"></a>
-  <h4 id="FileCurator_FileInfo_Write_System_String_System_IO_FileMode_System_Text_Encoding_" data-uid="FileCurator.FileInfo.Write(System.String,System.IO.FileMode,System.Text.Encoding)">Write(string, FileMode, Encoding?)</h4>
+
+  <h3 id="FileCurator_FileInfo_Write_System_String_System_IO_FileMode_System_Text_Encoding_" data-uid="FileCurator.FileInfo.Write(System.String,System.IO.FileMode,System.Text.Encoding)">
+  Write(string, FileMode, Encoding?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L509"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes content to the file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Write(string content, FileMode mode = FileMode.Create, Encoding? encoding = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">content</span></td>
-        <td><p>Content to write</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></td>
-        <td><span class="parametername">mode</span></td>
-        <td><p>Mode to open the file as</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.encoding">Encoding</a></td>
-        <td><span class="parametername">encoding</span></td>
-        <td><p>Encoding to use for the content</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The result of the write or original content</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_WriteAsync_FileCurator_Formats_Data_Interfaces_IGenericFile_System_IO_FileMode_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.WriteAsync(FileCurator.Formats.Data.Interfaces.IGenericFile%2CSystem.IO.FileMode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L562">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>content</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Content to write</p>
+</dd>
+    <dt><code>mode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></dt>
+    <dd><p>Mode to open the file as</p>
+</dd>
+    <dt><code>encoding</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.encoding">Encoding</a></dt>
+    <dd><p>Encoding to use for the content</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The result of the write or original content</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_WriteAsync_" data-uid="FileCurator.FileInfo.WriteAsync*"></a>
-  <h4 id="FileCurator_FileInfo_WriteAsync_FileCurator_Formats_Data_Interfaces_IGenericFile_System_IO_FileMode_" data-uid="FileCurator.FileInfo.WriteAsync(FileCurator.Formats.Data.Interfaces.IGenericFile,System.IO.FileMode)">WriteAsync(IGenericFile, FileMode)</h4>
+
+  <h3 id="FileCurator_FileInfo_WriteAsync_FileCurator_Formats_Data_Interfaces_IGenericFile_System_IO_FileMode_" data-uid="FileCurator.FileInfo.WriteAsync(FileCurator.Formats.Data.Interfaces.IGenericFile,System.IO.FileMode)">
+  WriteAsync(IGenericFile, FileMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L562"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the specified data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; WriteAsync(IGenericFile data, FileMode mode = FileMode.Create)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.Data.Interfaces.IGenericFile.html">IGenericFile</a></td>
-        <td><span class="parametername">data</span></td>
-        <td><p>The data.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></td>
-        <td><span class="parametername">mode</span></td>
-        <td><p>The mode.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
-        <td><p>True if it was written successfully, false otherwise.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_WriteAsync_System_Byte___System_IO_FileMode_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.WriteAsync(System.Byte%5B%5D%2CSystem.IO.FileMode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L549">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="FileCurator.Formats.Data.Interfaces.IGenericFile.html">IGenericFile</a></dt>
+    <dd><p>The data.</p>
+</dd>
+    <dt><code>mode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></dt>
+    <dd><p>The mode.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd><p>True if it was written successfully, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_WriteAsync_" data-uid="FileCurator.FileInfo.WriteAsync*"></a>
-  <h4 id="FileCurator_FileInfo_WriteAsync_System_Byte___System_IO_FileMode_" data-uid="FileCurator.FileInfo.WriteAsync(System.Byte[],System.IO.FileMode)">WriteAsync(byte[], FileMode)</h4>
+
+  <h3 id="FileCurator_FileInfo_WriteAsync_System_Byte___System_IO_FileMode_" data-uid="FileCurator.FileInfo.WriteAsync(System.Byte[],System.IO.FileMode)">
+  WriteAsync(byte[], FileMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L549"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes content to the file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Task&lt;byte[]&gt; WriteAsync(byte[] content, FileMode mode = FileMode.Create)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><span class="parametername">content</span></td>
-        <td><p>Content to write</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></td>
-        <td><span class="parametername">mode</span></td>
-        <td><p>File mode</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</td>
-        <td><p>The result of the write or original content</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_WriteAsync_System_String_System_IO_FileMode_System_Text_Encoding_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.WriteAsync(System.String%2CSystem.IO.FileMode%2CSystem.Text.Encoding)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L536">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>content</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>Content to write</p>
+</dd>
+    <dt><code>mode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></dt>
+    <dd><p>File mode</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</dt>
+    <dd><p>The result of the write or original content</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_WriteAsync_" data-uid="FileCurator.FileInfo.WriteAsync*"></a>
-  <h4 id="FileCurator_FileInfo_WriteAsync_System_String_System_IO_FileMode_System_Text_Encoding_" data-uid="FileCurator.FileInfo.WriteAsync(System.String,System.IO.FileMode,System.Text.Encoding)">WriteAsync(string, FileMode, Encoding?)</h4>
+
+  <h3 id="FileCurator_FileInfo_WriteAsync_System_String_System_IO_FileMode_System_Text_Encoding_" data-uid="FileCurator.FileInfo.WriteAsync(System.String,System.IO.FileMode,System.Text.Encoding)">
+  WriteAsync(string, FileMode, Encoding?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L536"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes content to the file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Task&lt;string&gt; WriteAsync(string content, FileMode mode = FileMode.Create, Encoding? encoding = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">content</span></td>
-        <td><p>Content to write</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></td>
-        <td><span class="parametername">mode</span></td>
-        <td><p>File mode</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.encoding">Encoding</a></td>
-        <td><span class="parametername">encoding</span></td>
-        <td><p>Encoding that the content should be saved as (default is UTF8)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
-        <td><p>The result of the write or original content</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="operators">Operators
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_op_Equality_FileCurator_FileInfo_FileCurator_FileInfo_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.op_Equality(FileCurator.FileInfo%2CFileCurator.FileInfo)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L183">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>content</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Content to write</p>
+</dd>
+    <dt><code>mode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></dt>
+    <dd><p>File mode</p>
+</dd>
+    <dt><code>encoding</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.encoding">Encoding</a></dt>
+    <dd><p>Encoding that the content should be saved as (default is UTF8)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>The result of the write or original content</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
   <a id="FileCurator_FileInfo_op_Equality_" data-uid="FileCurator.FileInfo.op_Equality*"></a>
-  <h4 id="FileCurator_FileInfo_op_Equality_FileCurator_FileInfo_FileCurator_FileInfo_" data-uid="FileCurator.FileInfo.op_Equality(FileCurator.FileInfo,FileCurator.FileInfo)">operator ==(FileInfo, FileInfo)</h4>
+
+  <h3 id="FileCurator_FileInfo_op_Equality_FileCurator_FileInfo_FileCurator_FileInfo_" data-uid="FileCurator.FileInfo.op_Equality(FileCurator.FileInfo,FileCurator.FileInfo)">
+  operator ==(FileInfo, FileInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L183"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines if two directories are equal</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool operator ==(FileInfo file1, FileInfo file2)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></td>
-        <td><span class="parametername">file1</span></td>
-        <td><p>File 1</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></td>
-        <td><span class="parametername">file2</span></td>
-        <td><p>File 2</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>True if they are, false otherwise</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_op_GreaterThan_FileCurator_FileInfo_FileCurator_FileInfo_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.op_GreaterThan(FileCurator.FileInfo%2CFileCurator.FileInfo)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L198">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>file1</code> <a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></dt>
+    <dd><p>File 1</p>
+</dd>
+    <dt><code>file2</code> <a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></dt>
+    <dd><p>File 2</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if they are, false otherwise</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_op_GreaterThan_" data-uid="FileCurator.FileInfo.op_GreaterThan*"></a>
-  <h4 id="FileCurator_FileInfo_op_GreaterThan_FileCurator_FileInfo_FileCurator_FileInfo_" data-uid="FileCurator.FileInfo.op_GreaterThan(FileCurator.FileInfo,FileCurator.FileInfo)">operator &gt;(FileInfo, FileInfo)</h4>
+
+  <h3 id="FileCurator_FileInfo_op_GreaterThan_FileCurator_FileInfo_FileCurator_FileInfo_" data-uid="FileCurator.FileInfo.op_GreaterThan(FileCurator.FileInfo,FileCurator.FileInfo)">
+  operator &gt;(FileInfo, FileInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Greater than</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool operator &gt;(FileInfo file1, FileInfo file2)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></td>
-        <td><span class="parametername">file1</span></td>
-        <td><p>File 1</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></td>
-        <td><span class="parametername">file2</span></td>
-        <td><p>File 2</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_op_GreaterThanOrEqual_FileCurator_FileInfo_FileCurator_FileInfo_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.op_GreaterThanOrEqual(FileCurator.FileInfo%2CFileCurator.FileInfo)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L211">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>file1</code> <a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></dt>
+    <dd><p>File 1</p>
+</dd>
+    <dt><code>file2</code> <a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></dt>
+    <dd><p>File 2</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_op_GreaterThanOrEqual_" data-uid="FileCurator.FileInfo.op_GreaterThanOrEqual*"></a>
-  <h4 id="FileCurator_FileInfo_op_GreaterThanOrEqual_FileCurator_FileInfo_FileCurator_FileInfo_" data-uid="FileCurator.FileInfo.op_GreaterThanOrEqual(FileCurator.FileInfo,FileCurator.FileInfo)">operator &gt;=(FileInfo, FileInfo)</h4>
+
+  <h3 id="FileCurator_FileInfo_op_GreaterThanOrEqual_FileCurator_FileInfo_FileCurator_FileInfo_" data-uid="FileCurator.FileInfo.op_GreaterThanOrEqual(FileCurator.FileInfo,FileCurator.FileInfo)">
+  operator &gt;=(FileInfo, FileInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L211"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Greater than or equal</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool operator &gt;=(FileInfo file1, FileInfo file2)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></td>
-        <td><span class="parametername">file1</span></td>
-        <td><p>File 1</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></td>
-        <td><span class="parametername">file2</span></td>
-        <td><p>File 2</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_op_Implicit_FileCurator_FileInfo__System_Byte__.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.op_Implicit(FileCurator.FileInfo)~System.Byte%5B%5D%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L121">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>file1</code> <a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></dt>
+    <dd><p>File 1</p>
+</dd>
+    <dt><code>file2</code> <a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></dt>
+    <dd><p>File 2</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_op_Implicit_" data-uid="FileCurator.FileInfo.op_Implicit*"></a>
-  <h4 id="FileCurator_FileInfo_op_Implicit_FileCurator_FileInfo__System_Byte__" data-uid="FileCurator.FileInfo.op_Implicit(FileCurator.FileInfo)~System.Byte[]">implicit operator byte[](FileInfo)</h4>
+
+  <h3 id="FileCurator_FileInfo_op_Implicit_FileCurator_FileInfo__System_Byte__" data-uid="FileCurator.FileInfo.op_Implicit(FileCurator.FileInfo)~System.Byte[]">
+  implicit operator byte[](FileInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Reads the file and converts it to a byte array</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator byte[](FileInfo file)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></td>
-        <td><span class="parametername">file</span></td>
-        <td><p>File to read</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><p>The file as a byte array</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_op_Implicit_FileCurator_FileInfo__System_String.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.op_Implicit(FileCurator.FileInfo)~System.String%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L133">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>file</code> <a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></dt>
+    <dd><p>File to read</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The file as a byte array</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_op_Implicit_" data-uid="FileCurator.FileInfo.op_Implicit*"></a>
-  <h4 id="FileCurator_FileInfo_op_Implicit_FileCurator_FileInfo__System_String" data-uid="FileCurator.FileInfo.op_Implicit(FileCurator.FileInfo)~System.String">implicit operator string(FileInfo)</h4>
+
+  <h3 id="FileCurator_FileInfo_op_Implicit_FileCurator_FileInfo__System_String" data-uid="FileCurator.FileInfo.op_Implicit(FileCurator.FileInfo)~System.String">
+  implicit operator string(FileInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Reads the file and converts it to a string</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator string(FileInfo file)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></td>
-        <td><span class="parametername">file</span></td>
-        <td><p>File to read</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The file as a string</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_op_Inequality_FileCurator_FileInfo_FileCurator_FileInfo_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.op_Inequality(FileCurator.FileInfo%2CFileCurator.FileInfo)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L146">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>file</code> <a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></dt>
+    <dd><p>File to read</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The file as a string</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_op_Inequality_" data-uid="FileCurator.FileInfo.op_Inequality*"></a>
-  <h4 id="FileCurator_FileInfo_op_Inequality_FileCurator_FileInfo_FileCurator_FileInfo_" data-uid="FileCurator.FileInfo.op_Inequality(FileCurator.FileInfo,FileCurator.FileInfo)">operator !=(FileInfo, FileInfo)</h4>
+
+  <h3 id="FileCurator_FileInfo_op_Inequality_FileCurator_FileInfo_FileCurator_FileInfo_" data-uid="FileCurator.FileInfo.op_Inequality(FileCurator.FileInfo,FileCurator.FileInfo)">
+  operator !=(FileInfo, FileInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines if two directories are not equal</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool operator !=(FileInfo file1, FileInfo file2)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></td>
-        <td><span class="parametername">file1</span></td>
-        <td><p>File 1</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></td>
-        <td><span class="parametername">file2</span></td>
-        <td><p>File 2</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>True if they are not equal, false otherwise</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_op_LessThan_FileCurator_FileInfo_FileCurator_FileInfo_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.op_LessThan(FileCurator.FileInfo%2CFileCurator.FileInfo)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L157">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>file1</code> <a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></dt>
+    <dd><p>File 1</p>
+</dd>
+    <dt><code>file2</code> <a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></dt>
+    <dd><p>File 2</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if they are not equal, false otherwise</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_op_LessThan_" data-uid="FileCurator.FileInfo.op_LessThan*"></a>
-  <h4 id="FileCurator_FileInfo_op_LessThan_FileCurator_FileInfo_FileCurator_FileInfo_" data-uid="FileCurator.FileInfo.op_LessThan(FileCurator.FileInfo,FileCurator.FileInfo)">operator &lt;(FileInfo, FileInfo)</h4>
+
+  <h3 id="FileCurator_FileInfo_op_LessThan_FileCurator_FileInfo_FileCurator_FileInfo_" data-uid="FileCurator.FileInfo.op_LessThan(FileCurator.FileInfo,FileCurator.FileInfo)">
+  operator &lt;(FileInfo, FileInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Less than</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool operator &lt;(FileInfo file1, FileInfo file2)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></td>
-        <td><span class="parametername">file1</span></td>
-        <td><p>File 1</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></td>
-        <td><span class="parametername">file2</span></td>
-        <td><p>File 2</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_FileInfo_op_LessThanOrEqual_FileCurator_FileInfo_FileCurator_FileInfo_.md&amp;value=---%0Auid%3A%20FileCurator.FileInfo.op_LessThanOrEqual(FileCurator.FileInfo%2CFileCurator.FileInfo)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L170">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>file1</code> <a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></dt>
+    <dd><p>File 1</p>
+</dd>
+    <dt><code>file2</code> <a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></dt>
+    <dd><p>File 2</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="FileCurator_FileInfo_op_LessThanOrEqual_" data-uid="FileCurator.FileInfo.op_LessThanOrEqual*"></a>
-  <h4 id="FileCurator_FileInfo_op_LessThanOrEqual_FileCurator_FileInfo_FileCurator_FileInfo_" data-uid="FileCurator.FileInfo.op_LessThanOrEqual(FileCurator.FileInfo,FileCurator.FileInfo)">operator &lt;=(FileInfo, FileInfo)</h4>
+
+  <h3 id="FileCurator_FileInfo_op_LessThanOrEqual_FileCurator_FileInfo_FileCurator_FileInfo_" data-uid="FileCurator.FileInfo.op_LessThanOrEqual(FileCurator.FileInfo,FileCurator.FileInfo)">
+  operator &lt;=(FileInfo, FileInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Less than or equal</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool operator &lt;=(FileInfo file1, FileInfo file2)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></td>
-        <td><span class="parametername">file1</span></td>
-        <td><p>File 1</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></td>
-        <td><span class="parametername">file2</span></td>
-        <td><p>File 2</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="FileCurator.Interfaces.IFile.html">IFile</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
-  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>file1</code> <a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></dt>
+    <dd><p>File 1</p>
+</dd>
+    <dt><code>file2</code> <a class="xref" href="FileCurator.FileInfo.html">FileInfo</a></dt>
+    <dd><p>File 2</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-                </div>
 
-                <div class="copyright-footer">
-                    <span>&#169; James Craig. All rights reserved.</span>
-                </div>
-            </main>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/FileInfo.cs/#L32" class="edit-link">Edit this page</a>
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
-        <script type="text/javascript" src="../styles/url.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
-        <script type="text/javascript" src="../styles/docfx.js"></script>
-        <script type="text/javascript" src="../styles/main.js"></script>
-        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <strong><a href='https://github.com/JaCraig/FileCurator'>Open in Github</a></strong>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

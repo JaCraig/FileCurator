@@ -1,118 +1,128 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
       <title>Class OutlookStorage.NativeMethods
  | FileCurator API Reference </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class OutlookStorage.NativeMethods
  | FileCurator API Reference ">
-      <meta name="generator" content="docfx ">
-  
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
-      <link rel="stylesheet" href="../styles/config.css">
-      <link rel="stylesheet" href="../styles/discord.css">
-      <link rel="stylesheet" href="../styles/singulink.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.json">
-      <meta property="docfx:tocrel" content="toc.json">
-  
-  <meta property="docfx:rel" content="../">
-  <meta property="docfx:newtab" content="true">
-    </head>
-    <body>
-        <div class="top-navbar">
-            <a class="burger-icon" onclick="toggleMenu()">
-                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
-            </a>
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
 
 
-            <a class="brand" href="../index.html">
-              <img src="../images/icon.png" alt="FileCurator" class="logomark">
-              <span class="brand-title">FileCurator</span>
-            </a>        </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="FileCurator">
+            FileCurator
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <div class="body-content">
-            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
-            <nav id="sidebar" role="navigation">
-                <div class="sidebar">
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                    <div>
-                      <div class="mobile-hide">
+          <nav id="breadcrumb"></nav>
+        </div>
 
-                        <a class="brand" href="../index.html">
-                          <img src="../images/icon.png" alt="FileCurator" class="logomark">
-                          <span class="brand-title">FileCurator</span>
-                        </a>                      </div>
-
-                      <div class="sidesearch">
-                        <form id="search" role="search" class="search">
-                            <i class="bi bi-search search-icon"></i>
-                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
-                        </form>
-                      </div>
-
-                      <div id="navbar">
-                      </div>
-                    </div>                    <div class="sidebar-item-separator"></div>
-
-                        <div id="sidetoggle">
-                          <div id="sidetoc"></div>
-                        </div>
-                </div>
-                <div class="footer">
-  <strong><a href='https://github.com/JaCraig/FileCurator'>Open in Github</a></strong>
-  
-                </div>            </nav>
-
-            <main class="main-panel">
-
-                <div id="search-results" style="display: none;">
-                  <h1 class="search-list">Search Results for <span></span></h1>
-                  <div class="sr-items">
-                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
-                  </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
-                </div>
- 
-
-                <div role="main" class="hide-when-search">
-
-                        <div class="subnav navbar navbar-default">
-                          <div class="container hide-when-search" id="breadcrumb">
-                            <ul class="breadcrumb">
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-
-                         <div id="contribution">
-                               <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                         </div>
-
-                    <article class="content wrap" id="_content" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods">
+        <article data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods">
 
 
 
-  <h1 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods" class="text-break">Class OutlookStorage.NativeMethods
-</h1>
-  <div class="markdown level0 summary"><p>Native methods</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">OutlookStorage.NativeMethods</span></div>
+  <h1 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods" class="text-break">
+    Class OutlookStorage.NativeMethods
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1209"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="FileCurator.html">FileCurator</a>.<a class="xref" href="FileCurator.Formats.html">Formats</a>.<a class="xref" href="FileCurator.Formats.MSG.html">MSG</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>FileCurator.dll</dd></dl>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+  <div class="markdown summary"><p>Native methods</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static class OutlookStorage.NativeMethods</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">OutlookStorage.NativeMethods</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -134,941 +144,880 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="FileCurator.html">FileCurator</a>.<a class="xref" href="FileCurator.Formats.html">Formats</a>.<a class="xref" href="FileCurator.Formats.MSG.html">MSG</a></h6>
-  <h6><strong>Assembly</strong>: FileCurator.dll</h6>
-  <h5 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected static class OutlookStorage.NativeMethods</code></pre>
-  </div>
-  <h3 id="fields">Fields
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_APPTIME.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_APPTIME%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1214">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_APPTIME" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_APPTIME">PT_APPTIME</h4>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_APPTIME" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_APPTIME">
+  PT_APPTIME
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1214"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ apptime</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_APPTIME = 7</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_BINARY.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_BINARY%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1219">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_BINARY" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_BINARY">PT_BINARY</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_BINARY" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_BINARY">
+  PT_BINARY
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1219"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ binary</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_BINARY = 258</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_BOOLEAN.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_BOOLEAN%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1224">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_BOOLEAN" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_BOOLEAN">PT_BOOLEAN</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_BOOLEAN" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_BOOLEAN">
+  PT_BOOLEAN
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ boolean</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_BOOLEAN = 11</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_CLSID.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_CLSID%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1229">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_CLSID" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_CLSID">PT_CLSID</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_CLSID" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_CLSID">
+  PT_CLSID
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1229"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ CLSID</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_CLSID = 72</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_CURRENCY.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_CURRENCY%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1234">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_CURRENCY" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_CURRENCY">PT_CURRENCY</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_CURRENCY" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_CURRENCY">
+  PT_CURRENCY
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1234"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ currency</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_CURRENCY = 6</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_DOUBLE.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_DOUBLE%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1239">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_DOUBLE" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_DOUBLE">PT_DOUBLE</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_DOUBLE" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_DOUBLE">
+  PT_DOUBLE
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1239"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ double</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_DOUBLE = 5</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_ERROR.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_ERROR%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1244">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_ERROR" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_ERROR">PT_ERROR</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_ERROR" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_ERROR">
+  PT_ERROR
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1244"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ error</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_ERROR = 10</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_I2.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_I2%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1249">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_I2" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_I2">PT_I2</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_I2" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_I2">
+  PT_I2
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ i2</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_I2 = 2</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_I8.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_I8%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1254">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_I8" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_I8">PT_I8</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_I8" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_I8">
+  PT_I8
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1254"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ i8</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_I8 = 20</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_LONG.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_LONG%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1259">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_LONG" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_LONG">PT_LONG</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_LONG" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_LONG">
+  PT_LONG
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1259"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ long</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_LONG = 3</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_NULL.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_NULL%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1264">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_NULL" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_NULL">PT_NULL</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_NULL" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_NULL">
+  PT_NULL
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1264"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ null</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_NULL = 1</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_OBJECT.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_OBJECT%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1269">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_OBJECT" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_OBJECT">PT_OBJECT</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_OBJECT" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_OBJECT">
+  PT_OBJECT
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1269"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ object</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_OBJECT = 13</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_R4.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_R4%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1274">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_R4" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_R4">PT_R4</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_R4" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_R4">
+  PT_R4
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1274"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The pt r4</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_R4 = 4</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_STRING8.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_STRING8%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1279">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_STRING8" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_STRING8">PT_STRING8</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_STRING8" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_STRING8">
+  PT_STRING8
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1279"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ strin g8</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_STRING8 = 30</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_SYSTIME.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_SYSTIME%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1284">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_SYSTIME" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_SYSTIME">PT_SYSTIME</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_SYSTIME" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_SYSTIME">
+  PT_SYSTIME
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1284"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ systime</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_SYSTIME = 64</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_UNICODE.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_UNICODE%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1289">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_UNICODE" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_UNICODE">PT_UNICODE</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_UNICODE" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_UNICODE">
+  PT_UNICODE
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1289"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ unicode</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_UNICODE = 31</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_UNSPECIFIED.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_UNSPECIFIED%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1294">View Source</a>
-  </span>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_UNSPECIFIED" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_UNSPECIFIED">PT_UNSPECIFIED</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_PT_UNSPECIFIED" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.PT_UNSPECIFIED">
+  PT_UNSPECIFIED
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1294"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The p t_ unspecified</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const ushort PT_UNSPECIFIED = 0</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/FileCurator/new/master/apiSpec/new?filename=FileCurator_Formats_MSG_OutlookStorage_NativeMethods_CloneStorage_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_System_Boolean_.md&amp;value=---%0Auid%3A%20FileCurator.Formats.MSG.OutlookStorage.NativeMethods.CloneStorage(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1302">View Source</a>
-  </span>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_CloneStorage_" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.CloneStorage*"></a>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_CloneStorage_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_System_Boolean_" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.CloneStorage(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage,System.Boolean)">CloneStorage(IStorage, bool)</h4>
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_CloneStorage_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_System_Boolean_" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.CloneStorage(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage,System.Boolean)">
+  CloneStorage(IStorage, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1302"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Clones the storage.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static OutlookStorage.NativeMethods.IStorage? CloneStorage(OutlookStorage.NativeMethods.IStorage source, bool closeSource)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html">IStorage</a></td>
-        <td><span class="parametername">source</span></td>
-        <td><p>The source.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">closeSource</span></td>
-        <td><p>if set to <code>true</code> [close source].</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html">IStorage</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html">IStorage</a></dt>
+    <dd><p>The source.</p>
+</dd>
+    <dt><code>closeSource</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if set to <code>true</code> [close source].</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html">IStorage</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
 
 
   <a id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_CreateILockBytesOnHGlobal_" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.CreateILockBytesOnHGlobal*"></a>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_CreateILockBytesOnHGlobal_System_IntPtr_System_Boolean_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_ILockBytes__" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.CreateILockBytesOnHGlobal(System.IntPtr,System.Boolean,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes@)">CreateILockBytesOnHGlobal(IntPtr, bool, out ILockBytes)</h4>
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_CreateILockBytesOnHGlobal_System_IntPtr_System_Boolean_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_ILockBytes__" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.CreateILockBytesOnHGlobal(System.IntPtr,System.Boolean,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes@)">
+  CreateILockBytesOnHGlobal(IntPtr, bool, out ILockBytes)
+  
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates the i lock bytes on h global.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static extern int CreateILockBytesOnHGlobal(IntPtr hGlobal, bool fDeleteOnRelease, out OutlookStorage.NativeMethods.ILockBytes ppLkbyt)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
-        <td><span class="parametername">hGlobal</span></td>
-        <td><p>The h global.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">fDeleteOnRelease</span></td>
-        <td><p>if set to <code>true</code> [f delete on release].</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes.html">ILockBytes</a></td>
-        <td><span class="parametername">ppLkbyt</span></td>
-        <td><p>The pp lkbyt.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>hGlobal</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></dt>
+    <dd><p>The h global.</p>
+</dd>
+    <dt><code>fDeleteOnRelease</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if set to <code>true</code> [f delete on release].</p>
+</dd>
+    <dt><code>ppLkbyt</code> <a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes.html">ILockBytes</a></dt>
+    <dd><p>The pp lkbyt.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
 
 
   <a id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgCreateDocfileOnILockBytes_" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes*"></a>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgCreateDocfileOnILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_ILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_STGM_System_UInt32_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage__" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.UInt32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)">StgCreateDocfileOnILockBytes(ILockBytes, STGM, uint, out IStorage)</h4>
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgCreateDocfileOnILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_ILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_STGM_System_UInt32_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage__" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgCreateDocfileOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.UInt32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)">
+  StgCreateDocfileOnILockBytes(ILockBytes, STGM, uint, out IStorage)
+  
+  </h3>
+
   <div class="markdown level1 summary"><p>STGs the create docfile on i lock bytes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static extern int StgCreateDocfileOnILockBytes(OutlookStorage.NativeMethods.ILockBytes plkbyt, OutlookStorage.NativeMethods.STGM grfMode, uint reserved, out OutlookStorage.NativeMethods.IStorage ppstgOpen)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes.html">ILockBytes</a></td>
-        <td><span class="parametername">plkbyt</span></td>
-        <td><p>The plkbyt.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM.html">STGM</a></td>
-        <td><span class="parametername">grfMode</span></td>
-        <td><p>The GRF mode.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
-        <td><span class="parametername">reserved</span></td>
-        <td><p>The reserved.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html">IStorage</a></td>
-        <td><span class="parametername">ppstgOpen</span></td>
-        <td><p>The PPSTG open.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>plkbyt</code> <a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes.html">ILockBytes</a></dt>
+    <dd><p>The plkbyt.</p>
+</dd>
+    <dt><code>grfMode</code> <a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM.html">STGM</a></dt>
+    <dd><p>The GRF mode.</p>
+</dd>
+    <dt><code>reserved</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p>The reserved.</p>
+</dd>
+    <dt><code>ppstgOpen</code> <a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html">IStorage</a></dt>
+    <dd><p>The PPSTG open.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
 
 
   <a id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgIsStorageFile_" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile*"></a>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgIsStorageFile_System_String_" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile(System.String)">StgIsStorageFile(string)</h4>
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgIsStorageFile_System_String_" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageFile(System.String)">
+  StgIsStorageFile(string)
+  
+  </h3>
+
   <div class="markdown level1 summary"><p>STGs the is storage file.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static extern int StgIsStorageFile(string wcsName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">wcsName</span></td>
-        <td><p>Name of the WCS.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wcsName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the WCS.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
 
 
   <a id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgIsStorageILockBytes_" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes*"></a>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgIsStorageILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_ILockBytes_" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes)">StgIsStorageILockBytes(ILockBytes)</h4>
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgIsStorageILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_ILockBytes_" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes)">
+  StgIsStorageILockBytes(ILockBytes)
+  
+  </h3>
+
   <div class="markdown level1 summary"><p>STGs the is storage i lock bytes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static extern int StgIsStorageILockBytes(OutlookStorage.NativeMethods.ILockBytes plkbyt)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes.html">ILockBytes</a></td>
-        <td><span class="parametername">plkbyt</span></td>
-        <td><p>The plkbyt.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>plkbyt</code> <a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes.html">ILockBytes</a></dt>
+    <dd><p>The plkbyt.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
 
 
   <a id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgOpenStorage_" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorage*"></a>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgOpenStorage_System_String_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_STGM_System_IntPtr_System_Int32_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage__" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorage(System.String,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.IntPtr,System.Int32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)">StgOpenStorage(string, IStorage?, STGM, IntPtr, int, out IStorage)</h4>
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgOpenStorage_System_String_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_STGM_System_IntPtr_System_Int32_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage__" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorage(System.String,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.IntPtr,System.Int32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)">
+  StgOpenStorage(string, IStorage?, STGM, IntPtr, int, out IStorage)
+  
+  </h3>
+
   <div class="markdown level1 summary"><p>STGs the open storage.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static extern int StgOpenStorage(string wcsName, OutlookStorage.NativeMethods.IStorage? pstgPriority, OutlookStorage.NativeMethods.STGM grfMode, IntPtr snbExclude, int reserved, out OutlookStorage.NativeMethods.IStorage ppstgOpen)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">wcsName</span></td>
-        <td><p>Name of the WCS.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html">IStorage</a></td>
-        <td><span class="parametername">pstgPriority</span></td>
-        <td><p>The PSTG priority.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM.html">STGM</a></td>
-        <td><span class="parametername">grfMode</span></td>
-        <td><p>The GRF mode.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
-        <td><span class="parametername">snbExclude</span></td>
-        <td><p>The SNB exclude.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">reserved</span></td>
-        <td><p>The reserved.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html">IStorage</a></td>
-        <td><span class="parametername">ppstgOpen</span></td>
-        <td><p>The PPSTG open.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wcsName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the WCS.</p>
+</dd>
+    <dt><code>pstgPriority</code> <a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html">IStorage</a></dt>
+    <dd><p>The PSTG priority.</p>
+</dd>
+    <dt><code>grfMode</code> <a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM.html">STGM</a></dt>
+    <dd><p>The GRF mode.</p>
+</dd>
+    <dt><code>snbExclude</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></dt>
+    <dd><p>The SNB exclude.</p>
+</dd>
+    <dt><code>reserved</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The reserved.</p>
+</dd>
+    <dt><code>ppstgOpen</code> <a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html">IStorage</a></dt>
+    <dd><p>The PPSTG open.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
 
 
   <a id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgOpenStorageOnILockBytes_" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorageOnILockBytes*"></a>
-  <h4 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgOpenStorageOnILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_ILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_STGM_System_IntPtr_System_UInt32_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage__" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorageOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.IntPtr,System.UInt32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)">StgOpenStorageOnILockBytes(ILockBytes, IStorage?, STGM, IntPtr, uint, out IStorage)</h4>
+
+  <h3 id="FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgOpenStorageOnILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_ILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_STGM_System_IntPtr_System_UInt32_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage__" data-uid="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorageOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.IntPtr,System.UInt32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)">
+  StgOpenStorageOnILockBytes(ILockBytes, IStorage?, STGM, IntPtr, uint, out IStorage)
+  
+  </h3>
+
   <div class="markdown level1 summary"><p>STGs the open storage on i lock bytes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static extern void StgOpenStorageOnILockBytes(OutlookStorage.NativeMethods.ILockBytes plkbyt, OutlookStorage.NativeMethods.IStorage? pstgPriority, OutlookStorage.NativeMethods.STGM grfMode, IntPtr snbExclude, uint reserved, out OutlookStorage.NativeMethods.IStorage ppstgOpen)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes.html">ILockBytes</a></td>
-        <td><span class="parametername">plkbyt</span></td>
-        <td><p>The plkbyt.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html">IStorage</a></td>
-        <td><span class="parametername">pstgPriority</span></td>
-        <td><p>The PSTG priority.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM.html">STGM</a></td>
-        <td><span class="parametername">grfMode</span></td>
-        <td><p>The GRF mode.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
-        <td><span class="parametername">snbExclude</span></td>
-        <td><p>The SNB exclude.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
-        <td><span class="parametername">reserved</span></td>
-        <td><p>The reserved.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html">IStorage</a></td>
-        <td><span class="parametername">ppstgOpen</span></td>
-        <td><p>The PPSTG open.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>plkbyt</code> <a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes.html">ILockBytes</a></dt>
+    <dd><p>The plkbyt.</p>
+</dd>
+    <dt><code>pstgPriority</code> <a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html">IStorage</a></dt>
+    <dd><p>The PSTG priority.</p>
+</dd>
+    <dt><code>grfMode</code> <a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM.html">STGM</a></dt>
+    <dd><p>The GRF mode.</p>
+</dd>
+    <dt><code>snbExclude</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></dt>
+    <dd><p>The SNB exclude.</p>
+</dd>
+    <dt><code>reserved</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p>The reserved.</p>
+</dd>
+    <dt><code>ppstgOpen</code> <a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.html">OutlookStorage</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html">NativeMethods</a>.<a class="xref" href="FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html">IStorage</a></dt>
+    <dd><p>The PPSTG open.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-                </div>
 
-                <div class="copyright-footer">
-                    <span>&#169; James Craig. All rights reserved.</span>
-                </div>
-            </main>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Formats/MSG/Data/OutlookStorage.cs/#L1209" class="edit-link">Edit this page</a>
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
-        <script type="text/javascript" src="../styles/url.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
-        <script type="text/javascript" src="../styles/docfx.js"></script>
-        <script type="text/javascript" src="../styles/main.js"></script>
-        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <strong><a href='https://github.com/JaCraig/FileCurator'>Open in Github</a></strong>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
