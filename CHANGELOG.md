@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.40"></a>
+## [4.0.40](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.40) (2023-12-12)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([a979490](https://www.github.com/JaCraig/FileCurator/commit/a979490bf20e8773f5897de84736fdaa9d1f1d0c))
+
+### Other
+
+* Merge pull request #101 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-e099decf7a ([4547151](https://www.github.com/JaCraig/FileCurator/commit/4547151e1c0784e85c9399df0313b9e481addef2))
+* Merge pull request #102 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-494264589d ([ae2133e](https://www.github.com/JaCraig/FileCurator/commit/ae2133eb76936c0da84a17134050a9eba1c7f2f8))
+* Merge pull request #103 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-1725126a36 ([b4f7ee9](https://www.github.com/JaCraig/FileCurator/commit/b4f7ee955880f2de3d81ce50a403d4b1dcc78dc3))
+* Merge pull request #104 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-6095d6a029 ([0042f5d](https://www.github.com/JaCraig/FileCurator/commit/0042f5da6b13a4766990503365267583933d01ee))
+* Merge pull request #105 from JaCraig/dependabot/github_actions/dependencies-9d15ffb50c ([5790e72](https://www.github.com/JaCraig/FileCurator/commit/5790e72e91a2b2c413a53a55e10f79b1787c1fc8))
+* Merge pull request #106 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-9380cae661 ([e229d4f](https://www.github.com/JaCraig/FileCurator/commit/e229d4fe09ece19c52cfb37034a4fb12b5a43aaf))
+* Merge pull request #107 from JaCraig/dependabot/nuget/dependencies-b7f5e8c31f ([5a10cc8](https://www.github.com/JaCraig/FileCurator/commit/5a10cc8ec6bc9c01ce558b43574b7a229fac83dc))
+* bump the dependencies group ([4330cf1](https://www.github.com/JaCraig/FileCurator/commit/4330cf13d49e8c3429435e5d472496b45cbac1a1))
+* bump the dependencies group ([278a975](https://www.github.com/JaCraig/FileCurator/commit/278a975bc2ee29d541dbcd611b1337c3799151fb))
+* bump the dependencies group ([1884dd6](https://www.github.com/JaCraig/FileCurator/commit/1884dd61814d096caa7a162e20171542826a9f83))
+* bump the dependencies group ([ef19eba](https://www.github.com/JaCraig/FileCurator/commit/ef19eba688a5b1cb8e7e857b734480929d917699))
+* bump the dependencies group ([3815bb4](https://www.github.com/JaCraig/FileCurator/commit/3815bb4deb1cdf0796d06972e62286c4b73969dd))
+* bump the dependencies group with 1 update ([058c8d1](https://www.github.com/JaCraig/FileCurator/commit/058c8d182f87e73a433fa7f87fd6bd98e90931eb))
+* Fixing doc gen ([d7d31e5](https://www.github.com/JaCraig/FileCurator/commit/d7d31e56c3fcec3e4415790d24d9772a6cc8c4b1))
+
 <a name="4.0.39"></a>
 ## [4.0.39](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.39) (2023-11-23)
 
