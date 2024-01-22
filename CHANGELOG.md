@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.47"></a>
+## [4.0.47](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.47) (2024-01-22)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([662878c](https://www.github.com/JaCraig/FileCurator/commit/662878c79aee65d762cb3826f931e6ee86637d6b))
+
+### Other
+
+* Merge pull request #130 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-fe356a0f01 ([d3cece0](https://www.github.com/JaCraig/FileCurator/commit/d3cece0b66b9edd6deef7017f6effdb3e94b8938))
+* Merge pull request #131 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-5fbe0c1566 ([0fd6263](https://www.github.com/JaCraig/FileCurator/commit/0fd6263d595d52599373d55ef7667a6eed71a716))
+* Merge pull request #132 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-3103ae00d9 ([0b7deee](https://www.github.com/JaCraig/FileCurator/commit/0b7deee43682e33d047f9a69edc7a73148683bb9))
+* Merge pull request #133 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-4da3577a30 ([9616c53](https://www.github.com/JaCraig/FileCurator/commit/9616c534047c482bc7d0e5a9921b0dea133958e0))
+* Merge pull request #134 from JaCraig/dependabot/nuget/dependencies-00b85c4322 ([7d327ac](https://www.github.com/JaCraig/FileCurator/commit/7d327ac0f678bed7a6841b383c3917d7d77fb781))
+* bump the dependencies group ([84ac79a](https://www.github.com/JaCraig/FileCurator/commit/84ac79a1e0ebd617a171a611a6cfdf7327079260))
+* bump the dependencies group ([a6772a2](https://www.github.com/JaCraig/FileCurator/commit/a6772a22339a461661869be2d9ae21ade5e9b346))
+* bump the dependencies group ([d7203b5](https://www.github.com/JaCraig/FileCurator/commit/d7203b536da41707360e0b06c59b447d6237f11f))
+* bump the dependencies group ([80ee92b](https://www.github.com/JaCraig/FileCurator/commit/80ee92bb18356d9112e0edf0900cd745a4169261))
+
 <a name="4.0.46"></a>
 ## [4.0.46](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.46) (2024-01-11)
 
