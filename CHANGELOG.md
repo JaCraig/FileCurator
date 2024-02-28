@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.63"></a>
+## [4.0.63](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.63) (2024-02-28)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([51cfc94](https://www.github.com/JaCraig/FileCurator/commit/51cfc94a37d6af19a6962e8cb18f852e8ce782c6))
+
+### Other
+
+* Merge pull request #174 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-f6211233d0 ([6f5a15f](https://www.github.com/JaCraig/FileCurator/commit/6f5a15f8f35571995cac7a994cba187ed2f03929))
+* Merge pull request #175 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-551d1549c2 ([26c79b2](https://www.github.com/JaCraig/FileCurator/commit/26c79b2015b4fdb55972999f36ce24098d2e7522))
+* Merge pull request #176 from JaCraig/dependabot/nuget/dependencies-b49a64a182 ([421f136](https://www.github.com/JaCraig/FileCurator/commit/421f136e57453615a9f75fae08673d2dc3bb77e0))
+* bump the dependencies group ([857c2dd](https://www.github.com/JaCraig/FileCurator/commit/857c2dd185b46acdb25c2b130ff0649975113a24))
+* bump the dependencies group ([fa66925](https://www.github.com/JaCraig/FileCurator/commit/fa669259f5a208bea105d9b4390767e4b590661b))
+
 <a name="4.0.62"></a>
 ## [4.0.62](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.62) (2024-02-27)
 
