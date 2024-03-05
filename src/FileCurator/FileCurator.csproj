@@ -49,7 +49,7 @@
     <PackageReference Include="BigBook" Version="5.1.15" />
     <PackageReference Include="DocumentFormat.OpenXml" Version="3.0.1" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.59" />
-    <PackageReference Include="MimeKit" Version="4.3.0" />
+    <PackageReference Include="MimeKit" Version="4.4.0" />
     <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
     <PackageReference Include="System.Net.Requests" Version="4.3.0" />
     <PackageReference Include="System.Threading.Tasks.Parallel" Version="4.3.0" />
