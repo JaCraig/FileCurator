@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.74"></a>
+## [4.0.74](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.74) (2024-04-10)
+
+### Bug Fixes
+
+* bump BigBook from 5.1.25 to 5.1.26 in the dependencies group ([213a78b](https://www.github.com/JaCraig/FileCurator/commit/213a78b23f63fc933d05f544b52ed477b6e98747))
+
+### Other
+
+* Merge pull request #204 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-c9b27241bf ([4b36778](https://www.github.com/JaCraig/FileCurator/commit/4b36778505c42092edf5a1cc26c978d1dd06688a))
+* Merge pull request #205 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-3929d00113 ([395e2ab](https://www.github.com/JaCraig/FileCurator/commit/395e2ab84b2fc4584f559d56b22a3e197c97bbd0))
+* Merge pull request #206 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-bba4a47fc6 ([08993f5](https://www.github.com/JaCraig/FileCurator/commit/08993f5029eb119d84f8175c8d56c9989771fb47))
+* Merge pull request #207 from JaCraig/dependabot/github_actions/dependencies-45223d3826 ([340fb27](https://www.github.com/JaCraig/FileCurator/commit/340fb27e17ccd1664a1f1db2797df739812f82b4))
+* Merge pull request #208 from JaCraig/dependabot/nuget/dependencies-022c1db52a ([4c07939](https://www.github.com/JaCraig/FileCurator/commit/4c0793979480cd68f38371028edef421889df5c2))
+* bump peaceiris/actions-gh-pages in the dependencies group ([15233c1](https://www.github.com/JaCraig/FileCurator/commit/15233c1d570262a359aed155a589c7d74ba760be))
+* bump the dependencies group ([a6b0927](https://www.github.com/JaCraig/FileCurator/commit/a6b0927530de8b9c25204a01cf09a47524348cd8))
+* bump the dependencies group ([524c5bd](https://www.github.com/JaCraig/FileCurator/commit/524c5bd3fee2094511902fdc16ab78001a329533))
+* bump the dependencies group ([a3a5789](https://www.github.com/JaCraig/FileCurator/commit/a3a5789e1767364fc4301ea9eafa2468c035d82c))
+
 <a name="4.0.73"></a>
 ## [4.0.73](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.73) (2024-03-29)
 
