@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.75"></a>
+## [4.0.75](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.75) (2024-04-11)
+
+### Bug Fixes
+
+* bump BigBook from 5.1.26 to 5.1.27 in the dependencies group ([126dd98](https://www.github.com/JaCraig/FileCurator/commit/126dd9887e9ac175aef88f427627a7ec5c9c2796))
+
+### Other
+
+* Merge pull request #209 from JaCraig/dependabot/nuget/dependencies-a6023b0396 ([8f59b2a](https://www.github.com/JaCraig/FileCurator/commit/8f59b2ad32845bd21b7327f24c64fcad971571d5))
+
 <a name="4.0.74"></a>
 ## [4.0.74](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.74) (2024-04-10)
 
