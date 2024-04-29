@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.77"></a>
+## [4.0.77](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.77) (2024-04-29)
+
+### Bug Fixes
+
+* bump the dependencies group with 2 updates ([2f208da](https://www.github.com/JaCraig/FileCurator/commit/2f208dad4ed5d9435cfe04b042345dd1a07f1468))
+
+### Other
+
+* Merge pull request #214 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-19ce10f744 ([fdb599b](https://www.github.com/JaCraig/FileCurator/commit/fdb599b28e21d6e7432ec295e556ad23310ac143))
+* Merge pull request #215 from JaCraig/dependabot/github_actions/dependencies-67cf71b959 ([265f87c](https://www.github.com/JaCraig/FileCurator/commit/265f87c5bc9f6329714db041ec5f4d61b5eeab0f))
+* Merge pull request #216 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-10b8ce0db7 ([e5d76e5](https://www.github.com/JaCraig/FileCurator/commit/e5d76e55f17e8b5b7165f7e8f1d49ed2bb9e8c73))
+* Merge pull request #217 from JaCraig/dependabot/nuget/dependencies-51355d8f44 ([ceb7887](https://www.github.com/JaCraig/FileCurator/commit/ceb7887d9e11f34aef0aa39a31e0f5b72f785991))
+* bump dependabot/fetch-metadata in the dependencies group ([52cfeed](https://www.github.com/JaCraig/FileCurator/commit/52cfeed6367d2859fa21d0664d103b0509ebd563))
+* bump Mecha.xUnit ([a194cd2](https://www.github.com/JaCraig/FileCurator/commit/a194cd2913616e222e236f7fda1a7e9aa73adeec))
+* bump the dependencies group ([6fc4cf1](https://www.github.com/JaCraig/FileCurator/commit/6fc4cf1a3d8c05724dc12982fd328c7e786f33a4))
+
 <a name="4.0.76"></a>
 ## [4.0.76](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.76) (2024-04-15)
 
