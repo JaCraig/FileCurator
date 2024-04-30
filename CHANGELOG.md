@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.78"></a>
+## [4.0.78](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.78) (2024-04-30)
+
+### Bug Fixes
+
+* bump the dependencies group with 2 updates ([a38e3d9](https://www.github.com/JaCraig/FileCurator/commit/a38e3d93756b33899902f3cec465426aae93872f))
+
+### Other
+
+* Merge pull request #218 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-7c64645fbf ([d8fb581](https://www.github.com/JaCraig/FileCurator/commit/d8fb5819b80f6c493d6d21a99d77b474591ac15c))
+* Merge pull request #219 from JaCraig/dependabot/nuget/dependencies-deb2320c57 ([39c49ca](https://www.github.com/JaCraig/FileCurator/commit/39c49caea82d8052db72e79c004c54fd8af6e4be))
+* bump Mecha.xUnit ([479a36e](https://www.github.com/JaCraig/FileCurator/commit/479a36eadf87fa1b3e6a31c09b359ae0cb8d4f92))
+
 <a name="4.0.77"></a>
 ## [4.0.77](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.77) (2024-04-29)
 
