@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.79"></a>
+## [4.0.79](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.79) (2024-05-01)
+
+### Bug Fixes
+
+* bump the dependencies group with 2 updates ([f7d7a0b](https://www.github.com/JaCraig/FileCurator/commit/f7d7a0bbfb93a6338a7c66f823bfeb2436eb1d5b))
+
+### Other
+
+* Merge pull request #220 from JaCraig/dependabot/nuget/dependencies-521091bc6d ([c48f8cb](https://www.github.com/JaCraig/FileCurator/commit/c48f8cb927e2de068e2d52540b426f0cdcd340ef))
+
 <a name="4.0.78"></a>
 ## [4.0.78](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.78) (2024-04-30)
 
