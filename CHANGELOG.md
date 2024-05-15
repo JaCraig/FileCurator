@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.83"></a>
+## [4.0.83](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.83) (2024-05-15)
+
+### Bug Fixes
+
+* bump BigBook from 5.1.33 to 5.1.34 in the dependencies group ([cf11e06](https://www.github.com/JaCraig/FileCurator/commit/cf11e061e09e23fa78d88e9564e81d225c489281))
+
+### Other
+
+* Merge pull request #229 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-1a26926a81 ([7694c6e](https://www.github.com/JaCraig/FileCurator/commit/7694c6e78fe37eeb130353b1e832e0c359320e4b))
+* Merge pull request #230 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-ef690fe79b ([d72ac71](https://www.github.com/JaCraig/FileCurator/commit/d72ac71040889bcc4061499bf90a79b9bacf49f5))
+* Merge pull request #231 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-0e57b7119a ([8683cd3](https://www.github.com/JaCraig/FileCurator/commit/8683cd372588e9aabecd28526c5b452ef9864f8f))
+* Merge pull request #232 from JaCraig/dependabot/nuget/dependencies-d9acf7e816 ([fb05d55](https://www.github.com/JaCraig/FileCurator/commit/fb05d5535ada4df653cbfab527129cf905a894ca))
+* bump Mecha.xUnit ([6251778](https://www.github.com/JaCraig/FileCurator/commit/6251778319d1deb895796c949df36241efd4bb76))
+* bump Mecha.xUnit ([0db2621](https://www.github.com/JaCraig/FileCurator/commit/0db2621e9b4d69896cc3cf1f903c33764d5695ab))
+* bump Mecha.xUnit ([7de7838](https://www.github.com/JaCraig/FileCurator/commit/7de7838fc84ac06429babf09217db4ffb8504393))
+
 <a name="4.0.82"></a>
 ## [4.0.82](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.82) (2024-05-07)
 
