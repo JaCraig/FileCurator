@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.86"></a>
+## [4.0.86](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.86) (2024-05-29)
+
+### Bug Fixes
+
+* bump BigBook from 5.1.35 to 5.1.36 in the dependencies group ([1f99db8](https://www.github.com/JaCraig/FileCurator/commit/1f99db89ffeb99f36b183a8cd8ca91bab240c1e9))
+
+### Other
+
+* --- ([6053a0e](https://www.github.com/JaCraig/FileCurator/commit/6053a0e273d3b60d83b2e7c60cc15ce24bc881b7))
+* Merge pull request #237 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-b7224192ad ([06f7ec1](https://www.github.com/JaCraig/FileCurator/commit/06f7ec19650c5a24f6cf582e01ee467a3853b767))
+* Merge pull request #238 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-17bfdebd43 ([68080b5](https://www.github.com/JaCraig/FileCurator/commit/68080b5afab0afa2068ee46164e6f64ddcc787b6))
+* Merge pull request #239 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-d10d8338a5 ([0890e63](https://www.github.com/JaCraig/FileCurator/commit/0890e630bd5e28f83df1327b50e11556a55a5808))
+* Merge pull request #240 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-63bf006411 ([03c919d](https://www.github.com/JaCraig/FileCurator/commit/03c919df80bde7913e42ec123b845fd9b94753c7))
+* Merge pull request #241 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-e000669da3 ([9f76242](https://www.github.com/JaCraig/FileCurator/commit/9f7624226a93dee43a0412b3d139faa892d0c24b))
+* Merge pull request #242 from JaCraig/dependabot/nuget/dependencies-233bfabb76 ([7d787b6](https://www.github.com/JaCraig/FileCurator/commit/7d787b6d99c80e1afc0e1183fc74e1512f780c06))
+* bump Mecha.xUnit ([bc9bd9e](https://www.github.com/JaCraig/FileCurator/commit/bc9bd9e91d2e566f68ab62136fdaa7105bfea9d1))
+* bump Mecha.xUnit ([d1a0c91](https://www.github.com/JaCraig/FileCurator/commit/d1a0c913d4b42416655dbc168314c38ac0e3c578))
+* bump Microsoft.NET.Test.Sdk ([a2b2594](https://www.github.com/JaCraig/FileCurator/commit/a2b25943908c4a476659a155b9411123bcf1e8ea))
+* bump the dependencies group ([35a1501](https://www.github.com/JaCraig/FileCurator/commit/35a150100360364913c0819d07fe6e14fe4e2472))
+
 <a name="4.0.85"></a>
 ## [4.0.85](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.85) (2024-05-20)
 
