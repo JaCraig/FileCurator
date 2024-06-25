@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.93"></a>
+## [4.0.93](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.93) (2024-06-25)
+
+### Bug Fixes
+
+* bump BigBook from 5.1.42 to 5.1.43 in the dependencies group ([bc27c4e](https://www.github.com/JaCraig/FileCurator/commit/bc27c4e16e055ef46c3eade93db87092e132377b))
+
+### Other
+
+* Merge pull request #255 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-aa3a9706db ([28f8f0e](https://www.github.com/JaCraig/FileCurator/commit/28f8f0e18821717f3aaf4e876e34fde15c3f93d2))
+* Merge pull request #256 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-0fd8bb063d ([ffb1712](https://www.github.com/JaCraig/FileCurator/commit/ffb1712e262fddd0b4a9fcf9680b9d73487b2f0f))
+* Merge pull request #257 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-9ecedce413 ([8241d5f](https://www.github.com/JaCraig/FileCurator/commit/8241d5f9582dd1884cff3424c2249a4d89e292a9))
+* Merge pull request #258 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-d40a2bd69e ([1a5479c](https://www.github.com/JaCraig/FileCurator/commit/1a5479c9be4acea00282c4004e7c2872197ece84))
+* Merge pull request #259 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-939adb7052 ([6e773c9](https://www.github.com/JaCraig/FileCurator/commit/6e773c912ffca8a616c1aed6aafc35596067c571))
+* Merge pull request #260 from JaCraig/dependabot/nuget/dependencies-9928568e43 ([4f56bfb](https://www.github.com/JaCraig/FileCurator/commit/4f56bfbe5e896874d807b96f74fc0ce6ee8ec869))
+* bump Mecha.xUnit ([6bfc217](https://www.github.com/JaCraig/FileCurator/commit/6bfc217658699d89750214b9c8229abe90f5b091))
+* bump Mecha.xUnit ([7a1ddb4](https://www.github.com/JaCraig/FileCurator/commit/7a1ddb47392f7474a8dcc0729b7be3ec4e0a34da))
+* bump Mecha.xUnit ([2f815e0](https://www.github.com/JaCraig/FileCurator/commit/2f815e0ccc8bfd611a6d929b73f5ff77383a11cf))
+* bump Mecha.xUnit ([74d6989](https://www.github.com/JaCraig/FileCurator/commit/74d6989c6502ceb9ac383449a8cabd826678ff1d))
+* bump Mecha.xUnit ([5d059e2](https://www.github.com/JaCraig/FileCurator/commit/5d059e2a1185c17adcbcff8b9cc29d3f6c067db3))
+
 <a name="4.0.92"></a>
 ## [4.0.92](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.92) (2024-06-18)
 
