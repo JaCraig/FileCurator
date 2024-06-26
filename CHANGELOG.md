@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.94"></a>
+## [4.0.94](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.94) (2024-06-26)
+
+### Bug Fixes
+
+* bump BigBook from 5.1.43 to 5.1.44 in the dependencies group ([1df4209](https://www.github.com/JaCraig/FileCurator/commit/1df4209990fd35bb539073b3b5cef3e813544931))
+
+### Other
+
+* Merge pull request #261 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-9c9374a764 ([1e7abb7](https://www.github.com/JaCraig/FileCurator/commit/1e7abb76aee952a84c8ae5837d348a2f42d18e15))
+* Merge pull request #262 from JaCraig/dependabot/nuget/dependencies-31048d535f ([01359fb](https://www.github.com/JaCraig/FileCurator/commit/01359fb0b6ecea982427ddf81bed4e4cf3396c4d))
+* bump Mecha.xUnit ([e17399e](https://www.github.com/JaCraig/FileCurator/commit/e17399ed65d5e6031f36a889e1ac2b26aabf615f))
+
 <a name="4.0.93"></a>
 ## [4.0.93](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.93) (2024-06-25)
 
