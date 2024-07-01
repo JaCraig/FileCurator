@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.95"></a>
+## [4.0.95](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.95) (2024-07-01)
+
+### Bug Fixes
+
+* bump MimeKit from 4.6.0 to 4.7.0 in the dependencies group ([7da8661](https://www.github.com/JaCraig/FileCurator/commit/7da8661c8615a72fbefc3455ed2e6bd559b3cefb))
+
+### Other
+
+* Merge pull request #263 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-b196582cf9 ([82de2e1](https://www.github.com/JaCraig/FileCurator/commit/82de2e1c9ba2e47c27dc8bc1f1b853be99b59f5a))
+* Merge pull request #264 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-e0a0db7f59 ([b3b8dbd](https://www.github.com/JaCraig/FileCurator/commit/b3b8dbd263c87181f59406bd09339f808343c1f4))
+* Merge pull request #265 from JaCraig/dependabot/nuget/dependencies-4781124a46 ([0f5407f](https://www.github.com/JaCraig/FileCurator/commit/0f5407f84e33ff33c8a40539aeeed88167c0d439))
+* bump Mecha.xUnit ([b4755af](https://www.github.com/JaCraig/FileCurator/commit/b4755afa1216df86192b5e0a470dd36fa95e4324))
+* bump Mecha.xUnit ([88cffb0](https://www.github.com/JaCraig/FileCurator/commit/88cffb02e68d45c43f510d878a850fc8a2785795))
+
 <a name="4.0.94"></a>
 ## [4.0.94](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.94) (2024-06-26)
 
