@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.98"></a>
+## [4.0.98](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.98) (2024-07-31)
+
+### Bug Fixes
+
+* bump DocumentFormat.OpenXml in the dependencies group ([9be86aa](https://www.github.com/JaCraig/FileCurator/commit/9be86aa8ad68340aa7ec59bb64353c277fbe473c))
+
+### Other
+
+* Merge pull request #276 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-25d55e3327 ([c9588aa](https://www.github.com/JaCraig/FileCurator/commit/c9588aa78ac8394bf56a1403b7dc5c8be65304a6))
+* Merge pull request #277 from JaCraig/dependabot/nuget/dependencies-d6dce349c2 ([55b03f6](https://www.github.com/JaCraig/FileCurator/commit/55b03f619fe107facb20c6ec90e49d20f5248df4))
+* bump Mecha.xUnit ([8801668](https://www.github.com/JaCraig/FileCurator/commit/8801668d8d8c9b607bd8a8d6bd84c9650ad51d27))
+
 <a name="4.0.97"></a>
 ## [4.0.97](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.97) (2024-07-25)
 
