@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.104"></a>
+## [4.0.104](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.104) (2024-08-20)
+
+### Bug Fixes
+
+* bump HtmlAgilityPack in the dependencies group ([eb8c356](https://www.github.com/JaCraig/FileCurator/commit/eb8c35679f45561297a461fe9a3ae4c59288fb83))
+
+### Other
+
+* Merge pull request #290 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-e3f6db98b2 ([c94161e](https://www.github.com/JaCraig/FileCurator/commit/c94161e68da1835658850c6187a837334324b0db))
+* Merge pull request #291 from JaCraig/dependabot/nuget/dependencies-0f15858be7 ([51fa751](https://www.github.com/JaCraig/FileCurator/commit/51fa751075d75d6b4cbb6e73f7f8cb4a0f9cfbf3))
+* bump the dependencies group ([c43c5da](https://www.github.com/JaCraig/FileCurator/commit/c43c5da7be15d968b6970f014e1adbd5a967c8a9))
+
 <a name="4.0.103"></a>
 ## [4.0.103](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.103) (2024-08-19)
 
