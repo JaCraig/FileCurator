@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.109"></a>
+## [4.0.109](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.109) (2024-09-02)
+
+### Bug Fixes
+
+* bump HtmlAgilityPack in the dependencies group ([25e6be7](https://www.github.com/JaCraig/FileCurator/commit/25e6be7ec64f16cee822c691cde6184bdc90c0fd))
+
+### Other
+
+* Merge pull request #302 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-d145a1dea9 ([ea40ade](https://www.github.com/JaCraig/FileCurator/commit/ea40ade77ff4a6b640ca97a59b1d5d710a38ef7a))
+* Merge pull request #303 from JaCraig/dependabot/nuget/dependencies-1d40bf1bbb ([28ea762](https://www.github.com/JaCraig/FileCurator/commit/28ea76274a4f9222b68b35f5619a8ccc2fba664d))
+* bump Mecha.xUnit ([9bc8cc7](https://www.github.com/JaCraig/FileCurator/commit/9bc8cc7b78a4047c505be2d1a1f0d5271e281c38))
+
 <a name="4.0.108"></a>
 ## [4.0.108](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.108) (2024-08-29)
 
