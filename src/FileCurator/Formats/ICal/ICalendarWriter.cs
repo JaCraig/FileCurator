@@ -97,9 +97,8 @@ namespace FileCurator.Formats.ICal
                       .AppendLine("CLASS:PUBLIC")
                       .AppendLineFormat("DTSTAMP:{0}", DateTime.Now.ToUniversalTime().ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture))
                       .AppendLineFormat("CREATED:{0}", DateTime.Now.ToUniversalTime().ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture))
-                      .AppendLine(StripHTML(calendarFile.Description.Replace("<br />", Environment.NewLine)))
-                      .AppendLineFormat("DTStart:{0}", StartTime.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture))
-                      .AppendLineFormat("DTEnd:{0}", EndTime.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture))
+                      .AppendLineFormat("DTSTART:{0}", StartTime.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture))
+                      .AppendLineFormat("DTEND:{0}", EndTime.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture))
                       .AppendLineFormat("LOCATION:{0}", calendarFile.Location)
                       .AppendLineFormat("SUMMARY;LANGUAGE=en-us:{0}", calendarFile.Subject)
                       .AppendLineFormat("UID:{0}{1}{2}", StartTime.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture), EndTime.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture), calendarFile.Subject);
