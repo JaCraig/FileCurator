@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.110"></a>
+## [4.0.110](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.110) (2024-09-09)
+
+### Bug Fixes
+
+* Fix date-time labels and add MSG file type tests ([74e11fa](https://www.github.com/JaCraig/FileCurator/commit/74e11fa358b83808a73a4d350a4fb5a0bdb737ce))
+
+### Other
+
+* Merge pull request #304 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-48ac8098b3 ([5e959f5](https://www.github.com/JaCraig/FileCurator/commit/5e959f571dd16b650130ffccc292c1c997ebc88e))
+* Merge pull request #305 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-78c52a00e0 ([639b5fd](https://www.github.com/JaCraig/FileCurator/commit/639b5fdeadc4415480125bd0e68e96b467137209))
+* Merge pull request #306 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-69124f657d ([1ad3557](https://www.github.com/JaCraig/FileCurator/commit/1ad3557b36f74df99426d070f87d76795eef5259))
+* Another fix for tests ([af74fca](https://www.github.com/JaCraig/FileCurator/commit/af74fcabb18380ad267b450693e6dfdba7e882ad))
+* bump Mecha.xUnit ([44b9626](https://www.github.com/JaCraig/FileCurator/commit/44b96261d02e3049f82f8e027de904c75046c6cf))
+* bump Mecha.xUnit ([4f85508](https://www.github.com/JaCraig/FileCurator/commit/4f85508fae918ff5783d6bbcd17f597487abb137))
+* bump Microsoft.NET.Test.Sdk ([b01e6fa](https://www.github.com/JaCraig/FileCurator/commit/b01e6fae92b530f68182feadfd7896d5528c00db))
+* Fixing test ([884bb4d](https://www.github.com/JaCraig/FileCurator/commit/884bb4d8b06c88850b59798a8f5b3a170d8df7b0))
+
 <a name="4.0.109"></a>
 ## [4.0.109](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.0.109) (2024-09-02)
 
