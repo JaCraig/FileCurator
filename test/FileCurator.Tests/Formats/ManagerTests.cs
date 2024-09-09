@@ -14,7 +14,7 @@ namespace FileCurator.Tests.Formats
             TestObject = null;
         }
 
-        public static readonly TheoryData<string, string> FormatDataByFileContents = new TheoryData<string, string>
+        public static readonly TheoryData<string, string> FormatDataByFileContents = new()
         {
             {"TestCSV.csv","Text" },
             {"TestDefault.boop","Text" },
@@ -22,7 +22,7 @@ namespace FileCurator.Tests.Formats
             {"TestICal.ics","ICal" },
             {"TestMHTML.mht","MIME" },
             {"TestEml.eml","MIME" },
-            {"TestMsg.msg","MSG" },
+            {"TestMSG.msg","MSG" },
             {"TestTXT.txt","Text" },
             {"TestVCal.vcs","ICal" },
             {"TestVCF.vcf","vCard" },
@@ -34,7 +34,7 @@ namespace FileCurator.Tests.Formats
             {"TestRSS.rss","RSS" }
         };
 
-        public static readonly TheoryData<string, string, string> FormatDataByMimeType = new TheoryData<string, string, string>
+        public static readonly TheoryData<string, string, string> FormatDataByMimeType = new()
         {
             {"TestDOCX.docx","Word","application/vnd.openxmlformats-officedocument.wordprocessingml.document" },
             {"TestDOCX.docx","Word","application/msword" },
@@ -57,7 +57,7 @@ namespace FileCurator.Tests.Formats
             {"TestXML.xml","XML","text/xml" }
         };
 
-        public static readonly TheoryData<string, string> FormatDataByName = new TheoryData<string, string>
+        public static readonly TheoryData<string, string> FormatDataByName = new()
         {
             {"TestDOCX.docx","Word" },
             {"TestCSV.csv","Delimited files" },
@@ -81,7 +81,7 @@ namespace FileCurator.Tests.Formats
         public void FindFormatByName(string fileName, string expectedFormat)
         {
             var TestObject = new Manager(GetServiceProvider().GetServices<IFormat>());
-            var Format = TestObject.FindFormat("./TestData/" + fileName, null);
+            IFormat Format = TestObject.FindFormat("./TestData/" + fileName, null);
             Assert.Equal(expectedFormat, Format.DisplayName);
         }
 
@@ -92,8 +92,8 @@ namespace FileCurator.Tests.Formats
             var TestObject = new Manager(GetServiceProvider().GetServices<IFormat>());
             try
             {
-                using var TempFile = File.OpenRead("./TestData/" + fileName);
-                var Format = TestObject.FindFormat(TempFile, "");
+                using FileStream TempFile = File.OpenRead("./TestData/" + fileName);
+                IFormat Format = TestObject.FindFormat(TempFile, "");
                 Assert.Equal(expectedFormat, Format.DisplayName);
             }
             catch { }
@@ -104,8 +104,8 @@ namespace FileCurator.Tests.Formats
         public void FindFormatByStreamWithMimeType(string fileName, string expectedFormat, string mimeType)
         {
             var TestObject = new Manager(GetServiceProvider().GetServices<IFormat>());
-            using var TempFile = File.OpenRead("./TestData/" + fileName);
-            var Format = TestObject.FindFormat(TempFile, mimeType);
+            using FileStream TempFile = File.OpenRead("./TestData/" + fileName);
+            IFormat Format = TestObject.FindFormat(TempFile, mimeType);
             Assert.Equal(expectedFormat, Format.DisplayName);
         }
     }
