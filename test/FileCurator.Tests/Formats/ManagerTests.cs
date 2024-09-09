@@ -45,7 +45,7 @@ namespace FileCurator.Tests.Formats
             {"TestICal.ics","ICal","text/calendar" },
             {"TestMHTML.mht","MIME","message/rfc822" },
             {"TestEml.eml","MIME","message/rfc822" },
-            {"TestMsg.msg","MSG","APPLICATION/VND.MS-OUTLOOK" },
+            {"TestMSG.msg","MSG","APPLICATION/VND.MS-OUTLOOK" },
             {"TestPPSX.ppsx","PowerPoint","application/vnd.openxmlformats-officedocument.presentationml.slideshow" },
             {"TestPPTX.pptx","PowerPoint","application/vnd.openxmlformats-officedocument.presentationml.slideshow" },
             {"TestRSS.rss","RSS","APPLICATION/RSS+XML" },
