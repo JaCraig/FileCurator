@@ -16,8 +16,9 @@ limitations under the License.
 
 using FileCurator.Formats.BaseClasses;
 using FileCurator.Formats.Data.Interfaces;
+using FileCurator.Windows.Formats.PDF;
 
-namespace FileCurator.Windows.Formats.PDF
+namespace FileCurator.Formats.PDF
 {
     /// <summary>
     /// PDF Format
