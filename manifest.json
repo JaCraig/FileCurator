@@ -1172,6 +1172,36 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.PDF.PDFFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.PDF.PDFFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.PDF.PDFReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.PDF.PDFReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FileCurator.Formats.PDF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FileCurator.Formats.PDF.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/FileCurator.Formats.PowerPoint.PowerPointFormat.yml",
       "output": {
         ".html": {
@@ -1676,26 +1706,6 @@
       "output": {
         ".html": {
           "relative_path": "api/FileCurator.Windows.Formats.MSG.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/FileCurator.Windows.Formats.PDF.PDFFormat.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/FileCurator.Windows.Formats.PDF.PDFFormat.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/FileCurator.Windows.Formats.PDF.PDFReader.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/FileCurator.Windows.Formats.PDF.PDFReader.html"
         }
       },
       "version": ""
