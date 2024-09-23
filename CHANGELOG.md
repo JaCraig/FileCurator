@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.1.1"></a>
+## [4.1.1](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.1.1) (2024-09-23)
+
+### Bug Fixes
+
+* bump HtmlAgilityPack in the dependencies group ([efe0bfa](https://www.github.com/JaCraig/FileCurator/commit/efe0bfaecb5ba063a9c260d0bbe80bf1473db9ba))
+
+### Other
+
+* Merge pull request #308 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-0a3d0dcfc4 ([97422a7](https://www.github.com/JaCraig/FileCurator/commit/97422a7b2e4b6aad834e28f3bf4a747d0652761c))
+* Merge pull request #309 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-e833257e60 ([707f56f](https://www.github.com/JaCraig/FileCurator/commit/707f56f28d78db1c7a0eb87d4340324587adcd69))
+* Merge pull request #310 from JaCraig/dependabot/nuget/dependencies-15ffb5f61b ([0a9b788](https://www.github.com/JaCraig/FileCurator/commit/0a9b788a8db871d09eed4da8b4518d380920a0df))
+* bump Mecha.xUnit ([98f1415](https://www.github.com/JaCraig/FileCurator/commit/98f1415b9c690d1a494db5035d1b76c59198482b))
+* bump xunit in /test/FileCurator.Tests in the dependencies group ([74affff](https://www.github.com/JaCraig/FileCurator/commit/74affff36c5b9494fc93a77936741eee1c792f44))
+
 <a name="4.1.0"></a>
 ## [4.1.0](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.1.0) (2024-09-16)
 
