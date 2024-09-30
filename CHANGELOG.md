@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.1.2"></a>
+## [4.1.2](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.1.2) (2024-09-30)
+
+### Bug Fixes
+
+* bump MimeKit from 4.7.1 to 4.8.0 in the dependencies group ([7a601e0](https://www.github.com/JaCraig/FileCurator/commit/7a601e0ba8f08ee5d58ec5a165f71c259e1c5709))
+
+### Other
+
+* Merge pull request #311 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-15f3a94963 ([f2cd57b](https://www.github.com/JaCraig/FileCurator/commit/f2cd57b6869f3de2083db319148016e7db087525))
+* Merge pull request #312 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-e8514b389a ([cc08ca7](https://www.github.com/JaCraig/FileCurator/commit/cc08ca7b64386ba5f33f77fa262698253aec1eaf))
+* Merge pull request #313 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-799ab3113c ([febcd2a](https://www.github.com/JaCraig/FileCurator/commit/febcd2a3ca78af4ddf2c5f251cd9e30b4795c1f6))
+* Merge pull request #314 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-fa09ffb26b ([37dc6a6](https://www.github.com/JaCraig/FileCurator/commit/37dc6a6a7542045e076dd34f30f5c3c4bcbfe8cf))
+* Merge pull request #315 from JaCraig/dependabot/nuget/dependencies-f1a12671ca ([b18c2e1](https://www.github.com/JaCraig/FileCurator/commit/b18c2e1a39e676f6903513f81cad7fc4181a250b))
+* bump Mecha.xUnit ([c8910ba](https://www.github.com/JaCraig/FileCurator/commit/c8910baeb52da250d78f95f3e8c680fcc889b13d))
+* bump Mecha.xUnit ([4f69c3b](https://www.github.com/JaCraig/FileCurator/commit/4f69c3b25e899df5e5695291cbcaa00dc710cb91))
+* bump Mecha.xUnit ([b230dc1](https://www.github.com/JaCraig/FileCurator/commit/b230dc13ebe04fb1f38f65f542ed4dec4a4c00f0))
+* bump xunit in /test/FileCurator.Tests in the dependencies group ([5916612](https://www.github.com/JaCraig/FileCurator/commit/591661207588aaf752e26e0d9207292b03eef2e0))
+
 <a name="4.1.1"></a>
 ## [4.1.1](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.1.1) (2024-09-23)
 
