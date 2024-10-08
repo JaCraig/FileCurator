@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.1.4"></a>
+## [4.1.4](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.1.4) (2024-10-08)
+
+### Bug Fixes
+
+* bump PdfPig from 0.1.8 to 0.1.9 in the dependencies group ([6cbc1ad](https://www.github.com/JaCraig/FileCurator/commit/6cbc1ada7f067e9e3003ed16bd87604664390a35))
+
+### Other
+
+* Merge pull request #317 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-429049ca98 ([e8a2e00](https://www.github.com/JaCraig/FileCurator/commit/e8a2e00930567f638041618596c968275d3f054c))
+* Merge pull request #318 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-88334da37a ([1897e1f](https://www.github.com/JaCraig/FileCurator/commit/1897e1f5624d328c035d2ef3b845b675f167bc95))
+* Merge pull request #319 from JaCraig/dependabot/nuget/dependencies-eef3e7423d ([2c72f9f](https://www.github.com/JaCraig/FileCurator/commit/2c72f9f113d077451f309b26d1432e3210605020))
+* bump Mecha.xUnit ([285fbb9](https://www.github.com/JaCraig/FileCurator/commit/285fbb9b8312df3d722d99a5e3c48598c8b428f1))
+* bump Mecha.xUnit ([4d1d347](https://www.github.com/JaCraig/FileCurator/commit/4d1d347c6e3fc8baec5c0752dd2e8ec1185e0404))
+
 <a name="4.1.3"></a>
 ## [4.1.3](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.1.3) (2024-10-01)
 
