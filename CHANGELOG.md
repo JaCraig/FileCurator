@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.1.7"></a>
+## [4.1.7](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.1.7) (2024-10-29)
+
+### Bug Fixes
+
+* bump DocumentFormat.OpenXml in the dependencies group ([6fed55b](https://www.github.com/JaCraig/FileCurator/commit/6fed55bd1cd413d72435d96c7e9497a258f7540a))
+* bump HtmlAgilityPack in the dependencies group ([a1a0bce](https://www.github.com/JaCraig/FileCurator/commit/a1a0bce9fccc28e1c7e8a6c359157bbaa10b0a9f))
+* bump HtmlAgilityPack in the dependencies group ([a518baf](https://www.github.com/JaCraig/FileCurator/commit/a518baf9157b3223ecff1d95cd59ab4768e4e936))
+* bump HtmlAgilityPack in the dependencies group ([116504d](https://www.github.com/JaCraig/FileCurator/commit/116504d22a459f37461a1ac46bae9ea311705d79))
+* bump the dependencies group with 2 updates ([c6a692d](https://www.github.com/JaCraig/FileCurator/commit/c6a692d37f4ab6088d60af30809e635d6899ccb8))
+* bump versionize from 2.0.0 to 2.1.0 in the dependencies group ([0019cb7](https://www.github.com/JaCraig/FileCurator/commit/0019cb793ac14af038558a9ce6b717f3771e28af))
+
+### Other
+
+* Merge pull request #324 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-006c3a6508 ([4f50f46](https://www.github.com/JaCraig/FileCurator/commit/4f50f46aee8ff26799276fd29203a1e0a8599836))
+* Merge pull request #325 from JaCraig/dependabot/nuget/dependencies-e43804591a ([c17c2b3](https://www.github.com/JaCraig/FileCurator/commit/c17c2b3dcdcd266bae25253b1eeb48bbb0a94d23))
+* Merge pull request #326 from JaCraig/dependabot/nuget/dependencies-e7692e75d8 ([4d2c4e0](https://www.github.com/JaCraig/FileCurator/commit/4d2c4e0455ff22b21e2b4a6b7dc304e3bb39d7ed))
+* Merge pull request #327 from JaCraig/dependabot/nuget/dependencies-3894128c1d ([2c5d957](https://www.github.com/JaCraig/FileCurator/commit/2c5d9579369e14960272480e4c8a85a307388fe8))
+* Merge pull request #328 from JaCraig/dependabot/nuget/dependencies-380b82bafa ([e801fb5](https://www.github.com/JaCraig/FileCurator/commit/e801fb5a43a4a4fd13996aa54be4006a28729184))
+* Merge pull request #329 from JaCraig/dependabot/github_actions/dependencies-18190d55f2 ([699d71a](https://www.github.com/JaCraig/FileCurator/commit/699d71a3805b1c65d7b0026c7c228243d221debd))
+* Merge pull request #330 from JaCraig/dependabot/nuget/dependencies-517f5308fb ([7d3334c](https://www.github.com/JaCraig/FileCurator/commit/7d3334c8a564a085d9d67d632944a73b04cd0a7d))
+* Merge pull request #331 from JaCraig/dependabot/nuget/dependencies-b29be10b0f ([a46437e](https://www.github.com/JaCraig/FileCurator/commit/a46437e0c104d6112dfc8190edf6ac74dbc28970))
+* bump actions/setup-dotnet in the dependencies group ([d3d819f](https://www.github.com/JaCraig/FileCurator/commit/d3d819f6f5ffacf0f3a0fb32cfd0f74cf4f22aa4))
+* bump Mecha.xUnit ([8196450](https://www.github.com/JaCraig/FileCurator/commit/8196450d27ebad35cf6f0c3ecb0454812d0b3645))
+* Refactor versionize command in dotnet-publish.yml ([16f12db](https://www.github.com/JaCraig/FileCurator/commit/16f12db44661fc4f6af51051ca20470bd779258a))
+
 <a name="4.1.6"></a>
 ## [4.1.6](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.1.6) (2024-10-10)
 
