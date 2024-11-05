@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.1.11"></a>
+## [4.1.11](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.1.11) (2024-11-05)
+
+### Bug Fixes
+
+* bump BigBook from 5.1.60 to 5.1.61 in the dependencies group ([d2e6dd4](https://www.github.com/JaCraig/FileCurator/commit/d2e6dd4c8237f3ecf0b11810e9eefcdc3e8c7786))
+
+### Other
+
+* Merge pull request #338 from JaCraig/dependabot/nuget/dependencies-836056217a ([7c3c41a](https://www.github.com/JaCraig/FileCurator/commit/7c3c41ac49d2ea389d1b0c28bab2479dad81ceb3))
+
 <a name="4.1.10"></a>
 ## [4.1.10](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.1.10) (2024-11-04)
 
