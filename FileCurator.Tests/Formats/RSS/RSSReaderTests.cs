@@ -16,20 +16,20 @@ namespace FileCurator.Tests.Formats.RSS
         public void Read()
         {
             var TestObject = new RSSReader();
-            var Result = TestObject.Read(File.OpenRead("./TestData/TestRSS.rss"));
-            Assert.Single(Result);
+            FileCurator.Formats.Data.Interfaces.IFeed Result = TestObject.Read(File.OpenRead("./TestData/TestRSS.rss"));
+            _ = Assert.Single(Result);
             Assert.Equal(10, Result.Channels[0].Count);
-            Assert.Equal(12056, Result.Content.Length);
+            Assert.Equal(11957, Result.Content.ReplaceLineEndings("\n").Length);
         }
 
         [Fact]
         public void Read2()
         {
             var TestObject = new RSSReader();
-            var Result = TestObject.Read(File.OpenRead("./TestData/TestRSS2.rss"));
-            Assert.Single(Result);
+            FileCurator.Formats.Data.Interfaces.IFeed Result = TestObject.Read(File.OpenRead("./TestData/TestRSS2.rss"));
+            _ = Assert.Single(Result);
             Assert.Equal(50, Result.Channels[0].Count);
-            Assert.Equal(15485, Result.Content.Length);
+            Assert.Equal(15485, Result.Content.ReplaceLineEndings("\n").Length);
         }
     }
 }
