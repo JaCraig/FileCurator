@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.0.0"></a>
+## [5.0.0](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.0) (2024-11-24)
+
+### Features
+
+* Update to .Net 8/9, updating workflows, and registration code ([68e0ab2](https://www.github.com/JaCraig/FileCurator/commit/68e0ab20c0f645006f5c111c58fb6a9d6f4a287e))
+
+### Bug Fixes
+
+* Add coverlet packages for code coverage ([b7d2299](https://www.github.com/JaCraig/FileCurator/commit/b7d2299e8f3fc6a5f8bd1e9e9a5349879779cc27))
+* Refactor tests for type safety and consistent line endings ([d5ccef7](https://www.github.com/JaCraig/FileCurator/commit/d5ccef750967dc3dcf1732f77db55ed4a57378d0))
+* Refactor variable types and improve newline handling ([6c4bcb4](https://www.github.com/JaCraig/FileCurator/commit/6c4bcb4524f195471f282048b38bf8467f4ac300))
+
+### Breaking Changes
+
+* Update to .Net 8/9, updating workflows, and registration code ([68e0ab2](https://www.github.com/JaCraig/FileCurator/commit/68e0ab20c0f645006f5c111c58fb6a9d6f4a287e))
+
+### Other
+
+* Merge pull request #344 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-956fc5c724 ([85d7b1c](https://www.github.com/JaCraig/FileCurator/commit/85d7b1c066d4d58d0b17758ff424a9110857e8e7))
+* Merge pull request #345 from JaCraig/dependabot/nuget/test/FileCurator.Tests/dependencies-617062173c ([314afab](https://www.github.com/JaCraig/FileCurator/commit/314afaba0236eb9a78d909b5d32593ad20982f60))
+* bump Mecha.xUnit ([89c6587](https://www.github.com/JaCraig/FileCurator/commit/89c6587e119f4fa0455ed4688230a3ac84df6168))
+* bump Microsoft.NET.Test.Sdk ([96f0972](https://www.github.com/JaCraig/FileCurator/commit/96f0972b0b9f83c2e933a97ef5f33c4662878cac))
+
 <a name="4.1.13"></a>
 ## [4.1.13](https://www.github.com/JaCraig/FileCurator/releases/tag/v4.1.13) (2024-11-12)
 
