@@ -11604,13 +11604,13 @@ references:
   fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.CloneStorage
   nameWithType: OutlookStorage.NativeMethods.CloneStorage
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.CreateILockBytesOnHGlobal(System.IntPtr,System.Boolean,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes@)
-  name: CreateILockBytesOnHGlobal(IntPtr, bool, out ILockBytes)
+  name: CreateILockBytesOnHGlobal(nint, bool, out ILockBytes)
   href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_CreateILockBytesOnHGlobal_System_IntPtr_System_Boolean_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_ILockBytes__
   commentId: M:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.CreateILockBytesOnHGlobal(System.IntPtr,System.Boolean,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes@)
   name.vb: CreateILockBytesOnHGlobal(IntPtr, Boolean, ILockBytes)
-  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.CreateILockBytesOnHGlobal(System.IntPtr, bool, out FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes)
+  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.CreateILockBytesOnHGlobal(nint, bool, out FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes)
   fullName.vb: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.CreateILockBytesOnHGlobal(System.IntPtr, Boolean, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes)
-  nameWithType: OutlookStorage.NativeMethods.CreateILockBytesOnHGlobal(IntPtr, bool, out OutlookStorage.NativeMethods.ILockBytes)
+  nameWithType: OutlookStorage.NativeMethods.CreateILockBytesOnHGlobal(nint, bool, out OutlookStorage.NativeMethods.ILockBytes)
   nameWithType.vb: OutlookStorage.NativeMethods.CreateILockBytesOnHGlobal(IntPtr, Boolean, OutlookStorage.NativeMethods.ILockBytes)
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.CreateILockBytesOnHGlobal*
   name: CreateILockBytesOnHGlobal
@@ -11820,13 +11820,13 @@ references:
   fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.Commit
   nameWithType: OutlookStorage.NativeMethods.IStorage.Commit
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.CopyTo(System.Int32,System.Guid[],System.IntPtr,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
-  name: CopyTo(int, Guid[]?, IntPtr, IStorage)
+  name: CopyTo(int, Guid[]?, nint, IStorage)
   href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_CopyTo_System_Int32_System_Guid___System_IntPtr_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_
   commentId: M:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.CopyTo(System.Int32,System.Guid[],System.IntPtr,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
   name.vb: CopyTo(Integer, Guid(), IntPtr, IStorage)
-  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.CopyTo(int, System.Guid[]?, System.IntPtr, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
+  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.CopyTo(int, System.Guid[]?, nint, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
   fullName.vb: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.CopyTo(Integer, System.Guid(), System.IntPtr, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
-  nameWithType: OutlookStorage.NativeMethods.IStorage.CopyTo(int, Guid[]?, IntPtr, OutlookStorage.NativeMethods.IStorage)
+  nameWithType: OutlookStorage.NativeMethods.IStorage.CopyTo(int, Guid[]?, nint, OutlookStorage.NativeMethods.IStorage)
   nameWithType.vb: OutlookStorage.NativeMethods.IStorage.CopyTo(Integer, Guid(), IntPtr, OutlookStorage.NativeMethods.IStorage)
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.CopyTo*
   name: CopyTo
@@ -11884,13 +11884,13 @@ references:
   fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.DestroyElement
   nameWithType: OutlookStorage.NativeMethods.IStorage.DestroyElement
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.EnumElements(System.Int32,System.IntPtr,System.Int32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IEnumSTATSTG@)
-  name: EnumElements(int, IntPtr, int, out IEnumSTATSTG)
+  name: EnumElements(int, nint, int, out IEnumSTATSTG)
   href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_EnumElements_System_Int32_System_IntPtr_System_Int32_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IEnumSTATSTG__
   commentId: M:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.EnumElements(System.Int32,System.IntPtr,System.Int32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IEnumSTATSTG@)
   name.vb: EnumElements(Integer, IntPtr, Integer, IEnumSTATSTG)
-  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.EnumElements(int, System.IntPtr, int, out FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IEnumSTATSTG)
+  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.EnumElements(int, nint, int, out FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IEnumSTATSTG)
   fullName.vb: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.EnumElements(Integer, System.IntPtr, Integer, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IEnumSTATSTG)
-  nameWithType: OutlookStorage.NativeMethods.IStorage.EnumElements(int, IntPtr, int, out OutlookStorage.NativeMethods.IEnumSTATSTG)
+  nameWithType: OutlookStorage.NativeMethods.IStorage.EnumElements(int, nint, int, out OutlookStorage.NativeMethods.IEnumSTATSTG)
   nameWithType.vb: OutlookStorage.NativeMethods.IStorage.EnumElements(Integer, IntPtr, Integer, OutlookStorage.NativeMethods.IEnumSTATSTG)
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.EnumElements*
   name: EnumElements
@@ -11916,13 +11916,13 @@ references:
   fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.MoveElementTo
   nameWithType: OutlookStorage.NativeMethods.IStorage.MoveElementTo
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.OpenStorage(System.String,System.IntPtr,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.IntPtr,System.Int32)
-  name: OpenStorage(string, IntPtr, STGM, IntPtr, int)
+  name: OpenStorage(string, nint, STGM, nint, int)
   href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_OpenStorage_System_String_System_IntPtr_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_STGM_System_IntPtr_System_Int32_
   commentId: M:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.OpenStorage(System.String,System.IntPtr,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.IntPtr,System.Int32)
   name.vb: OpenStorage(String, IntPtr, STGM, IntPtr, Integer)
-  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.OpenStorage(string, System.IntPtr, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, System.IntPtr, int)
+  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.OpenStorage(string, nint, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, nint, int)
   fullName.vb: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.OpenStorage(String, System.IntPtr, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, System.IntPtr, Integer)
-  nameWithType: OutlookStorage.NativeMethods.IStorage.OpenStorage(string, IntPtr, OutlookStorage.NativeMethods.STGM, IntPtr, int)
+  nameWithType: OutlookStorage.NativeMethods.IStorage.OpenStorage(string, nint, OutlookStorage.NativeMethods.STGM, nint, int)
   nameWithType.vb: OutlookStorage.NativeMethods.IStorage.OpenStorage(String, IntPtr, OutlookStorage.NativeMethods.STGM, IntPtr, Integer)
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.OpenStorage*
   name: OpenStorage
@@ -11932,13 +11932,13 @@ references:
   fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.OpenStorage
   nameWithType: OutlookStorage.NativeMethods.IStorage.OpenStorage
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.OpenStream(System.String,System.IntPtr,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.Int32)
-  name: OpenStream(string, IntPtr, STGM, int)
+  name: OpenStream(string, nint, STGM, int)
   href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_OpenStream_System_String_System_IntPtr_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_STGM_System_Int32_
   commentId: M:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.OpenStream(System.String,System.IntPtr,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.Int32)
   name.vb: OpenStream(String, IntPtr, STGM, Integer)
-  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.OpenStream(string, System.IntPtr, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, int)
+  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.OpenStream(string, nint, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, int)
   fullName.vb: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.OpenStream(String, System.IntPtr, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, Integer)
-  nameWithType: OutlookStorage.NativeMethods.IStorage.OpenStream(string, IntPtr, OutlookStorage.NativeMethods.STGM, int)
+  nameWithType: OutlookStorage.NativeMethods.IStorage.OpenStream(string, nint, OutlookStorage.NativeMethods.STGM, int)
   nameWithType.vb: OutlookStorage.NativeMethods.IStorage.OpenStream(String, IntPtr, OutlookStorage.NativeMethods.STGM, Integer)
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.OpenStream*
   name: OpenStream
@@ -12299,13 +12299,13 @@ references:
   fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgIsStorageILockBytes
   nameWithType: OutlookStorage.NativeMethods.StgIsStorageILockBytes
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorage(System.String,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.IntPtr,System.Int32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)
-  name: StgOpenStorage(string, IStorage?, STGM, IntPtr, int, out IStorage)
+  name: StgOpenStorage(string, IStorage?, STGM, nint, int, out IStorage)
   href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgOpenStorage_System_String_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_STGM_System_IntPtr_System_Int32_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage__
   commentId: M:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorage(System.String,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.IntPtr,System.Int32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)
   name.vb: StgOpenStorage(String, IStorage, STGM, IntPtr, Integer, IStorage)
-  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorage(string, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage?, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, System.IntPtr, int, out FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
+  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorage(string, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage?, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, nint, int, out FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
   fullName.vb: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorage(String, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, System.IntPtr, Integer, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
-  nameWithType: OutlookStorage.NativeMethods.StgOpenStorage(string, OutlookStorage.NativeMethods.IStorage?, OutlookStorage.NativeMethods.STGM, IntPtr, int, out OutlookStorage.NativeMethods.IStorage)
+  nameWithType: OutlookStorage.NativeMethods.StgOpenStorage(string, OutlookStorage.NativeMethods.IStorage?, OutlookStorage.NativeMethods.STGM, nint, int, out OutlookStorage.NativeMethods.IStorage)
   nameWithType.vb: OutlookStorage.NativeMethods.StgOpenStorage(String, OutlookStorage.NativeMethods.IStorage, OutlookStorage.NativeMethods.STGM, IntPtr, Integer, OutlookStorage.NativeMethods.IStorage)
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorage*
   name: StgOpenStorage
@@ -12314,13 +12314,13 @@ references:
   fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorage
   nameWithType: OutlookStorage.NativeMethods.StgOpenStorage
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorageOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.IntPtr,System.UInt32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)
-  name: StgOpenStorageOnILockBytes(ILockBytes, IStorage?, STGM, IntPtr, uint, out IStorage)
+  name: StgOpenStorageOnILockBytes(ILockBytes, IStorage?, STGM, nint, uint, out IStorage)
   href: api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html#FileCurator_Formats_MSG_OutlookStorage_NativeMethods_StgOpenStorageOnILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_ILockBytes_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_STGM_System_IntPtr_System_UInt32_FileCurator_Formats_MSG_OutlookStorage_NativeMethods_IStorage__
   commentId: M:FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorageOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM,System.IntPtr,System.UInt32,FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage@)
   name.vb: StgOpenStorageOnILockBytes(ILockBytes, IStorage, STGM, IntPtr, UInteger, IStorage)
-  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorageOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage?, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, System.IntPtr, uint, out FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
+  fullName: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorageOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage?, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, nint, uint, out FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
   fullName.vb: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorageOnILockBytes(FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM, System.IntPtr, UInteger, FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage)
-  nameWithType: OutlookStorage.NativeMethods.StgOpenStorageOnILockBytes(OutlookStorage.NativeMethods.ILockBytes, OutlookStorage.NativeMethods.IStorage?, OutlookStorage.NativeMethods.STGM, IntPtr, uint, out OutlookStorage.NativeMethods.IStorage)
+  nameWithType: OutlookStorage.NativeMethods.StgOpenStorageOnILockBytes(OutlookStorage.NativeMethods.ILockBytes, OutlookStorage.NativeMethods.IStorage?, OutlookStorage.NativeMethods.STGM, nint, uint, out OutlookStorage.NativeMethods.IStorage)
   nameWithType.vb: OutlookStorage.NativeMethods.StgOpenStorageOnILockBytes(OutlookStorage.NativeMethods.ILockBytes, OutlookStorage.NativeMethods.IStorage, OutlookStorage.NativeMethods.STGM, IntPtr, UInteger, OutlookStorage.NativeMethods.IStorage)
 - uid: FileCurator.Formats.MSG.OutlookStorage.NativeMethods.StgOpenStorageOnILockBytes*
   name: StgOpenStorageOnILockBytes
@@ -15913,6 +15913,15 @@ references:
   fullName.vb: Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.RegisterFileCurator(Canister.Interfaces.ICanisterConfiguration)
   nameWithType: FileCuratorCanisterExtensions.RegisterFileCurator(ICanisterConfiguration?)
   nameWithType.vb: FileCuratorCanisterExtensions.RegisterFileCurator(ICanisterConfiguration)
+- uid: Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.RegisterFileCurator(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name: RegisterFileCurator(IServiceCollection?)
+  href: api/Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.html#Microsoft_Extensions_DependencyInjection_FileCuratorCanisterExtensions_RegisterFileCurator_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  commentId: M:Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.RegisterFileCurator(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name.vb: RegisterFileCurator(IServiceCollection)
+  fullName: Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.RegisterFileCurator(Microsoft.Extensions.DependencyInjection.IServiceCollection?)
+  fullName.vb: Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.RegisterFileCurator(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  nameWithType: FileCuratorCanisterExtensions.RegisterFileCurator(IServiceCollection?)
+  nameWithType.vb: FileCuratorCanisterExtensions.RegisterFileCurator(IServiceCollection)
 - uid: Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.RegisterFileCurator*
   name: RegisterFileCurator
   href: api/Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.html#Microsoft_Extensions_DependencyInjection_FileCuratorCanisterExtensions_RegisterFileCurator_

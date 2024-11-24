@@ -89,7 +89,7 @@
 
 
   <h1 id="Microsoft_Extensions_DependencyInjection_FileCuratorCanisterExtensions" data-uid="Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions" class="text-break">
-Class FileCuratorCanisterExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Registration/CanisterExtension.cs/#L24"><i class="bi bi-code-slash"></i></a>
+Class FileCuratorCanisterExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/FileCurator/Registration/CanisterExtension.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -157,7 +157,7 @@ Class FileCuratorCanisterExtensions  <a class="header-action link-secondary" tit
 
   <h3 id="Microsoft_Extensions_DependencyInjection_FileCuratorCanisterExtensions_RegisterFileCurator_Canister_Interfaces_ICanisterConfiguration_" data-uid="Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.RegisterFileCurator(Canister.Interfaces.ICanisterConfiguration)">
   RegisterFileCurator(ICanisterConfiguration?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Registration/CanisterExtension.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/FileCurator/Registration/CanisterExtension.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Registers the big book of data types.</p>
@@ -170,15 +170,54 @@ Class FileCuratorCanisterExtensions  <a class="header-action link-secondary" tit
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>bootstrapper</code> <a class="xref" href="https://github.com/JaCraig/Canister/blob/master/src/Canister.IoC/Interfaces/ICanisterConfiguration.cs">ICanisterConfiguration</a></dt>
+    <dt><code>bootstrapper</code> <a class="xref" href="https://github.com/JaCraig/Canister/blob/master/Canister.IoC/Interfaces/ICanisterConfiguration.cs">ICanisterConfiguration</a></dt>
     <dd><p>The bootstrapper.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://github.com/JaCraig/Canister/blob/master/src/Canister.IoC/Interfaces/ICanisterConfiguration.cs">ICanisterConfiguration</a></dt>
+    <dt><a class="xref" href="https://github.com/JaCraig/Canister/blob/master/Canister.IoC/Interfaces/ICanisterConfiguration.cs">ICanisterConfiguration</a></dt>
     <dd><p>The bootstrapper</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Microsoft_Extensions_DependencyInjection_FileCuratorCanisterExtensions_RegisterFileCurator_" data-uid="Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.RegisterFileCurator*"></a>
+
+  <h3 id="Microsoft_Extensions_DependencyInjection_FileCuratorCanisterExtensions_RegisterFileCurator_Microsoft_Extensions_DependencyInjection_IServiceCollection_" data-uid="Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.RegisterFileCurator(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+  RegisterFileCurator(IServiceCollection?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/FileCurator/blob/master/FileCurator/Registration/CanisterExtension.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Registers the FileCurator services with the specified service collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IServiceCollection? RegisterFileCurator(this IServiceCollection? services)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>services</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
+    <dd><p>The service collection to register the services with.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
+    <dd><p>The updated service collection.</p>
 </dd>
   </dl>
 
@@ -196,7 +235,7 @@ Class FileCuratorCanisterExtensions  <a class="header-action link-secondary" tit
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/JaCraig/FileCurator/blob/master/src/FileCurator/Registration/CanisterExtension.cs/#L24" class="edit-link">Edit this page</a>
+          <a href="https://github.com/JaCraig/FileCurator/blob/master/FileCurator/Registration/CanisterExtension.cs/#L30" class="edit-link">Edit this page</a>
         </div>
 
 

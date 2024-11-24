@@ -76,10 +76,13 @@
 <p><a href="https://github.com/JaCraig/FileCurator/actions/workflows/dotnet-publish.yml"><img src="https://github.com/JaCraig/FileCurator/actions/workflows/dotnet-publish.yml/badge.svg" alt=".NET Publish"></a></p>
 <p>FileCurator is a library used to simplify file access and management on your system. It aims to make accessing a local file as simple as accessing a URL or 3rd party system like Dropbox.</p>
 <h2 id="basic-usage">Basic Usage</h2>
-<p>The system relies on an IoC wrapper called <a href="https://github.com/JaCraig/Canister">Canister</a>. While Canister has a built in IoC container, it's purpose is to actually wrap your container of choice in a way that simplifies setup and usage for other libraries that don't want to be tied to a specific IoC container. FileCurator uses it to detect and pull in file system providers. As such you must set up Canister in order to use FileCurator:</p>
-<pre><code>services.AddCanisterModules(configure =&gt; configure.RegisterFileCurator());
+<p>The system relies on your app's ServiceCollection in order to wire itself up correctly. In order to use the system you need to add the following line to your application's startup code:</p>
+<pre><code>services.RegisterFileCurator();
 </code></pre>
-<p>This line is required prior to using the extension methods, FileInfo, and DirectoryInfo classes for the first time. Once Canister is set up, you can call the classes provided:</p>
+<p>Or if you're using Canister:</p>
+<pre><code>services.AddCanisterModules();
+</code></pre>
+<p>This line is required prior to using the extension methods, FileInfo, and DirectoryInfo classes for the first time. Once it is set up, you can call the classes provided:</p>
 <pre><code>var MyFile = new FileInfo(&quot;~/MyFile.txt&quot;);
 MyFile = new FileInfo(&quot;./MyFile.txt&quot;);
 MyFile = new FileInfo(&quot;MyFile.txt&quot;);
@@ -139,15 +142,11 @@ MyFile = new FileInfo(&quot;resource://MyDLL/MyDLL.Resources.MyFile.txt&quot;);
 <li>VCF (vCard files)</li>
 <li>Word (DOCX files only)</li>
 <li>XML</li>
-<li>And of course TXT files...</li>
-</ul>
-<p>There are also a few items that are not .Net Core/.Net Standard supported in the FileCurator.Windows package:</p>
-<ul>
 <li>PDF</li>
 <li>MSG files</li>
-<li>RTF</li>
+<li>And of course TXT files</li>
 </ul>
-<p>Once a .Net Standard library is available to parse these items that is open sourced (and without a funky license), these will be moved into the main library. Anyway, in order to parse a file you would do the following:</p>
+<p>In order to parse a file you would do the following:</p>
 <pre><code>var MyFile = new FileInfo(&quot;~/MyFile.txt&quot;).Parse();
 </code></pre>
 <p>The above code opens the MyFile.txt document and parses it into a IGenericFile object. This object contains a Content property, a Title property, and a Meta property. For the above text file, only the Content property is filled in. However you can also do this:</p>
@@ -269,14 +268,10 @@ public class TxtWriter : IGenericFileWriter
 <h2 id="installation">Installation</h2>
 <p>The library is available via Nuget with the package name &quot;FileCurator&quot;. To install it run the following command in the Package Manager Console:</p>
 <p>Install-Package FileCurator</p>
-<p>The file parsers that are not .Net Standard yet are also available with the package name of &quot;FileCurator.Windows&quot;. To install it run the following command in the Package Manager Console:</p>
-<p>Install-Package FileCurator.Windows</p>
-<p>This package, however, is .Net Framework only and generally not needed as most formats have been moved to .Net Standard/.Net 5+.</p>
 <h2 id="build-process">Build Process</h2>
 <p>In order to build the library you will require the following as a minimum:</p>
 <ol>
-<li>Visual Studio 2019</li>
-<li>.Net 5</li>
+<li>Visual Studio 2022</li>
 </ol>
 <p>Other than that, just clone the project and you should be able to load the solution and build without too much effort.</p>
 
