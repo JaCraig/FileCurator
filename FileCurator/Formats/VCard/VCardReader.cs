@@ -56,7 +56,7 @@ namespace FileCurator.Formats.VCard
         public override ICard Read(Stream stream)
         {
             var ReturnValue = new GenericCard();
-            string Content = GetData(stream);
+            var Content = GetData(stream);
             foreach (Match TempMatch in EntryRegex.Matches(Content))
             {
                 var Title = TempMatch.Groups["Title"].Value.ToUpperInvariant().Trim();
@@ -79,7 +79,7 @@ namespace FileCurator.Formats.VCard
                 }
                 else if (Title.StartsWith("TEL", StringComparison.Ordinal))
                 {
-                    var Type = TypeRegex.Match(Title);
+                    Match Type = TypeRegex.Match(Title);
                     ReturnValue.DirectDial.Add(new PhoneNumber
                     {
                         Number = Value,
@@ -88,7 +88,7 @@ namespace FileCurator.Formats.VCard
                 }
                 else if (Title.StartsWith("EMAIL", StringComparison.Ordinal))
                 {
-                    var Type = TypeRegex.Match(Title);
+                    Match Type = TypeRegex.Match(Title);
                     ReturnValue.Email.Add(new MailAddress
                     {
                         EmailAddress = Value,
@@ -109,7 +109,7 @@ namespace FileCurator.Formats.VCard
                 }
                 else if (Title.StartsWith("ADR", StringComparison.Ordinal))
                 {
-                    var Type = TypeRegex.Match(Title);
+                    Match Type = TypeRegex.Match(Title);
                     var Name = Value.Split(';');
                     ReturnValue.Addresses.Add(new Address
                     {
@@ -135,7 +135,7 @@ namespace FileCurator.Formats.VCard
         {
             try
             {
-                return stream?.ReadAll().Replace("\r\n ", string.Empty) ?? "";
+                return stream?.ReadAll().Replace("\r\n ", string.Empty).Replace("\n ", string.Empty).Replace("\n ", string.Empty) ?? "";
             }
             catch
             {
