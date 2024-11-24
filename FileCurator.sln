@@ -12,9 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4E3A6A17-29C8-4A85-8B84-1E2D2487AE77}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileCurator", "src\FileCurator\FileCurator.csproj", "{800CBF12-4F73-46BB-8DDC-EE5D6279CD15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileCurator", "FileCurator\FileCurator.csproj", "{800CBF12-4F73-46BB-8DDC-EE5D6279CD15}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileCurator.Tests", "test\FileCurator.Tests\FileCurator.Tests.csproj", "{92A08683-DE2A-4D41-9713-EB766589329E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileCurator.Tests", "FileCurator.Tests\FileCurator.Tests.csproj", "{92A08683-DE2A-4D41-9713-EB766589329E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileCurator.Example", "FileCurator.Example\FileCurator.Example.csproj", "{C35EDEC9-B798-424C-8FCA-C796C166278A}"
 EndProject

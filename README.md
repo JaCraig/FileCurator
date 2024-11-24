@@ -6,11 +6,15 @@ FileCurator is a library used to simplify file access and management on your sys
 
 ## Basic Usage
 
-The system relies on an IoC wrapper called [Canister](https://github.com/JaCraig/Canister). While Canister has a built in IoC container, it's purpose is to actually wrap your container of choice in a way that simplifies setup and usage for other libraries that don't want to be tied to a specific IoC container. FileCurator uses it to detect and pull in file system providers. As such you must set up Canister in order to use FileCurator:
+The system relies on your app's ServiceCollection in order to wire itself up correctly. In order to use the system you need to add the following line to your application's startup code:
 
-    services.AddCanisterModules(configure => configure.RegisterFileCurator());
+    services.RegisterFileCurator();
+
+Or if you're using Canister:
+
+    services.AddCanisterModules();
 	
-This line is required prior to using the extension methods, FileInfo, and DirectoryInfo classes for the first time. Once Canister is set up, you can call the classes provided:
+This line is required prior to using the extension methods, FileInfo, and DirectoryInfo classes for the first time. Once it is set up, you can call the classes provided:
 
     var MyFile = new FileInfo("~/MyFile.txt");
 	MyFile = new FileInfo("./MyFile.txt");
@@ -81,15 +85,11 @@ FileCurator also has a number of file formats that it understands and can parse:
 * VCF (vCard files)
 * Word (DOCX files only)
 * XML
-* And of course TXT files...
-
-There are also a few items that are not .Net Core/.Net Standard supported in the FileCurator.Windows package:
-
 * PDF
 * MSG files
-* RTF
+* And of course TXT files
 
-Once a .Net Standard library is available to parse these items that is open sourced (and without a funky license), these will be moved into the main library. Anyway, in order to parse a file you would do the following:
+In order to parse a file you would do the following:
 
     var MyFile = new FileInfo("~/MyFile.txt").Parse();
 	
@@ -228,17 +228,10 @@ The library is available via Nuget with the package name "FileCurator". To insta
 
 Install-Package FileCurator
 
-The file parsers that are not .Net Standard yet are also available with the package name of "FileCurator.Windows". To install it run the following command in the Package Manager Console:
-
-Install-Package FileCurator.Windows
-
-This package, however, is .Net Framework only and generally not needed as most formats have been moved to .Net Standard/.Net 5+.
-
 ## Build Process
 
 In order to build the library you will require the following as a minimum:
 
-1. Visual Studio 2019
-2. .Net 5
+1. Visual Studio 2022
 
 Other than that, just clone the project and you should be able to load the solution and build without too much effort.

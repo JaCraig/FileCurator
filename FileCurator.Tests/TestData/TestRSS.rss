@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?>
+    <?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?>
+        <rss xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0"
+            version="2.0">
+            <channel>
+                <title>The Underfold</title>
+                <link>http://theunderfold.com</link>
+                <description>A comic by Brian Russell where Brian and his bag-faced friend, JB embark on misadventures!</description>
+                <language>en-US</language>
+                <lastBuildDate>Thu, 24 Aug 2017 20:00:21 PDT</lastBuildDate>
+                <sy:updatePeriod xmlns:sy="http://purl.org/rss/1.0/modules/syndication/">hourly</sy:updatePeriod>
+                <sy:updateFrequency xmlns:sy="http://purl.org/rss/1.0/modules/syndication/">1</sy:updateFrequency>
+                <site xmlns="com-wordpress:feed-additions:1">21458600</site>
+                <feedburner:info uri="theunderfold" />
+                <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/"
+                />
+                <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license>
+                <xhtml:meta xmlns:xhtml="http://www.w3.org/1999/xhtml"
+                    name="robots" content="noindex" />
+                <image>
+                    <link>http://theunderfold.com</link>
+                    <url>http://theunderfold.com/wp-content/uploads/2015/03/underfold-comics-logo-small.png</url>
+                    <title>Underfold Comics</title>
+                </image>
+                <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://theunderfold.com/feed/"
+                />
+                <feedburner:emailServiceId>theunderfold</feedburner:emailServiceId>
+                <feedburner:feedburnerHostname>https://feedburner.google.com</feedburner:feedburnerHostname>
+                <feedburner:feedFlare href="https://add.my.yahoo.com/rss?url=http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif">Subscribe with My Yahoo!</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="http://www.newsgator.com/images/ngsub1.gif">Subscribe with NewsGator</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://feeds.my.aol.com/add.jsp?url=http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="http://o.aolcdn.com/favorites.my.aol.com/webmaster/ffclient/webroot/locale/en-US/images/myAOLButtonSmall.gif">Subscribe with My AOL</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://www.bloglines.com/sub/http://theunderfold.com/feed/"
+                    src="http://www.bloglines.com/images/sub_modern11.gif">Subscribe with Bloglines</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://www.netvibes.com/subscribe.php?url=http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="//www.netvibes.com/img/add2netvibes.gif">Subscribe with Netvibes</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://fusion.google.com/add?feedurl=http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="http://buttons.googlesyndication.com/fusion/add.gif">Subscribe with Google</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://www.pageflakes.com/subscribe.aspx?url=http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="http://www.pageflakes.com/ImageFile.ashx?instanceId=Static_4&amp;fileName=ATP_blu_91x17.gif">Subscribe with Pageflakes</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://www.plusmo.com/add?url=http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="http://plusmo.com/res/graphics/fbplusmo.gif">Subscribe with Plusmo</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://www.thefreedictionary.com/_/hp/AddRSS.aspx?http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="http://img.tfd.com/hp/addToTheFreeDictionary.gif">Subscribe with The Free Dictionary</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://www.bitty.com/manual/?contenttype=rssfeed&amp;contentvalue=http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="http://www.bitty.com/img/bittychicklet_91x17.gif">Subscribe with Bitty Browser</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://www.live.com/?add=http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="http://tkfiles.storage.msn.com/x1piYkpqHC_35nIp1gLE68-wvzLZO8iXl_JMledmJQXP-XTBOLfmQv4zhj4MhcWEJh_GtoBIiAl1Mjh-ndp9k47If7hTaFno0mxW9_i3p_5qQw">Subscribe with Live.com</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://mix.excite.eu/add?feedurl=http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="http://image.excite.co.uk/mix/addtomix.gif">Subscribe with Excite MIX</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://www.webwag.com/wwgthis.php?url=http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="http://www.webwag.com/images/wwgthis.gif">Subscribe with Webwag</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://www.podcastready.com/oneclick_bookmark.php?url=http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="http://www.podcastready.com/images/podcastready_button.gif">Subscribe with Podcast Ready</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://www.wikio.com/subscribe?url=http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="http://www.wikio.com/shared/img/add2wikio.gif">Subscribe with Wikio</feedburner:feedFlare>
+                <feedburner:feedFlare href="http://www.dailyrotation.com/index.php?feed=http%3A%2F%2Ftheunderfold.com%2Ffeed%2F"
+                    src="http://www.dailyrotation.com/rss-dr2.gif">Subscribe with Daily Rotation</feedburner:feedFlare>
+                <feedburner:browserFriendly>Greetings RSS Fold! Shh! Don't tell anyone, but you are way cooler than all the other Underfold fans. Just
+                    sayin'.</feedburner:browserFriendly>
+                <item>
+                    <title>Power Rangers</title>
+                    <link>http://feedproxy.google.com/~r/theunderfold/~3/UduxH9X81qI/</link>
+                    <category>All New Underfold</category>
+                    <category>bonus comic</category>
+                    <category>IT</category>
+                    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Russell</dc:creator>
+                    <pubDate>Thu, 24 Aug 2017 20:00:21 PDT</pubDate>
+                    <guid isPermaLink="false">http://theunderfold.com/?p=9023</guid>
+                    <description>&lt;p&gt;I don&amp;#8217;t even really know. This is just silly.&lt;/p&gt; &lt;p&gt;The post &lt;a rel="nofollow"
+                        href="http://theunderfold.com/2017/08/25/power-rangers/"&gt;Power Rangers&lt;/a&gt; appeared first
+                        on &lt;a rel="nofollow" href="http://theunderfold.com"&gt;Underfold Comics&lt;/a&gt;.&lt;/p&gt;&lt;div
+                        class="feedflare"&gt; &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=UduxH9X81qI:8mOfj0YlM-Q:yIl2AUoC8zA"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=UduxH9X81qI:8mOfj0YlM-Q:gIN9vFwOqvQ"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?i=UduxH9X81qI:8mOfj0YlM-Q:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=UduxH9X81qI:8mOfj0YlM-Q:qj6IDK7rITs"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/theunderfold/~4/UduxH9X81qI" height="1" width="1"
+                        alt=""/&gt;</description>
+                    <post-id xmlns="com-wordpress:feed-additions:1">9023</post-id>
+                    <feedburner:origLink>http://theunderfold.com/2017/08/25/power-rangers/</feedburner:origLink>
+                </item>
+                <item>
+                    <title>Wish</title>
+                    <link>http://feedproxy.google.com/~r/theunderfold/~3/SfYq_AqtGxQ/</link>
+                    <category>All New Underfold</category>
+                    <category>bonus comic</category>
+                    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Russell</dc:creator>
+                    <pubDate>Wed, 23 Aug 2017 03:00:33 PDT</pubDate>
+                    <guid isPermaLink="false">http://theunderfold.com/?p=9018</guid>
+                    <description>&lt;p&gt;Dream a little dream.&lt;/p&gt; &lt;p&gt;The post &lt;a rel="nofollow" href="http://theunderfold.com/2017/08/23/wish/"&gt;Wish&lt;/a&gt;
+                        appeared first on &lt;a rel="nofollow" href="http://theunderfold.com"&gt;Underfold Comics&lt;/a&gt;.&lt;/p&gt;&lt;div
+                        class="feedflare"&gt; &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=SfYq_AqtGxQ:E0bH3nHZOZ0:yIl2AUoC8zA"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=SfYq_AqtGxQ:E0bH3nHZOZ0:gIN9vFwOqvQ"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?i=SfYq_AqtGxQ:E0bH3nHZOZ0:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=SfYq_AqtGxQ:E0bH3nHZOZ0:qj6IDK7rITs"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/theunderfold/~4/SfYq_AqtGxQ" height="1" width="1"
+                        alt=""/&gt;</description>
+                    <post-id xmlns="com-wordpress:feed-additions:1">9018</post-id>
+                    <feedburner:origLink>http://theunderfold.com/2017/08/23/wish/</feedburner:origLink>
+                </item>
+                <item>
+                    <title>Research</title>
+                    <link>http://feedproxy.google.com/~r/theunderfold/~3/1FLbyopVTSo/</link>
+                    <category>All New Underfold</category>
+                    <category>bonus comic</category>
+                    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Russell</dc:creator>
+                    <pubDate>Mon, 21 Aug 2017 03:02:40 PDT</pubDate>
+                    <guid isPermaLink="false">http://theunderfold.com/?p=9015</guid>
+                    <description>&lt;p&gt;Wife: What&amp;#8217;s your comic about for tomorrow? Me: *timidly*&amp;#8230; uh&amp;#8230;
+                        wiping your butt&amp;#8230; Wife: *sighs until it&amp;#8217;s next week*&lt;/p&gt; &lt;p&gt;The post
+                        &lt;a rel="nofollow" href="http://theunderfold.com/2017/08/21/research/"&gt;Research&lt;/a&gt; appeared
+                        first on &lt;a rel="nofollow" href="http://theunderfold.com"&gt;Underfold Comics&lt;/a&gt;.&lt;/p&gt;&lt;div
+                        class="feedflare"&gt; &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=1FLbyopVTSo:tJbpEKqnBN4:yIl2AUoC8zA"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=1FLbyopVTSo:tJbpEKqnBN4:gIN9vFwOqvQ"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?i=1FLbyopVTSo:tJbpEKqnBN4:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=1FLbyopVTSo:tJbpEKqnBN4:qj6IDK7rITs"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/theunderfold/~4/1FLbyopVTSo" height="1" width="1"
+                        alt=""/&gt;</description>
+                    <post-id xmlns="com-wordpress:feed-additions:1">9015</post-id>
+                    <feedburner:origLink>http://theunderfold.com/2017/08/21/research/</feedburner:origLink>
+                </item>
+                <item>
+                    <title>Review</title>
+                    <link>http://feedproxy.google.com/~r/theunderfold/~3/29KfsctPEIs/</link>
+                    <category>All New Underfold</category>
+                    <category>IT</category>
+                    <category>Work</category>
+                    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Russell</dc:creator>
+                    <pubDate>Thu, 17 Aug 2017 20:00:00 PDT</pubDate>
+                    <guid isPermaLink="false">http://theunderfold.com/?p=9013</guid>
+                    <description>&lt;p&gt;No condescension at all? What an amateur.&lt;/p&gt; &lt;p&gt;The post &lt;a rel="nofollow" href="http://theunderfold.com/2017/08/18/review/"&gt;Review&lt;/a&gt;
+                        appeared first on &lt;a rel="nofollow" href="http://theunderfold.com"&gt;Underfold Comics&lt;/a&gt;.&lt;/p&gt;&lt;div
+                        class="feedflare"&gt; &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=29KfsctPEIs:gWicYDHFrt8:yIl2AUoC8zA"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=29KfsctPEIs:gWicYDHFrt8:gIN9vFwOqvQ"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?i=29KfsctPEIs:gWicYDHFrt8:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=29KfsctPEIs:gWicYDHFrt8:qj6IDK7rITs"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/theunderfold/~4/29KfsctPEIs" height="1" width="1"
+                        alt=""/&gt;</description>
+                    <post-id xmlns="com-wordpress:feed-additions:1">9013</post-id>
+                    <feedburner:origLink>http://theunderfold.com/2017/08/18/review/</feedburner:origLink>
+                </item>
+                <item>
+                    <title>Mouse</title>
+                    <link>http://feedproxy.google.com/~r/theunderfold/~3/4GBCE5RspXo/</link>
+                    <category>All New Underfold</category>
+                    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Russell</dc:creator>
+                    <pubDate>Tue, 15 Aug 2017 22:06:13 PDT</pubDate>
+                    <guid isPermaLink="false">http://theunderfold.com/?p=9012</guid>
+                    <description>&lt;p&gt;In truth, I came up with this comic watching a show on Disney Jr. with my kids.&lt;/p&gt; &lt;p&gt;The
+                        post &lt;a rel="nofollow" href="http://theunderfold.com/2017/08/16/mouse/"&gt;Mouse&lt;/a&gt; appeared
+                        first on &lt;a rel="nofollow" href="http://theunderfold.com"&gt;Underfold Comics&lt;/a&gt;.&lt;/p&gt;&lt;div
+                        class="feedflare"&gt; &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=4GBCE5RspXo:yjhv9C131ew:yIl2AUoC8zA"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=4GBCE5RspXo:yjhv9C131ew:gIN9vFwOqvQ"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?i=4GBCE5RspXo:yjhv9C131ew:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=4GBCE5RspXo:yjhv9C131ew:qj6IDK7rITs"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/theunderfold/~4/4GBCE5RspXo" height="1" width="1"
+                        alt=""/&gt;</description>
+                    <post-id xmlns="com-wordpress:feed-additions:1">9012</post-id>
+                    <feedburner:origLink>http://theunderfold.com/2017/08/16/mouse/</feedburner:origLink>
+                </item>
+                <item>
+                    <title>Congrats!</title>
+                    <link>http://feedproxy.google.com/~r/theunderfold/~3/Zc0kaYJ4H0k/</link>
+                    <category>All New Underfold</category>
+                    <category>Co-workers</category>
+                    <category>Work</category>
+                    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Russell</dc:creator>
+                    <pubDate>Sun, 13 Aug 2017 22:08:50 PDT</pubDate>
+                    <guid isPermaLink="false">http://theunderfold.com/?p=9008</guid>
+                    <description>&lt;p&gt;Celebrate your work anniversaries with pride!&lt;/p&gt; &lt;p&gt;The post &lt;a rel="nofollow"
+                        href="http://theunderfold.com/2017/08/14/congrats/"&gt;Congrats!&lt;/a&gt; appeared first on &lt;a
+                        rel="nofollow" href="http://theunderfold.com"&gt;Underfold Comics&lt;/a&gt;.&lt;/p&gt;&lt;div class="feedflare"&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=Zc0kaYJ4H0k:odZ2aYo68zU:yIl2AUoC8zA"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=Zc0kaYJ4H0k:odZ2aYo68zU:gIN9vFwOqvQ"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?i=Zc0kaYJ4H0k:odZ2aYo68zU:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=Zc0kaYJ4H0k:odZ2aYo68zU:qj6IDK7rITs"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/theunderfold/~4/Zc0kaYJ4H0k" height="1" width="1"
+                        alt=""/&gt;</description>
+                    <post-id xmlns="com-wordpress:feed-additions:1">9008</post-id>
+                    <feedburner:origLink>http://theunderfold.com/2017/08/14/congrats/</feedburner:origLink>
+                </item>
+                <item>
+                    <title>Degree</title>
+                    <link>http://feedproxy.google.com/~r/theunderfold/~3/v7QCJbsSjnQ/</link>
+                    <category>All New Underfold</category>
+                    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Russell</dc:creator>
+                    <pubDate>Mon, 07 Aug 2017 01:00:28 PDT</pubDate>
+                    <guid isPermaLink="false">http://theunderfold.com/?p=9005</guid>
+                    <description>&lt;p&gt;Let&amp;#8217;s all celebrate those student loans!&lt;/p&gt; &lt;p&gt;The post &lt;a rel="nofollow"
+                        href="http://theunderfold.com/2017/08/07/degree/"&gt;Degree&lt;/a&gt; appeared first on &lt;a rel="nofollow"
+                        href="http://theunderfold.com"&gt;Underfold Comics&lt;/a&gt;.&lt;/p&gt;&lt;div class="feedflare"&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=v7QCJbsSjnQ:tqOYYmukYGk:yIl2AUoC8zA"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=v7QCJbsSjnQ:tqOYYmukYGk:gIN9vFwOqvQ"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?i=v7QCJbsSjnQ:tqOYYmukYGk:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=v7QCJbsSjnQ:tqOYYmukYGk:qj6IDK7rITs"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/theunderfold/~4/v7QCJbsSjnQ" height="1" width="1"
+                        alt=""/&gt;</description>
+                    <post-id xmlns="com-wordpress:feed-additions:1">9005</post-id>
+                    <feedburner:origLink>http://theunderfold.com/2017/08/07/degree/</feedburner:origLink>
+                </item>
+                <item>
+                    <title>Fart</title>
+                    <link>http://feedproxy.google.com/~r/theunderfold/~3/Scn2iJMNOPo/</link>
+                    <category>All New Underfold</category>
+                    <category>Co-workers</category>
+                    <category>Work</category>
+                    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Russell</dc:creator>
+                    <pubDate>Thu, 03 Aug 2017 20:00:54 PDT</pubDate>
+                    <guid isPermaLink="false">http://theunderfold.com/?p=9001</guid>
+                    <description>&lt;p&gt;It&amp;#8217;s been a while since we had a fart joke.&lt;/p&gt; &lt;p&gt;The post &lt;a rel="nofollow"
+                        href="http://theunderfold.com/2017/08/04/fart/"&gt;Fart&lt;/a&gt; appeared first on &lt;a rel="nofollow"
+                        href="http://theunderfold.com"&gt;Underfold Comics&lt;/a&gt;.&lt;/p&gt;&lt;div class="feedflare"&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=Scn2iJMNOPo:1lOIH8w_iM4:yIl2AUoC8zA"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=Scn2iJMNOPo:1lOIH8w_iM4:gIN9vFwOqvQ"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?i=Scn2iJMNOPo:1lOIH8w_iM4:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=Scn2iJMNOPo:1lOIH8w_iM4:qj6IDK7rITs"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/theunderfold/~4/Scn2iJMNOPo" height="1" width="1"
+                        alt=""/&gt;</description>
+                    <post-id xmlns="com-wordpress:feed-additions:1">9001</post-id>
+                    <feedburner:origLink>http://theunderfold.com/2017/08/04/fart/</feedburner:origLink>
+                </item>
+                <item>
+                    <title>Shoe</title>
+                    <link>http://feedproxy.google.com/~r/theunderfold/~3/_vVgbLSEW9c/</link>
+                    <category>All New Underfold</category>
+                    <category>Family</category>
+                    <category>Kids</category>
+                    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Russell</dc:creator>
+                    <pubDate>Tue, 01 Aug 2017 20:00:27 PDT</pubDate>
+                    <guid isPermaLink="false">http://theunderfold.com/?p=8999</guid>
+                    <description>&lt;p&gt;It&amp;#8217;s not a joke. It&amp;#8217;s just real life.&lt;/p&gt; &lt;p&gt;The post &lt;a
+                        rel="nofollow" href="http://theunderfold.com/2017/08/02/shoe/"&gt;Shoe&lt;/a&gt; appeared first on
+                        &lt;a rel="nofollow" href="http://theunderfold.com"&gt;Underfold Comics&lt;/a&gt;.&lt;/p&gt;&lt;div
+                        class="feedflare"&gt; &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=_vVgbLSEW9c:fRGnjKyt5aY:yIl2AUoC8zA"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=_vVgbLSEW9c:fRGnjKyt5aY:gIN9vFwOqvQ"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?i=_vVgbLSEW9c:fRGnjKyt5aY:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=_vVgbLSEW9c:fRGnjKyt5aY:qj6IDK7rITs"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/theunderfold/~4/_vVgbLSEW9c" height="1" width="1"
+                        alt=""/&gt;</description>
+                    <post-id xmlns="com-wordpress:feed-additions:1">8999</post-id>
+                    <feedburner:origLink>http://theunderfold.com/2017/08/02/shoe/</feedburner:origLink>
+                </item>
+                <item>
+                    <title>Table</title>
+                    <link>http://feedproxy.google.com/~r/theunderfold/~3/Yo9kCl-E-MY/</link>
+                    <category>All New Underfold</category>
+                    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Brian Russell</dc:creator>
+                    <pubDate>Sun, 30 Jul 2017 20:25:17 PDT</pubDate>
+                    <guid isPermaLink="false">http://theunderfold.com/?p=8996</guid>
+                    <description>&lt;p&gt;This comic is based on a tweet from @NewDadNotes!&lt;/p&gt; &lt;p&gt;The post &lt;a rel="nofollow"
+                        href="http://theunderfold.com/2017/07/31/table/"&gt;Table&lt;/a&gt; appeared first on &lt;a rel="nofollow"
+                        href="http://theunderfold.com"&gt;Underfold Comics&lt;/a&gt;.&lt;/p&gt;&lt;div class="feedflare"&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=Yo9kCl-E-MY:Gm44qlzhZF0:yIl2AUoC8zA"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=Yo9kCl-E-MY:Gm44qlzhZF0:gIN9vFwOqvQ"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?i=Yo9kCl-E-MY:Gm44qlzhZF0:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;a href="http://feeds.feedburner.com/~ff/theunderfold?a=Yo9kCl-E-MY:Gm44qlzhZF0:qj6IDK7rITs"&gt;&lt;img
+                        src="http://feeds.feedburner.com/~ff/theunderfold?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+                        &lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/theunderfold/~4/Yo9kCl-E-MY" height="1" width="1"
+                        alt=""/&gt;</description>
+                    <post-id xmlns="com-wordpress:feed-additions:1">8996</post-id>
+                    <feedburner:origLink>http://theunderfold.com/2017/07/31/table/</feedburner:origLink>
+                </item>
+            </channel>
+        </rss>

@@ -3,13 +3,13 @@
     {
       "src": [
         {
-          "files": ["src/FileCurator/FileCurator.csproj"],
+          "files": ["FileCurator/FileCurator.csproj"],
           "src": "../"
         }
       ],
       "dest": "api",
       "properties": {
-        "TargetFramework": "net6.0"
+        "TargetFramework": "net8.0"
       },
       "includePrivateMembers": false,
       "disableGitFeatures": false,
