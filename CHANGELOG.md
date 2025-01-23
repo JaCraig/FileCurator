@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.0.2"></a>
+## [5.0.2](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.2) (2025-01-23)
+
+### Bug Fixes
+
+* bump BigBook in /FileCurator in the dependencies group ([426bf60](https://www.github.com/JaCraig/FileCurator/commit/426bf6029148d7e1fec47e73aae0e5cdcdf37390))
+
+### Other
+
+* Merge pull request #349 from JaCraig/dependabot/nuget/FileCurator.Example/dependencies-64009d1b91 ([341d7e7](https://www.github.com/JaCraig/FileCurator/commit/341d7e71df683c5277a563dece15f39b1748c8dd))
+* Merge pull request #350 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-ae4dc51d69 ([bb531c6](https://www.github.com/JaCraig/FileCurator/commit/bb531c608e31ec93b3f038743e98d7dcca5553c6))
+* Merge pull request #351 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-637ad84d5b ([47ad73a](https://www.github.com/JaCraig/FileCurator/commit/47ad73a766e027879eeddbea4c56885c792b670b))
+* Merge pull request #352 from JaCraig/dependabot/nuget/FileCurator.Example/dependencies-67c686b7bb ([24e9a75](https://www.github.com/JaCraig/FileCurator/commit/24e9a755a0b8cebb6d7472a46972f361590863c4))
+* Merge pull request #353 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-37a7915f86 ([2ebf199](https://www.github.com/JaCraig/FileCurator/commit/2ebf1998ea91a18fcf1b62cf5c3bd1cbdb5796da))
+* Merge pull request #354 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-2d63af336a ([c2a59b0](https://www.github.com/JaCraig/FileCurator/commit/c2a59b00da172a5a7601ee75b871b34b1a87c302))
+* Merge pull request #355 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-109af05799 ([ed77b36](https://www.github.com/JaCraig/FileCurator/commit/ed77b367334390f8ea12a71df952320020083682))
+* Merge pull request #356 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-a3eea154c6 ([07e939c](https://www.github.com/JaCraig/FileCurator/commit/07e939ce298129b981fc5e74dbd031a9b22e4a10))
+* Merge pull request #357 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-293c44675e ([59a3459](https://www.github.com/JaCraig/FileCurator/commit/59a345961431e6e810fbbc72a1a63de70d0653df))
+* Merge pull request #358 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-8e84d5e7c4 ([e76689b](https://www.github.com/JaCraig/FileCurator/commit/e76689b37170f818e72ede4551ce39131f5e0aab))
+* Merge pull request #359 from JaCraig/dependabot/nuget/FileCurator/dependencies-0d060393c4 ([0862e6d](https://www.github.com/JaCraig/FileCurator/commit/0862e6d727a55d958cbf261fff810b68b3a89361))
+* bump HtmlAgilityPack ([0fcb4e7](https://www.github.com/JaCraig/FileCurator/commit/0fcb4e75c5a9aecabffaabef4c744ef3c6f90d03))
+* bump Mecha.xUnit in /FileCurator.Tests in the dependencies group ([fff796b](https://www.github.com/JaCraig/FileCurator/commit/fff796b5d18e874285cde7920523f44c4261df5e))
+* bump Mecha.xUnit in /FileCurator.Tests in the dependencies group ([e59faff](https://www.github.com/JaCraig/FileCurator/commit/e59faff6506568f479dfd9461bcad804bcbc1519))
+* bump Mecha.xUnit in /FileCurator.Tests in the dependencies group ([8925bab](https://www.github.com/JaCraig/FileCurator/commit/8925bab87b448139c0d9dca00dcb431fdf8acfad))
+* bump Mecha.xUnit in /FileCurator.Tests in the dependencies group ([b3aca6e](https://www.github.com/JaCraig/FileCurator/commit/b3aca6e0c1fd5d0ac49a73a652dd649adff0c5c0))
+* bump MimeKit in /FileCurator.Example in the dependencies group ([74a27dc](https://www.github.com/JaCraig/FileCurator/commit/74a27dcb1582ac1bd15961e52f1d04b10393463c))
+* bump the dependencies group in /FileCurator.Tests with 2 updates ([bbf0f17](https://www.github.com/JaCraig/FileCurator/commit/bbf0f1702db2677b9fee2ab82893c13cd7d092b1))
+* bump the dependencies group in /FileCurator.Tests with 2 updates ([28a3c08](https://www.github.com/JaCraig/FileCurator/commit/28a3c08ae447724fb0d3d157374386f01dfb6981))
+* bump the dependencies group in /FileCurator.Tests with 2 updates ([54ea0d7](https://www.github.com/JaCraig/FileCurator/commit/54ea0d715a52121fcf9de194f15a1f6c945aeac2))
+* bump xunit.runner.visualstudio ([7d1fa09](https://www.github.com/JaCraig/FileCurator/commit/7d1fa09ea5dbf0a70686364e82310105d692da17))
+
 <a name="5.0.1"></a>
 ## [5.0.1](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.1) (2024-12-09)
 
