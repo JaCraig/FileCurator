@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.0.3"></a>
+## [5.0.3](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.3) (2025-01-29)
+
+### Bug Fixes
+
+* bump BigBook in /FileCurator in the dependencies group ([8d1e55f](https://www.github.com/JaCraig/FileCurator/commit/8d1e55f23de5566f43069ab53228dc366d346b24))
+
+### Other
+
+* Merge pull request #360 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-cdc5eca79b ([532fa8e](https://www.github.com/JaCraig/FileCurator/commit/532fa8e401d0e0c3c78dfc9984204939d04f2f10))
+* Merge pull request #361 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-bebb527868 ([ba15a46](https://www.github.com/JaCraig/FileCurator/commit/ba15a467c31002398e0fe36bb3ec170982af9bd3))
+* Merge pull request #362 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-836e21bf11 ([bed167b](https://www.github.com/JaCraig/FileCurator/commit/bed167b5600268eace2469ce48e42c5b1c43108b))
+* Merge pull request #363 from JaCraig/dependabot/nuget/FileCurator/dependencies-8512ba2625 ([0e782c5](https://www.github.com/JaCraig/FileCurator/commit/0e782c5b9ba66789307f4bb439355f837499f6a3))
+* bump Mecha.xUnit in /FileCurator.Tests in the dependencies group ([df9a189](https://www.github.com/JaCraig/FileCurator/commit/df9a189fdc7b14cfad1ef0403b68d7632559c800))
+* bump MimeKit in /FileCurator.Tests in the dependencies group ([b221732](https://www.github.com/JaCraig/FileCurator/commit/b22173250cd33a9599dbdade0cea2a0b258d7100))
+* bump versionize in /FileCurator.Tests in the dependencies group ([1c74c2c](https://www.github.com/JaCraig/FileCurator/commit/1c74c2c37ba91e755c9feed4ebb7727c19d03cb1))
+
 <a name="5.0.2"></a>
 ## [5.0.2](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.2) (2025-01-23)
 
