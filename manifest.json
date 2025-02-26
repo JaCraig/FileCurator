@@ -18,7 +18,11 @@
           "relative_path": "api/FileCurator.BaseClasses.DirectoryBase-2.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.BaseClasses.DirectoryBase<TInternalDirectoryType, TDirectoryType>",
+      "Summary": "<p sourcefile=\"api/FileCurator.BaseClasses.DirectoryBase-2.yml\" sourcestartlinenumber=\"1\">Directory base class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -28,7 +32,11 @@
           "relative_path": "api/FileCurator.BaseClasses.FileBase-2.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.BaseClasses.FileBase<InternalFileType, FileType>",
+      "Summary": "<p sourcefile=\"api/FileCurator.BaseClasses.FileBase-2.yml\" sourcestartlinenumber=\"1\">Directory base class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -38,7 +46,11 @@
           "relative_path": "api/FileCurator.BaseClasses.FileSystemBase.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.BaseClasses.FileSystemBase",
+      "Summary": "<p sourcefile=\"api/FileCurator.BaseClasses.FileSystemBase.yml\" sourcestartlinenumber=\"1\">File system base class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -48,7 +60,11 @@
           "relative_path": "api/FileCurator.BaseClasses.LocalFileSystemBase.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.BaseClasses.LocalFileSystemBase",
+      "Summary": "<p sourcefile=\"api/FileCurator.BaseClasses.LocalFileSystemBase.yml\" sourcestartlinenumber=\"1\">Local file system base class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -58,7 +74,11 @@
           "relative_path": "api/FileCurator.BaseClasses.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.BaseClasses",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -68,7 +88,11 @@
           "relative_path": "api/FileCurator.Credentials.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Credentials",
+      "Summary": "<p sourcefile=\"api/FileCurator.Credentials.yml\" sourcestartlinenumber=\"1\">Credentials info</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -78,7 +102,11 @@
           "relative_path": "api/FileCurator.Data.FixedLength.BaseClasses.FieldBaseClass-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Data.FixedLength.BaseClasses.FieldBaseClass<TField>",
+      "Summary": "<p sourcefile=\"api/FileCurator.Data.FixedLength.BaseClasses.FieldBaseClass-1.yml\" sourcestartlinenumber=\"1\">Field base class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -88,7 +116,11 @@
           "relative_path": "api/FileCurator.Data.FixedLength.BaseClasses.FixedLengthBaseClass.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Data.FixedLength.BaseClasses.FixedLengthBaseClass",
+      "Summary": "<p sourcefile=\"api/FileCurator.Data.FixedLength.BaseClasses.FixedLengthBaseClass.yml\" sourcestartlinenumber=\"1\">Fixed length base class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -98,7 +130,11 @@
           "relative_path": "api/FileCurator.Data.FixedLength.BaseClasses.RecordBase-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Data.FixedLength.BaseClasses.RecordBase<TField>",
+      "Summary": "<p sourcefile=\"api/FileCurator.Data.FixedLength.BaseClasses.RecordBase-1.yml\" sourcestartlinenumber=\"1\">Record base class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -108,7 +144,11 @@
           "relative_path": "api/FileCurator.Data.FixedLength.BaseClasses.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Data.FixedLength.BaseClasses",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -118,7 +158,11 @@
           "relative_path": "api/FileCurator.Data.FixedLength.Interfaces.IField-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Data.FixedLength.Interfaces.IField<TField>",
+      "Summary": "<p sourcefile=\"api/FileCurator.Data.FixedLength.Interfaces.IField-1.yml\" sourcestartlinenumber=\"1\">Field interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -128,7 +172,11 @@
           "relative_path": "api/FileCurator.Data.FixedLength.Interfaces.IRecord.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Data.FixedLength.Interfaces.IRecord",
+      "Summary": "<p sourcefile=\"api/FileCurator.Data.FixedLength.Interfaces.IRecord.yml\" sourcestartlinenumber=\"1\">Record interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -138,7 +186,11 @@
           "relative_path": "api/FileCurator.Data.FixedLength.Interfaces.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Data.FixedLength.Interfaces",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -148,7 +200,11 @@
           "relative_path": "api/FileCurator.Data.FixedLength.StringField.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Data.FixedLength.StringField",
+      "Summary": "<p sourcefile=\"api/FileCurator.Data.FixedLength.StringField.yml\" sourcestartlinenumber=\"1\">Basic string field</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -158,7 +214,11 @@
           "relative_path": "api/FileCurator.Data.FixedLength.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Data.FixedLength",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -168,7 +228,11 @@
           "relative_path": "api/FileCurator.Default.AbsoluteLocalFileSystem.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.AbsoluteLocalFileSystem",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.AbsoluteLocalFileSystem.yml\" sourcestartlinenumber=\"1\">Absolute local file system</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -178,7 +242,11 @@
           "relative_path": "api/FileCurator.Default.Ftp.FtpDirectory.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.Ftp.FtpDirectory",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.Ftp.FtpDirectory.yml\" sourcestartlinenumber=\"1\">Ftp directory</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -188,7 +256,11 @@
           "relative_path": "api/FileCurator.Default.Ftp.FtpFile.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.Ftp.FtpFile",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.Ftp.FtpFile.yml\" sourcestartlinenumber=\"1\">Ftp File</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -198,7 +270,11 @@
           "relative_path": "api/FileCurator.Default.Ftp.FtpFileSystem.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.Ftp.FtpFileSystem",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.Ftp.FtpFileSystem.yml\" sourcestartlinenumber=\"1\">Ftp file system</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -208,7 +284,11 @@
           "relative_path": "api/FileCurator.Default.Ftp.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.Ftp",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -218,7 +298,11 @@
           "relative_path": "api/FileCurator.Default.HttpFileSystem.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.HttpFileSystem",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.HttpFileSystem.yml\" sourcestartlinenumber=\"1\">HTTP file system</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -228,7 +312,11 @@
           "relative_path": "api/FileCurator.Default.LocalDirectory.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.LocalDirectory",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.LocalDirectory.yml\" sourcestartlinenumber=\"1\">Local directory class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -238,7 +326,11 @@
           "relative_path": "api/FileCurator.Default.LocalFile.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.LocalFile",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.LocalFile.yml\" sourcestartlinenumber=\"1\">Basic local file class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -248,7 +340,11 @@
           "relative_path": "api/FileCurator.Default.Memory.MemoryDirectory.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.Memory.MemoryDirectory",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.Memory.MemoryDirectory.yml\" sourcestartlinenumber=\"1\">Memory directory</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -258,7 +354,11 @@
           "relative_path": "api/FileCurator.Default.Memory.MemoryFile.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.Memory.MemoryFile",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.Memory.MemoryFile.yml\" sourcestartlinenumber=\"1\">Memory file</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -268,7 +368,11 @@
           "relative_path": "api/FileCurator.Default.Memory.MemoryFileSystem.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.Memory.MemoryFileSystem",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.Memory.MemoryFileSystem.yml\" sourcestartlinenumber=\"1\">Temporary file system held in memory (this is not for memory mapped files)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -278,7 +382,11 @@
           "relative_path": "api/FileCurator.Default.Memory.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.Memory",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -288,7 +396,11 @@
           "relative_path": "api/FileCurator.Default.NetworkFileSystem.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.NetworkFileSystem",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.NetworkFileSystem.yml\" sourcestartlinenumber=\"1\">Network file system</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -298,7 +410,11 @@
           "relative_path": "api/FileCurator.Default.RelativeLocalFileSystem.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.RelativeLocalFileSystem",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.RelativeLocalFileSystem.yml\" sourcestartlinenumber=\"1\">Relative local file system</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -308,7 +424,11 @@
           "relative_path": "api/FileCurator.Default.ResourceDirectory.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.ResourceDirectory",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.ResourceDirectory.yml\" sourcestartlinenumber=\"1\">Directory class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -318,7 +438,11 @@
           "relative_path": "api/FileCurator.Default.ResourceFile.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.ResourceFile",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.ResourceFile.yml\" sourcestartlinenumber=\"1\">Basic Resource file class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -328,7 +452,11 @@
           "relative_path": "api/FileCurator.Default.ResourceFileSystem.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.ResourceFileSystem",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.ResourceFileSystem.yml\" sourcestartlinenumber=\"1\">Resource file system</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -338,7 +466,11 @@
           "relative_path": "api/FileCurator.Default.WebDirectory.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.WebDirectory",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.WebDirectory.yml\" sourcestartlinenumber=\"1\">Directory class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -348,7 +480,11 @@
           "relative_path": "api/FileCurator.Default.WebFile.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default.WebFile",
+      "Summary": "<p sourcefile=\"api/FileCurator.Default.WebFile.yml\" sourcestartlinenumber=\"1\">Web file</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -358,7 +494,11 @@
           "relative_path": "api/FileCurator.Default.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Default",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -368,7 +508,11 @@
           "relative_path": "api/FileCurator.DirectoryInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.DirectoryInfo",
+      "Summary": "<p sourcefile=\"api/FileCurator.DirectoryInfo.yml\" sourcestartlinenumber=\"1\">Directory info class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -378,7 +522,11 @@
           "relative_path": "api/FileCurator.Enums.CopyOptions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Enums.CopyOptions",
+      "Summary": "<p sourcefile=\"api/FileCurator.Enums.CopyOptions.yml\" sourcestartlinenumber=\"1\">Options used in directory copying</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -388,7 +536,11 @@
           "relative_path": "api/FileCurator.Enums.MimeType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Enums.MimeType",
+      "Summary": "<p sourcefile=\"api/FileCurator.Enums.MimeType.yml\" sourcestartlinenumber=\"1\">Mime type enum like static class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -398,7 +550,11 @@
           "relative_path": "api/FileCurator.Enums.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Enums",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -408,7 +564,11 @@
           "relative_path": "api/FileCurator.FileInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.FileInfo",
+      "Summary": "<p sourcefile=\"api/FileCurator.FileInfo.yml\" sourcestartlinenumber=\"1\">File info class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -418,7 +578,11 @@
           "relative_path": "api/FileCurator.FileSystem.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.FileSystem",
+      "Summary": "<p sourcefile=\"api/FileCurator.FileSystem.yml\" sourcestartlinenumber=\"1\">Main class for FileCurator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -428,7 +592,11 @@
           "relative_path": "api/FileCurator.Formats.BaseClasses.FormatBaseClass-3.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.BaseClasses.FormatBaseClass<TFileReader, TFileWriter, TFile>",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.BaseClasses.FormatBaseClass-3.yml\" sourcestartlinenumber=\"1\">Format base class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -438,7 +606,11 @@
           "relative_path": "api/FileCurator.Formats.BaseClasses.ReaderBaseClass-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.BaseClasses.ReaderBaseClass<TFile>",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.BaseClasses.ReaderBaseClass-1.yml\" sourcestartlinenumber=\"1\">Reader base class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -448,7 +620,11 @@
           "relative_path": "api/FileCurator.Formats.BaseClasses.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.BaseClasses",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -458,7 +634,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Address.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Address",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Address.yml\" sourcestartlinenumber=\"1\">Address class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -468,7 +648,11 @@
           "relative_path": "api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.BaseClasses.FileBaseClass<FormatFileType>",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.BaseClasses.FileBaseClass-1.yml\" sourcestartlinenumber=\"1\">File base class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -478,7 +662,11 @@
           "relative_path": "api/FileCurator.Formats.Data.BaseClasses.TableBaseClass.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.BaseClasses.TableBaseClass",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.BaseClasses.TableBaseClass.yml\" sourcestartlinenumber=\"1\">Table base class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -488,7 +676,11 @@
           "relative_path": "api/FileCurator.Formats.Data.BaseClasses.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.BaseClasses",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -498,7 +690,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Enums.Relationship.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Enums.Relationship",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Enums.Relationship.yml\" sourcestartlinenumber=\"1\">Enum defining relationships (used for XFN markup)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -508,7 +704,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Enums.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Enums",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -518,7 +718,11 @@
           "relative_path": "api/FileCurator.Formats.Data.GenericCalendar.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.GenericCalendar",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.GenericCalendar.yml\" sourcestartlinenumber=\"1\">Generic calendar item</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -528,7 +732,11 @@
           "relative_path": "api/FileCurator.Formats.Data.GenericCard.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.GenericCard",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.GenericCard.yml\" sourcestartlinenumber=\"1\">Generic card</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -538,7 +746,11 @@
           "relative_path": "api/FileCurator.Formats.Data.GenericCell.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.GenericCell",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.GenericCell.yml\" sourcestartlinenumber=\"1\">Generic cell data</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -548,7 +760,11 @@
           "relative_path": "api/FileCurator.Formats.Data.GenericEmail.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.GenericEmail",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.GenericEmail.yml\" sourcestartlinenumber=\"1\">Generic email message</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -558,7 +774,11 @@
           "relative_path": "api/FileCurator.Formats.Data.GenericFile.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.GenericFile",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.GenericFile.yml\" sourcestartlinenumber=\"1\">Generic file</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -568,7 +788,11 @@
           "relative_path": "api/FileCurator.Formats.Data.GenericRow.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.GenericRow",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.GenericRow.yml\" sourcestartlinenumber=\"1\">Generic row data</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -578,7 +802,11 @@
           "relative_path": "api/FileCurator.Formats.Data.GenericTable.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.GenericTable",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.GenericTable.yml\" sourcestartlinenumber=\"1\">Generic table object</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -588,7 +816,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interface.IPhoneNumber.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interface.IPhoneNumber",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interface.IPhoneNumber.yml\" sourcestartlinenumber=\"1\">Phone number</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -598,7 +830,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interface.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interface",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -608,7 +844,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.IAddress.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.IAddress",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.IAddress.yml\" sourcestartlinenumber=\"1\">Address interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -618,7 +858,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.ICalendar.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.ICalendar",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.ICalendar.yml\" sourcestartlinenumber=\"1\">Calendar item</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -628,7 +872,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.ICard.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.ICard",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.ICard.yml\" sourcestartlinenumber=\"1\">Card file type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -638,7 +886,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.ICell.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.ICell",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.ICell.yml\" sourcestartlinenumber=\"1\">Cell interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -648,7 +900,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.IChannel.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.IChannel",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.IChannel.yml\" sourcestartlinenumber=\"1\">Channel interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -658,7 +914,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.IEnclosure.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.IEnclosure",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.IEnclosure.yml\" sourcestartlinenumber=\"1\">Enclosure interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -668,7 +928,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.IFeed.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.IFeed",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.IFeed.yml\" sourcestartlinenumber=\"1\">Feed interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -678,7 +942,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.IFeedGuid.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.IFeedGuid",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.IFeedGuid.yml\" sourcestartlinenumber=\"1\">Feed Guid</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -688,7 +956,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.IFeedItem.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.IFeedItem",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.IFeedItem.yml\" sourcestartlinenumber=\"1\">Feed item</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -698,7 +970,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.IGenericFile.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.IGenericFile",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.IGenericFile.yml\" sourcestartlinenumber=\"1\">File interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -708,7 +984,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.IMailAddress.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.IMailAddress",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.IMailAddress.yml\" sourcestartlinenumber=\"1\">Mail address interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -718,7 +998,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.IMessage.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.IMessage",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.IMessage.yml\" sourcestartlinenumber=\"1\">Message interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -728,7 +1012,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.IRow.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.IRow",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.IRow.yml\" sourcestartlinenumber=\"1\">Row interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -738,7 +1026,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.ITable.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.ITable",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.ITable.yml\" sourcestartlinenumber=\"1\">Table interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -748,7 +1040,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.IThumbnail.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces.IThumbnail",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.Interfaces.IThumbnail.yml\" sourcestartlinenumber=\"1\">Thumbnail interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -758,7 +1054,11 @@
           "relative_path": "api/FileCurator.Formats.Data.Interfaces.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.Interfaces",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -768,7 +1068,11 @@
           "relative_path": "api/FileCurator.Formats.Data.MailAddress.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.MailAddress",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.MailAddress.yml\" sourcestartlinenumber=\"1\">Mail address</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -778,7 +1082,11 @@
           "relative_path": "api/FileCurator.Formats.Data.PhoneNumber.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data.PhoneNumber",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Data.PhoneNumber.yml\" sourcestartlinenumber=\"1\">Phone number data holder</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -788,7 +1096,11 @@
           "relative_path": "api/FileCurator.Formats.Data.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Data",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -798,7 +1110,11 @@
           "relative_path": "api/FileCurator.Formats.Delimited.DelimitedFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Delimited.DelimitedFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Delimited.DelimitedFormat.yml\" sourcestartlinenumber=\"1\">Delimited file format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -808,7 +1124,11 @@
           "relative_path": "api/FileCurator.Formats.Delimited.DelimitedReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Delimited.DelimitedReader",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Delimited.DelimitedReader.yml\" sourcestartlinenumber=\"1\">Delimited file reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -818,7 +1138,11 @@
           "relative_path": "api/FileCurator.Formats.Delimited.DelimitedWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Delimited.DelimitedWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Delimited.DelimitedWriter.yml\" sourcestartlinenumber=\"1\">Delimited file writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -828,7 +1152,11 @@
           "relative_path": "api/FileCurator.Formats.Delimited.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Delimited",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -838,7 +1166,11 @@
           "relative_path": "api/FileCurator.Formats.Excel.ExcelFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Excel.ExcelFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Excel.ExcelFormat.yml\" sourcestartlinenumber=\"1\">Excel format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -848,7 +1180,11 @@
           "relative_path": "api/FileCurator.Formats.Excel.ExcelReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Excel.ExcelReader",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Excel.ExcelReader.yml\" sourcestartlinenumber=\"1\">Excel reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -858,7 +1194,11 @@
           "relative_path": "api/FileCurator.Formats.Excel.ExcelWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Excel.ExcelWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Excel.ExcelWriter.yml\" sourcestartlinenumber=\"1\">Excel writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -868,7 +1208,11 @@
           "relative_path": "api/FileCurator.Formats.Excel.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Excel",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -878,7 +1222,11 @@
           "relative_path": "api/FileCurator.Formats.HTML.HTMLFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.HTML.HTMLFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.HTML.HTMLFormat.yml\" sourcestartlinenumber=\"1\">HTML format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -888,7 +1236,11 @@
           "relative_path": "api/FileCurator.Formats.HTML.HTMLReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.HTML.HTMLReader",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.HTML.HTMLReader.yml\" sourcestartlinenumber=\"1\">HTML reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -898,7 +1250,11 @@
           "relative_path": "api/FileCurator.Formats.HTML.HTMLWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.HTML.HTMLWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.HTML.HTMLWriter.yml\" sourcestartlinenumber=\"1\">HTML Writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -908,7 +1264,11 @@
           "relative_path": "api/FileCurator.Formats.HTML.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.HTML",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -918,7 +1278,11 @@
           "relative_path": "api/FileCurator.Formats.ICal.ICalendarFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.ICal.ICalendarFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.ICal.ICalendarFormat.yml\" sourcestartlinenumber=\"1\">ICal format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -928,7 +1292,11 @@
           "relative_path": "api/FileCurator.Formats.ICal.ICalendarReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.ICal.ICalendarReader",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.ICal.ICalendarReader.yml\" sourcestartlinenumber=\"1\">ICal reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -938,7 +1306,11 @@
           "relative_path": "api/FileCurator.Formats.ICal.ICalendarWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.ICal.ICalendarWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.ICal.ICalendarWriter.yml\" sourcestartlinenumber=\"1\">ICal writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -948,7 +1320,11 @@
           "relative_path": "api/FileCurator.Formats.ICal.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.ICal",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -958,7 +1334,11 @@
           "relative_path": "api/FileCurator.Formats.Interfaces.IFormat-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Interfaces.IFormat<TFile>",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Interfaces.IFormat-1.yml\" sourcestartlinenumber=\"1\">Format interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -968,7 +1348,11 @@
           "relative_path": "api/FileCurator.Formats.Interfaces.IFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Interfaces.IFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Interfaces.IFormat.yml\" sourcestartlinenumber=\"1\">Format interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -978,7 +1362,11 @@
           "relative_path": "api/FileCurator.Formats.Interfaces.IGenericFileReader-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Interfaces.IGenericFileReader<TFile>",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Interfaces.IGenericFileReader-1.yml\" sourcestartlinenumber=\"1\">File reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -988,7 +1376,11 @@
           "relative_path": "api/FileCurator.Formats.Interfaces.IGenericFileWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Interfaces.IGenericFileWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Interfaces.IGenericFileWriter.yml\" sourcestartlinenumber=\"1\">File writer interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -998,7 +1390,11 @@
           "relative_path": "api/FileCurator.Formats.Interfaces.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Interfaces",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1008,7 +1404,11 @@
           "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.Attachment.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.MSG.OutlookStorage.Attachment",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.MSG.OutlookStorage.Attachment.yml\" sourcestartlinenumber=\"1\">Attachment</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1018,7 +1418,11 @@
           "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.CLZF.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.MSG.OutlookStorage.CLZF",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.MSG.OutlookStorage.CLZF.yml\" sourcestartlinenumber=\"1\">Summary description for CLZF.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1028,7 +1432,11 @@
           "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.Message.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.MSG.OutlookStorage.Message",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.MSG.OutlookStorage.Message.yml\" sourcestartlinenumber=\"1\">Message</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1038,7 +1446,11 @@
           "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IEnumSTATSTG.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IEnumSTATSTG",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IEnumSTATSTG.yml\" sourcestartlinenumber=\"1\">Enum STATSTG</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1048,7 +1460,11 @@
           "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.ILockBytes.yml\" sourcestartlinenumber=\"1\">ILock bytes</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1058,7 +1474,11 @@
           "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.IStorage.yml\" sourcestartlinenumber=\"1\">Storage</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1068,7 +1488,11 @@
           "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.STGM.yml\" sourcestartlinenumber=\"1\">STGM?</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1078,7 +1502,11 @@
           "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.MSG.OutlookStorage.NativeMethods",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.MSG.OutlookStorage.NativeMethods.yml\" sourcestartlinenumber=\"1\">Native methods</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1088,7 +1516,11 @@
           "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.Recipient.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.MSG.OutlookStorage.Recipient",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.MSG.OutlookStorage.Recipient.yml\" sourcestartlinenumber=\"1\">Recipient</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1098,7 +1530,11 @@
           "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.RecipientType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.MSG.OutlookStorage.RecipientType",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.MSG.OutlookStorage.RecipientType.yml\" sourcestartlinenumber=\"1\">Recipient type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1108,7 +1544,11 @@
           "relative_path": "api/FileCurator.Formats.MSG.OutlookStorage.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.MSG.OutlookStorage",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.MSG.OutlookStorage.yml\" sourcestartlinenumber=\"1\">Outlook storage</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1118,7 +1558,11 @@
           "relative_path": "api/FileCurator.Formats.MSG.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.MSG",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1128,7 +1572,11 @@
           "relative_path": "api/FileCurator.Formats.Manager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Manager",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Manager.yml\" sourcestartlinenumber=\"1\">Format manager</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1138,7 +1586,11 @@
           "relative_path": "api/FileCurator.Formats.Mime.MimeFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Mime.MimeFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Mime.MimeFormat.yml\" sourcestartlinenumber=\"1\">Mime format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1148,7 +1600,11 @@
           "relative_path": "api/FileCurator.Formats.Mime.MimeReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Mime.MimeReader",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Mime.MimeReader.yml\" sourcestartlinenumber=\"1\">MIME file reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1158,7 +1614,11 @@
           "relative_path": "api/FileCurator.Formats.Mime.MimeWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Mime.MimeWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Mime.MimeWriter.yml\" sourcestartlinenumber=\"1\">MIME Writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1168,7 +1628,11 @@
           "relative_path": "api/FileCurator.Formats.Mime.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Mime",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1178,7 +1642,11 @@
           "relative_path": "api/FileCurator.Formats.PDF.PDFFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.PDF.PDFFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.PDF.PDFFormat.yml\" sourcestartlinenumber=\"1\">PDF Format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1188,7 +1656,11 @@
           "relative_path": "api/FileCurator.Formats.PDF.PDFReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.PDF.PDFReader",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.PDF.PDFReader.yml\" sourcestartlinenumber=\"1\">PDF Reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1198,7 +1670,11 @@
           "relative_path": "api/FileCurator.Formats.PDF.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.PDF",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1208,7 +1684,11 @@
           "relative_path": "api/FileCurator.Formats.PowerPoint.PowerPointFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.PowerPoint.PowerPointFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.PowerPoint.PowerPointFormat.yml\" sourcestartlinenumber=\"1\">PowerPoint format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1218,7 +1698,11 @@
           "relative_path": "api/FileCurator.Formats.PowerPoint.PowerPointReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.PowerPoint.PowerPointReader",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.PowerPoint.PowerPointReader.yml\" sourcestartlinenumber=\"1\">Powerpoint file reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1228,7 +1712,11 @@
           "relative_path": "api/FileCurator.Formats.PowerPoint.PowerPointWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.PowerPoint.PowerPointWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.PowerPoint.PowerPointWriter.yml\" sourcestartlinenumber=\"1\">PowerPoint file writer.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1238,7 +1726,11 @@
           "relative_path": "api/FileCurator.Formats.PowerPoint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.PowerPoint",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1248,7 +1740,11 @@
           "relative_path": "api/FileCurator.Formats.RSS.Data.Channel.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.RSS.Data.Channel",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.RSS.Data.Channel.yml\" sourcestartlinenumber=\"1\">Channel</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1258,7 +1754,11 @@
           "relative_path": "api/FileCurator.Formats.RSS.Data.Enclosure.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.RSS.Data.Enclosure",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.RSS.Data.Enclosure.yml\" sourcestartlinenumber=\"1\">Enclosure</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1268,7 +1768,11 @@
           "relative_path": "api/FileCurator.Formats.RSS.Data.Feed.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.RSS.Data.Feed",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.RSS.Data.Feed.yml\" sourcestartlinenumber=\"1\">Individual RSS Feed</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1278,7 +1782,11 @@
           "relative_path": "api/FileCurator.Formats.RSS.Data.FeedGuid.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.RSS.Data.FeedGuid",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.RSS.Data.FeedGuid.yml\" sourcestartlinenumber=\"1\">Feed GUID</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1288,7 +1796,11 @@
           "relative_path": "api/FileCurator.Formats.RSS.Data.FeedItem.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.RSS.Data.FeedItem",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.RSS.Data.FeedItem.yml\" sourcestartlinenumber=\"1\">Feed item</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1298,7 +1810,11 @@
           "relative_path": "api/FileCurator.Formats.RSS.Data.Thumbnail.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.RSS.Data.Thumbnail",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.RSS.Data.Thumbnail.yml\" sourcestartlinenumber=\"1\">Thumbnail</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1308,7 +1824,11 @@
           "relative_path": "api/FileCurator.Formats.RSS.Data.Utils.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.RSS.Data.Utils",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.RSS.Data.Utils.yml\" sourcestartlinenumber=\"1\">Utility class used by RSS classes.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1318,7 +1838,11 @@
           "relative_path": "api/FileCurator.Formats.RSS.Data.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.RSS.Data",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1328,7 +1852,11 @@
           "relative_path": "api/FileCurator.Formats.RSS.RSSFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.RSS.RSSFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.RSS.RSSFormat.yml\" sourcestartlinenumber=\"1\">RSS Format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1338,7 +1866,11 @@
           "relative_path": "api/FileCurator.Formats.RSS.RSSReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.RSS.RSSReader",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.RSS.RSSReader.yml\" sourcestartlinenumber=\"1\">RSS Reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1348,7 +1880,11 @@
           "relative_path": "api/FileCurator.Formats.RSS.RSSWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.RSS.RSSWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.RSS.RSSWriter.yml\" sourcestartlinenumber=\"1\">RSS Writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1358,7 +1894,11 @@
           "relative_path": "api/FileCurator.Formats.RSS.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.RSS",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1368,7 +1908,11 @@
           "relative_path": "api/FileCurator.Formats.Txt.TxtFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Txt.TxtFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Txt.TxtFormat.yml\" sourcestartlinenumber=\"1\">Text format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1378,7 +1922,11 @@
           "relative_path": "api/FileCurator.Formats.Txt.TxtReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Txt.TxtReader",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Txt.TxtReader.yml\" sourcestartlinenumber=\"1\">TXT file reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1388,7 +1936,11 @@
           "relative_path": "api/FileCurator.Formats.Txt.TxtWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Txt.TxtWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Txt.TxtWriter.yml\" sourcestartlinenumber=\"1\">Txt Writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1398,7 +1950,11 @@
           "relative_path": "api/FileCurator.Formats.Txt.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Txt",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1408,7 +1964,11 @@
           "relative_path": "api/FileCurator.Formats.VCalendar.VCalendarFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.VCalendar.VCalendarFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.VCalendar.VCalendarFormat.yml\" sourcestartlinenumber=\"1\">VCal format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1418,7 +1978,11 @@
           "relative_path": "api/FileCurator.Formats.VCalendar.VCalendarReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.VCalendar.VCalendarReader",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.VCalendar.VCalendarReader.yml\" sourcestartlinenumber=\"1\">VCal reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1428,7 +1992,11 @@
           "relative_path": "api/FileCurator.Formats.VCalendar.VCalendarWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.VCalendar.VCalendarWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.VCalendar.VCalendarWriter.yml\" sourcestartlinenumber=\"1\">VCal writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1438,7 +2006,11 @@
           "relative_path": "api/FileCurator.Formats.VCalendar.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.VCalendar",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1448,7 +2020,11 @@
           "relative_path": "api/FileCurator.Formats.VCard.VCardFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.VCard.VCardFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.VCard.VCardFormat.yml\" sourcestartlinenumber=\"1\">VCard format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1458,7 +2034,11 @@
           "relative_path": "api/FileCurator.Formats.VCard.VCardReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.VCard.VCardReader",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.VCard.VCardReader.yml\" sourcestartlinenumber=\"1\">Vcard reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1468,7 +2048,11 @@
           "relative_path": "api/FileCurator.Formats.VCard.VCardWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.VCard.VCardWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.VCard.VCardWriter.yml\" sourcestartlinenumber=\"1\">VCard writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1478,7 +2062,11 @@
           "relative_path": "api/FileCurator.Formats.VCard.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.VCard",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1488,7 +2076,11 @@
           "relative_path": "api/FileCurator.Formats.Word.WordFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Word.WordFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Word.WordFormat.yml\" sourcestartlinenumber=\"1\">Word format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1498,7 +2090,11 @@
           "relative_path": "api/FileCurator.Formats.Word.WordReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Word.WordReader",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Word.WordReader.yml\" sourcestartlinenumber=\"1\">Word reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1508,7 +2104,11 @@
           "relative_path": "api/FileCurator.Formats.Word.WordWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Word.WordWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.Word.WordWriter.yml\" sourcestartlinenumber=\"1\">Word writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1518,7 +2118,11 @@
           "relative_path": "api/FileCurator.Formats.Word.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.Word",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1528,7 +2132,11 @@
           "relative_path": "api/FileCurator.Formats.XML.XMLFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.XML.XMLFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.XML.XMLFormat.yml\" sourcestartlinenumber=\"1\">XML Format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1538,7 +2146,11 @@
           "relative_path": "api/FileCurator.Formats.XML.XMLReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.XML.XMLReader",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.XML.XMLReader.yml\" sourcestartlinenumber=\"1\">XML Reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1548,7 +2160,11 @@
           "relative_path": "api/FileCurator.Formats.XML.XMLWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.XML.XMLWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Formats.XML.XMLWriter.yml\" sourcestartlinenumber=\"1\">XML Writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1558,7 +2174,11 @@
           "relative_path": "api/FileCurator.Formats.XML.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats.XML",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1568,7 +2188,11 @@
           "relative_path": "api/FileCurator.Formats.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Formats",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1578,7 +2202,11 @@
           "relative_path": "api/FileCurator.HelperMethods.InternalHttpClientFactory.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.HelperMethods.InternalHttpClientFactory",
+      "Summary": "<p sourcefile=\"api/FileCurator.HelperMethods.InternalHttpClientFactory.yml\" sourcestartlinenumber=\"1\">Internal HTTP Client Factory</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1588,7 +2216,11 @@
           "relative_path": "api/FileCurator.HelperMethods.Word.WordDocumentAssembler.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.HelperMethods.Word.WordDocumentAssembler",
+      "Summary": "<p sourcefile=\"api/FileCurator.HelperMethods.Word.WordDocumentAssembler.yml\" sourcestartlinenumber=\"1\">Document assembly helper class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1598,7 +2230,11 @@
           "relative_path": "api/FileCurator.HelperMethods.Word.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.HelperMethods.Word",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1608,7 +2244,11 @@
           "relative_path": "api/FileCurator.HelperMethods.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.HelperMethods",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1618,7 +2258,11 @@
           "relative_path": "api/FileCurator.Interfaces.IDirectory.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Interfaces.IDirectory",
+      "Summary": "<p sourcefile=\"api/FileCurator.Interfaces.IDirectory.yml\" sourcestartlinenumber=\"1\">Represents a directory</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1628,7 +2272,11 @@
           "relative_path": "api/FileCurator.Interfaces.IFile.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Interfaces.IFile",
+      "Summary": "<p sourcefile=\"api/FileCurator.Interfaces.IFile.yml\" sourcestartlinenumber=\"1\">Represents an individual file</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1638,7 +2286,11 @@
           "relative_path": "api/FileCurator.Interfaces.IFileSystem.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Interfaces.IFileSystem",
+      "Summary": "<p sourcefile=\"api/FileCurator.Interfaces.IFileSystem.yml\" sourcestartlinenumber=\"1\">Interface for the file system</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1648,7 +2300,11 @@
           "relative_path": "api/FileCurator.Interfaces.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Interfaces",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1658,7 +2314,11 @@
           "relative_path": "api/FileCurator.Module.FileCuratorModule.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Module.FileCuratorModule",
+      "Summary": "<p sourcefile=\"api/FileCurator.Module.FileCuratorModule.yml\" sourcestartlinenumber=\"1\">File curator module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1668,7 +2328,11 @@
           "relative_path": "api/FileCurator.Module.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Module",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1678,7 +2342,11 @@
           "relative_path": "api/FileCurator.Windows.Formats.MSG.MSGFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Windows.Formats.MSG.MSGFormat",
+      "Summary": "<p sourcefile=\"api/FileCurator.Windows.Formats.MSG.MSGFormat.yml\" sourcestartlinenumber=\"1\">MSG Format</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1688,7 +2356,11 @@
           "relative_path": "api/FileCurator.Windows.Formats.MSG.MSGReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Windows.Formats.MSG.MSGReader",
+      "Summary": "<p sourcefile=\"api/FileCurator.Windows.Formats.MSG.MSGReader.yml\" sourcestartlinenumber=\"1\">MSG Reader</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1698,7 +2370,11 @@
           "relative_path": "api/FileCurator.Windows.Formats.MSG.MSGWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Windows.Formats.MSG.MSGWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Windows.Formats.MSG.MSGWriter.yml\" sourcestartlinenumber=\"1\">MSG Writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1708,7 +2384,11 @@
           "relative_path": "api/FileCurator.Windows.Formats.MSG.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Windows.Formats.MSG",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1718,7 +2398,11 @@
           "relative_path": "api/FileCurator.Windows.Formats.PDF.PDFWriter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Windows.Formats.PDF.PDFWriter",
+      "Summary": "<p sourcefile=\"api/FileCurator.Windows.Formats.PDF.PDFWriter.yml\" sourcestartlinenumber=\"1\">PDF writer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1728,7 +2412,11 @@
           "relative_path": "api/FileCurator.Windows.Formats.PDF.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator.Windows.Formats.PDF",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1738,7 +2426,11 @@
           "relative_path": "api/FileCurator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "FileCurator",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1748,7 +2440,11 @@
           "relative_path": "api/Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions",
+      "Summary": "<p sourcefile=\"api/Microsoft.Extensions.DependencyInjection.FileCuratorCanisterExtensions.yml\" sourcestartlinenumber=\"1\">Canister registration extension</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1758,7 +2454,11 @@
           "relative_path": "api/Microsoft.Extensions.DependencyInjection.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Microsoft.Extensions.DependencyInjection",
+      "Summary": null
     },
     {
       "type": "Conceptual",
@@ -1774,11 +2474,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "api/toc.html"
-        },
         ".json": {
           "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
         }
       },
       "version": ""
@@ -1797,11 +2497,11 @@
       "type": "Toc",
       "source_relative_path": "articles/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "articles/toc.html"
-        },
         ".json": {
           "relative_path": "articles/toc.json"
+        },
+        ".html": {
+          "relative_path": "articles/toc.html"
         }
       },
       "version": ""
@@ -1830,11 +2530,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
         ".json": {
           "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""
