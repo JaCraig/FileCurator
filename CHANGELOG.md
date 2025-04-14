@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.0.6"></a>
+## [5.0.6](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.6) (2025-04-14)
+
+### Bug Fixes
+
+* **build:** update package versions and refactor code ([1f97f5e](https://www.github.com/JaCraig/FileCurator/commit/1f97f5e3db173f0ea95d4b36dacacaf7d5c1ed68))
+* **MSG:** Fixing null object when storage can not be read ([aa56301](https://www.github.com/JaCraig/FileCurator/commit/aa563019cd1700994f5f2213ef81e013dc6d8102))
+
+### Other
+
+* merge ([104cdbe](https://www.github.com/JaCraig/FileCurator/commit/104cdbe64755489b3917a831c12d4867b4b31940))
+
 <a name="5.0.5"></a>
 ## [5.0.5](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.5) (2025-04-14)
 
