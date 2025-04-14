@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.0.4"></a>
+## [5.0.4](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.4) (2025-04-14)
+
+### Bug Fixes
+
+* **MSGReader:** refactor HeaderIdentifier and message handling ([918e73e](https://www.github.com/JaCraig/FileCurator/commit/918e73e1a7e0fb036f0c873f0d0740f65ec3fe18))
+
+### Other
+
+* Merge pull request #364 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-d90f1eecb3 ([f6e2d25](https://www.github.com/JaCraig/FileCurator/commit/f6e2d25c83731c26546e923af96b62d5a81f3270))
+* Merge pull request #365 from JaCraig/dependabot/nuget/FileCurator.Example/dependencies-5f74575daa ([dc9d5a8](https://www.github.com/JaCraig/FileCurator/commit/dc9d5a83e59fb1f60de131f705baf367d92f0a6a))
+* Merge pull request #366 from JaCraig/dependabot/nuget/FileCurator.Example/dependencies-74cd523690 ([09f6476](https://www.github.com/JaCraig/FileCurator/commit/09f6476e65621537c557e632e49ba204e6ff3a80))
+* Merge pull request #367 from JaCraig/dependabot/nuget/FileCurator.Example/dependencies-d389a50c21 ([68f2df8](https://www.github.com/JaCraig/FileCurator/commit/68f2df886696e4bfb85c5eeee25dc8a402f323c7))
+* Merge pull request #368 from JaCraig/dependabot/nuget/FileCurator.Example/dependencies-62b2b76b09 ([7db079e](https://www.github.com/JaCraig/FileCurator/commit/7db079e3ccb53546673da636182e046f319be34a))
+* Merge pull request #369 from JaCraig/dependabot/nuget/FileCurator.Example/dependencies-9ed5837ba8 ([78e9e9c](https://www.github.com/JaCraig/FileCurator/commit/78e9e9c35208ea608896ba4f4ef4a457ff0de48f))
+* bump DocumentFormat.OpenXml ([d1a9e7b](https://www.github.com/JaCraig/FileCurator/commit/d1a9e7bb430bdadc1bbb7643fba285206803f75c))
+* bump HtmlAgilityPack ([2b73520](https://www.github.com/JaCraig/FileCurator/commit/2b735202f67b40cde15c5a319d247c13c11bf872))
+* bump HtmlAgilityPack ([7ff2da4](https://www.github.com/JaCraig/FileCurator/commit/7ff2da425c752039d7e44bed58d854bc56471498))
+* bump HtmlAgilityPack ([d5cacca](https://www.github.com/JaCraig/FileCurator/commit/d5caccabcefdd460bb0aef8e8b5a758a8206530c))
+* bump Mecha.xUnit in /FileCurator.Tests in the dependencies group ([9669571](https://www.github.com/JaCraig/FileCurator/commit/966957105cc95767645519c3b8c9b474f8bb022f))
+* bump the dependencies group ([a88a356](https://www.github.com/JaCraig/FileCurator/commit/a88a35602ce8f0c18566096d5be56620eb2e172b))
+
 <a name="5.0.3"></a>
 ## [5.0.3](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.3) (2025-01-29)
 
