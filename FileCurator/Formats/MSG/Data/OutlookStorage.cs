@@ -386,13 +386,14 @@ namespace FileCurator.Formats.MSG
             {
                 //enum all elements of the storage
                 storage?.EnumElements(0, IntPtr.Zero, 0, out storageElementEnum);
+                uint elementStatCount = 0;
 
                 //iterate elements
                 while (true)
                 {
                     //get 1 element out of the com enumerator
                     var elementStats = new System.Runtime.InteropServices.ComTypes.STATSTG[1];
-                    storageElementEnum?.Next(1, elementStats, out var elementStatCount);
+                    storageElementEnum?.Next(1, elementStats, out elementStatCount);
 
                     //break loop if element not retrieved
                     if (elementStatCount != 1)
