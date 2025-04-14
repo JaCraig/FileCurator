@@ -31,13 +31,13 @@ namespace FileCurator.Formats.Data
         /// Gets the BCC.
         /// </summary>
         /// <value>The BCC.</value>
-        public IList<string> BCC { get; } = new List<string>();
+        public IList<string> BCC { get; } = [];
 
         /// <summary>
         /// Gets the cc.
         /// </summary>
         /// <value>The cc.</value>
-        public IList<string> CC { get; } = new List<string>();
+        public IList<string> CC { get; } = [];
 
         /// <summary>
         /// Parsed content
@@ -73,7 +73,7 @@ namespace FileCurator.Formats.Data
         /// Gets to.
         /// </summary>
         /// <value>To.</value>
-        public IList<string> To { get; } = new List<string>();
+        public IList<string> To { get; } = [];
 
         /// <summary>
         /// Compares the object to another object

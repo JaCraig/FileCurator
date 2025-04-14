@@ -65,11 +65,13 @@ namespace FileCurator.Windows.Formats.MSG
         /// <param name="action">The action.</param>
         private static void AddRecipients(Message message, RecipientType type, Action<string> action)
         {
-            if (message?.Recipients is null)
+            if (message is null || action is null)
                 return;
-            foreach (var Item in message.Recipients.Where(x => x?.Type == type).Select(x => x?.Email))
+            foreach (var Item in message.Recipients?.Where(x => x?.Type == type).Select(x => x?.Email) ?? [])
             {
-                action(Item!);
+                if (string.IsNullOrEmpty(Item))
+                    continue;
+                action(Item);
             }
         }
     }
