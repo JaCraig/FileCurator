@@ -63,7 +63,7 @@ namespace FileCurator.Formats.MSG
             }
 
             //open and load IStorage from file
-            NativeMethods.StgOpenStorage(storageFilePath, null, NativeMethods.STGM.READ | NativeMethods.STGM.SHARE_DENY_WRITE, IntPtr.Zero, 0, out NativeMethods.IStorage fileStorage);
+            _ = NativeMethods.StgOpenStorage(storageFilePath, null, NativeMethods.STGM.READ | NativeMethods.STGM.SHARE_DENY_WRITE, IntPtr.Zero, 0, out NativeMethods.IStorage fileStorage);
             LoadStorage(fileStorage);
         }
 
@@ -79,11 +79,11 @@ namespace FileCurator.Formats.MSG
             try
             {
                 //read stream into buffer
-                byte[] buffer = new byte[storageStream.Length];
-                storageStream.Read(buffer, 0, buffer.Length);
+                var buffer = new byte[storageStream.Length];
+                _ = storageStream.Read(buffer, 0, buffer.Length);
 
                 //create a ILockBytes (unmanaged byte array) and write buffer into it
-                NativeMethods.CreateILockBytesOnHGlobal(IntPtr.Zero, true, out memoryStorageBytes);
+                _ = NativeMethods.CreateILockBytesOnHGlobal(IntPtr.Zero, true, out memoryStorageBytes);
                 memoryStorageBytes.WriteAt(0, buffer, buffer.Length, null);
 
                 //ensure provided stream data is an IStorage
@@ -100,14 +100,14 @@ namespace FileCurator.Formats.MSG
             {
                 if (memoryStorage != null)
                 {
-                    Marshal.ReleaseComObject(memoryStorage);
+                    _ = Marshal.ReleaseComObject(memoryStorage);
                 }
             }
             finally
             {
                 if (memoryStorageBytes != null)
                 {
-                    Marshal.ReleaseComObject(memoryStorageBytes);
+                    _ = Marshal.ReleaseComObject(memoryStorageBytes);
                 }
             }
         }
@@ -123,57 +123,14 @@ namespace FileCurator.Formats.MSG
         }
 
         /// <summary>
-        /// Releases unmanaged resources and performs other cleanup operations before the is
-        /// reclaimed by garbage collection.
-        /// </summary>
-        ~OutlookStorage()
-        {
-            Dispose();
-        }
-
-        /// <summary>
-        /// Gets the received time.
-        /// </summary>
-        /// <value>The received time.</value>
-        public DateTime? ReceivedTime => (DateTime?)GetMapiProperty(PR_MESSAGE_DELIVERY_TIME);
-
-        /// <summary>
-        /// Gets the sent time.
-        /// </summary>
-        /// <value>The sent time.</value>
-        public DateTime? SentTime => (DateTime?)GetMapiProperty(PR_CLIENT_SUBMIT_TIME);
-
-        /// <summary>
-        /// Gets a value indicating whether this instance is the top level outlook message.
-        /// </summary>
-        /// <value><c>true</c> if this instance is the top level outlook message; otherwise, <c>false</c>.</value>
-        private bool IsTopParent => parentMessage is null;
-
-        /// <summary>
-        /// Gets the top level outlook message from a sub message at any level.
-        /// </summary>
-        /// <value>The top level outlook message.</value>
-        private OutlookStorage TopParent
-        {
-            get
-            {
-                if (parentMessage != null)
-                {
-                    return parentMessage.TopParent;
-                }
-                return this;
-            }
-        }
-
-        /// <summary>
         /// The statistics for all streams in the IStorage associated with this instance.
         /// </summary>
-        public Dictionary<string, System.Runtime.InteropServices.ComTypes.STATSTG> streamStatistics = new Dictionary<string, System.Runtime.InteropServices.ComTypes.STATSTG>();
+        public Dictionary<string, System.Runtime.InteropServices.ComTypes.STATSTG> streamStatistics = [];
 
         /// <summary>
         /// The statistics for all storgages in the IStorage associated with this instance.
         /// </summary>
-        public Dictionary<string, System.Runtime.InteropServices.ComTypes.STATSTG> subStorageStatistics = new Dictionary<string, System.Runtime.InteropServices.ComTypes.STATSTG>();
+        public Dictionary<string, System.Runtime.InteropServices.ComTypes.STATSTG> subStorageStatistics = [];
 
         private const int ATTACH_EMBEDDED_MSG = 5;
 
@@ -254,6 +211,40 @@ namespace FileCurator.Formats.MSG
         private NativeMethods.IStorage? storage_;
 
         /// <summary>
+        /// Gets the received time.
+        /// </summary>
+        /// <value>The received time.</value>
+        public DateTime? ReceivedTime => (DateTime?)GetMapiProperty(PR_MESSAGE_DELIVERY_TIME);
+
+        /// <summary>
+        /// Gets the sent time.
+        /// </summary>
+        /// <value>The sent time.</value>
+        public DateTime? SentTime => (DateTime?)GetMapiProperty(PR_CLIENT_SUBMIT_TIME);
+
+        /// <summary>
+        /// Gets a value indicating whether this instance is the top level outlook message.
+        /// </summary>
+        /// <value><c>true</c> if this instance is the top level outlook message; otherwise, <c>false</c>.</value>
+        private bool IsTopParent => parentMessage is null;
+
+        /// <summary>
+        /// Gets the top level outlook message from a sub message at any level.
+        /// </summary>
+        /// <value>The top level outlook message.</value>
+        private OutlookStorage TopParent
+        {
+            get
+            {
+                if (parentMessage != null)
+                {
+                    return parentMessage.TopParent;
+                }
+                return this;
+            }
+        }
+
+        /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting
         /// unmanaged resources.
         /// </summary>
@@ -270,7 +261,7 @@ namespace FileCurator.Formats.MSG
                 {
                     //release COM storage object and suppress finalizer
                     ReferenceManager.RemoveItem(storage_);
-                    Marshal.ReleaseComObject(storage_);
+                    _ = Marshal.ReleaseComObject(storage_);
                     GC.SuppressFinalize(this);
                 }
             }
@@ -281,54 +272,40 @@ namespace FileCurator.Formats.MSG
         /// </summary>
         /// <param name="propIdentifier">The 4 char hexadecimal prop identifier.</param>
         /// <returns>The raw value of the MAPI property.</returns>
-        public object? GetMapiProperty(string propIdentifier)
-        {
+        public object? GetMapiProperty(string propIdentifier) =>
             //try get prop value from stream or storage
 
             //if not found in stream or storage try get prop value from property stream
 
-            return GetMapiPropertyFromStreamOrStorage(propIdentifier) ?? GetMapiPropertyFromPropertyStream(propIdentifier);
-        }
+            GetMapiPropertyFromStreamOrStorage(propIdentifier) ?? GetMapiPropertyFromPropertyStream(propIdentifier);
 
         /// <summary>
         /// Gets the value of the MAPI property as a byte array.
         /// </summary>
         /// <param name="propIdentifier">The 4 char hexadecimal prop identifier.</param>
         /// <returns>The value of the MAPI property as a byte array.</returns>
-        public byte[]? GetMapiPropertyBytes(string propIdentifier)
-        {
-            return GetMapiProperty(propIdentifier) as byte[];
-        }
+        public byte[]? GetMapiPropertyBytes(string propIdentifier) => GetMapiProperty(propIdentifier) as byte[];
 
         /// <summary>
         /// Gets the value of the MAPI property as a short.
         /// </summary>
         /// <param name="propIdentifier">The 4 char hexadecimal prop identifier.</param>
         /// <returns>The value of the MAPI property as a short.</returns>
-        public short GetMapiPropertyInt16(string propIdentifier)
-        {
-            return (short)GetMapiProperty(propIdentifier)!;
-        }
+        public short GetMapiPropertyInt16(string propIdentifier) => (short)GetMapiProperty(propIdentifier)!;
 
         /// <summary>
         /// Gets the value of the MAPI property as a integer.
         /// </summary>
         /// <param name="propIdentifier">The 4 char hexadecimal prop identifier.</param>
         /// <returns>The value of the MAPI property as a integer.</returns>
-        public int GetMapiPropertyInt32(string propIdentifier)
-        {
-            return (int)GetMapiProperty(propIdentifier)!;
-        }
+        public int GetMapiPropertyInt32(string propIdentifier) => (int)GetMapiProperty(propIdentifier)!;
 
         /// <summary>
         /// Gets the value of the MAPI property as a string.
         /// </summary>
         /// <param name="propIdentifier">The 4 char hexadecimal prop identifier.</param>
         /// <returns>The value of the MAPI property as a string.</returns>
-        public string? GetMapiPropertyString(string propIdentifier)
-        {
-            return GetMapiProperty(propIdentifier) as string;
-        }
+        public string? GetMapiPropertyString(string propIdentifier) => GetMapiProperty(propIdentifier) as string;
 
         /// <summary>
         /// Gets the data in the specified stream as a string using the specifed encoding to decode
@@ -379,7 +356,7 @@ namespace FileCurator.Formats.MSG
             {
                 if (stream != null)
                 {
-                    Marshal.ReleaseComObject(stream);
+                    _ = Marshal.ReleaseComObject(stream);
                 }
             }
 
@@ -414,8 +391,8 @@ namespace FileCurator.Formats.MSG
                 while (true)
                 {
                     //get 1 element out of the com enumerator
-                    System.Runtime.InteropServices.ComTypes.STATSTG[] elementStats = new System.Runtime.InteropServices.ComTypes.STATSTG[1];
-                    storageElementEnum.Next(1, elementStats, out uint elementStatCount);
+                    var elementStats = new System.Runtime.InteropServices.ComTypes.STATSTG[1];
+                    storageElementEnum?.Next(1, elementStats, out var elementStatCount);
 
                     //break loop if element not retrieved
                     if (elementStatCount != 1)
@@ -443,7 +420,7 @@ namespace FileCurator.Formats.MSG
                 //free memory
                 if (storageElementEnum != null)
                 {
-                    Marshal.ReleaseComObject(storageElementEnum);
+                    _ = Marshal.ReleaseComObject(storageElementEnum);
                 }
             }
         }
@@ -465,7 +442,7 @@ namespace FileCurator.Formats.MSG
             var propBytes = GetStreamBytes(PROPERTIES_STREAM);
 
             //iterate over property stream in 16 byte chunks starting from end of header
-            for (int i = propHeaderSize; i < propBytes.Length; i += 16)
+            for (var i = propHeaderSize; i < propBytes.Length; i += 16)
             {
                 //get property type located in the 1st and 2nd bytes as a unsigned short value
                 var propType = BitConverter.ToUInt16(propBytes, i);
@@ -516,8 +493,8 @@ namespace FileCurator.Formats.MSG
 
             //determine if the property identifier is in a stream or sub storage
             string? propTag = null;
-            ushort propType = NativeMethods.PT_UNSPECIFIED;
-            foreach (string propKey in propKeys)
+            var propType = NativeMethods.PT_UNSPECIFIED;
+            foreach (var propKey in propKeys)
             {
                 if (propKey.StartsWith("__substg1.0_" + propIdentifier, StringComparison.Ordinal))
                 {
@@ -528,7 +505,7 @@ namespace FileCurator.Formats.MSG
             }
 
             //depending on prop type use method to get property value
-            string containerName = "__substg1.0_" + propTag;
+            var containerName = "__substg1.0_" + propTag;
             return propType switch
             {
                 NativeMethods.PT_UNSPECIFIED => null,
@@ -541,24 +518,12 @@ namespace FileCurator.Formats.MSG
         }
 
         /// <summary>
-        /// Recipient type
+        /// Releases unmanaged resources and performs other cleanup operations before the is
+        /// reclaimed by garbage collection.
         /// </summary>
-        public enum RecipientType
+        ~OutlookStorage()
         {
-            /// <summary>
-            /// To
-            /// </summary>
-            To,
-
-            /// <summary>
-            /// CC
-            /// </summary>
-            CC,
-
-            /// <summary>
-            /// The unknown
-            /// </summary>
-            Unknown
+            Dispose();
         }
 
         /// <summary>
@@ -667,8 +632,8 @@ namespace FileCurator.Formats.MSG
             public static int CalculateCRC32(byte[] buf, int off, int len)
             {
                 uint c = 0;
-                int end = off + len;
-                for (int i = off; i < end; i++)
+                var end = off + len;
+                for (var i = off; i < end; i++)
                 {
                     //!!!!        c = CRC32_TABLE[(c ^ buf[i]) & 0xFF] ^ (c >>> 8);
                     c = CRC32_TABLE[(c ^ buf[i]) & 0xFF] ^ (c >> 8);
@@ -696,8 +661,8 @@ namespace FileCurator.Formats.MSG
             public static byte[] DecompressRTF(byte[] src)
             {
                 byte[] dst; // destination for uncompressed bytes
-                int inPos = 0; // current position in src array
-                int outPos = 0; // current position in dst array
+                var inPos = 0; // current position in src array
+                var outPos = 0; // current position in dst array
 
                 COMPRESSED_RTF_PREBUF = Encoding.ASCII.GetBytes(prebuf);
 
@@ -731,8 +696,8 @@ namespace FileCurator.Formats.MSG
                     dst = new byte[COMPRESSED_RTF_PREBUF.Length + uncompressedSize];
                     Array.Copy(COMPRESSED_RTF_PREBUF, 0, dst, 0, COMPRESSED_RTF_PREBUF.Length);
                     outPos = COMPRESSED_RTF_PREBUF.Length;
-                    int flagCount = 0;
-                    int flags = 0;
+                    var flagCount = 0;
+                    var flags = 0;
                     while (outPos < dst.Length)
                     {
                         // each flag byte flags 8 literals/references, 1 per bit
@@ -750,12 +715,12 @@ namespace FileCurator.Formats.MSG
                                                          // such a buffer by pointing straight into
                                                          // the data buffer, and simulating this
                                                          // behaviour by modifying the pointers appropriately.
-                            offset = ((outPos / 4096) * 4096) + offset;
+                            offset = (outPos / 4096 * 4096) + offset;
                             if (offset >= outPos) // take from previous block
                                 offset -= 4096;
                             // note: can't use System.arraycopy, because the referenced bytes can
                             // cross through the current out position.
-                            int end = offset + length;
+                            var end = offset + length;
                             while (offset < end)
                                 dst[outPos++] = dst[offset++];
                         }
@@ -783,10 +748,7 @@ namespace FileCurator.Formats.MSG
             /// <param name="buf">The buf.</param>
             /// <param name="offset">The offset.</param>
             /// <returns></returns>
-            public static long GetU32(byte[] buf, int offset)
-            {
-                return ((buf[offset] & 0xFF) | ((buf[offset + 1] & 0xFF) << 8) | ((buf[offset + 2] & 0xFF) << 16) | ((buf[offset + 3] & 0xFF) << 24)) & 0x00000000FFFFFFFFL;
-            }
+            public static long GetU32(byte[] buf, int offset) => ((buf[offset] & 0xFF) | ((buf[offset + 1] & 0xFF) << 8) | ((buf[offset + 2] & 0xFF) << 16) | ((buf[offset + 3] & 0xFF) << 24)) & 0x00000000FFFFFFFFL;
 
             /*
              * Returns an unsigned 8-bit value from a byte array.
@@ -802,10 +764,7 @@ namespace FileCurator.Formats.MSG
             /// <param name="buf">The buf.</param>
             /// <param name="offset">The offset.</param>
             /// <returns></returns>
-            public static int GetU8(byte[] buf, int offset)
-            {
-                return buf[offset] & 0xFF;
-            }
+            public static int GetU8(byte[] buf, int offset) => buf[offset] & 0xFF;
 
             /*
               * Decompresses compressed-RTF data.
@@ -905,7 +864,7 @@ namespace FileCurator.Formats.MSG
             /// Gets the list of attachments in the outlook message.
             /// </summary>
             /// <value>The list of attachments in the outlook message.</value>
-            public List<Attachment> Attachments { get; } = new List<Attachment>();
+            public List<Attachment> Attachments { get; } = [];
 
             /// <summary>
             /// Gets the body of the outlook message in RTF format.
@@ -948,13 +907,13 @@ namespace FileCurator.Formats.MSG
             /// Gets the list of sub messages in the outlook message.
             /// </summary>
             /// <value>The list of sub messages in the outlook message.</value>
-            public List<Message> Messages { get; } = new List<Message>();
+            public List<Message> Messages { get; } = [];
 
             /// <summary>
             /// Gets the list of recipients in the outlook message.
             /// </summary>
             /// <value>The list of recipients in the outlook message.</value>
-            public List<Recipient> Recipients { get; } = new List<Recipient>();
+            public List<Recipient> Recipients { get; } = [];
 
             /// <summary>
             /// Gets the subject of the outlook message.
@@ -968,7 +927,7 @@ namespace FileCurator.Formats.MSG
             /// <param name="fileName">Name of the file.</param>
             public void Save(string fileName)
             {
-                var saveFileStream = File.Open(fileName, FileMode.Create, FileAccess.ReadWrite);
+                FileStream saveFileStream = File.Open(fileName, FileMode.Create, FileAccess.ReadWrite);
                 Save(saveFileStream);
                 saveFileStream.Close();
             }
@@ -989,11 +948,11 @@ namespace FileCurator.Formats.MSG
                 try
                 {
                     //create a ILockBytes (unmanaged byte array) and then create a IStorage using the byte array as a backing store
-                    NativeMethods.CreateILockBytesOnHGlobal(IntPtr.Zero, true, out memoryStorageBytes);
-                    NativeMethods.StgCreateDocfileOnILockBytes(memoryStorageBytes, NativeMethods.STGM.CREATE | NativeMethods.STGM.READWRITE | NativeMethods.STGM.SHARE_EXCLUSIVE, 0, out memoryStorage);
+                    _ = NativeMethods.CreateILockBytesOnHGlobal(IntPtr.Zero, true, out memoryStorageBytes);
+                    _ = NativeMethods.StgCreateDocfileOnILockBytes(memoryStorageBytes, NativeMethods.STGM.CREATE | NativeMethods.STGM.READWRITE | NativeMethods.STGM.SHARE_EXCLUSIVE, 0, out memoryStorage);
 
                     //copy the save storage into the new storage
-                    saveMsg.storage_.CopyTo(0, null, IntPtr.Zero, memoryStorage);
+                    saveMsg?.storage_.CopyTo(0, null, IntPtr.Zero, memoryStorage);
                     memoryStorageBytes.Flush();
                     memoryStorage.Commit(0);
 
@@ -1011,7 +970,7 @@ namespace FileCurator.Formats.MSG
                         var props = saveMsg.GetStreamBytes(PROPERTIES_STREAM);
 
                         //create new array to store a copy of the properties that is 8 bytes larger than the old so the header can be padded
-                        byte[] newProps = new byte[props.Length + 8];
+                        var newProps = new byte[props.Length + 8];
 
                         //insert 8 null bytes from index 24 to 32. this is because a top level object property header requires a 32 byte header
                         Buffer.BlockCopy(props, 0, newProps, 0, 24);
@@ -1021,7 +980,7 @@ namespace FileCurator.Formats.MSG
                         memoryStorage.DestroyElement(PROPERTIES_STREAM);
 
                         //create the property stream again and write in the padded version
-                        var propStream = memoryStorage.CreateStream(PROPERTIES_STREAM, NativeMethods.STGM.READWRITE | NativeMethods.STGM.SHARE_EXCLUSIVE, 0, 0);
+                        System.Runtime.InteropServices.ComTypes.IStream propStream = memoryStorage.CreateStream(PROPERTIES_STREAM, NativeMethods.STGM.READWRITE | NativeMethods.STGM.SHARE_EXCLUSIVE, 0, 0);
                         propStream.Write(newProps, newProps.Length, IntPtr.Zero);
                     }
 
@@ -1043,17 +1002,17 @@ namespace FileCurator.Formats.MSG
                 {
                     if (nameIdSourceStorage != null)
                     {
-                        Marshal.ReleaseComObject(nameIdSourceStorage);
+                        _ = Marshal.ReleaseComObject(nameIdSourceStorage);
                     }
 
                     if (memoryStorage != null)
                     {
-                        Marshal.ReleaseComObject(memoryStorage);
+                        _ = Marshal.ReleaseComObject(memoryStorage);
                     }
 
                     if (memoryStorageBytes != null)
                     {
-                        Marshal.ReleaseComObject(memoryStorageBytes);
+                        _ = Marshal.ReleaseComObject(memoryStorageBytes);
                     }
                 }
             }
@@ -1093,7 +1052,11 @@ namespace FileCurator.Formats.MSG
                 foreach (System.Runtime.InteropServices.ComTypes.STATSTG storageStat in subStorageStatistics.Values)
                 {
                     //element is a storage. get it and add its statistics object to the sub storage dictionary
-                    var subStorage = storage_.OpenStorage(storageStat.pwcsName, IntPtr.Zero, NativeMethods.STGM.READ | NativeMethods.STGM.SHARE_EXCLUSIVE, IntPtr.Zero, 0);
+                    NativeMethods.IStorage? subStorage = storage_?.OpenStorage(storageStat.pwcsName, IntPtr.Zero, NativeMethods.STGM.READ | NativeMethods.STGM.SHARE_EXCLUSIVE, IntPtr.Zero, 0);
+                    if (subStorage == null)
+                    {
+                        continue;
+                    }
 
                     //run specific load method depending on sub storage name prefix
                     if (storageStat.pwcsName.StartsWith(RECIP_STORAGE_PREFIX, StringComparison.Ordinal))
@@ -1108,7 +1071,7 @@ namespace FileCurator.Formats.MSG
                     else
                     {
                         //release sub storage
-                        Marshal.ReleaseComObject(subStorage);
+                        _ = Marshal.ReleaseComObject(subStorage);
                     }
                 }
             }
@@ -1306,8 +1269,8 @@ namespace FileCurator.Formats.MSG
                 try
                 {
                     //create a ILockBytes (unmanaged byte array) and then create a IStorage using the byte array as a backing store
-                    CreateILockBytesOnHGlobal(IntPtr.Zero, true, out memoryStorageBytes);
-                    StgCreateDocfileOnILockBytes(memoryStorageBytes, STGM.CREATE | STGM.READWRITE | STGM.SHARE_EXCLUSIVE, 0, out memoryStorage);
+                    _ = CreateILockBytesOnHGlobal(IntPtr.Zero, true, out memoryStorageBytes);
+                    _ = StgCreateDocfileOnILockBytes(memoryStorageBytes, STGM.CREATE | STGM.READWRITE | STGM.SHARE_EXCLUSIVE, 0, out memoryStorage);
 
                     //copy the source storage into the new storage
                     source.CopyTo(0, null, IntPtr.Zero, memoryStorage);
@@ -1321,19 +1284,19 @@ namespace FileCurator.Formats.MSG
                 {
                     if (memoryStorage != null)
                     {
-                        Marshal.ReleaseComObject(memoryStorage);
+                        _ = Marshal.ReleaseComObject(memoryStorage);
                     }
                 }
                 finally
                 {
                     if (memoryStorageBytes != null)
                     {
-                        Marshal.ReleaseComObject(memoryStorageBytes);
+                        _ = Marshal.ReleaseComObject(memoryStorageBytes);
                     }
 
                     if (closeSource)
                     {
-                        Marshal.ReleaseComObject(source);
+                        _ = Marshal.ReleaseComObject(source);
                     }
                 }
 
@@ -1406,103 +1369,6 @@ namespace FileCurator.Formats.MSG
 
             [DllImport("kernel32.dll")]
             private static extern IntPtr GlobalLock(IntPtr hMem);
-
-            /// <summary>
-            /// STGM?
-            /// </summary>
-            [Flags]
-            public enum STGM
-            {
-                /// <summary>
-                /// The direct
-                /// </summary>
-                DIRECT = 0x00000000,
-
-                /// <summary>
-                /// The read
-                /// </summary>
-                READ = DIRECT,
-
-                /// <summary>
-                /// The failifthere
-                /// </summary>
-                FAILIFTHERE = DIRECT,
-
-                /// <summary>
-                /// The write
-                /// </summary>
-                WRITE = 0x00000001,
-
-                /// <summary>
-                /// The readwrite
-                /// </summary>
-                READWRITE = 0x00000002,
-
-                /// <summary>
-                /// The shar e_ exclusive
-                /// </summary>
-                SHARE_EXCLUSIVE = 0x00000010,
-
-                /// <summary>
-                /// The shar e_ den y_ write
-                /// </summary>
-                SHARE_DENY_WRITE = 0x00000020,
-
-                /// <summary>
-                /// The shar e_ den y_ read
-                /// </summary>
-                SHARE_DENY_READ = SHARE_EXCLUSIVE | SHARE_DENY_WRITE,
-
-                /// <summary>
-                /// The shar e_ den y_ none
-                /// </summary>
-                SHARE_DENY_NONE = 0x00000040,
-
-                /// <summary>
-                /// The create
-                /// </summary>
-                CREATE = 0x00001000,
-
-                /// <summary>
-                /// The transacted
-                /// </summary>
-                TRANSACTED = 0x00010000,
-
-                /// <summary>
-                /// The convert
-                /// </summary>
-                CONVERT = 0x00020000,
-
-                /// <summary>
-                /// The priority
-                /// </summary>
-                PRIORITY = 0x00040000,
-
-                /// <summary>
-                /// The noscratch
-                /// </summary>
-                NOSCRATCH = 0x00100000,
-
-                /// <summary>
-                /// The nosnapshot
-                /// </summary>
-                NOSNAPSHOT = 0x00200000,
-
-                /// <summary>
-                /// The direc t_ SWMR
-                /// </summary>
-                DIRECT_SWMR = 0x00400000,
-
-                /// <summary>
-                /// The deleteonrelease
-                /// </summary>
-                DELETEONRELEASE = 0x04000000,
-
-                /// <summary>
-                /// The simple
-                /// </summary>
-                SIMPLE = 0x08000000
-            }
 
             /// <summary>
             /// Enum STATSTG
@@ -1728,6 +1594,103 @@ namespace FileCurator.Formats.MSG
                 void Stat([Out] out System.Runtime.InteropServices.ComTypes.STATSTG pStatStg, int grfStatFlag);
             }
 
+            /// <summary>
+            /// STGM?
+            /// </summary>
+            [Flags]
+            public enum STGM
+            {
+                /// <summary>
+                /// The direct
+                /// </summary>
+                DIRECT = 0x00000000,
+
+                /// <summary>
+                /// The read
+                /// </summary>
+                READ = DIRECT,
+
+                /// <summary>
+                /// The failifthere
+                /// </summary>
+                FAILIFTHERE = DIRECT,
+
+                /// <summary>
+                /// The write
+                /// </summary>
+                WRITE = 0x00000001,
+
+                /// <summary>
+                /// The readwrite
+                /// </summary>
+                READWRITE = 0x00000002,
+
+                /// <summary>
+                /// The shar e_ exclusive
+                /// </summary>
+                SHARE_EXCLUSIVE = 0x00000010,
+
+                /// <summary>
+                /// The shar e_ den y_ write
+                /// </summary>
+                SHARE_DENY_WRITE = 0x00000020,
+
+                /// <summary>
+                /// The shar e_ den y_ read
+                /// </summary>
+                SHARE_DENY_READ = SHARE_EXCLUSIVE | SHARE_DENY_WRITE,
+
+                /// <summary>
+                /// The shar e_ den y_ none
+                /// </summary>
+                SHARE_DENY_NONE = 0x00000040,
+
+                /// <summary>
+                /// The create
+                /// </summary>
+                CREATE = 0x00001000,
+
+                /// <summary>
+                /// The transacted
+                /// </summary>
+                TRANSACTED = 0x00010000,
+
+                /// <summary>
+                /// The convert
+                /// </summary>
+                CONVERT = 0x00020000,
+
+                /// <summary>
+                /// The priority
+                /// </summary>
+                PRIORITY = 0x00040000,
+
+                /// <summary>
+                /// The noscratch
+                /// </summary>
+                NOSCRATCH = 0x00100000,
+
+                /// <summary>
+                /// The nosnapshot
+                /// </summary>
+                NOSNAPSHOT = 0x00200000,
+
+                /// <summary>
+                /// The direc t_ SWMR
+                /// </summary>
+                DIRECT_SWMR = 0x00400000,
+
+                /// <summary>
+                /// The deleteonrelease
+                /// </summary>
+                DELETEONRELEASE = 0x04000000,
+
+                /// <summary>
+                /// The simple
+                /// </summary>
+                SIMPLE = 0x08000000
+            }
+
             /* (Reserved for interface use) type doesn't matter to caller */
             /* NULL property value */
             /* Signed 16-bit value */
@@ -1753,20 +1716,9 @@ namespace FileCurator.Formats.MSG
             {
             }
 
-            ~ReferenceManager()
-            {
-                foreach (object trackingObject in trackingObjects)
-                {
-                    if (trackingObject != null)
-                    {
-                        Marshal.ReleaseComObject(trackingObject);
-                    }
-                }
-            }
+            private static readonly ReferenceManager instance = new();
 
-            private static readonly ReferenceManager instance = new ReferenceManager();
-
-            private readonly List<object> trackingObjects = new List<object>();
+            private readonly List<object> trackingObjects = [];
 
             public static void AddItem(object? track)
             {
@@ -1785,10 +1737,42 @@ namespace FileCurator.Formats.MSG
                 {
                     if (instance.trackingObjects.Contains(track))
                     {
-                        instance.trackingObjects.Remove(track);
+                        _ = instance.trackingObjects.Remove(track);
                     }
                 }
             }
+
+            ~ReferenceManager()
+            {
+                foreach (var trackingObject in trackingObjects)
+                {
+                    if (trackingObject != null)
+                    {
+                        _ = Marshal.ReleaseComObject(trackingObject);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Recipient type
+        /// </summary>
+        public enum RecipientType
+        {
+            /// <summary>
+            /// To
+            /// </summary>
+            To,
+
+            /// <summary>
+            /// CC
+            /// </summary>
+            CC,
+
+            /// <summary>
+            /// The unknown
+            /// </summary>
+            Unknown
         }
     }
 }
