@@ -34,7 +34,7 @@ namespace FileCurator.Windows.Formats.MSG
         /// Gets the header identifier.
         /// </summary>
         /// <value>The header identifier.</value>
-        public override byte[] HeaderIdentifier => new byte[] { 0xD0, 0xCF, 0x11, 0xE0, 0xA1, 0xB1, 0x1A, 0xE1, 0x00 };
+        public override byte[] HeaderIdentifier => [0xD0, 0xCF, 0x11, 0xE0, 0xA1, 0xB1, 0x1A, 0xE1, 0x00];
 
         /// <summary>
         /// Reads the specified stream.
@@ -43,17 +43,17 @@ namespace FileCurator.Windows.Formats.MSG
         /// <returns>The file</returns>
         public override IMessage Read(Stream stream)
         {
-            using var message = new Message(stream);
+            using var Message = new Message(stream);
             var ReturnValue = new GenericEmail
             {
-                Content = message.BodyText ?? "",
-                Title = message.Subject ?? "",
-                From = message.From ?? "",
-                Sent = message.SentTime ?? DateTime.Now
+                Content = Message.BodyText ?? "",
+                Title = Message.Subject ?? "",
+                From = Message.From ?? "",
+                Sent = Message.SentTime ?? DateTime.Now
             };
-            AddRecipients(message, RecipientType.Unknown, x => ReturnValue.BCC.Add(x));
-            AddRecipients(message, RecipientType.CC, x => ReturnValue.CC.Add(x));
-            AddRecipients(message, RecipientType.To, x => ReturnValue.To.Add(x));
+            AddRecipients(Message, RecipientType.Unknown, ReturnValue.BCC.Add);
+            AddRecipients(Message, RecipientType.CC, ReturnValue.CC.Add);
+            AddRecipients(Message, RecipientType.To, ReturnValue.To.Add);
             return ReturnValue;
         }
 
@@ -63,11 +63,13 @@ namespace FileCurator.Windows.Formats.MSG
         /// <param name="message">The message.</param>
         /// <param name="type">The type.</param>
         /// <param name="action">The action.</param>
-        private void AddRecipients(Message message, RecipientType type, Action<string> action)
+        private static void AddRecipients(Message message, RecipientType type, Action<string> action)
         {
-            foreach (var Item in message.Recipients.Where(x => x.Type == type).Select(x => x.Email))
+            if (message?.Recipients is null)
+                return;
+            foreach (var Item in message.Recipients.Where(x => x?.Type == type).Select(x => x?.Email))
             {
-                action(Item);
+                action(Item!);
             }
         }
     }
