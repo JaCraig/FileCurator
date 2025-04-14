@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.0.5"></a>
+## [5.0.5](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.5) (2025-04-14)
+
+### Bug Fixes
+
+* **MSGReader:** enhance null-checking in AddRecipients ([93697f3](https://www.github.com/JaCraig/FileCurator/commit/93697f3fcc406e2a964778b2b35d90667c9107bc))
+
+### Other
+
+* **project:** update version to 5.0.4 ([4b70df4](https://www.github.com/JaCraig/FileCurator/commit/4b70df4eae6b4733a4286b56cbbae9b887e9f91b))
+
 <a name="5.0.4"></a>
 ## [5.0.4](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.4) (2025-04-14)
 
