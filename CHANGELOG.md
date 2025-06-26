@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.0.7"></a>
+## [5.0.7](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.7) (2025-06-26)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([7b2cf1e](https://www.github.com/JaCraig/FileCurator/commit/7b2cf1ef9d2d8c536bf5745af45e33c81389533a))
+
+### Other
+
+* Merge pull request #370 from JaCraig/dependabot/nuget/FileCurator.Example/dependencies-e80537f63a ([846897d](https://www.github.com/JaCraig/FileCurator/commit/846897d40080dfc9bbda97dfb7daddf986dab742))
+* Merge pull request #371 from JaCraig/dependabot/nuget/FileCurator.Example/dependencies-be42066063 ([5635702](https://www.github.com/JaCraig/FileCurator/commit/56357027e6dbeb1e643dce3ae0cd34df9ea5aa1b))
+* Merge pull request #372 from JaCraig/dependabot/nuget/FileCurator/dependencies-70f9e6279c ([1f99ef0](https://www.github.com/JaCraig/FileCurator/commit/1f99ef035ba3971d810079b8a4701b3f1034d309))
+* bump HtmlAgilityPack ([09ca22f](https://www.github.com/JaCraig/FileCurator/commit/09ca22faaa994b494dac0b78e9db79b520255bdc))
+* bump MimeKit in /FileCurator.Example in the dependencies group ([c807ce3](https://www.github.com/JaCraig/FileCurator/commit/c807ce3f336bc86376867ad13cc0c17971abf673))
+
 <a name="5.0.6"></a>
 ## [5.0.6](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.6) (2025-04-14)
 
