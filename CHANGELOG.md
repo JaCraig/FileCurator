@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.0.8"></a>
+## [5.0.8](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.8) (2025-06-27)
+
+### Bug Fixes
+
+* **dependabot:** correct indentation in patterns section ([2bbd742](https://www.github.com/JaCraig/FileCurator/commit/2bbd74235489e55e7cd32e2427c72317b866eff5))
+
 <a name="5.0.7"></a>
 ## [5.0.7](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.7) (2025-06-26)
 
