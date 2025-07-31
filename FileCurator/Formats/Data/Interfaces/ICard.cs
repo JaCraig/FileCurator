@@ -64,6 +64,11 @@ namespace FileCurator.Formats.Data.Interfaces
         string MiddleName { get; set; }
 
         /// <summary>
+        /// Gets or sets the nickname associated with the entity.
+        /// </summary>
+        string Nickname { get; set; }
+
+        /// <summary>
         /// Organization the person belongs to
         /// </summary>
         string Organization { get; set; }

@@ -63,10 +63,12 @@ namespace FileCurator.Formats.VCard
         /// <returns></returns>
         private static string GenerateCard(ICard fileCard)
         {
-            return new StringBuilder().Append("BEGIN:VCARD\r\nVERSION:2.1\r\n")
+            var ReturnValue = new StringBuilder().Append("BEGIN:VCARD\r\nVERSION:2.1\r\n")
                 .AppendFormat(CultureInfo.CurrentCulture, "FN:{0}\r\n", fileCard.FullName)
-                .AppendFormat(CultureInfo.CurrentCulture, "N:{0}\r\n", $"{fileCard.LastName};{fileCard.FirstName};{fileCard.MiddleName};{fileCard.Prefix};{fileCard.Suffix}")
-                .AppendLine(fileCard.DirectDial.ToString(x => $"TEL;TYPE={x.Type}:{x.Number}", "\r\n"))
+                .AppendFormat(CultureInfo.CurrentCulture, "N:{0}\r\n", $"{fileCard.LastName};{fileCard.FirstName};{fileCard.MiddleName};{fileCard.Prefix};{fileCard.Suffix}");
+            if (!string.IsNullOrWhiteSpace(fileCard.Nickname))
+                ReturnValue.AppendFormat(CultureInfo.CurrentCulture, "NICKNAME:{0}\r\n", fileCard.Nickname);
+            return ReturnValue.AppendLine(fileCard.DirectDial.ToString(x => $"TEL;TYPE={x.Type}:{x.Number}", "\r\n"))
                 .AppendLine(fileCard.Email.ToString(x => $"EMAIL;TYPE={x.Type}:{x.EmailAddress}", "\r\n"))
                 .AppendLine(fileCard.Addresses.ToString(x => $"ADR;TYPE={x.Type}:;{x.Name};{x.Street};{x.City};{x.StateOrProvence};{x.ZipCode};{x.Country}", "\n"))
                 .AppendFormat(CultureInfo.CurrentCulture, "TITLE:{0}\r\n", fileCard.Title)

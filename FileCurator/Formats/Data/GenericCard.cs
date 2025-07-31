@@ -99,6 +99,8 @@ namespace FileCurator.Formats.Data
         /// </summary>
         public string MiddleName { get; set; }
 
+        public string Nickname { get; set; }
+
         /// <summary>
         /// Organization the person belongs to
         /// </summary>
@@ -147,10 +149,12 @@ namespace FileCurator.Formats.Data
         /// <returns>VCard as a string</returns>
         public override string ToString()
         {
-            return new StringBuilder().Append("BEGIN:VCARD\r\nVERSION:2.1\r\n")
+            var ReturnValue = new StringBuilder().Append("BEGIN:VCARD\r\nVERSION:2.1\r\n")
                 .AppendFormat(CultureInfo.CurrentCulture, "FN:{0}\r\n", FullName)
-                .AppendFormat(CultureInfo.CurrentCulture, "N:{0}\r\n", Name)
-                .AppendLine(DirectDial.ToString(x => $"TEL;TYPE={x.Type}:{x.Number}", "\n"))
+                .AppendFormat(CultureInfo.CurrentCulture, "N:{0}\r\n", Name);
+            if (!string.IsNullOrWhiteSpace(Nickname))
+                ReturnValue.AppendFormat(CultureInfo.CurrentCulture, "NICKNAME:{0}\r\n", Nickname);
+            return ReturnValue.AppendLine(DirectDial.ToString(x => $"TEL;TYPE={x.Type}:{x.Number}", "\n"))
                 .AppendLine(Email.ToString(x => $"EMAIL;TYPE={x.Type}:{x.EmailAddress}", "\n"))
                 .AppendLine(Addresses.ToString(x => $"ADR;TYPE={x.Type}:;{x.Name};{x.Street};{x.City};{x.StateOrProvence};{x.ZipCode};{x.Country}", "\n"))
                 .AppendFormat(CultureInfo.CurrentCulture, "TITLE:{0}\r\n", Title)
