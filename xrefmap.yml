@@ -8541,6 +8541,19 @@ references:
   isSpec: "True"
   fullName: FileCurator.Formats.Data.GenericCard.Name
   nameWithType: GenericCard.Name
+- uid: FileCurator.Formats.Data.GenericCard.Nickname
+  name: Nickname
+  href: api/FileCurator.Formats.Data.GenericCard.html#FileCurator_Formats_Data_GenericCard_Nickname
+  commentId: P:FileCurator.Formats.Data.GenericCard.Nickname
+  fullName: FileCurator.Formats.Data.GenericCard.Nickname
+  nameWithType: GenericCard.Nickname
+- uid: FileCurator.Formats.Data.GenericCard.Nickname*
+  name: Nickname
+  href: api/FileCurator.Formats.Data.GenericCard.html#FileCurator_Formats_Data_GenericCard_Nickname_
+  commentId: Overload:FileCurator.Formats.Data.GenericCard.Nickname
+  isSpec: "True"
+  fullName: FileCurator.Formats.Data.GenericCard.Nickname
+  nameWithType: GenericCard.Nickname
 - uid: FileCurator.Formats.Data.GenericCard.Organization
   name: Organization
   href: api/FileCurator.Formats.Data.GenericCard.html#FileCurator_Formats_Data_GenericCard_Organization
@@ -9389,6 +9402,19 @@ references:
   isSpec: "True"
   fullName: FileCurator.Formats.Data.Interfaces.ICard.MiddleName
   nameWithType: ICard.MiddleName
+- uid: FileCurator.Formats.Data.Interfaces.ICard.Nickname
+  name: Nickname
+  href: api/FileCurator.Formats.Data.Interfaces.ICard.html#FileCurator_Formats_Data_Interfaces_ICard_Nickname
+  commentId: P:FileCurator.Formats.Data.Interfaces.ICard.Nickname
+  fullName: FileCurator.Formats.Data.Interfaces.ICard.Nickname
+  nameWithType: ICard.Nickname
+- uid: FileCurator.Formats.Data.Interfaces.ICard.Nickname*
+  name: Nickname
+  href: api/FileCurator.Formats.Data.Interfaces.ICard.html#FileCurator_Formats_Data_Interfaces_ICard_Nickname_
+  commentId: Overload:FileCurator.Formats.Data.Interfaces.ICard.Nickname
+  isSpec: "True"
+  fullName: FileCurator.Formats.Data.Interfaces.ICard.Nickname
+  nameWithType: ICard.Nickname
 - uid: FileCurator.Formats.Data.Interfaces.ICard.Organization
   name: Organization
   href: api/FileCurator.Formats.Data.Interfaces.ICard.html#FileCurator_Formats_Data_Interfaces_ICard_Organization
