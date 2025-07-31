@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.1.0"></a>
+## [5.1.0](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.1.0) (2025-07-31)
+
+### Features
+
+* **data:** add nickname property to GenericCard and ICard ([5a53a7f](https://www.github.com/JaCraig/FileCurator/commit/5a53a7ffc39fb8d8773ca41e8109ed89cff121ee))
+
+### Other
+
+* Merge pull request #373 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-0110843c0c ([a08bab6](https://www.github.com/JaCraig/FileCurator/commit/a08bab6db7320e5553960c97a47075128d8a65a8))
+* Merge pull request #374 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-f5ef2f2cd0 ([0bb1005](https://www.github.com/JaCraig/FileCurator/commit/0bb10051540dddb1bfd3dfb0e7aa1ada97f5e94e))
+* Merge pull request #375 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-fe84a2f1fc ([30b886d](https://www.github.com/JaCraig/FileCurator/commit/30b886dd6ae4a5434f0927dcce09df4226b13150))
+* Merge pull request #376 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-0b34180b1d ([ebc946c](https://www.github.com/JaCraig/FileCurator/commit/ebc946cd89df28a2934475ea8917d4344b880fd9))
+* Merge pull request #377 from JaCraig/dependabot/nuget/FileCurator/dependencies-aca8f29c58 ([f51a107](https://www.github.com/JaCraig/FileCurator/commit/f51a10719af201ac251166179a1cdcbd3b0fa424))
+* Merge pull request #378 from JaCraig/dependabot/nuget/FileCurator/dependencies-ee2564c198 ([717e932](https://www.github.com/JaCraig/FileCurator/commit/717e9321410368a90d9b3484672f0c7f22e366f9))
+* Bump the dependencies group with 1 update ([39d42d0](https://www.github.com/JaCraig/FileCurator/commit/39d42d09c8df999c8c8c9f3badc4b898987496a4))
+* Bump the dependencies group with 1 update ([e4a761e](https://www.github.com/JaCraig/FileCurator/commit/e4a761e182707b64cbfe6c336003c893f5e68560))
+* Bump the dependencies group with 1 update ([dd3316f](https://www.github.com/JaCraig/FileCurator/commit/dd3316ffa0f4608613f4c140277fe68cb1cd5cf7))
+* Bump the dependencies group with 1 update ([e70d406](https://www.github.com/JaCraig/FileCurator/commit/e70d406d3911a38dfabaaaec266c590fb68dbf6e))
+* Bump the dependencies group with 2 updates ([6d0dcee](https://www.github.com/JaCraig/FileCurator/commit/6d0dceee01b633f0ab49a8fd9a2fe9a22880dafa))
+* Bump the dependencies group with 2 updates ([7d9992d](https://www.github.com/JaCraig/FileCurator/commit/7d9992d752580d6925954b6337417f5435b2dda6))
+
 <a name="5.0.8"></a>
 ## [5.0.8](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.0.8) (2025-06-27)
 
