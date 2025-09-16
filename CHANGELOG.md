@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.1.2"></a>
+## [5.1.2](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.1.2) (2025-09-16)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([2f82d42](https://www.github.com/JaCraig/FileCurator/commit/2f82d424368a44e3382b0d3f4b60a28be309bb7a))
+
+### Other
+
+* Merge pull request #384 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-c86233ea9b ([368be95](https://www.github.com/JaCraig/FileCurator/commit/368be953b198de8c5d724d00a49e8678c14d3049))
+* Merge pull request #385 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-40efe4b6f8 ([b69a7bb](https://www.github.com/JaCraig/FileCurator/commit/b69a7bbd340bfe0549a460bf3bdc1f5fabf57679))
+* Merge pull request #386 from JaCraig/dependabot/nuget/FileCurator/dependencies-baa57054bb ([bd6fe45](https://www.github.com/JaCraig/FileCurator/commit/bd6fe45bdffbd9a7354e306ce6e7f203945cdacd))
+* Merge pull request #387 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-fdb64db92a ([11b7a0a](https://www.github.com/JaCraig/FileCurator/commit/11b7a0af4644320550207a8361300519bf9ef08f))
+* Merge pull request #388 from JaCraig/dependabot/nuget/FileCurator/dependencies-04731732d7 ([36bb4ae](https://www.github.com/JaCraig/FileCurator/commit/36bb4ae3c0c30624a1e65d2792c02d567074a82e))
+* Merge pull request #389 from JaCraig/dependabot/nuget/FileCurator/dependencies-04731732d7 ([17d1620](https://www.github.com/JaCraig/FileCurator/commit/17d162010300d5642b86066fdc47cd856ecf7ca6))
+* Bump the dependencies group with 1 update ([7afb3f3](https://www.github.com/JaCraig/FileCurator/commit/7afb3f320ca5586a527eefc88d8339dbe6673d43))
+* Bump the dependencies group with 1 update ([2df6a2d](https://www.github.com/JaCraig/FileCurator/commit/2df6a2ddd499521473f7cd23e72bcf450bfd5120))
+* Bump the dependencies group with 1 update ([d0740bc](https://www.github.com/JaCraig/FileCurator/commit/d0740bc25087c16520621690d36f55ca902072ec))
+* Bump the dependencies group with 1 update ([21b2ade](https://www.github.com/JaCraig/FileCurator/commit/21b2ade0b8fc7cb47f2db7840a6669cec5b4ae58))
+* Bump the dependencies group with 2 updates ([2b9e4cc](https://www.github.com/JaCraig/FileCurator/commit/2b9e4cc07df14c98c8a42915e5e04b27d792b02f))
+
 <a name="5.1.1"></a>
 ## [5.1.1](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.1.1) (2025-08-18)
 
