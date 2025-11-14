@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.1.9"></a>
+## [5.1.9](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.1.9) (2025-11-14)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([3c2d4dd](https://www.github.com/JaCraig/FileCurator/commit/3c2d4dda7dae71b3716694611505d0773ae82b80))
+
+### Other
+
+* Merge pull request #409 from JaCraig/dependabot/nuget/dot-config/dependencies-57c977e283 ([9337f90](https://www.github.com/JaCraig/FileCurator/commit/9337f90da503c0e178966f9219e69b92681886a0))
+* Merge pull request #410 from JaCraig/dependabot/nuget/FileCurator/dependencies-9695a9bd67 ([6f5c14c](https://www.github.com/JaCraig/FileCurator/commit/6f5c14c3ea7ff4053deb9337e73d4afbec62cdc6))
+* Bump the dependencies group with 5 updates ([b192cbe](https://www.github.com/JaCraig/FileCurator/commit/b192cbe239786ba1140464f53c20163599a77d3f))
+
 <a name="5.1.8"></a>
 ## [5.1.8](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.1.8) (2025-11-13)
 
