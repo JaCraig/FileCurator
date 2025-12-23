@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.1.10"></a>
+## [5.1.10](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.1.10) (2025-12-23)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([a161b03](https://www.github.com/JaCraig/FileCurator/commit/a161b03d1eb1c41340b768a4f95e7c40a2817e2e))
+
+### Other
+
+* Merge pull request #411 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-069e2d8cfe ([d1dc098](https://www.github.com/JaCraig/FileCurator/commit/d1dc09840b9900115f32e4afd2808521a9e8234c))
+* Merge pull request #412 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-f4b6243359 ([b6e5e1f](https://www.github.com/JaCraig/FileCurator/commit/b6e5e1f1cf0911622bd8200fbf955a0e251687a5))
+* Merge pull request #413 from JaCraig/dependabot/nuget/FileCurator/dependencies-b61e6a2f11 ([4538605](https://www.github.com/JaCraig/FileCurator/commit/45386056a22bcdf8e9e8e5c7dc276112ac3f3991))
+* Merge pull request #414 from JaCraig/dependabot/nuget/FileCurator/dependencies-b61e6a2f11 ([55ef889](https://www.github.com/JaCraig/FileCurator/commit/55ef8897c614e3aefd2cdee0972bddbf25f8a39a))
+* Merge pull request #415 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-406f96db61 ([6e85545](https://www.github.com/JaCraig/FileCurator/commit/6e85545fd7dd0fd68cc3c8fa3b11b05f36b943f1))
+* Merge pull request #416 from JaCraig/dependabot/nuget/FileCurator/dependencies-d0124eae7d ([f96032b](https://www.github.com/JaCraig/FileCurator/commit/f96032b27430d4ffb58654dba7aa7a85b15e7309))
+* Bump the dependencies group with 1 update ([8ed2664](https://www.github.com/JaCraig/FileCurator/commit/8ed2664c2376d00360ee9551b143cd20538fcfbf))
+* Bump the dependencies group with 1 update ([f1476fd](https://www.github.com/JaCraig/FileCurator/commit/f1476fd50c45c3a848f44259663fdc22a14e3d9d))
+* Bump the dependencies group with 2 updates ([a2cc196](https://www.github.com/JaCraig/FileCurator/commit/a2cc1969c8362eda021e6da5ff5dd1228729c209))
+* Bump the dependencies group with 2 updates ([0b42e94](https://www.github.com/JaCraig/FileCurator/commit/0b42e94b3b06e5baa5bb6ae8dd0e775b59b95c87))
+* Bump the dependencies group with 2 updates ([357f58c](https://www.github.com/JaCraig/FileCurator/commit/357f58c16b08b67f375ef71772fa5b7a4d71e53e))
+
 <a name="5.1.9"></a>
 ## [5.1.9](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.1.9) (2025-11-14)
 
