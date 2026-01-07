@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.1.11"></a>
+## [5.1.11](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.1.11) (2026-01-07)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([2775f69](https://www.github.com/JaCraig/FileCurator/commit/2775f698c2e77e6c67a4a248a3e39bf5276656f0))
+
+### Other
+
+* Merge pull request #417 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-515ff5359e ([3f99113](https://www.github.com/JaCraig/FileCurator/commit/3f991130c15a45cb5e51b708277a0e444d801ccd))
+* Merge pull request #418 from JaCraig/dependabot/nuget/FileCurator/dependencies-56af1cdd03 ([eaa52bc](https://www.github.com/JaCraig/FileCurator/commit/eaa52bc3bd372d7eed23696b27bb8da514097cf3))
+* Bump the dependencies group with 1 update ([3f6accd](https://www.github.com/JaCraig/FileCurator/commit/3f6accd8d93b376841e1faaead197da55f1b54e6))
+
 <a name="5.1.10"></a>
 ## [5.1.10](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.1.10) (2025-12-23)
 
