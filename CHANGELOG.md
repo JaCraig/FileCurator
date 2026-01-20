@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.1.12"></a>
+## [5.1.12](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.1.12) (2026-01-20)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([b4e2776](https://www.github.com/JaCraig/FileCurator/commit/b4e2776c864ada10b64587180554db6fd27c9f00))
+
+### Other
+
+* Merge pull request #419 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-513ebfd917 ([bcf8378](https://www.github.com/JaCraig/FileCurator/commit/bcf837879ccd43d8692b317d7cc0426ffeb39275))
+* Merge pull request #420 from JaCraig/dependabot/nuget/FileCurator/dependencies-2492a9e0da ([c869d4c](https://www.github.com/JaCraig/FileCurator/commit/c869d4cf648d94554aa06b602183d436b8f5d3dc))
+* Merge pull request #421 from JaCraig/dependabot/nuget/FileCurator/dependencies-9bdde8abe2 ([23bdfd5](https://www.github.com/JaCraig/FileCurator/commit/23bdfd5f6c438acd2e13df41e670a4fea324dca7))
+* Merge pull request #422 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-5de9d601b5 ([f302c06](https://www.github.com/JaCraig/FileCurator/commit/f302c06d3877d5c7f1998889683d19e80f61a4a7))
+* Merge pull request #423 from JaCraig/dependabot/nuget/FileCurator/dependencies-f9ffac7415 ([45257dd](https://www.github.com/JaCraig/FileCurator/commit/45257dda81616cac40cf863e704ab8abdcaa8dda))
+* Bump the dependencies group with 1 update ([d6226ad](https://www.github.com/JaCraig/FileCurator/commit/d6226ad6c8309f6934e9513ea01c493bc9c1afaf))
+* Bump the dependencies group with 1 update ([6df57aa](https://www.github.com/JaCraig/FileCurator/commit/6df57aa9e286e78d81fb90f5e0a4c6eec3eb827f))
+* Bump the dependencies group with 2 updates ([75b814e](https://www.github.com/JaCraig/FileCurator/commit/75b814e5133a4f1300f73bc48f4c8bfb56d047e2))
+* Bump the dependencies group with 2 updates ([a581271](https://www.github.com/JaCraig/FileCurator/commit/a58127164663741079d2dbdb26eb3139b59381d3))
+
 <a name="5.1.11"></a>
 ## [5.1.11](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.1.11) (2026-01-07)
 
