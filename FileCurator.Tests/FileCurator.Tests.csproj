@@ -109,7 +109,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Mecha.xUnit" Version="3.3.3" />
+    <PackageReference Include="Mecha.xUnit" Version="3.3.4" />
     <PackageReference Include="coverlet.collector" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
