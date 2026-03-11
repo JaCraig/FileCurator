@@ -4,7 +4,7 @@
     <Description>Tests for FileCurator</Description>
     <AssemblyTitle>FileCurator.Tests</AssemblyTitle>
     <Authors>James Craig</Authors>
-    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
     <DebugType>portable</DebugType>
     <AssemblyName>FileCurator.Tests</AssemblyName>
     <PackageId>FileCurator.Tests</PackageId>
