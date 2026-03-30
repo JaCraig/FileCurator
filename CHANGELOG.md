@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.2.4"></a>
+## [5.2.4](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.2.4) (2026-03-30)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([6e8638b](https://www.github.com/JaCraig/FileCurator/commit/6e8638bbc94284131dc81099d94ef4e096820772))
+
+### Other
+
+* Merge pull request #447 from JaCraig/dependabot/nuget/dot-config/dependencies-4fa4d863e1 ([e2f0aff](https://www.github.com/JaCraig/FileCurator/commit/e2f0aff74f98984064a8bb80800697410a0024de))
+* Merge pull request #448 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-6491850a24 ([6fb96c3](https://www.github.com/JaCraig/FileCurator/commit/6fb96c308320258675be636e5941a827ea5933df))
+* Merge pull request #449 from JaCraig/dependabot/nuget/FileCurator/dependencies-b84136b1aa ([09840c5](https://www.github.com/JaCraig/FileCurator/commit/09840c53d86829fac3e6915924dea47e2385273a))
+* Merge pull request #450 from JaCraig/dependabot/nuget/FileCurator/dependencies-f92dd90ce9 ([9df3360](https://www.github.com/JaCraig/FileCurator/commit/9df3360fc479acfde65f17a7bd9e7839723d3c14))
+* Merge pull request #451 from JaCraig/dependabot/nuget/FileCurator/dependencies-b11594b647 ([2af8e70](https://www.github.com/JaCraig/FileCurator/commit/2af8e70b72a908dfff7a33585e22f098dc3ad564))
+* Bump the dependencies group with 1 update ([b892913](https://www.github.com/JaCraig/FileCurator/commit/b892913f89e61d91bc74ec58ca32817cf4c50c5e))
+* Bump the dependencies group with 1 update ([545e5d7](https://www.github.com/JaCraig/FileCurator/commit/545e5d70216be4fbe32c25a0bbb1bac3778d898c))
+* Bump the dependencies group with 2 updates ([9d03ac8](https://www.github.com/JaCraig/FileCurator/commit/9d03ac8311fbf31ee9513efde58c9aae0cf66d0b))
+* Bump the dependencies group with 3 updates ([04d18ba](https://www.github.com/JaCraig/FileCurator/commit/04d18ba208faf2cff8a08075138bff60a49293be))
+* Merge branch 'master' of https://github.com/JaCraig/FileCurator ([2fa9c9b](https://www.github.com/JaCraig/FileCurator/commit/2fa9c9bc56f77a46f511fa5ac3716d325571bef3))
+* **tests:** update target frameworks in project file ([0b2a5e6](https://www.github.com/JaCraig/FileCurator/commit/0b2a5e6d34dd0bcacb3bd4c0998ca4ffd9515971))
+* **workflows:** update schedules and formatting in workflow files ([4ab7b58](https://www.github.com/JaCraig/FileCurator/commit/4ab7b587735575e466d64cba70afdbbd91c2db96))
+
 <a name="5.2.3"></a>
 ## [5.2.3](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.2.3) (2026-03-16)
 
