@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.2.6"></a>
+## [5.2.6](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.2.6) (2026-04-15)
+
+### Bug Fixes
+
+* Bump the dependencies group with 3 updates ([d2f2af6](https://www.github.com/JaCraig/FileCurator/commit/d2f2af68959e33bb0ed4bb3057dd8e9fef052f52))
+
+### Other
+
+* Merge pull request #455 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-e323a428b3 ([68f56d0](https://www.github.com/JaCraig/FileCurator/commit/68f56d057f92b4a5e9b2227e29b9d52b3ac7b308))
+* Merge pull request #456 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-16e42fef11 ([3451053](https://www.github.com/JaCraig/FileCurator/commit/34510531109b079cb26742774cb23b7e7c5408bf))
+* Merge pull request #457 from JaCraig/dependabot/nuget/FileCurator/dependencies-7067d50a38 ([7f48bab](https://www.github.com/JaCraig/FileCurator/commit/7f48bab12e650c1c4bbb0187d613f2947ea1899c))
+* Bump the dependencies group with 1 update ([5586098](https://www.github.com/JaCraig/FileCurator/commit/5586098ae5cdcc46f03181619781e883d10a7aa1))
+* Bump the dependencies group with 2 updates ([ef4f92a](https://www.github.com/JaCraig/FileCurator/commit/ef4f92ade0c28dbe036bf7eb0440ce92beab92b2))
+
 <a name="5.2.5"></a>
 ## [5.2.5](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.2.5) (2026-04-06)
 
