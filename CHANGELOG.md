@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.2.12"></a>
+## [5.2.12](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.2.12) (2026-04-27)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([78908f2](https://www.github.com/JaCraig/FileCurator/commit/78908f291f42fd7c2c2b4ddaa0c207dd19f64588))
+
+### Other
+
+* Enhance commit-lint.csx for better message validation ([c6c2043](https://www.github.com/JaCraig/FileCurator/commit/c6c2043f319f3a832b3dc86b105cf6ebc8b561a0))
+* Merge pull request #465 from JaCraig/dependabot/nuget/FileCurator/dependencies-31f2f4caad ([d323dbd](https://www.github.com/JaCraig/FileCurator/commit/d323dbdacf472917557b2d3cac5c50769c02a96b))
+
 <a name="5.2.11"></a>
 ## [5.2.11](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.2.11) (2026-04-24)
 
