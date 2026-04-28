@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.2.13"></a>
+## [5.2.13](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.2.13) (2026-04-28)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([aa6c550](https://www.github.com/JaCraig/FileCurator/commit/aa6c550baf8f2e7e60a84954f8f337e5d1bbee50))
+
+### Other
+
+* Merge pull request #466 from JaCraig/dependabot/nuget/FileCurator/dependencies-18e4c83aaa ([85bac0f](https://www.github.com/JaCraig/FileCurator/commit/85bac0fec0c329d0db5e3b9cdb5708b62832aa41))
+
 <a name="5.2.12"></a>
 ## [5.2.12](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.2.12) (2026-04-27)
 
