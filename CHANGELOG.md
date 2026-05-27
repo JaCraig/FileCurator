@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.2.16"></a>
+## [5.2.16](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.2.16) (2026-05-27)
+
+### Bug Fixes
+
+* **workflows:** remove unnecessary secrets from YAML files ([6800cad](https://www.github.com/JaCraig/FileCurator/commit/6800cadcc8f6e5b439cf3a87eaf2431323bdee78))
+
+### Other
+
+* Merge pull request #474 from JaCraig/dependabot/nuget/FileCurator/dependencies-d8c77d0ffb ([fcbaa9c](https://www.github.com/JaCraig/FileCurator/commit/fcbaa9c538c3141a4edf697f4d7c813ce4a94d00))
+* Merge pull request #475 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-f8829e08ff ([c4bf1d8](https://www.github.com/JaCraig/FileCurator/commit/c4bf1d860a134a64f7ed7d28b0ee33950b847ed4))
+* Merge pull request #476 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-041891a2d4 ([693a8e1](https://www.github.com/JaCraig/FileCurator/commit/693a8e17d74335be12cad2beb29e2ed783ed64fc))
+* add Copilot instructions for commit messages ([319b59f](https://www.github.com/JaCraig/FileCurator/commit/319b59f6861a50d3fbfd4d97348b93e0a141f930))
+* Bump the dependencies group with 1 update ([05ca294](https://www.github.com/JaCraig/FileCurator/commit/05ca294018e37248b209ea0eb5b98d609a205180))
+* Bump the dependencies group with 1 update ([75f45cb](https://www.github.com/JaCraig/FileCurator/commit/75f45cb53815f4049e3541fbfecdac617d4476f7))
+* Bump the dependencies group with 4 updates ([a7fed25](https://www.github.com/JaCraig/FileCurator/commit/a7fed25162460cfc0a9db1021929702b63a1ae36))
+
 <a name="5.2.15"></a>
 ## [5.2.15](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.2.15) (2026-05-15)
 
