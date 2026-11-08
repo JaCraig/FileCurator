@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="5.2.18"></a>
+## [5.2.18](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.2.18) (2026-11-08)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([b2d470b](https://www.github.com/JaCraig/FileCurator/commit/b2d470b28b6b885dbf84df9456cc3333bcbd3bd9))
+* Bump the dependencies group with 1 update ([6078e17](https://www.github.com/JaCraig/FileCurator/commit/6078e17499bac02964c79051baa05cbd4145af8d))
+* Bump the dependencies group with 1 update ([33c9113](https://www.github.com/JaCraig/FileCurator/commit/33c91133109c690047889f17a8d9e3ba4173129e))
+* Bump the dependencies group with 1 update ([9c9c54d](https://www.github.com/JaCraig/FileCurator/commit/9c9c54da3e1f11c8964f62915fb649af3f291b10))
+* Bump the dependencies group with 1 update ([e8cab67](https://www.github.com/JaCraig/FileCurator/commit/e8cab67e00b3dca2e90f593424ce0432b927b631))
+* Bump the dependencies group with 1 update ([4e9a417](https://www.github.com/JaCraig/FileCurator/commit/4e9a4179f19429fc7b3913ddb4a479e97583fae4))
+* Bump the dependencies group with 1 update ([6c40fc1](https://www.github.com/JaCraig/FileCurator/commit/6c40fc1295ce85b2205bf1e82135d84111d0b207))
+* Bump the dependencies group with 2 updates ([d4e2d40](https://www.github.com/JaCraig/FileCurator/commit/d4e2d40d3662e8fa749918bc50dbd284c0def8c3))
+* Bump the dependencies group with 2 updates ([1e66014](https://www.github.com/JaCraig/FileCurator/commit/1e660144093d3b68e7123b26fe56fbb42c5a41d3))
+* Bump the dependencies group with 2 updates ([50a2e7d](https://www.github.com/JaCraig/FileCurator/commit/50a2e7de3004249d5bcc3fb3ef6959024a4af404))
+* **workflow:** update permissions and enhance publish steps ([b7b0e49](https://www.github.com/JaCraig/FileCurator/commit/b7b0e4990eb17a1776afb07b9810a8ae318b95fe))
+
+### Other
+
+* Merge pull request #489 from JaCraig/dependabot/nuget/FileCurator/dependencies-40d4d2aff0 ([13a3b35](https://www.github.com/JaCraig/FileCurator/commit/13a3b35d35d4bc985d8178764f75ed1b0c099930))
+* Merge pull request #490 from JaCraig/dependabot/nuget/FileCurator/dependencies-7dcad0c303 ([da07177](https://www.github.com/JaCraig/FileCurator/commit/da0717718be39f58f22835c367aed8329fc55080))
+* Merge pull request #491 from JaCraig/dependabot/nuget/FileCurator/dependencies-c90deb9ecc ([7c6a5c0](https://www.github.com/JaCraig/FileCurator/commit/7c6a5c05a73dc96d29a064ae08c1d3fca1c95e9a))
+* Merge pull request #492 from JaCraig/dependabot/nuget/FileCurator/dependencies-c90deb9ecc ([8f69d38](https://www.github.com/JaCraig/FileCurator/commit/8f69d38fd47e82e4a0fa85e24824c6f20227f933))
+* Merge pull request #493 from JaCraig/dependabot/nuget/dot-config/dependencies-87dec4854d ([df1be19](https://www.github.com/JaCraig/FileCurator/commit/df1be19a09b33149e82a44db4eb95d267766cd77))
+* Merge pull request #494 from JaCraig/dependabot/nuget/FileCurator/dependencies-39d8d9731f ([9b37290](https://www.github.com/JaCraig/FileCurator/commit/9b372902fc5bba182a07b1fd041c79292b398482))
+* Merge pull request #495 from JaCraig/dependabot/nuget/FileCurator/dependencies-3f35df2962 ([2cd876d](https://www.github.com/JaCraig/FileCurator/commit/2cd876de840eb20c49c6cf34e2963043e56804b2))
+* Merge pull request #496 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-8af17d2a0f ([4441e52](https://www.github.com/JaCraig/FileCurator/commit/4441e52132c1bed6e131d7607fd5861157f3debe))
+* Merge pull request #497 from JaCraig/dependabot/nuget/FileCurator/dependencies-aed2e71a3e ([3aff522](https://www.github.com/JaCraig/FileCurator/commit/3aff522daecadcca71a00ee5edf454d5c6826e4b))
+* Merge pull request #498 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-1aaad36d12 ([00655cf](https://www.github.com/JaCraig/FileCurator/commit/00655cfa045bb8263cbc184951a5d5a4448680e9))
+* Merge pull request #499 from JaCraig/dependabot/nuget/FileCurator/dependencies-c7758ce8d5 ([e393c0a](https://www.github.com/JaCraig/FileCurator/commit/e393c0a30cc7086ff3bf0962070fb129db3d8b6f))
+* Merge pull request #500 from JaCraig/dependabot/nuget/FileCurator/dependencies-c1ede9f7c1 ([0b975bf](https://www.github.com/JaCraig/FileCurator/commit/0b975bfee9a62b782e24b0451bcffc01fa864450))
+* Merge pull request #501 from JaCraig/dependabot/nuget/FileCurator/dependencies-c1ede9f7c1 ([c5eb8f7](https://www.github.com/JaCraig/FileCurator/commit/c5eb8f7084f00a981f8560be3208e7a0757d1a2d))
+* Merge pull request #502 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-ac2dbdb488 ([0d5e20e](https://www.github.com/JaCraig/FileCurator/commit/0d5e20eeb4db9c6b4e320560327f4468a3a81cda))
+* Merge pull request #503 from JaCraig/dependabot/nuget/FileCurator/dependencies-772279ef0c ([c207e4e](https://www.github.com/JaCraig/FileCurator/commit/c207e4ee163e955d593a7fca05c765292370539a))
+* Merge pull request #504 from JaCraig/dependabot/nuget/FileCurator/dependencies-f4803d6dd8 ([d6c218f](https://www.github.com/JaCraig/FileCurator/commit/d6c218fbf76e838cfe49f49d5b7c304bebe150d6))
+* Bump the dependencies group with 1 update ([5b7a1ca](https://www.github.com/JaCraig/FileCurator/commit/5b7a1cad16039f6b3b0dffbd4f60228eef4ccde4))
+* Bump the dependencies group with 1 update ([6301f1e](https://www.github.com/JaCraig/FileCurator/commit/6301f1e12a77013621c6cb9355d78b8fb6408b18))
+* Bump the dependencies group with 1 update ([b7a46a0](https://www.github.com/JaCraig/FileCurator/commit/b7a46a0c2191a430afd53fbb6c7304637fd76de7))
+* Bump the dependencies group with 2 updates ([d2a72d3](https://www.github.com/JaCraig/FileCurator/commit/d2a72d32a74580cf3b2ca18a9a007889d1ca57e8))
+* Bump the dependencies group with 2 updates ([8bba9b7](https://www.github.com/JaCraig/FileCurator/commit/8bba9b71506825134b24b8e71f93dc2ae8184dc9))
+* Bump the dependencies group with 4 updates ([e0613f7](https://www.github.com/JaCraig/FileCurator/commit/e0613f7c12a0ceb0caf8b1cdf57cf67308562ddb))
+
 <a name="5.2.17"></a>
 ## [5.2.17](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.2.17) (2026-08-18)
 
