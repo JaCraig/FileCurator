@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="6.0.0"></a>
+## [6.0.0](https://www.github.com/JaCraig/FileCurator/releases/tag/v6.0.0) (2026-11-13)
+
+### Features
+
+* **framework:** target .NET 10 and 11 ([7503f87](https://www.github.com/JaCraig/FileCurator/commit/7503f870e76f00255d7d6b9b1d23e4c119eb4f40))
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([4a4c400](https://www.github.com/JaCraig/FileCurator/commit/4a4c4002503256e6866daef087dfbe9d6e4e578c))
+
+### Breaking Changes
+
+* **framework:** target .NET 10 and 11 ([7503f87](https://www.github.com/JaCraig/FileCurator/commit/7503f870e76f00255d7d6b9b1d23e4c119eb4f40))
+
+### Other
+
+* Merge pull request #505 from JaCraig/dependabot/nuget/FileCurator/dependencies-2186410a91 ([10c5711](https://www.github.com/JaCraig/FileCurator/commit/10c57119c87f2e82dcfd76cf9ba5edc7064857b7))
+* Merge pull request #506 from JaCraig/dependabot/nuget/FileCurator.Tests/dependencies-1ff2a48c6f ([345f2d6](https://www.github.com/JaCraig/FileCurator/commit/345f2d608f59af6096e09dccf1ff4d64a2a48408))
+* Bump the dependencies group with 1 update ([96653cc](https://www.github.com/JaCraig/FileCurator/commit/96653ccbb5c0656047e4df7b7e7f7d1f9cbc811e))
+
 <a name="5.2.18"></a>
 ## [5.2.18](https://www.github.com/JaCraig/FileCurator/releases/tag/v5.2.18) (2026-11-08)
 
